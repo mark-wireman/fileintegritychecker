@@ -34,7 +34,7 @@ enum status{READ,
 
 // === Functions ===
 //void calculateHash(FILE *file)
-HashedValuesPtr* calculateHash(FILE *file)
+HashedValuesPtr calculateHash(FILE *file)
 {   
     HashedValuesPtr retVal = (HashedValuesPtr) malloc (sizeof(HashedValues));
     // Variables
@@ -188,7 +188,7 @@ HashedValuesPtr* calculateHash(FILE *file)
         retVal->HASHVALUES[index] = H[index];
     }
 
-    return *retVal;
+    return retVal;
 }
 
 // This function is used to handle the opening and reading of files
