@@ -34,5 +34,5 @@ void endianCheckPrint();
 _Bool endianCheck();
 int fillMessageBlock();
 //void calculateHash(FILE *file);
-HashedValuesPtr* calculateHash(FILE *file);
+HashedValuesPtr calculateHash(FILE *file);
 int nextMessageBlock(FILE *file, union messageBlock *msgBlock, enum status *state, __uint64_t *numBits);
