@@ -18,7 +18,7 @@ int main(int argc, char* argv[] ){
    
    hashfiles(dir);
 
-   closedir(dir);
+   //closedir(dir);
 
    return 0;
 }
