@@ -1,3 +1,9 @@
+/*
+http://staff.washington.edu/gmobus/Academics/TCES202/Moodle/OO-ProgrammingInC.html
+https://www.tutorialspoint.com/data_structures_algorithms/linked_list_program_in_c.htm
+
+*/
+
 #include "headers/fileintegritychecker.h"
 
 int main(int argc, char* argv[] ){
@@ -25,6 +31,27 @@ void hashfiles(DIR *currentlocation) {
    while( files=readdir(currentlocation) )
    {
       stat(files->d_name,&filestat);
+      if( !S_ISDIR(filestat.st_mode) ) {
+         FILE *file;
+         file = fopen(files->d_name, "r");
+         HashedValuesPtr hashedvalue = (HashedValuesPtr) malloc (sizeof(HashedValues));
+         hashedvalue = calculateHash(file);
+
+          // Print the results
+         printf("\n=================== HASH OUTPUT from fileintegritychecker.c ======\n\n");
+         printf("%08llx", hashedvalue->HASHVALUES[0]);
+         printf("%08llx", hashedvalue->HASHVALUES[1]);
+         printf("%08llx", hashedvalue->HASHVALUES[2]);
+         printf("%08llx", hashedvalue->HASHVALUES[3]);
+         printf("%08llx", hashedvalue->HASHVALUES[4]);
+         printf("%08llx", hashedvalue->HASHVALUES[5]);
+         printf("%08llx", hashedvalue->HASHVALUES[6]);
+         printf("%08llx", hashedvalue->HASHVALUES[7]);
+         
+         printf("\n\n==================================================================\n\n");
+
+      }
+      /*stat(files->d_name,&filestat);
       if( S_ISDIR(filestat.st_mode) ) {
          if(checkifrootorparent(files->d_name) == 0 ) {
             DIR *newdir = opendir(files->d_name);
@@ -34,6 +61,7 @@ void hashfiles(DIR *currentlocation) {
       }
       else
               printf("%4s: %s\n","File",files->d_name);
+      */
    }
 
    closedir(currentlocation);

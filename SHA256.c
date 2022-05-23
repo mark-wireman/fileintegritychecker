@@ -4,11 +4,7 @@
 // Section Reference: https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf
 
 #include "headers/SHA256.h"
-/*#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <inttypes.h>
-#include <stdbool.h>*/
+
 
 #define byteSwap32(x) (((x) >> 24) | (((x)&0x00FF0000) >> 8) | (((x)&0x0000FF00) << 8) | ((x) << 24))
 #define byteSwap64(x)                                                      \
@@ -36,86 +32,9 @@ enum status{READ,
 // Tell our preprocessor to create a variable MAXCHAR with value of 100000
 #define MAXCHAR 100000
 
-// Function decleration
-// See Section 4.1.2
-/*__uint32_t sig0(__uint32_t x);
-__uint32_t sig1(__uint32_t x);
-
-__uint32_t rotr(__uint32_t n, __uint16_t x);
-__uint32_t shr(__uint32_t n, __uint16_t x);
-
-__uint32_t SIG0(__uint32_t x);
-__uint32_t SIG1(__uint32_t x);
-
-__uint32_t Ch(__uint32_t x,__uint32_t y,__uint32_t z);
-__uint32_t Maj(__uint32_t x,__uint32_t y,__uint32_t z);
-
-void printFileContents();
-int calcFileSize();
-void endianCheckPrint();
-_Bool endianCheck();
-int fillMessageBlock();
-void calculateHash(FILE *file);
-int nextMessageBlock(FILE *file, union messageBlock *msgBlock, enum status *state, __uint64_t *numBits);*/
-
-
-// ==== Main ===
-/*int main(int argc, char *argv[]) 
-{   
-     // Variables
-    FILE *file;
-    FILE *fileForPrinting;
-    char* fileName;
-    int argumentCount = argc;
-
-    // Print header
-    printf("\n======== SHA256 - HASHING ALGORITHM ========");
-
-    // Test to make sure the user is inputting a filename
-    if(argumentCount == 0)
-    {
-        printf("Please supply a file to hash as command line arguments.");
-        exit;
-    }
-    else if(argumentCount >= 1)
-    {
-        printf("\n Correct arguments. Attemping to read file.. \n");
-
-        fileName = argv[1];
-            
-        // Open a file, specifiying which file using command line arguments
-        fileForPrinting = fopen(fileName, "r");
-        file = fopen(fileName, "r");
-
-         // First check to make sure the file could be found
-        if (file == NULL){
-            printf("\n Could not open file %s\n", fileName);
-        }
-        else
-        {
-            // Function calls
-            printf("\n File ok, executing functions.. \n");
-            endianCheckPrint();
-            printFileContents(fileForPrinting);
-
-             // Open a file, specifiying which file using command line arguments
-            calculateHash(file);
-
-        }
-    }
-    else
-    {
-        printf("Invalid arguments, please recheck your spelling.");
-        exit;
-    }
-    
-    return 0;
-
-}*/
-
 // === Functions ===
 //void calculateHash(FILE *file)
-HashedValuesPtr calculateHash(FILE *file)
+HashedValuesPtr* calculateHash(FILE *file)
 {   
     HashedValuesPtr retVal = (HashedValuesPtr) malloc (sizeof(HashedValues));
     // Variables
@@ -264,7 +183,10 @@ HashedValuesPtr calculateHash(FILE *file)
 
     fclose(file);
 
-    retVal->HASHVALUES = H;
+    int index;
+    for(index = 0; index < sizeof(H); index++) {
+        retVal->HASHVALUES[index] = H[index];
+    }
 
     return retVal;
 }
