@@ -1,0 +1,2 @@
+To compile the SHA256 code as an object only:
+	gcc -c SHA256.c -v -nostartfiles
