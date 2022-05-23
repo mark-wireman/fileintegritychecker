@@ -7,7 +7,6 @@ https://www.tutorialspoint.com/data_structures_algorithms/linked_list_program_in
 #include "headers/fileintegritychecker.h"
 
 int main(int argc, char* argv[] ){
-   //DIR *dir = opendir(".");
    printf("Directory name to search: %s\n",argv[1]);
    DIR *dir = opendir(argv[1]);
 
@@ -17,8 +16,6 @@ int main(int argc, char* argv[] ){
    }
    
    hashfiles(dir);
-
-   //closedir(dir);
 
    return 0;
 }
@@ -31,7 +28,8 @@ void hashfiles(DIR *currentlocation) {
    while( files=readdir(currentlocation) )
    {
       stat(files->d_name,&filestat);
-      if( !S_ISDIR(filestat.st_mode) ) {
+      //if( S_ISDIR(filestat.st_mode) ) {
+      if(checkifrootorparent(files->d_name) ! 0 ) {   
          FILE *file;
          file = fopen(files->d_name, "r");
          HashedValuesPtr hashedvalue = (HashedValuesPtr) malloc (sizeof(HashedValues));
