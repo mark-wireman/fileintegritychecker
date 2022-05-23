@@ -1,2 +1,6 @@
 To compile the SHA256 code as an object only:
 	gcc -c SHA256.c -v -nostartfiles
+
+
+To compile the file integrity checker app:
+	gcc SHA256.o fileintegritychecker.c -o filechecker
