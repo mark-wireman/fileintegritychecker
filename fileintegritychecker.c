@@ -8,47 +8,79 @@ https://www.tutorialspoint.com/data_structures_algorithms/linked_list_program_in
 
 int main(int argc, char* argv[] ){
    printf("Directory name to search: %s\n",argv[1]);
-   DIR *dir = opendir(argv[1]);
+   //DIR *dir = opendir(argv[1]);
 
-   if (dir == NULL){
-      printf("Directory cannot be opened!" );
+   if (argv[1] == NULL){
+      printf("Directory must be provided." );
       return 0;
    }
    
-   hashfiles(dir);
+   hashfiles(argv[1]);
 
    return 0;
 }
 
-void hashfiles(DIR *currentlocation) {
-   struct dirent *files;
-   struct stat filestat;
-   char* dirname;
+int isDir(char* filename) {
+   struct stat path;
+   stat(filename, &path);
+   return S_ISREG(path.st_mode);
+}
 
-   while( files=readdir(currentlocation) )
+void hashfiles(char* startdirectory) {
+   struct dirent *dir;
+   DIR *d;
+
+   d = opendir(startdirectory);
+
+   while( (dir = readdir(d)) != NULL )
    {
-      stat(files->d_name,&filestat);
-      //if( S_ISDIR(filestat.st_mode) ) {
-      if(checkifrootorparent(files->d_name) != 0 ) {   
+      struct stat buf;
+      //stat(files->d_name,&filestat);
+      //if ((files->d_name, &sb) == -1) {
+      //         perror("lstat");
+      //         exit(1);
+      //}
+
+      /*printf("ID of containing device:  [%jx,%jx]\n\n",
+                   (uintmax_t) major(sb.st_dev),
+                   (uintmax_t) minor(sb.st_dev));
+
+      switch (sb.st_mode & S_IFMT) {
+	case S_IFDIR: printf("Directory %s\n",files->d_name); break;
+        case S_IFREG: printf("\tFile %s\n",files->d_name); break;
+        default: printf("%s",files->d_name); break;
+      }*/
+      int ret = isDir(dir->d_name);
+
+      printf("Return value for %s is %d\n\n",dir->d_name,ret);
+
+      if(dir->d_type == DT_DIR) {
+         //if(checkifrootorparent(files->d_name) == 0 ) {
+	 printf("Found a directory %s. Moving on....\n\n",dir->d_name);
+         //}
+      }
+      else {   
          FILE *file;
-         file = fopen(files->d_name, "r");
+         file = fopen(dir->d_name, "r");
          HashedValuesPtr hashedvalue = (HashedValuesPtr) malloc (sizeof(HashedValues));
          hashedvalue = calculateHash(file);
 
+         printf("HASHING %s\n",dir->d_name);
           // Print the results
-         printf("\n=================== HASH OUTPUT from fileintegritychecker.c ======\n\n");
-         printf("%08llx", hashedvalue->HASHVALUES[0]);
-         printf("%08llx", hashedvalue->HASHVALUES[1]);
-         printf("%08llx", hashedvalue->HASHVALUES[2]);
-         printf("%08llx", hashedvalue->HASHVALUES[3]);
-         printf("%08llx", hashedvalue->HASHVALUES[4]);
-         printf("%08llx", hashedvalue->HASHVALUES[5]);
-         printf("%08llx", hashedvalue->HASHVALUES[6]);
-         printf("%08llx", hashedvalue->HASHVALUES[7]);
+         printf("\t\n=================== HASH OUTPUT from fileintegritychecker.c ======\n\n");
+         printf("\t%08llx", hashedvalue->HASHVALUES[0]);
+         printf("\t%08llx", hashedvalue->HASHVALUES[1]);
+         printf("\t%08llx", hashedvalue->HASHVALUES[2]);
+         printf("\t%08llx", hashedvalue->HASHVALUES[3]);
+         printf("\t%08llx", hashedvalue->HASHVALUES[4]);
+         printf("\t%08llx", hashedvalue->HASHVALUES[5]);
+         printf("\t%08llx", hashedvalue->HASHVALUES[6]);
+         printf("\t%08llx", hashedvalue->HASHVALUES[7]);
          
-         printf("\n\n==================================================================\n\n");
+         printf("\t\n\n==================================================================\n\n");
 
 	free(hashedvalue);
+        //fclose(file);
 
       }
       /*stat(files->d_name,&filestat);
@@ -64,7 +96,7 @@ void hashfiles(DIR *currentlocation) {
       */
    }
 
-   closedir(currentlocation);
+   closedir(d);
 
 }
 

@@ -181,7 +181,7 @@ HashedValuesPtr calculateHash(FILE *file)
     
     printf("\n\n==================================================================\n\n");
 
-    fclose(file);
+    //fclose(file);
 
     int index;
     for(index = 0; index < sizeof(H); index++) {
