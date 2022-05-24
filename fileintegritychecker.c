@@ -29,7 +29,7 @@ void hashfiles(DIR *currentlocation) {
    {
       stat(files->d_name,&filestat);
       //if( S_ISDIR(filestat.st_mode) ) {
-      if(checkifrootorparent(files->d_name) ! 0 ) {   
+      if(checkifrootorparent(files->d_name) != 0 ) {   
          FILE *file;
          file = fopen(files->d_name, "r");
          HashedValuesPtr hashedvalue = (HashedValuesPtr) malloc (sizeof(HashedValues));
@@ -47,6 +47,8 @@ void hashfiles(DIR *currentlocation) {
          printf("%08llx", hashedvalue->HASHVALUES[7]);
          
          printf("\n\n==================================================================\n\n");
+
+	free(hashedvalue);
 
       }
       /*stat(files->d_name,&filestat);
