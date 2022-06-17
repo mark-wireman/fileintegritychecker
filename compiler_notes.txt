@@ -4,3 +4,11 @@ To compile the SHA256 code as an object only:
 
 To compile the file integrity checker app:
 	gcc SHA256.o fileintegritychecker.c -o filechecker
+
+
+C++ Compling instructions
+
+g++ -c src/sqlite3crud.cpp -lsqlite3
+g++ -c src/SHA256.cpp
+g++ -c src/Menu.cpp
+g++ src/sqlite3crud.o src/SHA256.o src/Menu.o src/fileintegritychecker.cpp -lsqlite3 -o fileintegritychecker.exe
