@@ -1,38 +1,63 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <inttypes.h>
-#include <stdbool.h>
+/*
+ * sha256.h
+ *
+ *  Created on: Jun 4, 2022
+ *      Author: mark_
+ */
 
-union messageBlock;
-enum status;
+#ifndef HEADERS_SHA256_H_
+#define HEADERS_SHA256_H_
 
-typedef struct {
-    __uint32_t HASHVALUES[8];
-} HashedValues;
+#include <string>
 
-typedef HashedValues * HashedValuesPtr;
-// To instantiate use: HashedValuesPtr hashedvalue = (HashedValuesPtr) malloc (sizeof(HashedValues));
+class SHA256
+{
+protected:
+    typedef unsigned char uint8;
+    typedef unsigned int uint32;
+    typedef unsigned long long uint64;
 
-// Function decleration
-// See Section 4.1.2
-__uint32_t sig0(__uint32_t x);
-__uint32_t sig1(__uint32_t x);
+    const static uint32 sha256_k[];
+    static const unsigned int SHA224_256_BLOCK_SIZE = (512/8);
+public:
+    void init();
+    void update(const unsigned char *message, unsigned int len);
+    void final(unsigned char *digest);
+    static const unsigned int DIGEST_SIZE = ( 256 / 8);
 
-__uint32_t rotr(__uint32_t n, __uint16_t x);
-__uint32_t shr(__uint32_t n, __uint16_t x);
+protected:
+    void transform(const unsigned char *message, unsigned int block_nb);
+    unsigned int m_tot_len;
+    unsigned int m_len;
+    unsigned char m_block[2*SHA224_256_BLOCK_SIZE];
+    uint32 m_h[8];
+};
 
-__uint32_t SIG0(__uint32_t x);
-__uint32_t SIG1(__uint32_t x);
+std::string sha256(std::string input);
 
-__uint32_t Ch(__uint32_t x,__uint32_t y,__uint32_t z);
-__uint32_t Maj(__uint32_t x,__uint32_t y,__uint32_t z);
+#define SHA2_SHFR(x, n)    (x >> n)
+#define SHA2_ROTR(x, n)   ((x >> n) | (x << ((sizeof(x) << 3) - n)))
+#define SHA2_ROTL(x, n)   ((x << n) | (x >> ((sizeof(x) << 3) - n)))
+#define SHA2_CH(x, y, z)  ((x & y) ^ (~x & z))
+#define SHA2_MAJ(x, y, z) ((x & y) ^ (x & z) ^ (y & z))
+#define SHA256_F1(x) (SHA2_ROTR(x,  2) ^ SHA2_ROTR(x, 13) ^ SHA2_ROTR(x, 22))
+#define SHA256_F2(x) (SHA2_ROTR(x,  6) ^ SHA2_ROTR(x, 11) ^ SHA2_ROTR(x, 25))
+#define SHA256_F3(x) (SHA2_ROTR(x,  7) ^ SHA2_ROTR(x, 18) ^ SHA2_SHFR(x,  3))
+#define SHA256_F4(x) (SHA2_ROTR(x, 17) ^ SHA2_ROTR(x, 19) ^ SHA2_SHFR(x, 10))
+#define SHA2_UNPACK32(x, str)                 \
+{                                             \
+    *((str) + 3) = (uint8) ((x)      );       \
+    *((str) + 2) = (uint8) ((x) >>  8);       \
+    *((str) + 1) = (uint8) ((x) >> 16);       \
+    *((str) + 0) = (uint8) ((x) >> 24);       \
+}
+#define SHA2_PACK32(str, x)                   \
+{                                             \
+    *(x) =   ((uint32) *((str) + 3)      )    \
+           | ((uint32) *((str) + 2) <<  8)    \
+           | ((uint32) *((str) + 1) << 16)    \
+           | ((uint32) *((str) + 0) << 24);   \
+}
 
-void printFileContents();
-int calcFileSize();
-void endianCheckPrint();
-_Bool endianCheck();
-int fillMessageBlock();
-//void calculateHash(FILE *file);
-HashedValuesPtr calculateHash(FILE *file);
-int nextMessageBlock(FILE *file, union messageBlock *msgBlock, enum status *state, __uint64_t *numBits);
+
+#endif /* HEADERS_SHA256_H_ */
