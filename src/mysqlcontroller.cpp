@@ -7,7 +7,7 @@ std::string hostname;
 std::string dbasename;
 std::string username;
 std::string password;
-static int port = 3306;
+int port;
 int state;
 
 mysqlcontroller::mysqlcontroller() {}
@@ -21,43 +21,43 @@ mysqlcontroller::mysqlcontroller(std::string host, std::string dbase, std::strin
     port = portno;
 }
 
-void setHOSTNAME(std::string host) {
+void mysqlcontroller::setHOSTNAME(std::string host) {
     hostname = host;
 }
 
-void setDBASENAME(std::string dbase) {
+void mysqlcontroller::setDBASENAME(std::string dbase) {
     dbasename = dbase;
 }
 
-void setUSERNAME(std::string uname) {
+void mysqlcontroller::setUSERNAME(std::string uname) {
     username = uname;
 }
 
-void setPASSWORD(std::string pwd) {
+void mysqlcontroller::setPASSWORD(std::string pwd) {
     password = pwd;
 }
 
-void setPORT(int portno) {
+void mysqlcontroller::setPORT(int portno) {
     port = portno;
 }
 
-std::string getHOSTNAME() {
+std::string mysqlcontroller::getHOSTNAME() {
     return hostname;
 }
 
-std::string getDBASENAME() {
+std::string mysqlcontroller::getDBASENAME() {
     return dbasename;
 }
 
-std::string getUSERNAME() {
+std::string mysqlcontroller::getUSERNAME() {
     return username;
 }
 
-std::string getPASSWORD() {
+std::string mysqlcontroller::getPASSWORD() {
     return password;
 }
 
-int getPORT() {
+int mysqlcontroller::getPORT() {
     return port;
 }
 
