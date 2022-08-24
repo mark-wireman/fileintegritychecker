@@ -23,5 +23,7 @@ g++ src/sqlite3crud.o src/SHA256.o src/Menu.o src/fileintegritychecker.cpp -o de
 sudo apt install default-libmysqlclient-dev
 
 g++ -c src/mysqlcontroller.cpp -I/usr/local/include -I/usr/local/include/mysql -W -lmysqlclient -L/usr/local/lib
+g++ -std=c++17 -c src/mysqlcontroller.cpp -I/usr/include/mysql -W -fno-stack-protector -ggdb -lmysqlclient
 
-g++ mysqlcontroller.o -o mysqltest -I/usr/local/include -I/usr/local/include/mysql -W -lmysqlclient -L/usr/local/lib src/testmysqlcontroller.cpp
+g++ mysqlcontroller.o SHA256.o Menu.o -I/usr/local/include src/fileintegritychecker.cpp -I/usr/include/mysql -W -lmysqlclient -o fileintegritychecker
+g++ -std=c++17 mysqlcontroller.o SHA256.o Menu.o -I/usr/local/include src/fileintegritychecker.cpp -I/usr/include/mysql -W -fno-stack-protector -ggdb -lstdc++fs -lmysqlclient -o fileintegritychecker

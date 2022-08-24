@@ -18,13 +18,23 @@ class Menu {
 public:
 	Menu();
 	virtual ~Menu();
-	char* getDBaseInfo();
-	char* getParentDir();
 	void ParseArguments(int argc, char *argv[]);
 	void PrintMenu();
+	char* getDATABASEHOSTNAME();
+	char* getUSERNAME();
+	char* getPASSWORD();
+	int getPORT();
+	char* getDATABASENAME();
+	char* getMACHINENAME();
+	char* getPARENTDIR();
 private:
-	char* dbasedetails;
 	char* parentdir;
+	char* dbasehost;
+	char* uname;
+	char* pwd;
+	int portno;
+	char* dbase;
+	char* mname;
 };
 
 #endif /* MENU_H_ */
