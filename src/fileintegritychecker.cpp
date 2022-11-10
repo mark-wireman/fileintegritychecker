@@ -1,3 +1,4 @@
+//#include <sw/redis++/redis++.h>
 #include <iostream>
 #include <cstdint>
 #include <fstream>
@@ -5,54 +6,37 @@
 #include <string>
 #include <cstring>
 #include <thread>
-#include <dirent.h>
+#include <vector>
 #include <sys/types.h>
 #include "../headers/sha256.h"
-#include "../headers/mysqlcontroller.h"
 #include "../headers/Menu.h"
+#include "../headers/mysqlcontroller.h"
 
 using namespace std;
+//using namespace sw::redis;
 namespace fs = std::filesystem;
 
-class dbase_thread_obj {
-public:
-    void operator()(char* dbasesettings[6], const char* dirname)
-    {
-
-        char* dbasehost = dbasesettings[0];
-        char* dbasename = dbasesettings[1];
-        char* dbaseuser = dbasesettings[2];
-        char* dbasepwd = dbasesettings[3];
-        int dbaseport = atoi(dbasesettings[4]);
-        char* machine = dbasesettings[5];
-
-        cout << "Current directory value inside thread: " << dirname << endl;
-
-        mysqlcontroller *mysqlctlthread;
-        mysqlctlthread = new mysqlcontroller(dbasehost,dbasename,dbaseuser,dbasepwd,dbaseport,machine);
-        mysqlctlthread->initdb();
-        mysqlctlthread->initPreparedStatements();
-        mysqlctlthread->saveDirectoryName(dirname);
-        mysqlctlthread->closePreparedStatements();
-        mysqlctlthread->closedb();
-    }
-};
-
-DIR *dr;
-struct dirent *en;
 char* parentdir;
 char* dbasehost;
 char* dbase;
 char* uname;
 char* pwd;
-int portno;
+char* portno;
 char* mname;
+long int numberofdirectories = 0;
+long int numberofnewdirectories = 0;
+long int numberofverifieddirectories = 0;
 
 // Tell our preprocessor to create a variable MAXCHAR with value of 100000
 #define MAXCHAR 100000
-//sqlite3crud sql3 = sqlite3crud();
-mysqlcontroller *mysqlctl;
 Menu *m;
+
+/*std::unordered_map<string, string> record = {
+    {"host", ""},
+    {"status", ""},
+    {"dateadded", ""},
+    {"dateverified", ""}
+};*/
 
 // Simple function that calcuates the size of a file
 int calcFileSize(FILE *file)
@@ -98,36 +82,6 @@ string getFileContents(FILE *fileForPrinting)
     
 }
 
-void traverseDirectoryTree(DIR* parentdir, const char* dirpath) {
-
-	DIR *dr;
-    struct dirent *en;
-    //cout<<"\nInside traversDirectoryTree...";
-	if (parentdir) {
-	  //cout<<"\nInside if(parentdir)...";
-      while ((en = readdir(parentdir)) != NULL) {
-         //cout<<"\nInside while....";
-         cout << "\t\t" << en->d_name << endl;
-      	 //if(en->d_type == DT_DIR && strcmp(en->d_name,".") != 0 && strcmp(en->d_name,"..") != 0) {
-        if(en->d_type == DT_DIR) {
-            if(strcmp(en->d_name,".") != 0 && strcmp(en->d_name,"..") != 0) {
-                std::string dirname = dirpath;
-                dirname+= en->d_name;
-                dirname+="/";
-                cout<<" \nFound Directory: "<<dirname<<endl; //print directory name
-                dr = opendir(dirname.c_str());
-                mysqlctl->initPreparedStatements();
-                mysqlctl->saveDirectoryName(dirname);
-                mysqlctl->closePreparedStatements();  		
-                traverseDirectoryTree(dr,dirname.c_str());
-                //dirname = "";
-            }
-         }
-         
-      }
-	}
-}
-
 char* getCurrentTime() {
 	string retVal;
 	char* char_array;
@@ -150,6 +104,64 @@ char* getCurrentTime() {
 	
 	return char_array;
 }
+
+/*ConnectionOptions getRedisConnStr() {
+    //char* retVal;
+    ConnectionOptions connection_options;
+    connection_options.host = dbasehost;  // Required.
+    connection_options.port = stoi(portno); // Optional. The default port is 6379.
+    
+    //retVal = new char[6+strlen(dbasehost)+strlen(portno)];
+    //strcat(retVal,"tcp://");
+    //strcat(retVal,dbasehost);
+    //strcat(retVal,":");
+    //strcat(retVal,portno);
+
+    if(pwd != NULL)
+    {
+        connection_options.password = pwd;   // Optional. No password by default.
+        //strcat(retVal," -a ");
+        //strcat(retVal,pwd);
+    }
+
+    return connection_options;
+}*/
+
+
+/*int entryExists(string dirname, Redis *redisdbase) {
+    int retVal = 0;
+    string hostval = "";
+    string statusval = "";
+    string dateaddedval = "";
+
+
+    record.clear();
+    redisdbase->hgetall(dirname, std::inserter(record, record.begin()));
+
+    if(record.size() > 0) {
+        hostval = record["host"];
+
+        if(hostval == mname) {
+            record["status"] = "VERIFIED";
+            record["dateverified"] = getCurrentTime();
+
+            numberofverifieddirectories++;
+        }
+
+        retVal = 1;
+    } else {
+       record["host"] = (string)mname;
+       record["status"] = "NEW";
+       record["dateadded"] = getCurrentTime();
+       record["dateverified"] = ""; 
+       numberofnewdirectories++;
+    }
+
+    return retVal;
+
+}*/
+
+
 
 void get_directories_savetocsv(const string& s) {
     char* fname = new char[strlen(mname) + 4];
@@ -176,101 +188,103 @@ void get_directories_savetocsv(const string& s) {
     directorycsv.close();
 }
 
-void get_directories(const string& s) {
+/*void get_directories_hmset(const string& s) {
     auto d_init = filesystem::recursive_directory_iterator(s,filesystem::directory_options::skip_permission_denied);
     auto d_end = filesystem::end(d_init);
     auto error_code = std::error_code();
+    auto redis = Redis(getRedisConnStr());
+
+    cout << "After setting Redis object with connection string. " << endl;
+
     for(; d_init != d_end; d_init.increment(error_code)){
         if(!error_code){
-            if(!d_init->is_symlink() && d_init->is_directory()){
+            if(!d_init->is_symlink() && d_init->is_directory()){                
+
                 cout << "Directory: " + d_init->path().string() << endl;
-                //const char* currentdir = d_init->path().string().c_str();
-                //cout << "Current directory value before thread: " << currentdir << endl;
-                //char* dbaseinfo[6] = {dbasehost,dbase,uname,pwd,const_cast<char*>(to_string(portno).c_str()),mname};
                 
-                //thread mysql_thread(dbase_thread_obj(), dbaseinfo, currentdir);
-                //if (mysql_thread.joinable()) {
-                //    mysql_thread.join();
-                //}
-                mysqlctl->initPreparedStatements();
-                mysqlctl->saveDirectoryName(d_init->path().string().c_str());
-                mysqlctl->closePreparedStatements();
+                string dirname = d_init->path().string();
+                string dateverifiedval = "";
+                
+                entryExists(d_init->path().string(),&redis);
+                
+                string indexval = "dir:" + dirname;
+                redis.hmset(indexval,record.begin(),record.end());
+
+                numberofdirectories++;
             }
         }
     }
-}
+}*/
 
-/*std::vector<std::string> get_directories(const std::string& s)
-{
-    cout << "Directory passed in is " << s << endl;
-     
-    std::vector<std::string> r;
-    for(auto& p : fs::recursive_directory_iterator(s, fs::directory_options::skip_permission_denied)) {
-        if (p.is_directory()) {
-            r.push_back(p.path().string());
-            cout << p.path().string() << endl;
+void get_directories_mysql(const string& s, mysqlcontroller* mysql) {
+   auto d_init = filesystem::recursive_directory_iterator(s,filesystem::directory_options::skip_permission_denied);
+    auto d_end = filesystem::end(d_init);
+    auto error_code = std::error_code();
+    
+    for(; d_init != d_end; d_init.increment(error_code)){
+        if(!error_code){
+            if(!d_init->is_symlink() && d_init->is_directory()){ 
+                string dirname = d_init->path().string();
+                cout << "Saving directory: " + dirname << endl;
+                mysql->initPreparedStatements();
+                mysql->saveDirectoryName(dirname);
+                mysql->closePreparedStatements();
+                numberofdirectories++;
+            }
         }
     }
-    
-    return r;
-}*/
+
+}
 
 void setParamVals() {
    parentdir = m->getPARENTDIR();
    dbasehost = m->getDATABASEHOSTNAME();
-   dbase = m->getDATABASENAME();
    uname = m->getUSERNAME();
    pwd = m->getPASSWORD();
    portno = m->getPORT();
    mname = m->getMACHINENAME();
 }
 
-void setDBaseConnection() {
-   mysqlctl = new mysqlcontroller();
-    mysqlctl->setHOSTNAME(dbasehost);
-    mysqlctl->setDBASENAME(dbase);
-    mysqlctl->setPORT(portno);
-    mysqlctl->setUSERNAME(uname);
-    mysqlctl->setPASSWORD(pwd);
-    mysqlctl->setMACHINENAME(mname);
-    cout << "fileintegritychecker::Before call to initdb()\n";
-    mysqlctl->initdb();
-    cout << "fileintegritychecker::After call to initdb()\n";
-}
-
 int main(int argc, char *argv[]) {
-   
+   time_t start, end;
+   double time_taken = 0.0;
+
+   time(&start);
+
    m = new Menu();
-   cout << "Number of arguments: " << argc << "\n";
-   if(argc >= 15) {
-        cout << "fileintegritychecker::Before calling ParseArguments.\n";
-	   m->ParseArguments(argc, argv);
-       cout << "fileintegritychecker::After calling ParseArguments.\n";
+   
+   if(argc >= 8) {
+      m->ParseArguments(argc, argv);
    } else {
 	   m->PrintMenu();
 	   return 0;
    }
-   
-   cout << "Before calling get_directories.\n";
     
     setParamVals();
-    setDBaseConnection();
-    
-    
     
     string pDir = parentdir;
     cout << pDir << endl;
-    
-    get_directories_savetocsv(pDir);
-    //get_directories(pDir);
+    mysqlcontroller *mysqlctl = new mysqlcontroller(dbasehost,"fileintegritychecker",uname,pwd,3306,mname);
+    mysqlctl->initdb();
+    get_directories_mysql(pDir,mysqlctl);
+    mysqlctl->closedb();
+    //get_directories_hmset(pDir);
 
-    //dr = opendir(parentdir); //open all directory
-    //string pDir = parentdir;
-    //pDir+="/";
-    //traverseDirectoryTree(dr, pDir.c_str());
-    //mysqlctl->closedb();
-   
-   return(0);
+    time(&end);
+
+    // Calculating total time taken by the program.
+    time_taken = double(end - start);
+    int n = time_taken;
+    n = n % (24 * 3600);
+    int hour = n / 3600;
+    n %= 3600;
+    int minutes = n / 60 ;
+    n %= 60;
+    int seconds = n;
+    cout << "Time taken is: " << hour << " " << "hours " << minutes << " " << "minutes " << seconds << " " << "seconds " << endl;
+    cout << "Total directories: " << numberofdirectories << " - " << "new directories = " << numberofnewdirectories << " " << "verified directories = " << numberofverifieddirectories << " ." << endl;
+
+    return(0);
 }
 
 

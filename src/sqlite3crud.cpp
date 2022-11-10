@@ -167,6 +167,7 @@ void sqlite3crud::saveDirectoryName(std::string dirname) {
 	   sql+="');";
 	*/
 
+	
 	const char* sqlStmt = "INSERT INTO directories (name,dateadded) VALUES (?,?)";
 	sqlite3_stmt* preparedStmt;
 	int sqlerr;

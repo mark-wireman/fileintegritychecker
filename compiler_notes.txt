@@ -24,6 +24,26 @@ sudo apt install default-libmysqlclient-dev
 
 g++ -c src/mysqlcontroller.cpp -I/usr/local/include -I/usr/local/include/mysql -W -lmysqlclient -L/usr/local/lib
 g++ -std=c++17 -c src/mysqlcontroller.cpp -I/usr/include/mysql -W -fno-stack-protector -ggdb -lmysqlclient
+g++ -c -std=c++17 mysqlcpptest.cpp -I/usr/include/mysql -lmysqlcppconn
 
 g++ mysqlcontroller.o SHA256.o Menu.o -I/usr/local/include src/fileintegritychecker.cpp -I/usr/include/mysql -W -lmysqlclient -o fileintegritychecker
-g++ -std=c++17 mysqlcontroller.o SHA256.o Menu.o -I/usr/local/include src/fileintegritychecker.cpp -I/usr/include/mysql -W -fno-stack-protector -ggdb -lstdc++fs -lmysqlclient -o fileintegritychecker
+g++ -std=c++17 mysqlcontroller.o SHA256.o Menu.o -I/usr/local/include src/fileintegritychecker.cpp -I/usr/include/mysql -W -fno-stack-protector -ggdb -lstdc++fs -lmysqlclient -o fileintegritychecker /usr/local/lib/libredis++.a /usr/local/lib/libhiredis.a -pthread
+
+g++ -std=c++17 SHA256.o Menu.o mysqlcontroller.o -I/usr/local/include -DSTATIC_CONCPP -I/usr/include src/fileintegritychecker.cpp /usr/lib/x86_64-linux-gnu/libmysqlcppconn-static.a /usr/lib/x86_64-linux-gnu/libmysqlclient.a -Wl,--copy-dt-needed-entries -o fileintegritychecker.exe -pthread -lssl -lcrypto
+
+g++ -std=c++17 SHA256.o Menu.o -I/usr/local/include src/fileintegritychecker.cpp -W -fno-stack-protector -ggdb -lstdc++fs -o fileintegritychecker /usr/local/lib/libredis++.a /usr/local/lib/libhiredis.a -pthread
+
+g++ -c -std=c++17 -DSTATIC_CONCPP -I/usr/include src/mysqlcontroller.cpp /usr/lib/x86_64-linux-gnu/libmysqlcppconn-static.a /usr/lib/x86_64-linux-gnu/libmysqlclient.a -lssl -lcrypto -lpthread
+
+FT.CREATE dirIdx ON HASH PREFIX 1 dir: SCHEMA host TEXT status TEXT dateadded TEXT dateverified TEXT
+
+
+g++ -o msyqlembtest mysqlembeddedtest.o /usr/lib/x86_64-linux-gnu/libmysqlclient.a
+
+/usr/lib/x86_64-linux-gnu/libmysqlcppconn.so
+/usr/lib/x86_64-linux-gnu/libmysqlcppconn-static.a
+/usr/lib/x86_64-linux-gnu/libmysqlclient.a
+
+-L/usr/lib/x86_64-linux-gnu/ -llibmysqlcppconn-static.a -llibmysqlclient.a
+
+sudo find / -name "libmysqlcppconn.so*" 2>&1 | grep -v "Permission denied"

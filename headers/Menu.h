@@ -23,17 +23,15 @@ public:
 	char* getDATABASEHOSTNAME();
 	char* getUSERNAME();
 	char* getPASSWORD();
-	int getPORT();
-	char* getDATABASENAME();
+	char* getPORT();
 	char* getMACHINENAME();
 	char* getPARENTDIR();
 private:
 	char* parentdir;
 	char* dbasehost;
-	char* uname;
-	char* pwd;
-	int portno;
-	char* dbase;
+	char* uname = NULL;
+	char* pwd = NULL;
+	char* portno;
 	char* mname;
 };
 
