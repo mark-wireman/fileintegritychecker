@@ -127,7 +127,7 @@
 <entry>
 <para>dirname</para>
 </entry><entry>
-<para>absolute path of the directory </para>
+<para>relative path and name of the directory </para>
 </entry></row>
       <row >
 <entry>
@@ -151,11 +151,90 @@
 <entry>
 <para>machinename</para>
 </entry><entry>
-<para>name of the machine where the scanner is running. files - used to store the details of the files found during the scan.</para>
+<para>name of the machine where the scanner is running.</para>
 </entry></row>
     </tbody>
     </tgroup>
 </informaltable>
+<?linebreak?> <emphasis role="bold">files Table - used to store the details of the files found during the scan.</emphasis> <informaltable frame="all">
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<thead>
+      <row >
+<entry>
+<para>Field name</para>
+</entry><entry>
+<para>Description </para>
+</entry></row>
+</thead><tbody>
+      <row >
+<entry>
+<para>id</para>
+</entry><entry>
+<para>the auto generated id for the directory entry </para>
+</entry></row>
+      <row >
+<entry>
+<para>dirid</para>
+</entry><entry>
+<para>The ID of the Directory where the file is located. </para>
+</entry></row>
+      <row >
+<entry>
+<para>dateadded</para>
+</entry><entry>
+<para>the date the directory was added to the table </para>
+</entry></row>
+      <row >
+<entry>
+<para>filename</para>
+</entry><entry>
+<para>The absolute name of the file. The relative path can be pulled together using the directory reference via the dirid. </para>
+</entry></row>
+      <row >
+<entry>
+<para>hashedvalue</para>
+</entry><entry>
+<para>The hashed value of the file if the hashed value flag is set to true. The default value is NOVAL. </para>
+</entry></row>
+      <row >
+<entry>
+<para>hashedvaluechanged</para>
+</entry><entry>
+<para>A flag to indicate the hashed value changed and all changes are added to the changes table. </para>
+</entry></row>
+      <row >
+<entry>
+<para>lastmodified</para>
+</entry><entry>
+<para>The date the file was last modified. </para>
+</entry></row>
+      <row >
+<entry>
+<para>hashedvaluechanged</para>
+</entry><entry>
+<para>A flag to indicate the last modified changed and all changes are added to the changes table. </para>
+</entry></row>
+      <row >
+<entry>
+<para>filesize</para>
+</entry><entry>
+<para>The file size of the file in bytes. </para>
+</entry></row>
+      <row >
+<entry>
+<para>filesizechanged</para>
+</entry><entry>
+<para>A flag to indicate the file size changed and all changes are added to the changes table.</para>
+</entry></row>
+    </tbody>
+    </tgroup>
+</informaltable>
+<formalpara><title>See also</title>
+
+<para><link linkend="__menu_8h">Menu.h</link> </para>
+</formalpara>
 </para>
 </section>
 <anchor xml:id="_classsqlite3controller_1a6ffbf500e8d1d203bd264e221ee833a2"/><section>

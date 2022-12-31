@@ -113,12 +113,37 @@ This is called when a new SQLite database is created. The following tables are c
 \cellcolor{\tableheadbgcolor}\textbf{ Field name}&\cellcolor{\tableheadbgcolor}\textbf{ Description }\\\cline{1-2}
 \endhead
 id&the auto generated id for the directory entry \\\cline{1-2}
-dirname&absolute path of the directory \\\cline{1-2}
+dirname&relative path and name of the directory \\\cline{1-2}
 dateadded&the date the directory was added to the table \\\cline{1-2}
 status&Either NEW or VERIFIED. A NEW status is set when a directory is seen by the scanner the first time. VERIFIED is the scanner verifies the directory was seen again. \\\cline{1-2}
 dataverified&This is the date the VERIFIED directory was verified by the scanner. \\\cline{1-2}
-machinename&name of the machine where the scanner is running. files -\/ used to store the details of the files found during the scan.\\\cline{1-2}
+machinename&name of the machine where the scanner is running.\\\cline{1-2}
 \end{longtabu}
+~\newline
+ {\bfseries{files Table -\/ used to store the details of the files found during the scan.}} \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Field name}&\cellcolor{\tableheadbgcolor}\textbf{ Description }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Field name}&\cellcolor{\tableheadbgcolor}\textbf{ Description }\\\cline{1-2}
+\endhead
+id&the auto generated id for the directory entry \\\cline{1-2}
+dirid&The ID of the Directory where the file is located. \\\cline{1-2}
+dateadded&the date the directory was added to the table \\\cline{1-2}
+filename&The absolute name of the file. The relative path can be pulled together using the directory reference via the dirid. \\\cline{1-2}
+hashedvalue&The hashed value of the file if the hashed value flag is set to true. The default value is NOVAL. \\\cline{1-2}
+hashedvaluechanged&A flag to indicate the hashed value changed and all changes are added to the changes table. \\\cline{1-2}
+lastmodified&The date the file was last modified. \\\cline{1-2}
+hashedvaluechanged&A flag to indicate the last modified changed and all changes are added to the changes table. \\\cline{1-2}
+filesize&The file size of the file in bytes. \\\cline{1-2}
+filesizechanged&A flag to indicate the file size changed and all changes are added to the changes table.\\\cline{1-2}
+\end{longtabu}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_menu_8h}{Menu.\+h}} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{classsqlite3controller_a6ffbf500e8d1d203bd264e221ee833a2}\label{classsqlite3controller_a6ffbf500e8d1d203bd264e221ee833a2}} 
 \index{sqlite3controller@{sqlite3controller}!getDATABASENAME@{getDATABASENAME}}
 \index{getDATABASENAME@{getDATABASENAME}!sqlite3controller@{sqlite3controller}}

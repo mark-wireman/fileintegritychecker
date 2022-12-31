@@ -47,12 +47,25 @@ class sqlite3controller {
          * <div align="center"><caption id="multi_row"><b>directories Table - used to store the details of the directories found during the scan.</b></caption></div>
          * <table><tr><th>Field name</th><th>Description</th>
          * <tr><td>id</td><td>the auto generated id for the directory entry</td>
-         * <tr><td>dirname</td><td>absolute path of the directory</td>
+         * <tr><td>dirname</td><td>relative path and name of the directory</td>
          * <tr><td>dateadded</td><td>the date the directory was added to the table</td>
-         * <tr><td>status</td><td>Either NEW or VERIFIED. A NEW status is set when a directory is seen by the scanner the first time. VERIFIED is the scanner verifies the directory was seen again.</td>
+         * <tr><td>status</td><td>Either NEW or VERIFIED. A NEW status is set when a directory is seen by the scanner the first time. VERIFIED if the scanner verifies the directory was seen again.</td>
          * <tr><td>dataverified</td><td>This is the date the VERIFIED directory was verified by the scanner.</td>
-         * <tr><td>machinename</td><td>name of the machine where the scanner is running.</td>
-         * files - used to store the details of the files found during the scan.</td></table>
+         * <tr><td>machinename</td><td>name of the machine where the scanner is running.</td></table>
+         * <div><br></div>
+         * <div align="center"><caption id="multi_row"><b>files Table - used to store the details of the files found during the scan.</b></caption></div>
+         * <table><tr><th>Field name</th><th>Description</th>
+         * <tr><td>id</td><td>the auto generated id for the directory entry</td>
+         * <tr><td>dirid</td><td>The ID of the Directory where the file is located.</td>
+         * <tr><td>dateadded</td><td>the date the directory was added to the table</td>
+         * <tr><td>filename</td><td>The absolute name of the file. The relative path can be pulled together using the directory reference via the dirid.</td>
+         * <tr><td>hashedvalue</td><td>The hashed value of the file if the hashed value flag is set to true. The default value is NOVAL.</td>
+         * <tr><td>hashedvaluechanged</td><td>A flag to indicate the hashed value changed and all changes are added to the changes table.</td>
+         * <tr><td>lastmodified</td><td>The date the file was last modified.</td>
+         * <tr><td>hashedvaluechanged</td><td>A flag to indicate the last modified changed and all changes are added to the changes table.</td>
+         * <tr><td>filesize</td><td>The file size of the file in bytes.</td>
+         * <tr><td>filesizechanged</td><td>A flag to indicate the file size changed and all changes are added to the changes table.</td></table>
+         * @see Menu.h
         */
         void createTables();
         int save_file_info(const char* fname, const char* dirname, char* lastmodified, uintmax_t filesize, const char* hashval = NULL);
