@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="en-US">
+  <compounddef id="sqlite3controller_8h" kind="file" language="C++">
+    <compoundname>sqlite3controller.h</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">cstdint</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">filesystem</includes>
+    <includes local="no">string</includes>
+    <includes local="no">cstring</includes>
+    <includes local="no">thread</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">dirent.h</includes>
+    <includes local="no">sqlite3.h</includes>
+    <includes refid="_s_h_a256_c_p_p_8h" local="yes">SHA256CPP.h</includes>
+    <includes refid="helper_8h" local="yes">helper.h</includes>
+    <incdepgraph>
+      <node id="14">
+        <label>SHA256CPP.h</label>
+        <link refid="_s_h_a256_c_p_p_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>helper.h</label>
+        <link refid="helper_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>headers/sqlite3controller.h</label>
+        <link refid="sqlite3controller_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>array</label>
+      </node>
+      <node id="5">
+        <label>cstdint</label>
+      </node>
+      <node id="9">
+        <label>cstring</label>
+      </node>
+      <node id="12">
+        <label>dirent.h</label>
+      </node>
+      <node id="7">
+        <label>filesystem</label>
+      </node>
+      <node id="6">
+        <label>fstream</label>
+      </node>
+      <node id="16">
+        <label>inttypes.h</label>
+      </node>
+      <node id="4">
+        <label>iostream</label>
+      </node>
+      <node id="13">
+        <label>sqlite3.h</label>
+      </node>
+      <node id="17">
+        <label>stdbool.h</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+      <node id="8">
+        <label>string</label>
+      </node>
+      <node id="15">
+        <label>string.h</label>
+      </node>
+      <node id="10">
+        <label>thread</label>
+      </node>
+      <node id="11">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classsqlite3controller" prot="public">sqlite3controller</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="sqlite3controller_8h_1a7a104b2e349617222c6419b36bfd3260" prot="public" static="no">
+        <name>__STDC_WANT_LIB_EXT1__</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/sqlite3controller.h" line="4" column="9" bodyfile="headers/sqlite3controller.h" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>HEADERS_SQLITE3CONTROLLER_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HEADERS_SQLITE3CONTROLLER_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="sqlite3controller_8h_1a7a104b2e349617222c6419b36bfd3260" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__STDC_WANT_LIB_EXT1__<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstdint&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;filesystem&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dirent.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sqlite3.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_s_h_a256_c_p_p_8h" kindref="compound">SHA256CPP.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="helper_8h" kindref="compound">helper.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="classsqlite3controller" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classsqlite3controller" kindref="compound">sqlite3controller</ref><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29" refid="classsqlite3controller_1a5e12813ef2d44e41238dfd8d4bbbea9a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsqlite3controller_1a5e12813ef2d44e41238dfd8d4bbbea9a" kindref="member">sqlite3controller</ref>();</highlight></codeline>
+<codeline lineno="30" refid="classsqlite3controller_1aa85b2bdd95d168c27a28476e07d36d88" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classsqlite3controller_1aa85b2bdd95d168c27a28476e07d36d88" kindref="member">sqlite3controller</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>databasename,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>machinename);</highlight></codeline>
+<codeline lineno="31" refid="classsqlite3controller_1a0517049f3235b533cbcc1f2d68a42844" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classsqlite3controller_1a0517049f3235b533cbcc1f2d68a42844" kindref="member">~sqlite3controller</ref>();</highlight></codeline>
+<codeline lineno="32" refid="classsqlite3controller_1a7d6ff837161930eb903754d5688f1b9b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsqlite3controller_1a7d6ff837161930eb903754d5688f1b9b" kindref="member">initdb</ref>();</highlight></codeline>
+<codeline lineno="33" refid="classsqlite3controller_1ab092ae9a83a7a124a5ca19a202f6243a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsqlite3controller_1ab092ae9a83a7a124a5ca19a202f6243a" kindref="member">closedb</ref>();</highlight></codeline>
+<codeline lineno="34" refid="classsqlite3controller_1ac0c940ac721d94e09be08e38eb0e5ca4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsqlite3controller_1ac0c940ac721d94e09be08e38eb0e5ca4" kindref="member">setDATABASENAME</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>dbasename);</highlight></codeline>
+<codeline lineno="35" refid="classsqlite3controller_1a87910e834388b6f11c8493f10fd6a576" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsqlite3controller_1a87910e834388b6f11c8493f10fd6a576" kindref="member">setMACHINENAME</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>machinename);</highlight></codeline>
+<codeline lineno="36" refid="classsqlite3controller_1a6ffbf500e8d1d203bd264e221ee833a2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classsqlite3controller_1a6ffbf500e8d1d203bd264e221ee833a2" kindref="member">getDATABASENAME</ref>();</highlight></codeline>
+<codeline lineno="37" refid="classsqlite3controller_1a816f15ac623d19e1f71d55c1751e46e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classsqlite3controller_1a816f15ac623d19e1f71d55c1751e46e1" kindref="member">getMACHINENAME</ref>();</highlight></codeline>
+<codeline lineno="38" refid="classsqlite3controller_1a9aa0232afbc7a8d2b71d330c607c5b40" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsqlite3controller_1a9aa0232afbc7a8d2b71d330c607c5b40" kindref="member">createTables</ref>();</highlight></codeline>
+<codeline lineno="39" refid="classsqlite3controller_1a875ee2c930b5c9f78c9ad1770893ec8a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classsqlite3controller_1a875ee2c930b5c9f78c9ad1770893ec8a" kindref="member">save_file_info</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>fname,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>dirname,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>lastmodified,<sp/>uintmax_t<sp/>filesize,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>hashval);</highlight></codeline>
+<codeline lineno="40" refid="classsqlite3controller_1a6bda68c0ea1d995b4fcf60965ab433a6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classsqlite3controller_1a6bda68c0ea1d995b4fcf60965ab433a6" kindref="member">save_dir_info</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>dirname);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="42" refid="classsqlite3controller_1add1047a4808cc535544154fffe9206a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classsqlite3controller_1add1047a4808cc535544154fffe9206a7" kindref="member">getPreviousHashval</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fileId);</highlight></codeline>
+<codeline lineno="43" refid="classsqlite3controller_1afad285c88925ab4bb987583563c11d8a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classsqlite3controller_1afad285c88925ab4bb987583563c11d8a" kindref="member">checkIfDirectoryExist</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>dirname);</highlight></codeline>
+<codeline lineno="44" refid="classsqlite3controller_1a884a6ddbbdd5f12a5d2cdcd4828c33cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classsqlite3controller_1a884a6ddbbdd5f12a5d2cdcd4828c33cd" kindref="member">checkIfHashvalExist</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fileId,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>hval);</highlight></codeline>
+<codeline lineno="45" refid="classsqlite3controller_1a96b9af7291ed73ed8b7da9b3e36c5983" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classsqlite3controller_1a96b9af7291ed73ed8b7da9b3e36c5983" kindref="member">checkIfFileExist</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>fname,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>dirname);</highlight></codeline>
+<codeline lineno="46" refid="classsqlite3controller_1ac60d6e9c7f76a56f2409b7eb3f24dbab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsqlite3controller_1ac60d6e9c7f76a56f2409b7eb3f24dbab" kindref="member">fileUpdateSameHashVal</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fileId);</highlight></codeline>
+<codeline lineno="47" refid="classsqlite3controller_1a917e6ee3c3214a31131c605e627a26be" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsqlite3controller_1a917e6ee3c3214a31131c605e627a26be" kindref="member">fileUpdateNewHashVal</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fileId,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>prevhashval,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>newhashval);</highlight></codeline>
+<codeline lineno="48" refid="classsqlite3controller_1a41db1cc8b4879147b3fa6fc5eaed630f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsqlite3controller_1a41db1cc8b4879147b3fa6fc5eaed630f" kindref="member">fileAddNew</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>fname,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dirId,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>hashval,<sp/>uintmax_t<sp/>fsize,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>date_modified);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>getCurrentTime();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="headers/sqlite3controller.h"/>
+  </compounddef>
+</doxygen>

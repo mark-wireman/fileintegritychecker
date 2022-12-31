@@ -1,0 +1,95 @@
+.TH "headers/SHA256CPP.h" 3 "Sat Dec 10 2022" "fileintegritychecker" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+headers/SHA256CPP.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <inttypes\&.h>\fP
+.br
+\fC#include <stdbool\&.h>\fP
+.br
+\fC#include <array>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBHashValues\fP"
+.br
+.ti -1c
+.RI "union \fBmessageBlock\fP"
+.br
+.ti -1c
+.RI "class \fBSHA256CPP\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBbyteSwap32\fP(x)   (((x) >> 24) | (((x)&0x00FF0000) >> 8) | (((x)&0x0000FF00) << 8) | ((x) << 24))"
+.br
+.ti -1c
+.RI "#define \fBbyteSwap64\fP(x)"
+.br
+.ti -1c
+.RI "#define \fBMAXCHAR\fP   100000"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBstatus\fP { \fBREAD\fP, \fBPAD0\fP, \fBPAD1\fP, \fBFINISH\fP }"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define byteSwap32(x)   (((x) >> 24) | (((x)&0x00FF0000) >> 8) | (((x)&0x0000FF00) << 8) | ((x) << 24))"
+
+.PP
+Definition at line \fB11\fP of file \fBSHA256CPP\&.h\fP\&.
+.SS "#define byteSwap64(x)"
+\fBValue:\fP
+.PP
+.nf
+   ((((x) >> 56) & 0x00000000000000FF) | (((x) >> 40) & 0x000000000000FF00) | \
+     (((x) >> 24) & 0x0000000000FF0000) | (((x) >> 8) & 0x00000000FF000000) |  \
+     (((x) << 8) & 0x000000FF00000000) | (((x) << 24) & 0x0000FF0000000000) |  \
+     (((x) << 40) & 0x00FF000000000000) | (((x) << 56) & 0xFF00000000000000))
+.fi
+.PP
+Definition at line \fB12\fP of file \fBSHA256CPP\&.h\fP\&.
+.SS "#define MAXCHAR   100000"
+
+.PP
+Definition at line \fB18\fP of file \fBSHA256CPP\&.h\fP\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBstatus\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIREAD \fP\fP
+.TP
+\fB\fIPAD0 \fP\fP
+.TP
+\fB\fIPAD1 \fP\fP
+.TP
+\fB\fIFINISH \fP\fP
+.PP
+Definition at line \fB34\fP of file \fBSHA256CPP\&.h\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for fileintegritychecker from the source code\&.

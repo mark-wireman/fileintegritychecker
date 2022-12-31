@@ -1,0 +1,129 @@
+.TH "sqlite3controller" 3 "Sat Dec 10 2022" "fileintegritychecker" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sqlite3controller \- Sqlite3 Controller class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <sqlite3controller\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBsqlite3controller\fP ()"
+.br
+.ti -1c
+.RI "\fBsqlite3controller\fP (char *databasename, char *machinename)"
+.br
+.ti -1c
+.RI "virtual \fB~sqlite3controller\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitdb\fP ()"
+.br
+.ti -1c
+.RI "void \fBclosedb\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetDATABASENAME\fP (char *dbasename)"
+.br
+.ti -1c
+.RI "void \fBsetMACHINENAME\fP (char *machinename)"
+.br
+.ti -1c
+.RI "char * \fBgetDATABASENAME\fP ()"
+.br
+.ti -1c
+.RI "char * \fBgetMACHINENAME\fP ()"
+.br
+.ti -1c
+.RI "void \fBcreateTables\fP ()"
+.br
+.ti -1c
+.RI "int \fBsave_file_info\fP (const char *fname, const char *dirname, char *lastmodified, uintmax_t filesize, const char *hashval)"
+.br
+.ti -1c
+.RI "int \fBsave_dir_info\fP (const char *dirname)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBgetPreviousHashval\fP (const int fileId)"
+.br
+.ti -1c
+.RI "int \fBcheckIfDirectoryExist\fP (const char *dirname)"
+.br
+.ti -1c
+.RI "int \fBcheckIfHashvalExist\fP (const int fileId, const char *hval)"
+.br
+.ti -1c
+.RI "int \fBcheckIfFileExist\fP (const char *fname, const char *dirname)"
+.br
+.ti -1c
+.RI "void \fBfileUpdateSameHashVal\fP (int fileId)"
+.br
+.ti -1c
+.RI "void \fBfileUpdateNewHashVal\fP (int fileId, const char *prevhashval, const char *newhashval)"
+.br
+.ti -1c
+.RI "void \fBfileAddNew\fP (const char *fname, int dirId, const char *hashval, uintmax_t fsize, char *date_modified)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Sqlite3 Controller class\&. 
+
+The class that handles the SQL functions for creating, updating, and adding files and directories to a Sqlite3 database\&. 
+.PP
+Definition at line \fB27\fP of file \fBsqlite3controller\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "sqlite3controller::sqlite3controller ()"
+
+.SS "sqlite3controller::sqlite3controller (char * databasename, char * machinename)"
+
+.SS "virtual sqlite3controller::~sqlite3controller ()\fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "int sqlite3controller::checkIfDirectoryExist (const char * dirname)\fC [protected]\fP"
+
+.SS "int sqlite3controller::checkIfFileExist (const char * fname, const char * dirname)\fC [protected]\fP"
+
+.SS "int sqlite3controller::checkIfHashvalExist (const int fileId, const char * hval)\fC [protected]\fP"
+
+.SS "void sqlite3controller::closedb ()"
+
+.SS "void sqlite3controller::createTables ()"
+
+.SS "void sqlite3controller::fileAddNew (const char * fname, int dirId, const char * hashval, uintmax_t fsize, char * date_modified)\fC [protected]\fP"
+
+.SS "void sqlite3controller::fileUpdateNewHashVal (int fileId, const char * prevhashval, const char * newhashval)\fC [protected]\fP"
+
+.SS "void sqlite3controller::fileUpdateSameHashVal (int fileId)\fC [protected]\fP"
+
+.SS "char * sqlite3controller::getDATABASENAME ()"
+
+.SS "char * sqlite3controller::getMACHINENAME ()"
+
+.SS "char * sqlite3controller::getPreviousHashval (const int fileId)\fC [protected]\fP"
+
+.SS "void sqlite3controller::initdb ()"
+
+.SS "int sqlite3controller::save_dir_info (const char * dirname)"
+
+.SS "int sqlite3controller::save_file_info (const char * fname, const char * dirname, char * lastmodified, uintmax_t filesize, const char * hashval)"
+
+.SS "void sqlite3controller::setDATABASENAME (char * dbasename)"
+
+.SS "void sqlite3controller::setMACHINENAME (char * machinename)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for fileintegritychecker from the source code\&.

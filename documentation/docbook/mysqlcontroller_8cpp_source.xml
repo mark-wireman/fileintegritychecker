@@ -1,0 +1,274 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_mysqlcontroller_8cpp_source" xml:lang="en-US">
+<title>mysqlcontroller.cpp</title>
+<indexterm><primary>C:/Users/mark_/source/repos/fileintegritychecker/src/mysqlcontroller.cpp</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_mysqlcontroller_8cpp_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&quot;../headers/mysqlcontroller.h&quot;</emphasis>
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00002"/>00002 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00003"/><link linkend="_mysqlcontroller_8cpp_1ad78224efe1d3fb39b67ca74ad9d9eec7">00003</link> <emphasis role="preprocessor">#define&#32;STRING_SIZE&#32;65535</emphasis>
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00004"/><link linkend="_mysqlcontroller_8cpp_1a32ff108940138d3b5038cd11fbabf293">00004</link> <emphasis role="preprocessor">#define&#32;SAVEDIRSTOREDPROCSTMT&#32;&quot;call&#32;saveDirectoryDetails(?,&#32;?,&#32;?)&quot;</emphasis>
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00005"/><link linkend="_mysqlcontroller_8cpp_1a0e90c82df49e2043941930efcab0fb89">00005</link> <emphasis role="preprocessor">#define&#32;SAVEFILEINFOPROCSTMT&#32;&quot;call&#32;saveFileHashVal(?,?,?,?,?)&quot;</emphasis>
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00006"/>00006 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00007"/>00007 <emphasis role="comment">//MYSQL&#32;*connection,&#32;mysql;</emphasis>
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00008"/><link linkend="_mysqlcontroller_8cpp_1af203df082d5c6dcaa0c88b07cf86466d">00008</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_mysqlcontroller_8cpp_1af203df082d5c6dcaa0c88b07cf86466d">hostname</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00009"/><link linkend="_mysqlcontroller_8cpp_1aa1d4dd60015ed611b5141e9472985b88">00009</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_mysqlcontroller_8cpp_1aa1d4dd60015ed611b5141e9472985b88">dbasename</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00010"/><link linkend="_mysqlcontroller_8cpp_1a9b20c006bd90a09e1465fb668700e81d">00010</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_mysqlcontroller_8cpp_1a9b20c006bd90a09e1465fb668700e81d">username</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00011"/><link linkend="_mysqlcontroller_8cpp_1a59460a3ff2c12443d1022e5cc0fba85c">00011</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_mysqlcontroller_8cpp_1a59460a3ff2c12443d1022e5cc0fba85c">password</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00012"/><link linkend="_mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c">00012</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c">machinename</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00013"/><link linkend="_mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb">00013</link> <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb">port</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00014"/><link linkend="_mysqlcontroller_8cpp_1a89f234133d3efe315836311cbf21c64b">00014</link> <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1a89f234133d3efe315836311cbf21c64b">state</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00015"/>00015 <emphasis role="comment">//MYSQL_STMT&#32;*storedProcStmt&#32;=&#32;NULL;</emphasis>
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00016"/>00016 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00017"/><link linkend="_mysqlcontroller_8cpp_1a689a469da10bca69c80830e8b2785e2c">00017</link> sql::Driver&#32;*<link linkend="_mysqlcontroller_8cpp_1a689a469da10bca69c80830e8b2785e2c">driver</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00018"/><link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">00018</link> sql::Connection&#32;*<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00019"/><link linkend="_mysqlcontroller_8cpp_1ab6db88c378faf719a15498d0b3a37b31">00019</link> sql::Statement&#32;*<link linkend="_mysqlcontroller_8cpp_1ab6db88c378faf719a15498d0b3a37b31">stmt</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00020"/><link linkend="_mysqlcontroller_8cpp_1aafbbfadf03a197580df9925af46a548e">00020</link> sql::ResultSet&#32;*<link linkend="_mysqlcontroller_8cpp_1aafbbfadf03a197580df9925af46a548e">res</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00021"/><link linkend="_mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62">00021</link> sql::PreparedStatement&#32;*<link linkend="_mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62">savedirprepStmt</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00022"/><link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">00022</link> sql::PreparedStatement&#32;*<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00023"/>00023 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00028"/>00028 mysqlcontroller::mysqlcontroller()&#32;{}
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00029"/>00029 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00030"/>00030 mysqlcontroller::mysqlcontroller(<emphasis role="keywordtype">char</emphasis>*&#32;host,&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dbase,&#32;<emphasis role="keywordtype">char</emphasis>*&#32;uname,&#32;<emphasis role="keywordtype">char</emphasis>*&#32;pwd,&#32;<emphasis role="keywordtype">int</emphasis>&#32;portno,&#32;<emphasis role="keywordtype">char</emphasis>*&#32;mname)
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00031"/>00031 {
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1af203df082d5c6dcaa0c88b07cf86466d">hostname</link>&#32;=&#32;host;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00033"/>00033 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1aa1d4dd60015ed611b5141e9472985b88">dbasename</link>&#32;=&#32;dbase;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9b20c006bd90a09e1465fb668700e81d">username</link>=&#32;uname;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a59460a3ff2c12443d1022e5cc0fba85c">password</link>&#32;=&#32;pwd;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb">port</link>&#32;=&#32;portno;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c">machinename</link>&#32;=&#32;mname;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00038"/>00038 }
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00039"/>00039 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00044"/>00044 mysqlcontroller::~mysqlcontroller()&#32;{}
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00045"/>00045 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00051"/>00051 <emphasis role="keywordtype">void</emphasis>&#32;mysqlcontroller::setHOSTNAME(<emphasis role="keywordtype">char</emphasis>*&#32;host)&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1af203df082d5c6dcaa0c88b07cf86466d">hostname</link>&#32;=&#32;host;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00053"/>00053 }
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00054"/>00054 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00060"/>00060 <emphasis role="keywordtype">void</emphasis>&#32;mysqlcontroller::setDBASENAME(<emphasis role="keywordtype">char</emphasis>*&#32;dbase)&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1aa1d4dd60015ed611b5141e9472985b88">dbasename</link>&#32;=&#32;dbase;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00062"/>00062 }
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00063"/>00063 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00069"/>00069 <emphasis role="keywordtype">void</emphasis>&#32;mysqlcontroller::setUSERNAME(<emphasis role="keywordtype">char</emphasis>*&#32;uname)&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00070"/>00070 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9b20c006bd90a09e1465fb668700e81d">username</link>&#32;=&#32;uname;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00071"/>00071 }
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00072"/>00072 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00078"/>00078 <emphasis role="keywordtype">void</emphasis>&#32;mysqlcontroller::setPASSWORD(<emphasis role="keywordtype">char</emphasis>*&#32;pwd)&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00079"/>00079 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a59460a3ff2c12443d1022e5cc0fba85c">password</link>&#32;=&#32;pwd;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00080"/>00080 }
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00081"/>00081 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00087"/>00087 <emphasis role="keywordtype">void</emphasis>&#32;mysqlcontroller::setPORT(<emphasis role="keywordtype">int</emphasis>&#32;portno)&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00088"/>00088 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb">port</link>&#32;=&#32;portno;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00089"/>00089 }
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00090"/>00090 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00096"/>00096 <emphasis role="keywordtype">void</emphasis>&#32;mysqlcontroller::setMACHINENAME(<emphasis role="keywordtype">char</emphasis>*&#32;mname)&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00097"/>00097 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c">machinename</link>&#32;=&#32;mname;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00098"/>00098 }
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00099"/>00099 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00105"/>00105 <emphasis role="keywordtype">char</emphasis>*&#32;mysqlcontroller::getHOSTNAME()&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00106"/>00106 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1af203df082d5c6dcaa0c88b07cf86466d">hostname</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00107"/>00107 }
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00108"/>00108 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00114"/>00114 <emphasis role="keywordtype">char</emphasis>*&#32;mysqlcontroller::getDBASENAME()&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00115"/>00115 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1aa1d4dd60015ed611b5141e9472985b88">dbasename</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00116"/>00116 }
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00117"/>00117 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00123"/>00123 <emphasis role="keywordtype">char</emphasis>*&#32;mysqlcontroller::getUSERNAME()&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00124"/>00124 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1a9b20c006bd90a09e1465fb668700e81d">username</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00125"/>00125 }
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00126"/>00126 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00132"/>00132 <emphasis role="keywordtype">char</emphasis>*&#32;mysqlcontroller::getPASSWORD()&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00133"/>00133 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1a59460a3ff2c12443d1022e5cc0fba85c">password</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00134"/>00134 }
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00135"/>00135 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00141"/>00141 <emphasis role="keywordtype">int</emphasis>&#32;mysqlcontroller::getPORT()&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00142"/>00142 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb">port</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00143"/>00143 }
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00144"/>00144 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00150"/>00150 <emphasis role="keywordtype">char</emphasis>*&#32;mysqlcontroller::getMACHINENAME()&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00151"/>00151 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c">machinename</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00152"/>00152 }
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00153"/>00153 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00158"/>00158 <emphasis role="keywordtype">void</emphasis>&#32;mysqlcontroller::initPreparedStatements()&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00159"/>00159 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00160"/>00160 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62">savedirprepStmt</link>&#32;=&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;prepareStatement(<link linkend="_mysqlcontroller_8cpp_1a32ff108940138d3b5038cd11fbabf293">SAVEDIRSTOREDPROCSTMT</link>);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00161"/>00161 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>&#32;=&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;prepareStatement(<link linkend="_mysqlcontroller_8cpp_1a0e90c82df49e2043941930efcab0fb89">SAVEFILEINFOPROCSTMT</link>);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00162"/>00162 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00163"/>00163 }
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00164"/>00164 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00165"/>00165 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00170"/>00170 <emphasis role="keywordtype">void</emphasis>&#32;mysqlcontroller::initdb()&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00171"/>00171 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00172"/>00172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Initializing&#32;connection&#32;to&#32;the&#32;database.&quot;</emphasis>&#32;&lt;&lt;&#32;std::endl;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00173"/>00173 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00174"/>00174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;connstr&#32;=&#32;<emphasis role="stringliteral">&quot;tcp://&quot;</emphasis>&#32;+&#32;string(<link linkend="_mysqlcontroller_8cpp_1af203df082d5c6dcaa0c88b07cf86466d">hostname</link>)&#32;+&#32;<emphasis role="stringliteral">&quot;:&quot;</emphasis>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00175"/>00175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00176"/>00176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb">port</link>&#32;==&#32;0)&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00177"/>00177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;connstr&#32;+=&#32;<emphasis role="stringliteral">&quot;3306&quot;</emphasis>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00178"/>00178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00179"/>00179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00180"/>00180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;connstr&#32;+=&#32;to_string(<link linkend="_mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb">port</link>);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00181"/>00181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00182"/>00182 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00183"/>00183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Create&#32;a&#32;connection&#32;*/</emphasis>
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00184"/>00184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a689a469da10bca69c80830e8b2785e2c">driver</link>&#32;=&#32;get_driver_instance();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00185"/>00185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>&#32;=&#32;<link linkend="_mysqlcontroller_8cpp_1a689a469da10bca69c80830e8b2785e2c">driver</link>-&gt;connect(connstr,&#32;<link linkend="_mysqlcontroller_8cpp_1a9b20c006bd90a09e1465fb668700e81d">username</link>,&#32;<link linkend="_mysqlcontroller_8cpp_1a59460a3ff2c12443d1022e5cc0fba85c">password</link>);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00186"/>00186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;setAutoCommit(<emphasis role="keyword">false</emphasis>);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00187"/>00187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Connect&#32;to&#32;the&#32;MySQL&#32;test&#32;database&#32;*/</emphasis>
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00188"/>00188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;setSchema(<link linkend="_mysqlcontroller_8cpp_1aa1d4dd60015ed611b5141e9472985b88">dbasename</link>);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00189"/>00189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Successfully&#32;connected&#32;to&#32;database.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00190"/>00190 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(sql::SQLException&#32;&amp;e)&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00191"/>00191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;#&#32;ERR:&#32;SQLException&#32;in&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;__FILE__;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00192"/>00192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;(&quot;</emphasis>&#32;&lt;&lt;&#32;__FUNCTION__&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;)&#32;on&#32;line&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;__LINE__&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00193"/>00193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;#&#32;ERR:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.what();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00194"/>00194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;(MySQL&#32;error&#32;code:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.getErrorCode();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00195"/>00195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;SQLState:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.getSQLState()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;)&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00196"/>00196 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00197"/>00197 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00198"/>00198 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00199"/>00199 }
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00200"/>00200 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00207"/>00207 <emphasis role="keywordtype">char</emphasis>*&#32;mysqlcontroller::filterApostraphe(<emphasis role="keywordtype">string</emphasis>&#32;dirname)&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00208"/>00208 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;retVal&#32;=&#32;<emphasis role="stringliteral">&quot;&quot;</emphasis>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00209"/>00209 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;char_array;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00210"/>00210 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00211"/>00211 &#32;&#32;&#32;&#32;std::vector&lt;string&gt;&#32;result;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00212"/>00212 &#32;&#32;&#32;&#32;std::stringstream&#32;s_stream(dirname);&#32;<emphasis role="comment">//create&#32;string&#32;stream&#32;from&#32;the&#32;string</emphasis>
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00213"/>00213 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00214"/>00214 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(s_stream.good())&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00215"/>00215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;substr;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00216"/>00216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;getline(s_stream,&#32;substr,&#32;<emphasis role="charliteral">&apos;\&apos;&apos;</emphasis>);&#32;<emphasis role="comment">//get&#32;first&#32;string&#32;delimited&#32;by&#32;comma</emphasis>
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00217"/>00217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;result.push_back(substr);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00218"/>00218 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00219"/>00219 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00220"/>00220 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(result.size()&#32;&gt;&#32;1)&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00221"/>00221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal+=result.at(0);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00222"/>00222 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00223"/>00223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;1;&#32;i&lt;result.size();&#32;i++)&#32;{&#32;&#32;&#32;&#32;<emphasis role="comment">//print&#32;all&#32;splitted&#32;strings</emphasis>
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00224"/>00224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal+=<emphasis role="stringliteral">&quot;&apos;&quot;</emphasis>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00225"/>00225 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal+=<emphasis role="stringliteral">&quot;&apos;&quot;</emphasis>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00226"/>00226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal+=result.at(i);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00227"/>00227 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00228"/>00228 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00229"/>00229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;dirname;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00230"/>00230 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00231"/>00231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00232"/>00232 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n&#32;=&#32;retVal.length();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00233"/>00233 &#32;&#32;&#32;&#32;char_array&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>[n&#32;+&#32;1];
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00234"/>00234 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00235"/>00235 &#32;&#32;&#32;&#32;strcpy(char_array,&#32;retVal.c_str());
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00236"/>00236 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00237"/>00237 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;char_array;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00238"/>00238 }
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00239"/>00239 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00245"/>00245 <emphasis role="keywordtype">void</emphasis>&#32;mysqlcontroller::saveDirectoryName(<emphasis role="keywordtype">string</emphasis>&#32;dirname)&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00246"/>00246 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00247"/>00247 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dirnameverified&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>[dirname.length()&#32;+&#32;1];&#32;<emphasis role="comment">//&#32;filterApostraphe(dirname);</emphasis>
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00248"/>00248 &#32;&#32;&#32;&#32;strcpy(dirnameverified,dirname.c_str());
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00249"/>00249 &#32;&#32;&#32;&#32;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00250"/>00250 &#32;&#32;&#32;&#32;initPreparedStatements();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00251"/>00251 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;currenttime&#32;=&#32;SQLiteHelper::getCurrentTime();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00252"/>00252 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00253"/>00253 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00254"/>00254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;setAutoCommit(<emphasis role="keyword">false</emphasis>);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00255"/>00255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62">savedirprepStmt</link>-&gt;setString(1,&#32;dirnameverified);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00256"/>00256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62">savedirprepStmt</link>-&gt;setString(2,&#32;currenttime);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00257"/>00257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62">savedirprepStmt</link>-&gt;setString(3,&#32;<link linkend="_mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c">machinename</link>);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00258"/>00258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62">savedirprepStmt</link>-&gt;executeUpdate();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00259"/>00259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;commit();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00260"/>00260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;setAutoCommit(<emphasis role="keyword">true</emphasis>);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00261"/>00261 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(sql::SQLException&#32;&amp;e)&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00262"/>00262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;#&#32;ERR:&#32;SQLException&#32;in&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;__FILE__;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00263"/>00263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;(&quot;</emphasis>&#32;&lt;&lt;&#32;__FUNCTION__&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;)&#32;on&#32;line&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;__LINE__&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00264"/>00264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;#&#32;ERR:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.what();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00265"/>00265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;(MySQL&#32;error&#32;code:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.getErrorCode();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00266"/>00266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;SQLState:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.getSQLState()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;)&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00267"/>00267 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00268"/>00268 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00269"/>00269 &#32;&#32;&#32;&#32;closePreparedStatements();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00270"/>00270 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00271"/>00271 }
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00272"/>00272 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00278"/>00278 <emphasis role="keywordtype">void</emphasis>&#32;mysqlcontroller::saveDirectoryName_async(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">string</emphasis>&#32;&amp;dirname)&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00279"/>00279 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;dname&#32;=&#32;dirname;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00280"/>00280 &#32;&#32;&#32;&#32;saveDirectoryName(dname);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00281"/>00281 }
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00282"/>00282 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00290"/>00290 <emphasis role="keywordtype">void</emphasis>&#32;mysqlcontroller::saveFileInfo_async(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">string</emphasis>&#32;&amp;dirname,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">string</emphasis>&#32;&amp;fname,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">string</emphasis>&#32;&amp;hashval)&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00291"/>00291 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;dname&#32;=&#32;dirname;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00292"/>00292 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;filname&#32;=&#32;fname;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00293"/>00293 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;hval&#32;=&#32;hashval;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00294"/>00294 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;currenttime&#32;=&#32;<emphasis role="stringliteral">&quot;&quot;</emphasis>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00295"/>00295 &#32;&#32;&#32;&#32;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00296"/>00296 &#32;&#32;&#32;&#32;std::time_t&#32;t&#32;=&#32;std::time(0);&#32;&#32;&#32;<emphasis role="comment">//&#32;get&#32;time&#32;now</emphasis>
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00297"/>00297 &#32;&#32;&#32;&#32;std::tm*&#32;now&#32;=&#32;std::localtime(&amp;t);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00298"/>00298 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;date_string[100];
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00299"/>00299 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;time_string[100];
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00300"/>00300 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00301"/>00301 &#32;&#32;&#32;&#32;strftime(date_string,&#32;50,&#32;<emphasis role="stringliteral">&quot;%B&#32;%d,&#32;%Y&#32;&quot;</emphasis>,&#32;now);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00302"/>00302 &#32;&#32;&#32;&#32;strftime(time_string,&#32;50,&#32;<emphasis role="stringliteral">&quot;%T&quot;</emphasis>,&#32;now);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00303"/>00303 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00304"/>00304 &#32;&#32;&#32;&#32;currenttime&#32;+=&#32;date_string;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00305"/>00305 &#32;&#32;&#32;&#32;currenttime&#32;+=&#32;time_string;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00306"/>00306 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00307"/>00307 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>&#32;=&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;prepareStatement(<link linkend="_mysqlcontroller_8cpp_1a0e90c82df49e2043941930efcab0fb89">SAVEFILEINFOPROCSTMT</link>);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00308"/>00308 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00309"/>00309 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00310"/>00310 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;setAutoCommit(<emphasis role="keyword">false</emphasis>);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00311"/>00311 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;setString(1,&#32;dirname);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00312"/>00312 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;setString(2,&#32;currenttime);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00313"/>00313 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;setString(3,&#32;<link linkend="_mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c">machinename</link>);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00314"/>00314 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;setString(4,&#32;fname);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00315"/>00315 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;setString(5,&#32;hashval);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00316"/>00316 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;executeUpdate();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00317"/>00317 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;commit();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00318"/>00318 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;setAutoCommit(<emphasis role="keyword">true</emphasis>);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00319"/>00319 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(sql::SQLException&#32;&amp;e)&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00320"/>00320 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;#&#32;ERR:&#32;SQLException&#32;in&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;__FILE__;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00321"/>00321 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;(&quot;</emphasis>&#32;&lt;&lt;&#32;__FUNCTION__&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;)&#32;on&#32;line&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;__LINE__&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00322"/>00322 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;#&#32;ERR:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.what();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00323"/>00323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;(MySQL&#32;error&#32;code:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.getErrorCode();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00324"/>00324 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;SQLState:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.getSQLState()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;)&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00325"/>00325 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00326"/>00326 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00327"/>00327 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00328"/>00328 }
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00329"/>00329 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00337"/>00337 <emphasis role="keywordtype">void</emphasis>&#32;mysqlcontroller::saveFileInfo(<emphasis role="keywordtype">string</emphasis>&#32;dirname,&#32;<emphasis role="keywordtype">string</emphasis>&#32;fname,&#32;<emphasis role="keywordtype">string</emphasis>&#32;hashval)&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00338"/>00338 &#32;&#32;&#32;&#32;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00339"/>00339 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;currenttime&#32;=&#32;SQLiteHelper::getCurrentTime();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00340"/>00340 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00341"/>00341 &#32;&#32;&#32;&#32;initPreparedStatements();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00342"/>00342 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00343"/>00343 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00344"/>00344 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;setAutoCommit(<emphasis role="keyword">false</emphasis>);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00345"/>00345 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;setString(1,&#32;dirname);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00346"/>00346 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;setString(2,&#32;currenttime);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00347"/>00347 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;setString(3,&#32;<link linkend="_mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c">machinename</link>);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00348"/>00348 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;setString(4,&#32;fname);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00349"/>00349 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;setString(5,&#32;hashval);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00350"/>00350 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;executeUpdate();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00351"/>00351 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;commit();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00352"/>00352 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;setAutoCommit(<emphasis role="keyword">true</emphasis>);
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00353"/>00353 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(sql::SQLException&#32;&amp;e)&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00354"/>00354 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;#&#32;ERR:&#32;SQLException&#32;in&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;__FILE__;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00355"/>00355 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;(&quot;</emphasis>&#32;&lt;&lt;&#32;__FUNCTION__&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;)&#32;on&#32;line&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;__LINE__&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00356"/>00356 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;#&#32;ERR:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.what();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00357"/>00357 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;(MySQL&#32;error&#32;code:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.getErrorCode();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00358"/>00358 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;SQLState:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.getSQLState()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;)&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00359"/>00359 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00360"/>00360 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00361"/>00361 &#32;&#32;&#32;&#32;closePreparedStatements();
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00362"/>00362 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00363"/>00363 }
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00364"/>00364 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00369"/>00369 <emphasis role="keywordtype">void</emphasis>&#32;mysqlcontroller::closePreparedStatements()&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00370"/>00370 &#32;&#32;&#32;&#32;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00371"/>00371 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62">savedirprepStmt</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00372"/>00372 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00373"/>00373 }
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00374"/>00374 
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00379"/>00379 <emphasis role="keywordtype">void</emphasis>&#32;mysqlcontroller::closedb()&#32;{
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00380"/>00380 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1aafbbfadf03a197580df9925af46a548e">res</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00381"/>00381 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1ab6db88c378faf719a15498d0b3a37b31">stmt</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00382"/>00382 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>;
+<anchor xml:id="_mysqlcontroller_8cpp_source_1l00383"/>00383 }
+</programlisting></section>

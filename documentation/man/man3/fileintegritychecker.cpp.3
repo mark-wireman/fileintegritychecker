@@ -1,0 +1,262 @@
+.TH "src/fileintegritychecker.cpp" 3 "Sat Dec 10 2022" "fileintegritychecker" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/fileintegritychecker.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <cstdint>\fP
+.br
+\fC#include <fstream>\fP
+.br
+\fC#include <filesystem>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <cstring>\fP
+.br
+\fC#include <thread>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <dirent\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <future>\fP
+.br
+\fC#include '\&.\&./headers/SHA256CPP\&.h'\fP
+.br
+\fC#include '\&.\&./headers/Menu\&.h'\fP
+.br
+\fC#include '\&.\&./headers/mysqlcontroller\&.h'\fP
+.br
+\fC#include '\&.\&./headers/sqlite3controller\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMAXCHAR\fP   100000"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBgetCurrentTime\fP ()"
+.br
+.RI "Get the Current Time object\&. "
+.ti -1c
+.RI "void \fBget_directories_files\fP (const string &s, int level=0)"
+.br
+.RI "Get the directories files object\&. "
+.ti -1c
+.RI "void \fBsetParamVals\fP ()"
+.br
+.RI "Set the Param Vals object\&. "
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "char * \fBparentdir\fP"
+.br
+.ti -1c
+.RI "char * \fBdbasehost\fP"
+.br
+.ti -1c
+.RI "char * \fBdbase\fP"
+.br
+.ti -1c
+.RI "char * \fBuname\fP"
+.br
+.ti -1c
+.RI "char * \fBpwd\fP"
+.br
+.ti -1c
+.RI "char * \fBportno\fP"
+.br
+.ti -1c
+.RI "char * \fBmname\fP"
+.br
+.ti -1c
+.RI "char * \fBdbasetype\fP"
+.br
+.ti -1c
+.RI "char * \fBdbasefilename\fP"
+.br
+.ti -1c
+.RI "int \fBusehashvals\fP = 0"
+.br
+.ti -1c
+.RI "long int \fBnumberofdirectories\fP = 0"
+.br
+.ti -1c
+.RI "long int \fBnumberofnewdirectories\fP = 0"
+.br
+.ti -1c
+.RI "long int \fBnumberofverifieddirectories\fP = 0"
+.br
+.ti -1c
+.RI "long int \fBnumberoffiles\fP = 0"
+.br
+.ti -1c
+.RI "bool \fBverbose_output\fP = false"
+.br
+.ti -1c
+.RI "mysqlcontroller * \fBmysqlctl\fP"
+.br
+.ti -1c
+.RI "sqlite3controller * \fBsqlitectl\fP"
+.br
+.ti -1c
+.RI "Menu * \fBm\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define MAXCHAR   100000"
+
+.PP
+Definition at line \fB40\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "void get_directories_files (const string & s, int level = \fC0\fP)"
+
+.PP
+Get the directories files object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIs\fP 
+.br
+\fIlevel\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB77\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SS "char * Helper::getCurrentTime ()"
+
+.PP
+Get the Current Time object\&. 
+.PP
+\fBReturns\fP
+.RS 4
+char*
+.PP
+char* 
+.RE
+.PP
+
+.PP
+Definition at line \fB48\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SS "int main (int argc, char * argv[])"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIargc\fP 
+.br
+\fIargv\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+int 
+.RE
+.PP
+
+.PP
+Definition at line \fB208\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SS "void setParamVals ()"
+
+.PP
+Set the Param Vals object\&. 
+.PP
+Definition at line \fB181\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SH "Variable Documentation"
+.PP 
+.SS "char* dbase"
+
+.PP
+Definition at line \fB23\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SS "char* dbasefilename"
+
+.PP
+Definition at line \fB29\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SS "char* dbasehost"
+
+.PP
+Definition at line \fB22\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SS "char* dbasetype"
+
+.PP
+Definition at line \fB28\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SS "Menu* m"
+
+.PP
+Definition at line \fB41\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SS "char* mname"
+
+.PP
+Definition at line \fB27\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SS "mysqlcontroller* mysqlctl"
+
+.PP
+Definition at line \fB36\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SS "long int numberofdirectories = 0"
+
+.PP
+Definition at line \fB31\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SS "long int numberoffiles = 0"
+
+.PP
+Definition at line \fB34\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SS "long int numberofnewdirectories = 0"
+
+.PP
+Definition at line \fB32\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SS "long int numberofverifieddirectories = 0"
+
+.PP
+Definition at line \fB33\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SS "char* parentdir"
+
+.PP
+Definition at line \fB21\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SS "char* portno"
+
+.PP
+Definition at line \fB26\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SS "char* pwd"
+
+.PP
+Definition at line \fB25\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SS "sqlite3controller* sqlitectl"
+
+.PP
+Definition at line \fB37\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SS "char* uname"
+
+.PP
+Definition at line \fB24\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SS "int usehashvals = 0"
+
+.PP
+Definition at line \fB30\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SS "bool verbose_output = false"
+
+.PP
+Definition at line \fB35\fP of file \fBfileintegritychecker\&.cpp\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for fileintegritychecker from the source code\&.

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_sqlite3controller_8cpp" xml:lang="en-US">
+<title>C:/Users/mark_/source/repos/fileintegritychecker/src/sqlite3controller.cpp File Reference</title>
+<indexterm><primary>C:/Users/mark_/source/repos/fileintegritychecker/src/sqlite3controller.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../headers/sqlite3controller.h&quot;<?linebreak?></programlisting>Include dependency graph for sqlite3controller.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="sqlite3controller_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>sqlite3 * <link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link></para>
+</listitem>
+            <listitem><para>char * <link linkend="_sqlite3controller_8cpp_1a89983a6d628aa726003d2a29bc372df4">sqlite3_dbasename</link></para>
+</listitem>
+            <listitem><para>char * <link linkend="_sqlite3controller_8cpp_1aadf24962fe0ba651d19e77bd6ed61b51">sqlite3_mname</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b"/><section>
+    <title>db</title>
+<indexterm><primary>db</primary><secondary>sqlite3controller.cpp</secondary></indexterm>
+<indexterm><primary>sqlite3controller.cpp</primary><secondary>db</secondary></indexterm>
+<para><computeroutput>sqlite3* db</computeroutput></para><para>
+Definition at line <link linkend="_sqlite3controller_8cpp_source_1l00006">6</link> of file <link linkend="_sqlite3controller_8cpp_source">sqlite3controller.cpp</link>.</para>
+</section>
+<anchor xml:id="_sqlite3controller_8cpp_1a89983a6d628aa726003d2a29bc372df4"/><section>
+    <title>sqlite3_dbasename</title>
+<indexterm><primary>sqlite3_dbasename</primary><secondary>sqlite3controller.cpp</secondary></indexterm>
+<indexterm><primary>sqlite3controller.cpp</primary><secondary>sqlite3_dbasename</secondary></indexterm>
+<para><computeroutput>char* sqlite3_dbasename</computeroutput></para><para>
+Definition at line <link linkend="_sqlite3controller_8cpp_source_1l00007">7</link> of file <link linkend="_sqlite3controller_8cpp_source">sqlite3controller.cpp</link>.</para>
+</section>
+<anchor xml:id="_sqlite3controller_8cpp_1aadf24962fe0ba651d19e77bd6ed61b51"/><section>
+    <title>sqlite3_mname</title>
+<indexterm><primary>sqlite3_mname</primary><secondary>sqlite3controller.cpp</secondary></indexterm>
+<indexterm><primary>sqlite3controller.cpp</primary><secondary>sqlite3_mname</secondary></indexterm>
+<para><computeroutput>char* sqlite3_mname</computeroutput></para><para>
+Definition at line <link linkend="_sqlite3controller_8cpp_source_1l00008">8</link> of file <link linkend="_sqlite3controller_8cpp_source">sqlite3controller.cpp</link>.</para>
+</section>
+</section>
+</section>

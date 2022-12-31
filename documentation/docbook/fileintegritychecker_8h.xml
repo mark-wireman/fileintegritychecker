@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_fileintegritychecker_8h" xml:lang="en-US">
+<title>C:/Users/mark_/source/repos/fileintegritychecker/headers/fileintegritychecker.h File Reference</title>
+<indexterm><primary>C:/Users/mark_/source/repos/fileintegritychecker/headers/fileintegritychecker.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;iostream&gt;<?linebreak?>#include &lt;cstdint&gt;<?linebreak?>#include &lt;fstream&gt;<?linebreak?>#include &lt;filesystem&gt;<?linebreak?>#include &lt;string&gt;<?linebreak?>#include &lt;cstring&gt;<?linebreak?>#include &lt;thread&gt;<?linebreak?>#include &lt;vector&gt;<?linebreak?>#include &lt;dirent.h&gt;<?linebreak?>#include &lt;sys/types.h&gt;<?linebreak?>#include &lt;future&gt;<?linebreak?>#include &lt;chrono&gt;<?linebreak?>#include &quot;SHA256CPP.h&quot;<?linebreak?>#include &quot;Menu.h&quot;<?linebreak?>#include &quot;mysqlcontroller.h&quot;<?linebreak?>#include &quot;sqlite3controller.h&quot;<?linebreak?>#include &quot;SQLiteHelper.h&quot;<?linebreak?></programlisting>Include dependency graph for fileintegritychecker.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="fileintegritychecker_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_classfileintegritychecker">fileintegritychecker</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

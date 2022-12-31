@@ -8,9 +8,9 @@ To compile the file integrity checker app:
 
 C++ Compling instructions for individual components
 
-g++ -c src/sqlite3crud.cpp -lsqlite3
-g++ -c src/SHA256.cpp
-g++ -c src/Menu.cpp
+g++ -std=c++17 -c src/sqlite3crud.cpp -lsqlite3
+g++ -std=c++17 -c src/SHA256.cpp
+g++ -std=c++17 -c src/Menu.cpp
 
 C++ Compling instructions for sqlite3
 
@@ -47,3 +47,10 @@ g++ -o msyqlembtest mysqlembeddedtest.o /usr/lib/x86_64-linux-gnu/libmysqlclient
 -L/usr/lib/x86_64-linux-gnu/ -llibmysqlcppconn-static.a -llibmysqlclient.a
 
 sudo find / -name "libmysqlcppconn.so*" 2>&1 | grep -v "Permission denied"
+
+To compile with MySQL:
+
+g++ -c -std=c++17 src/SHA256.cpp
+g++ -c -std=c++17 src/Menu.cpp
+g++ -c -std=c++17 -DSTATIC_CONCPP -I/usr/include src/mysqlcontroller.cpp /usr/lib/x86_64-linux-gnu/libmysqlcppconn-static.a /usr/lib/x86_64-linux-gnu/libmysqlclient.a -lssl -lcrypto -lpthread
+g++ -std=c++17 SHA256.o Menu.o mysqlcontroller.o -I/usr/local/include -DSTATIC_CONCPP -I/usr/include src/fileintegritychecker.cpp /usr/lib/x86_64-linux-gnu/libmysqlcppconn-static.a /usr/lib/x86_64-linux-gnu/libmysqlclient.a -Wl,--copy-dt-needed-entries -o fileintegritychecker.exe -pthread -lssl -lcrypto -lmysqlcppconn

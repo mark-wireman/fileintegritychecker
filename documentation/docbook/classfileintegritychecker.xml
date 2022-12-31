@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classfileintegritychecker" xml:lang="en-US">
+<title>fileintegritychecker Class Reference</title>
+<indexterm><primary>fileintegritychecker</primary></indexterm>
+<para>
+<computeroutput>#include &lt;fileintegritychecker.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classfileintegritychecker_1a4f113638831295eab7ae564155dc2c3c">fileintegritychecker</link> ()</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classfileintegritychecker_1abf6a40bce2f3466f8bddc9a5ed02fe1d">~fileintegritychecker</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classfileintegritychecker_1af19f4b1b0f37b3645f0aa27ce201538d">setParamVals</link> (<link linkend="_class_menu">Menu</link> *m)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classfileintegritychecker_1ad83727702919ed588145f7e9f9f183d7">setDatabaseConnections</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classfileintegritychecker_1ab064f5cb87b4a7d8c557a32d764a131a">processFiles</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classfileintegritychecker_1aeb559134d644a9263fc9ab8a25ecf333">closeDatabaseConnections</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>long int <link linkend="_classfileintegritychecker_1a084e0e1a26d35c85d16ecfccc84ee031">numberofdirectories</link> = 0</para>
+</listitem>
+            <listitem><para>long int <link linkend="_classfileintegritychecker_1a8cc50a2938d11837ec1ee0250e73fa6d">numberoffiles</link> = 0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classfileintegritychecker_1a4f113638831295eab7ae564155dc2c3c"/><section>
+    <title>fileintegritychecker()</title>
+<indexterm><primary>fileintegritychecker</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>fileintegritychecker</secondary></indexterm>
+<para><computeroutput>fileintegritychecker::fileintegritychecker ( )</computeroutput></para></section>
+<anchor xml:id="_classfileintegritychecker_1abf6a40bce2f3466f8bddc9a5ed02fe1d"/><section>
+    <title>~fileintegritychecker()</title>
+<indexterm><primary>~fileintegritychecker</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>~fileintegritychecker</secondary></indexterm>
+<para><computeroutput>virtual fileintegritychecker::~fileintegritychecker ( )<computeroutput>[virtual]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classfileintegritychecker_1aeb559134d644a9263fc9ab8a25ecf333"/><section>
+    <title>closeDatabaseConnections()</title>
+<indexterm><primary>closeDatabaseConnections</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>closeDatabaseConnections</secondary></indexterm>
+<para><computeroutput>void fileintegritychecker::closeDatabaseConnections ( )</computeroutput></para></section>
+<anchor xml:id="_classfileintegritychecker_1ab064f5cb87b4a7d8c557a32d764a131a"/><section>
+    <title>processFiles()</title>
+<indexterm><primary>processFiles</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>processFiles</secondary></indexterm>
+<para><computeroutput>void fileintegritychecker::processFiles ( )</computeroutput></para></section>
+<anchor xml:id="_classfileintegritychecker_1ad83727702919ed588145f7e9f9f183d7"/><section>
+    <title>setDatabaseConnections()</title>
+<indexterm><primary>setDatabaseConnections</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>setDatabaseConnections</secondary></indexterm>
+<para><computeroutput>void fileintegritychecker::setDatabaseConnections ( )</computeroutput></para></section>
+<anchor xml:id="_classfileintegritychecker_1af19f4b1b0f37b3645f0aa27ce201538d"/><section>
+    <title>setParamVals()</title>
+<indexterm><primary>setParamVals</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>setParamVals</secondary></indexterm>
+<para><computeroutput>void fileintegritychecker::setParamVals (<link linkend="_class_menu">Menu</link> * m)</computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classfileintegritychecker_1a084e0e1a26d35c85d16ecfccc84ee031"/><section>
+    <title>numberofdirectories</title>
+<indexterm><primary>numberofdirectories</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>numberofdirectories</secondary></indexterm>
+<para><computeroutput>long int fileintegritychecker::numberofdirectories = 0</computeroutput></para></section>
+<anchor xml:id="_classfileintegritychecker_1a8cc50a2938d11837ec1ee0250e73fa6d"/><section>
+    <title>numberoffiles</title>
+<indexterm><primary>numberoffiles</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>numberoffiles</secondary></indexterm>
+<para><computeroutput>long int fileintegritychecker::numberoffiles = 0</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+C:/Users/mark_/source/repos/fileintegritychecker/headers/<link linkend="_fileintegritychecker_8h">fileintegritychecker.h</link></section>
+</section>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_userdefinederrors_8h_source" xml:lang="en-US">
+<title>userdefinederrors.h</title>
+<indexterm><primary>C:/Users/mark_/source/repos/fileintegritychecker/headers/userdefinederrors.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#define&#32;NO_ERROR&#32;0</emphasis>
+2 <emphasis role="preprocessor">#define&#32;NO_OBJECT_ERROR&#32;1001</emphasis>
+3 <emphasis role="preprocessor">#define&#32;INVALID_HASH_NO_ERROR&#32;1002</emphasis>
+4 <emphasis role="preprocessor">#define&#32;INVALID_DIRECTORY_ERROR&#32;1003</emphasis>
+5 <emphasis role="preprocessor">#define&#32;INVALID_FILENAME_ERROR&#32;1004</emphasis>
+</programlisting></section>

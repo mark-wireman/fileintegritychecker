@@ -1,0 +1,123 @@
+\hypertarget{class_helper}{}\doxysection{Helper Class Reference}
+\label{class_helper}\index{Helper@{Helper}}
+
+
+{\ttfamily \#include $<$helper.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_helper_a925994da414b49c76b77851bac11a0ed}{Attribute\+To\+Check}} \{ \mbox{\hyperlink{class_helper_a925994da414b49c76b77851bac11a0eda0a2c2ad45a8ef22d0854418220f13f07}{Hashed\+Val}} = 1
+, \mbox{\hyperlink{class_helper_a925994da414b49c76b77851bac11a0edad916bef10461ccf8f246674ddc77dd49}{File\+Size}} = 2
+, \mbox{\hyperlink{class_helper_a925994da414b49c76b77851bac11a0eda06af975a56ed4ed9fcf3afabd41ba0b3}{Date\+Modified}} = 3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_helper_a0f9c4b55b87835fc629ea6327b51202f}{check\+If\+Hashval\+Exist\+In\+Files}} (const int file\+Id, const char $\ast$hval, sqlite3 $\ast$db)
+\item 
+static int \mbox{\hyperlink{class_helper_aa18f3c515ed5d6ce6af10bbaa3686fa7}{check\+If\+Hashval\+Exist\+In\+Changes}} (const int file\+Id, const char $\ast$hval, sqlite3 $\ast$db)
+\item 
+static int \mbox{\hyperlink{class_helper_a2e25b7788bfb4d832089068d2d87390d}{check\+If\+File\+Size\+Exist\+In\+Changes}} (const int file\+Id, const int filesize, sqlite3 $\ast$db)
+\item 
+static int \mbox{\hyperlink{class_helper_a986f4e981d6ec7422919c64476cf66d1}{check\+If\+File\+Size\+Is\+Verified\+Or\+Modified}} (const int file\+Id, sqlite3 $\ast$db)
+\item 
+static int \mbox{\hyperlink{class_helper_a2d7b2ef729d42a55c99568958a3362a9}{check\+If\+Date\+Modified\+Exist\+In\+Files}} (const int file\+Id, const char $\ast$datemodified, sqlite3 $\ast$db)
+\item 
+static int \mbox{\hyperlink{class_helper_ac980a433560328044e9916d2f5a99e8d}{check\+If\+Date\+Modified\+Exist\+In\+Changes}} (const int file\+Id, const char $\ast$datemodified, sqlite3 $\ast$db)
+\item 
+static int \mbox{\hyperlink{class_helper_ae449b9e499fa75c53f06522a6155b08a}{check\+If\+Attribute\+Is\+Verified\+Or\+Modified}} (const int file\+Id, const \mbox{\hyperlink{class_helper_a925994da414b49c76b77851bac11a0ed}{Attribute\+To\+Check}} attribute, sqlite3 $\ast$db)
+\item 
+static char $\ast$ \mbox{\hyperlink{class_helper_a21eb1535d481de637af099ba556e40cd}{get\+Current\+Time}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{helper_8h_source_l00014}{14}} of file \mbox{\hyperlink{helper_8h_source}{helper.\+h}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_helper_a925994da414b49c76b77851bac11a0ed}\label{class_helper_a925994da414b49c76b77851bac11a0ed}} 
+\index{Helper@{Helper}!AttributeToCheck@{AttributeToCheck}}
+\index{AttributeToCheck@{AttributeToCheck}!Helper@{Helper}}
+\doxysubsubsection{\texorpdfstring{AttributeToCheck}{AttributeToCheck}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_helper_a925994da414b49c76b77851bac11a0ed}{Helper\+::\+Attribute\+To\+Check}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HashedVal@{HashedVal}!Helper@{Helper}}\index{Helper@{Helper}!HashedVal@{HashedVal}}}\mbox{\Hypertarget{class_helper_a925994da414b49c76b77851bac11a0eda0a2c2ad45a8ef22d0854418220f13f07}\label{class_helper_a925994da414b49c76b77851bac11a0eda0a2c2ad45a8ef22d0854418220f13f07}} 
+Hashed\+Val&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileSize@{FileSize}!Helper@{Helper}}\index{Helper@{Helper}!FileSize@{FileSize}}}\mbox{\Hypertarget{class_helper_a925994da414b49c76b77851bac11a0edad916bef10461ccf8f246674ddc77dd49}\label{class_helper_a925994da414b49c76b77851bac11a0edad916bef10461ccf8f246674ddc77dd49}} 
+File\+Size&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DateModified@{DateModified}!Helper@{Helper}}\index{Helper@{Helper}!DateModified@{DateModified}}}\mbox{\Hypertarget{class_helper_a925994da414b49c76b77851bac11a0eda06af975a56ed4ed9fcf3afabd41ba0b3}\label{class_helper_a925994da414b49c76b77851bac11a0eda06af975a56ed4ed9fcf3afabd41ba0b3}} 
+Date\+Modified&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{helper_8h_source_l00016}{16}} of file \mbox{\hyperlink{helper_8h_source}{helper.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_helper_ae449b9e499fa75c53f06522a6155b08a}\label{class_helper_ae449b9e499fa75c53f06522a6155b08a}} 
+\index{Helper@{Helper}!checkIfAttributeIsVerifiedOrModified@{checkIfAttributeIsVerifiedOrModified}}
+\index{checkIfAttributeIsVerifiedOrModified@{checkIfAttributeIsVerifiedOrModified}!Helper@{Helper}}
+\doxysubsubsection{\texorpdfstring{checkIfAttributeIsVerifiedOrModified()}{checkIfAttributeIsVerifiedOrModified()}}
+{\footnotesize\ttfamily static int Helper\+::check\+If\+Attribute\+Is\+Verified\+Or\+Modified (\begin{DoxyParamCaption}\item[{const int}]{file\+Id,  }\item[{const \mbox{\hyperlink{class_helper_a925994da414b49c76b77851bac11a0ed}{Attribute\+To\+Check}}}]{attribute,  }\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_helper_ac980a433560328044e9916d2f5a99e8d}\label{class_helper_ac980a433560328044e9916d2f5a99e8d}} 
+\index{Helper@{Helper}!checkIfDateModifiedExistInChanges@{checkIfDateModifiedExistInChanges}}
+\index{checkIfDateModifiedExistInChanges@{checkIfDateModifiedExistInChanges}!Helper@{Helper}}
+\doxysubsubsection{\texorpdfstring{checkIfDateModifiedExistInChanges()}{checkIfDateModifiedExistInChanges()}}
+{\footnotesize\ttfamily static int Helper\+::check\+If\+Date\+Modified\+Exist\+In\+Changes (\begin{DoxyParamCaption}\item[{const int}]{file\+Id,  }\item[{const char $\ast$}]{datemodified,  }\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_helper_a2d7b2ef729d42a55c99568958a3362a9}\label{class_helper_a2d7b2ef729d42a55c99568958a3362a9}} 
+\index{Helper@{Helper}!checkIfDateModifiedExistInFiles@{checkIfDateModifiedExistInFiles}}
+\index{checkIfDateModifiedExistInFiles@{checkIfDateModifiedExistInFiles}!Helper@{Helper}}
+\doxysubsubsection{\texorpdfstring{checkIfDateModifiedExistInFiles()}{checkIfDateModifiedExistInFiles()}}
+{\footnotesize\ttfamily static int Helper\+::check\+If\+Date\+Modified\+Exist\+In\+Files (\begin{DoxyParamCaption}\item[{const int}]{file\+Id,  }\item[{const char $\ast$}]{datemodified,  }\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_helper_a2e25b7788bfb4d832089068d2d87390d}\label{class_helper_a2e25b7788bfb4d832089068d2d87390d}} 
+\index{Helper@{Helper}!checkIfFileSizeExistInChanges@{checkIfFileSizeExistInChanges}}
+\index{checkIfFileSizeExistInChanges@{checkIfFileSizeExistInChanges}!Helper@{Helper}}
+\doxysubsubsection{\texorpdfstring{checkIfFileSizeExistInChanges()}{checkIfFileSizeExistInChanges()}}
+{\footnotesize\ttfamily static int Helper\+::check\+If\+File\+Size\+Exist\+In\+Changes (\begin{DoxyParamCaption}\item[{const int}]{file\+Id,  }\item[{const int}]{filesize,  }\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_helper_a986f4e981d6ec7422919c64476cf66d1}\label{class_helper_a986f4e981d6ec7422919c64476cf66d1}} 
+\index{Helper@{Helper}!checkIfFileSizeIsVerifiedOrModified@{checkIfFileSizeIsVerifiedOrModified}}
+\index{checkIfFileSizeIsVerifiedOrModified@{checkIfFileSizeIsVerifiedOrModified}!Helper@{Helper}}
+\doxysubsubsection{\texorpdfstring{checkIfFileSizeIsVerifiedOrModified()}{checkIfFileSizeIsVerifiedOrModified()}}
+{\footnotesize\ttfamily static int Helper\+::check\+If\+File\+Size\+Is\+Verified\+Or\+Modified (\begin{DoxyParamCaption}\item[{const int}]{file\+Id,  }\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_helper_aa18f3c515ed5d6ce6af10bbaa3686fa7}\label{class_helper_aa18f3c515ed5d6ce6af10bbaa3686fa7}} 
+\index{Helper@{Helper}!checkIfHashvalExistInChanges@{checkIfHashvalExistInChanges}}
+\index{checkIfHashvalExistInChanges@{checkIfHashvalExistInChanges}!Helper@{Helper}}
+\doxysubsubsection{\texorpdfstring{checkIfHashvalExistInChanges()}{checkIfHashvalExistInChanges()}}
+{\footnotesize\ttfamily static int Helper\+::check\+If\+Hashval\+Exist\+In\+Changes (\begin{DoxyParamCaption}\item[{const int}]{file\+Id,  }\item[{const char $\ast$}]{hval,  }\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_helper_a0f9c4b55b87835fc629ea6327b51202f}\label{class_helper_a0f9c4b55b87835fc629ea6327b51202f}} 
+\index{Helper@{Helper}!checkIfHashvalExistInFiles@{checkIfHashvalExistInFiles}}
+\index{checkIfHashvalExistInFiles@{checkIfHashvalExistInFiles}!Helper@{Helper}}
+\doxysubsubsection{\texorpdfstring{checkIfHashvalExistInFiles()}{checkIfHashvalExistInFiles()}}
+{\footnotesize\ttfamily static int Helper\+::check\+If\+Hashval\+Exist\+In\+Files (\begin{DoxyParamCaption}\item[{const int}]{file\+Id,  }\item[{const char $\ast$}]{hval,  }\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_helper_a21eb1535d481de637af099ba556e40cd}\label{class_helper_a21eb1535d481de637af099ba556e40cd}} 
+\index{Helper@{Helper}!getCurrentTime@{getCurrentTime}}
+\index{getCurrentTime@{getCurrentTime}!Helper@{Helper}}
+\doxysubsubsection{\texorpdfstring{getCurrentTime()}{getCurrentTime()}}
+{\footnotesize\ttfamily static char $\ast$ Helper\+::get\+Current\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+headers/\mbox{\hyperlink{helper_8h}{helper.\+h}}\end{DoxyCompactItemize}

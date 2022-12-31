@@ -1,0 +1,476 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="en-US">
+  <compounddef id="classmysqlcontroller" kind="class" language="C++" prot="public">
+    <compoundname>mysqlcontroller</compoundname>
+    <includes refid="mysqlcontroller_8h" local="no">mysqlcontroller.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmysqlcontroller_1a891d523d7a39f46e72b16a36c1387767" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mysqlcontroller::mysqlcontroller</definition>
+        <argsstring>()</argsstring>
+        <name>mysqlcontroller</name>
+        <qualifiedname>mysqlcontroller::mysqlcontroller</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="28" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1a5660513979df1fce6d3ff042ff477b99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>mysqlcontroller::mysqlcontroller</definition>
+        <argsstring>(char *host, char *dbase, char *uname, char *pwd, int port, char *mname)</argsstring>
+        <name>mysqlcontroller</name>
+        <qualifiedname>mysqlcontroller::mysqlcontroller</qualifiedname>
+        <param>
+          <type>char *</type>
+          <declname>host</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>dbase</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>uname</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>pwd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>mname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="29" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1a5281329cf5af806d612908b406a9ec89" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual mysqlcontroller::~mysqlcontroller</definition>
+        <argsstring>()</argsstring>
+        <name>~mysqlcontroller</name>
+        <qualifiedname>mysqlcontroller::~mysqlcontroller</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="30" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1ac879ce9833813cd7649059a3d871fedd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mysqlcontroller::setHOSTNAME</definition>
+        <argsstring>(char *host)</argsstring>
+        <name>setHOSTNAME</name>
+        <qualifiedname>mysqlcontroller::setHOSTNAME</qualifiedname>
+        <param>
+          <type>char *</type>
+          <declname>host</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="31" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1a465f1a74a87fa74d5ab2aefd34bbe941" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mysqlcontroller::setDBASENAME</definition>
+        <argsstring>(char *dbase)</argsstring>
+        <name>setDBASENAME</name>
+        <qualifiedname>mysqlcontroller::setDBASENAME</qualifiedname>
+        <param>
+          <type>char *</type>
+          <declname>dbase</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="32" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1ab095a99557c1d7582c66329398d4bd38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mysqlcontroller::setUSERNAME</definition>
+        <argsstring>(char *uname)</argsstring>
+        <name>setUSERNAME</name>
+        <qualifiedname>mysqlcontroller::setUSERNAME</qualifiedname>
+        <param>
+          <type>char *</type>
+          <declname>uname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="33" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1a39a1970d8c3c3f013487652493a66e5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mysqlcontroller::setPASSWORD</definition>
+        <argsstring>(char *pwd)</argsstring>
+        <name>setPASSWORD</name>
+        <qualifiedname>mysqlcontroller::setPASSWORD</qualifiedname>
+        <param>
+          <type>char *</type>
+          <declname>pwd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="34" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1afd4432161cc947ac73243b5227d49a79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mysqlcontroller::setPORT</definition>
+        <argsstring>(int port)</argsstring>
+        <name>setPORT</name>
+        <qualifiedname>mysqlcontroller::setPORT</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="35" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1a686a2d830775da6da5e8451333b4099f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mysqlcontroller::setMACHINENAME</definition>
+        <argsstring>(char *mname)</argsstring>
+        <name>setMACHINENAME</name>
+        <qualifiedname>mysqlcontroller::setMACHINENAME</qualifiedname>
+        <param>
+          <type>char *</type>
+          <declname>mname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="36" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1aa98d95b40af60c2d3654e1734f02f4fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * mysqlcontroller::getHOSTNAME</definition>
+        <argsstring>()</argsstring>
+        <name>getHOSTNAME</name>
+        <qualifiedname>mysqlcontroller::getHOSTNAME</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="37" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1a9fd8e8a368cc3d5e84a371c2a4cd6b7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * mysqlcontroller::getDBASENAME</definition>
+        <argsstring>()</argsstring>
+        <name>getDBASENAME</name>
+        <qualifiedname>mysqlcontroller::getDBASENAME</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="38" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1aabe3ab7506b212aa7125a3f81d725414" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * mysqlcontroller::getUSERNAME</definition>
+        <argsstring>()</argsstring>
+        <name>getUSERNAME</name>
+        <qualifiedname>mysqlcontroller::getUSERNAME</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="39" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1ac38c7f7d6f37a4ac287a3997c398966c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * mysqlcontroller::getPASSWORD</definition>
+        <argsstring>()</argsstring>
+        <name>getPASSWORD</name>
+        <qualifiedname>mysqlcontroller::getPASSWORD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="40" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1a9df4b563e915fb2ba56797ed499dad8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mysqlcontroller::getPORT</definition>
+        <argsstring>()</argsstring>
+        <name>getPORT</name>
+        <qualifiedname>mysqlcontroller::getPORT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="41" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1a32c523aaf33000a0bb1f42b0c5dcbe57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * mysqlcontroller::getMACHINENAME</definition>
+        <argsstring>()</argsstring>
+        <name>getMACHINENAME</name>
+        <qualifiedname>mysqlcontroller::getMACHINENAME</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="42" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1a74389e9c368e9f43df261f7050377cb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mysqlcontroller::initdb</definition>
+        <argsstring>()</argsstring>
+        <name>initdb</name>
+        <qualifiedname>mysqlcontroller::initdb</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="43" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1a053dfe67635af840ec7a787e86b95f41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mysqlcontroller::saveDirectoryName</definition>
+        <argsstring>(string dirname)</argsstring>
+        <name>saveDirectoryName</name>
+        <qualifiedname>mysqlcontroller::saveDirectoryName</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>dirname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="44" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1a8ac76206c0cfc7954cce8011616119ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mysqlcontroller::saveFileInfo</definition>
+        <argsstring>(string dirname, string fname, string hashval)</argsstring>
+        <name>saveFileInfo</name>
+        <qualifiedname>mysqlcontroller::saveFileInfo</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>dirname</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>fname</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>hashval</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="45" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1a1158e1c0c82d11cbe200219b4a5a96b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mysqlcontroller::saveDirectoryName_async</definition>
+        <argsstring>(const string &amp;dirname)</argsstring>
+        <name>saveDirectoryName_async</name>
+        <qualifiedname>mysqlcontroller::saveDirectoryName_async</qualifiedname>
+        <param>
+          <type>const string &amp;</type>
+          <declname>dirname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="46" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1aad16b25269ed6065b0360c2b8312aea0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mysqlcontroller::saveFileInfo_async</definition>
+        <argsstring>(const string &amp;dirname, const string &amp;fname, const string &amp;hashval)</argsstring>
+        <name>saveFileInfo_async</name>
+        <qualifiedname>mysqlcontroller::saveFileInfo_async</qualifiedname>
+        <param>
+          <type>const string &amp;</type>
+          <declname>dirname</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>fname</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>hashval</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="47" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1a50702b70c6eb0355c2d169050776b394" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mysqlcontroller::deleteDirectoryNames</definition>
+        <argsstring>()</argsstring>
+        <name>deleteDirectoryNames</name>
+        <qualifiedname>mysqlcontroller::deleteDirectoryNames</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="48" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1a75776ad16ad15a20736e0c1b6adda411" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mysqlcontroller::closedb</definition>
+        <argsstring>()</argsstring>
+        <name>closedb</name>
+        <qualifiedname>mysqlcontroller::closedb</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="49" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1a069876969dedc6baf9c5f95cca1ab33d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mysqlcontroller::initPreparedStatements</definition>
+        <argsstring>()</argsstring>
+        <name>initPreparedStatements</name>
+        <qualifiedname>mysqlcontroller::initPreparedStatements</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="50" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classmysqlcontroller_1a760179764d3008ac64c36e0b4fb26553" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void mysqlcontroller::closePreparedStatements</definition>
+        <argsstring>()</argsstring>
+        <name>closePreparedStatements</name>
+        <qualifiedname>mysqlcontroller::closePreparedStatements</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="51" column="10"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classmysqlcontroller_1a116a7441f9bae6f7ef1e0676bd211a7e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * mysqlcontroller::filterApostraphe</definition>
+        <argsstring>(string)</argsstring>
+        <name>filterApostraphe</name>
+        <qualifiedname>mysqlcontroller::filterApostraphe</qualifiedname>
+        <param>
+          <type>string</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="55" column="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="headers/mysqlcontroller.h" line="26" column="1" bodyfile="headers/mysqlcontroller.h" bodystart="26" bodyend="57"/>
+    <listofallmembers>
+      <member refid="classmysqlcontroller_1a75776ad16ad15a20736e0c1b6adda411" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>closedb</name></member>
+      <member refid="classmysqlcontroller_1a760179764d3008ac64c36e0b4fb26553" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>closePreparedStatements</name></member>
+      <member refid="classmysqlcontroller_1a50702b70c6eb0355c2d169050776b394" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>deleteDirectoryNames</name></member>
+      <member refid="classmysqlcontroller_1a116a7441f9bae6f7ef1e0676bd211a7e" prot="private" virt="non-virtual"><scope>mysqlcontroller</scope><name>filterApostraphe</name></member>
+      <member refid="classmysqlcontroller_1a9fd8e8a368cc3d5e84a371c2a4cd6b7a" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>getDBASENAME</name></member>
+      <member refid="classmysqlcontroller_1aa98d95b40af60c2d3654e1734f02f4fd" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>getHOSTNAME</name></member>
+      <member refid="classmysqlcontroller_1a32c523aaf33000a0bb1f42b0c5dcbe57" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>getMACHINENAME</name></member>
+      <member refid="classmysqlcontroller_1ac38c7f7d6f37a4ac287a3997c398966c" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>getPASSWORD</name></member>
+      <member refid="classmysqlcontroller_1a9df4b563e915fb2ba56797ed499dad8b" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>getPORT</name></member>
+      <member refid="classmysqlcontroller_1aabe3ab7506b212aa7125a3f81d725414" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>getUSERNAME</name></member>
+      <member refid="classmysqlcontroller_1a74389e9c368e9f43df261f7050377cb4" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>initdb</name></member>
+      <member refid="classmysqlcontroller_1a069876969dedc6baf9c5f95cca1ab33d" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>initPreparedStatements</name></member>
+      <member refid="classmysqlcontroller_1a891d523d7a39f46e72b16a36c1387767" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>mysqlcontroller</name></member>
+      <member refid="classmysqlcontroller_1a5660513979df1fce6d3ff042ff477b99" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>mysqlcontroller</name></member>
+      <member refid="classmysqlcontroller_1a053dfe67635af840ec7a787e86b95f41" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>saveDirectoryName</name></member>
+      <member refid="classmysqlcontroller_1a1158e1c0c82d11cbe200219b4a5a96b3" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>saveDirectoryName_async</name></member>
+      <member refid="classmysqlcontroller_1a8ac76206c0cfc7954cce8011616119ab" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>saveFileInfo</name></member>
+      <member refid="classmysqlcontroller_1aad16b25269ed6065b0360c2b8312aea0" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>saveFileInfo_async</name></member>
+      <member refid="classmysqlcontroller_1a465f1a74a87fa74d5ab2aefd34bbe941" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>setDBASENAME</name></member>
+      <member refid="classmysqlcontroller_1ac879ce9833813cd7649059a3d871fedd" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>setHOSTNAME</name></member>
+      <member refid="classmysqlcontroller_1a686a2d830775da6da5e8451333b4099f" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>setMACHINENAME</name></member>
+      <member refid="classmysqlcontroller_1a39a1970d8c3c3f013487652493a66e5f" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>setPASSWORD</name></member>
+      <member refid="classmysqlcontroller_1afd4432161cc947ac73243b5227d49a79" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>setPORT</name></member>
+      <member refid="classmysqlcontroller_1ab095a99557c1d7582c66329398d4bd38" prot="public" virt="non-virtual"><scope>mysqlcontroller</scope><name>setUSERNAME</name></member>
+      <member refid="classmysqlcontroller_1a5281329cf5af806d612908b406a9ec89" prot="public" virt="virtual"><scope>mysqlcontroller</scope><name>~mysqlcontroller</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

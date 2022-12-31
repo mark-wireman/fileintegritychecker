@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_fileintegritychecker_8cpp_source" xml:lang="en-US">
+<title>fileintegritychecker.cpp</title>
+<indexterm><primary>C:/Users/mark_/source/repos/fileintegritychecker/src/fileintegritychecker.cpp</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_fileintegritychecker_8cpp_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&quot;../headers/fileintegritychecker.h&quot;</emphasis>
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00002"/>00002 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00003"/>00003 <emphasis role="keyword">using&#32;namespace&#32;</emphasis>std;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00004"/>00004 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00005"/>00005 <emphasis role="keyword">namespace&#32;</emphasis>fs&#32;=&#32;std::filesystem;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00006"/>00006 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00007"/>00007 <emphasis role="comment">//&#32;Tell&#32;our&#32;preprocessor&#32;to&#32;create&#32;a&#32;variable&#32;MAXCHAR&#32;with&#32;value&#32;of&#32;100000</emphasis>
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00008"/><link linkend="_fileintegritychecker_8cpp_1ac1535592e39e7edf0cafbd5e695ea622">00008</link> <emphasis role="preprocessor">#define&#32;MAXCHAR&#32;100000</emphasis>
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00009"/>00009 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00010"/>00010 <emphasis role="keyword">template</emphasis>&#32;&lt;<emphasis role="keyword">typename</emphasis>&#32;TP&gt;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00011"/><link linkend="_fileintegritychecker_8cpp_1aa0c7e6e475d4dd6b5f4dd0f04be4fbfa">00011</link> std::time_t&#32;<link linkend="_fileintegritychecker_8cpp_1aa0c7e6e475d4dd6b5f4dd0f04be4fbfa">to_time_t</link>(TP&#32;tp)
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00012"/>00012 {
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00013"/>00013 &#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;namespace&#32;</emphasis>std::chrono;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00014"/>00014 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;sctp&#32;=&#32;time_point_cast&lt;system_clock::duration&gt;(tp&#32;-&#32;TP::clock::now()
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00015"/>00015 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;+&#32;system_clock::now());
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00016"/>00016 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;system_clock::to_time_t(sctp);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00017"/>00017 }
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00018"/>00018 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00019"/><link linkend="_fileintegritychecker_8cpp_1ac01cc26ee78680a5119ba192f7b4ea53">00019</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_fileintegritychecker_8cpp_1ac01cc26ee78680a5119ba192f7b4ea53">to_char_time_t</link>(std::time_t&#32;time)
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00020"/>00020 {
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;retVal;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;char_array;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00023"/>00023 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;tm*&#32;now&#32;=&#32;localtime(&amp;time);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;date_string[100];
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;time_string[100];
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00027"/>00027 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00028"/>00028 &#32;&#32;&#32;&#32;strftime(date_string,&#32;50,&#32;<emphasis role="stringliteral">&quot;%B&#32;%d,&#32;%Y&#32;&quot;</emphasis>,&#32;now);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00029"/>00029 &#32;&#32;&#32;&#32;strftime(time_string,&#32;50,&#32;<emphasis role="stringliteral">&quot;%T&quot;</emphasis>,&#32;now);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00030"/>00030 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00031"/>00031 &#32;&#32;&#32;&#32;retVal&#32;+=&#32;date_string;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00032"/>00032 &#32;&#32;&#32;&#32;retVal&#32;+=&#32;time_string;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00033"/>00033 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00034"/>00034 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n&#32;=&#32;retVal.length();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00035"/>00035 &#32;&#32;&#32;&#32;char_array&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>[n&#32;+&#32;1];
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00036"/>00036 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00037"/>00037 &#32;&#32;&#32;&#32;strcpy(char_array,&#32;retVal.c_str());
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00038"/>00038 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;char_array;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00040"/>00040 }
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00041"/>00041 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00048"/>00048 <emphasis role="keywordtype">void</emphasis>&#32;fileintegritychecker::get_directories_files(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">string</emphasis>&amp;&#32;s,&#32;<emphasis role="keywordtype">int</emphasis>&#32;level)&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00049"/>00049 &#32;&#32;&#32;&#32;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00050"/>00050 &#32;&#32;&#32;&#32;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00051"/>00051 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;error_code&#32;=&#32;std::error_code();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&amp;&#32;entry&#32;:&#32;fs::directory_iterator(s,fs::directory_options::skip_permission_denied,&#32;error_code))&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00053"/>00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//cout&#32;&lt;&lt;&#32;&quot;.&quot;;</emphasis>
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(!error_code)&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00055"/>00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(!entry.is_symlink()&#32;&amp;&amp;&#32;entry.is_directory()){
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00056"/>00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&#32;dirname&#32;=&#32;<emphasis role="stringliteral">&quot;/&quot;</emphasis>&#32;+&#32;entry.path().relative_path().string();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00057"/>00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Dir:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;dirname&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(strcmp(this-&gt;dbasetype,<emphasis role="stringliteral">&quot;mysql&quot;</emphasis>)&#32;==&#32;0)&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;dirsaveasync&#32;=&#32;std::async(std::launch::async,&#32;&amp;mysqlcontroller::saveDirectoryName_async,&#32;this-&gt;mysqlctl,&#32;dirname);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00060"/>00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dirsaveasync.wait();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00061"/>00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00062"/>00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(strcmp(this-&gt;dbasetype,<emphasis role="stringliteral">&quot;sqlite&quot;</emphasis>)&#32;==&#32;0)&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;sqlitectl-&gt;save_dir_info(dirname.c_str());
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00064"/>00064 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;&#32;&#32;&#32;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;numberofdirectories++;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;get_directories_files(dirname,&#32;level+1);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00067"/>00067 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(entry.is_regular_file())&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00070"/>00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&#32;dname&#32;=&#32;s;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00071"/>00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&#32;filename&#32;=&#32;<emphasis role="stringliteral">&quot;/&quot;</emphasis>&#32;+&#32;&#32;entry.path().relative_path().string();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00072"/>00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&#32;ftime&#32;=&#32;entry.last_write_time();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::time_t&#32;ctime&#32;=&#32;<link linkend="_fileintegritychecker_8cpp_1aa0c7e6e475d4dd6b5f4dd0f04be4fbfa">to_time_t</link>(ftime);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00074"/>00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;time&#32;=&#32;<link linkend="_fileintegritychecker_8cpp_1ac01cc26ee78680a5119ba192f7b4ea53">to_char_time_t</link>(ctime);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00075"/>00075 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00076"/>00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uintmax_t&#32;fsize&#32;=&#32;entry.file_size();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;numberoffiles++;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00078"/>00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\tFile:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;filename&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00079"/>00079 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00080"/>00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(usehashvals&#32;==&#32;0)&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00081"/>00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(strcmp(this-&gt;dbasetype,&#32;<emphasis role="stringliteral">&quot;sqlite&quot;</emphasis>)&#32;==&#32;0)&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00082"/>00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;sqlitectl-&gt;save_file_info(filename.c_str(),dname.c_str(),&#32;time,&#32;fsize);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00083"/>00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00084"/>00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00085"/>00085 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00086"/>00086 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00087"/>00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FILE*&#32;file&#32;=&#32;fopen(filename.c_str(),&#32;<emphasis role="stringliteral">&quot;r&quot;</emphasis>);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00088"/>00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00089"/>00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(file&#32;==&#32;NULL)&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00090"/>00090 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;\tUnable&#32;to&#32;open&#32;file.&#32;Moving&#32;on...\n&quot;</emphasis>);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00091"/>00091 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00092"/>00092 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00093"/>00093 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SHA256CPP*&#32;sha256_obj&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;SHA256CPP();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00094"/>00094 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HashValues&#32;hashVals;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00095"/>00095 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00096"/>00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hashVals&#32;=&#32;sha256_obj-&gt;calculateHash(file);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00097"/>00097 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00098"/>00098 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fclose(file);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00099"/>00099 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;sha256_obj;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00100"/>00100 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00101"/>00101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;hashedvals&#32;=&#32;to_string(hashVals.H[0]);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00102"/>00102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hashedvals&#32;+=&#32;to_string(hashVals.H[1]);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00103"/>00103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hashedvals&#32;+=&#32;to_string(hashVals.H[2]);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00104"/>00104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hashedvals&#32;+=&#32;to_string(hashVals.H[3]);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00105"/>00105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hashedvals&#32;+=&#32;to_string(hashVals.H[4]);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00106"/>00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hashedvals&#32;+=&#32;to_string(hashVals.H[5]);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00107"/>00107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hashedvals&#32;+=&#32;to_string(hashVals.H[6]);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00108"/>00108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hashedvals&#32;+=&#32;to_string(hashVals.H[7]);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00109"/>00109 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00110"/>00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(strcmp(this-&gt;dbasetype,&#32;<emphasis role="stringliteral">&quot;mysql&quot;</emphasis>)&#32;==&#32;0)&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00111"/>00111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;filesaveasync&#32;=&#32;std::async(std::launch::async,&#32;&amp;mysqlcontroller::saveFileInfo_async,&#32;this-&gt;mysqlctl,&#32;dname,&#32;entry.path().filename().string(),&#32;hashedvals);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00112"/>00112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;filesaveasync.wait();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00113"/>00113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00114"/>00114 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00115"/>00115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(strcmp(this-&gt;dbasetype,&#32;<emphasis role="stringliteral">&quot;sqlite&quot;</emphasis>)&#32;==&#32;0)&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00116"/>00116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//fprintf(stderr,&#32;&quot;Saving&#32;hashedvalue&#32;of&#32;%s&quot;,&#32;hashedvals.c_str());</emphasis>
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00117"/>00117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;sqlitectl-&gt;save_file_info(filename.c_str(),&#32;dname.c_str(),&#32;time,&#32;fsize,&#32;(<emphasis role="keywordtype">char</emphasis>*)hashedvals.c_str());
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00118"/>00118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00119"/>00119 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00120"/>00120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00121"/>00121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00122"/>00122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00123"/>00123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00124"/>00124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Do&#32;nothing</emphasis>
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00125"/>00125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&#32;unknown&#32;=&#32;<emphasis role="stringliteral">&quot;/&quot;</emphasis>&#32;+&#32;&#32;entry.path().relative_path().string();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00126"/>00126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\tUnknown:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;unknown&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00127"/>00127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00128"/>00128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00129"/>00129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;#&#32;ERR:&#32;DirectoryIterator&#32;in&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;__FILE__;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00130"/>00130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;(&quot;</emphasis>&#32;&lt;&lt;&#32;__FUNCTION__&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;)&#32;on&#32;line&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;__LINE__&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00131"/>00131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;#&#32;ERROR&#32;Code:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;error_code.category().name();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00132"/>00132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;ERROR&#32;Details:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;error_code.category().message(error_code.value())&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00133"/>00133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;ERROR&#32;accessing:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;entry.path().relative_path().string()&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00134"/>00134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;&#32;&#32;&#32;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00135"/>00135 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00136"/>00136 &#32;&#32;&#32;&#32;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00137"/>00137 }
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00138"/>00138 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00143"/>00143 <emphasis role="keywordtype">void</emphasis>&#32;fileintegritychecker::setParamVals(Menu&#32;*_menu)&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00144"/>00144 &#32;&#32;&#32;this-&gt;parentdir&#32;=&#32;_menu-&gt;getPARENTDIR();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00145"/>00145 &#32;&#32;&#32;this-&gt;dbasetype&#32;=&#32;_menu-&gt;getDBASETYPE();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00146"/>00146 &#32;&#32;&#32;this-&gt;mname&#32;=&#32;_menu-&gt;getMACHINENAME();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00147"/>00147 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00148"/>00148 &#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(strcmp(this-&gt;dbasetype,<emphasis role="stringliteral">&quot;mysql&quot;</emphasis>)&#32;==&#32;0)&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00149"/>00149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;dbasehost&#32;=&#32;_menu-&gt;getDATABASEHOSTNAME();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00150"/>00150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;uname&#32;=&#32;_menu-&gt;getUSERNAME();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00151"/>00151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;pwd&#32;=&#32;_menu-&gt;getPASSWORD();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00152"/>00152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;portno&#32;=&#32;_menu-&gt;getPORT();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00153"/>00153 &#32;&#32;&#32;}
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00154"/>00154 &#32;&#32;&#32;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00155"/>00155 &#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(strcmp(this-&gt;dbasetype,<emphasis role="stringliteral">&quot;sqlite&quot;</emphasis>)&#32;==&#32;0)&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00156"/>00156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;dbasefilename&#32;=&#32;_menu-&gt;getDBASEFILENAME();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00157"/>00157 &#32;&#32;&#32;}
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00158"/>00158 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00159"/>00159 &#32;&#32;&#32;this-&gt;usehashvals&#32;=&#32;_menu-&gt;getPROCESSHASHVALS();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00160"/>00160 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00161"/>00161 }
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00162"/>00162 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00163"/>00163 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00164"/>00164 <emphasis role="keywordtype">void</emphasis>&#32;fileintegritychecker::setDatabaseConnections()&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00165"/>00165 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(strcmp(this-&gt;dbasetype,&#32;<emphasis role="stringliteral">&quot;mysql&quot;</emphasis>)&#32;==&#32;0)&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00166"/>00166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;mysqlctl&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;mysqlcontroller(this-&gt;dbasehost,&#32;<emphasis role="stringliteral">&quot;fileintegritychecker&quot;</emphasis>,&#32;this-&gt;uname,&#32;this-&gt;pwd,&#32;3306,&#32;this-&gt;mname);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00167"/>00167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;mysqlctl-&gt;initdb();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00168"/>00168 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00169"/>00169 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00170"/>00170 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(strcmp(this-&gt;dbasetype,&#32;<emphasis role="stringliteral">&quot;sqlite&quot;</emphasis>)&#32;==&#32;0)&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00171"/>00171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;sqlitectl&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;sqlite3controller(this-&gt;dbasefilename,&#32;this-&gt;mname);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00172"/>00172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;sqlitectl-&gt;initdb();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00173"/>00173 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00174"/>00174 }
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00175"/>00175 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00176"/>00176 <emphasis role="keywordtype">void</emphasis>&#32;fileintegritychecker::closeDatabaseConnections()&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00177"/>00177 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(strcmp(this-&gt;dbasetype,&#32;<emphasis role="stringliteral">&quot;mysql&quot;</emphasis>)&#32;==&#32;0)&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00178"/>00178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;mysqlctl-&gt;closedb();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00179"/>00179 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00180"/>00180 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00181"/>00181 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(strcmp(this-&gt;dbasetype,&#32;<emphasis role="stringliteral">&quot;sqlite&quot;</emphasis>)&#32;==&#32;0)&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00182"/>00182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;sqlitectl-&gt;closedb();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00183"/>00183 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00184"/>00184 }
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00185"/>00185 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00186"/>00186 <emphasis role="keywordtype">void</emphasis>&#32;fileintegritychecker::processFiles()&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00187"/>00187 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;pDir&#32;=&#32;this-&gt;parentdir;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00188"/>00188 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;pDir&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00189"/>00189 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00190"/>00190 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(strcmp(this-&gt;dbasetype,&#32;<emphasis role="stringliteral">&quot;mysql&quot;</emphasis>)&#32;==&#32;0)&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00191"/>00191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;dirsaveasync&#32;=&#32;std::async(std::launch::async,&#32;&amp;mysqlcontroller::saveDirectoryName_async,&#32;this-&gt;mysqlctl,&#32;pDir.c_str());
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00192"/>00192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dirsaveasync.wait();
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00193"/>00193 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00194"/>00194 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(strcmp(this-&gt;dbasetype,&#32;<emphasis role="stringliteral">&quot;sqlite&quot;</emphasis>)&#32;==&#32;0)&#32;{
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00195"/>00195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;sqlitectl-&gt;save_dir_info(pDir.c_str());
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00196"/>00196 &#32;&#32;&#32;&#32;}
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00197"/>00197 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00198"/>00198 &#32;&#32;&#32;&#32;numberofdirectories++;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00199"/>00199 &#32;&#32;&#32;&#32;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00200"/>00200 &#32;&#32;&#32;&#32;this-&gt;get_directories_files(pDir);
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00201"/>00201 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00202"/>00202 &#32;&#32;&#32;&#32;
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00203"/>00203 }
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00204"/>00204 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00205"/>00205 fileintegritychecker::fileintegritychecker()&#32;{}
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00206"/>00206 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00207"/>00207 fileintegritychecker::~fileintegritychecker()&#32;{}
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00208"/>00208 
+<anchor xml:id="_fileintegritychecker_8cpp_source_1l00209"/>00209 
+</programlisting></section>

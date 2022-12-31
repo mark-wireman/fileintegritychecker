@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_q_lite_helper_8cpp" xml:lang="en-US">
+<title>C:/Users/mark_/source/repos/fileintegritychecker/src/SQLiteHelper.cpp File Reference</title>
+<indexterm><primary>C:/Users/mark_/source/repos/fileintegritychecker/src/SQLiteHelper.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../headers/SQLiteHelper.h&quot;<?linebreak?></programlisting>Include dependency graph for SQLiteHelper.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_s_q_lite_helper_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1aadee09a8afa07a05dc77b8fb183502fe">sql_check_if_filesize_changed</link> = &quot;select filesizechanged from files where id=?; &quot;</para>
+</listitem>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1a11a095d4c486bbde5cd5c03fdeef757e">sql_check_if_filesize_changed_in_files</link> = &quot;select id from files where filesize = ? and id = ?; &quot;</para>
+</listitem>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1a30a8474684b57677c7f4ade261d52396">sql_check_if_hashedval_changed</link> = &quot;select hashedvaluechanged from files where id=?; &quot;</para>
+</listitem>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1a24430c9279b2f12e6865146481668de6">sql_check_if_hashedval_changed_in_files</link> = &quot;select id from files where hashedvalue = ? and id = ?; &quot;</para>
+</listitem>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1a0b374634088c38fd0277d22cee8a076a">sql_check_if_datemodified_changed</link> = &quot;select lastmodifiedchanged from files where id=?; &quot;</para>
+</listitem>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1a2a3a606e5782280c0d3693624d86223a">sql_check_if_datemodified_changed_in_files</link> = &quot;select id from files where lastmodified = ? and id = ?; &quot;</para>
+</listitem>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1a6eaedbf4c3a151599a4dff198e474d86">sql_check_if_value_changed_in_changes_textval</link> = &quot;select id from changes where fileid = ? and textvalue = ?; &quot;</para>
+</listitem>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1a6c55458a9f14bda4df0194ad7ea8d24f">sql_check_if_value_changed_in_changes_intval</link> = &quot;select id from changes where fileid = ? and intvalue = ?; &quot;</para>
+</listitem>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1a8141fadef4ba0f5b6d6661c5dc0a5edc">sql_get_file_id</link> = &quot;select id from files where filename=? and dirid=?; &quot;</para>
+</listitem>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1ad69bcee87ad4e63344e2788867af9d33">sql_get_directory_id</link> = &quot;select id from directories where dirname=? and <link linkend="_mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c">machinename</link>= ?; &quot;</para>
+</listitem>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1a970ba9c2ed3ddfaa6961348c39d128db">sql_save_newfile_nohashedval</link> = &quot;insert into files (dirid, dateadded, filename, filesize, lastmodified) VALUES (?,?,?,?,?); &quot;</para>
+</listitem>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1a9881226bc88bfd09be3a2c29af05419f">sql_save_newfile_hashedval</link> = &quot;insert into files (dirid, dateadded, filename, filesize, lastmodified, hashval) VALUES (?,?,?,?,?,?); &quot;</para>
+</listitem>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1a022241ec805998c398b20c90d1a51256">sql_save_textval_in_changes</link> = &quot;INSERT INTO changes (fileid,datechanged,textvalue) VALUES (?,?,?); &quot;</para>
+</listitem>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1a1ffdb057e3cdae8e7c5b832f735d97bd">sql_save_intval_in_changes</link> = &quot;INSERT INTO changes (fileid,datechanged,intvalue) VALUES (?,?,?); &quot;</para>
+</listitem>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1abea92ed80d2eadb452e3517aa9e4f4b5">sql_set_inchanges_hashedval</link> = &quot;UPDATE files SET hashedvaluechanged=1 WHERE id=?; &quot;</para>
+</listitem>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1a48a30016c73a80ddd5de694dad070638">sql_set_inchanges_filesize</link> = &quot;UPDATE files SET filesizechanged=1 WHERE id=?; &quot;</para>
+</listitem>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1a86296081c599ddc648276a4e8a7699e7">sql_set_inchanges_lastmodified</link> = &quot;UPDATE files SET lastmodifiedchanged=1 WHERE id=?; &quot;</para>
+</listitem>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1a204ff8c5d0354b487b6e77ab17c0e106">_dirname</link></para>
+</listitem>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1a865240c40b0ff5596e16d5ff7c709565">_filename</link></para>
+</listitem>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1aa424942af01346d64f66002f897ec80e">_machinename</link></para>
+</listitem>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1a57cb4a0beb90bcf5df0d725693b1a5b9">_datemodified</link></para>
+</listitem>
+            <listitem><para>char * <link linkend="__s_q_lite_helper_8cpp_1ae0d9cf99ed8ba63c3466d6ee724a0f38">_hashedval</link></para>
+</listitem>
+            <listitem><para>int <link linkend="__s_q_lite_helper_8cpp_1a8fa7c9a40c7098d3a32f6c6a939898ba">_filesize</link></para>
+</listitem>
+            <listitem><para>int <link linkend="__s_q_lite_helper_8cpp_1a6ff722a0f3f2c0e8e2db123ddba7c66d">_dirid</link></para>
+</listitem>
+            <listitem><para>sqlite3_stmt * <link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Variable Documentation</title>
+<anchor xml:id="__s_q_lite_helper_8cpp_1a57cb4a0beb90bcf5df0d725693b1a5b9"/><section>
+    <title>_datemodified</title>
+<indexterm><primary>_datemodified</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>_datemodified</secondary></indexterm>
+<para><computeroutput>char* _datemodified</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00033">33</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1a6ff722a0f3f2c0e8e2db123ddba7c66d"/><section>
+    <title>_dirid</title>
+<indexterm><primary>_dirid</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>_dirid</secondary></indexterm>
+<para><computeroutput>int _dirid</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00036">36</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1a204ff8c5d0354b487b6e77ab17c0e106"/><section>
+    <title>_dirname</title>
+<indexterm><primary>_dirname</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>_dirname</secondary></indexterm>
+<para><computeroutput>char* _dirname</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00030">30</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1a865240c40b0ff5596e16d5ff7c709565"/><section>
+    <title>_filename</title>
+<indexterm><primary>_filename</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>_filename</secondary></indexterm>
+<para><computeroutput>char* _filename</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00031">31</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1a8fa7c9a40c7098d3a32f6c6a939898ba"/><section>
+    <title>_filesize</title>
+<indexterm><primary>_filesize</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>_filesize</secondary></indexterm>
+<para><computeroutput>int _filesize</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00035">35</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1ae0d9cf99ed8ba63c3466d6ee724a0f38"/><section>
+    <title>_hashedval</title>
+<indexterm><primary>_hashedval</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>_hashedval</secondary></indexterm>
+<para><computeroutput>char* _hashedval</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00034">34</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1aa424942af01346d64f66002f897ec80e"/><section>
+    <title>_machinename</title>
+<indexterm><primary>_machinename</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>_machinename</secondary></indexterm>
+<para><computeroutput>char* _machinename</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00032">32</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed"/><section>
+    <title>pStmt</title>
+<indexterm><primary>pStmt</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>pStmt</secondary></indexterm>
+<para><computeroutput>sqlite3_stmt* pStmt</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00038">38</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1a0b374634088c38fd0277d22cee8a076a"/><section>
+    <title>sql_check_if_datemodified_changed</title>
+<indexterm><primary>sql_check_if_datemodified_changed</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>sql_check_if_datemodified_changed</secondary></indexterm>
+<para><computeroutput>char* sql_check_if_datemodified_changed = &quot;select lastmodifiedchanged from files where id=?; &quot;</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00011">11</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1a2a3a606e5782280c0d3693624d86223a"/><section>
+    <title>sql_check_if_datemodified_changed_in_files</title>
+<indexterm><primary>sql_check_if_datemodified_changed_in_files</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>sql_check_if_datemodified_changed_in_files</secondary></indexterm>
+<para><computeroutput>char* sql_check_if_datemodified_changed_in_files = &quot;select id from files where lastmodified = ? and id = ?; &quot;</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00012">12</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1aadee09a8afa07a05dc77b8fb183502fe"/><section>
+    <title>sql_check_if_filesize_changed</title>
+<indexterm><primary>sql_check_if_filesize_changed</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>sql_check_if_filesize_changed</secondary></indexterm>
+<para><computeroutput>char* sql_check_if_filesize_changed = &quot;select filesizechanged from files where id=?; &quot;</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00005">5</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1a11a095d4c486bbde5cd5c03fdeef757e"/><section>
+    <title>sql_check_if_filesize_changed_in_files</title>
+<indexterm><primary>sql_check_if_filesize_changed_in_files</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>sql_check_if_filesize_changed_in_files</secondary></indexterm>
+<para><computeroutput>char* sql_check_if_filesize_changed_in_files = &quot;select id from files where filesize = ? and id = ?; &quot;</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00006">6</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1a30a8474684b57677c7f4ade261d52396"/><section>
+    <title>sql_check_if_hashedval_changed</title>
+<indexterm><primary>sql_check_if_hashedval_changed</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>sql_check_if_hashedval_changed</secondary></indexterm>
+<para><computeroutput>char* sql_check_if_hashedval_changed = &quot;select hashedvaluechanged from files where id=?; &quot;</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00008">8</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1a24430c9279b2f12e6865146481668de6"/><section>
+    <title>sql_check_if_hashedval_changed_in_files</title>
+<indexterm><primary>sql_check_if_hashedval_changed_in_files</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>sql_check_if_hashedval_changed_in_files</secondary></indexterm>
+<para><computeroutput>char* sql_check_if_hashedval_changed_in_files = &quot;select id from files where hashedvalue = ? and id = ?; &quot;</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00009">9</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1a6c55458a9f14bda4df0194ad7ea8d24f"/><section>
+    <title>sql_check_if_value_changed_in_changes_intval</title>
+<indexterm><primary>sql_check_if_value_changed_in_changes_intval</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>sql_check_if_value_changed_in_changes_intval</secondary></indexterm>
+<para><computeroutput>char* sql_check_if_value_changed_in_changes_intval = &quot;select id from changes where fileid = ? and intvalue = ?; &quot;</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00015">15</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1a6eaedbf4c3a151599a4dff198e474d86"/><section>
+    <title>sql_check_if_value_changed_in_changes_textval</title>
+<indexterm><primary>sql_check_if_value_changed_in_changes_textval</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>sql_check_if_value_changed_in_changes_textval</secondary></indexterm>
+<para><computeroutput>char* sql_check_if_value_changed_in_changes_textval = &quot;select id from changes where fileid = ? and textvalue = ?; &quot;</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00014">14</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1ad69bcee87ad4e63344e2788867af9d33"/><section>
+    <title>sql_get_directory_id</title>
+<indexterm><primary>sql_get_directory_id</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>sql_get_directory_id</secondary></indexterm>
+<para><computeroutput>char* sql_get_directory_id = &quot;select id from directories where dirname=? and <link linkend="_mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c">machinename</link>= ?; &quot;</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00018">18</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1a8141fadef4ba0f5b6d6661c5dc0a5edc"/><section>
+    <title>sql_get_file_id</title>
+<indexterm><primary>sql_get_file_id</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>sql_get_file_id</secondary></indexterm>
+<para><computeroutput>char* sql_get_file_id = &quot;select id from files where filename=? and dirid=?; &quot;</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00017">17</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1a1ffdb057e3cdae8e7c5b832f735d97bd"/><section>
+    <title>sql_save_intval_in_changes</title>
+<indexterm><primary>sql_save_intval_in_changes</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>sql_save_intval_in_changes</secondary></indexterm>
+<para><computeroutput>char* sql_save_intval_in_changes = &quot;INSERT INTO changes (fileid,datechanged,intvalue) VALUES (?,?,?); &quot;</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00024">24</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1a9881226bc88bfd09be3a2c29af05419f"/><section>
+    <title>sql_save_newfile_hashedval</title>
+<indexterm><primary>sql_save_newfile_hashedval</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>sql_save_newfile_hashedval</secondary></indexterm>
+<para><computeroutput>char* sql_save_newfile_hashedval = &quot;insert into files (dirid, dateadded, filename, filesize, lastmodified, hashval) VALUES (?,?,?,?,?,?); &quot;</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00021">21</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1a970ba9c2ed3ddfaa6961348c39d128db"/><section>
+    <title>sql_save_newfile_nohashedval</title>
+<indexterm><primary>sql_save_newfile_nohashedval</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>sql_save_newfile_nohashedval</secondary></indexterm>
+<para><computeroutput>char* sql_save_newfile_nohashedval = &quot;insert into files (dirid, dateadded, filename, filesize, lastmodified) VALUES (?,?,?,?,?); &quot;</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00020">20</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1a022241ec805998c398b20c90d1a51256"/><section>
+    <title>sql_save_textval_in_changes</title>
+<indexterm><primary>sql_save_textval_in_changes</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>sql_save_textval_in_changes</secondary></indexterm>
+<para><computeroutput>char* sql_save_textval_in_changes = &quot;INSERT INTO changes (fileid,datechanged,textvalue) VALUES (?,?,?); &quot;</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00023">23</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1a48a30016c73a80ddd5de694dad070638"/><section>
+    <title>sql_set_inchanges_filesize</title>
+<indexterm><primary>sql_set_inchanges_filesize</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>sql_set_inchanges_filesize</secondary></indexterm>
+<para><computeroutput>char* sql_set_inchanges_filesize = &quot;UPDATE files SET filesizechanged=1 WHERE id=?; &quot;</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00027">27</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1abea92ed80d2eadb452e3517aa9e4f4b5"/><section>
+    <title>sql_set_inchanges_hashedval</title>
+<indexterm><primary>sql_set_inchanges_hashedval</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>sql_set_inchanges_hashedval</secondary></indexterm>
+<para><computeroutput>char* sql_set_inchanges_hashedval = &quot;UPDATE files SET hashedvaluechanged=1 WHERE id=?; &quot;</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00026">26</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+<anchor xml:id="__s_q_lite_helper_8cpp_1a86296081c599ddc648276a4e8a7699e7"/><section>
+    <title>sql_set_inchanges_lastmodified</title>
+<indexterm><primary>sql_set_inchanges_lastmodified</primary><secondary>SQLiteHelper.cpp</secondary></indexterm>
+<indexterm><primary>SQLiteHelper.cpp</primary><secondary>sql_set_inchanges_lastmodified</secondary></indexterm>
+<para><computeroutput>char* sql_set_inchanges_lastmodified = &quot;UPDATE files SET lastmodifiedchanged=1 WHERE id=?; &quot;</computeroutput></para><para>
+Definition at line <link linkend="__s_q_lite_helper_8cpp_source_1l00028">28</link> of file <link linkend="__s_q_lite_helper_8cpp_source">SQLiteHelper.cpp</link>.</para>
+</section>
+</section>
+</section>

@@ -1,0 +1,560 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="en-US">
+  <compounddef id="mysqlcontroller_8cpp" kind="file" language="C++">
+    <compoundname>mysqlcontroller.cpp</compoundname>
+    <includes local="yes">../headers/mysqlcontroller.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>../headers/mysqlcontroller.h</label>
+      </node>
+      <node id="1">
+        <label>src/mysqlcontroller.cpp</label>
+        <link refid="mysqlcontroller_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="mysqlcontroller_8cpp_1ad78224efe1d3fb39b67ca74ad9d9eec7" prot="public" static="no">
+        <name>STRING_SIZE</name>
+        <initializer>65535</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mysqlcontroller.cpp" line="3" column="9" bodyfile="src/mysqlcontroller.cpp" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="mysqlcontroller_8cpp_1a32ff108940138d3b5038cd11fbabf293" prot="public" static="no">
+        <name>SAVEDIRSTOREDPROCSTMT</name>
+        <initializer>&quot;call saveDirectoryDetails(?, ?, ?)&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mysqlcontroller.cpp" line="4" column="9" bodyfile="src/mysqlcontroller.cpp" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="mysqlcontroller_8cpp_1a0e90c82df49e2043941930efcab0fb89" prot="public" static="no">
+        <name>SAVEFILEINFOPROCSTMT</name>
+        <initializer>&quot;call saveFileHashVal(?,?,?,?,?)&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mysqlcontroller.cpp" line="5" column="9" bodyfile="src/mysqlcontroller.cpp" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="mysqlcontroller_8cpp_1af203df082d5c6dcaa0c88b07cf86466d" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* hostname</definition>
+        <argsstring></argsstring>
+        <name>hostname</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mysqlcontroller.cpp" line="8" column="6" bodyfile="src/mysqlcontroller.cpp" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mysqlcontroller_8cpp_1aa1d4dd60015ed611b5141e9472985b88" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* dbasename</definition>
+        <argsstring></argsstring>
+        <name>dbasename</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mysqlcontroller.cpp" line="9" column="6" bodyfile="src/mysqlcontroller.cpp" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mysqlcontroller_8cpp_1a9b20c006bd90a09e1465fb668700e81d" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* username</definition>
+        <argsstring></argsstring>
+        <name>username</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mysqlcontroller.cpp" line="10" column="6" bodyfile="src/mysqlcontroller.cpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mysqlcontroller_8cpp_1a59460a3ff2c12443d1022e5cc0fba85c" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* password</definition>
+        <argsstring></argsstring>
+        <name>password</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mysqlcontroller.cpp" line="11" column="6" bodyfile="src/mysqlcontroller.cpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c" prot="public" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* machinename</definition>
+        <argsstring></argsstring>
+        <name>machinename</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mysqlcontroller.cpp" line="12" column="6" bodyfile="src/mysqlcontroller.cpp" bodystart="12" bodyend="-1"/>
+        <referencedby refid="mysqlcontroller_8cpp_1a9c694d085ae2c0107f2731483ec5d64d" compoundref="mysqlcontroller_8cpp" startline="290" endline="328">saveFileInfo_async</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int port</definition>
+        <argsstring></argsstring>
+        <name>port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mysqlcontroller.cpp" line="13" column="5" bodyfile="src/mysqlcontroller.cpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mysqlcontroller_8cpp_1a89f234133d3efe315836311cbf21c64b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mysqlcontroller.cpp" line="14" column="5" bodyfile="src/mysqlcontroller.cpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mysqlcontroller_8cpp_1a689a469da10bca69c80830e8b2785e2c" prot="public" static="no" mutable="no">
+        <type>sql::Driver *</type>
+        <definition>sql::Driver* driver</definition>
+        <argsstring></argsstring>
+        <name>driver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mysqlcontroller.cpp" line="17" column="13" bodyfile="src/mysqlcontroller.cpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb" prot="public" static="no" mutable="no">
+        <type>sql::Connection *</type>
+        <definition>sql::Connection* con</definition>
+        <argsstring></argsstring>
+        <name>con</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mysqlcontroller.cpp" line="18" column="17" bodyfile="src/mysqlcontroller.cpp" bodystart="18" bodyend="-1"/>
+        <referencedby refid="mysqlcontroller_8cpp_1a9c694d085ae2c0107f2731483ec5d64d" compoundref="mysqlcontroller_8cpp" startline="290" endline="328">saveFileInfo_async</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="mysqlcontroller_8cpp_1ab6db88c378faf719a15498d0b3a37b31" prot="public" static="no" mutable="no">
+        <type>sql::Statement *</type>
+        <definition>sql::Statement* stmt</definition>
+        <argsstring></argsstring>
+        <name>stmt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mysqlcontroller.cpp" line="19" column="16" bodyfile="src/mysqlcontroller.cpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mysqlcontroller_8cpp_1aafbbfadf03a197580df9925af46a548e" prot="public" static="no" mutable="no">
+        <type>sql::ResultSet *</type>
+        <definition>sql::ResultSet* res</definition>
+        <argsstring></argsstring>
+        <name>res</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mysqlcontroller.cpp" line="20" column="16" bodyfile="src/mysqlcontroller.cpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62" prot="public" static="no" mutable="no">
+        <type>sql::PreparedStatement *</type>
+        <definition>sql::PreparedStatement* savedirprepStmt</definition>
+        <argsstring></argsstring>
+        <name>savedirprepStmt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mysqlcontroller.cpp" line="21" column="24" bodyfile="src/mysqlcontroller.cpp" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264" prot="public" static="no" mutable="no">
+        <type>sql::PreparedStatement *</type>
+        <definition>sql::PreparedStatement* savedfileprepStmt</definition>
+        <argsstring></argsstring>
+        <name>savedfileprepStmt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mysqlcontroller.cpp" line="22" column="24" bodyfile="src/mysqlcontroller.cpp" bodystart="22" bodyend="-1"/>
+        <referencedby refid="mysqlcontroller_8cpp_1a9c694d085ae2c0107f2731483ec5d64d" compoundref="mysqlcontroller_8cpp" startline="290" endline="328">saveFileInfo_async</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="mysqlcontroller_8cpp_1a9c694d085ae2c0107f2731483ec5d64d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void saveFileInfo_async</definition>
+        <argsstring>(const string &amp;dirname, const string &amp;fname, const string &amp;hashval)</argsstring>
+        <name>saveFileInfo_async</name>
+        <param>
+          <type>const string &amp;</type>
+          <declname>dirname</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>fname</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>hashval</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dirname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hashval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mysqlcontroller.cpp" line="290" column="6" bodyfile="src/mysqlcontroller.cpp" bodystart="290" bodyend="328"/>
+        <references refid="mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb" compoundref="mysqlcontroller_8cpp" startline="18">con</references>
+        <references refid="mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c" compoundref="mysqlcontroller_8cpp" startline="12">machinename</references>
+        <references refid="mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264" compoundref="mysqlcontroller_8cpp" startline="22">savedfileprepStmt</references>
+        <references refid="mysqlcontroller_8cpp_1a0e90c82df49e2043941930efcab0fb89" compoundref="mysqlcontroller_8cpp" startline="5">SAVEFILEINFOPROCSTMT</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;../headers/mysqlcontroller.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="mysqlcontroller_8cpp_1ad78224efe1d3fb39b67ca74ad9d9eec7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STRING_SIZE<sp/>65535</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="mysqlcontroller_8cpp_1a32ff108940138d3b5038cd11fbabf293" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAVEDIRSTOREDPROCSTMT<sp/>&quot;call<sp/>saveDirectoryDetails(?,<sp/>?,<sp/>?)&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="mysqlcontroller_8cpp_1a0e90c82df49e2043941930efcab0fb89" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAVEFILEINFOPROCSTMT<sp/>&quot;call<sp/>saveFileHashVal(?,?,?,?,?)&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//MYSQL<sp/>*connection,<sp/>mysql;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="mysqlcontroller_8cpp_1af203df082d5c6dcaa0c88b07cf86466d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="mysqlcontroller_8cpp_1af203df082d5c6dcaa0c88b07cf86466d" kindref="member">hostname</ref>;</highlight></codeline>
+<codeline lineno="9" refid="mysqlcontroller_8cpp_1aa1d4dd60015ed611b5141e9472985b88" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="mysqlcontroller_8cpp_1aa1d4dd60015ed611b5141e9472985b88" kindref="member">dbasename</ref>;</highlight></codeline>
+<codeline lineno="10" refid="mysqlcontroller_8cpp_1a9b20c006bd90a09e1465fb668700e81d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="mysqlcontroller_8cpp_1a9b20c006bd90a09e1465fb668700e81d" kindref="member">username</ref>;</highlight></codeline>
+<codeline lineno="11" refid="mysqlcontroller_8cpp_1a59460a3ff2c12443d1022e5cc0fba85c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="mysqlcontroller_8cpp_1a59460a3ff2c12443d1022e5cc0fba85c" kindref="member">password</ref>;</highlight></codeline>
+<codeline lineno="12" refid="mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c" kindref="member">machinename</ref>;</highlight></codeline>
+<codeline lineno="13" refid="mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb" kindref="member">port</ref>;</highlight></codeline>
+<codeline lineno="14" refid="mysqlcontroller_8cpp_1a89f234133d3efe315836311cbf21c64b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="mysqlcontroller_8cpp_1a89f234133d3efe315836311cbf21c64b" kindref="member">state</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//MYSQL_STMT<sp/>*storedProcStmt<sp/>=<sp/>NULL;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="mysqlcontroller_8cpp_1a689a469da10bca69c80830e8b2785e2c" refkind="member"><highlight class="normal">sql::Driver<sp/>*<ref refid="mysqlcontroller_8cpp_1a689a469da10bca69c80830e8b2785e2c" kindref="member">driver</ref>;</highlight></codeline>
+<codeline lineno="18" refid="mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb" refkind="member"><highlight class="normal">sql::Connection<sp/>*<ref refid="mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb" kindref="member">con</ref>;</highlight></codeline>
+<codeline lineno="19" refid="mysqlcontroller_8cpp_1ab6db88c378faf719a15498d0b3a37b31" refkind="member"><highlight class="normal">sql::Statement<sp/>*<ref refid="mysqlcontroller_8cpp_1ab6db88c378faf719a15498d0b3a37b31" kindref="member">stmt</ref>;</highlight></codeline>
+<codeline lineno="20" refid="mysqlcontroller_8cpp_1aafbbfadf03a197580df9925af46a548e" refkind="member"><highlight class="normal">sql::ResultSet<sp/>*<ref refid="mysqlcontroller_8cpp_1aafbbfadf03a197580df9925af46a548e" kindref="member">res</ref>;</highlight></codeline>
+<codeline lineno="21" refid="mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62" refkind="member"><highlight class="normal">sql::PreparedStatement<sp/>*<ref refid="mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62" kindref="member">savedirprepStmt</ref>;</highlight></codeline>
+<codeline lineno="22" refid="mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264" refkind="member"><highlight class="normal">sql::PreparedStatement<sp/>*<ref refid="mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264" kindref="member">savedfileprepStmt</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">mysqlcontroller::mysqlcontroller()<sp/>{}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">mysqlcontroller::mysqlcontroller(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>host,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="fileintegritychecker_8cpp_1ad908160ba11a9c262e5600afd2e058a5" kindref="member">dbase</ref>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="fileintegritychecker_8cpp_1adc52ecb713839400e57e6a5d17e9728b" kindref="member">uname</ref>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="fileintegritychecker_8cpp_1a4be832ac49cb1384b79b9423028f1d54" kindref="member">pwd</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="fileintegritychecker_8cpp_1a59ff512514e7fffbc440a95f0cfa82bf" kindref="member">portno</ref>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="fileintegritychecker_8cpp_1a8721eff2350ed6076b3b331690c9eb67" kindref="member">mname</ref>)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1af203df082d5c6dcaa0c88b07cf86466d" kindref="member">hostname</ref><sp/>=<sp/>host;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1aa1d4dd60015ed611b5141e9472985b88" kindref="member">dbasename</ref><sp/>=<sp/><ref refid="fileintegritychecker_8cpp_1ad908160ba11a9c262e5600afd2e058a5" kindref="member">dbase</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1a9b20c006bd90a09e1465fb668700e81d" kindref="member">username</ref>=<sp/><ref refid="fileintegritychecker_8cpp_1adc52ecb713839400e57e6a5d17e9728b" kindref="member">uname</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1a59460a3ff2c12443d1022e5cc0fba85c" kindref="member">password</ref><sp/>=<sp/><ref refid="fileintegritychecker_8cpp_1a4be832ac49cb1384b79b9423028f1d54" kindref="member">pwd</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb" kindref="member">port</ref><sp/>=<sp/><ref refid="fileintegritychecker_8cpp_1a59ff512514e7fffbc440a95f0cfa82bf" kindref="member">portno</ref>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c" kindref="member">machinename</ref><sp/>=<sp/><ref refid="fileintegritychecker_8cpp_1a8721eff2350ed6076b3b331690c9eb67" kindref="member">mname</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">mysqlcontroller::~mysqlcontroller()<sp/>{}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mysqlcontroller::setHOSTNAME(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>host)<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1af203df082d5c6dcaa0c88b07cf86466d" kindref="member">hostname</ref><sp/>=<sp/>host;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mysqlcontroller::setDBASENAME(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="fileintegritychecker_8cpp_1ad908160ba11a9c262e5600afd2e058a5" kindref="member">dbase</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1aa1d4dd60015ed611b5141e9472985b88" kindref="member">dbasename</ref><sp/>=<sp/><ref refid="fileintegritychecker_8cpp_1ad908160ba11a9c262e5600afd2e058a5" kindref="member">dbase</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mysqlcontroller::setUSERNAME(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="fileintegritychecker_8cpp_1adc52ecb713839400e57e6a5d17e9728b" kindref="member">uname</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1a9b20c006bd90a09e1465fb668700e81d" kindref="member">username</ref><sp/>=<sp/><ref refid="fileintegritychecker_8cpp_1adc52ecb713839400e57e6a5d17e9728b" kindref="member">uname</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mysqlcontroller::setPASSWORD(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="fileintegritychecker_8cpp_1a4be832ac49cb1384b79b9423028f1d54" kindref="member">pwd</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1a59460a3ff2c12443d1022e5cc0fba85c" kindref="member">password</ref><sp/>=<sp/><ref refid="fileintegritychecker_8cpp_1a4be832ac49cb1384b79b9423028f1d54" kindref="member">pwd</ref>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mysqlcontroller::setPORT(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="fileintegritychecker_8cpp_1a59ff512514e7fffbc440a95f0cfa82bf" kindref="member">portno</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb" kindref="member">port</ref><sp/>=<sp/><ref refid="fileintegritychecker_8cpp_1a59ff512514e7fffbc440a95f0cfa82bf" kindref="member">portno</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mysqlcontroller::setMACHINENAME(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="fileintegritychecker_8cpp_1a8721eff2350ed6076b3b331690c9eb67" kindref="member">mname</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c" kindref="member">machinename</ref><sp/>=<sp/><ref refid="fileintegritychecker_8cpp_1a8721eff2350ed6076b3b331690c9eb67" kindref="member">mname</ref>;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>mysqlcontroller::getHOSTNAME()<sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="mysqlcontroller_8cpp_1af203df082d5c6dcaa0c88b07cf86466d" kindref="member">hostname</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>mysqlcontroller::getDBASENAME()<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="mysqlcontroller_8cpp_1aa1d4dd60015ed611b5141e9472985b88" kindref="member">dbasename</ref>;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>mysqlcontroller::getUSERNAME()<sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="mysqlcontroller_8cpp_1a9b20c006bd90a09e1465fb668700e81d" kindref="member">username</ref>;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>mysqlcontroller::getPASSWORD()<sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="mysqlcontroller_8cpp_1a59460a3ff2c12443d1022e5cc0fba85c" kindref="member">password</ref>;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mysqlcontroller::getPORT()<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb" kindref="member">port</ref>;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>mysqlcontroller::getMACHINENAME()<sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c" kindref="member">machinename</ref>;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mysqlcontroller::initPreparedStatements()<sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62" kindref="member">savedirprepStmt</ref><sp/>=<sp/><ref refid="mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb" kindref="member">con</ref>-&gt;prepareStatement(<ref refid="mysqlcontroller_8cpp_1a32ff108940138d3b5038cd11fbabf293" kindref="member">SAVEDIRSTOREDPROCSTMT</ref>);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264" kindref="member">savedfileprepStmt</ref><sp/>=<sp/><ref refid="mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb" kindref="member">con</ref>-&gt;prepareStatement(<ref refid="mysqlcontroller_8cpp_1a0e90c82df49e2043941930efcab0fb89" kindref="member">SAVEFILEINFOPROCSTMT</ref>);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mysqlcontroller::initdb()<sp/>{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Initializing<sp/>connection<sp/>to<sp/>the<sp/>database.&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>connstr<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;tcp://&quot;</highlight><highlight class="normal"><sp/>+<sp/>string(<ref refid="mysqlcontroller_8cpp_1af203df082d5c6dcaa0c88b07cf86466d" kindref="member">hostname</ref>)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;:&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb" kindref="member">port</ref><sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>connstr<sp/>+=<sp/></highlight><highlight class="stringliteral">&quot;3306&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>connstr<sp/>+=<sp/>to_string(<ref refid="mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb" kindref="member">port</ref>);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Create<sp/>a<sp/>connection<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1a689a469da10bca69c80830e8b2785e2c" kindref="member">driver</ref><sp/>=<sp/>get_driver_instance();</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb" kindref="member">con</ref><sp/>=<sp/><ref refid="mysqlcontroller_8cpp_1a689a469da10bca69c80830e8b2785e2c" kindref="member">driver</ref>-&gt;connect(connstr,<sp/><ref refid="mysqlcontroller_8cpp_1a9b20c006bd90a09e1465fb668700e81d" kindref="member">username</ref>,<sp/><ref refid="mysqlcontroller_8cpp_1a59460a3ff2c12443d1022e5cc0fba85c" kindref="member">password</ref>);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb" kindref="member">con</ref>-&gt;setAutoCommit(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Connect<sp/>to<sp/>the<sp/>MySQL<sp/>test<sp/>database<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb" kindref="member">con</ref>-&gt;setSchema(<ref refid="mysqlcontroller_8cpp_1aa1d4dd60015ed611b5141e9472985b88" kindref="member">dbasename</ref>);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Successfully<sp/>connected<sp/>to<sp/>database.&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(sql::SQLException<sp/>&amp;e)<sp/>{</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;#<sp/>ERR:<sp/>SQLException<sp/>in<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>__FILE__;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>__FUNCTION__<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)<sp/>on<sp/>line<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>__LINE__<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;#<sp/>ERR:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what();</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>(MySQL<sp/>error<sp/>code:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.getErrorCode();</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>SQLState:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.getSQLState()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>)&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>mysqlcontroller::filterApostraphe(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>dirname)<sp/>{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>retVal<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>char_array;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;string&gt;<sp/>result;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>std::stringstream<sp/>s_stream(dirname);<sp/></highlight><highlight class="comment">//create<sp/>string<sp/>stream<sp/>from<sp/>the<sp/>string</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(s_stream.good())<sp/>{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>substr;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getline(s_stream,<sp/>substr,<sp/></highlight><highlight class="charliteral">&apos;\&apos;&apos;</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//get<sp/>first<sp/>string<sp/>delimited<sp/>by<sp/>comma</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.push_back(substr);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(result.size()<sp/>&gt;<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>retVal+=result.at(0);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1;<sp/>i&lt;result.size();<sp/>i++)<sp/>{<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//print<sp/>all<sp/>splitted<sp/>strings</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>retVal+=</highlight><highlight class="stringliteral">&quot;&apos;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>retVal+=</highlight><highlight class="stringliteral">&quot;&apos;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>retVal+=result.at(i);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>retVal<sp/>=<sp/>dirname;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n<sp/>=<sp/>retVal.length();</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>char_array<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[n<sp/>+<sp/>1];</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>strcpy(char_array,<sp/>retVal.c_str());</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>char_array;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mysqlcontroller::saveDirectoryName(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>dirname)<sp/>{</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>dirnameverified<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">[dirname.length()<sp/>+<sp/>1];<sp/></highlight><highlight class="comment">//<sp/>filterApostraphe(dirname);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>strcpy(dirnameverified,dirname.c_str());</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>initPreparedStatements();</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>currenttime<sp/>=<sp/>Helper::getCurrentTime();</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb" kindref="member">con</ref>-&gt;setAutoCommit(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62" kindref="member">savedirprepStmt</ref>-&gt;setString(1,<sp/>dirnameverified);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62" kindref="member">savedirprepStmt</ref>-&gt;setString(2,<sp/>currenttime);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62" kindref="member">savedirprepStmt</ref>-&gt;setString(3,<sp/><ref refid="mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c" kindref="member">machinename</ref>);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62" kindref="member">savedirprepStmt</ref>-&gt;executeUpdate();</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb" kindref="member">con</ref>-&gt;commit();</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb" kindref="member">con</ref>-&gt;setAutoCommit(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(sql::SQLException<sp/>&amp;e)<sp/>{</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;#<sp/>ERR:<sp/>SQLException<sp/>in<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>__FILE__;</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>__FUNCTION__<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)<sp/>on<sp/>line<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>__LINE__<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;#<sp/>ERR:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what();</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>(MySQL<sp/>error<sp/>code:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.getErrorCode();</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>SQLState:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.getSQLState()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>)&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/>closePreparedStatements();</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mysqlcontroller::saveDirectoryName_async(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;dirname)<sp/>{</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>dname<sp/>=<sp/>dirname;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/>saveDirectoryName(dname);</highlight></codeline>
+<codeline lineno="281"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290" refid="mysqlcontroller_8cpp_1a9c694d085ae2c0107f2731483ec5d64d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mysqlcontroller_8cpp_1a9c694d085ae2c0107f2731483ec5d64d" kindref="member">saveFileInfo_async</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;dirname,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;fname,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;hashval)<sp/>{</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>dname<sp/>=<sp/>dirname;</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>filname<sp/>=<sp/>fname;</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>hval<sp/>=<sp/>hashval;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>currenttime<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>std::time_t<sp/>t<sp/>=<sp/>std::time(0);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>get<sp/>time<sp/>now</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/>std::tm*<sp/>now<sp/>=<sp/>std::localtime(&amp;t);</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>date_string[100];</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>time_string[100];</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>strftime(date_string,<sp/>50,<sp/></highlight><highlight class="stringliteral">&quot;%B<sp/>%d,<sp/>%Y<sp/>&quot;</highlight><highlight class="normal">,<sp/>now);</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/>strftime(time_string,<sp/>50,<sp/></highlight><highlight class="stringliteral">&quot;%T&quot;</highlight><highlight class="normal">,<sp/>now);</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/>currenttime<sp/>+=<sp/>date_string;</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>currenttime<sp/>+=<sp/>time_string;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264" kindref="member">savedfileprepStmt</ref><sp/>=<sp/><ref refid="mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb" kindref="member">con</ref>-&gt;prepareStatement(<ref refid="mysqlcontroller_8cpp_1a0e90c82df49e2043941930efcab0fb89" kindref="member">SAVEFILEINFOPROCSTMT</ref>);</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb" kindref="member">con</ref>-&gt;setAutoCommit(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264" kindref="member">savedfileprepStmt</ref>-&gt;setString(1,<sp/>dirname);</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264" kindref="member">savedfileprepStmt</ref>-&gt;setString(2,<sp/>currenttime);</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264" kindref="member">savedfileprepStmt</ref>-&gt;setString(3,<sp/><ref refid="mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c" kindref="member">machinename</ref>);</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264" kindref="member">savedfileprepStmt</ref>-&gt;setString(4,<sp/>fname);</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264" kindref="member">savedfileprepStmt</ref>-&gt;setString(5,<sp/>hashval);</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264" kindref="member">savedfileprepStmt</ref>-&gt;executeUpdate();</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb" kindref="member">con</ref>-&gt;commit();</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb" kindref="member">con</ref>-&gt;setAutoCommit(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(sql::SQLException<sp/>&amp;e)<sp/>{</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;#<sp/>ERR:<sp/>SQLException<sp/>in<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>__FILE__;</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>__FUNCTION__<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)<sp/>on<sp/>line<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>__LINE__<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;#<sp/>ERR:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what();</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>(MySQL<sp/>error<sp/>code:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.getErrorCode();</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>SQLState:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.getSQLState()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>)&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264" kindref="member">savedfileprepStmt</ref>;</highlight></codeline>
+<codeline lineno="328"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mysqlcontroller::saveFileInfo(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>dirname,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>fname,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>hashval)<sp/>{</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>currenttime<sp/>=<sp/>Helper::getCurrentTime();</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/>initPreparedStatements();</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb" kindref="member">con</ref>-&gt;setAutoCommit(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264" kindref="member">savedfileprepStmt</ref>-&gt;setString(1,<sp/>dirname);</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264" kindref="member">savedfileprepStmt</ref>-&gt;setString(2,<sp/>currenttime);</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264" kindref="member">savedfileprepStmt</ref>-&gt;setString(3,<sp/><ref refid="mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c" kindref="member">machinename</ref>);</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264" kindref="member">savedfileprepStmt</ref>-&gt;setString(4,<sp/>fname);</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264" kindref="member">savedfileprepStmt</ref>-&gt;setString(5,<sp/>hashval);</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264" kindref="member">savedfileprepStmt</ref>-&gt;executeUpdate();</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb" kindref="member">con</ref>-&gt;commit();</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb" kindref="member">con</ref>-&gt;setAutoCommit(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(sql::SQLException<sp/>&amp;e)<sp/>{</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;#<sp/>ERR:<sp/>SQLException<sp/>in<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>__FILE__;</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>__FUNCTION__<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)<sp/>on<sp/>line<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>__LINE__<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;#<sp/>ERR:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what();</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>(MySQL<sp/>error<sp/>code:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.getErrorCode();</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>SQLState:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.getSQLState()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>)&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/>closePreparedStatements();</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight></codeline>
+<codeline lineno="363"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mysqlcontroller::closePreparedStatements()<sp/>{</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62" kindref="member">savedirprepStmt</ref>;</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264" kindref="member">savedfileprepStmt</ref>;</highlight></codeline>
+<codeline lineno="373"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mysqlcontroller::closedb()<sp/>{</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="mysqlcontroller_8cpp_1aafbbfadf03a197580df9925af46a548e" kindref="member">res</ref>;</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="mysqlcontroller_8cpp_1ab6db88c378faf719a15498d0b3a37b31" kindref="member">stmt</ref>;</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb" kindref="member">con</ref>;</highlight></codeline>
+<codeline lineno="383"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/mysqlcontroller.cpp"/>
+  </compounddef>
+</doxygen>

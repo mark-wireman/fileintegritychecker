@@ -1,0 +1,85 @@
+.TH "Helper" 3 "Sat Dec 10 2022" "fileintegritychecker" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Helper
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <helper\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAttributeToCheck\fP { \fBHashedVal\fP = 1, \fBFileSize\fP = 2, \fBDateModified\fP = 3 }"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBcheckIfHashvalExistInFiles\fP (const int fileId, const char *hval, sqlite3 *db)"
+.br
+.ti -1c
+.RI "static int \fBcheckIfHashvalExistInChanges\fP (const int fileId, const char *hval, sqlite3 *db)"
+.br
+.ti -1c
+.RI "static int \fBcheckIfFileSizeExistInChanges\fP (const int fileId, const int filesize, sqlite3 *db)"
+.br
+.ti -1c
+.RI "static int \fBcheckIfFileSizeIsVerifiedOrModified\fP (const int fileId, sqlite3 *db)"
+.br
+.ti -1c
+.RI "static int \fBcheckIfDateModifiedExistInFiles\fP (const int fileId, const char *datemodified, sqlite3 *db)"
+.br
+.ti -1c
+.RI "static int \fBcheckIfDateModifiedExistInChanges\fP (const int fileId, const char *datemodified, sqlite3 *db)"
+.br
+.ti -1c
+.RI "static int \fBcheckIfAttributeIsVerifiedOrModified\fP (const int fileId, const \fBAttributeToCheck\fP attribute, sqlite3 *db)"
+.br
+.ti -1c
+.RI "static char * \fBgetCurrentTime\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB14\fP of file \fBhelper\&.h\fP\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBHelper::AttributeToCheck\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIHashedVal \fP\fP
+.TP
+\fB\fIFileSize \fP\fP
+.TP
+\fB\fIDateModified \fP\fP
+.PP
+Definition at line \fB16\fP of file \fBhelper\&.h\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static int Helper::checkIfAttributeIsVerifiedOrModified (const int fileId, const \fBAttributeToCheck\fP attribute, sqlite3 * db)\fC [static]\fP"
+
+.SS "static int Helper::checkIfDateModifiedExistInChanges (const int fileId, const char * datemodified, sqlite3 * db)\fC [static]\fP"
+
+.SS "static int Helper::checkIfDateModifiedExistInFiles (const int fileId, const char * datemodified, sqlite3 * db)\fC [static]\fP"
+
+.SS "static int Helper::checkIfFileSizeExistInChanges (const int fileId, const int filesize, sqlite3 * db)\fC [static]\fP"
+
+.SS "static int Helper::checkIfFileSizeIsVerifiedOrModified (const int fileId, sqlite3 * db)\fC [static]\fP"
+
+.SS "static int Helper::checkIfHashvalExistInChanges (const int fileId, const char * hval, sqlite3 * db)\fC [static]\fP"
+
+.SS "static int Helper::checkIfHashvalExistInFiles (const int fileId, const char * hval, sqlite3 * db)\fC [static]\fP"
+
+.SS "static char * Helper::getCurrentTime ()\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for fileintegritychecker from the source code\&.

@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_s_q_lite_helper" xml:lang="en-US">
+<title>SQLiteHelper Class Reference</title>
+<indexterm><primary>SQLiteHelper</primary></indexterm>
+<para>
+<computeroutput>#include &lt;SQLiteHelper.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> { <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f">HashedVal</link> = 1
+, <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02">FileSize</link> = 2
+, <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7">DateModified</link> = 3
+, <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad">NONE</link> = 4
+ }</para>
+</listitem>
+            <listitem><para>enum <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> { <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809">Files</link> = 1
+, <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17">Changes</link> = 2
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1ab5c6b4d91ba851773d08383743cbe503">checkIfAttributeIsInChanges</link> (const int file_id, const <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attribute, sqlite3 *db)</para>
+</listitem>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a277ba3424168330b7f5b354e477f5de2">checkIfAttributeHasChanged</link> (const int file_id, const <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attribute, const <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, sqlite3 *db, const char *char_attr=NULL, const int int_attr=0)</para>
+</listitem>
+            <listitem><para>static char * <link linkend="_class_s_q_lite_helper_1adbeb0bc39c03a429690faf485a17c2d1">getCurrentTime</link> ()</para>
+</listitem>
+            <listitem><para>static void <link linkend="_class_s_q_lite_helper_1a174400575d3038248769856efc9546a8">setDirectoryName</link> (char *dir_name)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_class_s_q_lite_helper_1a0815f283b738dea61f78f0e0dab958ea">setFileName</link> (char *file_name)</para>
+</listitem>
+            <listitem><para>static void <link linkend="_class_s_q_lite_helper_1a8fc3a476fa41e7601138ed1a87431ab9">setMachineName</link> (char *machine_name)</para>
+</listitem>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1adcab3649b5f610ddab96736dc409d653">getDirectoryId</link> (sqlite3 *db)</para>
+</listitem>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a42d042748147b7ebe97214069c62ace6">getDirectoryId</link> (sqlite3 *db, char *dir_name, char *machine_name)</para>
+</listitem>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a4e69ffbd22c6d9c2df1decfd484e5a83">getFileId</link> (sqlite3 *db)</para>
+</listitem>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1abb6a58d490dda33874679f9b6f7a2025">getFileId</link> (sqlite3 *db, char *file_name, int dir_id)</para>
+</listitem>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1ac43f81918e037ab5b07f773794d8f9af">saveFileInfo</link> (sqlite3 *db, const int dir_id, const char *file_name, const int file_size=0, const char *date_modified=NULL, const char *hashed_val=NULL, const bool isNew=true, <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attr_to_update=<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad">AttributeToCheck::NONE</link>)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Enumeration Documentation</title>
+<anchor xml:id="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643"/><section>
+    <title>AttributeToCheck</title>
+<indexterm><primary>AttributeToCheck</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>AttributeToCheck</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">SQLiteHelper::AttributeToCheck</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>HashedVal</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>HashedVal</secondary></indexterm>
+<anchor xml:id="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f"/>HashedVal</entry><entry></entry></row><row><entry><indexterm><primary>FileSize</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>FileSize</secondary></indexterm>
+<anchor xml:id="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02"/>FileSize</entry><entry></entry></row><row><entry><indexterm><primary>DateModified</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>DateModified</secondary></indexterm>
+<anchor xml:id="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7"/>DateModified</entry><entry></entry></row><row><entry><indexterm><primary>NONE</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>NONE</secondary></indexterm>
+<anchor xml:id="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad"/>NONE</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+<anchor xml:id="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec"/><section>
+    <title>TableToCheck</title>
+<indexterm><primary>TableToCheck</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>TableToCheck</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">SQLiteHelper::TableToCheck</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>Files</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>Files</secondary></indexterm>
+<anchor xml:id="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809"/>Files</entry><entry></entry></row><row><entry><indexterm><primary>Changes</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>Changes</secondary></indexterm>
+<anchor xml:id="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17"/>Changes</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_s_q_lite_helper_1a277ba3424168330b7f5b354e477f5de2"/><section>
+    <title>checkIfAttributeHasChanged()</title>
+<indexterm><primary>checkIfAttributeHasChanged</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>checkIfAttributeHasChanged</secondary></indexterm>
+<para><computeroutput>static int SQLiteHelper::checkIfAttributeHasChanged (const int file_id, const <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attribute, const <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, sqlite3 * db, const char * char_attr = <computeroutput>NULL</computeroutput>
+, const int int_attr = <computeroutput>0</computeroutput>
+)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_s_q_lite_helper_1ab5c6b4d91ba851773d08383743cbe503"/><section>
+    <title>checkIfAttributeIsInChanges()</title>
+<indexterm><primary>checkIfAttributeIsInChanges</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>checkIfAttributeIsInChanges</secondary></indexterm>
+<para><computeroutput>static int SQLiteHelper::checkIfAttributeIsInChanges (const int file_id, const <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attribute, sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_s_q_lite_helper_1adbeb0bc39c03a429690faf485a17c2d1"/><section>
+    <title>getCurrentTime()</title>
+<indexterm><primary>getCurrentTime</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>getCurrentTime</secondary></indexterm>
+<para><computeroutput>static char * SQLiteHelper::getCurrentTime ( )<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_s_q_lite_helper_1adcab3649b5f610ddab96736dc409d653"/><section>
+    <title>getDirectoryId()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>getDirectoryId</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>getDirectoryId</secondary></indexterm>
+<para><computeroutput>static int SQLiteHelper::getDirectoryId (sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_s_q_lite_helper_1a42d042748147b7ebe97214069c62ace6"/><section>
+    <title>getDirectoryId()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>getDirectoryId</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>getDirectoryId</secondary></indexterm>
+<para><computeroutput>static int SQLiteHelper::getDirectoryId (sqlite3 * db, char * dir_name, char * machine_name)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_s_q_lite_helper_1a4e69ffbd22c6d9c2df1decfd484e5a83"/><section>
+    <title>getFileId()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>getFileId</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>getFileId</secondary></indexterm>
+<para><computeroutput>static int SQLiteHelper::getFileId (sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_s_q_lite_helper_1abb6a58d490dda33874679f9b6f7a2025"/><section>
+    <title>getFileId()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>getFileId</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>getFileId</secondary></indexterm>
+<para><computeroutput>static int SQLiteHelper::getFileId (sqlite3 * db, char * file_name, int dir_id)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_s_q_lite_helper_1ac43f81918e037ab5b07f773794d8f9af"/><section>
+    <title>saveFileInfo()</title>
+<indexterm><primary>saveFileInfo</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>saveFileInfo</secondary></indexterm>
+<para><computeroutput>static int SQLiteHelper::saveFileInfo (sqlite3 * db, const int dir_id, const char * file_name, const int file_size = <computeroutput>0</computeroutput>
+, const char * date_modified = <computeroutput>NULL</computeroutput>
+, const char * hashed_val = <computeroutput>NULL</computeroutput>
+, const bool isNew = <computeroutput>true</computeroutput>
+, <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attr_to_update = <computeroutput><link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad">AttributeToCheck::NONE</link></computeroutput>
+)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_s_q_lite_helper_1a174400575d3038248769856efc9546a8"/><section>
+    <title>setDirectoryName()</title>
+<indexterm><primary>setDirectoryName</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>setDirectoryName</secondary></indexterm>
+<para><computeroutput>static void SQLiteHelper::setDirectoryName (char * dir_name)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_s_q_lite_helper_1a0815f283b738dea61f78f0e0dab958ea"/><section>
+    <title>setFileName()</title>
+<indexterm><primary>setFileName</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>setFileName</secondary></indexterm>
+<para><computeroutput>static void SQLiteHelper::setFileName (char * file_name)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_s_q_lite_helper_1a8fc3a476fa41e7601138ed1a87431ab9"/><section>
+    <title>setMachineName()</title>
+<indexterm><primary>setMachineName</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>setMachineName</secondary></indexterm>
+<para><computeroutput>static void SQLiteHelper::setMachineName (char * machine_name)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+C:/Users/mark_/source/repos/fileintegritychecker/headers/<link linkend="__s_q_lite_helper_8h">SQLiteHelper.h</link></section>
+</section>

@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="en-US">
+  <compounddef id="unionmessage_block" kind="union" language="C++" prot="public">
+    <compoundname>messageBlock</compoundname>
+    <includes refid="_s_h_a256_c_p_p_8h" local="no">SHA256CPP.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="unionmessage_block_1a59107a6d1bbc97a38c8eeafc29474a96" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t messageBlock::e[64]</definition>
+        <argsstring>[64]</argsstring>
+        <name>e</name>
+        <qualifiedname>messageBlock::e</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="28" column="13" bodyfile="headers/SHA256CPP.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionmessage_block_1a3a07b88e31bce5184238c481aa255922" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t messageBlock::t[16]</definition>
+        <argsstring>[16]</argsstring>
+        <name>t</name>
+        <qualifiedname>messageBlock::t</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="29" column="14" bodyfile="headers/SHA256CPP.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionmessage_block_1a650ca0815e457fcda932238399372548" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t messageBlock::s[8]</definition>
+        <argsstring>[8]</argsstring>
+        <name>s</name>
+        <qualifiedname>messageBlock::s</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="30" column="14" bodyfile="headers/SHA256CPP.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="headers/SHA256CPP.h" line="26" column="1" bodyfile="headers/SHA256CPP.h" bodystart="27" bodyend="31"/>
+    <listofallmembers>
+      <member refid="unionmessage_block_1a59107a6d1bbc97a38c8eeafc29474a96" prot="public" virt="non-virtual"><scope>messageBlock</scope><name>e</name></member>
+      <member refid="unionmessage_block_1a650ca0815e457fcda932238399372548" prot="public" virt="non-virtual"><scope>messageBlock</scope><name>s</name></member>
+      <member refid="unionmessage_block_1a3a07b88e31bce5184238c481aa255922" prot="public" virt="non-virtual"><scope>messageBlock</scope><name>t</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

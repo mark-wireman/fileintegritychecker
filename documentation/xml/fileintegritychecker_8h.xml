@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="en-US">
+  <compounddef id="fileintegritychecker_8h" kind="file" language="C++">
+    <compoundname>fileintegritychecker.h</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">dirent.h</includes>
+    <includes local="no">sys/stat.h</includes>
+    <includes local="no">sys/types.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">time.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">sys/sysmacros.h</includes>
+    <includes local="yes">SHA256.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>headers/fileintegritychecker.h</label>
+        <link refid="fileintegritychecker_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>SHA256.h</label>
+      </node>
+      <node id="3">
+        <label>dirent.h</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+      <node id="8">
+        <label>stdlib.h</label>
+      </node>
+      <node id="4">
+        <label>sys/stat.h</label>
+      </node>
+      <node id="9">
+        <label>sys/sysmacros.h</label>
+      </node>
+      <node id="5">
+        <label>sys/types.h</label>
+      </node>
+      <node id="7">
+        <label>time.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="fileintegritychecker_8h_1a0718941808eb9a49943667c7e06b2ac5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int isDir</definition>
+        <argsstring>(char *filename)</argsstring>
+        <name>isDir</name>
+        <param>
+          <type>char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/fileintegritychecker.h" line="11" column="5" declfile="headers/fileintegritychecker.h" declline="11" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="fileintegritychecker_8h_1a0ddf1224851353fc92bfbff6f499fa97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/fileintegritychecker.h" line="12" column="5" declfile="headers/fileintegritychecker.h" declline="12" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="fileintegritychecker_8h_1a23ad3bf2468ed919d8d0ff4b110cda29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hashfiles</definition>
+        <argsstring>(char *startdirectory)</argsstring>
+        <name>hashfiles</name>
+        <param>
+          <type>char *</type>
+          <declname>startdirectory</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/fileintegritychecker.h" line="13" column="6" declfile="headers/fileintegritychecker.h" declline="13" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="fileintegritychecker_8h_1a5f8127c6203682d4e5442274909d19ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int checkifrootorparent</definition>
+        <argsstring>(char *dirname)</argsstring>
+        <name>checkifrootorparent</name>
+        <param>
+          <type>char *</type>
+          <declname>dirname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/fileintegritychecker.h" line="14" column="5" declfile="headers/fileintegritychecker.h" declline="14" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="fileintegritychecker_8h_1ab528fd1e803c03f8dcfd7ccdf7d431bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int checkifrootdir</definition>
+        <argsstring>(char *dirname)</argsstring>
+        <name>checkifrootdir</name>
+        <param>
+          <type>char *</type>
+          <declname>dirname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/fileintegritychecker.h" line="15" column="5" declfile="headers/fileintegritychecker.h" declline="15" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="fileintegritychecker_8h_1a320a4dd3911b9d8178df4b1cfca30175" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int checkifparentdir</definition>
+        <argsstring>(char *dirname)</argsstring>
+        <name>checkifparentdir</name>
+        <param>
+          <type>char *</type>
+          <declname>dirname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/fileintegritychecker.h" line="16" column="5" declfile="headers/fileintegritychecker.h" declline="16" declcolumn="5"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dirent.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/stat.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/sysmacros.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SHA256.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="fileintegritychecker_8h_1a0718941808eb9a49943667c7e06b2ac5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="fileintegritychecker_8h_1a0718941808eb9a49943667c7e06b2ac5" kindref="member">isDir</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>filename);</highlight></codeline>
+<codeline lineno="12" refid="fileintegritychecker_8h_1a0ddf1224851353fc92bfbff6f499fa97" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="fileintegritychecker_8h_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>argv[]<sp/>);</highlight></codeline>
+<codeline lineno="13" refid="fileintegritychecker_8h_1a23ad3bf2468ed919d8d0ff4b110cda29" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fileintegritychecker_8h_1a23ad3bf2468ed919d8d0ff4b110cda29" kindref="member">hashfiles</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>startdirectory);</highlight></codeline>
+<codeline lineno="14" refid="fileintegritychecker_8h_1a5f8127c6203682d4e5442274909d19ae" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="fileintegritychecker_8h_1a5f8127c6203682d4e5442274909d19ae" kindref="member">checkifrootorparent</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>dirname);</highlight></codeline>
+<codeline lineno="15" refid="fileintegritychecker_8h_1ab528fd1e803c03f8dcfd7ccdf7d431bc" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="fileintegritychecker_8h_1ab528fd1e803c03f8dcfd7ccdf7d431bc" kindref="member">checkifrootdir</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>dirname);</highlight></codeline>
+<codeline lineno="16" refid="fileintegritychecker_8h_1a320a4dd3911b9d8178df4b1cfca30175" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="fileintegritychecker_8h_1a320a4dd3911b9d8178df4b1cfca30175" kindref="member">checkifparentdir</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>dirname);</highlight></codeline>
+    </programlisting>
+    <location file="headers/fileintegritychecker.h"/>
+  </compounddef>
+</doxygen>

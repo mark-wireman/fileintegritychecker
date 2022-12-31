@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="en-US">
+  <compounddef id="struct_hash_values" kind="struct" language="C++" prot="public">
+    <compoundname>HashValues</compoundname>
+    <includes refid="_s_h_a256_c_p_p_8h" local="no">SHA256CPP.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_hash_values_1a33327f22884b787dcb01088a9fb847a4" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t HashValues::H[8]</definition>
+        <argsstring>[8]</argsstring>
+        <name>H</name>
+        <qualifiedname>HashValues::H</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="21" column="14" bodyfile="headers/SHA256CPP.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="headers/SHA256CPP.h" line="20" column="1" bodyfile="headers/SHA256CPP.h" bodystart="20" bodyend="22"/>
+    <listofallmembers>
+      <member refid="struct_hash_values_1a33327f22884b787dcb01088a9fb847a4" prot="public" virt="non-virtual"><scope>HashValues</scope><name>H</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

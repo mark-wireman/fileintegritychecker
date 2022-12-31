@@ -1,0 +1,26 @@
+\hypertarget{testmysqlcontroller_8cpp_source}{}\doxysection{testmysqlcontroller.\+cpp}
+\label{testmysqlcontroller_8cpp_source}\index{C:/Users/mark\_/source/repos/fileintegritychecker/src/testmysqlcontroller.cpp@{C:/Users/mark\_/source/repos/fileintegritychecker/src/testmysqlcontroller.cpp}}
+\mbox{\hyperlink{testmysqlcontroller_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{testmysqlcontroller_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{testmysqlcontroller_8cpp_source_l00002}00002 \textcolor{comment}{//\#include <fstream>}}
+\DoxyCodeLine{\Hypertarget{testmysqlcontroller_8cpp_source_l00003}00003 \textcolor{comment}{//\#include <string>}}
+\DoxyCodeLine{\Hypertarget{testmysqlcontroller_8cpp_source_l00004}00004 \textcolor{comment}{//\#include <cstring>}}
+\DoxyCodeLine{\Hypertarget{testmysqlcontroller_8cpp_source_l00005}00005 \textcolor{comment}{//\#include <dirent.h>}}
+\DoxyCodeLine{\Hypertarget{testmysqlcontroller_8cpp_source_l00006}00006 \textcolor{comment}{//\#include <sys/types.h>}}
+\DoxyCodeLine{\Hypertarget{testmysqlcontroller_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include "{}../headers/mysqlcontroller.h"{}}}
+\DoxyCodeLine{\Hypertarget{testmysqlcontroller_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{testmysqlcontroller_8cpp_source_l00009}\mbox{\hyperlink{testmysqlcontroller_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00009}} \textcolor{keywordtype}{int} \mbox{\hyperlink{testmysqlcontroller_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[]) \{}
+\DoxyCodeLine{\Hypertarget{testmysqlcontroller_8cpp_source_l00010}00010     mysqlcontroller *msc;}
+\DoxyCodeLine{\Hypertarget{testmysqlcontroller_8cpp_source_l00011}00011     msc = \textcolor{keyword}{new} mysqlcontroller();}
+\DoxyCodeLine{\Hypertarget{testmysqlcontroller_8cpp_source_l00012}00012     msc-\/>setHOSTNAME(\textcolor{stringliteral}{"{}192.168.86.115"{}});}
+\DoxyCodeLine{\Hypertarget{testmysqlcontroller_8cpp_source_l00013}00013     msc-\/>setDBASENAME(\textcolor{stringliteral}{"{}mysql"{}});}
+\DoxyCodeLine{\Hypertarget{testmysqlcontroller_8cpp_source_l00014}00014     msc-\/>setPORT(3306);}
+\DoxyCodeLine{\Hypertarget{testmysqlcontroller_8cpp_source_l00015}00015     msc-\/>setUSERNAME(\textcolor{stringliteral}{"{}mwireman"{}});}
+\DoxyCodeLine{\Hypertarget{testmysqlcontroller_8cpp_source_l00016}00016     msc-\/>setPASSWORD(\textcolor{stringliteral}{"{}shinobu5"{}});}
+\DoxyCodeLine{\Hypertarget{testmysqlcontroller_8cpp_source_l00017}00017     msc-\/>initdb();}
+\DoxyCodeLine{\Hypertarget{testmysqlcontroller_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{testmysqlcontroller_8cpp_source_l00019}00019     \textcolor{keywordflow}{return}(0);}
+\DoxyCodeLine{\Hypertarget{testmysqlcontroller_8cpp_source_l00020}00020 \}}
+
+\end{DoxyCode}

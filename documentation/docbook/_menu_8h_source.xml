@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__menu_8h_source" xml:lang="en-US">
+<title>Menu.h</title>
+<indexterm><primary>C:/Users/mark_/source/repos/fileintegritychecker/headers/Menu.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="comment">/*</emphasis>
+2 <emphasis role="comment">&#32;*&#32;Menu.h</emphasis>
+3 <emphasis role="comment">&#32;*</emphasis>
+4 <emphasis role="comment">&#32;*&#32;&#32;Created&#32;on:&#32;Jun&#32;7,&#32;2022</emphasis>
+5 <emphasis role="comment">&#32;*&#32;&#32;&#32;&#32;&#32;&#32;Author:&#32;mark_</emphasis>
+6 <emphasis role="comment">&#32;*/</emphasis>
+7 
+8 <emphasis role="preprocessor">#ifndef&#32;MENU_H_</emphasis>
+9 <emphasis role="preprocessor">#define&#32;MENU_H_</emphasis>
+10 
+11 <emphasis role="preprocessor">#include&#32;&lt;string&gt;</emphasis>
+12 <emphasis role="preprocessor">#include&#32;&lt;cstring&gt;</emphasis>
+13 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+14 
+15 <emphasis role="keyword">using&#32;namespace&#32;</emphasis>std;
+16 
+17 <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_menu">Menu</link>&#32;{
+18 <emphasis role="keyword">public</emphasis>:
+19 &#32;&#32;&#32;&#32;<link linkend="_class_menu_1ad466dd83355124a6ed958430450bfe94">Menu</link>();
+20 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_class_menu_1a5bf168cbb40e28e718ced8f248b3d37a">~Menu</link>();
+21 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_menu_1a50f39bd5a994cb64421bfacbf6aed5e8">ParseArguments</link>(<emphasis role="keywordtype">int</emphasis>&#32;argc,&#32;<emphasis role="keywordtype">char</emphasis>&#32;*argv[]);
+22 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_menu_1acbe5ec7e6202dec08ca26f4898df8040">PrintMenu</link>();
+23 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_menu_1aca44a03905fb898515c88a49b4fca849">getDATABASEHOSTNAME</link>();
+24 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_menu_1a7b3f2bde7bf5297d47409c7fa7f8c940">getUSERNAME</link>();
+25 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_menu_1a08a81ab79febb5e1f74a21853717cbae">getPASSWORD</link>();
+26 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_menu_1ac8fe61db0d8a3f32fbb161abdeee4668">getPORT</link>();
+27 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_menu_1ab2ce4cac489c6da0f08eb4bd0753a555">getMACHINENAME</link>();
+28 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_menu_1ac07eb59a5697f449133f2d4caf95947c">getPARENTDIR</link>();
+29 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_menu_1a1f0c07508ea10698ae7af1caad692d52">getDBASETYPE</link>();
+30 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_menu_1a34eb19b4584c6139b1d0fbc7811ba68a">getDBASEFILENAME</link>();
+31 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_menu_1a7296588596f0d05634bb6b6a26d51000">getPROCESSHASHVALS</link>();
+32 <emphasis role="keyword">private</emphasis>:
+33 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;parentdir&#32;=&#32;NULL;
+34 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dbasehost&#32;=&#32;NULL;
+35 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;uname&#32;=&#32;NULL;
+36 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;pwd&#32;=&#32;NULL;
+37 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;portno&#32;=&#32;NULL;
+38 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;mname&#32;=&#32;NULL;
+39 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dbasetype&#32;=&#32;NULL;
+40 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dbasefilename&#32;=&#32;NULL;
+41 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;processhashvals&#32;=&#32;0;
+42 };
+43 
+44 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;MENU_H_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+</programlisting></section>

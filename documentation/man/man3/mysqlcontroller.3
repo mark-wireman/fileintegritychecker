@@ -1,0 +1,145 @@
+.TH "mysqlcontroller" 3 "Sat Dec 10 2022" "fileintegritychecker" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+mysqlcontroller
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <mysqlcontroller\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBmysqlcontroller\fP ()"
+.br
+.ti -1c
+.RI "\fBmysqlcontroller\fP (char *host, char *dbase, char *uname, char *pwd, int port, char *mname)"
+.br
+.ti -1c
+.RI "virtual \fB~mysqlcontroller\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetHOSTNAME\fP (char *host)"
+.br
+.ti -1c
+.RI "void \fBsetDBASENAME\fP (char *dbase)"
+.br
+.ti -1c
+.RI "void \fBsetUSERNAME\fP (char *uname)"
+.br
+.ti -1c
+.RI "void \fBsetPASSWORD\fP (char *pwd)"
+.br
+.ti -1c
+.RI "void \fBsetPORT\fP (int port)"
+.br
+.ti -1c
+.RI "void \fBsetMACHINENAME\fP (char *mname)"
+.br
+.ti -1c
+.RI "char * \fBgetHOSTNAME\fP ()"
+.br
+.ti -1c
+.RI "char * \fBgetDBASENAME\fP ()"
+.br
+.ti -1c
+.RI "char * \fBgetUSERNAME\fP ()"
+.br
+.ti -1c
+.RI "char * \fBgetPASSWORD\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetPORT\fP ()"
+.br
+.ti -1c
+.RI "char * \fBgetMACHINENAME\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitdb\fP ()"
+.br
+.ti -1c
+.RI "void \fBsaveDirectoryName\fP (string dirname)"
+.br
+.ti -1c
+.RI "void \fBsaveFileInfo\fP (string dirname, string fname, string hashval)"
+.br
+.ti -1c
+.RI "void \fBsaveDirectoryName_async\fP (const string &dirname)"
+.br
+.ti -1c
+.RI "void \fBsaveFileInfo_async\fP (const string &dirname, const string &fname, const string &hashval)"
+.br
+.ti -1c
+.RI "void \fBdeleteDirectoryNames\fP ()"
+.br
+.ti -1c
+.RI "void \fBclosedb\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitPreparedStatements\fP ()"
+.br
+.ti -1c
+.RI "void \fBclosePreparedStatements\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB26\fP of file \fBmysqlcontroller\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "mysqlcontroller::mysqlcontroller ()"
+
+.SS "mysqlcontroller::mysqlcontroller (char * host, char * dbase, char * uname, char * pwd, int port, char * mname)"
+
+.SS "virtual mysqlcontroller::~mysqlcontroller ()\fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void mysqlcontroller::closedb ()"
+
+.SS "void mysqlcontroller::closePreparedStatements ()"
+
+.SS "void mysqlcontroller::deleteDirectoryNames ()"
+
+.SS "char * mysqlcontroller::getDBASENAME ()"
+
+.SS "char * mysqlcontroller::getHOSTNAME ()"
+
+.SS "char * mysqlcontroller::getMACHINENAME ()"
+
+.SS "char * mysqlcontroller::getPASSWORD ()"
+
+.SS "int mysqlcontroller::getPORT ()"
+
+.SS "char * mysqlcontroller::getUSERNAME ()"
+
+.SS "void mysqlcontroller::initdb ()"
+
+.SS "void mysqlcontroller::initPreparedStatements ()"
+
+.SS "void mysqlcontroller::saveDirectoryName (string dirname)"
+
+.SS "void mysqlcontroller::saveDirectoryName_async (const string & dirname)"
+
+.SS "void mysqlcontroller::saveFileInfo (string dirname, string fname, string hashval)"
+
+.SS "void mysqlcontroller::saveFileInfo_async (const string & dirname, const string & fname, const string & hashval)"
+
+.SS "void mysqlcontroller::setDBASENAME (char * dbase)"
+
+.SS "void mysqlcontroller::setHOSTNAME (char * host)"
+
+.SS "void mysqlcontroller::setMACHINENAME (char * mname)"
+
+.SS "void mysqlcontroller::setPASSWORD (char * pwd)"
+
+.SS "void mysqlcontroller::setPORT (int port)"
+
+.SS "void mysqlcontroller::setUSERNAME (char * uname)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for fileintegritychecker from the source code\&.

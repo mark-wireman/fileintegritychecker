@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="en-US">
+  <compounddef id="mysqlcontroller_8h" kind="file" language="C++">
+    <compoundname>mysqlcontroller.h</compoundname>
+    <includes local="no">string.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">errno.h</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">ctime</includes>
+    <includes local="no">sstream</includes>
+    <includes local="yes">mysql_connection.h</includes>
+    <includes refid="helper_8h" local="yes">helper.h</includes>
+    <includes local="no">cppconn/driver.h</includes>
+    <includes local="no">cppconn/exception.h</includes>
+    <includes local="no">cppconn/resultset.h</includes>
+    <includes local="no">cppconn/statement.h</includes>
+    <includes local="no">cppconn/prepared_statement.h</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>helper.h</label>
+        <link refid="helper_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>headers/mysqlcontroller.h</label>
+        <link refid="mysqlcontroller_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>cppconn/driver.h</label>
+      </node>
+      <node id="16">
+        <label>cppconn/exception.h</label>
+      </node>
+      <node id="19">
+        <label>cppconn/prepared_statement.h</label>
+      </node>
+      <node id="17">
+        <label>cppconn/resultset.h</label>
+      </node>
+      <node id="18">
+        <label>cppconn/statement.h</label>
+      </node>
+      <node id="11">
+        <label>cstdint</label>
+      </node>
+      <node id="13">
+        <label>cstring</label>
+      </node>
+      <node id="7">
+        <label>ctime</label>
+      </node>
+      <node id="5">
+        <label>errno.h</label>
+      </node>
+      <node id="12">
+        <label>fstream</label>
+      </node>
+      <node id="6">
+        <label>iostream</label>
+      </node>
+      <node id="9">
+        <label>mysql_connection.h</label>
+      </node>
+      <node id="14">
+        <label>sqlite3.h</label>
+      </node>
+      <node id="8">
+        <label>sstream</label>
+      </node>
+      <node id="3">
+        <label>stdio.h</label>
+      </node>
+      <node id="4">
+        <label>stdlib.h</label>
+      </node>
+      <node id="2">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classmysqlcontroller" prot="public">mysqlcontroller</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="mysqlcontroller_8h_1a7a104b2e349617222c6419b36bfd3260" prot="public" static="no">
+        <name>__STDC_WANT_LIB_EXT1__</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/mysqlcontroller.h" line="5" column="9" bodyfile="headers/mysqlcontroller.h" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HEADERS_MYSQLCONTROLLER_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HEADERS_MYSQLCONTROLLER_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="mysqlcontroller_8h_1a7a104b2e349617222c6419b36bfd3260" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__STDC_WANT_LIB_EXT1__<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Standard<sp/>C++<sp/>includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;errno.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ctime&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">std::stringstream;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;mysql_connection.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="helper_8h" kindref="compound">helper.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cppconn/driver.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cppconn/exception.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cppconn/resultset.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cppconn/statement.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cppconn/prepared_statement.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classmysqlcontroller" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmysqlcontroller" kindref="compound">mysqlcontroller</ref><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28" refid="classmysqlcontroller_1a891d523d7a39f46e72b16a36c1387767" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmysqlcontroller_1a891d523d7a39f46e72b16a36c1387767" kindref="member">mysqlcontroller</ref>();</highlight></codeline>
+<codeline lineno="29" refid="classmysqlcontroller_1a5660513979df1fce6d3ff042ff477b99" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmysqlcontroller_1a5660513979df1fce6d3ff042ff477b99" kindref="member">mysqlcontroller</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>host,</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>dbase,</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>uname,</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>pwd,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port,</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>mname);</highlight></codeline>
+<codeline lineno="30" refid="classmysqlcontroller_1a5281329cf5af806d612908b406a9ec89" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classmysqlcontroller_1a5281329cf5af806d612908b406a9ec89" kindref="member">~mysqlcontroller</ref>();</highlight></codeline>
+<codeline lineno="31" refid="classmysqlcontroller_1ac879ce9833813cd7649059a3d871fedd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmysqlcontroller_1ac879ce9833813cd7649059a3d871fedd" kindref="member">setHOSTNAME</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>host);</highlight></codeline>
+<codeline lineno="32" refid="classmysqlcontroller_1a465f1a74a87fa74d5ab2aefd34bbe941" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmysqlcontroller_1a465f1a74a87fa74d5ab2aefd34bbe941" kindref="member">setDBASENAME</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>dbase);</highlight></codeline>
+<codeline lineno="33" refid="classmysqlcontroller_1ab095a99557c1d7582c66329398d4bd38" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmysqlcontroller_1ab095a99557c1d7582c66329398d4bd38" kindref="member">setUSERNAME</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>uname);</highlight></codeline>
+<codeline lineno="34" refid="classmysqlcontroller_1a39a1970d8c3c3f013487652493a66e5f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmysqlcontroller_1a39a1970d8c3c3f013487652493a66e5f" kindref="member">setPASSWORD</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>pwd);</highlight></codeline>
+<codeline lineno="35" refid="classmysqlcontroller_1afd4432161cc947ac73243b5227d49a79" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmysqlcontroller_1afd4432161cc947ac73243b5227d49a79" kindref="member">setPORT</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port);</highlight></codeline>
+<codeline lineno="36" refid="classmysqlcontroller_1a686a2d830775da6da5e8451333b4099f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmysqlcontroller_1a686a2d830775da6da5e8451333b4099f" kindref="member">setMACHINENAME</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>mname);</highlight></codeline>
+<codeline lineno="37" refid="classmysqlcontroller_1aa98d95b40af60c2d3654e1734f02f4fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classmysqlcontroller_1aa98d95b40af60c2d3654e1734f02f4fd" kindref="member">getHOSTNAME</ref>();</highlight></codeline>
+<codeline lineno="38" refid="classmysqlcontroller_1a9fd8e8a368cc3d5e84a371c2a4cd6b7a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classmysqlcontroller_1a9fd8e8a368cc3d5e84a371c2a4cd6b7a" kindref="member">getDBASENAME</ref>();</highlight></codeline>
+<codeline lineno="39" refid="classmysqlcontroller_1aabe3ab7506b212aa7125a3f81d725414" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classmysqlcontroller_1aabe3ab7506b212aa7125a3f81d725414" kindref="member">getUSERNAME</ref>();</highlight></codeline>
+<codeline lineno="40" refid="classmysqlcontroller_1ac38c7f7d6f37a4ac287a3997c398966c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classmysqlcontroller_1ac38c7f7d6f37a4ac287a3997c398966c" kindref="member">getPASSWORD</ref>();</highlight></codeline>
+<codeline lineno="41" refid="classmysqlcontroller_1a9df4b563e915fb2ba56797ed499dad8b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classmysqlcontroller_1a9df4b563e915fb2ba56797ed499dad8b" kindref="member">getPORT</ref>();</highlight></codeline>
+<codeline lineno="42" refid="classmysqlcontroller_1a32c523aaf33000a0bb1f42b0c5dcbe57" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classmysqlcontroller_1a32c523aaf33000a0bb1f42b0c5dcbe57" kindref="member">getMACHINENAME</ref>();</highlight></codeline>
+<codeline lineno="43" refid="classmysqlcontroller_1a74389e9c368e9f43df261f7050377cb4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmysqlcontroller_1a74389e9c368e9f43df261f7050377cb4" kindref="member">initdb</ref>();</highlight></codeline>
+<codeline lineno="44" refid="classmysqlcontroller_1a053dfe67635af840ec7a787e86b95f41" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmysqlcontroller_1a053dfe67635af840ec7a787e86b95f41" kindref="member">saveDirectoryName</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>dirname);<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45" refid="classmysqlcontroller_1a8ac76206c0cfc7954cce8011616119ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmysqlcontroller_1a8ac76206c0cfc7954cce8011616119ab" kindref="member">saveFileInfo</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>dirname,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>fname,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>hashval);</highlight></codeline>
+<codeline lineno="46" refid="classmysqlcontroller_1a1158e1c0c82d11cbe200219b4a5a96b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmysqlcontroller_1a1158e1c0c82d11cbe200219b4a5a96b3" kindref="member">saveDirectoryName_async</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;dirname);</highlight></codeline>
+<codeline lineno="47" refid="classmysqlcontroller_1aad16b25269ed6065b0360c2b8312aea0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmysqlcontroller_1aad16b25269ed6065b0360c2b8312aea0" kindref="member">saveFileInfo_async</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;dirname,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;fname,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;hashval);</highlight></codeline>
+<codeline lineno="48" refid="classmysqlcontroller_1a50702b70c6eb0355c2d169050776b394" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmysqlcontroller_1a50702b70c6eb0355c2d169050776b394" kindref="member">deleteDirectoryNames</ref>();</highlight></codeline>
+<codeline lineno="49" refid="classmysqlcontroller_1a75776ad16ad15a20736e0c1b6adda411" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmysqlcontroller_1a75776ad16ad15a20736e0c1b6adda411" kindref="member">closedb</ref>();</highlight></codeline>
+<codeline lineno="50" refid="classmysqlcontroller_1a069876969dedc6baf9c5f95cca1ab33d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmysqlcontroller_1a069876969dedc6baf9c5f95cca1ab33d" kindref="member">initPreparedStatements</ref>();</highlight></codeline>
+<codeline lineno="51" refid="classmysqlcontroller_1a760179764d3008ac64c36e0b4fb26553" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmysqlcontroller_1a760179764d3008ac64c36e0b4fb26553" kindref="member">closePreparedStatements</ref>();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//char*<sp/>getCurrentTime();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//void<sp/>addVerified(int);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>filterApostraphe(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="headers/mysqlcontroller.h"/>
+  </compounddef>
+</doxygen>

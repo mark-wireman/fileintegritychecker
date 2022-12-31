@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="en-US">
+  <compounddef id="_s_h_a256_c_p_p_8h" kind="file" language="C++">
+    <compoundname>SHA256CPP.h</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">inttypes.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">array</includes>
+    <includedby refid="sqlite3controller_8h" local="yes">headers/sqlite3controller.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>headers/SHA256CPP.h</label>
+        <link refid="_s_h_a256_c_p_p_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>array</label>
+      </node>
+      <node id="5">
+        <label>inttypes.h</label>
+      </node>
+      <node id="6">
+        <label>stdbool.h</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+      <node id="3">
+        <label>stdlib.h</label>
+      </node>
+      <node id="4">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>headers/SHA256CPP.h</label>
+        <link refid="_s_h_a256_c_p_p_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>headers/sqlite3controller.h</label>
+        <link refid="sqlite3controller_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_hash_values" prot="public">HashValues</innerclass>
+    <innerclass refid="unionmessage_block" prot="public">messageBlock</innerclass>
+    <innerclass refid="class_s_h_a256_c_p_p" prot="public">SHA256CPP</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_s_h_a256_c_p_p_8h_1af69af86b63bfa5f9ae02b9ade66929e9" prot="public" static="no">
+        <name>byteSwap32</name>
+        <param><defname>x</defname></param>
+        <initializer>(((x) &gt;&gt; 24) | (((x)&amp;0x00FF0000) &gt;&gt; 8) | (((x)&amp;0x0000FF00) &lt;&lt; 8) | ((x) &lt;&lt; 24))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="11" column="9" bodyfile="headers/SHA256CPP.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_h_a256_c_p_p_8h_1a317cf659e36d8c74574a1617e1c6bce1" prot="public" static="no">
+        <name>byteSwap64</name>
+        <param><defname>x</defname></param>
+        <initializer>	((((x) &gt;&gt; 56) &amp; 0x00000000000000FF) | (((x) &gt;&gt; 40) &amp; 0x000000000000FF00) | \
+	 (((x) &gt;&gt; 24) &amp; 0x0000000000FF0000) | (((x) &gt;&gt; 8) &amp; 0x00000000FF000000) |  \
+	 (((x) &lt;&lt; 8) &amp; 0x000000FF00000000) | (((x) &lt;&lt; 24) &amp; 0x0000FF0000000000) |  \
+	 (((x) &lt;&lt; 40) &amp; 0x00FF000000000000) | (((x) &lt;&lt; 56) &amp; 0xFF00000000000000))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="12" column="9" bodyfile="headers/SHA256CPP.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_s_h_a256_c_p_p_8h_1ac1535592e39e7edf0cafbd5e695ea622" prot="public" static="no">
+        <name>MAXCHAR</name>
+        <initializer>100000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="18" column="9" bodyfile="headers/SHA256CPP.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959" prot="public" static="no" strong="no">
+        <type></type>
+        <name>status</name>
+        <enumvalue id="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959acb9be765f361bb7efb9073730aac92c6" prot="public">
+          <name>READ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959a24c954e013ccb8f230031742d8193f55" prot="public">
+          <name>PAD0</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959a7af380b5255ed8fbb4f1943b92048b15" prot="public">
+          <name>PAD1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959a8b9af67858708d770f017e4aae85900d" prot="public">
+          <name>FINISH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="34" column="1" bodyfile="headers/SHA256CPP.h" bodystart="35" bodyend="40"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>HEADERS_SHA256CPP_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HEADERS_SHA256CPP_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;inttypes.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;array&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="_s_h_a256_c_p_p_8h_1af69af86b63bfa5f9ae02b9ade66929e9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>byteSwap32(x)<sp/>(((x)<sp/>&gt;&gt;<sp/>24)<sp/>|<sp/>(((x)&amp;0x00FF0000)<sp/>&gt;&gt;<sp/>8)<sp/>|<sp/>(((x)&amp;0x0000FF00)<sp/>&lt;&lt;<sp/>8)<sp/>|<sp/>((x)<sp/>&lt;&lt;<sp/>24))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="_s_h_a256_c_p_p_8h_1a317cf659e36d8c74574a1617e1c6bce1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>byteSwap64(x)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="13"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>((((x)<sp/>&gt;&gt;<sp/>56)<sp/>&amp;<sp/>0x00000000000000FF)<sp/>|<sp/>(((x)<sp/>&gt;&gt;<sp/>40)<sp/>&amp;<sp/>0x000000000000FF00)<sp/>|<sp/>\</highlight></codeline>
+<codeline lineno="14"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/>(((x)<sp/>&gt;&gt;<sp/>24)<sp/>&amp;<sp/>0x0000000000FF0000)<sp/>|<sp/>(((x)<sp/>&gt;&gt;<sp/>8)<sp/>&amp;<sp/>0x00000000FF000000)<sp/>|<sp/><sp/>\</highlight></codeline>
+<codeline lineno="15"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/>(((x)<sp/>&lt;&lt;<sp/>8)<sp/>&amp;<sp/>0x000000FF00000000)<sp/>|<sp/>(((x)<sp/>&lt;&lt;<sp/>24)<sp/>&amp;<sp/>0x0000FF0000000000)<sp/>|<sp/><sp/>\</highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/>(((x)<sp/>&lt;&lt;<sp/>40)<sp/>&amp;<sp/>0x00FF000000000000)<sp/>|<sp/>(((x)<sp/>&lt;&lt;<sp/>56)<sp/>&amp;<sp/>0xFF00000000000000))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Tell<sp/>our<sp/>preprocessor<sp/>to<sp/>create<sp/>a<sp/>variable<sp/>MAXCHAR<sp/>with<sp/>value<sp/>of<sp/>100000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="_s_h_a256_c_p_p_8h_1ac1535592e39e7edf0cafbd5e695ea622" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAXCHAR<sp/>100000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="struct_hash_values" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_hash_values" kindref="compound">HashValues</ref><sp/>{</highlight></codeline>
+<codeline lineno="21" refid="struct_hash_values_1a33327f22884b787dcb01088a9fb847a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="struct_hash_values_1a33327f22884b787dcb01088a9fb847a4" kindref="member">H</ref>[8];</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Define<sp/>a<sp/>union<sp/>for<sp/>easy<sp/>reference</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Union<sp/>represents<sp/>a<sp/>message<sp/>block</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="unionmessage_block" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal"><ref refid="unionmessage_block" kindref="compound">messageBlock</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28" refid="unionmessage_block_1a59107a6d1bbc97a38c8eeafc29474a96" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="unionmessage_block_1a59107a6d1bbc97a38c8eeafc29474a96" kindref="member">e</ref>[64];</highlight></codeline>
+<codeline lineno="29" refid="unionmessage_block_1a3a07b88e31bce5184238c481aa255922" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="unionmessage_block_1a3a07b88e31bce5184238c481aa255922" kindref="member">t</ref>[16];</highlight></codeline>
+<codeline lineno="30" refid="unionmessage_block_1a650ca0815e457fcda932238399372548" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/><ref refid="unionmessage_block_1a650ca0815e457fcda932238399372548" kindref="member">s</ref>[8];</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">//<sp/>ENUM<sp/>to<sp/>control<sp/>state<sp/>of<sp/>the<sp/>program</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959" kindref="member">status</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36" refid="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959acb9be765f361bb7efb9073730aac92c6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959acb9be765f361bb7efb9073730aac92c6" kindref="member">READ</ref>,<sp/></highlight></codeline>
+<codeline lineno="37" refid="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959a24c954e013ccb8f230031742d8193f55" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959a24c954e013ccb8f230031742d8193f55" kindref="member">PAD0</ref>,</highlight></codeline>
+<codeline lineno="38" refid="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959a7af380b5255ed8fbb4f1943b92048b15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959a7af380b5255ed8fbb4f1943b92048b15" kindref="member">PAD1</ref>,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959a8b9af67858708d770f017e4aae85900d" kindref="member">FINISH</ref></highlight></codeline>
+<codeline lineno="40" refid="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959a8b9af67858708d770f017e4aae85900d" refkind="member"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="class_s_h_a256_c_p_p" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_s_h_a256_c_p_p" kindref="compound">SHA256CPP</ref><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="45" refid="class_s_h_a256_c_p_p_1ac2f738d58ae8cbc5ee99963adaf538ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_s_h_a256_c_p_p_1ac2f738d58ae8cbc5ee99963adaf538ca" kindref="member">SHA256CPP</ref>();</highlight></codeline>
+<codeline lineno="46" refid="class_s_h_a256_c_p_p_1a5b3c3cd1fcc19df9f6b855cc05dfe5af" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_s_h_a256_c_p_p_1a5b3c3cd1fcc19df9f6b855cc05dfe5af" kindref="member">~SHA256CPP</ref>();</highlight></codeline>
+<codeline lineno="47" refid="class_s_h_a256_c_p_p_1acd60e2902a86486cd8c0c730b22ec34d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_s_h_a256_c_p_p_1acd60e2902a86486cd8c0c730b22ec34d" kindref="member">endianCheck</ref>();</highlight></codeline>
+<codeline lineno="48" refid="class_s_h_a256_c_p_p_1a9466f56550cb9725c8fd6be92e5c1b77" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_hash_values" kindref="compound">HashValues</ref><sp/><ref refid="class_s_h_a256_c_p_p_1a9466f56550cb9725c8fd6be92e5c1b77" kindref="member">calculateHash</ref>(FILE<sp/>*file);</highlight></codeline>
+<codeline lineno="49" refid="class_s_h_a256_c_p_p_1accf77858eb3d4019f13d1e9c40dc9a73" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_s_h_a256_c_p_p_1accf77858eb3d4019f13d1e9c40dc9a73" kindref="member">printFileContents</ref>(FILE<sp/>*fileForPrinting);</highlight></codeline>
+<codeline lineno="50" refid="class_s_h_a256_c_p_p_1af6bbbbc8eb2d1d2ce127d9ee41f80d43" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_s_h_a256_c_p_p_1af6bbbbc8eb2d1d2ce127d9ee41f80d43" kindref="member">endianCheckPrint</ref>();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>sig0(uint32_t<sp/>x);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>sig1(uint32_t<sp/>x);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>rotr(uint32_t<sp/>n,<sp/>uint16_t<sp/>x);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>shr(uint32_t<sp/>n,<sp/>uint16_t<sp/>x);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>SIG0(uint32_t<sp/>x);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>SIG1(uint32_t<sp/>x);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>Ch(uint32_t<sp/>x,uint32_t<sp/>y,uint32_t<sp/>z);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>Maj(uint32_t<sp/>x,uint32_t<sp/>y,uint32_t<sp/>z);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>calcFileSize(FILE<sp/>*file);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fillMessageBlock(FILE<sp/>*file,<sp/></highlight><highlight class="keyword">union</highlight><highlight class="normal"><sp/><ref refid="unionmessage_block" kindref="compound">messageBlock</ref><sp/>*msgBlock,<sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959" kindref="member">status</ref><sp/>*state,<sp/>uint64_t<sp/>*numBits);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>HEADERS_SHA256CPP_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="headers/SHA256CPP.h"/>
+  </compounddef>
+</doxygen>

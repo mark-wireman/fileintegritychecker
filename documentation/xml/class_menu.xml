@@ -1,0 +1,366 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="en-US">
+  <compounddef id="class_menu" kind="class" language="C++" prot="public">
+    <compoundname>Menu</compoundname>
+    <includes refid="_menu_8h" local="no">Menu.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_menu_1a00e9ec31107eb8cbef31f3f198f168a2" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* Menu::parentdir</definition>
+        <argsstring></argsstring>
+        <name>parentdir</name>
+        <qualifiedname>Menu::parentdir</qualifiedname>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="33" column="6" bodyfile="headers/Menu.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_menu_1a05ecb7899e5f3ae7345dae98bc27553c" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* Menu::dbasehost</definition>
+        <argsstring></argsstring>
+        <name>dbasehost</name>
+        <qualifiedname>Menu::dbasehost</qualifiedname>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="34" column="6" bodyfile="headers/Menu.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_menu_1abfa524748149194d31f3a760ab8765fd" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* Menu::uname</definition>
+        <argsstring></argsstring>
+        <name>uname</name>
+        <qualifiedname>Menu::uname</qualifiedname>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="35" column="6" bodyfile="headers/Menu.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_menu_1a3851b8c999f1ed310c57b306d6bc2a03" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* Menu::pwd</definition>
+        <argsstring></argsstring>
+        <name>pwd</name>
+        <qualifiedname>Menu::pwd</qualifiedname>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="36" column="6" bodyfile="headers/Menu.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_menu_1ab170c7e84e5d2da91880820ccbc12abf" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* Menu::portno</definition>
+        <argsstring></argsstring>
+        <name>portno</name>
+        <qualifiedname>Menu::portno</qualifiedname>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="37" column="6" bodyfile="headers/Menu.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_menu_1ab67d5fb0837589bb4d6dac62131a72a4" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* Menu::mname</definition>
+        <argsstring></argsstring>
+        <name>mname</name>
+        <qualifiedname>Menu::mname</qualifiedname>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="38" column="6" bodyfile="headers/Menu.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_menu_1a0cc46cd227e7fcecf4413b9afe58d29d" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* Menu::dbasetype</definition>
+        <argsstring></argsstring>
+        <name>dbasetype</name>
+        <qualifiedname>Menu::dbasetype</qualifiedname>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="39" column="6" bodyfile="headers/Menu.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_menu_1a3ff2979249504fbed7989ee73b4f58a6" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* Menu::dbasefilename</definition>
+        <argsstring></argsstring>
+        <name>dbasefilename</name>
+        <qualifiedname>Menu::dbasefilename</qualifiedname>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="40" column="6" bodyfile="headers/Menu.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_menu_1aa094dcb11114277b2e0921587c2bcb12" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Menu::processhashvals</definition>
+        <argsstring></argsstring>
+        <name>processhashvals</name>
+        <qualifiedname>Menu::processhashvals</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="41" column="5" bodyfile="headers/Menu.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_menu_1ad466dd83355124a6ed958430450bfe94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Menu::Menu</definition>
+        <argsstring>()</argsstring>
+        <name>Menu</name>
+        <qualifiedname>Menu::Menu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="19" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_menu_1a5bf168cbb40e28e718ced8f248b3d37a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual Menu::~Menu</definition>
+        <argsstring>()</argsstring>
+        <name>~Menu</name>
+        <qualifiedname>Menu::~Menu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="20" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_menu_1a50f39bd5a994cb64421bfacbf6aed5e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Menu::ParseArguments</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>ParseArguments</name>
+        <qualifiedname>Menu::ParseArguments</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="21" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_menu_1acbe5ec7e6202dec08ca26f4898df8040" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Menu::PrintMenu</definition>
+        <argsstring>()</argsstring>
+        <name>PrintMenu</name>
+        <qualifiedname>Menu::PrintMenu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="22" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_menu_1aca44a03905fb898515c88a49b4fca849" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * Menu::getDATABASEHOSTNAME</definition>
+        <argsstring>()</argsstring>
+        <name>getDATABASEHOSTNAME</name>
+        <qualifiedname>Menu::getDATABASEHOSTNAME</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="23" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_menu_1a7b3f2bde7bf5297d47409c7fa7f8c940" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * Menu::getUSERNAME</definition>
+        <argsstring>()</argsstring>
+        <name>getUSERNAME</name>
+        <qualifiedname>Menu::getUSERNAME</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="24" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_menu_1a08a81ab79febb5e1f74a21853717cbae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * Menu::getPASSWORD</definition>
+        <argsstring>()</argsstring>
+        <name>getPASSWORD</name>
+        <qualifiedname>Menu::getPASSWORD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="25" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_menu_1ac8fe61db0d8a3f32fbb161abdeee4668" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * Menu::getPORT</definition>
+        <argsstring>()</argsstring>
+        <name>getPORT</name>
+        <qualifiedname>Menu::getPORT</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="26" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_menu_1ab2ce4cac489c6da0f08eb4bd0753a555" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * Menu::getMACHINENAME</definition>
+        <argsstring>()</argsstring>
+        <name>getMACHINENAME</name>
+        <qualifiedname>Menu::getMACHINENAME</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="27" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_menu_1ac07eb59a5697f449133f2d4caf95947c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * Menu::getPARENTDIR</definition>
+        <argsstring>()</argsstring>
+        <name>getPARENTDIR</name>
+        <qualifiedname>Menu::getPARENTDIR</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="28" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_menu_1a1f0c07508ea10698ae7af1caad692d52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * Menu::getDBASETYPE</definition>
+        <argsstring>()</argsstring>
+        <name>getDBASETYPE</name>
+        <qualifiedname>Menu::getDBASETYPE</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="29" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_menu_1a34eb19b4584c6139b1d0fbc7811ba68a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * Menu::getDBASEFILENAME</definition>
+        <argsstring>()</argsstring>
+        <name>getDBASEFILENAME</name>
+        <qualifiedname>Menu::getDBASEFILENAME</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="30" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_menu_1a7296588596f0d05634bb6b6a26d51000" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Menu::getPROCESSHASHVALS</definition>
+        <argsstring>()</argsstring>
+        <name>getPROCESSHASHVALS</name>
+        <qualifiedname>Menu::getPROCESSHASHVALS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/Menu.h" line="31" column="5"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="headers/Menu.h" line="17" column="1" bodyfile="headers/Menu.h" bodystart="17" bodyend="42"/>
+    <listofallmembers>
+      <member refid="class_menu_1a3ff2979249504fbed7989ee73b4f58a6" prot="private" virt="non-virtual"><scope>Menu</scope><name>dbasefilename</name></member>
+      <member refid="class_menu_1a05ecb7899e5f3ae7345dae98bc27553c" prot="private" virt="non-virtual"><scope>Menu</scope><name>dbasehost</name></member>
+      <member refid="class_menu_1a0cc46cd227e7fcecf4413b9afe58d29d" prot="private" virt="non-virtual"><scope>Menu</scope><name>dbasetype</name></member>
+      <member refid="class_menu_1aca44a03905fb898515c88a49b4fca849" prot="public" virt="non-virtual"><scope>Menu</scope><name>getDATABASEHOSTNAME</name></member>
+      <member refid="class_menu_1a34eb19b4584c6139b1d0fbc7811ba68a" prot="public" virt="non-virtual"><scope>Menu</scope><name>getDBASEFILENAME</name></member>
+      <member refid="class_menu_1a1f0c07508ea10698ae7af1caad692d52" prot="public" virt="non-virtual"><scope>Menu</scope><name>getDBASETYPE</name></member>
+      <member refid="class_menu_1ab2ce4cac489c6da0f08eb4bd0753a555" prot="public" virt="non-virtual"><scope>Menu</scope><name>getMACHINENAME</name></member>
+      <member refid="class_menu_1ac07eb59a5697f449133f2d4caf95947c" prot="public" virt="non-virtual"><scope>Menu</scope><name>getPARENTDIR</name></member>
+      <member refid="class_menu_1a08a81ab79febb5e1f74a21853717cbae" prot="public" virt="non-virtual"><scope>Menu</scope><name>getPASSWORD</name></member>
+      <member refid="class_menu_1ac8fe61db0d8a3f32fbb161abdeee4668" prot="public" virt="non-virtual"><scope>Menu</scope><name>getPORT</name></member>
+      <member refid="class_menu_1a7296588596f0d05634bb6b6a26d51000" prot="public" virt="non-virtual"><scope>Menu</scope><name>getPROCESSHASHVALS</name></member>
+      <member refid="class_menu_1a7b3f2bde7bf5297d47409c7fa7f8c940" prot="public" virt="non-virtual"><scope>Menu</scope><name>getUSERNAME</name></member>
+      <member refid="class_menu_1ad466dd83355124a6ed958430450bfe94" prot="public" virt="non-virtual"><scope>Menu</scope><name>Menu</name></member>
+      <member refid="class_menu_1ab67d5fb0837589bb4d6dac62131a72a4" prot="private" virt="non-virtual"><scope>Menu</scope><name>mname</name></member>
+      <member refid="class_menu_1a00e9ec31107eb8cbef31f3f198f168a2" prot="private" virt="non-virtual"><scope>Menu</scope><name>parentdir</name></member>
+      <member refid="class_menu_1a50f39bd5a994cb64421bfacbf6aed5e8" prot="public" virt="non-virtual"><scope>Menu</scope><name>ParseArguments</name></member>
+      <member refid="class_menu_1ab170c7e84e5d2da91880820ccbc12abf" prot="private" virt="non-virtual"><scope>Menu</scope><name>portno</name></member>
+      <member refid="class_menu_1acbe5ec7e6202dec08ca26f4898df8040" prot="public" virt="non-virtual"><scope>Menu</scope><name>PrintMenu</name></member>
+      <member refid="class_menu_1aa094dcb11114277b2e0921587c2bcb12" prot="private" virt="non-virtual"><scope>Menu</scope><name>processhashvals</name></member>
+      <member refid="class_menu_1a3851b8c999f1ed310c57b306d6bc2a03" prot="private" virt="non-virtual"><scope>Menu</scope><name>pwd</name></member>
+      <member refid="class_menu_1abfa524748149194d31f3a760ab8765fd" prot="private" virt="non-virtual"><scope>Menu</scope><name>uname</name></member>
+      <member refid="class_menu_1a5bf168cbb40e28e718ced8f248b3d37a" prot="public" virt="virtual"><scope>Menu</scope><name>~Menu</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

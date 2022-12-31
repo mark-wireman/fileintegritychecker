@@ -1,290 +1,209 @@
-//#include <sw/redis++/redis++.h>
-#include <iostream>
-#include <cstdint>
-#include <fstream>
-#include <filesystem>
-#include <string>
-#include <cstring>
-#include <thread>
-#include <vector>
-#include <sys/types.h>
-#include "../headers/sha256.h"
-#include "../headers/Menu.h"
-#include "../headers/mysqlcontroller.h"
+#include "../headers/fileintegritychecker.h"
 
 using namespace std;
-//using namespace sw::redis;
-namespace fs = std::filesystem;
 
-char* parentdir;
-char* dbasehost;
-char* dbase;
-char* uname;
-char* pwd;
-char* portno;
-char* mname;
-long int numberofdirectories = 0;
-long int numberofnewdirectories = 0;
-long int numberofverifieddirectories = 0;
+namespace fs = std::filesystem;
 
 // Tell our preprocessor to create a variable MAXCHAR with value of 100000
 #define MAXCHAR 100000
-Menu *m;
 
-/*std::unordered_map<string, string> record = {
-    {"host", ""},
-    {"status", ""},
-    {"dateadded", ""},
-    {"dateverified", ""}
-};*/
-
-// Simple function that calcuates the size of a file
-int calcFileSize(FILE *file)
+template <typename TP>
+std::time_t to_time_t(TP tp)
 {
-    int prev=ftell(file);
-    fseek(file, 0L, SEEK_END);
-    int size=ftell(file);
-    fseek(file,prev,SEEK_SET); 
-    return size;
+    using namespace std::chrono;
+    auto sctp = time_point_cast<system_clock::duration>(tp - TP::clock::now()
+        + system_clock::now());
+    return system_clock::to_time_t(sctp);
 }
 
-// This function is used to read the contents of the file and return them as an array of chars
-string getFileContents(FILE *fileForPrinting)
+char* to_char_time_t(std::time_t time)
 {
-    // Variables
-    char fileContents[MAXCHAR];
-    char fileContentsAsString[MAXCHAR];
-    long fileSize;
-    std::string retVal = "";
+    string retVal;
+    char* char_array;
 
-    // First check to make sure the file could be found
-    if (fileForPrinting == NULL){
-        retVal = "Could not open file";
-    }
-    else
-    {
-        // Calculate the size of the file
-        fileSize = calcFileSize(fileForPrinting);
+    tm* now = localtime(&time);
+    char date_string[100];
+    char time_string[100];
 
-        // While there is still stuff to read from the file
-        while(fgets(fileContents, MAXCHAR, fileForPrinting) != NULL)
-        {
-            // Print the contents of the file
-            retVal+=fileContents;
-            //printf(" %s\n", fileContents);
-        };
-        
-        fclose(fileForPrinting);
+    strftime(date_string, 50, "%B %d, %Y ", now);
+    strftime(time_string, 50, "%T", now);
 
-        // Close the file 
-        return retVal;
-    }
-    
+    retVal += date_string;
+    retVal += time_string;
+
+    int n = retVal.length();
+    char_array = new char[n + 1];
+
+    strcpy(char_array, retVal.c_str());
+
+    return char_array;
 }
 
-char* getCurrentTime() {
-	string retVal;
-	char* char_array;
-
-	std::time_t t = std::time(0);   // get time now
-	std::tm* now = std::localtime(&t);
-	char date_string[100];
-	char time_string[100];
-
-	strftime(date_string, 50, "%B %d, %Y ", now);
-	strftime(time_string, 50, "%T", now);
-
-	retVal += date_string;
-	retVal += time_string;
-
-	int n = retVal.length();
-	char_array = new char[n + 1];
-
-	strcpy(char_array, retVal.c_str());
-	
-	return char_array;
-}
-
-/*ConnectionOptions getRedisConnStr() {
-    //char* retVal;
-    ConnectionOptions connection_options;
-    connection_options.host = dbasehost;  // Required.
-    connection_options.port = stoi(portno); // Optional. The default port is 6379.
+/**
+ * @brief Get the directories files object
+ * 
+ * @param s 
+ * @param level 
+ */
+void fileintegritychecker::get_directories_files(const string& s, int level) {
     
-    //retVal = new char[6+strlen(dbasehost)+strlen(portno)];
-    //strcat(retVal,"tcp://");
-    //strcat(retVal,dbasehost);
-    //strcat(retVal,":");
-    //strcat(retVal,portno);
-
-    if(pwd != NULL)
-    {
-        connection_options.password = pwd;   // Optional. No password by default.
-        //strcat(retVal," -a ");
-        //strcat(retVal,pwd);
-    }
-
-    return connection_options;
-}*/
-
-
-/*int entryExists(string dirname, Redis *redisdbase) {
-    int retVal = 0;
-    string hostval = "";
-    string statusval = "";
-    string dateaddedval = "";
-
-
-    record.clear();
-    redisdbase->hgetall(dirname, std::inserter(record, record.begin()));
-
-    if(record.size() > 0) {
-        hostval = record["host"];
-
-        if(hostval == mname) {
-            record["status"] = "VERIFIED";
-            record["dateverified"] = getCurrentTime();
-
-            numberofverifieddirectories++;
-        }
-
-        retVal = 1;
-    } else {
-       record["host"] = (string)mname;
-       record["status"] = "NEW";
-       record["dateadded"] = getCurrentTime();
-       record["dateverified"] = ""; 
-       numberofnewdirectories++;
-    }
-
-    return retVal;
-
-}*/
-
-
-
-void get_directories_savetocsv(const string& s) {
-    char* fname = new char[strlen(mname) + 4];
-
-    strcat(fname,mname);
-    strcat(fname,".csv");
-
-    ofstream directorycsv(fname);
-
-    directorycsv << "dirname,dateadded,machinename" << endl;
     
-    auto d_init = filesystem::recursive_directory_iterator(s,filesystem::directory_options::skip_permission_denied);
-    auto d_end = filesystem::end(d_init);
     auto error_code = std::error_code();
-    for(; d_init != d_end; d_init.increment(error_code)){
-        if(!error_code){
-            if(!d_init->is_symlink() && d_init->is_directory()){
-                cout << "Directory: " + d_init->path().string() << endl;
-                directorycsv << d_init->path().string() << ",\"" << getCurrentTime() << "\"," << mname << endl;
-            }
-        }
-    }
-
-    directorycsv.close();
-}
-
-/*void get_directories_hmset(const string& s) {
-    auto d_init = filesystem::recursive_directory_iterator(s,filesystem::directory_options::skip_permission_denied);
-    auto d_end = filesystem::end(d_init);
-    auto error_code = std::error_code();
-    auto redis = Redis(getRedisConnStr());
-
-    cout << "After setting Redis object with connection string. " << endl;
-
-    for(; d_init != d_end; d_init.increment(error_code)){
-        if(!error_code){
-            if(!d_init->is_symlink() && d_init->is_directory()){                
-
-                cout << "Directory: " + d_init->path().string() << endl;
-                
-                string dirname = d_init->path().string();
-                string dateverifiedval = "";
-                
-                entryExists(d_init->path().string(),&redis);
-                
-                string indexval = "dir:" + dirname;
-                redis.hmset(indexval,record.begin(),record.end());
-
+    for(const auto& entry : fs::directory_iterator(s,fs::directory_options::skip_permission_denied, error_code)) {
+        //cout << ".";
+        if(!error_code) {
+            if(!entry.is_symlink() && entry.is_directory()){
+                const auto dirname = "/" + entry.path().relative_path().string();
+                cout << "Dir: " << dirname << endl;
+                if(strcmp(this->dbasetype,"mysql") == 0) {
+                    auto dirsaveasync = std::async(std::launch::async, &mysqlcontroller::saveDirectoryName_async, this->mysqlctl, dirname);
+                    dirsaveasync.wait();
+                }
+                if(strcmp(this->dbasetype,"sqlite") == 0) {
+                    this->sqlitectl->save_dir_info(dirname.c_str());
+                }    
                 numberofdirectories++;
-            }
-        }
-    }
-}*/
+                this->get_directories_files(dirname, level+1);
 
-void get_directories_mysql(const string& s, mysqlcontroller* mysql) {
-   auto d_init = filesystem::recursive_directory_iterator(s,filesystem::directory_options::skip_permission_denied);
-    auto d_end = filesystem::end(d_init);
-    auto error_code = std::error_code();
+            } else if (entry.is_regular_file()) {
+                
+                const auto dname = s;
+                const auto filename = "/" +  entry.path().relative_path().string();
+                const auto ftime = entry.last_write_time();
+                std::time_t ctime = to_time_t(ftime);
+                char* time = to_char_time_t(ctime);
+
+                uintmax_t fsize = entry.file_size();
+                numberoffiles++;
+                cout << "\tFile: " << filename << endl;
+
+                if (usehashvals == 0) {
+                    if (strcmp(this->dbasetype, "sqlite") == 0) {
+                        this->sqlitectl->save_file_info(filename.c_str(),dname.c_str(), time, fsize);
+                    }
+                }
+                else {
+
+                    FILE* file = fopen(filename.c_str(), "r");
+                    
+                    if (file == NULL) {
+                        printf("\tUnable to open file. Moving on...\n");
+                    }
+                    else {
+                        SHA256CPP* sha256_obj = new SHA256CPP();
+                        HashValues hashVals;
+
+                        hashVals = sha256_obj->calculateHash(file);
+
+                        fclose(file);
+                        delete sha256_obj;
+
+                        string hashedvals = to_string(hashVals.H[0]);
+                        hashedvals += to_string(hashVals.H[1]);
+                        hashedvals += to_string(hashVals.H[2]);
+                        hashedvals += to_string(hashVals.H[3]);
+                        hashedvals += to_string(hashVals.H[4]);
+                        hashedvals += to_string(hashVals.H[5]);
+                        hashedvals += to_string(hashVals.H[6]);
+                        hashedvals += to_string(hashVals.H[7]);
+
+                        if (strcmp(this->dbasetype, "mysql") == 0) {
+                            auto filesaveasync = std::async(std::launch::async, &mysqlcontroller::saveFileInfo_async, this->mysqlctl, dname, entry.path().filename().string(), hashedvals);
+                            filesaveasync.wait();
+                        }
+
+                        if (strcmp(this->dbasetype, "sqlite") == 0) {
+                            //fprintf(stderr, "Saving hashedvalue of %s", hashedvals.c_str());
+                            this->sqlitectl->save_file_info(filename.c_str(), dname.c_str(), time, fsize, (char*)hashedvals.c_str());
+                        }
+
+                    }
+                }
+            } 
+            else {
+                //Do nothing
+                const auto unknown = "/" +  entry.path().relative_path().string();
+                cout << "\tUnknown: " << unknown << endl;
+            }
+        } else {
+            cout << "# ERR: DirectoryIterator in " << __FILE__;
+            cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
+            cout << "# ERROR Code: " << error_code.category().name();
+            cout << " ERROR Details: " << error_code.category().message(error_code.value()) << endl;
+            cout << " ERROR accessing: " << entry.path().relative_path().string() << endl;
+        }    
+    }
     
-    for(; d_init != d_end; d_init.increment(error_code)){
-        if(!error_code){
-            if(!d_init->is_symlink() && d_init->is_directory()){ 
-                string dirname = d_init->path().string();
-                cout << "Saving directory: " + dirname << endl;
-                mysql->initPreparedStatements();
-                mysql->saveDirectoryName(dirname);
-                mysql->closePreparedStatements();
-                numberofdirectories++;
-            }
-        }
-    }
-
 }
 
-void setParamVals() {
-   parentdir = m->getPARENTDIR();
-   dbasehost = m->getDATABASEHOSTNAME();
-   uname = m->getUSERNAME();
-   pwd = m->getPASSWORD();
-   portno = m->getPORT();
-   mname = m->getMACHINENAME();
-}
+/**
+ * @brief Set the Param Vals object
+ * 
+ */
+void fileintegritychecker::setParamVals(Menu *_menu) {
+   this->parentdir = _menu->getPARENTDIR();
+   this->dbasetype = _menu->getDBASETYPE();
+   this->mname = _menu->getMACHINENAME();
 
-int main(int argc, char *argv[]) {
-   time_t start, end;
-   double time_taken = 0.0;
-
-   time(&start);
-
-   m = new Menu();
-   
-   if(argc >= 8) {
-      m->ParseArguments(argc, argv);
-   } else {
-	   m->PrintMenu();
-	   return 0;
+   if(strcmp(this->dbasetype,"mysql") == 0) {
+       this->dbasehost = _menu->getDATABASEHOSTNAME();
+       this->uname = _menu->getUSERNAME();
+       this->pwd = _menu->getPASSWORD();
+       this->portno = _menu->getPORT();
    }
-    
-    setParamVals();
-    
-    string pDir = parentdir;
-    cout << pDir << endl;
-    mysqlcontroller *mysqlctl = new mysqlcontroller(dbasehost,"fileintegritychecker",uname,pwd,3306,mname);
-    mysqlctl->initdb();
-    get_directories_mysql(pDir,mysqlctl);
-    mysqlctl->closedb();
-    //get_directories_hmset(pDir);
+   
+   if(strcmp(this->dbasetype,"sqlite") == 0) {
+       this->dbasefilename = _menu->getDBASEFILENAME();
+   }
 
-    time(&end);
+   this->usehashvals = _menu->getPROCESSHASHVALS();
 
-    // Calculating total time taken by the program.
-    time_taken = double(end - start);
-    int n = time_taken;
-    n = n % (24 * 3600);
-    int hour = n / 3600;
-    n %= 3600;
-    int minutes = n / 60 ;
-    n %= 60;
-    int seconds = n;
-    cout << "Time taken is: " << hour << " " << "hours " << minutes << " " << "minutes " << seconds << " " << "seconds " << endl;
-    cout << "Total directories: " << numberofdirectories << " - " << "new directories = " << numberofnewdirectories << " " << "verified directories = " << numberofverifieddirectories << " ." << endl;
-
-    return(0);
 }
+
+
+void fileintegritychecker::setDatabaseConnections() {
+    if (strcmp(this->dbasetype, "mysql") == 0) {
+        this->mysqlctl = new mysqlcontroller(this->dbasehost, "fileintegritychecker", this->uname, this->pwd, 3306, this->mname);
+        this->mysqlctl->initdb();
+    }
+
+    if (strcmp(this->dbasetype, "sqlite") == 0) {
+        this->sqlitectl = new sqlite3controller(this->dbasefilename, this->mname);
+        this->sqlitectl->initdb();
+    }
+}
+
+void fileintegritychecker::closeDatabaseConnections() {
+    if (strcmp(this->dbasetype, "mysql") == 0) {
+        this->mysqlctl->closedb();
+    }
+
+    if (strcmp(this->dbasetype, "sqlite") == 0) {
+        this->sqlitectl->closedb();
+    }
+}
+
+void fileintegritychecker::processFiles() {
+    string pDir = this->parentdir;
+    cout << pDir << endl;
+
+    if (strcmp(this->dbasetype, "mysql") == 0) {
+        auto dirsaveasync = std::async(std::launch::async, &mysqlcontroller::saveDirectoryName_async, this->mysqlctl, pDir.c_str());
+        dirsaveasync.wait();
+    }
+    if (strcmp(this->dbasetype, "sqlite") == 0) {
+        this->sqlitectl->save_dir_info(pDir.c_str());
+    }
+
+    numberofdirectories++;
+    
+    this->get_directories_files(pDir);
+
+    
+}
+
+fileintegritychecker::fileintegritychecker() {}
+
+fileintegritychecker::~fileintegritychecker() {}
 
 

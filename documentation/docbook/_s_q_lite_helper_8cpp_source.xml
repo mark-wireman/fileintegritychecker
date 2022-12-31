@@ -1,0 +1,679 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_q_lite_helper_8cpp_source" xml:lang="en-US">
+<title>SQLiteHelper.cpp</title>
+<indexterm><primary>C:/Users/mark_/source/repos/fileintegritychecker/src/SQLiteHelper.cpp</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="__s_q_lite_helper_8cpp_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&quot;../headers/SQLiteHelper.h&quot;</emphasis>
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00002"/>00002 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00003"/>00003 <emphasis role="keyword">using&#32;</emphasis>namespace::std;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00004"/>00004 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00005"/><link linkend="__s_q_lite_helper_8cpp_1aadee09a8afa07a05dc77b8fb183502fe">00005</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1aadee09a8afa07a05dc77b8fb183502fe">sql_check_if_filesize_changed</link>&#32;=&#32;<emphasis role="stringliteral">&quot;select&#32;filesizechanged&#32;from&#32;files&#32;where&#32;id=?;&#32;&quot;</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00006"/><link linkend="__s_q_lite_helper_8cpp_1a11a095d4c486bbde5cd5c03fdeef757e">00006</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1a11a095d4c486bbde5cd5c03fdeef757e">sql_check_if_filesize_changed_in_files</link>&#32;=&#32;<emphasis role="stringliteral">&quot;select&#32;id&#32;from&#32;files&#32;where&#32;filesize&#32;=&#32;?&#32;and&#32;id&#32;=&#32;?;&#32;&quot;</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00007"/>00007 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00008"/><link linkend="__s_q_lite_helper_8cpp_1a30a8474684b57677c7f4ade261d52396">00008</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1a30a8474684b57677c7f4ade261d52396">sql_check_if_hashedval_changed</link>&#32;=&#32;<emphasis role="stringliteral">&quot;select&#32;hashedvaluechanged&#32;from&#32;files&#32;where&#32;id=?;&#32;&quot;</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00009"/><link linkend="__s_q_lite_helper_8cpp_1a24430c9279b2f12e6865146481668de6">00009</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1a24430c9279b2f12e6865146481668de6">sql_check_if_hashedval_changed_in_files</link>&#32;=&#32;<emphasis role="stringliteral">&quot;select&#32;id&#32;from&#32;files&#32;where&#32;hashedvalue&#32;=&#32;?&#32;and&#32;id&#32;=&#32;?;&#32;&quot;</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00010"/>00010 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00011"/><link linkend="__s_q_lite_helper_8cpp_1a0b374634088c38fd0277d22cee8a076a">00011</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1a0b374634088c38fd0277d22cee8a076a">sql_check_if_datemodified_changed</link>&#32;=&#32;<emphasis role="stringliteral">&quot;select&#32;lastmodifiedchanged&#32;from&#32;files&#32;where&#32;id=?;&#32;&quot;</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00012"/><link linkend="__s_q_lite_helper_8cpp_1a2a3a606e5782280c0d3693624d86223a">00012</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1a2a3a606e5782280c0d3693624d86223a">sql_check_if_datemodified_changed_in_files</link>&#32;=&#32;<emphasis role="stringliteral">&quot;select&#32;id&#32;from&#32;files&#32;where&#32;lastmodified&#32;=&#32;?&#32;and&#32;id&#32;=&#32;?;&#32;&quot;</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00013"/>00013 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00014"/><link linkend="__s_q_lite_helper_8cpp_1a6eaedbf4c3a151599a4dff198e474d86">00014</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1a6eaedbf4c3a151599a4dff198e474d86">sql_check_if_value_changed_in_changes_textval</link>&#32;=&#32;<emphasis role="stringliteral">&quot;select&#32;id&#32;from&#32;changes&#32;where&#32;fileid&#32;=&#32;?&#32;and&#32;textvalue&#32;=&#32;?;&#32;&quot;</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00015"/><link linkend="__s_q_lite_helper_8cpp_1a6c55458a9f14bda4df0194ad7ea8d24f">00015</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1a6c55458a9f14bda4df0194ad7ea8d24f">sql_check_if_value_changed_in_changes_intval</link>&#32;=&#32;<emphasis role="stringliteral">&quot;select&#32;id&#32;from&#32;changes&#32;where&#32;fileid&#32;=&#32;?&#32;and&#32;intvalue&#32;=&#32;?;&#32;&quot;</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00016"/>00016 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00017"/><link linkend="__s_q_lite_helper_8cpp_1a8141fadef4ba0f5b6d6661c5dc0a5edc">00017</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1a8141fadef4ba0f5b6d6661c5dc0a5edc">sql_get_file_id</link>&#32;=&#32;<emphasis role="stringliteral">&quot;select&#32;id&#32;from&#32;files&#32;where&#32;filename=?&#32;and&#32;dirid=?;&#32;&quot;</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00018"/><link linkend="__s_q_lite_helper_8cpp_1ad69bcee87ad4e63344e2788867af9d33">00018</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1ad69bcee87ad4e63344e2788867af9d33">sql_get_directory_id</link>&#32;=&#32;<emphasis role="stringliteral">&quot;select&#32;id&#32;from&#32;directories&#32;where&#32;dirname=?&#32;and&#32;machinename=&#32;?;&#32;&quot;</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00019"/>00019 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00020"/><link linkend="__s_q_lite_helper_8cpp_1a970ba9c2ed3ddfaa6961348c39d128db">00020</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1a970ba9c2ed3ddfaa6961348c39d128db">sql_save_newfile_nohashedval</link>&#32;=&#32;<emphasis role="stringliteral">&quot;insert&#32;into&#32;files&#32;(dirid,&#32;dateadded,&#32;filename,&#32;filesize,&#32;lastmodified)&#32;VALUES&#32;(?,?,?,?,?);&#32;&quot;</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00021"/><link linkend="__s_q_lite_helper_8cpp_1a9881226bc88bfd09be3a2c29af05419f">00021</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1a9881226bc88bfd09be3a2c29af05419f">sql_save_newfile_hashedval</link>&#32;=&#32;<emphasis role="stringliteral">&quot;insert&#32;into&#32;files&#32;(dirid,&#32;dateadded,&#32;filename,&#32;filesize,&#32;lastmodified,&#32;hashval)&#32;VALUES&#32;(?,?,?,?,?,?);&#32;&quot;</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00022"/>00022 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00023"/><link linkend="__s_q_lite_helper_8cpp_1a022241ec805998c398b20c90d1a51256">00023</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1a022241ec805998c398b20c90d1a51256">sql_save_textval_in_changes</link>&#32;=&#32;<emphasis role="stringliteral">&quot;INSERT&#32;INTO&#32;changes&#32;(fileid,datechanged,textvalue)&#32;VALUES&#32;(?,?,?);&#32;&quot;</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00024"/><link linkend="__s_q_lite_helper_8cpp_1a1ffdb057e3cdae8e7c5b832f735d97bd">00024</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1a1ffdb057e3cdae8e7c5b832f735d97bd">sql_save_intval_in_changes</link>&#32;=&#32;<emphasis role="stringliteral">&quot;INSERT&#32;INTO&#32;changes&#32;(fileid,datechanged,intvalue)&#32;VALUES&#32;(?,?,?);&#32;&quot;</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00025"/>00025 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00026"/><link linkend="__s_q_lite_helper_8cpp_1abea92ed80d2eadb452e3517aa9e4f4b5">00026</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1abea92ed80d2eadb452e3517aa9e4f4b5">sql_set_inchanges_hashedval</link>&#32;=&#32;<emphasis role="stringliteral">&quot;UPDATE&#32;files&#32;SET&#32;hashedvaluechanged=1&#32;WHERE&#32;id=?;&#32;&quot;</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00027"/><link linkend="__s_q_lite_helper_8cpp_1a48a30016c73a80ddd5de694dad070638">00027</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1a48a30016c73a80ddd5de694dad070638">sql_set_inchanges_filesize</link>&#32;=&#32;<emphasis role="stringliteral">&quot;UPDATE&#32;files&#32;SET&#32;filesizechanged=1&#32;WHERE&#32;id=?;&#32;&quot;</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00028"/><link linkend="__s_q_lite_helper_8cpp_1a86296081c599ddc648276a4e8a7699e7">00028</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1a86296081c599ddc648276a4e8a7699e7">sql_set_inchanges_lastmodified</link>&#32;=&#32;<emphasis role="stringliteral">&quot;UPDATE&#32;files&#32;SET&#32;lastmodifiedchanged=1&#32;WHERE&#32;id=?;&#32;&quot;</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00029"/>00029 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00030"/><link linkend="__s_q_lite_helper_8cpp_1a204ff8c5d0354b487b6e77ab17c0e106">00030</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1a204ff8c5d0354b487b6e77ab17c0e106">_dirname</link>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00031"/><link linkend="__s_q_lite_helper_8cpp_1a865240c40b0ff5596e16d5ff7c709565">00031</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1a865240c40b0ff5596e16d5ff7c709565">_filename</link>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00032"/><link linkend="__s_q_lite_helper_8cpp_1aa424942af01346d64f66002f897ec80e">00032</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1aa424942af01346d64f66002f897ec80e">_machinename</link>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00033"/><link linkend="__s_q_lite_helper_8cpp_1a57cb4a0beb90bcf5df0d725693b1a5b9">00033</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1a57cb4a0beb90bcf5df0d725693b1a5b9">_datemodified</link>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00034"/><link linkend="__s_q_lite_helper_8cpp_1ae0d9cf99ed8ba63c3466d6ee724a0f38">00034</link> <emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="__s_q_lite_helper_8cpp_1ae0d9cf99ed8ba63c3466d6ee724a0f38">_hashedval</link>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00035"/><link linkend="__s_q_lite_helper_8cpp_1a8fa7c9a40c7098d3a32f6c6a939898ba">00035</link> <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_q_lite_helper_8cpp_1a8fa7c9a40c7098d3a32f6c6a939898ba">_filesize</link>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00036"/><link linkend="__s_q_lite_helper_8cpp_1a6ff722a0f3f2c0e8e2db123ddba7c66d">00036</link> <emphasis role="keywordtype">int</emphasis>&#32;<link linkend="__s_q_lite_helper_8cpp_1a6ff722a0f3f2c0e8e2db123ddba7c66d">_dirid</link>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00037"/>00037 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00038"/><link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">00038</link> sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00039"/>00039 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00040"/>00040 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00041"/>00041 <emphasis role="keywordtype">int</emphasis>&#32;SQLiteHelper::checkIfAttributeHasChanged(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;<emphasis role="keyword">const</emphasis>&#32;AttributeToCheck&#32;attribute,&#32;<emphasis role="keyword">const</emphasis>&#32;TableToCheck&#32;table,&#32;sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;char_attr,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;int_attr)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00043"/>00043 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00044"/>00044 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>(attribute)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00045"/>00045 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;1:&#32;<emphasis role="comment">//Hashedval</emphasis>
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00046"/>00046 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;didHashedValueChange(char_attr,&#32;table,&#32;file_id,&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00047"/>00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00048"/>00048 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;2:&#32;<emphasis role="comment">//Filesize</emphasis>
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00049"/>00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;didFileSizeChange(int_attr,&#32;table,&#32;file_id,&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00050"/>00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00051"/>00051 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;3:&#32;<emphasis role="comment">//Datemodified</emphasis>
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;didDateModifiedChange(char_attr,&#32;table,&#32;file_id,&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00053"/>00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00054"/>00054 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">default</emphasis>:
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00055"/>00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;-1;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00056"/>00056 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00057"/>00057 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00058"/>00058 &#32;&#32;&#32;&#32;<emphasis role="comment">//fprintf(stderr,&#32;&quot;\nReturn&#32;value&#32;from&#32;checkIfAttributeHasChanged&#32;is&#32;%d&quot;,&#32;retVal);</emphasis>
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00060"/>00060 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00061"/>00061 }
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00062"/>00062 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00063"/>00063 <emphasis role="keywordtype">int</emphasis>&#32;SQLiteHelper::checkIfAttributeIsInChanges(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;<emphasis role="keyword">const</emphasis>&#32;AttributeToCheck&#32;attribute,&#32;sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00064"/>00064 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00065"/>00065 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00067"/>00067 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;sql_stmt;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00069"/>00069 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00070"/>00070 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00071"/>00071 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>&#32;(attribute)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00072"/>00072 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;1:&#32;<emphasis role="comment">//Hashedval</emphasis>
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a30a8474684b57677c7f4ade261d52396">sql_check_if_hashedval_changed</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00074"/>00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00075"/>00075 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;2:&#32;<emphasis role="comment">//Filesize</emphasis>
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00076"/>00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1aadee09a8afa07a05dc77b8fb183502fe">sql_check_if_filesize_changed</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00078"/>00078 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;3:&#32;<emphasis role="comment">//Datemodified</emphasis>
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00079"/>00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a0b374634088c38fd0277d22cee8a076a">sql_check_if_datemodified_changed</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00080"/>00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00081"/>00081 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">default</emphasis>:
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00082"/>00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;-1;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00083"/>00083 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00084"/>00084 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00085"/>00085 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_OK)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00086"/>00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;1,&#32;file_id);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00087"/>00087 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00088"/>00088 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00089"/>00089 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00090"/>00090 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis role="stringliteral">&quot;checkIfAttributeIsInChanges::Failed&#32;to&#32;execute&#32;statement:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00091"/>00091 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00092"/>00092 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00093"/>00093 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00094"/>00094 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>)&#32;==&#32;SQLITE_ROW)
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00095"/>00095 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00096"/>00096 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;sqlite3_column_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;0);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00097"/>00097 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00098"/>00098 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00099"/>00099 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00100"/>00100 }
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00101"/>00101 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00102"/>00102 <emphasis role="keywordtype">int</emphasis>&#32;SQLiteHelper::didHashedValueChange(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;hashed_val,&#32;TableToCheck&#32;table,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00103"/>00103 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00104"/>00104 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00105"/>00105 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00106"/>00106 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00107"/>00107 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00108"/>00108 &#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00109"/>00109 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00110"/>00110 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(table&#32;==&#32;1)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00111"/>00111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a24430c9279b2f12e6865146481668de6">sql_check_if_hashedval_changed_in_files</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00112"/>00112 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00113"/>00113 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(table&#32;==&#32;2)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00114"/>00114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a6eaedbf4c3a151599a4dff198e474d86">sql_check_if_value_changed_in_changes_textval</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00115"/>00115 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00116"/>00116 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00117"/>00117 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00118"/>00118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00119"/>00119 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00120"/>00120 &#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00121"/>00121 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00122"/>00122 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_OK)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00123"/>00123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00124"/>00124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;1,&#32;hashed_val,&#32;-1,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00125"/>00125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;2,&#32;file_id);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00126"/>00126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00127"/>00127 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00128"/>00128 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00129"/>00129 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00130"/>00130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis role="stringliteral">&quot;didHashedValueChange::Failed&#32;to&#32;execute&#32;statement:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00131"/>00131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00132"/>00132 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00133"/>00133 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00134"/>00134 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>)&#32;==&#32;SQLITE_ROW)
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00135"/>00135 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00136"/>00136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;sqlite3_column_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;0);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00137"/>00137 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00138"/>00138 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00139"/>00139 &#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00140"/>00140 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00141"/>00141 &#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00142"/>00142 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00143"/>00143 }
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00144"/>00144 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00145"/>00145 <emphasis role="keywordtype">int</emphasis>&#32;SQLiteHelper::didFileSizeChange(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_size,&#32;TableToCheck&#32;table,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00146"/>00146 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00147"/>00147 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00148"/>00148 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00149"/>00149 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00150"/>00150 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00151"/>00151 &#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00152"/>00152 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00153"/>00153 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(table&#32;==&#32;1)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00154"/>00154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a11a095d4c486bbde5cd5c03fdeef757e">sql_check_if_filesize_changed_in_files</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00155"/>00155 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00156"/>00156 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(table&#32;==&#32;2)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00157"/>00157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a6c55458a9f14bda4df0194ad7ea8d24f">sql_check_if_value_changed_in_changes_intval</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00158"/>00158 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00159"/>00159 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00160"/>00160 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00161"/>00161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00162"/>00162 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00163"/>00163 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00164"/>00164 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00165"/>00165 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_OK)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00166"/>00166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;1,&#32;file_size);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00167"/>00167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;2,&#32;file_id);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00168"/>00168 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00169"/>00169 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00170"/>00170 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00171"/>00171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis role="stringliteral">&quot;didFileSizeChange::Failed&#32;to&#32;execute&#32;statement:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00172"/>00172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00173"/>00173 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00174"/>00174 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00175"/>00175 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>)&#32;==&#32;SQLITE_ROW)
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00176"/>00176 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00177"/>00177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;sqlite3_column_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;0);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00178"/>00178 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00179"/>00179 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00180"/>00180 &#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00181"/>00181 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00182"/>00182 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00183"/>00183 }
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00184"/>00184 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00185"/>00185 <emphasis role="keywordtype">int</emphasis>&#32;SQLiteHelper::didDateModifiedChange(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;date_modified,&#32;TableToCheck&#32;table,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00186"/>00186 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00187"/>00187 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00188"/>00188 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00189"/>00189 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00190"/>00190 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00191"/>00191 &#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00192"/>00192 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00193"/>00193 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(table&#32;==&#32;1)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00194"/>00194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a2a3a606e5782280c0d3693624d86223a">sql_check_if_datemodified_changed_in_files</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00195"/>00195 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00196"/>00196 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(table&#32;==&#32;2)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00197"/>00197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a6eaedbf4c3a151599a4dff198e474d86">sql_check_if_value_changed_in_changes_textval</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00198"/>00198 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00199"/>00199 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00200"/>00200 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00201"/>00201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00202"/>00202 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00203"/>00203 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00204"/>00204 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00205"/>00205 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_OK)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00206"/>00206 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;1,&#32;date_modified,&#32;-1,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00207"/>00207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;2,&#32;file_id);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00208"/>00208 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00209"/>00209 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00210"/>00210 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00211"/>00211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis role="stringliteral">&quot;didDateModifiedChange::Failed&#32;to&#32;execute&#32;statement:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00212"/>00212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00213"/>00213 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00214"/>00214 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00215"/>00215 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>)&#32;==&#32;SQLITE_ROW)
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00216"/>00216 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00217"/>00217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;sqlite3_column_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;0);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00218"/>00218 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00219"/>00219 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00220"/>00220 &#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00221"/>00221 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00222"/>00222 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00223"/>00223 }
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00224"/>00224 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00225"/>00225 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00226"/>00226 <emphasis role="keywordtype">void</emphasis>&#32;SQLiteHelper::setDirectoryName(<emphasis role="keywordtype">char</emphasis>*&#32;dir_name)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00227"/>00227 &#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1a204ff8c5d0354b487b6e77ab17c0e106">_dirname</link>&#32;=&#32;(<emphasis role="keywordtype">char</emphasis>*)malloc(strlen(dir_name)&#32;+&#32;1);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00228"/>00228 &#32;&#32;&#32;&#32;strcpy(<link linkend="__s_q_lite_helper_8cpp_1a204ff8c5d0354b487b6e77ab17c0e106">_dirname</link>,&#32;dir_name);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00229"/>00229 }
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00230"/>00230 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00231"/>00231 <emphasis role="keywordtype">void</emphasis>&#32;SQLiteHelper::setFileName(<emphasis role="keywordtype">char</emphasis>*&#32;file_name)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00232"/>00232 &#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1a865240c40b0ff5596e16d5ff7c709565">_filename</link>&#32;=&#32;(<emphasis role="keywordtype">char</emphasis>*)malloc(strlen(file_name)&#32;+&#32;1);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00233"/>00233 &#32;&#32;&#32;&#32;strcpy(<link linkend="__s_q_lite_helper_8cpp_1a865240c40b0ff5596e16d5ff7c709565">_filename</link>,&#32;file_name);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00234"/>00234 }
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00235"/>00235 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00236"/>00236 <emphasis role="keywordtype">void</emphasis>&#32;SQLiteHelper::setMachineName(<emphasis role="keywordtype">char</emphasis>*&#32;machine_name)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00237"/>00237 &#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1aa424942af01346d64f66002f897ec80e">_machinename</link>&#32;=&#32;(<emphasis role="keywordtype">char</emphasis>*)malloc(strlen(machine_name)&#32;+&#32;1);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00238"/>00238 &#32;&#32;&#32;&#32;strcpy(<link linkend="__s_q_lite_helper_8cpp_1aa424942af01346d64f66002f897ec80e">_machinename</link>,&#32;machine_name);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00239"/>00239 }
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00240"/>00240 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00241"/>00241 <emphasis role="keywordtype">int</emphasis>&#32;SQLiteHelper::getDirectoryId(sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00242"/>00242 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00243"/>00243 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00244"/>00244 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00245"/>00245 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00246"/>00246 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00247"/>00247 &#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1ad69bcee87ad4e63344e2788867af9d33">sql_get_directory_id</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00248"/>00248 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00249"/>00249 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_OK)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00250"/>00250 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;1,&#32;<link linkend="__s_q_lite_helper_8cpp_1a204ff8c5d0354b487b6e77ab17c0e106">_dirname</link>,&#32;-1,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00251"/>00251 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;2,&#32;<link linkend="__s_q_lite_helper_8cpp_1aa424942af01346d64f66002f897ec80e">_machinename</link>,&#32;-1,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00252"/>00252 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00253"/>00253 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00254"/>00254 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00255"/>00255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis role="stringliteral">&quot;getDirectoryId::Failed&#32;to&#32;execute&#32;statement:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00256"/>00256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00257"/>00257 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00258"/>00258 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00259"/>00259 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>)&#32;==&#32;SQLITE_ROW)
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00260"/>00260 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00261"/>00261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;sqlite3_column_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;0);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00262"/>00262 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00263"/>00263 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00264"/>00264 &#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00265"/>00265 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00266"/>00266 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00267"/>00267 }
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00268"/>00268 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00269"/>00269 <emphasis role="keywordtype">int</emphasis>&#32;SQLiteHelper::getDirectoryId(sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dir_name,&#32;<emphasis role="keywordtype">char</emphasis>*&#32;machine_name)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00270"/>00270 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00271"/>00271 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00272"/>00272 &#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1a204ff8c5d0354b487b6e77ab17c0e106">_dirname</link>&#32;=&#32;(<emphasis role="keywordtype">char</emphasis>*)malloc(strlen(dir_name)&#32;+&#32;1);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00273"/>00273 &#32;&#32;&#32;&#32;strcpy(<link linkend="__s_q_lite_helper_8cpp_1a204ff8c5d0354b487b6e77ab17c0e106">_dirname</link>,&#32;dir_name);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00274"/>00274 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00275"/>00275 &#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1aa424942af01346d64f66002f897ec80e">_machinename</link>&#32;=&#32;(<emphasis role="keywordtype">char</emphasis>*)malloc(strlen(machine_name)&#32;+&#32;1);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00276"/>00276 &#32;&#32;&#32;&#32;strcpy(<link linkend="__s_q_lite_helper_8cpp_1aa424942af01346d64f66002f897ec80e">_machinename</link>,&#32;machine_name);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00277"/>00277 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00278"/>00278 &#32;&#32;&#32;&#32;retVal&#32;=&#32;getDirectoryId(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00279"/>00279 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00280"/>00280 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00281"/>00281 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00282"/>00282 }
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00283"/>00283 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00284"/>00284 <emphasis role="keywordtype">int</emphasis>&#32;SQLiteHelper::getFileId(sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00285"/>00285 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00286"/>00286 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00287"/>00287 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00288"/>00288 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00289"/>00289 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00290"/>00290 &#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a8141fadef4ba0f5b6d6661c5dc0a5edc">sql_get_file_id</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00291"/>00291 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00292"/>00292 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_OK)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00293"/>00293 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;1,&#32;<link linkend="__s_q_lite_helper_8cpp_1a865240c40b0ff5596e16d5ff7c709565">_filename</link>,&#32;-1,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00294"/>00294 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;2,&#32;<link linkend="__s_q_lite_helper_8cpp_1a6ff722a0f3f2c0e8e2db123ddba7c66d">_dirid</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00295"/>00295 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00296"/>00296 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00297"/>00297 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00298"/>00298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis role="stringliteral">&quot;getFileId::Failed&#32;to&#32;execute&#32;statement:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00299"/>00299 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00300"/>00300 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00301"/>00301 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00302"/>00302 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>)&#32;==&#32;SQLITE_ROW)
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00303"/>00303 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00304"/>00304 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;sqlite3_column_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;0);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00305"/>00305 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00306"/>00306 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00307"/>00307 &#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00308"/>00308 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00309"/>00309 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00310"/>00310 }
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00311"/>00311 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00312"/>00312 <emphasis role="keywordtype">int</emphasis>&#32;SQLiteHelper::getFileId(sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<emphasis role="keywordtype">char</emphasis>*&#32;file_name,&#32;<emphasis role="keywordtype">int</emphasis>&#32;dir_id)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00313"/>00313 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00314"/>00314 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00315"/>00315 &#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1a865240c40b0ff5596e16d5ff7c709565">_filename</link>&#32;=&#32;(<emphasis role="keywordtype">char</emphasis>*)malloc(strlen(file_name)&#32;+&#32;1);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00316"/>00316 &#32;&#32;&#32;&#32;strcpy(<link linkend="__s_q_lite_helper_8cpp_1a865240c40b0ff5596e16d5ff7c709565">_filename</link>,&#32;file_name);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00317"/>00317 &#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1a6ff722a0f3f2c0e8e2db123ddba7c66d">_dirid</link>&#32;=&#32;dir_id;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00318"/>00318 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00319"/>00319 &#32;&#32;&#32;&#32;retVal&#32;=&#32;getFileId(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00320"/>00320 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00321"/>00321 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00322"/>00322 }
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00323"/>00323 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00324"/>00324 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00330"/>00330 <emphasis role="keywordtype">char</emphasis>*&#32;SQLiteHelper::getCurrentTime()&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00331"/>00331 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;retVal;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00332"/>00332 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;char_array;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00333"/>00333 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00334"/>00334 &#32;&#32;&#32;&#32;time_t&#32;t&#32;=&#32;time(0);&#32;&#32;&#32;<emphasis role="comment">//&#32;get&#32;time&#32;now</emphasis>
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00335"/>00335 &#32;&#32;&#32;&#32;tm*&#32;now&#32;=&#32;localtime(&amp;t);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00336"/>00336 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;date_string[100];
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00337"/>00337 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;time_string[100];
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00338"/>00338 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00339"/>00339 &#32;&#32;&#32;&#32;strftime(date_string,&#32;50,&#32;<emphasis role="stringliteral">&quot;%B&#32;%d,&#32;%Y&#32;&quot;</emphasis>,&#32;now);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00340"/>00340 &#32;&#32;&#32;&#32;strftime(time_string,&#32;50,&#32;<emphasis role="stringliteral">&quot;%T&quot;</emphasis>,&#32;now);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00341"/>00341 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00342"/>00342 &#32;&#32;&#32;&#32;retVal&#32;+=&#32;date_string;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00343"/>00343 &#32;&#32;&#32;&#32;retVal&#32;+=&#32;time_string;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00344"/>00344 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00345"/>00345 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n&#32;=&#32;retVal.length();
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00346"/>00346 &#32;&#32;&#32;&#32;char_array&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>[n&#32;+&#32;1];
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00347"/>00347 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00348"/>00348 &#32;&#32;&#32;&#32;strcpy(char_array,&#32;retVal.c_str());
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00349"/>00349 &#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00350"/>00350 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;char_array;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00351"/>00351 }
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00352"/>00352 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00353"/>00353 <emphasis role="keywordtype">int</emphasis>&#32;SQLiteHelper::saveFileInfo(sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;dir_id,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;file_name,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_size,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;date_modified,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;hashed_val,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;isNew,&#32;AttributeToCheck&#32;attr_to_update)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00354"/>00354 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00355"/>00355 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;hasChanged&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00356"/>00356 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00357"/>00357 &#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1a6ff722a0f3f2c0e8e2db123ddba7c66d">_dirid</link>&#32;=&#32;dir_id;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00358"/>00358 &#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1a865240c40b0ff5596e16d5ff7c709565">_filename</link>&#32;=&#32;(<emphasis role="keywordtype">char</emphasis>*)malloc(strlen(file_name)+1);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00359"/>00359 &#32;&#32;&#32;&#32;strcpy(<link linkend="__s_q_lite_helper_8cpp_1a865240c40b0ff5596e16d5ff7c709565">_filename</link>,file_name);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00360"/>00360 &#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1a8fa7c9a40c7098d3a32f6c6a939898ba">_filesize</link>&#32;=&#32;file_size;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00361"/>00361 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00362"/>00362 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(date_modified&#32;!=&#32;NULL)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00363"/>00363 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1a57cb4a0beb90bcf5df0d725693b1a5b9">_datemodified</link>&#32;=&#32;(<emphasis role="keywordtype">char</emphasis>*)malloc(strlen(date_modified)&#32;+&#32;1);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00364"/>00364 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;strcpy(<link linkend="__s_q_lite_helper_8cpp_1a57cb4a0beb90bcf5df0d725693b1a5b9">_datemodified</link>,&#32;date_modified);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00365"/>00365 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00366"/>00366 &#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00367"/>00367 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(hashed_val&#32;!=&#32;NULL)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00368"/>00368 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//fprintf(stderr,&#32;&quot;\nGetting&#32;ready&#32;to&#32;store&#32;hashedvalue&#32;into&#32;_hashedval&#32;with&#32;value&#32;of&#32;%s\n&quot;,&#32;_hashedval);</emphasis>
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00369"/>00369 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1ae0d9cf99ed8ba63c3466d6ee724a0f38">_hashedval</link>&#32;=&#32;(<emphasis role="keywordtype">char</emphasis>*)malloc(strlen(hashed_val)&#32;+&#32;1);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00370"/>00370 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;strcpy(<link linkend="__s_q_lite_helper_8cpp_1ae0d9cf99ed8ba63c3466d6ee724a0f38">_hashedval</link>,&#32;(<emphasis role="keywordtype">char</emphasis>*)hashed_val);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00371"/>00371 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00372"/>00372 &#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00373"/>00373 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(isNew)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00374"/>00374 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;saveNewFileInfo(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00375"/>00375 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00376"/>00376 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00377"/>00377 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>&#32;(attr_to_update)
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00378"/>00378 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00379"/>00379 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;1:
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00380"/>00380 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//fprintf(stderr,&#32;&quot;\nGetting&#32;ready&#32;to&#32;save&#32;hashedvalue&#32;of&#32;%s\n&quot;,&#32;_hashedval);</emphasis>
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00381"/>00381 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;saveExistingFileInfo(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;attr_to_update,<link linkend="__s_q_lite_helper_8cpp_1ae0d9cf99ed8ba63c3466d6ee724a0f38">_hashedval</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00382"/>00382 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00383"/>00383 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;2:
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00384"/>00384 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;saveExistingFileInfo(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;attr_to_update,NULL,<link linkend="__s_q_lite_helper_8cpp_1a8fa7c9a40c7098d3a32f6c6a939898ba">_filesize</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00385"/>00385 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00386"/>00386 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;3:
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00387"/>00387 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;saveExistingFileInfo(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;attr_to_update,&#32;<link linkend="__s_q_lite_helper_8cpp_1a57cb4a0beb90bcf5df0d725693b1a5b9">_datemodified</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00388"/>00388 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00389"/>00389 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">default</emphasis>:
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00390"/>00390 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00391"/>00391 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00392"/>00392 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//saveExistingFileInfo(db,&#32;attr_to_update);</emphasis>
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00393"/>00393 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00394"/>00394 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00395"/>00395 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00396"/>00396 }
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00397"/>00397 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00398"/>00398 <emphasis role="keywordtype">int</emphasis>&#32;SQLiteHelper::saveNewFileInfo(sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00399"/>00399 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00400"/>00400 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00401"/>00401 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00402"/>00402 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00403"/>00403 &#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00404"/>00404 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;current_time&#32;=&#32;getCurrentTime();
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00405"/>00405 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00406"/>00406 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__s_q_lite_helper_8cpp_1ae0d9cf99ed8ba63c3466d6ee724a0f38">_hashedval</link>&#32;==&#32;NULL)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00407"/>00407 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a970ba9c2ed3ddfaa6961348c39d128db">sql_save_newfile_nohashedval</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00408"/>00408 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00409"/>00409 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00410"/>00410 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a9881226bc88bfd09be3a2c29af05419f">sql_save_newfile_hashedval</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00411"/>00411 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00412"/>00412 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00413"/>00413 &#32;&#32;&#32;&#32;<emphasis role="comment">//dirid,&#32;dateadded,&#32;filename,&#32;filesize,&#32;lastmodified</emphasis>
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00414"/>00414 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_OK)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00415"/>00415 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;1,&#32;<link linkend="__s_q_lite_helper_8cpp_1a6ff722a0f3f2c0e8e2db123ddba7c66d">_dirid</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00416"/>00416 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;2,&#32;current_time,&#32;-1,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00417"/>00417 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;3,&#32;<link linkend="__s_q_lite_helper_8cpp_1a865240c40b0ff5596e16d5ff7c709565">_filename</link>,&#32;-1,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00418"/>00418 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;4,&#32;<link linkend="__s_q_lite_helper_8cpp_1a8fa7c9a40c7098d3a32f6c6a939898ba">_filesize</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00419"/>00419 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;5,&#32;<link linkend="__s_q_lite_helper_8cpp_1a57cb4a0beb90bcf5df0d725693b1a5b9">_datemodified</link>,&#32;-1,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00420"/>00420 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00421"/>00421 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__s_q_lite_helper_8cpp_1ae0d9cf99ed8ba63c3466d6ee724a0f38">_hashedval</link>&#32;!=&#32;NULL)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00422"/>00422 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;7,&#32;<link linkend="__s_q_lite_helper_8cpp_1ae0d9cf99ed8ba63c3466d6ee724a0f38">_hashedval</link>,&#32;-1,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00423"/>00423 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00424"/>00424 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00425"/>00425 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00426"/>00426 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00427"/>00427 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//fprintf(stderr,&#32;&quot;saveNewFileInfo::Failed&#32;to&#32;execute&#32;statement:&#32;%s\n&quot;,&#32;sqlite3_errmsg(db));</emphasis>
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00428"/>00428 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;-1;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00429"/>00429 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00430"/>00430 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00431"/>00431 &#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00432"/>00432 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00433"/>00433 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_BUSY)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00434"/>00434 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nDatabase&#32;is&#32;busy&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00435"/>00435 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(rc&#32;==&#32;SQLITE_BUSY)
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00436"/>00436 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00437"/>00437 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00438"/>00438 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00439"/>00439 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00440"/>00440 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_ERROR)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00441"/>00441 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;\nIn&#32;saveNewFileInfo&#32;execution&#32;failed:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00442"/>00442 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00443"/>00443 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_MISUSE)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00444"/>00444 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nA&#32;MISUSE&#32;has&#32;been&#32;deteced&#32;in&#32;saveNewFileInfo.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00445"/>00445 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00446"/>00446 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_DONE)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00447"/>00447 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nsqlite3_step&#32;executed&#32;successfully&#32;in&#32;saveNewFileInfo.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00448"/>00448 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00449"/>00449 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00450"/>00450 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nNot&#32;sure&#32;what&#32;happened&#32;in&#32;saveNewFileInfo.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00451"/>00451 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00452"/>00452 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00453"/>00453 &#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00454"/>00454 &#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00455"/>00455 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00456"/>00456 }
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00457"/>00457 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00458"/>00458 <emphasis role="keywordtype">int</emphasis>&#32;SQLiteHelper::saveExistingFileInfo(sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;AttributeToCheck&#32;attr_to_update,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;text_val,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;int_val)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00459"/>00459 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00460"/>00460 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00461"/>00461 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00462"/>00462 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00463"/>00463 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00464"/>00464 &#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00465"/>00465 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;current_time&#32;=&#32;getCurrentTime();
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00466"/>00466 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;fileId&#32;=&#32;getFileId(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00467"/>00467 &#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00468"/>00468 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;in_changes&#32;=&#32;checkIfAttributeIsInChanges(fileId,&#32;attr_to_update,&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00469"/>00469 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;has_changes&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00470"/>00470 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00471"/>00471 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>&#32;(attr_to_update)
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00472"/>00472 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00473"/>00473 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;1:
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00474"/>00474 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00475"/>00475 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!in_changes)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00476"/>00476 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;has_changes&#32;=&#32;checkIfAttributeHasChanged(fileId,&#32;attr_to_update,&#32;TableToCheck::Files,&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;text_val);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00477"/>00477 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00478"/>00478 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00479"/>00479 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;has_changes&#32;=&#32;checkIfAttributeHasChanged(fileId,&#32;attr_to_update,&#32;TableToCheck::Changes,&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;text_val);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00480"/>00480 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00481"/>00481 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00482"/>00482 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(has_changes&#32;==&#32;0)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00483"/>00483 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//fprintf(stderr,&#32;&quot;\nInside&#32;has_changes&#32;with&#32;value&#32;of&#32;%d&#32;and&#32;text&#32;value&#32;%s\n&quot;,&#32;has_changes,&#32;text_val);</emphasis>
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00484"/>00484 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;insertTextValueToChanges(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;fileId,&#32;text_val);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00485"/>00485 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00486"/>00486 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00487"/>00487 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;2:
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00488"/>00488 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00489"/>00489 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!in_changes)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00490"/>00490 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;has_changes&#32;=&#32;checkIfAttributeHasChanged(fileId,&#32;attr_to_update,&#32;TableToCheck::Files,&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;NULL,&#32;int_val);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00491"/>00491 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00492"/>00492 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00493"/>00493 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;has_changes&#32;=&#32;checkIfAttributeHasChanged(fileId,&#32;attr_to_update,&#32;TableToCheck::Changes,&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;NULL,&#32;int_val);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00494"/>00494 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00495"/>00495 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00496"/>00496 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(has_changes&#32;==&#32;0)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00497"/>00497 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//fprintf(stderr,&#32;&quot;\nInside&#32;has_changes&#32;with&#32;value&#32;of&#32;%d&#32;and&#32;int&#32;value&#32;%d\n&quot;,&#32;has_changes,&#32;int_val);</emphasis>
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00498"/>00498 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;insertIntValueToChanges(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;fileId,&#32;int_val);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00499"/>00499 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00500"/>00500 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00501"/>00501 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;3:
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00502"/>00502 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00503"/>00503 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!in_changes)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00504"/>00504 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;has_changes&#32;=&#32;checkIfAttributeHasChanged(fileId,&#32;attr_to_update,&#32;TableToCheck::Files,&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;text_val);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00505"/>00505 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00506"/>00506 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00507"/>00507 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;has_changes&#32;=&#32;checkIfAttributeHasChanged(fileId,&#32;attr_to_update,&#32;TableToCheck::Changes,&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;text_val);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00508"/>00508 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00509"/>00509 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00510"/>00510 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(has_changes&#32;==&#32;0)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00511"/>00511 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//fprintf(stderr,&#32;&quot;\nInside&#32;has_changes&#32;with&#32;value&#32;of&#32;%d&#32;and&#32;text&#32;value&#32;%s\n&quot;,&#32;has_changes,&#32;text_val);</emphasis>
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00512"/>00512 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;insertTextValueToChanges(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;fileId,&#32;text_val);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00513"/>00513 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00514"/>00514 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00515"/>00515 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">default</emphasis>:
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00516"/>00516 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00517"/>00517 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00518"/>00518 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00519"/>00519 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!in_changes&#32;&amp;&amp;&#32;has_changes&#32;==&#32;0)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00520"/>00520 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;updateChangedInFile(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;fileId,&#32;attr_to_update);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00521"/>00521 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00522"/>00522 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00523"/>00523 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00524"/>00524 }
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00525"/>00525 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00526"/>00526 <emphasis role="keywordtype">int</emphasis>&#32;SQLiteHelper::insertTextValueToChanges(sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;text_val)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00527"/>00527 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00528"/>00528 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00529"/>00529 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00530"/>00530 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;current_time&#32;=&#32;getCurrentTime();
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00531"/>00531 &#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00532"/>00532 &#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a022241ec805998c398b20c90d1a51256">sql_save_textval_in_changes</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00533"/>00533 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00534"/>00534 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_OK)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00535"/>00535 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;1,&#32;file_id);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00536"/>00536 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;2,&#32;current_time,&#32;-1,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00537"/>00537 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;3,&#32;text_val,&#32;-1,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00538"/>00538 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00539"/>00539 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00540"/>00540 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00541"/>00541 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis role="stringliteral">&quot;insertTextValueToChanges::Failed&#32;to&#32;execute&#32;statement:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00542"/>00542 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00543"/>00543 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00544"/>00544 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00545"/>00545 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00546"/>00546 &#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00547"/>00547 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00548"/>00548 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_BUSY)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00549"/>00549 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nDatabase&#32;is&#32;busy&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00550"/>00550 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(rc&#32;==&#32;SQLITE_BUSY)
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00551"/>00551 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00552"/>00552 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00553"/>00553 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00554"/>00554 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00555"/>00555 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_ERROR)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00556"/>00556 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;\nIn&#32;insertTextValuetoChanges&#32;execution&#32;failed:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00557"/>00557 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00558"/>00558 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_MISUSE)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00559"/>00559 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nA&#32;MISUSE&#32;has&#32;been&#32;deteced&#32;in&#32;insertTextValuetoChanges.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00560"/>00560 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00561"/>00561 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_DONE)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00562"/>00562 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nsqlite3_step&#32;executed&#32;successfully.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00563"/>00563 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00564"/>00564 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00565"/>00565 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nNot&#32;sure&#32;what&#32;happened&#32;in&#32;insertTextValuetoChanges.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00566"/>00566 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00567"/>00567 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00568"/>00568 &#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00569"/>00569 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00570"/>00570 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00571"/>00571 }
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00572"/>00572 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00573"/>00573 <emphasis role="keywordtype">int</emphasis>&#32;SQLiteHelper::insertIntValueToChanges(sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;int_val)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00574"/>00574 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00575"/>00575 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00576"/>00576 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00577"/>00577 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;current_time&#32;=&#32;getCurrentTime();
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00578"/>00578 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00579"/>00579 &#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a1ffdb057e3cdae8e7c5b832f735d97bd">sql_save_intval_in_changes</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00580"/>00580 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00581"/>00581 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_OK)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00582"/>00582 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;1,&#32;file_id);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00583"/>00583 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;2,&#32;current_time,&#32;-1,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00584"/>00584 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;3,&#32;int_val);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00585"/>00585 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00586"/>00586 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00587"/>00587 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00588"/>00588 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis role="stringliteral">&quot;insertIntValueToChanges::Failed&#32;to&#32;execute&#32;statement:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00589"/>00589 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00590"/>00590 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00591"/>00591 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00592"/>00592 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00593"/>00593 &#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00594"/>00594 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00595"/>00595 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_BUSY)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00596"/>00596 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nDatabase&#32;is&#32;busy&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00597"/>00597 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(rc&#32;==&#32;SQLITE_BUSY)
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00598"/>00598 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00599"/>00599 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00600"/>00600 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00601"/>00601 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00602"/>00602 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_ERROR)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00603"/>00603 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;\nIn&#32;insertIntValueToChanges&#32;execution&#32;failed:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00604"/>00604 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00605"/>00605 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_MISUSE)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00606"/>00606 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nA&#32;MISUSE&#32;has&#32;been&#32;deteced&#32;in&#32;insertIntValueToChanges.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00607"/>00607 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00608"/>00608 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_DONE)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00609"/>00609 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nsqlite3_step&#32;executed&#32;successfully.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00610"/>00610 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00611"/>00611 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00612"/>00612 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nNot&#32;sure&#32;what&#32;happened&#32;in&#32;insertIntValueToChanges.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00613"/>00613 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00614"/>00614 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00615"/>00615 &#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00616"/>00616 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00617"/>00617 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00618"/>00618 }
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00619"/>00619 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00620"/>00620 <emphasis role="keywordtype">int</emphasis>&#32;SQLiteHelper::updateChangedInFile(sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;AttributeToCheck&#32;attr_to_change)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00621"/>00621 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00622"/>00622 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00623"/>00623 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00624"/>00624 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00625"/>00625 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;current_time&#32;=&#32;getCurrentTime();
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00626"/>00626 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;sql_stmt;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00627"/>00627 &#32;&#32;&#32;&#32;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00628"/>00628 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>&#32;(attr_to_change)
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00629"/>00629 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00630"/>00630 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;1:
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00631"/>00631 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1abea92ed80d2eadb452e3517aa9e4f4b5">sql_set_inchanges_hashedval</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00632"/>00632 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00633"/>00633 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;2:
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00634"/>00634 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a48a30016c73a80ddd5de694dad070638">sql_set_inchanges_filesize</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00635"/>00635 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00636"/>00636 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;3:
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00637"/>00637 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a86296081c599ddc648276a4e8a7699e7">sql_set_inchanges_lastmodified</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00638"/>00638 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00639"/>00639 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">default</emphasis>:
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00640"/>00640 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00641"/>00641 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Unknown&#32;attribute.&#32;Nothing&#32;saved.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00642"/>00642 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00643"/>00643 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00644"/>00644 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00645"/>00645 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_OK)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00646"/>00646 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;1,&#32;file_id);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00647"/>00647 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00648"/>00648 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00649"/>00649 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis role="stringliteral">&quot;updateChangedInFiles:Failed&#32;to&#32;execute&#32;statement:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00650"/>00650 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00651"/>00651 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00652"/>00652 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00653"/>00653 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00654"/>00654 &#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00655"/>00655 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00656"/>00656 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_BUSY)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00657"/>00657 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nDatabase&#32;is&#32;busy&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00658"/>00658 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(rc&#32;==&#32;SQLITE_BUSY)
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00659"/>00659 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00660"/>00660 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00661"/>00661 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00662"/>00662 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00663"/>00663 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_ERROR)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00664"/>00664 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;\nIn&#32;updateChangedInFiles&#32;execution&#32;failed:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00665"/>00665 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00666"/>00666 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_MISUSE)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00667"/>00667 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nA&#32;MISUSE&#32;has&#32;been&#32;deteced&#32;in&#32;updateChangedInFiles.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00668"/>00668 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00669"/>00669 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_DONE)&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00670"/>00670 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nsqlite3_step&#32;executed&#32;successfully.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00671"/>00671 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00672"/>00672 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00673"/>00673 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nNot&#32;sure&#32;what&#32;happened&#32;in&#32;updateChangedInFiles.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00674"/>00674 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00675"/>00675 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00676"/>00676 &#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00677"/>00677 
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00678"/>00678 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="__s_q_lite_helper_8cpp_source_1l00679"/>00679 }
+</programlisting></section>

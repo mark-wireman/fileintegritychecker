@@ -1,0 +1,55 @@
+\hypertarget{_s_q_lite_helper_8h_source}{}\doxysection{SQLite\+Helper.\+h}
+\label{_s_q_lite_helper_8h_source}\index{C:/Users/mark\_/source/repos/fileintegritychecker/headers/SQLiteHelper.h@{C:/Users/mark\_/source/repos/fileintegritychecker/headers/SQLiteHelper.h}}
+\mbox{\hyperlink{_s_q_lite_helper_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef HEADERS\_SQLITEHELPER\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define HEADERS\_SQLITEHELPER\_H\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define \_\_STDC\_WANT\_LIB\_EXT1\_\_ 1}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <sqlite3.h>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_s_q_lite_helper}{SQLiteHelper}} \{}
+\DoxyCodeLine{15 \textcolor{keyword}{public}:}
+\DoxyCodeLine{16     \textcolor{keyword}{enum} \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{AttributeToCheck}} \{ \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f}{HashedVal}} = 1, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02}{FileSize}} = 2, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7}{DateModified}} = 3, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad}{NONE}} = 4\};}
+\DoxyCodeLine{17     \textcolor{keyword}{enum} \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{TableToCheck}} \{\mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809}{Files}} = 1, \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17}{Changes}} = 2\};}
+\DoxyCodeLine{18     }
+\DoxyCodeLine{19     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_s_q_lite_helper_ab5c6b4d91ba851773d08383743cbe503}{checkIfAttributeIsInChanges}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} file\_id, \textcolor{keyword}{const} \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{AttributeToCheck}} attribute, sqlite3 *db);}
+\DoxyCodeLine{20     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_s_q_lite_helper_a277ba3424168330b7f5b354e477f5de2}{checkIfAttributeHasChanged}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} file\_id, \textcolor{keyword}{const} \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{AttributeToCheck}} attribute, \textcolor{keyword}{const} \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{TableToCheck}} table, sqlite3* db, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* char\_attr = NULL, \textcolor{keyword}{const} \textcolor{keywordtype}{int} int\_attr = 0);}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keyword}{static} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_s_q_lite_helper_adbeb0bc39c03a429690faf485a17c2d1}{getCurrentTime}}();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_s_q_lite_helper_a174400575d3038248769856efc9546a8}{setDirectoryName}}(\textcolor{keywordtype}{char}* dir\_name);}
+\DoxyCodeLine{25     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_s_q_lite_helper_a0815f283b738dea61f78f0e0dab958ea}{setFileName}}(\textcolor{keywordtype}{char}* file\_name);}
+\DoxyCodeLine{26     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_s_q_lite_helper_a8fc3a476fa41e7601138ed1a87431ab9}{setMachineName}}(\textcolor{keywordtype}{char}* machine\_name);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_s_q_lite_helper_adcab3649b5f610ddab96736dc409d653}{getDirectoryId}}(sqlite3* db);}
+\DoxyCodeLine{29     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_s_q_lite_helper_a42d042748147b7ebe97214069c62ace6}{getDirectoryId}}(sqlite3* db, \textcolor{keywordtype}{char}* dir\_name, \textcolor{keywordtype}{char}* machine\_name);}
+\DoxyCodeLine{30     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_s_q_lite_helper_a4e69ffbd22c6d9c2df1decfd484e5a83}{getFileId}}(sqlite3* db);}
+\DoxyCodeLine{31     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_s_q_lite_helper_abb6a58d490dda33874679f9b6f7a2025}{getFileId}}(sqlite3* db, \textcolor{keywordtype}{char}* file\_name, \textcolor{keywordtype}{int} dir\_id);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_s_q_lite_helper_ac43f81918e037ab5b07f773794d8f9af}{saveFileInfo}}(sqlite3* db, \textcolor{keyword}{const} \textcolor{keywordtype}{int} dir\_id, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* file\_name, \textcolor{keyword}{const} \textcolor{keywordtype}{int} file\_size = 0, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* date\_modified = NULL, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* hashed\_val = NULL, \textcolor{keyword}{const} \textcolor{keywordtype}{bool} isNew = \textcolor{keyword}{true}, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{AttributeToCheck}} attr\_to\_update = \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad}{AttributeToCheck::NONE}});}
+\DoxyCodeLine{34     }
+\DoxyCodeLine{35 \textcolor{keyword}{private}:}
+\DoxyCodeLine{36     \textcolor{keyword}{static} \textcolor{keywordtype}{int} didHashedValueChange(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* hashed\_val, \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{TableToCheck}} table, \textcolor{keyword}{const} \textcolor{keywordtype}{int} file\_id, sqlite3* db);}
+\DoxyCodeLine{37     \textcolor{keyword}{static} \textcolor{keywordtype}{int} didFileSizeChange(\textcolor{keyword}{const} \textcolor{keywordtype}{int} file\_size, \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{TableToCheck}} table, \textcolor{keyword}{const} \textcolor{keywordtype}{int} file\_id, sqlite3* db);}
+\DoxyCodeLine{38     \textcolor{keyword}{static} \textcolor{keywordtype}{int} didDateModifiedChange(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* date\_modified, \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{TableToCheck}} table, \textcolor{keyword}{const} \textcolor{keywordtype}{int} file\_id, sqlite3* db);}
+\DoxyCodeLine{39     \textcolor{keyword}{static} \textcolor{keywordtype}{int} saveNewFileInfo(sqlite3* db);}
+\DoxyCodeLine{40     \textcolor{keyword}{static} \textcolor{keywordtype}{int} saveExistingFileInfo(sqlite3* db, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{AttributeToCheck}} attr\_to\_update, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* text\_val = NULL, \textcolor{keyword}{const} \textcolor{keywordtype}{int} int\_val = 0);}
+\DoxyCodeLine{41     \textcolor{keyword}{static} \textcolor{keywordtype}{int} insertTextValueToChanges(sqlite3* db, \textcolor{keyword}{const} \textcolor{keywordtype}{int} file\_id, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* text\_val);}
+\DoxyCodeLine{42     \textcolor{keyword}{static} \textcolor{keywordtype}{int} insertIntValueToChanges(sqlite3* db, \textcolor{keyword}{const} \textcolor{keywordtype}{int} file\_id, \textcolor{keyword}{const} \textcolor{keywordtype}{int} int\_val);}
+\DoxyCodeLine{43     \textcolor{keyword}{static} \textcolor{keywordtype}{int} updateChangedInFile(sqlite3* db, \textcolor{keywordtype}{int} file\_id, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{AttributeToCheck}} attr\_to\_change);}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     }
+\DoxyCodeLine{46     }
+\DoxyCodeLine{47 \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

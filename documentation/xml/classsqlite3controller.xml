@@ -1,0 +1,422 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="en-US">
+  <compounddef id="classsqlite3controller" kind="class" language="C++" prot="public">
+    <compoundname>sqlite3controller</compoundname>
+    <includes refid="sqlite3controller_8h" local="no">sqlite3controller.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsqlite3controller_1a5e12813ef2d44e41238dfd8d4bbbea9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>sqlite3controller::sqlite3controller</definition>
+        <argsstring>()</argsstring>
+        <name>sqlite3controller</name>
+        <qualifiedname>sqlite3controller::sqlite3controller</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/sqlite3controller.h" line="29" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classsqlite3controller_1aa85b2bdd95d168c27a28476e07d36d88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>sqlite3controller::sqlite3controller</definition>
+        <argsstring>(char *databasename, char *machinename)</argsstring>
+        <name>sqlite3controller</name>
+        <qualifiedname>sqlite3controller::sqlite3controller</qualifiedname>
+        <param>
+          <type>char *</type>
+          <declname>databasename</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>machinename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/sqlite3controller.h" line="30" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classsqlite3controller_1a0517049f3235b533cbcc1f2d68a42844" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual sqlite3controller::~sqlite3controller</definition>
+        <argsstring>()</argsstring>
+        <name>~sqlite3controller</name>
+        <qualifiedname>sqlite3controller::~sqlite3controller</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/sqlite3controller.h" line="31" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classsqlite3controller_1a7d6ff837161930eb903754d5688f1b9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sqlite3controller::initdb</definition>
+        <argsstring>()</argsstring>
+        <name>initdb</name>
+        <qualifiedname>sqlite3controller::initdb</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/sqlite3controller.h" line="32" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classsqlite3controller_1ab092ae9a83a7a124a5ca19a202f6243a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sqlite3controller::closedb</definition>
+        <argsstring>()</argsstring>
+        <name>closedb</name>
+        <qualifiedname>sqlite3controller::closedb</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/sqlite3controller.h" line="33" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classsqlite3controller_1ac0c940ac721d94e09be08e38eb0e5ca4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sqlite3controller::setDATABASENAME</definition>
+        <argsstring>(char *dbasename)</argsstring>
+        <name>setDATABASENAME</name>
+        <qualifiedname>sqlite3controller::setDATABASENAME</qualifiedname>
+        <param>
+          <type>char *</type>
+          <declname>dbasename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/sqlite3controller.h" line="34" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classsqlite3controller_1a87910e834388b6f11c8493f10fd6a576" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sqlite3controller::setMACHINENAME</definition>
+        <argsstring>(char *machinename)</argsstring>
+        <name>setMACHINENAME</name>
+        <qualifiedname>sqlite3controller::setMACHINENAME</qualifiedname>
+        <param>
+          <type>char *</type>
+          <declname>machinename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/sqlite3controller.h" line="35" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classsqlite3controller_1a6ffbf500e8d1d203bd264e221ee833a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * sqlite3controller::getDATABASENAME</definition>
+        <argsstring>()</argsstring>
+        <name>getDATABASENAME</name>
+        <qualifiedname>sqlite3controller::getDATABASENAME</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/sqlite3controller.h" line="36" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classsqlite3controller_1a816f15ac623d19e1f71d55c1751e46e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * sqlite3controller::getMACHINENAME</definition>
+        <argsstring>()</argsstring>
+        <name>getMACHINENAME</name>
+        <qualifiedname>sqlite3controller::getMACHINENAME</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/sqlite3controller.h" line="37" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classsqlite3controller_1a9aa0232afbc7a8d2b71d330c607c5b40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sqlite3controller::createTables</definition>
+        <argsstring>()</argsstring>
+        <name>createTables</name>
+        <qualifiedname>sqlite3controller::createTables</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/sqlite3controller.h" line="38" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classsqlite3controller_1a875ee2c930b5c9f78c9ad1770893ec8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int sqlite3controller::save_file_info</definition>
+        <argsstring>(const char *fname, const char *dirname, char *lastmodified, uintmax_t filesize, const char *hashval)</argsstring>
+        <name>save_file_info</name>
+        <qualifiedname>sqlite3controller::save_file_info</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>fname</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>dirname</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>lastmodified</declname>
+        </param>
+        <param>
+          <type>uintmax_t</type>
+          <declname>filesize</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>hashval</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/sqlite3controller.h" line="39" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classsqlite3controller_1a6bda68c0ea1d995b4fcf60965ab433a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int sqlite3controller::save_dir_info</definition>
+        <argsstring>(const char *dirname)</argsstring>
+        <name>save_dir_info</name>
+        <qualifiedname>sqlite3controller::save_dir_info</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>dirname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/sqlite3controller.h" line="40" column="13"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classsqlite3controller_1add1047a4808cc535544154fffe9206a7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * sqlite3controller::getPreviousHashval</definition>
+        <argsstring>(const int fileId)</argsstring>
+        <name>getPreviousHashval</name>
+        <qualifiedname>sqlite3controller::getPreviousHashval</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>fileId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/sqlite3controller.h" line="42" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classsqlite3controller_1afad285c88925ab4bb987583563c11d8a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int sqlite3controller::checkIfDirectoryExist</definition>
+        <argsstring>(const char *dirname)</argsstring>
+        <name>checkIfDirectoryExist</name>
+        <qualifiedname>sqlite3controller::checkIfDirectoryExist</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>dirname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/sqlite3controller.h" line="43" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classsqlite3controller_1a884a6ddbbdd5f12a5d2cdcd4828c33cd" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int sqlite3controller::checkIfHashvalExist</definition>
+        <argsstring>(const int fileId, const char *hval)</argsstring>
+        <name>checkIfHashvalExist</name>
+        <qualifiedname>sqlite3controller::checkIfHashvalExist</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>fileId</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>hval</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/sqlite3controller.h" line="44" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classsqlite3controller_1a96b9af7291ed73ed8b7da9b3e36c5983" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int sqlite3controller::checkIfFileExist</definition>
+        <argsstring>(const char *fname, const char *dirname)</argsstring>
+        <name>checkIfFileExist</name>
+        <qualifiedname>sqlite3controller::checkIfFileExist</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>fname</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>dirname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/sqlite3controller.h" line="45" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classsqlite3controller_1ac60d6e9c7f76a56f2409b7eb3f24dbab" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sqlite3controller::fileUpdateSameHashVal</definition>
+        <argsstring>(int fileId)</argsstring>
+        <name>fileUpdateSameHashVal</name>
+        <qualifiedname>sqlite3controller::fileUpdateSameHashVal</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>fileId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/sqlite3controller.h" line="46" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classsqlite3controller_1a917e6ee3c3214a31131c605e627a26be" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sqlite3controller::fileUpdateNewHashVal</definition>
+        <argsstring>(int fileId, const char *prevhashval, const char *newhashval)</argsstring>
+        <name>fileUpdateNewHashVal</name>
+        <qualifiedname>sqlite3controller::fileUpdateNewHashVal</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>fileId</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>prevhashval</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>newhashval</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/sqlite3controller.h" line="47" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classsqlite3controller_1a41db1cc8b4879147b3fa6fc5eaed630f" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sqlite3controller::fileAddNew</definition>
+        <argsstring>(const char *fname, int dirId, const char *hashval, uintmax_t fsize, char *date_modified)</argsstring>
+        <name>fileAddNew</name>
+        <qualifiedname>sqlite3controller::fileAddNew</qualifiedname>
+        <param>
+          <type>const char *</type>
+          <declname>fname</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dirId</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>hashval</declname>
+        </param>
+        <param>
+          <type>uintmax_t</type>
+          <declname>fsize</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>date_modified</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/sqlite3controller.h" line="48" column="14"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classsqlite3controller_1a0ae7c038e20d01d22cb0dd9b8ef1fb48" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * sqlite3controller::getCurrentTime</definition>
+        <argsstring>()</argsstring>
+        <name>getCurrentTime</name>
+        <qualifiedname>sqlite3controller::getCurrentTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/sqlite3controller.h" line="50" column="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Sqlite3 Controller class. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The class that handles the SQL functions for creating, updating, and adding files and directories to a Sqlite3 database. </para>
+    </detaileddescription>
+    <location file="headers/sqlite3controller.h" line="27" column="1" bodyfile="headers/sqlite3controller.h" bodystart="27" bodyend="51"/>
+    <listofallmembers>
+      <member refid="classsqlite3controller_1afad285c88925ab4bb987583563c11d8a" prot="protected" virt="non-virtual"><scope>sqlite3controller</scope><name>checkIfDirectoryExist</name></member>
+      <member refid="classsqlite3controller_1a96b9af7291ed73ed8b7da9b3e36c5983" prot="protected" virt="non-virtual"><scope>sqlite3controller</scope><name>checkIfFileExist</name></member>
+      <member refid="classsqlite3controller_1a884a6ddbbdd5f12a5d2cdcd4828c33cd" prot="protected" virt="non-virtual"><scope>sqlite3controller</scope><name>checkIfHashvalExist</name></member>
+      <member refid="classsqlite3controller_1ab092ae9a83a7a124a5ca19a202f6243a" prot="public" virt="non-virtual"><scope>sqlite3controller</scope><name>closedb</name></member>
+      <member refid="classsqlite3controller_1a9aa0232afbc7a8d2b71d330c607c5b40" prot="public" virt="non-virtual"><scope>sqlite3controller</scope><name>createTables</name></member>
+      <member refid="classsqlite3controller_1a41db1cc8b4879147b3fa6fc5eaed630f" prot="protected" virt="non-virtual"><scope>sqlite3controller</scope><name>fileAddNew</name></member>
+      <member refid="classsqlite3controller_1a917e6ee3c3214a31131c605e627a26be" prot="protected" virt="non-virtual"><scope>sqlite3controller</scope><name>fileUpdateNewHashVal</name></member>
+      <member refid="classsqlite3controller_1ac60d6e9c7f76a56f2409b7eb3f24dbab" prot="protected" virt="non-virtual"><scope>sqlite3controller</scope><name>fileUpdateSameHashVal</name></member>
+      <member refid="classsqlite3controller_1a0ae7c038e20d01d22cb0dd9b8ef1fb48" prot="private" virt="non-virtual"><scope>sqlite3controller</scope><name>getCurrentTime</name></member>
+      <member refid="classsqlite3controller_1a6ffbf500e8d1d203bd264e221ee833a2" prot="public" virt="non-virtual"><scope>sqlite3controller</scope><name>getDATABASENAME</name></member>
+      <member refid="classsqlite3controller_1a816f15ac623d19e1f71d55c1751e46e1" prot="public" virt="non-virtual"><scope>sqlite3controller</scope><name>getMACHINENAME</name></member>
+      <member refid="classsqlite3controller_1add1047a4808cc535544154fffe9206a7" prot="protected" virt="non-virtual"><scope>sqlite3controller</scope><name>getPreviousHashval</name></member>
+      <member refid="classsqlite3controller_1a7d6ff837161930eb903754d5688f1b9b" prot="public" virt="non-virtual"><scope>sqlite3controller</scope><name>initdb</name></member>
+      <member refid="classsqlite3controller_1a6bda68c0ea1d995b4fcf60965ab433a6" prot="public" virt="non-virtual"><scope>sqlite3controller</scope><name>save_dir_info</name></member>
+      <member refid="classsqlite3controller_1a875ee2c930b5c9f78c9ad1770893ec8a" prot="public" virt="non-virtual"><scope>sqlite3controller</scope><name>save_file_info</name></member>
+      <member refid="classsqlite3controller_1ac0c940ac721d94e09be08e38eb0e5ca4" prot="public" virt="non-virtual"><scope>sqlite3controller</scope><name>setDATABASENAME</name></member>
+      <member refid="classsqlite3controller_1a87910e834388b6f11c8493f10fd6a576" prot="public" virt="non-virtual"><scope>sqlite3controller</scope><name>setMACHINENAME</name></member>
+      <member refid="classsqlite3controller_1a5e12813ef2d44e41238dfd8d4bbbea9a" prot="public" virt="non-virtual"><scope>sqlite3controller</scope><name>sqlite3controller</name></member>
+      <member refid="classsqlite3controller_1aa85b2bdd95d168c27a28476e07d36d88" prot="public" virt="non-virtual"><scope>sqlite3controller</scope><name>sqlite3controller</name></member>
+      <member refid="classsqlite3controller_1a0517049f3235b533cbcc1f2d68a42844" prot="public" virt="virtual"><scope>sqlite3controller</scope><name>~sqlite3controller</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

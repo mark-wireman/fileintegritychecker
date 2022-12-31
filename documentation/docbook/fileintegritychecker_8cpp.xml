@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_fileintegritychecker_8cpp" xml:lang="en-US">
+<title>C:/Users/mark_/source/repos/fileintegritychecker/src/fileintegritychecker.cpp File Reference</title>
+<indexterm><primary>C:/Users/mark_/source/repos/fileintegritychecker/src/fileintegritychecker.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;../headers/fileintegritychecker.h&quot;<?linebreak?></programlisting>Include dependency graph for fileintegritychecker.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="fileintegritychecker_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_fileintegritychecker_8cpp_1ac1535592e39e7edf0cafbd5e695ea622">MAXCHAR</link>&#160;&#160;&#160;100000</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>template&lt;typename TP &gt; </para><para>std::time_t <link linkend="_fileintegritychecker_8cpp_1aa0c7e6e475d4dd6b5f4dd0f04be4fbfa">to_time_t</link> (TP tp)</para>
+</listitem>
+            <listitem><para>char * <link linkend="_fileintegritychecker_8cpp_1ac01cc26ee78680a5119ba192f7b4ea53">to_char_time_t</link> (std::time_t time)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_fileintegritychecker_8cpp_1ac1535592e39e7edf0cafbd5e695ea622"/><section>
+    <title>MAXCHAR</title>
+<indexterm><primary>MAXCHAR</primary><secondary>fileintegritychecker.cpp</secondary></indexterm>
+<indexterm><primary>fileintegritychecker.cpp</primary><secondary>MAXCHAR</secondary></indexterm>
+<para><computeroutput>#define MAXCHAR&#160;&#160;&#160;100000</computeroutput></para><para>
+Definition at line <link linkend="_fileintegritychecker_8cpp_source_1l00008">8</link> of file <link linkend="_fileintegritychecker_8cpp_source">fileintegritychecker.cpp</link>.</para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_fileintegritychecker_8cpp_1ac01cc26ee78680a5119ba192f7b4ea53"/><section>
+    <title>to_char_time_t()</title>
+<indexterm><primary>to_char_time_t</primary><secondary>fileintegritychecker.cpp</secondary></indexterm>
+<indexterm><primary>fileintegritychecker.cpp</primary><secondary>to_char_time_t</secondary></indexterm>
+<para><computeroutput>char * to_char_time_t (std::time_t time)</computeroutput></para><para>
+Definition at line <link linkend="_fileintegritychecker_8cpp_source_1l00019">19</link> of file <link linkend="_fileintegritychecker_8cpp_source">fileintegritychecker.cpp</link>.</para>
+</section>
+<anchor xml:id="_fileintegritychecker_8cpp_1aa0c7e6e475d4dd6b5f4dd0f04be4fbfa"/><section>
+    <title>to_time_t()</title>
+<indexterm><primary>to_time_t</primary><secondary>fileintegritychecker.cpp</secondary></indexterm>
+<indexterm><primary>fileintegritychecker.cpp</primary><secondary>to_time_t</secondary></indexterm>
+<computeroutput>template&lt;typename TP &gt; </computeroutput><para><computeroutput>std::time_t to_time_t (TP tp)</computeroutput></para><para>
+Definition at line <link linkend="_fileintegritychecker_8cpp_source_1l00011">11</link> of file <link linkend="_fileintegritychecker_8cpp_source">fileintegritychecker.cpp</link>.</para>
+</section>
+</section>
+</section>

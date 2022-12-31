@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_unionmessage_block" xml:lang="en-US">
+<title>messageBlock Union Reference</title>
+<indexterm><primary>messageBlock</primary></indexterm>
+<para>
+<computeroutput>#include &lt;SHA256CPP.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>uint8_t <link linkend="_unionmessage_block_1a59107a6d1bbc97a38c8eeafc29474a96">e</link> [64]</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_unionmessage_block_1a3a07b88e31bce5184238c481aa255922">t</link> [16]</para>
+</listitem>
+            <listitem><para>uint64_t <link linkend="_unionmessage_block_1a650ca0815e457fcda932238399372548">s</link> [8]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_unionmessage_block_1a59107a6d1bbc97a38c8eeafc29474a96"/><section>
+    <title>e</title>
+<indexterm><primary>e</primary><secondary>messageBlock</secondary></indexterm>
+<indexterm><primary>messageBlock</primary><secondary>e</secondary></indexterm>
+<para><computeroutput>uint8_t messageBlock::e[64]</computeroutput></para></section>
+<anchor xml:id="_unionmessage_block_1a650ca0815e457fcda932238399372548"/><section>
+    <title>s</title>
+<indexterm><primary>s</primary><secondary>messageBlock</secondary></indexterm>
+<indexterm><primary>messageBlock</primary><secondary>s</secondary></indexterm>
+<para><computeroutput>uint64_t messageBlock::s[8]</computeroutput></para></section>
+<anchor xml:id="_unionmessage_block_1a3a07b88e31bce5184238c481aa255922"/><section>
+    <title>t</title>
+<indexterm><primary>t</primary><secondary>messageBlock</secondary></indexterm>
+<indexterm><primary>messageBlock</primary><secondary>t</secondary></indexterm>
+<para><computeroutput>uint32_t messageBlock::t[16]</computeroutput></para></section>
+<para>
+The documentation for this union was generated from the following file:</para>
+C:/Users/mark_/source/repos/fileintegritychecker/headers/<link linkend="__s_h_a256_c_p_p_8h">SHA256CPP.h</link></section>
+</section>

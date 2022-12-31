@@ -9,15 +9,11 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <iostream>
-//#include <mysql.h>
 #include <ctime>
-//#include <chrono>
-//#include <cstring>
 #include <sstream>
 using std::stringstream;
-//#include <fstream>
-//#include <vector>
 #include "mysql_connection.h"
+#include "SQLiteHelper.h"
 
 #include <cppconn/driver.h>
 #include <cppconn/exception.h>
@@ -31,6 +27,7 @@ class mysqlcontroller {
 public:
     mysqlcontroller();
     mysqlcontroller(char* host,char* dbase,char* uname,char* pwd,int port,char* mname);
+    virtual ~mysqlcontroller();
     void setHOSTNAME(char* host);
     void setDBASENAME(char* dbase);
     void setUSERNAME(char* uname);
@@ -44,17 +41,18 @@ public:
     int getPORT();
     char* getMACHINENAME();
     void initdb();
-    void saveDirectoryName(string dirname);
+    void saveDirectoryName(string dirname);    
+    void saveFileInfo(string dirname, string fname, string hashval);
+    void saveDirectoryName_async(const string &dirname);
+    void saveFileInfo_async(const string &dirname, const string &fname, const string &hashval);
     void deleteDirectoryNames();
     void closedb();
     void initPreparedStatements();
     void closePreparedStatements();
 private:
-    //std::vector<std::string> tables;
-    char* getCurrentTime();
-	void addVerified(int);
+    //char* getCurrentTime();
+	//void addVerified(int);
 	char* filterApostraphe(string);
-    //void finish_with_error();
     
 };
 

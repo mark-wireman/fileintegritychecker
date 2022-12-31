@@ -1,0 +1,359 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_h_a256_c_p_p_8cpp_source" xml:lang="en-US">
+<title>SHA256CPP.cpp</title>
+<indexterm><primary>C:/Users/mark_/source/repos/fileintegritychecker/src/SHA256CPP.cpp</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00001"/>00001 <emphasis role="preprocessor">#include&#32;&quot;../headers/SHA256CPP.h&quot;</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00002"/>00002 <emphasis role="keyword">using&#32;namespace&#32;</emphasis>std;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00003"/>00003 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00008"/>00008 SHA256CPP::SHA256CPP()&#32;{}
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00009"/>00009 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00014"/>00014 SHA256CPP::~SHA256CPP()&#32;{}
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00015"/>00015 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00020"/>00020 <emphasis role="keywordtype">void</emphasis>&#32;SHA256CPP::endianCheckPrint()&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00021"/>00021 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;num&#32;=&#32;1;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00022"/>00022 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(*(<emphasis role="keywordtype">char</emphasis>&#32;*)&amp;num&#32;==&#32;1)&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00023"/>00023 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;\n&#32;Your&#32;system&#32;is&#32;Little-Endian!\n&quot;</emphasis>);
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00024"/>00024 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;Your&#32;system&#32;is&#32;Big-Endian!\n&quot;</emphasis>);
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00026"/>00026 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00027"/>00027 };
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00028"/>00028 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00035"/>00035 <emphasis role="keywordtype">bool</emphasis>&#32;SHA256CPP::endianCheck()&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00036"/>00036 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;num&#32;=&#32;1;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00037"/>00037 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00038"/>00038 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(*(<emphasis role="keywordtype">char</emphasis>&#32;*)&amp;num&#32;==&#32;1)&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00039"/>00039 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00040"/>00040 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="keyword">true</emphasis>;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00042"/>00042 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00043"/>00043 }
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00044"/>00044 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00051"/>00051 HashValues&#32;SHA256CPP::calculateHash(FILE&#32;*file)&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00052"/>00052 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Variables</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00053"/>00053 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;The&#32;current&#32;message&#32;block</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00054"/>00054 &#32;&#32;&#32;&#32;<emphasis role="keyword">union&#32;</emphasis>messageBlock&#32;msgBlock;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00055"/>00055 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00056"/>00056 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;The&#32;number&#32;of&#32;bits&#32;read&#32;from&#32;the&#32;file</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00057"/>00057 &#32;&#32;&#32;&#32;uint64_t&#32;numBits&#32;=&#32;0;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00058"/>00058 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00059"/>00059 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;The&#32;state&#32;of&#32;the&#32;program</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00060"/>00060 &#32;&#32;&#32;&#32;<emphasis role="keyword">enum</emphasis>&#32;status&#32;<link linkend="_mysqlcontroller_8cpp_1a89f234133d3efe315836311cbf21c64b">state</link>&#32;=&#32;READ;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00061"/>00061 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00062"/>00062 &#32;&#32;&#32;&#32;<emphasis role="comment">//printf(&quot;\n&#32;Starting&#32;SHA256&#32;algorithm....\n&quot;);</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00063"/>00063 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00064"/>00064 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Declare&#32;the&#32;K&#32;constant</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00065"/>00065 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Defined&#32;in&#32;Section&#32;4.2.2</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00066"/>00066 &#32;&#32;&#32;&#32;uint32_t&#32;K[]&#32;=
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00067"/>00067 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00068"/>00068 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x428a2f98,&#32;0x71374491,&#32;0xb5c0fbcf,&#32;0xe9b5dba5,&#32;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00069"/>00069 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x3956c25b,&#32;0x59f111f1,&#32;0x923f82a4,&#32;0xab1c5ed5,
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00070"/>00070 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0xd807aa98,&#32;0x12835b01,&#32;0x243185be,&#32;0x550c7dc3,
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00071"/>00071 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x72be5d74,&#32;0x80deb1fe,&#32;0x9bdc06a7,&#32;0xc19bf174,
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00072"/>00072 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0xe49b69c1,&#32;0xefbe4786,&#32;0x0fc19dc6,&#32;0x240ca1cc,
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00073"/>00073 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x2de92c6f,&#32;0x4a7484aa,&#32;0x5cb0a9dc,&#32;0x76f988da,
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00074"/>00074 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x983e5152,&#32;0xa831c66d,&#32;0xb00327c8,&#32;0xbf597fc7,&#32;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00075"/>00075 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0xc6e00bf3,&#32;0xd5a79147,&#32;0x06ca6351,&#32;0x14292967,&#32;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00076"/>00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x27b70a85,&#32;0x2e1b2138,&#32;0x4d2c6dfc,&#32;0x53380d13,
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x650a7354,&#32;0x766a0abb,&#32;0x81c2c92e,&#32;0x92722c85,
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00078"/>00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0xa2bfe8a1,&#32;0xa81a664b,&#32;0xc24b8b70,&#32;0xc76c51a3,
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00079"/>00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0xd192e819,&#32;0xd6990624,&#32;0xf40e3585,&#32;0x106aa070,
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00080"/>00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x19a4c116,&#32;0x1e376c08,&#32;0x2748774c,&#32;0x34b0bcb5,
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00081"/>00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x391c0cb3,&#32;0x4ed8aa4a,&#32;0x5b9cca4f,&#32;0x682e6ff3,&#32;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00082"/>00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x748f82ee,&#32;0x78a5636f,&#32;0x84c87814,&#32;0x8cc70208,
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00083"/>00083 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;0x90befffa,&#32;0xa4506ceb,&#32;0xbef9a3f7,&#32;0xc67178f2
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00084"/>00084 &#32;&#32;&#32;&#32;};
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00085"/>00085 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00086"/>00086 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Message&#32;schedule</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00087"/>00087 &#32;&#32;&#32;&#32;uint32_t&#32;W[64];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00088"/>00088 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00089"/>00089 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Working&#32;variables</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00090"/>00090 &#32;&#32;&#32;&#32;uint32_t&#32;a,&#32;b,&#32;c,&#32;d,&#32;e,&#32;f,&#32;g,&#32;h;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00091"/>00091 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00092"/>00092 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Temp&#32;variables</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00093"/>00093 &#32;&#32;&#32;&#32;uint32_t&#32;T1;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00094"/>00094 &#32;&#32;&#32;&#32;uint32_t&#32;T2;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00095"/>00095 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00096"/>00096 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Hash&#32;values</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00097"/>00097 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Taken&#32;from&#32;https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00098"/>00098 &#32;&#32;&#32;&#32;<emphasis role="comment">//array&lt;uint32_t,8&gt;&#32;H;</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00099"/>00099 &#32;&#32;&#32;&#32;<emphasis role="comment">//static&#32;uint32_t&#32;H[8];</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00100"/>00100 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis>HashValues&#32;HVals;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00101"/>00101 &#32;&#32;&#32;&#32;HVals.H[0]&#32;=&#32;0x6a09e667;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00102"/>00102 &#32;&#32;&#32;&#32;HVals.H[1]&#32;=&#32;0xbb67ae85;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00103"/>00103 &#32;&#32;&#32;&#32;HVals.H[2]&#32;=&#32;0x3c6ef372;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00104"/>00104 &#32;&#32;&#32;&#32;HVals.H[3]&#32;=&#32;0xa54ff53a;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00105"/>00105 &#32;&#32;&#32;&#32;HVals.H[4]&#32;=&#32;0x510e527f;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00106"/>00106 &#32;&#32;&#32;&#32;HVals.H[5]&#32;=&#32;0x9b05688c;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00107"/>00107 &#32;&#32;&#32;&#32;HVals.H[6]&#32;=&#32;0x1f83d9ab;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00108"/>00108 &#32;&#32;&#32;&#32;HVals.H[7]&#32;=&#32;0x5be0cd19;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00109"/>00109 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00110"/>00110 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;The&#32;current&#32;message&#32;block</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00111"/>00111 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00112"/>00112 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;For&#32;loop&#32;to&#32;iterate&#32;through&#32;the&#32;message&#32;block&#32;</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00113"/>00113 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;j;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00114"/>00114 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;o;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00115"/>00115 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00116"/>00116 &#32;&#32;&#32;&#32;<emphasis role="comment">//printf(&quot;\n&#32;Initalized&#32;variables...&#32;Entering&#32;loops\n&quot;);</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00117"/>00117 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00118"/>00118 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(fillMessageBlock(file,&#32;&amp;msgBlock,&#32;&amp;<link linkend="_mysqlcontroller_8cpp_1a89f234133d3efe315836311cbf21c64b">state</link>,&#32;&amp;numBits))
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00119"/>00119 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00120"/>00120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(j=0;&#32;j&lt;16;&#32;j++)
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00121"/>00121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{&#32;&#32;&#32;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00122"/>00122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Fist&#32;check&#32;for&#32;big&#32;or&#32;little&#32;endian</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00123"/>00123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;our&#32;system&#32;is&#32;big&#32;endian&#32;we&#32;dont&#32;need&#32;to&#32;do&#32;any&#32;conversion</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00124"/>00124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(endianCheck()==<emphasis role="keyword">true</emphasis>)
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00125"/>00125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00126"/>00126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;W[j]&#32;=&#32;msgBlock.t[j];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00127"/>00127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00128"/>00128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00129"/>00129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00130"/>00130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Add&#32;the&#32;current&#32;message&#32;block&#32;to&#32;our&#32;messag&#32;schedule</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00131"/>00131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Convert&#32;to&#32;big&#32;endian&#32;first</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00132"/>00132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;W[j]&#32;=&#32;byteSwap32(msgBlock.t[j]);
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00133"/>00133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00134"/>00134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00135"/>00135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00136"/>00136 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00137"/>00137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(j=16;&#32;j&lt;64;&#32;j++)
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00138"/>00138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00139"/>00139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Step&#32;1</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00140"/>00140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;W[j]&#32;=&#32;sig1(W[j-2])&#32;+&#32;W[j-7]&#32;+&#32;sig0(W[j-15])&#32;+&#32;W[j-16];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00141"/>00141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00142"/>00142 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00143"/>00143 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00144"/>00144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Initalize&#32;a..h</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00145"/>00145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Step&#32;2</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00146"/>00146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;a=HVals.H[0];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00147"/>00147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;b=HVals.H[1];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00148"/>00148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;c=HVals.H[2];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00149"/>00149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;d=HVals.H[3];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00150"/>00150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;e=HVals.H[4];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00151"/>00151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;f=HVals.H[5];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00152"/>00152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;g=HVals.H[6];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00153"/>00153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;h=HVals.H[7];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00154"/>00154 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00155"/>00155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;For&#32;loop</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00156"/>00156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Step&#32;3</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00157"/>00157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(j&#32;=&#32;0;&#32;j&#32;&lt;&#32;64;&#32;j++)
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00158"/>00158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00159"/>00159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Creating&#32;new&#32;variables</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00160"/>00160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T1&#32;=&#32;h&#32;+&#32;SIG1(e)&#32;+&#32;Ch(e,f,g)&#32;+&#32;K[j]&#32;+&#32;W[j];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00161"/>00161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;T2&#32;=&#32;SIG0(a)&#32;+&#32;Maj(a,b,c);
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00162"/>00162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;h&#32;=&#32;g;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00163"/>00163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;g&#32;=&#32;f;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00164"/>00164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;f&#32;=&#32;e;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00165"/>00165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;e&#32;=&#32;d&#32;+&#32;T1;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00166"/>00166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;d&#32;=&#32;c;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00167"/>00167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;c&#32;=&#32;b;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00168"/>00168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;b&#32;=&#32;a;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00169"/>00169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;a&#32;=&#32;T1&#32;+&#32;T2;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00170"/>00170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00171"/>00171 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00172"/>00172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Step&#32;4</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00173"/>00173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HVals.H[0]&#32;=&#32;a&#32;+&#32;HVals.H[0];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00174"/>00174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HVals.H[1]&#32;=&#32;b&#32;+&#32;HVals.H[1];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00175"/>00175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HVals.H[2]&#32;=&#32;c&#32;+&#32;HVals.H[2];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00176"/>00176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HVals.H[3]&#32;=&#32;d&#32;+&#32;HVals.H[3];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00177"/>00177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HVals.H[4]&#32;=&#32;e&#32;+&#32;HVals.H[4];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00178"/>00178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HVals.H[5]&#32;=&#32;f&#32;+&#32;HVals.H[5];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00179"/>00179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HVals.H[6]&#32;=&#32;g&#32;+&#32;HVals.H[6];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00180"/>00180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HVals.H[7]&#32;=&#32;h&#32;+&#32;HVals.H[7];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00181"/>00181 &#32;&#32;&#32;&#32;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00182"/>00182 &#32;&#32;&#32;&#32;}<emphasis role="comment">//&#32;end&#32;while</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00183"/>00183 &#32;&#32;&#32;&#32;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00184"/>00184 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;HVals;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00185"/>00185 }
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00186"/>00186 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00196"/>00196 <emphasis role="keywordtype">int</emphasis>&#32;SHA256CPP::fillMessageBlock(FILE&#32;*file,&#32;<emphasis role="keyword">union</emphasis>&#32;messageBlock&#32;*msgBlock,&#32;<emphasis role="keyword">enum</emphasis>&#32;status&#32;*<link linkend="_mysqlcontroller_8cpp_1a89f234133d3efe315836311cbf21c64b">state</link>,&#32;uint64_t&#32;*numBits)&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00197"/>00197 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Variables</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00198"/>00198 &#32;&#32;&#32;&#32;uint64_t&#32;numBytes;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00199"/>00199 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;i;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00200"/>00200 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00201"/>00201 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;we&apos;ve&#32;finished&#32;padding&#32;and&#32;processing&#32;all&#32;the&#32;message&#32;blocks,&#32;exit</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00202"/>00202 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(*<link linkend="_mysqlcontroller_8cpp_1a89f234133d3efe315836311cbf21c64b">state</link>&#32;==&#32;FINISH)
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00203"/>00203 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00204"/>00204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//printf(&quot;\n&#32;State&#32;=&#32;FINISH.\n&quot;);</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00205"/>00205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00206"/>00206 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00207"/>00207 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00208"/>00208 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Handle&#32;our&#32;PAD0&#32;and&#32;PAD1&#32;states</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00209"/>00209 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Check&#32;if&#32;we&#32;need&#32;another&#32;block&#32;full&#32;of&#32;padding</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00210"/>00210 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(*<link linkend="_mysqlcontroller_8cpp_1a89f234133d3efe315836311cbf21c64b">state</link>&#32;==&#32;PAD0&#32;||&#32;*<link linkend="_mysqlcontroller_8cpp_1a89f234133d3efe315836311cbf21c64b">state</link>&#32;==&#32;PAD1)
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00211"/>00211 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00212"/>00212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//printf(&quot;\n&#32;State&#32;=&#32;PAD0&#32;or&#32;PAD1.\n&quot;);</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00213"/>00213 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00214"/>00214 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Set&#32;the&#32;first&#32;56&#32;bytes&#32;to&#32;all&#32;zero&#32;bits</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00215"/>00215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(i=0;&#32;i&lt;56;&#32;i++)
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00216"/>00216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00217"/>00217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;msgBlock-&gt;e[i]&#32;=&#32;0x00;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00218"/>00218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00219"/>00219 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00220"/>00220 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Set&#32;the&#32;last&#32;64&#32;bits&#32;to&#32;an&#32;integer&#32;(should&#32;be&#32;big&#32;endian)</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00221"/>00221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;msgBlock-&gt;s[7]&#32;=&#32;byteSwap64(*numBits);
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00222"/>00222 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00223"/>00223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Set&#32;the&#32;state&#32;to&#32;finish</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00224"/>00224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_mysqlcontroller_8cpp_1a89f234133d3efe315836311cbf21c64b">state</link>&#32;=&#32;FINISH;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00225"/>00225 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00226"/>00226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;state&#32;is&#32;PAD1,&#32;set&#32;the&#32;first&#32;bit&#32;of&#32;msgBlock&#32;to&#32;1</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00227"/>00227 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(*<link linkend="_mysqlcontroller_8cpp_1a89f234133d3efe315836311cbf21c64b">state</link>&#32;==&#32;PAD1)
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00228"/>00228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00229"/>00229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;0x80&#32;=&#32;10000000</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00230"/>00230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;msgBlock-&gt;e[0]&#32;=&#32;0x80;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00231"/>00231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00232"/>00232 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00233"/>00233 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;keep&#32;the&#32;loop&#32;in&#32;SHA256&#32;going&#32;for&#32;one&#32;more&#32;iteration</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00234"/>00234 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;1;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00235"/>00235 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00236"/>00236 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00237"/>00237 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Read&#32;bytes&#32;instead&#32;of&#32;characters</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00238"/>00238 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Read&#32;until&#32;the&#32;end&#32;of&#32;the&#32;file</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00239"/>00239 &#32;&#32;&#32;&#32;numBytes&#32;=&#32;fread(msgBlock-&gt;e,&#32;1,&#32;64,&#32;file);
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00240"/>00240 &#32;&#32;&#32;&#32;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00241"/>00241 &#32;&#32;&#32;&#32;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00242"/>00242 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Keep&#32;track&#32;of&#32;the&#32;number&#32;of&#32;bytes&#32;we&apos;ve&#32;read</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00243"/>00243 &#32;&#32;&#32;&#32;*numBits&#32;=&#32;*numBits&#32;+&#32;(numBytes&#32;*&#32;8);
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00244"/>00244 &#32;&#32;&#32;&#32;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00245"/>00245 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;If&#32;theres&#32;enough&#32;room&#32;to&#32;finish&#32;the&#32;padding</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00246"/>00246 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(numBytes&#32;&lt;&#32;56)
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00247"/>00247 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00248"/>00248 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;0x80&#32;=&#32;10000000</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00249"/>00249 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Add&#32;the&#32;one&#32;bit,&#32;as&#32;per&#32;the&#32;standard&#32;before&#32;padding&#32;with&#32;0s</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00250"/>00250 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;msgBlock-&gt;e[numBytes]&#32;=&#32;0x80;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00251"/>00251 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00252"/>00252 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Add&#32;0&#32;bits&#32;until&#32;the&#32;last&#32;64&#32;bits</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00253"/>00253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(numBytes&#32;&lt;&#32;56)
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00254"/>00254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00255"/>00255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Add&#32;the&#32;index&#32;into&#32;our&#32;block</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00256"/>00256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;numBytes&#32;=&#32;numBytes&#32;+1;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00257"/>00257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00258"/>00258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Add&#32;enough&#32;zeroes&#32;so&#32;that&#32;there&#32;are&#32;64&#32;bits&#32;left&#32;at&#32;the&#32;end</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00259"/>00259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;msgBlock-&gt;e[numBytes]&#32;=&#32;0x00;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00260"/>00260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00261"/>00261 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00262"/>00262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Store&#32;the&#32;length&#32;of&#32;the&#32;file&#32;in&#32;bits&#32;as&#32;a&#32;(Should&#32;be&#32;big&#32;endian)&#32;unsigned&#32;64&#32;bit&#32;int</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00263"/>00263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;msgBlock-&gt;s[7]&#32;=&#32;byteSwap64(*numBits);
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00264"/>00264 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00265"/>00265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Change&#32;the&#32;state&#32;of&#32;our&#32;program</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00266"/>00266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_mysqlcontroller_8cpp_1a89f234133d3efe315836311cbf21c64b">state</link>&#32;=&#32;FINISH;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00267"/>00267 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00268"/>00268 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Otherwise,&#32;check&#32;if&#32;we&#32;can&#32;put&#32;some&#32;padding&#32;into&#32;this&#32;message&#32;block</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00269"/>00269 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>(numBytes&#32;&lt;&#32;64)
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00270"/>00270 &#32;&#32;&#32;&#32;{&#32;&#32;&#32;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00271"/>00271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Set&#32;the&#32;state&#32;to&#32;PAD0</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00272"/>00272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_mysqlcontroller_8cpp_1a89f234133d3efe315836311cbf21c64b">state</link>&#32;=&#32;PAD0;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00273"/>00273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00274"/>00274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;0x80&#32;=&#32;10000000</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00275"/>00275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Add&#32;the&#32;one&#32;bit&#32;into&#32;the&#32;current&#32;message&#32;block</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00276"/>00276 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;msgBlock-&gt;e[numBytes]&#32;=&#32;0x80;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00277"/>00277 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00278"/>00278 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Pad&#32;the&#32;rest&#32;of&#32;the&#32;message&#32;block&#32;with&#32;0&#32;bits</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00279"/>00279 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(numBytes&#32;&lt;&#32;64)
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00280"/>00280 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00281"/>00281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;numBytes&#32;=&#32;numBytes&#32;+&#32;1;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00282"/>00282 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;msgBlock-&gt;e[numBytes]&#32;=&#32;0x00;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00283"/>00283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00284"/>00284 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00285"/>00285 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Otherwise&#32;if&#32;we&apos;re&#32;at&#32;the&#32;end&#32;of&#32;the&#32;file,&#32;need&#32;to&#32;create&#32;a&#32;new&#32;message&#32;block&#32;full&#32;of&#32;padding</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00286"/>00286 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>(feof(file))
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00287"/>00287 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00288"/>00288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Set&#32;the&#32;state&#32;to&#32;PAD1</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00289"/>00289 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;We&#32;need&#32;a&#32;message&#32;Block&#32;full&#32;of&#32;padding</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00290"/>00290 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;*<link linkend="_mysqlcontroller_8cpp_1a89f234133d3efe315836311cbf21c64b">state</link>&#32;=&#32;PAD1;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00291"/>00291 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00292"/>00292 &#32;&#32;&#32;&#32;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00293"/>00293 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Print&#32;padding</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00294"/>00294 &#32;&#32;&#32;&#32;<emphasis role="comment">/*</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00295"/>00295 <emphasis role="comment">&#32;&#32;&#32;&#32;printf(&quot;\n---&#32;PADDING&#32;---&#32;\n&quot;);</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00296"/>00296 <emphasis role="comment">&#32;&#32;&#32;&#32;for&#32;(int&#32;i=0;&#32;i&lt;64;&#32;i++)</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00297"/>00297 <emphasis role="comment">&#32;&#32;&#32;&#32;{</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00298"/>00298 <emphasis role="comment">&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(&quot;%x&quot;,&#32;msgBlock.e[i]);</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00299"/>00299 <emphasis role="comment">&#32;&#32;&#32;&#32;}</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00300"/>00300 <emphasis role="comment">&#32;&#32;&#32;&#32;printf(&quot;\n&quot;);</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00301"/>00301 <emphasis role="comment">&#32;&#32;&#32;&#32;*/</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00302"/>00302 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;1;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00303"/>00303 }
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00304"/>00304 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00310"/>00310 <emphasis role="keywordtype">void</emphasis>&#32;SHA256CPP::printFileContents(FILE&#32;*fileForPrinting)&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00311"/>00311 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Variables</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00312"/>00312 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;fileContents[<link linkend="_fileintegritychecker_8cpp_1ac1535592e39e7edf0cafbd5e695ea622">MAXCHAR</link>];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00313"/>00313 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;fileContentsAsString[<link linkend="_fileintegritychecker_8cpp_1ac1535592e39e7edf0cafbd5e695ea622">MAXCHAR</link>];
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00314"/>00314 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;fileSize;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00315"/>00315 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00316"/>00316 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;First&#32;check&#32;to&#32;make&#32;sure&#32;the&#32;file&#32;could&#32;be&#32;found</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00317"/>00317 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(fileForPrinting&#32;==&#32;NULL){
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00318"/>00318 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;\n&#32;Could&#32;not&#32;open&#32;file&quot;</emphasis>);
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00319"/>00319 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00320"/>00320 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00321"/>00321 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00322"/>00322 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Calculate&#32;the&#32;size&#32;of&#32;the&#32;file</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00323"/>00323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fileSize&#32;=&#32;calcFileSize(fileForPrinting);
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00324"/>00324 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00325"/>00325 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;\n&#32;File&#32;Size&#32;(characters):&#32;%d&#32;\n&quot;</emphasis>,&#32;fileSize);
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00326"/>00326 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00327"/>00327 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;\n&#32;=============&#32;File&#32;Contents&#32;=============&#32;\n&quot;</emphasis>);
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00328"/>00328 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00329"/>00329 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;While&#32;there&#32;is&#32;still&#32;stuff&#32;to&#32;read&#32;from&#32;the&#32;file</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00330"/>00330 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(fgets(fileContents,&#32;<link linkend="_fileintegritychecker_8cpp_1ac1535592e39e7edf0cafbd5e695ea622">MAXCHAR</link>,&#32;fileForPrinting)&#32;!=&#32;NULL)
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00331"/>00331 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00332"/>00332 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Print&#32;the&#32;contents&#32;of&#32;the&#32;file</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00333"/>00333 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;&#32;%s\n&quot;</emphasis>,&#32;fileContents);
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00334"/>00334 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00335"/>00335 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00336"/>00336 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;\n&#32;=========================================&#32;\n&quot;</emphasis>);
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00337"/>00337 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00338"/>00338 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fclose(fileForPrinting);
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00339"/>00339 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00340"/>00340 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Close&#32;the&#32;file&#32;</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00341"/>00341 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00342"/>00342 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00343"/>00343 }
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00344"/>00344 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00351"/>00351 <emphasis role="keywordtype">int</emphasis>&#32;SHA256CPP::calcFileSize(FILE&#32;*file)&#32;{
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00352"/>00352 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;prev=ftell(file);
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00353"/>00353 &#32;&#32;&#32;&#32;fseek(file,&#32;0L,&#32;SEEK_END);
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00354"/>00354 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;size=ftell(file);
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00355"/>00355 &#32;&#32;&#32;&#32;fseek(file,prev,SEEK_SET);&#32;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00356"/>00356 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;size;
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00357"/>00357 }
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00358"/>00358 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00365"/>00365 uint32_t&#32;SHA256CPP::sig0(uint32_t&#32;x)
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00366"/>00366 {
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00367"/>00367 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Section&#32;3.2</emphasis>
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00368"/>00368 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(rotr(x,&#32;7)&#32;^&#32;rotr(x,&#32;18)&#32;^&#32;shr(x,&#32;3));
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00369"/>00369 }
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00370"/>00370 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00377"/>00377 uint32_t&#32;SHA256CPP::sig1(uint32_t&#32;x)
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00378"/>00378 {
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00379"/>00379 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(rotr(x,&#32;17)&#32;^&#32;rotr(x,&#32;19)&#32;^&#32;shr(x,&#32;10));
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00380"/>00380 }
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00381"/>00381 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00389"/>00389 uint32_t&#32;SHA256CPP::rotr(uint32_t&#32;x,&#32;uint16_t&#32;a)
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00390"/>00390 {
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00391"/>00391 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(x&#32;&gt;&gt;&#32;a)&#32;|&#32;(x&#32;&lt;&lt;&#32;(32&#32;-&#32;a));
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00392"/>00392 }
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00393"/>00393 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00401"/>00401 uint32_t&#32;SHA256CPP::shr(uint32_t&#32;x,&#32;uint16_t&#32;b)
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00402"/>00402 {
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00403"/>00403 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(x&#32;&gt;&gt;&#32;b);
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00404"/>00404 }
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00405"/>00405 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00412"/>00412 uint32_t&#32;SHA256CPP::SIG0(uint32_t&#32;x)
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00413"/>00413 {
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00414"/>00414 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(rotr(x,&#32;2)&#32;^&#32;rotr(x,&#32;13)&#32;^&#32;rotr(x,&#32;22));
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00415"/>00415 }
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00416"/>00416 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00423"/>00423 uint32_t&#32;SHA256CPP::SIG1(uint32_t&#32;x)
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00424"/>00424 {
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00425"/>00425 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(rotr(x,&#32;6)&#32;^&#32;rotr(x,&#32;11)&#32;^&#32;rotr(x,&#32;25));
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00426"/>00426 }
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00427"/>00427 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00436"/>00436 uint32_t&#32;SHA256CPP::Ch(uint32_t&#32;x,uint32_t&#32;y,uint32_t&#32;z)
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00437"/>00437 {
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00438"/>00438 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;((x&#32;&amp;&#32;y)&#32;^&#32;(~(x)&amp;z));
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00439"/>00439 }
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00440"/>00440 
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00449"/>00449 uint32_t&#32;SHA256CPP::Maj(uint32_t&#32;x,uint32_t&#32;y,uint32_t&#32;z)
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00450"/>00450 {
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00451"/>00451 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;((x&#32;&amp;&#32;y)&#32;^&#32;(x&#32;&amp;&#32;z)&#32;^&#32;(y&#32;&amp;&#32;z));
+<anchor xml:id="__s_h_a256_c_p_p_8cpp_source_1l00452"/>00452 }
+</programlisting></section>

@@ -1,0 +1,44 @@
+\hypertarget{helper_8h_source}{}\doxysection{helper.\+h}
+\label{helper_8h_source}\index{headers/helper.h@{headers/helper.h}}
+\mbox{\hyperlink{helper_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef HEADERS\_HELPER\_H\_}}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00002}00002 \textcolor{preprocessor}{\#define HEADERS\_HELPER\_H\_}}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00004}\mbox{\hyperlink{helper_8h_a7a104b2e349617222c6419b36bfd3260}{00004}} \textcolor{preprocessor}{\#define \_\_STDC\_WANT\_LIB\_EXT1\_\_ 1}}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00006}00006 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00007}00007 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00008}00008 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00009}00009 \textcolor{preprocessor}{\#include <cstdint>}}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00010}00010 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00011}00011 \textcolor{preprocessor}{\#include <cstring>}}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00012}00012 \textcolor{preprocessor}{\#include <sqlite3.h>}}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00014}\mbox{\hyperlink{class_helper}{00014}} \textcolor{keyword}{class }\mbox{\hyperlink{class_helper}{Helper}} \{}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00015}00015 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00016}\mbox{\hyperlink{class_helper_a925994da414b49c76b77851bac11a0ed}{00016}}     \textcolor{keyword}{enum} \mbox{\hyperlink{class_helper_a925994da414b49c76b77851bac11a0ed}{AttributeToCheck}} \{ \mbox{\hyperlink{class_helper_a925994da414b49c76b77851bac11a0eda0a2c2ad45a8ef22d0854418220f13f07}{HashedVal}} = 1, \mbox{\hyperlink{class_helper_a925994da414b49c76b77851bac11a0edad916bef10461ccf8f246674ddc77dd49}{FileSize}} = 2, \mbox{\hyperlink{class_helper_a925994da414b49c76b77851bac11a0eda06af975a56ed4ed9fcf3afabd41ba0b3}{DateModified}} = 3\};}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00017}\mbox{\hyperlink{class_helper_a0f9c4b55b87835fc629ea6327b51202f}{00017}}     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_helper_a0f9c4b55b87835fc629ea6327b51202f}{checkIfHashvalExistInFiles}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} fileId, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* hval, sqlite3 *db);}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00018}\mbox{\hyperlink{class_helper_aa18f3c515ed5d6ce6af10bbaa3686fa7}{00018}}     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_helper_aa18f3c515ed5d6ce6af10bbaa3686fa7}{checkIfHashvalExistInChanges}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} fileId, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* hval, sqlite3 *db);}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00019}00019     }
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00020}\mbox{\hyperlink{class_helper_a2e25b7788bfb4d832089068d2d87390d}{00020}}     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_helper_a2e25b7788bfb4d832089068d2d87390d}{checkIfFileSizeExistInChanges}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} fileId, \textcolor{keyword}{const} \textcolor{keywordtype}{int} filesize, sqlite3 *db);}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00021}\mbox{\hyperlink{class_helper_a986f4e981d6ec7422919c64476cf66d1}{00021}}     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_helper_a986f4e981d6ec7422919c64476cf66d1}{checkIfFileSizeIsVerifiedOrModified}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} fileId, sqlite3 *db);}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00023}\mbox{\hyperlink{class_helper_a2d7b2ef729d42a55c99568958a3362a9}{00023}}     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_helper_a2d7b2ef729d42a55c99568958a3362a9}{checkIfDateModifiedExistInFiles}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} fileId, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* datemodified, sqlite3 *db);}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00024}\mbox{\hyperlink{class_helper_ac980a433560328044e9916d2f5a99e8d}{00024}}     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_helper_ac980a433560328044e9916d2f5a99e8d}{checkIfDateModifiedExistInChanges}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} fileId, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* datemodified, sqlite3 *db);}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00026}\mbox{\hyperlink{class_helper_ae449b9e499fa75c53f06522a6155b08a}{00026}}     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_helper_ae449b9e499fa75c53f06522a6155b08a}{checkIfAttributeIsVerifiedOrModified}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} fileId, \textcolor{keyword}{const} \mbox{\hyperlink{class_helper_a925994da414b49c76b77851bac11a0ed}{AttributeToCheck}} attribute, sqlite3 *db);}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00028}\mbox{\hyperlink{class_helper_a21eb1535d481de637af099ba556e40cd}{00028}}     \textcolor{keyword}{static} \textcolor{keywordtype}{char}* \mbox{\hyperlink{class_helper_a21eb1535d481de637af099ba556e40cd}{getCurrentTime}}();}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00029}00029     }
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00030}00030 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00031}00031     \textcolor{keyword}{static} \textcolor{keywordtype}{int} checkIfHashFileIsVerifiedOrModified(\textcolor{keyword}{const} \textcolor{keywordtype}{int} fileId, sqlite3 *db);}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00032}00032     \textcolor{keyword}{static} \textcolor{keywordtype}{int} checkIfFileSizeExistInFiles(\textcolor{keyword}{const} \textcolor{keywordtype}{int} fileId, \textcolor{keyword}{const} \textcolor{keywordtype}{int} filesize, sqlite3 *db);}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00033}00033     \textcolor{keyword}{static} \textcolor{keywordtype}{int} checkIfDateModifiedIsVerifiedOrModified(\textcolor{keyword}{const} \textcolor{keywordtype}{int} fileId, sqlite3 *db);}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00035}00035     }
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00036}00036 \};}
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{helper_8h_source_l00038}00038 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

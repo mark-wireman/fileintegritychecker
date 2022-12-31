@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_menu" xml:lang="en-US">
+<title>Menu Class Reference</title>
+<indexterm><primary>Menu</primary></indexterm>
+<para>
+<computeroutput>#include &lt;Menu.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_menu_1ad466dd83355124a6ed958430450bfe94">Menu</link> ()</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_class_menu_1a5bf168cbb40e28e718ced8f248b3d37a">~Menu</link> ()</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_menu_1a50f39bd5a994cb64421bfacbf6aed5e8">ParseArguments</link> (int argc, char *argv[])</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_menu_1acbe5ec7e6202dec08ca26f4898df8040">PrintMenu</link> ()</para>
+</listitem>
+            <listitem><para>char * <link linkend="_class_menu_1aca44a03905fb898515c88a49b4fca849">getDATABASEHOSTNAME</link> ()</para>
+</listitem>
+            <listitem><para>char * <link linkend="_class_menu_1a7b3f2bde7bf5297d47409c7fa7f8c940">getUSERNAME</link> ()</para>
+</listitem>
+            <listitem><para>char * <link linkend="_class_menu_1a08a81ab79febb5e1f74a21853717cbae">getPASSWORD</link> ()</para>
+</listitem>
+            <listitem><para>char * <link linkend="_class_menu_1ac8fe61db0d8a3f32fbb161abdeee4668">getPORT</link> ()</para>
+</listitem>
+            <listitem><para>char * <link linkend="_class_menu_1ab2ce4cac489c6da0f08eb4bd0753a555">getMACHINENAME</link> ()</para>
+</listitem>
+            <listitem><para>char * <link linkend="_class_menu_1ac07eb59a5697f449133f2d4caf95947c">getPARENTDIR</link> ()</para>
+</listitem>
+            <listitem><para>char * <link linkend="_class_menu_1a1f0c07508ea10698ae7af1caad692d52">getDBASETYPE</link> ()</para>
+</listitem>
+            <listitem><para>char * <link linkend="_class_menu_1a34eb19b4584c6139b1d0fbc7811ba68a">getDBASEFILENAME</link> ()</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_menu_1a7296588596f0d05634bb6b6a26d51000">getPROCESSHASHVALS</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_menu_1ad466dd83355124a6ed958430450bfe94"/><section>
+    <title>Menu()</title>
+<indexterm><primary>Menu</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>Menu</secondary></indexterm>
+<para><computeroutput>Menu::Menu ( )</computeroutput></para></section>
+<anchor xml:id="_class_menu_1a5bf168cbb40e28e718ced8f248b3d37a"/><section>
+    <title>~Menu()</title>
+<indexterm><primary>~Menu</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>~Menu</secondary></indexterm>
+<para><computeroutput>virtual Menu::~Menu ( )<computeroutput>[virtual]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_menu_1aca44a03905fb898515c88a49b4fca849"/><section>
+    <title>getDATABASEHOSTNAME()</title>
+<indexterm><primary>getDATABASEHOSTNAME</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>getDATABASEHOSTNAME</secondary></indexterm>
+<para><computeroutput>char * Menu::getDATABASEHOSTNAME ( )</computeroutput></para></section>
+<anchor xml:id="_class_menu_1a34eb19b4584c6139b1d0fbc7811ba68a"/><section>
+    <title>getDBASEFILENAME()</title>
+<indexterm><primary>getDBASEFILENAME</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>getDBASEFILENAME</secondary></indexterm>
+<para><computeroutput>char * Menu::getDBASEFILENAME ( )</computeroutput></para></section>
+<anchor xml:id="_class_menu_1a1f0c07508ea10698ae7af1caad692d52"/><section>
+    <title>getDBASETYPE()</title>
+<indexterm><primary>getDBASETYPE</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>getDBASETYPE</secondary></indexterm>
+<para><computeroutput>char * Menu::getDBASETYPE ( )</computeroutput></para></section>
+<anchor xml:id="_class_menu_1ab2ce4cac489c6da0f08eb4bd0753a555"/><section>
+    <title>getMACHINENAME()</title>
+<indexterm><primary>getMACHINENAME</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>getMACHINENAME</secondary></indexterm>
+<para><computeroutput>char * Menu::getMACHINENAME ( )</computeroutput></para></section>
+<anchor xml:id="_class_menu_1ac07eb59a5697f449133f2d4caf95947c"/><section>
+    <title>getPARENTDIR()</title>
+<indexterm><primary>getPARENTDIR</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>getPARENTDIR</secondary></indexterm>
+<para><computeroutput>char * Menu::getPARENTDIR ( )</computeroutput></para></section>
+<anchor xml:id="_class_menu_1a08a81ab79febb5e1f74a21853717cbae"/><section>
+    <title>getPASSWORD()</title>
+<indexterm><primary>getPASSWORD</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>getPASSWORD</secondary></indexterm>
+<para><computeroutput>char * Menu::getPASSWORD ( )</computeroutput></para></section>
+<anchor xml:id="_class_menu_1ac8fe61db0d8a3f32fbb161abdeee4668"/><section>
+    <title>getPORT()</title>
+<indexterm><primary>getPORT</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>getPORT</secondary></indexterm>
+<para><computeroutput>char * Menu::getPORT ( )</computeroutput></para></section>
+<anchor xml:id="_class_menu_1a7296588596f0d05634bb6b6a26d51000"/><section>
+    <title>getPROCESSHASHVALS()</title>
+<indexterm><primary>getPROCESSHASHVALS</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>getPROCESSHASHVALS</secondary></indexterm>
+<para><computeroutput>int Menu::getPROCESSHASHVALS ( )</computeroutput></para></section>
+<anchor xml:id="_class_menu_1a7b3f2bde7bf5297d47409c7fa7f8c940"/><section>
+    <title>getUSERNAME()</title>
+<indexterm><primary>getUSERNAME</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>getUSERNAME</secondary></indexterm>
+<para><computeroutput>char * Menu::getUSERNAME ( )</computeroutput></para></section>
+<anchor xml:id="_class_menu_1a50f39bd5a994cb64421bfacbf6aed5e8"/><section>
+    <title>ParseArguments()</title>
+<indexterm><primary>ParseArguments</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>ParseArguments</secondary></indexterm>
+<para><computeroutput>int Menu::ParseArguments (int argc, char * argv[])</computeroutput></para></section>
+<anchor xml:id="_class_menu_1acbe5ec7e6202dec08ca26f4898df8040"/><section>
+    <title>PrintMenu()</title>
+<indexterm><primary>PrintMenu</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>PrintMenu</secondary></indexterm>
+<para><computeroutput>void Menu::PrintMenu ( )</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+C:/Users/mark_/source/repos/fileintegritychecker/headers/<link linkend="__menu_8h">Menu.h</link></section>
+</section>

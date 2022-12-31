@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_h_a256_c_p_p_8h" xml:lang="en-US">
+<title>C:/Users/mark_/source/repos/fileintegritychecker/headers/SHA256CPP.h File Reference</title>
+<indexterm><primary>C:/Users/mark_/source/repos/fileintegritychecker/headers/SHA256CPP.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;stdlib.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &lt;inttypes.h&gt;<?linebreak?>#include &lt;stdbool.h&gt;<?linebreak?>#include &lt;array&gt;<?linebreak?></programlisting>Include dependency graph for SHA256CPP.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_s_h_a256_c_p_p_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_s_h_a256_c_p_p_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_struct_hash_values">HashValues</link></para>
+</listitem>
+            <listitem><para>union <link linkend="_unionmessage_block">messageBlock</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_s_h_a256_c_p_p">SHA256CPP</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__s_h_a256_c_p_p_8h_1af69af86b63bfa5f9ae02b9ade66929e9">byteSwap32</link>(x)&#160;&#160;&#160;(((x) &gt;&gt; 24) | (((x)&amp;0x00FF0000) &gt;&gt; 8) | (((x)&amp;0x0000FF00) &lt;&lt; 8) | ((x) &lt;&lt; 24))</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_h_a256_c_p_p_8h_1a317cf659e36d8c74574a1617e1c6bce1">byteSwap64</link>(x)</para>
+</listitem>
+            <listitem><para>#define <link linkend="__s_h_a256_c_p_p_8h_1ac1535592e39e7edf0cafbd5e695ea622">MAXCHAR</link>&#160;&#160;&#160;100000</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="__s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959">status</link> { <link linkend="__s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959acb9be765f361bb7efb9073730aac92c6">READ</link>
+, <link linkend="__s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959a24c954e013ccb8f230031742d8193f55">PAD0</link>
+, <link linkend="__s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959a7af380b5255ed8fbb4f1943b92048b15">PAD1</link>
+, <link linkend="__s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959a8b9af67858708d770f017e4aae85900d">FINISH</link>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="__s_h_a256_c_p_p_8h_1af69af86b63bfa5f9ae02b9ade66929e9"/><section>
+    <title>byteSwap32</title>
+<indexterm><primary>byteSwap32</primary><secondary>SHA256CPP.h</secondary></indexterm>
+<indexterm><primary>SHA256CPP.h</primary><secondary>byteSwap32</secondary></indexterm>
+<para><computeroutput>#define byteSwap32( x)&#160;&#160;&#160;(((x) &gt;&gt; 24) | (((x)&amp;0x00FF0000) &gt;&gt; 8) | (((x)&amp;0x0000FF00) &lt;&lt; 8) | ((x) &lt;&lt; 24))</computeroutput></para></section>
+<anchor xml:id="__s_h_a256_c_p_p_8h_1a317cf659e36d8c74574a1617e1c6bce1"/><section>
+    <title>byteSwap64</title>
+<indexterm><primary>byteSwap64</primary><secondary>SHA256CPP.h</secondary></indexterm>
+<indexterm><primary>SHA256CPP.h</primary><secondary>byteSwap64</secondary></indexterm>
+<para><computeroutput>#define byteSwap64( x)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;((((x)&#32;&gt;&gt;&#32;56)&#32;&amp;&#32;0x00000000000000FF)&#32;|&#32;(((x)&#32;&gt;&gt;&#32;40)&#32;&amp;&#32;0x000000000000FF00)&#32;|&#32;\
+&#32;&#32;&#32;&#32;&#32;(((x)&#32;&gt;&gt;&#32;24)&#32;&amp;&#32;0x0000000000FF0000)&#32;|&#32;(((x)&#32;&gt;&gt;&#32;8)&#32;&amp;&#32;0x00000000FF000000)&#32;|&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;(((x)&#32;&lt;&lt;&#32;8)&#32;&amp;&#32;0x000000FF00000000)&#32;|&#32;(((x)&#32;&lt;&lt;&#32;24)&#32;&amp;&#32;0x0000FF0000000000)&#32;|&#32;&#32;\
+&#32;&#32;&#32;&#32;&#32;(((x)&#32;&lt;&lt;&#32;40)&#32;&amp;&#32;0x00FF000000000000)&#32;|&#32;(((x)&#32;&lt;&lt;&#32;56)&#32;&amp;&#32;0xFF00000000000000))
+</programlisting></section>
+<anchor xml:id="__s_h_a256_c_p_p_8h_1ac1535592e39e7edf0cafbd5e695ea622"/><section>
+    <title>MAXCHAR</title>
+<indexterm><primary>MAXCHAR</primary><secondary>SHA256CPP.h</secondary></indexterm>
+<indexterm><primary>SHA256CPP.h</primary><secondary>MAXCHAR</secondary></indexterm>
+<para><computeroutput>#define MAXCHAR&#160;&#160;&#160;100000</computeroutput></para></section>
+</section>
+<section>
+<title>Enumeration Type Documentation</title>
+<anchor xml:id="__s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959"/><section>
+    <title>status</title>
+<indexterm><primary>status</primary><secondary>SHA256CPP.h</secondary></indexterm>
+<indexterm><primary>SHA256CPP.h</primary><secondary>status</secondary></indexterm>
+<para><computeroutput>enum <link linkend="__s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959">status</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>READ</primary><secondary>SHA256CPP.h</secondary></indexterm>
+<indexterm><primary>SHA256CPP.h</primary><secondary>READ</secondary></indexterm>
+<anchor xml:id="__s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959acb9be765f361bb7efb9073730aac92c6"/>READ</entry><entry></entry></row><row><entry><indexterm><primary>PAD0</primary><secondary>SHA256CPP.h</secondary></indexterm>
+<indexterm><primary>SHA256CPP.h</primary><secondary>PAD0</secondary></indexterm>
+<anchor xml:id="__s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959a24c954e013ccb8f230031742d8193f55"/>PAD0</entry><entry></entry></row><row><entry><indexterm><primary>PAD1</primary><secondary>SHA256CPP.h</secondary></indexterm>
+<indexterm><primary>SHA256CPP.h</primary><secondary>PAD1</secondary></indexterm>
+<anchor xml:id="__s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959a7af380b5255ed8fbb4f1943b92048b15"/>PAD1</entry><entry></entry></row><row><entry><indexterm><primary>FINISH</primary><secondary>SHA256CPP.h</secondary></indexterm>
+<indexterm><primary>SHA256CPP.h</primary><secondary>FINISH</secondary></indexterm>
+<anchor xml:id="__s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959a8b9af67858708d770f017e4aae85900d"/>FINISH</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+</section>
+</section>
+</section>

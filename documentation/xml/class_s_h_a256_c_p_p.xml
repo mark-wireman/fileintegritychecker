@@ -1,0 +1,342 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="en-US">
+  <compounddef id="class_s_h_a256_c_p_p" kind="class" language="C++" prot="public">
+    <compoundname>SHA256CPP</compoundname>
+    <includes refid="_s_h_a256_c_p_p_8h" local="no">SHA256CPP.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_s_h_a256_c_p_p_1ac2f738d58ae8cbc5ee99963adaf538ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SHA256CPP::SHA256CPP</definition>
+        <argsstring>()</argsstring>
+        <name>SHA256CPP</name>
+        <qualifiedname>SHA256CPP::SHA256CPP</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="45" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_s_h_a256_c_p_p_1a5b3c3cd1fcc19df9f6b855cc05dfe5af" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual SHA256CPP::~SHA256CPP</definition>
+        <argsstring>()</argsstring>
+        <name>~SHA256CPP</name>
+        <qualifiedname>SHA256CPP::~SHA256CPP</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="46" column="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_s_h_a256_c_p_p_1acd60e2902a86486cd8c0c730b22ec34d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SHA256CPP::endianCheck</definition>
+        <argsstring>()</argsstring>
+        <name>endianCheck</name>
+        <qualifiedname>SHA256CPP::endianCheck</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="47" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_s_h_a256_c_p_p_1a9466f56550cb9725c8fd6be92e5c1b77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_hash_values" kindref="compound">HashValues</ref></type>
+        <definition>HashValues SHA256CPP::calculateHash</definition>
+        <argsstring>(FILE *file)</argsstring>
+        <name>calculateHash</name>
+        <qualifiedname>SHA256CPP::calculateHash</qualifiedname>
+        <param>
+          <type>FILE *</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="48" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_s_h_a256_c_p_p_1accf77858eb3d4019f13d1e9c40dc9a73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SHA256CPP::printFileContents</definition>
+        <argsstring>(FILE *fileForPrinting)</argsstring>
+        <name>printFileContents</name>
+        <qualifiedname>SHA256CPP::printFileContents</qualifiedname>
+        <param>
+          <type>FILE *</type>
+          <declname>fileForPrinting</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="49" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_s_h_a256_c_p_p_1af6bbbbc8eb2d1d2ce127d9ee41f80d43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SHA256CPP::endianCheckPrint</definition>
+        <argsstring>()</argsstring>
+        <name>endianCheckPrint</name>
+        <qualifiedname>SHA256CPP::endianCheckPrint</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="50" column="10"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_s_h_a256_c_p_p_1ac70dfb32d56867b6f8790242c3202c06" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t SHA256CPP::sig0</definition>
+        <argsstring>(uint32_t x)</argsstring>
+        <name>sig0</name>
+        <qualifiedname>SHA256CPP::sig0</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="53" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_s_h_a256_c_p_p_1ad8bbe4f9babe02201d94d63fd65cc832" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t SHA256CPP::sig1</definition>
+        <argsstring>(uint32_t x)</argsstring>
+        <name>sig1</name>
+        <qualifiedname>SHA256CPP::sig1</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="54" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_s_h_a256_c_p_p_1ab1a29784c317f21287def4327f83c342" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t SHA256CPP::rotr</definition>
+        <argsstring>(uint32_t n, uint16_t x)</argsstring>
+        <name>rotr</name>
+        <qualifiedname>SHA256CPP::rotr</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="56" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_s_h_a256_c_p_p_1a0ba361bc6a4f925454dfcd14fcb95f58" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t SHA256CPP::shr</definition>
+        <argsstring>(uint32_t n, uint16_t x)</argsstring>
+        <name>shr</name>
+        <qualifiedname>SHA256CPP::shr</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="57" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_s_h_a256_c_p_p_1ae5224ffbd7fb6ab5d05a846e3c7e4bd3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t SHA256CPP::SIG0</definition>
+        <argsstring>(uint32_t x)</argsstring>
+        <name>SIG0</name>
+        <qualifiedname>SHA256CPP::SIG0</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="59" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_s_h_a256_c_p_p_1ad8ea0d3bc89a2622dd230b9fb42c8463" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t SHA256CPP::SIG1</definition>
+        <argsstring>(uint32_t x)</argsstring>
+        <name>SIG1</name>
+        <qualifiedname>SHA256CPP::SIG1</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="60" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_s_h_a256_c_p_p_1a4f63d4fc8d0f9267cd3d4c70fb61b2f3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t SHA256CPP::Ch</definition>
+        <argsstring>(uint32_t x, uint32_t y, uint32_t z)</argsstring>
+        <name>Ch</name>
+        <qualifiedname>SHA256CPP::Ch</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="62" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_s_h_a256_c_p_p_1a76c44344a60f168d02bf8a5888bf02ad" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t SHA256CPP::Maj</definition>
+        <argsstring>(uint32_t x, uint32_t y, uint32_t z)</argsstring>
+        <name>Maj</name>
+        <qualifiedname>SHA256CPP::Maj</qualifiedname>
+        <param>
+          <type>uint32_t</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="63" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_s_h_a256_c_p_p_1a5064c84992660bbd9e98f46511d780d8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SHA256CPP::calcFileSize</definition>
+        <argsstring>(FILE *file)</argsstring>
+        <name>calcFileSize</name>
+        <qualifiedname>SHA256CPP::calcFileSize</qualifiedname>
+        <param>
+          <type>FILE *</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="65" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_s_h_a256_c_p_p_1af0be644c9e466da786edad451fb16c14" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SHA256CPP::fillMessageBlock</definition>
+        <argsstring>(FILE *file, union messageBlock *msgBlock, enum status *state, uint64_t *numBits)</argsstring>
+        <name>fillMessageBlock</name>
+        <qualifiedname>SHA256CPP::fillMessageBlock</qualifiedname>
+        <param>
+          <type>FILE *</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>union <ref refid="unionmessage_block" kindref="compound">messageBlock</ref> *</type>
+          <declname>msgBlock</declname>
+        </param>
+        <param>
+          <type>enum <ref refid="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959" kindref="member">status</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>uint64_t *</type>
+          <declname>numBits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/SHA256CPP.h" line="66" column="9"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="headers/SHA256CPP.h" line="42" column="1" bodyfile="headers/SHA256CPP.h" bodystart="43" bodyend="67"/>
+    <listofallmembers>
+      <member refid="class_s_h_a256_c_p_p_1a5064c84992660bbd9e98f46511d780d8" prot="private" virt="non-virtual"><scope>SHA256CPP</scope><name>calcFileSize</name></member>
+      <member refid="class_s_h_a256_c_p_p_1a9466f56550cb9725c8fd6be92e5c1b77" prot="public" virt="non-virtual"><scope>SHA256CPP</scope><name>calculateHash</name></member>
+      <member refid="class_s_h_a256_c_p_p_1a4f63d4fc8d0f9267cd3d4c70fb61b2f3" prot="private" virt="non-virtual"><scope>SHA256CPP</scope><name>Ch</name></member>
+      <member refid="class_s_h_a256_c_p_p_1acd60e2902a86486cd8c0c730b22ec34d" prot="public" virt="non-virtual"><scope>SHA256CPP</scope><name>endianCheck</name></member>
+      <member refid="class_s_h_a256_c_p_p_1af6bbbbc8eb2d1d2ce127d9ee41f80d43" prot="public" virt="non-virtual"><scope>SHA256CPP</scope><name>endianCheckPrint</name></member>
+      <member refid="class_s_h_a256_c_p_p_1af0be644c9e466da786edad451fb16c14" prot="private" virt="non-virtual"><scope>SHA256CPP</scope><name>fillMessageBlock</name></member>
+      <member refid="class_s_h_a256_c_p_p_1a76c44344a60f168d02bf8a5888bf02ad" prot="private" virt="non-virtual"><scope>SHA256CPP</scope><name>Maj</name></member>
+      <member refid="class_s_h_a256_c_p_p_1accf77858eb3d4019f13d1e9c40dc9a73" prot="public" virt="non-virtual"><scope>SHA256CPP</scope><name>printFileContents</name></member>
+      <member refid="class_s_h_a256_c_p_p_1ab1a29784c317f21287def4327f83c342" prot="private" virt="non-virtual"><scope>SHA256CPP</scope><name>rotr</name></member>
+      <member refid="class_s_h_a256_c_p_p_1ac2f738d58ae8cbc5ee99963adaf538ca" prot="public" virt="non-virtual"><scope>SHA256CPP</scope><name>SHA256CPP</name></member>
+      <member refid="class_s_h_a256_c_p_p_1a0ba361bc6a4f925454dfcd14fcb95f58" prot="private" virt="non-virtual"><scope>SHA256CPP</scope><name>shr</name></member>
+      <member refid="class_s_h_a256_c_p_p_1ac70dfb32d56867b6f8790242c3202c06" prot="private" virt="non-virtual"><scope>SHA256CPP</scope><name>sig0</name></member>
+      <member refid="class_s_h_a256_c_p_p_1ae5224ffbd7fb6ab5d05a846e3c7e4bd3" prot="private" virt="non-virtual"><scope>SHA256CPP</scope><name>SIG0</name></member>
+      <member refid="class_s_h_a256_c_p_p_1ad8bbe4f9babe02201d94d63fd65cc832" prot="private" virt="non-virtual"><scope>SHA256CPP</scope><name>sig1</name></member>
+      <member refid="class_s_h_a256_c_p_p_1ad8ea0d3bc89a2622dd230b9fb42c8463" prot="private" virt="non-virtual"><scope>SHA256CPP</scope><name>SIG1</name></member>
+      <member refid="class_s_h_a256_c_p_p_1a5b3c3cd1fcc19df9f6b855cc05dfe5af" prot="public" virt="virtual"><scope>SHA256CPP</scope><name>~SHA256CPP</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

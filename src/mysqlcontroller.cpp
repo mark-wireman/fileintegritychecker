@@ -1,7 +1,8 @@
 #include "../headers/mysqlcontroller.h"
 
 #define STRING_SIZE 65535
-#define STOREDPROCSTMT "call saveDirectoryDetails(?, ?, ?)"
+#define SAVEDIRSTOREDPROCSTMT "call saveDirectoryDetails(?, ?, ?)"
+#define SAVEFILEINFOPROCSTMT "call saveFileHashVal(?,?,?,?,?)"
 
 //MYSQL *connection, mysql;
 char* hostname;
@@ -17,8 +18,13 @@ sql::Driver *driver;
 sql::Connection *con;
 sql::Statement *stmt;
 sql::ResultSet *res;
-sql::PreparedStatement *prepStmt;
+sql::PreparedStatement *savedirprepStmt;
+sql::PreparedStatement *savedfileprepStmt;
 
+/**
+ * @brief Construct a new mysqlcontroller::mysqlcontroller object
+ * 
+ */
 mysqlcontroller::mysqlcontroller() {}
 
 mysqlcontroller::mysqlcontroller(char* host, char* dbase, char* uname, char* pwd, int portno, char* mname)
@@ -31,117 +37,139 @@ mysqlcontroller::mysqlcontroller(char* host, char* dbase, char* uname, char* pwd
 	machinename = mname;
 }
 
+/**
+ * @brief Destroy mysqlcontroller::mysqlcontroller object
+ * 
+ */
+mysqlcontroller::~mysqlcontroller() {}
+
+/**
+ * @brief 
+ * 
+ * @param host 
+ */
 void mysqlcontroller::setHOSTNAME(char* host) {
     hostname = host;
 }
 
+/**
+ * @brief 
+ * 
+ * @param dbase 
+ */
 void mysqlcontroller::setDBASENAME(char* dbase) {
     dbasename = dbase;
 }
 
+/**
+ * @brief 
+ * 
+ * @param uname 
+ */
 void mysqlcontroller::setUSERNAME(char* uname) {
     username = uname;
 }
 
+/**
+ * @brief 
+ * 
+ * @param pwd 
+ */
 void mysqlcontroller::setPASSWORD(char* pwd) {
     password = pwd;
 }
 
+/**
+ * @brief 
+ * 
+ * @param portno 
+ */
 void mysqlcontroller::setPORT(int portno) {
     port = portno;
 }
 
+/**
+ * @brief 
+ * 
+ * @param mname 
+ */
 void mysqlcontroller::setMACHINENAME(char* mname) {
 	machinename = mname;
 }
 
+/**
+ * @brief 
+ * 
+ * @return char* 
+ */
 char* mysqlcontroller::getHOSTNAME() {
     return hostname;
 }
 
+/**
+ * @brief 
+ * 
+ * @return char* 
+ */
 char* mysqlcontroller::getDBASENAME() {
     return dbasename;
 }
 
+/**
+ * @brief 
+ * 
+ * @return char* 
+ */
 char* mysqlcontroller::getUSERNAME() {
     return username;
 }
 
+/**
+ * @brief 
+ * 
+ * @return char* 
+ */
 char* mysqlcontroller::getPASSWORD() {
     return password;
 }
 
+/**
+ * @brief 
+ * 
+ * @return int 
+ */
 int mysqlcontroller::getPORT() {
     return port;
 }
 
+/**
+ * @brief 
+ * 
+ * @return char* 
+ */
 char* mysqlcontroller::getMACHINENAME() {
 	return machinename;
 }
 
+/**
+ * @brief 
+ * 
+ */
 void mysqlcontroller::initPreparedStatements() {
-	/*int result; 
-    int count; 
 
-    storedProcStmt = mysql_stmt_init(connection); 
-    if (storedProcStmt == NULL) { 
-		cout << "init of insert stmt failed" << "\n";
-		exit(1);
-	} 
-    
-	result = mysql_stmt_prepare(storedProcStmt, STOREDPROCSTMT, strlen(STOREDPROCSTMT));  
-    if (result != 0) { 
-		cout << "prepare of insert stmt failed" << "\n";
-		exit(1);
-	} 
-
-    count = mysql_stmt_param_count(storedProcStmt);*/
-
-	prepStmt = con->prepareStatement(STOREDPROCSTMT);
+	savedirprepStmt = con->prepareStatement(SAVEDIRSTOREDPROCSTMT);
+	savedfileprepStmt = con->prepareStatement(SAVEFILEINFOPROCSTMT);
 
 }
 
-/*void mysqlcontroller::finish_with_error()
-{
-	string mysqlerr = mysql_error(&mysql);
-	fprintf(stderr, "MySQL Error: %s\n", mysqlerr.c_str());
-	mysql_close(connection);
-	throw invalid_argument(mysqlerr);
-	exit(1);
-}*/
 
-char* mysqlcontroller::getCurrentTime() {
-	string retVal;
-	char* char_array;
-
-	std::time_t t = std::time(0);   // get time now
-	std::tm* now = std::localtime(&t);
-	char date_string[100];
-	char time_string[100];
-
-	strftime(date_string, 50, "%B %d, %Y ", now);
-	strftime(time_string, 50, "%T", now);
-
-	retVal += date_string;
-	retVal += time_string;
-
-	int n = retVal.length();
-	char_array = new char[n + 1];
-
-	strcpy(char_array, retVal.c_str());
-	
-	return char_array;
-}
-
+/**
+ * @brief 
+ * 
+ */
 void mysqlcontroller::initdb() {
     try {
 		cout << "Initializing connection to the database." << std::endl;
-		/*mysql_init(&mysql);
-	
-		cout << "mysqlcontroller::Before call to connection\n";
-		cout << hostname << " - " << username << " - " << password << " - " << dbasename << "\n";
-		connection = mysql_real_connect(&mysql,hostname,username,password,dbasename,0,NULL,0);
-		cout << "mysqlcontroller::After call to connection\n";*/
 
 		string connstr = "tcp://" + string(hostname) + ":";
 		
@@ -158,15 +186,6 @@ void mysqlcontroller::initdb() {
 		con->setAutoCommit(false);
 		/* Connect to the MySQL test database */
 		con->setSchema(dbasename);
-
-		/*if (connection == NULL)
-		{
-			cout << "mysqlcontroller::initdb() Error - " << mysql_error(connection) << std::endl;
-			fprintf(stderr, "mysqlcontroller::Failed to connect to database: Error: %s\n",
-			mysql_error(&mysql));
-			this->finish_with_error();
-		}*/
-
 		cout << "Successfully connected to database." << endl;
 	} catch (sql::SQLException &e) {
 		cout << "# ERR: SQLException in " << __FILE__;
@@ -179,6 +198,12 @@ void mysqlcontroller::initdb() {
 	cout << endl;
 }
 
+/**
+ * @brief 
+ * 
+ * @param dirname 
+ * @return char* 
+ */
 char* mysqlcontroller::filterApostraphe(string dirname) {
 	string retVal = "";
     char* char_array;
@@ -212,57 +237,27 @@ char* mysqlcontroller::filterApostraphe(string dirname) {
 	return char_array;
 }
 
+/**
+ * @brief 
+ * 
+ * @param dirname 
+ */
 void mysqlcontroller::saveDirectoryName(string dirname) {
 
 	char* dirnameverified = new char[dirname.length() + 1]; // filterApostraphe(dirname);
 	strcpy(dirnameverified,dirname.c_str());
     
-	//MYSQL_BIND    bind[3];
-	char* currenttime = getCurrentTime();
-	/*unsigned long sizeofdirname = strlen(dirnameverified);
-	unsigned long sizeoftime = strlen(currenttime);
-	unsigned long sizeofmname = strlen(machinename);
-	unsigned int cursor_type = CURSOR_TYPE_NO_CURSOR;
-	int result = 0;
-
-	memset(bind, 0, sizeof(MYSQL_BIND)*3);*/
-
-	/* STRING PARAM */
-	/*bind[0].buffer_type= MYSQL_TYPE_STRING;
-	bind[0].buffer= dirnameverified;
-	bind[0].buffer_length= strlen(dirnameverified);
-	bind[0].length= &sizeofdirname;*/
-
-	/* STRING PARAM */
-	/*bind[1].buffer_type= MYSQL_TYPE_STRING;
-	bind[1].buffer= currenttime;
-	bind[1].buffer_length= strlen(currenttime);
-	bind[1].length= &sizeoftime;*/
-
-	/* STRING PARAM */
-	/*bind[2].buffer_type= MYSQL_TYPE_STRING;
-	bind[2].buffer= machinename;
-	bind[2].buffer_length= strlen(machinename);
-	bind[2].length= &sizeofmname;*/
+	initPreparedStatements();
+	char* currenttime = SQLiteHelper::getCurrentTime();
 
 	try {
-		//Connection *connpool = ConnectionPool::getInstance()->getConnection();
 		con->setAutoCommit(false);
-		//std::auto_ptr<sql::Statement> stmt(con->createStatement());
-
-		// We need not check the return value explicitly. If it indicates
-		// an error, Connector/C++ generates an exception.
-		//string storedProcStmt = "CALL saveDirectoryDetails '" + (string)dirnameverified + "','" + (string)currenttime + "','" + (string)machinename + "')";
-		//stmt->execute(storedProcStmt);
-		//prepStmt = con->prepareStatement(STOREDPROCSTMT);
-		prepStmt->setString(1, dirnameverified);
-		prepStmt->setString(2, currenttime);
-		prepStmt->setString(3, machinename);
-		prepStmt->executeUpdate();
+		savedirprepStmt->setString(1, dirnameverified);
+		savedirprepStmt->setString(2, currenttime);
+		savedirprepStmt->setString(3, machinename);
+		savedirprepStmt->executeUpdate();
 		con->commit();
 		con->setAutoCommit(true);
-		//delete prepStmt;
-		//ConnectionPool::close(connpool, prepStmt, NULL);
 	} catch (sql::SQLException &e) {
 		cout << "# ERR: SQLException in " << __FILE__;
 		cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
@@ -271,41 +266,117 @@ void mysqlcontroller::saveDirectoryName(string dirname) {
 		cout << ", SQLState: " << e.getSQLState() << " )" << endl;
 	}
 
-	cout << endl;
+	closePreparedStatements();
 
-	/*mysql_stmt_attr_set(storedProcStmt, STMT_ATTR_CURSOR_TYPE, &cursor_type);
+}
 
-	result = mysql_stmt_bind_param(storedProcStmt, bind);*/
+/**
+ * @brief 
+ * 
+ * @param dirname 
+ */
+void mysqlcontroller::saveDirectoryName_async(const string &dirname) {
+	string dname = dirname;
+	saveDirectoryName(dname);
+}
+
+/**
+ * @brief 
+ * 
+ * @param dirname 
+ * @param fname 
+ * @param hashval 
+ */
+void mysqlcontroller::saveFileInfo_async(const string &dirname, const string &fname, const string &hashval) {
+	string dname = dirname;
+	string filname = fname;
+	string hval = hashval;
+	string currenttime = "";
 	
-	/* Bind the buffers */
-	/*if (result != 0)
-	{
-  		fprintf(stderr, " saveDirectoryName::mysql_stmt_bind_param() failed\n");
-  		finish_with_error();
+	std::time_t t = std::time(0);   // get time now
+	std::tm* now = std::localtime(&t);
+	char date_string[100];
+	char time_string[100];
+
+	strftime(date_string, 50, "%B %d, %Y ", now);
+	strftime(time_string, 50, "%T", now);
+
+	currenttime += date_string;
+	currenttime += time_string;
+
+	savedfileprepStmt = con->prepareStatement(SAVEFILEINFOPROCSTMT);
+
+	try {
+		con->setAutoCommit(false);
+		savedfileprepStmt->setString(1, dirname);
+		savedfileprepStmt->setString(2, currenttime);
+		savedfileprepStmt->setString(3, machinename);
+		savedfileprepStmt->setString(4, fname);
+		savedfileprepStmt->setString(5, hashval);
+		savedfileprepStmt->executeUpdate();
+		con->commit();
+		con->setAutoCommit(true);
+	} catch (sql::SQLException &e) {
+		cout << "# ERR: SQLException in " << __FILE__;
+		cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
+		cout << "# ERR: " << e.what();
+		cout << " (MySQL error code: " << e.getErrorCode();
+		cout << ", SQLState: " << e.getSQLState() << " )" << endl;
 	}
 
-	result = mysql_stmt_execute(storedProcStmt);*/
+	delete savedfileprepStmt;
+}
 
-	/* Execute the INSERT statement - 1*/
-	/*if (result != 0)
-	{
-  		fprintf(stderr, " saveDirectoryName::mysql_stmt_execute(), 1 failed\n");
-		cout << "saveDirectoryName::MySQL Error - " << mysql_error(connection) << endl;
-		finish_with_error();
-  			
-	}*/
+/**
+ * @brief 
+ * 
+ * @param dirname 
+ * @param fname 
+ * @param hashval 
+ */
+void mysqlcontroller::saveFileInfo(string dirname, string fname, string hashval) {
+	
+	char* currenttime = SQLiteHelper::getCurrentTime();
+
+	initPreparedStatements();
+
+	try {
+		con->setAutoCommit(false);
+		savedfileprepStmt->setString(1, dirname);
+		savedfileprepStmt->setString(2, currenttime);
+		savedfileprepStmt->setString(3, machinename);
+		savedfileprepStmt->setString(4, fname);
+		savedfileprepStmt->setString(5, hashval);
+		savedfileprepStmt->executeUpdate();
+		con->commit();
+		con->setAutoCommit(true);
+	} catch (sql::SQLException &e) {
+		cout << "# ERR: SQLException in " << __FILE__;
+		cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
+		cout << "# ERR: " << e.what();
+		cout << " (MySQL error code: " << e.getErrorCode();
+		cout << ", SQLState: " << e.getSQLState() << " )" << endl;
+	}
+
+	closePreparedStatements();
 
 }
 
-
+/**
+ * @brief 
+ * 
+ */
 void mysqlcontroller::closePreparedStatements() {
 	
-    //mysql_stmt_close(storedProcStmt);
-	delete prepStmt;
+	delete savedirprepStmt;
+	delete savedfileprepStmt;
 }
 
+/**
+ * @brief 
+ * 
+ */
 void mysqlcontroller::closedb() {
-	//mysql_close(connection); 
 	delete res;
     delete stmt;
     delete con;

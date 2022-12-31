@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_hash_values" xml:lang="en-US">
+<title>HashValues Struct Reference</title>
+<indexterm><primary>HashValues</primary></indexterm>
+<para>
+<computeroutput>#include &lt;SHA256CPP.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>uint32_t <link linkend="_struct_hash_values_1a33327f22884b787dcb01088a9fb847a4">H</link> [8]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_struct_hash_values_1a33327f22884b787dcb01088a9fb847a4"/><section>
+    <title>H</title>
+<indexterm><primary>H</primary><secondary>HashValues</secondary></indexterm>
+<indexterm><primary>HashValues</primary><secondary>H</secondary></indexterm>
+<para><computeroutput>uint32_t HashValues::H[8]</computeroutput></para></section>
+<para>
+The documentation for this struct was generated from the following file:</para>
+C:/Users/mark_/source/repos/fileintegritychecker/headers/<link linkend="__s_h_a256_c_p_p_8h">SHA256CPP.h</link></section>
+</section>

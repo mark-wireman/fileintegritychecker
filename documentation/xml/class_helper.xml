@@ -1,0 +1,333 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="en-US">
+  <compounddef id="class_helper" kind="class" language="C++" prot="public">
+    <compoundname>Helper</compoundname>
+    <includes refid="helper_8h" local="no">helper.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_helper_1a925994da414b49c76b77851bac11a0ed" prot="public" static="no" strong="no">
+        <type></type>
+        <name>AttributeToCheck</name>
+        <qualifiedname>Helper::AttributeToCheck</qualifiedname>
+        <enumvalue id="class_helper_1a925994da414b49c76b77851bac11a0eda0a2c2ad45a8ef22d0854418220f13f07" prot="public">
+          <name>HashedVal</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_helper_1a925994da414b49c76b77851bac11a0edad916bef10461ccf8f246674ddc77dd49" prot="public">
+          <name>FileSize</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_helper_1a925994da414b49c76b77851bac11a0eda06af975a56ed4ed9fcf3afabd41ba0b3" prot="public">
+          <name>DateModified</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/helper.h" line="16" column="5" bodyfile="headers/helper.h" bodystart="16" bodyend="16"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_helper_1a0f9c4b55b87835fc629ea6327b51202f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int Helper::checkIfHashvalExistInFiles</definition>
+        <argsstring>(const int fileId, const char *hval, sqlite3 *db)</argsstring>
+        <name>checkIfHashvalExistInFiles</name>
+        <qualifiedname>Helper::checkIfHashvalExistInFiles</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>fileId</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>hval</declname>
+        </param>
+        <param>
+          <type>sqlite3 *</type>
+          <declname>db</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/helper.h" line="17" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_helper_1aa18f3c515ed5d6ce6af10bbaa3686fa7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int Helper::checkIfHashvalExistInChanges</definition>
+        <argsstring>(const int fileId, const char *hval, sqlite3 *db)</argsstring>
+        <name>checkIfHashvalExistInChanges</name>
+        <qualifiedname>Helper::checkIfHashvalExistInChanges</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>fileId</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>hval</declname>
+        </param>
+        <param>
+          <type>sqlite3 *</type>
+          <declname>db</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/helper.h" line="18" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_helper_1a2e25b7788bfb4d832089068d2d87390d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int Helper::checkIfFileSizeExistInChanges</definition>
+        <argsstring>(const int fileId, const int filesize, sqlite3 *db)</argsstring>
+        <name>checkIfFileSizeExistInChanges</name>
+        <qualifiedname>Helper::checkIfFileSizeExistInChanges</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>fileId</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>filesize</declname>
+        </param>
+        <param>
+          <type>sqlite3 *</type>
+          <declname>db</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/helper.h" line="20" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_helper_1a986f4e981d6ec7422919c64476cf66d1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int Helper::checkIfFileSizeIsVerifiedOrModified</definition>
+        <argsstring>(const int fileId, sqlite3 *db)</argsstring>
+        <name>checkIfFileSizeIsVerifiedOrModified</name>
+        <qualifiedname>Helper::checkIfFileSizeIsVerifiedOrModified</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>fileId</declname>
+        </param>
+        <param>
+          <type>sqlite3 *</type>
+          <declname>db</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/helper.h" line="21" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_helper_1a2d7b2ef729d42a55c99568958a3362a9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int Helper::checkIfDateModifiedExistInFiles</definition>
+        <argsstring>(const int fileId, const char *datemodified, sqlite3 *db)</argsstring>
+        <name>checkIfDateModifiedExistInFiles</name>
+        <qualifiedname>Helper::checkIfDateModifiedExistInFiles</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>fileId</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>datemodified</declname>
+        </param>
+        <param>
+          <type>sqlite3 *</type>
+          <declname>db</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/helper.h" line="23" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_helper_1ac980a433560328044e9916d2f5a99e8d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int Helper::checkIfDateModifiedExistInChanges</definition>
+        <argsstring>(const int fileId, const char *datemodified, sqlite3 *db)</argsstring>
+        <name>checkIfDateModifiedExistInChanges</name>
+        <qualifiedname>Helper::checkIfDateModifiedExistInChanges</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>fileId</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>datemodified</declname>
+        </param>
+        <param>
+          <type>sqlite3 *</type>
+          <declname>db</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/helper.h" line="24" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_helper_1ae449b9e499fa75c53f06522a6155b08a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int Helper::checkIfAttributeIsVerifiedOrModified</definition>
+        <argsstring>(const int fileId, const AttributeToCheck attribute, sqlite3 *db)</argsstring>
+        <name>checkIfAttributeIsVerifiedOrModified</name>
+        <qualifiedname>Helper::checkIfAttributeIsVerifiedOrModified</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>fileId</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_helper_1a925994da414b49c76b77851bac11a0ed" kindref="member">AttributeToCheck</ref></type>
+          <declname>attribute</declname>
+        </param>
+        <param>
+          <type>sqlite3 *</type>
+          <declname>db</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/helper.h" line="26" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_helper_1a21eb1535d481de637af099ba556e40cd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>static char * Helper::getCurrentTime</definition>
+        <argsstring>()</argsstring>
+        <name>getCurrentTime</name>
+        <qualifiedname>Helper::getCurrentTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/helper.h" line="28" column="17"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_helper_1a9f1d79d589283d709a75c2d3a7377735" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int Helper::checkIfHashFileIsVerifiedOrModified</definition>
+        <argsstring>(const int fileId, sqlite3 *db)</argsstring>
+        <name>checkIfHashFileIsVerifiedOrModified</name>
+        <qualifiedname>Helper::checkIfHashFileIsVerifiedOrModified</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>fileId</declname>
+        </param>
+        <param>
+          <type>sqlite3 *</type>
+          <declname>db</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/helper.h" line="31" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_helper_1a1bd663996542d940e651d85bed689626" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int Helper::checkIfFileSizeExistInFiles</definition>
+        <argsstring>(const int fileId, const int filesize, sqlite3 *db)</argsstring>
+        <name>checkIfFileSizeExistInFiles</name>
+        <qualifiedname>Helper::checkIfFileSizeExistInFiles</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>fileId</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>filesize</declname>
+        </param>
+        <param>
+          <type>sqlite3 *</type>
+          <declname>db</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/helper.h" line="32" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_helper_1a7dcd95e57fa871787ed2098e1f9f2883" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int Helper::checkIfDateModifiedIsVerifiedOrModified</definition>
+        <argsstring>(const int fileId, sqlite3 *db)</argsstring>
+        <name>checkIfDateModifiedIsVerifiedOrModified</name>
+        <qualifiedname>Helper::checkIfDateModifiedIsVerifiedOrModified</qualifiedname>
+        <param>
+          <type>const int</type>
+          <declname>fileId</declname>
+        </param>
+        <param>
+          <type>sqlite3 *</type>
+          <declname>db</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="headers/helper.h" line="33" column="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="headers/helper.h" line="14" column="1" bodyfile="headers/helper.h" bodystart="14" bodyend="36"/>
+    <listofallmembers>
+      <member refid="class_helper_1a925994da414b49c76b77851bac11a0ed" prot="public" virt="non-virtual"><scope>Helper</scope><name>AttributeToCheck</name></member>
+      <member refid="class_helper_1ae449b9e499fa75c53f06522a6155b08a" prot="public" virt="non-virtual"><scope>Helper</scope><name>checkIfAttributeIsVerifiedOrModified</name></member>
+      <member refid="class_helper_1ac980a433560328044e9916d2f5a99e8d" prot="public" virt="non-virtual"><scope>Helper</scope><name>checkIfDateModifiedExistInChanges</name></member>
+      <member refid="class_helper_1a2d7b2ef729d42a55c99568958a3362a9" prot="public" virt="non-virtual"><scope>Helper</scope><name>checkIfDateModifiedExistInFiles</name></member>
+      <member refid="class_helper_1a7dcd95e57fa871787ed2098e1f9f2883" prot="private" virt="non-virtual"><scope>Helper</scope><name>checkIfDateModifiedIsVerifiedOrModified</name></member>
+      <member refid="class_helper_1a2e25b7788bfb4d832089068d2d87390d" prot="public" virt="non-virtual"><scope>Helper</scope><name>checkIfFileSizeExistInChanges</name></member>
+      <member refid="class_helper_1a1bd663996542d940e651d85bed689626" prot="private" virt="non-virtual"><scope>Helper</scope><name>checkIfFileSizeExistInFiles</name></member>
+      <member refid="class_helper_1a986f4e981d6ec7422919c64476cf66d1" prot="public" virt="non-virtual"><scope>Helper</scope><name>checkIfFileSizeIsVerifiedOrModified</name></member>
+      <member refid="class_helper_1a9f1d79d589283d709a75c2d3a7377735" prot="private" virt="non-virtual"><scope>Helper</scope><name>checkIfHashFileIsVerifiedOrModified</name></member>
+      <member refid="class_helper_1aa18f3c515ed5d6ce6af10bbaa3686fa7" prot="public" virt="non-virtual"><scope>Helper</scope><name>checkIfHashvalExistInChanges</name></member>
+      <member refid="class_helper_1a0f9c4b55b87835fc629ea6327b51202f" prot="public" virt="non-virtual"><scope>Helper</scope><name>checkIfHashvalExistInFiles</name></member>
+      <member refid="class_helper_1a925994da414b49c76b77851bac11a0eda06af975a56ed4ed9fcf3afabd41ba0b3" prot="public" virt="non-virtual"><scope>Helper</scope><name>DateModified</name></member>
+      <member refid="class_helper_1a925994da414b49c76b77851bac11a0edad916bef10461ccf8f246674ddc77dd49" prot="public" virt="non-virtual"><scope>Helper</scope><name>FileSize</name></member>
+      <member refid="class_helper_1a21eb1535d481de637af099ba556e40cd" prot="public" virt="non-virtual"><scope>Helper</scope><name>getCurrentTime</name></member>
+      <member refid="class_helper_1a925994da414b49c76b77851bac11a0eda0a2c2ad45a8ef22d0854418220f13f07" prot="public" virt="non-virtual"><scope>Helper</scope><name>HashedVal</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

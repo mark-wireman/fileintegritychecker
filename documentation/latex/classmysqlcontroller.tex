@@ -1,0 +1,212 @@
+\hypertarget{classmysqlcontroller}{}\doxysection{mysqlcontroller Class Reference}
+\label{classmysqlcontroller}\index{mysqlcontroller@{mysqlcontroller}}
+
+
+{\ttfamily \#include $<$mysqlcontroller.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmysqlcontroller_a891d523d7a39f46e72b16a36c1387767}{mysqlcontroller}} ()
+\item 
+\mbox{\hyperlink{classmysqlcontroller_a5660513979df1fce6d3ff042ff477b99}{mysqlcontroller}} (char $\ast$host, char $\ast$dbase, char $\ast$uname, char $\ast$pwd, int port, char $\ast$mname)
+\item 
+virtual \mbox{\hyperlink{classmysqlcontroller_a5281329cf5af806d612908b406a9ec89}{$\sim$mysqlcontroller}} ()
+\item 
+void \mbox{\hyperlink{classmysqlcontroller_ac879ce9833813cd7649059a3d871fedd}{set\+HOSTNAME}} (char $\ast$host)
+\item 
+void \mbox{\hyperlink{classmysqlcontroller_a465f1a74a87fa74d5ab2aefd34bbe941}{set\+DBASENAME}} (char $\ast$dbase)
+\item 
+void \mbox{\hyperlink{classmysqlcontroller_ab095a99557c1d7582c66329398d4bd38}{set\+USERNAME}} (char $\ast$uname)
+\item 
+void \mbox{\hyperlink{classmysqlcontroller_a39a1970d8c3c3f013487652493a66e5f}{set\+PASSWORD}} (char $\ast$pwd)
+\item 
+void \mbox{\hyperlink{classmysqlcontroller_afd4432161cc947ac73243b5227d49a79}{set\+PORT}} (int port)
+\item 
+void \mbox{\hyperlink{classmysqlcontroller_a686a2d830775da6da5e8451333b4099f}{set\+MACHINENAME}} (char $\ast$mname)
+\item 
+char $\ast$ \mbox{\hyperlink{classmysqlcontroller_aa98d95b40af60c2d3654e1734f02f4fd}{get\+HOSTNAME}} ()
+\item 
+char $\ast$ \mbox{\hyperlink{classmysqlcontroller_a9fd8e8a368cc3d5e84a371c2a4cd6b7a}{get\+DBASENAME}} ()
+\item 
+char $\ast$ \mbox{\hyperlink{classmysqlcontroller_aabe3ab7506b212aa7125a3f81d725414}{get\+USERNAME}} ()
+\item 
+char $\ast$ \mbox{\hyperlink{classmysqlcontroller_ac38c7f7d6f37a4ac287a3997c398966c}{get\+PASSWORD}} ()
+\item 
+int \mbox{\hyperlink{classmysqlcontroller_a9df4b563e915fb2ba56797ed499dad8b}{get\+PORT}} ()
+\item 
+char $\ast$ \mbox{\hyperlink{classmysqlcontroller_a32c523aaf33000a0bb1f42b0c5dcbe57}{get\+MACHINENAME}} ()
+\item 
+void \mbox{\hyperlink{classmysqlcontroller_a74389e9c368e9f43df261f7050377cb4}{initdb}} ()
+\item 
+void \mbox{\hyperlink{classmysqlcontroller_a053dfe67635af840ec7a787e86b95f41}{save\+Directory\+Name}} (string dirname)
+\item 
+void \mbox{\hyperlink{classmysqlcontroller_a8ac76206c0cfc7954cce8011616119ab}{save\+File\+Info}} (string dirname, string fname, string hashval)
+\item 
+void \mbox{\hyperlink{classmysqlcontroller_a1158e1c0c82d11cbe200219b4a5a96b3}{save\+Directory\+Name\+\_\+async}} (const string \&dirname)
+\item 
+void \mbox{\hyperlink{classmysqlcontroller_aad16b25269ed6065b0360c2b8312aea0}{save\+File\+Info\+\_\+async}} (const string \&dirname, const string \&fname, const string \&hashval)
+\item 
+void \mbox{\hyperlink{classmysqlcontroller_a50702b70c6eb0355c2d169050776b394}{delete\+Directory\+Names}} ()
+\item 
+void \mbox{\hyperlink{classmysqlcontroller_a75776ad16ad15a20736e0c1b6adda411}{closedb}} ()
+\item 
+void \mbox{\hyperlink{classmysqlcontroller_a069876969dedc6baf9c5f95cca1ab33d}{init\+Prepared\+Statements}} ()
+\item 
+void \mbox{\hyperlink{classmysqlcontroller_a760179764d3008ac64c36e0b4fb26553}{close\+Prepared\+Statements}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmysqlcontroller_a891d523d7a39f46e72b16a36c1387767}\label{classmysqlcontroller_a891d523d7a39f46e72b16a36c1387767}} 
+\index{mysqlcontroller@{mysqlcontroller}!mysqlcontroller@{mysqlcontroller}}
+\index{mysqlcontroller@{mysqlcontroller}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{mysqlcontroller()}{mysqlcontroller()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily mysqlcontroller\+::mysqlcontroller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_a5660513979df1fce6d3ff042ff477b99}\label{classmysqlcontroller_a5660513979df1fce6d3ff042ff477b99}} 
+\index{mysqlcontroller@{mysqlcontroller}!mysqlcontroller@{mysqlcontroller}}
+\index{mysqlcontroller@{mysqlcontroller}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{mysqlcontroller()}{mysqlcontroller()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily mysqlcontroller\+::mysqlcontroller (\begin{DoxyParamCaption}\item[{char $\ast$}]{host,  }\item[{char $\ast$}]{dbase,  }\item[{char $\ast$}]{uname,  }\item[{char $\ast$}]{pwd,  }\item[{int}]{port,  }\item[{char $\ast$}]{mname }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_a5281329cf5af806d612908b406a9ec89}\label{classmysqlcontroller_a5281329cf5af806d612908b406a9ec89}} 
+\index{mysqlcontroller@{mysqlcontroller}!````~mysqlcontroller@{$\sim$mysqlcontroller}}
+\index{````~mysqlcontroller@{$\sim$mysqlcontroller}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{$\sim$mysqlcontroller()}{~mysqlcontroller()}}
+{\footnotesize\ttfamily virtual mysqlcontroller\+::$\sim$mysqlcontroller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmysqlcontroller_a75776ad16ad15a20736e0c1b6adda411}\label{classmysqlcontroller_a75776ad16ad15a20736e0c1b6adda411}} 
+\index{mysqlcontroller@{mysqlcontroller}!closedb@{closedb}}
+\index{closedb@{closedb}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{closedb()}{closedb()}}
+{\footnotesize\ttfamily void mysqlcontroller\+::closedb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_a760179764d3008ac64c36e0b4fb26553}\label{classmysqlcontroller_a760179764d3008ac64c36e0b4fb26553}} 
+\index{mysqlcontroller@{mysqlcontroller}!closePreparedStatements@{closePreparedStatements}}
+\index{closePreparedStatements@{closePreparedStatements}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{closePreparedStatements()}{closePreparedStatements()}}
+{\footnotesize\ttfamily void mysqlcontroller\+::close\+Prepared\+Statements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_a50702b70c6eb0355c2d169050776b394}\label{classmysqlcontroller_a50702b70c6eb0355c2d169050776b394}} 
+\index{mysqlcontroller@{mysqlcontroller}!deleteDirectoryNames@{deleteDirectoryNames}}
+\index{deleteDirectoryNames@{deleteDirectoryNames}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{deleteDirectoryNames()}{deleteDirectoryNames()}}
+{\footnotesize\ttfamily void mysqlcontroller\+::delete\+Directory\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_a9fd8e8a368cc3d5e84a371c2a4cd6b7a}\label{classmysqlcontroller_a9fd8e8a368cc3d5e84a371c2a4cd6b7a}} 
+\index{mysqlcontroller@{mysqlcontroller}!getDBASENAME@{getDBASENAME}}
+\index{getDBASENAME@{getDBASENAME}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{getDBASENAME()}{getDBASENAME()}}
+{\footnotesize\ttfamily char $\ast$ mysqlcontroller\+::get\+DBASENAME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_aa98d95b40af60c2d3654e1734f02f4fd}\label{classmysqlcontroller_aa98d95b40af60c2d3654e1734f02f4fd}} 
+\index{mysqlcontroller@{mysqlcontroller}!getHOSTNAME@{getHOSTNAME}}
+\index{getHOSTNAME@{getHOSTNAME}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{getHOSTNAME()}{getHOSTNAME()}}
+{\footnotesize\ttfamily char $\ast$ mysqlcontroller\+::get\+HOSTNAME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_a32c523aaf33000a0bb1f42b0c5dcbe57}\label{classmysqlcontroller_a32c523aaf33000a0bb1f42b0c5dcbe57}} 
+\index{mysqlcontroller@{mysqlcontroller}!getMACHINENAME@{getMACHINENAME}}
+\index{getMACHINENAME@{getMACHINENAME}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{getMACHINENAME()}{getMACHINENAME()}}
+{\footnotesize\ttfamily char $\ast$ mysqlcontroller\+::get\+MACHINENAME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_ac38c7f7d6f37a4ac287a3997c398966c}\label{classmysqlcontroller_ac38c7f7d6f37a4ac287a3997c398966c}} 
+\index{mysqlcontroller@{mysqlcontroller}!getPASSWORD@{getPASSWORD}}
+\index{getPASSWORD@{getPASSWORD}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{getPASSWORD()}{getPASSWORD()}}
+{\footnotesize\ttfamily char $\ast$ mysqlcontroller\+::get\+PASSWORD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_a9df4b563e915fb2ba56797ed499dad8b}\label{classmysqlcontroller_a9df4b563e915fb2ba56797ed499dad8b}} 
+\index{mysqlcontroller@{mysqlcontroller}!getPORT@{getPORT}}
+\index{getPORT@{getPORT}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{getPORT()}{getPORT()}}
+{\footnotesize\ttfamily int mysqlcontroller\+::get\+PORT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_aabe3ab7506b212aa7125a3f81d725414}\label{classmysqlcontroller_aabe3ab7506b212aa7125a3f81d725414}} 
+\index{mysqlcontroller@{mysqlcontroller}!getUSERNAME@{getUSERNAME}}
+\index{getUSERNAME@{getUSERNAME}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{getUSERNAME()}{getUSERNAME()}}
+{\footnotesize\ttfamily char $\ast$ mysqlcontroller\+::get\+USERNAME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_a74389e9c368e9f43df261f7050377cb4}\label{classmysqlcontroller_a74389e9c368e9f43df261f7050377cb4}} 
+\index{mysqlcontroller@{mysqlcontroller}!initdb@{initdb}}
+\index{initdb@{initdb}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{initdb()}{initdb()}}
+{\footnotesize\ttfamily void mysqlcontroller\+::initdb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_a069876969dedc6baf9c5f95cca1ab33d}\label{classmysqlcontroller_a069876969dedc6baf9c5f95cca1ab33d}} 
+\index{mysqlcontroller@{mysqlcontroller}!initPreparedStatements@{initPreparedStatements}}
+\index{initPreparedStatements@{initPreparedStatements}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{initPreparedStatements()}{initPreparedStatements()}}
+{\footnotesize\ttfamily void mysqlcontroller\+::init\+Prepared\+Statements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_a053dfe67635af840ec7a787e86b95f41}\label{classmysqlcontroller_a053dfe67635af840ec7a787e86b95f41}} 
+\index{mysqlcontroller@{mysqlcontroller}!saveDirectoryName@{saveDirectoryName}}
+\index{saveDirectoryName@{saveDirectoryName}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{saveDirectoryName()}{saveDirectoryName()}}
+{\footnotesize\ttfamily void mysqlcontroller\+::save\+Directory\+Name (\begin{DoxyParamCaption}\item[{string}]{dirname }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_a1158e1c0c82d11cbe200219b4a5a96b3}\label{classmysqlcontroller_a1158e1c0c82d11cbe200219b4a5a96b3}} 
+\index{mysqlcontroller@{mysqlcontroller}!saveDirectoryName\_async@{saveDirectoryName\_async}}
+\index{saveDirectoryName\_async@{saveDirectoryName\_async}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{saveDirectoryName\_async()}{saveDirectoryName\_async()}}
+{\footnotesize\ttfamily void mysqlcontroller\+::save\+Directory\+Name\+\_\+async (\begin{DoxyParamCaption}\item[{const string \&}]{dirname }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_a8ac76206c0cfc7954cce8011616119ab}\label{classmysqlcontroller_a8ac76206c0cfc7954cce8011616119ab}} 
+\index{mysqlcontroller@{mysqlcontroller}!saveFileInfo@{saveFileInfo}}
+\index{saveFileInfo@{saveFileInfo}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{saveFileInfo()}{saveFileInfo()}}
+{\footnotesize\ttfamily void mysqlcontroller\+::save\+File\+Info (\begin{DoxyParamCaption}\item[{string}]{dirname,  }\item[{string}]{fname,  }\item[{string}]{hashval }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_aad16b25269ed6065b0360c2b8312aea0}\label{classmysqlcontroller_aad16b25269ed6065b0360c2b8312aea0}} 
+\index{mysqlcontroller@{mysqlcontroller}!saveFileInfo\_async@{saveFileInfo\_async}}
+\index{saveFileInfo\_async@{saveFileInfo\_async}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{saveFileInfo\_async()}{saveFileInfo\_async()}}
+{\footnotesize\ttfamily void mysqlcontroller\+::save\+File\+Info\+\_\+async (\begin{DoxyParamCaption}\item[{const string \&}]{dirname,  }\item[{const string \&}]{fname,  }\item[{const string \&}]{hashval }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_a465f1a74a87fa74d5ab2aefd34bbe941}\label{classmysqlcontroller_a465f1a74a87fa74d5ab2aefd34bbe941}} 
+\index{mysqlcontroller@{mysqlcontroller}!setDBASENAME@{setDBASENAME}}
+\index{setDBASENAME@{setDBASENAME}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{setDBASENAME()}{setDBASENAME()}}
+{\footnotesize\ttfamily void mysqlcontroller\+::set\+DBASENAME (\begin{DoxyParamCaption}\item[{char $\ast$}]{dbase }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_ac879ce9833813cd7649059a3d871fedd}\label{classmysqlcontroller_ac879ce9833813cd7649059a3d871fedd}} 
+\index{mysqlcontroller@{mysqlcontroller}!setHOSTNAME@{setHOSTNAME}}
+\index{setHOSTNAME@{setHOSTNAME}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{setHOSTNAME()}{setHOSTNAME()}}
+{\footnotesize\ttfamily void mysqlcontroller\+::set\+HOSTNAME (\begin{DoxyParamCaption}\item[{char $\ast$}]{host }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_a686a2d830775da6da5e8451333b4099f}\label{classmysqlcontroller_a686a2d830775da6da5e8451333b4099f}} 
+\index{mysqlcontroller@{mysqlcontroller}!setMACHINENAME@{setMACHINENAME}}
+\index{setMACHINENAME@{setMACHINENAME}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{setMACHINENAME()}{setMACHINENAME()}}
+{\footnotesize\ttfamily void mysqlcontroller\+::set\+MACHINENAME (\begin{DoxyParamCaption}\item[{char $\ast$}]{mname }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_a39a1970d8c3c3f013487652493a66e5f}\label{classmysqlcontroller_a39a1970d8c3c3f013487652493a66e5f}} 
+\index{mysqlcontroller@{mysqlcontroller}!setPASSWORD@{setPASSWORD}}
+\index{setPASSWORD@{setPASSWORD}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{setPASSWORD()}{setPASSWORD()}}
+{\footnotesize\ttfamily void mysqlcontroller\+::set\+PASSWORD (\begin{DoxyParamCaption}\item[{char $\ast$}]{pwd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_afd4432161cc947ac73243b5227d49a79}\label{classmysqlcontroller_afd4432161cc947ac73243b5227d49a79}} 
+\index{mysqlcontroller@{mysqlcontroller}!setPORT@{setPORT}}
+\index{setPORT@{setPORT}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{setPORT()}{setPORT()}}
+{\footnotesize\ttfamily void mysqlcontroller\+::set\+PORT (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmysqlcontroller_ab095a99557c1d7582c66329398d4bd38}\label{classmysqlcontroller_ab095a99557c1d7582c66329398d4bd38}} 
+\index{mysqlcontroller@{mysqlcontroller}!setUSERNAME@{setUSERNAME}}
+\index{setUSERNAME@{setUSERNAME}!mysqlcontroller@{mysqlcontroller}}
+\doxysubsubsection{\texorpdfstring{setUSERNAME()}{setUSERNAME()}}
+{\footnotesize\ttfamily void mysqlcontroller\+::set\+USERNAME (\begin{DoxyParamCaption}\item[{char $\ast$}]{uname }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/mark\+\_\+/source/repos/fileintegritychecker/headers/\mbox{\hyperlink{mysqlcontroller_8h}{mysqlcontroller.\+h}}\end{DoxyCompactItemize}

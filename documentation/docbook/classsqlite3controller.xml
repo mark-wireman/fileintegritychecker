@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classsqlite3controller" xml:lang="en-US">
+<title>sqlite3controller Class Reference</title>
+<indexterm><primary>sqlite3controller</primary></indexterm>
+<para>
+
+<para>Sqlite3 Controller class. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;sqlite3controller.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classsqlite3controller_1a5e12813ef2d44e41238dfd8d4bbbea9a">sqlite3controller</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classsqlite3controller_1aa85b2bdd95d168c27a28476e07d36d88">sqlite3controller</link> (char *databasename, char *machinename)</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classsqlite3controller_1a0517049f3235b533cbcc1f2d68a42844">~sqlite3controller</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classsqlite3controller_1a7d6ff837161930eb903754d5688f1b9b">initdb</link> ()</para>
+
+<para>Initializes the SQLite database with the supplied databasename. The function will determine if the SQLite database already exists. If it does exist then the database is opened. If it does not exist, the database will be created and then a call to createTables is made to create the tables required to store the data. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classsqlite3controller_1ab092ae9a83a7a124a5ca19a202f6243a">closedb</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classsqlite3controller_1ac0c940ac721d94e09be08e38eb0e5ca4">setDATABASENAME</link> (char *dbasename)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classsqlite3controller_1a87910e834388b6f11c8493f10fd6a576">setMACHINENAME</link> (char *machinename)</para>
+</listitem>
+            <listitem><para>char * <link linkend="_classsqlite3controller_1a6ffbf500e8d1d203bd264e221ee833a2">getDATABASENAME</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classsqlite3controller_1a9aa0232afbc7a8d2b71d330c607c5b40">createTables</link> ()</para>
+
+<para>This is called when a new SQLite database is created. The following tables are created:<?linebreak?>. </para>
+</listitem>
+            <listitem><para>int <link linkend="_classsqlite3controller_1ad24d1eff1c881ec79c608d4fbd5207b3">save_file_info</link> (const char *fname, const char *dirname, char *lastmodified, uintmax_t filesize, const char *hashval=NULL)</para>
+</listitem>
+            <listitem><para>int <link linkend="_classsqlite3controller_1a6bda68c0ea1d995b4fcf60965ab433a6">save_dir_info</link> (const char *dirname)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>char * <link linkend="_classsqlite3controller_1add1047a4808cc535544154fffe9206a7">getPreviousHashval</link> (const int fileId)</para>
+</listitem>
+            <listitem><para>int <link linkend="_classsqlite3controller_1afad285c88925ab4bb987583563c11d8a">checkIfDirectoryExist</link> (const char *dirname)</para>
+</listitem>
+            <listitem><para>int <link linkend="_classsqlite3controller_1a96b9af7291ed73ed8b7da9b3e36c5983">checkIfFileExist</link> (const char *fname, const char *dirname)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Sqlite3 Controller class. </para>
+
+
+
+<para>The class that handles the SQL functions for creating, updating, and adding files and directories to a Sqlite3 database. </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classsqlite3controller_1a5e12813ef2d44e41238dfd8d4bbbea9a"/><section>
+    <title>sqlite3controller()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>sqlite3controller</primary><secondary>sqlite3controller</secondary></indexterm>
+<indexterm><primary>sqlite3controller</primary><secondary>sqlite3controller</secondary></indexterm>
+<para><computeroutput>sqlite3controller::sqlite3controller ( )</computeroutput></para></section>
+<anchor xml:id="_classsqlite3controller_1aa85b2bdd95d168c27a28476e07d36d88"/><section>
+    <title>sqlite3controller()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>sqlite3controller</primary><secondary>sqlite3controller</secondary></indexterm>
+<indexterm><primary>sqlite3controller</primary><secondary>sqlite3controller</secondary></indexterm>
+<para><computeroutput>sqlite3controller::sqlite3controller (char * databasename, char * machinename)</computeroutput></para></section>
+<anchor xml:id="_classsqlite3controller_1a0517049f3235b533cbcc1f2d68a42844"/><section>
+    <title>~sqlite3controller()</title>
+<indexterm><primary>~sqlite3controller</primary><secondary>sqlite3controller</secondary></indexterm>
+<indexterm><primary>sqlite3controller</primary><secondary>~sqlite3controller</secondary></indexterm>
+<para><computeroutput>virtual sqlite3controller::~sqlite3controller ( )<computeroutput>[virtual]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classsqlite3controller_1afad285c88925ab4bb987583563c11d8a"/><section>
+    <title>checkIfDirectoryExist()</title>
+<indexterm><primary>checkIfDirectoryExist</primary><secondary>sqlite3controller</secondary></indexterm>
+<indexterm><primary>sqlite3controller</primary><secondary>checkIfDirectoryExist</secondary></indexterm>
+<para><computeroutput>int sqlite3controller::checkIfDirectoryExist (const char * dirname)<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classsqlite3controller_1a96b9af7291ed73ed8b7da9b3e36c5983"/><section>
+    <title>checkIfFileExist()</title>
+<indexterm><primary>checkIfFileExist</primary><secondary>sqlite3controller</secondary></indexterm>
+<indexterm><primary>sqlite3controller</primary><secondary>checkIfFileExist</secondary></indexterm>
+<para><computeroutput>int sqlite3controller::checkIfFileExist (const char * fname, const char * dirname)<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classsqlite3controller_1ab092ae9a83a7a124a5ca19a202f6243a"/><section>
+    <title>closedb()</title>
+<indexterm><primary>closedb</primary><secondary>sqlite3controller</secondary></indexterm>
+<indexterm><primary>sqlite3controller</primary><secondary>closedb</secondary></indexterm>
+<para><computeroutput>void sqlite3controller::closedb ( )</computeroutput></para></section>
+<anchor xml:id="_classsqlite3controller_1a9aa0232afbc7a8d2b71d330c607c5b40"/><section>
+    <title>createTables()</title>
+<indexterm><primary>createTables</primary><secondary>sqlite3controller</secondary></indexterm>
+<indexterm><primary>sqlite3controller</primary><secondary>createTables</secondary></indexterm>
+<para><computeroutput>void sqlite3controller::createTables ( )</computeroutput></para><para>
+
+<para>This is called when a new SQLite database is created. The following tables are created:<?linebreak?>. </para>
+</para>
+
+<para><emphasis role="bold">directories Table - used to store the details of the directories found during the scan.</emphasis> <informaltable frame="all">
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<thead>
+      <row >
+<entry>
+<para>Field name</para>
+</entry><entry>
+<para>Description </para>
+</entry></row>
+</thead><tbody>
+      <row >
+<entry>
+<para>id</para>
+</entry><entry>
+<para>the auto generated id for the directory entry </para>
+</entry></row>
+      <row >
+<entry>
+<para>dirname</para>
+</entry><entry>
+<para>absolute path of the directory </para>
+</entry></row>
+      <row >
+<entry>
+<para>dateadded</para>
+</entry><entry>
+<para>the date the directory was added to the table </para>
+</entry></row>
+      <row >
+<entry>
+<para>status</para>
+</entry><entry>
+<para>Either NEW or VERIFIED. A NEW status is set when a directory is seen by the scanner the first time. VERIFIED is the scanner verifies the directory was seen again. </para>
+</entry></row>
+      <row >
+<entry>
+<para>dataverified</para>
+</entry><entry>
+<para>This is the date the VERIFIED directory was verified by the scanner. </para>
+</entry></row>
+      <row >
+<entry>
+<para>machinename</para>
+</entry><entry>
+<para>name of the machine where the scanner is running. files - used to store the details of the files found during the scan.</para>
+</entry></row>
+    </tbody>
+    </tgroup>
+</informaltable>
+</para>
+</section>
+<anchor xml:id="_classsqlite3controller_1a6ffbf500e8d1d203bd264e221ee833a2"/><section>
+    <title>getDATABASENAME()</title>
+<indexterm><primary>getDATABASENAME</primary><secondary>sqlite3controller</secondary></indexterm>
+<indexterm><primary>sqlite3controller</primary><secondary>getDATABASENAME</secondary></indexterm>
+<para><computeroutput>char * sqlite3controller::getDATABASENAME ( )</computeroutput></para></section>
+<anchor xml:id="_classsqlite3controller_1add1047a4808cc535544154fffe9206a7"/><section>
+    <title>getPreviousHashval()</title>
+<indexterm><primary>getPreviousHashval</primary><secondary>sqlite3controller</secondary></indexterm>
+<indexterm><primary>sqlite3controller</primary><secondary>getPreviousHashval</secondary></indexterm>
+<para><computeroutput>char * sqlite3controller::getPreviousHashval (const int fileId)<computeroutput>[protected]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classsqlite3controller_1a7d6ff837161930eb903754d5688f1b9b"/><section>
+    <title>initdb()</title>
+<indexterm><primary>initdb</primary><secondary>sqlite3controller</secondary></indexterm>
+<indexterm><primary>sqlite3controller</primary><secondary>initdb</secondary></indexterm>
+<para><computeroutput>void sqlite3controller::initdb ( )</computeroutput></para><para>
+
+<para>Initializes the SQLite database with the supplied databasename. The function will determine if the SQLite database already exists. If it does exist then the database is opened. If it does not exist, the database will be created and then a call to createTables is made to create the tables required to store the data. </para>
+</para>
+
+<para><formalpara><title>See also</title>
+
+<para><link linkend="_classsqlite3controller_1a9aa0232afbc7a8d2b71d330c607c5b40">createTables()</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_classsqlite3controller_1a6bda68c0ea1d995b4fcf60965ab433a6"/><section>
+    <title>save_dir_info()</title>
+<indexterm><primary>save_dir_info</primary><secondary>sqlite3controller</secondary></indexterm>
+<indexterm><primary>sqlite3controller</primary><secondary>save_dir_info</secondary></indexterm>
+<para><computeroutput>int sqlite3controller::save_dir_info (const char * dirname)</computeroutput></para></section>
+<anchor xml:id="_classsqlite3controller_1ad24d1eff1c881ec79c608d4fbd5207b3"/><section>
+    <title>save_file_info()</title>
+<indexterm><primary>save_file_info</primary><secondary>sqlite3controller</secondary></indexterm>
+<indexterm><primary>sqlite3controller</primary><secondary>save_file_info</secondary></indexterm>
+<para><computeroutput>int sqlite3controller::save_file_info (const char * fname, const char * dirname, char * lastmodified, uintmax_t filesize, const char * hashval = <computeroutput>NULL</computeroutput>
+)</computeroutput></para></section>
+<anchor xml:id="_classsqlite3controller_1ac0c940ac721d94e09be08e38eb0e5ca4"/><section>
+    <title>setDATABASENAME()</title>
+<indexterm><primary>setDATABASENAME</primary><secondary>sqlite3controller</secondary></indexterm>
+<indexterm><primary>sqlite3controller</primary><secondary>setDATABASENAME</secondary></indexterm>
+<para><computeroutput>void sqlite3controller::setDATABASENAME (char * dbasename)</computeroutput></para></section>
+<anchor xml:id="_classsqlite3controller_1a87910e834388b6f11c8493f10fd6a576"/><section>
+    <title>setMACHINENAME()</title>
+<indexterm><primary>setMACHINENAME</primary><secondary>sqlite3controller</secondary></indexterm>
+<indexterm><primary>sqlite3controller</primary><secondary>setMACHINENAME</secondary></indexterm>
+<para><computeroutput>void sqlite3controller::setMACHINENAME (char * machinename)</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+C:/Users/mark_/source/repos/fileintegritychecker/headers/<link linkend="_sqlite3controller_8h">sqlite3controller.h</link></section>
+</section>

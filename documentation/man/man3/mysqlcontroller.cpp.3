@@ -1,0 +1,162 @@
+.TH "src/mysqlcontroller.cpp" 3 "Sat Dec 10 2022" "fileintegritychecker" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/mysqlcontroller.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./headers/mysqlcontroller\&.h'\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSTRING_SIZE\fP   65535"
+.br
+.ti -1c
+.RI "#define \fBSAVEDIRSTOREDPROCSTMT\fP   'call saveDirectoryDetails(?, ?, ?)'"
+.br
+.ti -1c
+.RI "#define \fBSAVEFILEINFOPROCSTMT\fP   'call saveFileHashVal(?,?,?,?,?)'"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsaveFileInfo_async\fP (const string &dirname, const string &fname, const string &hashval)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "char * \fBhostname\fP"
+.br
+.ti -1c
+.RI "char * \fBdbasename\fP"
+.br
+.ti -1c
+.RI "char * \fBusername\fP"
+.br
+.ti -1c
+.RI "char * \fBpassword\fP"
+.br
+.ti -1c
+.RI "char * \fBmachinename\fP"
+.br
+.ti -1c
+.RI "int \fBport\fP"
+.br
+.ti -1c
+.RI "int \fBstate\fP"
+.br
+.ti -1c
+.RI "sql::Driver * \fBdriver\fP"
+.br
+.ti -1c
+.RI "sql::Connection * \fBcon\fP"
+.br
+.ti -1c
+.RI "sql::Statement * \fBstmt\fP"
+.br
+.ti -1c
+.RI "sql::ResultSet * \fBres\fP"
+.br
+.ti -1c
+.RI "sql::PreparedStatement * \fBsavedirprepStmt\fP"
+.br
+.ti -1c
+.RI "sql::PreparedStatement * \fBsavedfileprepStmt\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define SAVEDIRSTOREDPROCSTMT   'call saveDirectoryDetails(?, ?, ?)'"
+
+.PP
+Definition at line \fB4\fP of file \fBmysqlcontroller\&.cpp\fP\&.
+.SS "#define SAVEFILEINFOPROCSTMT   'call saveFileHashVal(?,?,?,?,?)'"
+
+.PP
+Definition at line \fB5\fP of file \fBmysqlcontroller\&.cpp\fP\&.
+.SS "#define STRING_SIZE   65535"
+
+.PP
+Definition at line \fB3\fP of file \fBmysqlcontroller\&.cpp\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "void saveFileInfo_async (const string & dirname, const string & fname, const string & hashval)"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIdirname\fP 
+.br
+\fIfname\fP 
+.br
+\fIhashval\fP 
+.RE
+.PP
+
+.PP
+Definition at line \fB290\fP of file \fBmysqlcontroller\&.cpp\fP\&.
+.SH "Variable Documentation"
+.PP 
+.SS "sql::Connection* con"
+
+.PP
+Definition at line \fB18\fP of file \fBmysqlcontroller\&.cpp\fP\&.
+.SS "char* dbasename"
+
+.PP
+Definition at line \fB9\fP of file \fBmysqlcontroller\&.cpp\fP\&.
+.SS "sql::Driver* driver"
+
+.PP
+Definition at line \fB17\fP of file \fBmysqlcontroller\&.cpp\fP\&.
+.SS "char* hostname"
+
+.PP
+Definition at line \fB8\fP of file \fBmysqlcontroller\&.cpp\fP\&.
+.SS "char* machinename"
+
+.PP
+Definition at line \fB12\fP of file \fBmysqlcontroller\&.cpp\fP\&.
+.SS "char* password"
+
+.PP
+Definition at line \fB11\fP of file \fBmysqlcontroller\&.cpp\fP\&.
+.SS "int port"
+
+.PP
+Definition at line \fB13\fP of file \fBmysqlcontroller\&.cpp\fP\&.
+.SS "sql::ResultSet* res"
+
+.PP
+Definition at line \fB20\fP of file \fBmysqlcontroller\&.cpp\fP\&.
+.SS "sql::PreparedStatement* savedfileprepStmt"
+
+.PP
+Definition at line \fB22\fP of file \fBmysqlcontroller\&.cpp\fP\&.
+.SS "sql::PreparedStatement* savedirprepStmt"
+
+.PP
+Definition at line \fB21\fP of file \fBmysqlcontroller\&.cpp\fP\&.
+.SS "int state"
+
+.PP
+Definition at line \fB14\fP of file \fBmysqlcontroller\&.cpp\fP\&.
+.SS "sql::Statement* stmt"
+
+.PP
+Definition at line \fB19\fP of file \fBmysqlcontroller\&.cpp\fP\&.
+.SS "char* username"
+
+.PP
+Definition at line \fB10\fP of file \fBmysqlcontroller\&.cpp\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for fileintegritychecker from the source code\&.

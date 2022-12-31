@@ -63,6 +63,48 @@
         "xstring": "cpp",
         "xtr1common": "cpp",
         "xtree": "cpp",
-        "xutility": "cpp"
-    }
+        "xutility": "cpp",
+        "any": "c",
+        "array": "c",
+        "bitset": "c",
+        "complex": "c",
+        "condition_variable": "c",
+        "csignal": "c",
+        "cstdarg": "c",
+        "deque": "c",
+        "filesystem": "c",
+        "functional": "c",
+        "future": "c",
+        "list": "c",
+        "numeric": "c",
+        "queue": "c",
+        "random": "c",
+        "ranges": "c",
+        "regex": "c",
+        "set": "c",
+        "shared_mutex": "c",
+        "span": "c",
+        "stack": "c",
+        "typeindex": "c",
+        "unordered_map": "c",
+        "unordered_set": "c",
+        "valarray": "c",
+        "variant": "c",
+        "xhash": "c"
+    },
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "192.168.86.115",
+            "port": 3306,
+            "askForPassword": true,
+            "driver": "MySQL",
+            "name": "dharmasvr2",
+            "database": "fileintegritychecker",
+            "username": "mwireman"
+        }
+    ]
 }

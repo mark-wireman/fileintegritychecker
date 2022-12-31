@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.5" xml:lang="en-US">
+  <compound refid="struct_hash_values" kind="struct"><name>HashValues</name>
+    <member refid="struct_hash_values_1a33327f22884b787dcb01088a9fb847a4" kind="variable"><name>H</name></member>
+  </compound>
+  <compound refid="class_helper" kind="class"><name>Helper</name>
+    <member refid="class_helper_1a925994da414b49c76b77851bac11a0ed" kind="enum"><name>AttributeToCheck</name></member>
+    <member refid="class_helper_1a925994da414b49c76b77851bac11a0eda0a2c2ad45a8ef22d0854418220f13f07" kind="enumvalue"><name>HashedVal</name></member>
+    <member refid="class_helper_1a925994da414b49c76b77851bac11a0edad916bef10461ccf8f246674ddc77dd49" kind="enumvalue"><name>FileSize</name></member>
+    <member refid="class_helper_1a925994da414b49c76b77851bac11a0eda06af975a56ed4ed9fcf3afabd41ba0b3" kind="enumvalue"><name>DateModified</name></member>
+    <member refid="class_helper_1a0f9c4b55b87835fc629ea6327b51202f" kind="function"><name>checkIfHashvalExistInFiles</name></member>
+    <member refid="class_helper_1aa18f3c515ed5d6ce6af10bbaa3686fa7" kind="function"><name>checkIfHashvalExistInChanges</name></member>
+    <member refid="class_helper_1a2e25b7788bfb4d832089068d2d87390d" kind="function"><name>checkIfFileSizeExistInChanges</name></member>
+    <member refid="class_helper_1a986f4e981d6ec7422919c64476cf66d1" kind="function"><name>checkIfFileSizeIsVerifiedOrModified</name></member>
+    <member refid="class_helper_1a2d7b2ef729d42a55c99568958a3362a9" kind="function"><name>checkIfDateModifiedExistInFiles</name></member>
+    <member refid="class_helper_1ac980a433560328044e9916d2f5a99e8d" kind="function"><name>checkIfDateModifiedExistInChanges</name></member>
+    <member refid="class_helper_1ae449b9e499fa75c53f06522a6155b08a" kind="function"><name>checkIfAttributeIsVerifiedOrModified</name></member>
+    <member refid="class_helper_1a21eb1535d481de637af099ba556e40cd" kind="function"><name>getCurrentTime</name></member>
+    <member refid="class_helper_1a9f1d79d589283d709a75c2d3a7377735" kind="function"><name>checkIfHashFileIsVerifiedOrModified</name></member>
+    <member refid="class_helper_1a1bd663996542d940e651d85bed689626" kind="function"><name>checkIfFileSizeExistInFiles</name></member>
+    <member refid="class_helper_1a7dcd95e57fa871787ed2098e1f9f2883" kind="function"><name>checkIfDateModifiedIsVerifiedOrModified</name></member>
+  </compound>
+  <compound refid="class_menu" kind="class"><name>Menu</name>
+    <member refid="class_menu_1a00e9ec31107eb8cbef31f3f198f168a2" kind="variable"><name>parentdir</name></member>
+    <member refid="class_menu_1a05ecb7899e5f3ae7345dae98bc27553c" kind="variable"><name>dbasehost</name></member>
+    <member refid="class_menu_1abfa524748149194d31f3a760ab8765fd" kind="variable"><name>uname</name></member>
+    <member refid="class_menu_1a3851b8c999f1ed310c57b306d6bc2a03" kind="variable"><name>pwd</name></member>
+    <member refid="class_menu_1ab170c7e84e5d2da91880820ccbc12abf" kind="variable"><name>portno</name></member>
+    <member refid="class_menu_1ab67d5fb0837589bb4d6dac62131a72a4" kind="variable"><name>mname</name></member>
+    <member refid="class_menu_1a0cc46cd227e7fcecf4413b9afe58d29d" kind="variable"><name>dbasetype</name></member>
+    <member refid="class_menu_1a3ff2979249504fbed7989ee73b4f58a6" kind="variable"><name>dbasefilename</name></member>
+    <member refid="class_menu_1aa094dcb11114277b2e0921587c2bcb12" kind="variable"><name>processhashvals</name></member>
+    <member refid="class_menu_1ad466dd83355124a6ed958430450bfe94" kind="function"><name>Menu</name></member>
+    <member refid="class_menu_1a5bf168cbb40e28e718ced8f248b3d37a" kind="function"><name>~Menu</name></member>
+    <member refid="class_menu_1a50f39bd5a994cb64421bfacbf6aed5e8" kind="function"><name>ParseArguments</name></member>
+    <member refid="class_menu_1acbe5ec7e6202dec08ca26f4898df8040" kind="function"><name>PrintMenu</name></member>
+    <member refid="class_menu_1aca44a03905fb898515c88a49b4fca849" kind="function"><name>getDATABASEHOSTNAME</name></member>
+    <member refid="class_menu_1a7b3f2bde7bf5297d47409c7fa7f8c940" kind="function"><name>getUSERNAME</name></member>
+    <member refid="class_menu_1a08a81ab79febb5e1f74a21853717cbae" kind="function"><name>getPASSWORD</name></member>
+    <member refid="class_menu_1ac8fe61db0d8a3f32fbb161abdeee4668" kind="function"><name>getPORT</name></member>
+    <member refid="class_menu_1ab2ce4cac489c6da0f08eb4bd0753a555" kind="function"><name>getMACHINENAME</name></member>
+    <member refid="class_menu_1ac07eb59a5697f449133f2d4caf95947c" kind="function"><name>getPARENTDIR</name></member>
+    <member refid="class_menu_1a1f0c07508ea10698ae7af1caad692d52" kind="function"><name>getDBASETYPE</name></member>
+    <member refid="class_menu_1a34eb19b4584c6139b1d0fbc7811ba68a" kind="function"><name>getDBASEFILENAME</name></member>
+    <member refid="class_menu_1a7296588596f0d05634bb6b6a26d51000" kind="function"><name>getPROCESSHASHVALS</name></member>
+  </compound>
+  <compound refid="unionmessage_block" kind="union"><name>messageBlock</name>
+    <member refid="unionmessage_block_1a59107a6d1bbc97a38c8eeafc29474a96" kind="variable"><name>e</name></member>
+    <member refid="unionmessage_block_1a3a07b88e31bce5184238c481aa255922" kind="variable"><name>t</name></member>
+    <member refid="unionmessage_block_1a650ca0815e457fcda932238399372548" kind="variable"><name>s</name></member>
+  </compound>
+  <compound refid="classmysqlcontroller" kind="class"><name>mysqlcontroller</name>
+    <member refid="classmysqlcontroller_1a891d523d7a39f46e72b16a36c1387767" kind="function"><name>mysqlcontroller</name></member>
+    <member refid="classmysqlcontroller_1a5660513979df1fce6d3ff042ff477b99" kind="function"><name>mysqlcontroller</name></member>
+    <member refid="classmysqlcontroller_1a5281329cf5af806d612908b406a9ec89" kind="function"><name>~mysqlcontroller</name></member>
+    <member refid="classmysqlcontroller_1ac879ce9833813cd7649059a3d871fedd" kind="function"><name>setHOSTNAME</name></member>
+    <member refid="classmysqlcontroller_1a465f1a74a87fa74d5ab2aefd34bbe941" kind="function"><name>setDBASENAME</name></member>
+    <member refid="classmysqlcontroller_1ab095a99557c1d7582c66329398d4bd38" kind="function"><name>setUSERNAME</name></member>
+    <member refid="classmysqlcontroller_1a39a1970d8c3c3f013487652493a66e5f" kind="function"><name>setPASSWORD</name></member>
+    <member refid="classmysqlcontroller_1afd4432161cc947ac73243b5227d49a79" kind="function"><name>setPORT</name></member>
+    <member refid="classmysqlcontroller_1a686a2d830775da6da5e8451333b4099f" kind="function"><name>setMACHINENAME</name></member>
+    <member refid="classmysqlcontroller_1aa98d95b40af60c2d3654e1734f02f4fd" kind="function"><name>getHOSTNAME</name></member>
+    <member refid="classmysqlcontroller_1a9fd8e8a368cc3d5e84a371c2a4cd6b7a" kind="function"><name>getDBASENAME</name></member>
+    <member refid="classmysqlcontroller_1aabe3ab7506b212aa7125a3f81d725414" kind="function"><name>getUSERNAME</name></member>
+    <member refid="classmysqlcontroller_1ac38c7f7d6f37a4ac287a3997c398966c" kind="function"><name>getPASSWORD</name></member>
+    <member refid="classmysqlcontroller_1a9df4b563e915fb2ba56797ed499dad8b" kind="function"><name>getPORT</name></member>
+    <member refid="classmysqlcontroller_1a32c523aaf33000a0bb1f42b0c5dcbe57" kind="function"><name>getMACHINENAME</name></member>
+    <member refid="classmysqlcontroller_1a74389e9c368e9f43df261f7050377cb4" kind="function"><name>initdb</name></member>
+    <member refid="classmysqlcontroller_1a053dfe67635af840ec7a787e86b95f41" kind="function"><name>saveDirectoryName</name></member>
+    <member refid="classmysqlcontroller_1a8ac76206c0cfc7954cce8011616119ab" kind="function"><name>saveFileInfo</name></member>
+    <member refid="classmysqlcontroller_1a1158e1c0c82d11cbe200219b4a5a96b3" kind="function"><name>saveDirectoryName_async</name></member>
+    <member refid="classmysqlcontroller_1aad16b25269ed6065b0360c2b8312aea0" kind="function"><name>saveFileInfo_async</name></member>
+    <member refid="classmysqlcontroller_1a50702b70c6eb0355c2d169050776b394" kind="function"><name>deleteDirectoryNames</name></member>
+    <member refid="classmysqlcontroller_1a75776ad16ad15a20736e0c1b6adda411" kind="function"><name>closedb</name></member>
+    <member refid="classmysqlcontroller_1a069876969dedc6baf9c5f95cca1ab33d" kind="function"><name>initPreparedStatements</name></member>
+    <member refid="classmysqlcontroller_1a760179764d3008ac64c36e0b4fb26553" kind="function"><name>closePreparedStatements</name></member>
+    <member refid="classmysqlcontroller_1a116a7441f9bae6f7ef1e0676bd211a7e" kind="function"><name>filterApostraphe</name></member>
+  </compound>
+  <compound refid="class_s_h_a256_c_p_p" kind="class"><name>SHA256CPP</name>
+    <member refid="class_s_h_a256_c_p_p_1ac2f738d58ae8cbc5ee99963adaf538ca" kind="function"><name>SHA256CPP</name></member>
+    <member refid="class_s_h_a256_c_p_p_1a5b3c3cd1fcc19df9f6b855cc05dfe5af" kind="function"><name>~SHA256CPP</name></member>
+    <member refid="class_s_h_a256_c_p_p_1acd60e2902a86486cd8c0c730b22ec34d" kind="function"><name>endianCheck</name></member>
+    <member refid="class_s_h_a256_c_p_p_1a9466f56550cb9725c8fd6be92e5c1b77" kind="function"><name>calculateHash</name></member>
+    <member refid="class_s_h_a256_c_p_p_1accf77858eb3d4019f13d1e9c40dc9a73" kind="function"><name>printFileContents</name></member>
+    <member refid="class_s_h_a256_c_p_p_1af6bbbbc8eb2d1d2ce127d9ee41f80d43" kind="function"><name>endianCheckPrint</name></member>
+    <member refid="class_s_h_a256_c_p_p_1ac70dfb32d56867b6f8790242c3202c06" kind="function"><name>sig0</name></member>
+    <member refid="class_s_h_a256_c_p_p_1ad8bbe4f9babe02201d94d63fd65cc832" kind="function"><name>sig1</name></member>
+    <member refid="class_s_h_a256_c_p_p_1ab1a29784c317f21287def4327f83c342" kind="function"><name>rotr</name></member>
+    <member refid="class_s_h_a256_c_p_p_1a0ba361bc6a4f925454dfcd14fcb95f58" kind="function"><name>shr</name></member>
+    <member refid="class_s_h_a256_c_p_p_1ae5224ffbd7fb6ab5d05a846e3c7e4bd3" kind="function"><name>SIG0</name></member>
+    <member refid="class_s_h_a256_c_p_p_1ad8ea0d3bc89a2622dd230b9fb42c8463" kind="function"><name>SIG1</name></member>
+    <member refid="class_s_h_a256_c_p_p_1a4f63d4fc8d0f9267cd3d4c70fb61b2f3" kind="function"><name>Ch</name></member>
+    <member refid="class_s_h_a256_c_p_p_1a76c44344a60f168d02bf8a5888bf02ad" kind="function"><name>Maj</name></member>
+    <member refid="class_s_h_a256_c_p_p_1a5064c84992660bbd9e98f46511d780d8" kind="function"><name>calcFileSize</name></member>
+    <member refid="class_s_h_a256_c_p_p_1af0be644c9e466da786edad451fb16c14" kind="function"><name>fillMessageBlock</name></member>
+  </compound>
+  <compound refid="classsqlite3controller" kind="class"><name>sqlite3controller</name>
+    <member refid="classsqlite3controller_1a5e12813ef2d44e41238dfd8d4bbbea9a" kind="function"><name>sqlite3controller</name></member>
+    <member refid="classsqlite3controller_1aa85b2bdd95d168c27a28476e07d36d88" kind="function"><name>sqlite3controller</name></member>
+    <member refid="classsqlite3controller_1a0517049f3235b533cbcc1f2d68a42844" kind="function"><name>~sqlite3controller</name></member>
+    <member refid="classsqlite3controller_1a7d6ff837161930eb903754d5688f1b9b" kind="function"><name>initdb</name></member>
+    <member refid="classsqlite3controller_1ab092ae9a83a7a124a5ca19a202f6243a" kind="function"><name>closedb</name></member>
+    <member refid="classsqlite3controller_1ac0c940ac721d94e09be08e38eb0e5ca4" kind="function"><name>setDATABASENAME</name></member>
+    <member refid="classsqlite3controller_1a87910e834388b6f11c8493f10fd6a576" kind="function"><name>setMACHINENAME</name></member>
+    <member refid="classsqlite3controller_1a6ffbf500e8d1d203bd264e221ee833a2" kind="function"><name>getDATABASENAME</name></member>
+    <member refid="classsqlite3controller_1a816f15ac623d19e1f71d55c1751e46e1" kind="function"><name>getMACHINENAME</name></member>
+    <member refid="classsqlite3controller_1a9aa0232afbc7a8d2b71d330c607c5b40" kind="function"><name>createTables</name></member>
+    <member refid="classsqlite3controller_1a875ee2c930b5c9f78c9ad1770893ec8a" kind="function"><name>save_file_info</name></member>
+    <member refid="classsqlite3controller_1a6bda68c0ea1d995b4fcf60965ab433a6" kind="function"><name>save_dir_info</name></member>
+    <member refid="classsqlite3controller_1add1047a4808cc535544154fffe9206a7" kind="function"><name>getPreviousHashval</name></member>
+    <member refid="classsqlite3controller_1afad285c88925ab4bb987583563c11d8a" kind="function"><name>checkIfDirectoryExist</name></member>
+    <member refid="classsqlite3controller_1a884a6ddbbdd5f12a5d2cdcd4828c33cd" kind="function"><name>checkIfHashvalExist</name></member>
+    <member refid="classsqlite3controller_1a96b9af7291ed73ed8b7da9b3e36c5983" kind="function"><name>checkIfFileExist</name></member>
+    <member refid="classsqlite3controller_1ac60d6e9c7f76a56f2409b7eb3f24dbab" kind="function"><name>fileUpdateSameHashVal</name></member>
+    <member refid="classsqlite3controller_1a917e6ee3c3214a31131c605e627a26be" kind="function"><name>fileUpdateNewHashVal</name></member>
+    <member refid="classsqlite3controller_1a41db1cc8b4879147b3fa6fc5eaed630f" kind="function"><name>fileAddNew</name></member>
+    <member refid="classsqlite3controller_1a0ae7c038e20d01d22cb0dd9b8ef1fb48" kind="function"><name>getCurrentTime</name></member>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="fileintegritychecker_8h" kind="file"><name>fileintegritychecker.h</name>
+    <member refid="fileintegritychecker_8h_1a0718941808eb9a49943667c7e06b2ac5" kind="function"><name>isDir</name></member>
+    <member refid="fileintegritychecker_8h_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+    <member refid="fileintegritychecker_8h_1a23ad3bf2468ed919d8d0ff4b110cda29" kind="function"><name>hashfiles</name></member>
+    <member refid="fileintegritychecker_8h_1a5f8127c6203682d4e5442274909d19ae" kind="function"><name>checkifrootorparent</name></member>
+    <member refid="fileintegritychecker_8h_1ab528fd1e803c03f8dcfd7ccdf7d431bc" kind="function"><name>checkifrootdir</name></member>
+    <member refid="fileintegritychecker_8h_1a320a4dd3911b9d8178df4b1cfca30175" kind="function"><name>checkifparentdir</name></member>
+  </compound>
+  <compound refid="helper_8h" kind="file"><name>helper.h</name>
+    <member refid="helper_8h_1a7a104b2e349617222c6419b36bfd3260" kind="define"><name>__STDC_WANT_LIB_EXT1__</name></member>
+  </compound>
+  <compound refid="_menu_8h" kind="file"><name>Menu.h</name>
+  </compound>
+  <compound refid="mysqlcontroller_8h" kind="file"><name>mysqlcontroller.h</name>
+    <member refid="mysqlcontroller_8h_1a7a104b2e349617222c6419b36bfd3260" kind="define"><name>__STDC_WANT_LIB_EXT1__</name></member>
+  </compound>
+  <compound refid="_s_h_a256_c_p_p_8h" kind="file"><name>SHA256CPP.h</name>
+    <member refid="_s_h_a256_c_p_p_8h_1af69af86b63bfa5f9ae02b9ade66929e9" kind="define"><name>byteSwap32</name></member>
+    <member refid="_s_h_a256_c_p_p_8h_1a317cf659e36d8c74574a1617e1c6bce1" kind="define"><name>byteSwap64</name></member>
+    <member refid="_s_h_a256_c_p_p_8h_1ac1535592e39e7edf0cafbd5e695ea622" kind="define"><name>MAXCHAR</name></member>
+    <member refid="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959" kind="enum"><name>status</name></member>
+    <member refid="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959acb9be765f361bb7efb9073730aac92c6" kind="enumvalue"><name>READ</name></member>
+    <member refid="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959a24c954e013ccb8f230031742d8193f55" kind="enumvalue"><name>PAD0</name></member>
+    <member refid="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959a7af380b5255ed8fbb4f1943b92048b15" kind="enumvalue"><name>PAD1</name></member>
+    <member refid="_s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959a8b9af67858708d770f017e4aae85900d" kind="enumvalue"><name>FINISH</name></member>
+  </compound>
+  <compound refid="sqlite3controller_8h" kind="file"><name>sqlite3controller.h</name>
+    <member refid="sqlite3controller_8h_1a7a104b2e349617222c6419b36bfd3260" kind="define"><name>__STDC_WANT_LIB_EXT1__</name></member>
+  </compound>
+  <compound refid="userdefinederrors_8h" kind="file"><name>userdefinederrors.h</name>
+    <member refid="userdefinederrors_8h_1a258bb72419ef143530a2f8f55e7d57af" kind="define"><name>NO_ERROR</name></member>
+    <member refid="userdefinederrors_8h_1a3c72af1ef921aeaf49d3cc9cddef85e6" kind="define"><name>NO_OBJECT_ERROR</name></member>
+    <member refid="userdefinederrors_8h_1a8abd4ca783fb3fba7498747ca21f008b" kind="define"><name>INVALID_HASH_NO_ERROR</name></member>
+    <member refid="userdefinederrors_8h_1a1cec51a90728cf1adda2c628b25f6f8c" kind="define"><name>INVALID_DIRECTORY_ERROR</name></member>
+    <member refid="userdefinederrors_8h_1aa2ece96aa693c397da613088f9360148" kind="define"><name>INVALID_FILENAME_ERROR</name></member>
+  </compound>
+  <compound refid="dir_7f57b1e41c5acd0e859ae5f3a2b075a9" kind="dir"><name>headers</name>
+  </compound>
+</doxygenindex>

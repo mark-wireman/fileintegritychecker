@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_userdefinederrors_8h" xml:lang="en-US">
+<title>C:/Users/mark_/source/repos/fileintegritychecker/headers/userdefinederrors.h File Reference</title>
+<indexterm><primary>C:/Users/mark_/source/repos/fileintegritychecker/headers/userdefinederrors.h</primary></indexterm>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_userdefinederrors_8h_1a258bb72419ef143530a2f8f55e7d57af">NO_ERROR</link>&#160;&#160;&#160;0</para>
+</listitem>
+            <listitem><para>#define <link linkend="_userdefinederrors_8h_1a3c72af1ef921aeaf49d3cc9cddef85e6">NO_OBJECT_ERROR</link>&#160;&#160;&#160;1001</para>
+</listitem>
+            <listitem><para>#define <link linkend="_userdefinederrors_8h_1a8abd4ca783fb3fba7498747ca21f008b">INVALID_HASH_NO_ERROR</link>&#160;&#160;&#160;1002</para>
+</listitem>
+            <listitem><para>#define <link linkend="_userdefinederrors_8h_1a1cec51a90728cf1adda2c628b25f6f8c">INVALID_DIRECTORY_ERROR</link>&#160;&#160;&#160;1003</para>
+</listitem>
+            <listitem><para>#define <link linkend="_userdefinederrors_8h_1aa2ece96aa693c397da613088f9360148">INVALID_FILENAME_ERROR</link>&#160;&#160;&#160;1004</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_userdefinederrors_8h_1a1cec51a90728cf1adda2c628b25f6f8c"/><section>
+    <title>INVALID_DIRECTORY_ERROR</title>
+<indexterm><primary>INVALID_DIRECTORY_ERROR</primary><secondary>userdefinederrors.h</secondary></indexterm>
+<indexterm><primary>userdefinederrors.h</primary><secondary>INVALID_DIRECTORY_ERROR</secondary></indexterm>
+<para><computeroutput>#define INVALID_DIRECTORY_ERROR&#160;&#160;&#160;1003</computeroutput></para></section>
+<anchor xml:id="_userdefinederrors_8h_1aa2ece96aa693c397da613088f9360148"/><section>
+    <title>INVALID_FILENAME_ERROR</title>
+<indexterm><primary>INVALID_FILENAME_ERROR</primary><secondary>userdefinederrors.h</secondary></indexterm>
+<indexterm><primary>userdefinederrors.h</primary><secondary>INVALID_FILENAME_ERROR</secondary></indexterm>
+<para><computeroutput>#define INVALID_FILENAME_ERROR&#160;&#160;&#160;1004</computeroutput></para></section>
+<anchor xml:id="_userdefinederrors_8h_1a8abd4ca783fb3fba7498747ca21f008b"/><section>
+    <title>INVALID_HASH_NO_ERROR</title>
+<indexterm><primary>INVALID_HASH_NO_ERROR</primary><secondary>userdefinederrors.h</secondary></indexterm>
+<indexterm><primary>userdefinederrors.h</primary><secondary>INVALID_HASH_NO_ERROR</secondary></indexterm>
+<para><computeroutput>#define INVALID_HASH_NO_ERROR&#160;&#160;&#160;1002</computeroutput></para></section>
+<anchor xml:id="_userdefinederrors_8h_1a258bb72419ef143530a2f8f55e7d57af"/><section>
+    <title>NO_ERROR</title>
+<indexterm><primary>NO_ERROR</primary><secondary>userdefinederrors.h</secondary></indexterm>
+<indexterm><primary>userdefinederrors.h</primary><secondary>NO_ERROR</secondary></indexterm>
+<para><computeroutput>#define NO_ERROR&#160;&#160;&#160;0</computeroutput></para></section>
+<anchor xml:id="_userdefinederrors_8h_1a3c72af1ef921aeaf49d3cc9cddef85e6"/><section>
+    <title>NO_OBJECT_ERROR</title>
+<indexterm><primary>NO_OBJECT_ERROR</primary><secondary>userdefinederrors.h</secondary></indexterm>
+<indexterm><primary>userdefinederrors.h</primary><secondary>NO_OBJECT_ERROR</secondary></indexterm>
+<para><computeroutput>#define NO_OBJECT_ERROR&#160;&#160;&#160;1001</computeroutput></para></section>
+</section>
+</section>

@@ -18,7 +18,7 @@ class Menu {
 public:
 	Menu();
 	virtual ~Menu();
-	void ParseArguments(int argc, char *argv[]);
+	int ParseArguments(int argc, char *argv[]);
 	void PrintMenu();
 	char* getDATABASEHOSTNAME();
 	char* getUSERNAME();
@@ -26,13 +26,19 @@ public:
 	char* getPORT();
 	char* getMACHINENAME();
 	char* getPARENTDIR();
+	char* getDBASETYPE();
+	char* getDBASEFILENAME();
+	int getPROCESSHASHVALS();
 private:
-	char* parentdir;
-	char* dbasehost;
+	char* parentdir = NULL;
+	char* dbasehost = NULL;
 	char* uname = NULL;
 	char* pwd = NULL;
-	char* portno;
-	char* mname;
+	char* portno = NULL;
+	char* mname = NULL;
+	char* dbasetype = NULL;
+	char* dbasefilename = NULL;
+	int processhashvals = 0;
 };
 
 #endif /* MENU_H_ */

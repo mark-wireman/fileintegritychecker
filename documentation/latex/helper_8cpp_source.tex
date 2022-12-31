@@ -1,0 +1,60 @@
+\hypertarget{helper_8cpp_source}{}\doxysection{helper.\+cpp}
+\label{helper_8cpp_source}\index{src/helper.cpp@{src/helper.cpp}}
+\mbox{\hyperlink{helper_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}../headers/helper.h"{}}}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00003}00003 \textcolor{keyword}{using }namespace::std;}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00012}00012 \textcolor{keywordtype}{int} Helper::checkIfHashvalExistInFiles(\textcolor{keyword}{const} \textcolor{keywordtype}{int} fileId, \textcolor{keyword}{const} \textcolor{keywordtype}{char}* hval, sqlite3 *\mbox{\hyperlink{sqlite3controller_8cpp_ad6e663497d2c934364b3bcf07496b30b}{db}}) \{}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00013}00013     \textcolor{keywordtype}{char} *zErrMsg = 0;}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00014}00014     \textcolor{keywordtype}{int} rc;}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00015}00015     \textcolor{keywordtype}{char} *sql = \textcolor{stringliteral}{"{}SELECT id FROM files WHERE id = ? AND hashedvalue = ?; "{}};}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00016}00016     sqlite3\_stmt * pStmt;}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00017}00017     \textcolor{keywordtype}{int} retVal = 0;}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00019}00019     rc = sqlite3\_prepare\_v3(\mbox{\hyperlink{sqlite3controller_8cpp_ad6e663497d2c934364b3bcf07496b30b}{db}}, sql, -\/1, 0, \&pStmt, NULL);}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00020}00020     }
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00021}00021     \textcolor{keywordflow}{if} (rc == SQLITE\_OK) \{        }
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00022}00022         sqlite3\_bind\_text(pStmt, 1, (\textcolor{keywordtype}{char}*)fileId, -\/1, NULL);}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00023}00023         sqlite3\_bind\_text(pStmt, 2, hval, -\/1, NULL);}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00024}00024     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00025}00025         }
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00026}00026         fprintf(stderr, \textcolor{stringliteral}{"{}Failed to execute statement: \%s\(\backslash\)n"{}}, sqlite3\_errmsg(\mbox{\hyperlink{sqlite3controller_8cpp_ad6e663497d2c934364b3bcf07496b30b}{db}}));}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00027}00027         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00028}00028     \}}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00030}00030     \textcolor{keywordflow}{while}(sqlite3\_step(pStmt) == SQLITE\_ROW)}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00031}00031     \{}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00032}00032         retVal = 1;}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00033}00033     \}}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00034}00034         }
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00035}00035     sqlite3\_finalize(pStmt);}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00037}00037     \textcolor{keywordflow}{return} retVal;}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00038}00038 \}}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00045}00045 \textcolor{keywordtype}{char}* Helper::getCurrentTime() \{}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00046}00046     \textcolor{keywordtype}{string} retVal;}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00047}00047     \textcolor{keywordtype}{char}* char\_array;}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00049}00049     time\_t t = time(0);   \textcolor{comment}{// get time now}}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00050}00050     tm* now = localtime(\&t);}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00051}00051     \textcolor{keywordtype}{char} date\_string[100];}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00052}00052     \textcolor{keywordtype}{char} time\_string[100];}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00054}00054     strftime(date\_string, 50, \textcolor{stringliteral}{"{}\%B \%d, \%Y "{}}, now);}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00055}00055     strftime(time\_string, 50, \textcolor{stringliteral}{"{}\%T"{}}, now);}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00057}00057     retVal += date\_string;}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00058}00058     retVal += time\_string;}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00060}00060     \textcolor{keywordtype}{int} n = retVal.length();}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00061}00061     char\_array = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[n + 1];}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00063}00063     strcpy(char\_array, retVal.c\_str());}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00064}00064     }
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00065}00065     \textcolor{keywordflow}{return} char\_array;}
+\DoxyCodeLine{\Hypertarget{helper_8cpp_source_l00066}00066 \}}
+
+\end{DoxyCode}

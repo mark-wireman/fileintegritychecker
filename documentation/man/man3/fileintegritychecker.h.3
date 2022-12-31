@@ -1,0 +1,66 @@
+.TH "headers/fileintegritychecker.h" 3 "Sat Dec 10 2022" "fileintegritychecker" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+headers/fileintegritychecker.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <dirent\&.h>\fP
+.br
+\fC#include <sys/stat\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <stdint\&.h>\fP
+.br
+\fC#include <time\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <sys/sysmacros\&.h>\fP
+.br
+\fC#include 'SHA256\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBisDir\fP (char *filename)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.ti -1c
+.RI "void \fBhashfiles\fP (char *startdirectory)"
+.br
+.ti -1c
+.RI "int \fBcheckifrootorparent\fP (char *dirname)"
+.br
+.ti -1c
+.RI "int \fBcheckifrootdir\fP (char *dirname)"
+.br
+.ti -1c
+.RI "int \fBcheckifparentdir\fP (char *dirname)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int checkifparentdir (char * dirname)"
+
+.SS "int checkifrootdir (char * dirname)"
+
+.SS "int checkifrootorparent (char * dirname)"
+
+.SS "void hashfiles (char * startdirectory)"
+
+.SS "int isDir (char * filename)"
+
+.SS "int main (int argc, char * argv[])"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for fileintegritychecker from the source code\&.

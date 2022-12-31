@@ -1,0 +1,75 @@
+\hypertarget{_s_h_a256_c_p_p_8h_source}{}\doxysection{SHA256\+CPP.\+h}
+\label{_s_h_a256_c_p_p_8h_source}\index{C:/Users/mark\_/source/repos/fileintegritychecker/headers/SHA256CPP.h@{C:/Users/mark\_/source/repos/fileintegritychecker/headers/SHA256CPP.h}}
+\mbox{\hyperlink{_s_h_a256_c_p_p_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef HEADERS\_SHA256CPP\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define HEADERS\_SHA256CPP\_H\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <inttypes.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <array>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define byteSwap32(x) (((x) >> 24) | (((x)\&0x00FF0000) >> 8) | (((x)\&0x0000FF00) << 8) | ((x) << 24))}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define byteSwap64(x)                                                      \(\backslash\)}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{    ((((x) >> 56) \& 0x00000000000000FF) | (((x) >> 40) \& 0x000000000000FF00) | \(\backslash\)}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{     (((x) >> 24) \& 0x0000000000FF0000) | (((x) >> 8) \& 0x00000000FF000000) |  \(\backslash\)}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{     (((x) << 8) \& 0x000000FF00000000) | (((x) << 24) \& 0x0000FF0000000000) |  \(\backslash\)}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{     (((x) << 40) \& 0x00FF000000000000) | (((x) << 56) \& 0xFF00000000000000))}}
+\DoxyCodeLine{17 \textcolor{comment}{// Tell our preprocessor to create a variable MAXCHAR with value of 100000}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define MAXCHAR 100000}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_hash_values}{HashValues}} \{}
+\DoxyCodeLine{21     uint32\_t \mbox{\hyperlink{struct_hash_values_a33327f22884b787dcb01088a9fb847a4}{H}}[8];}
+\DoxyCodeLine{22 \};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{// Define a union for easy reference}}
+\DoxyCodeLine{25 \textcolor{comment}{// Union represents a message block}}
+\DoxyCodeLine{26 \textcolor{keyword}{union }\mbox{\hyperlink{unionmessage_block}{messageBlock}}}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28     uint8\_t \mbox{\hyperlink{unionmessage_block_a59107a6d1bbc97a38c8eeafc29474a96}{e}}[64];}
+\DoxyCodeLine{29     uint32\_t \mbox{\hyperlink{unionmessage_block_a3a07b88e31bce5184238c481aa255922}{t}}[16];}
+\DoxyCodeLine{30     uint64\_t \mbox{\hyperlink{unionmessage_block_a650ca0815e457fcda932238399372548}{s}}[8];}
+\DoxyCodeLine{31 \};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{comment}{// ENUM to control state of the program}}
+\DoxyCodeLine{34 \textcolor{keyword}{enum} \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959}{status}}}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36     \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959acb9be765f361bb7efb9073730aac92c6}{READ}}, }
+\DoxyCodeLine{37     \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959a24c954e013ccb8f230031742d8193f55}{PAD0}},}
+\DoxyCodeLine{38     \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959a7af380b5255ed8fbb4f1943b92048b15}{PAD1}},}
+\DoxyCodeLine{39     \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959a8b9af67858708d770f017e4aae85900d}{FINISH}}}
+\DoxyCodeLine{40 \};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{class }\mbox{\hyperlink{class_s_h_a256_c_p_p}{SHA256CPP}} }
+\DoxyCodeLine{43 \{}
+\DoxyCodeLine{44 \textcolor{keyword}{public}:}
+\DoxyCodeLine{45     \mbox{\hyperlink{class_s_h_a256_c_p_p_ac2f738d58ae8cbc5ee99963adaf538ca}{SHA256CPP}}();}
+\DoxyCodeLine{46     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_s_h_a256_c_p_p_a5b3c3cd1fcc19df9f6b855cc05dfe5af}{\string~SHA256CPP}}();}
+\DoxyCodeLine{47     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_s_h_a256_c_p_p_acd60e2902a86486cd8c0c730b22ec34d}{endianCheck}}();}
+\DoxyCodeLine{48     \mbox{\hyperlink{struct_hash_values}{HashValues}} \mbox{\hyperlink{class_s_h_a256_c_p_p_a9466f56550cb9725c8fd6be92e5c1b77}{calculateHash}}(FILE *file);}
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_s_h_a256_c_p_p_accf77858eb3d4019f13d1e9c40dc9a73}{printFileContents}}(FILE *fileForPrinting);}
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_s_h_a256_c_p_p_af6bbbbc8eb2d1d2ce127d9ee41f80d43}{endianCheckPrint}}();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keyword}{private}:}
+\DoxyCodeLine{53     uint32\_t sig0(uint32\_t x);}
+\DoxyCodeLine{54     uint32\_t sig1(uint32\_t x);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     uint32\_t rotr(uint32\_t n, uint16\_t x);}
+\DoxyCodeLine{57     uint32\_t shr(uint32\_t n, uint16\_t x);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     uint32\_t SIG0(uint32\_t x);}
+\DoxyCodeLine{60     uint32\_t SIG1(uint32\_t x);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     uint32\_t Ch(uint32\_t x,uint32\_t y,uint32\_t z);}
+\DoxyCodeLine{63     uint32\_t Maj(uint32\_t x,uint32\_t y,uint32\_t z);}
+\DoxyCodeLine{64     }
+\DoxyCodeLine{65     \textcolor{keywordtype}{int} calcFileSize(FILE *file);}
+\DoxyCodeLine{66     \textcolor{keywordtype}{int} fillMessageBlock(FILE *file, \textcolor{keyword}{union} \mbox{\hyperlink{unionmessage_block}{messageBlock}} *msgBlock, \textcolor{keyword}{enum} \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959}{status}} *state, uint64\_t *numBits);}
+\DoxyCodeLine{67 \};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* HEADERS\_SHA256CPP\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

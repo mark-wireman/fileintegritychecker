@@ -1,1 +1,0 @@
-cmd='/usr/bin/cmake;-DCMAKE_C_COMPILER=/usr/bin/cc;-DCMAKE_CXX_COMPILER=/usr/bin/c++;-DCMAKE_BUILD_TYPE=Release;-DBUILD_TESTING=Off;-DCMAKE_INSTALL_PREFIX:PATH=/usr/local/include/bsoncxx/v_noabi/bsoncxx/third_party/mnmlstc;-DINCLUDE_INSTALL_DIR=.;-GUnix Makefiles;<SOURCE_DIR><SOURCE_SUBDIR>'

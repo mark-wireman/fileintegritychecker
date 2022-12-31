@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_s_h_a256_c_p_p" xml:lang="en-US">
+<title>SHA256CPP Class Reference</title>
+<indexterm><primary>SHA256CPP</primary></indexterm>
+<para>
+<computeroutput>#include &lt;SHA256CPP.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_s_h_a256_c_p_p_1ac2f738d58ae8cbc5ee99963adaf538ca">SHA256CPP</link> ()</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_class_s_h_a256_c_p_p_1a5b3c3cd1fcc19df9f6b855cc05dfe5af">~SHA256CPP</link> ()</para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_s_h_a256_c_p_p_1acd60e2902a86486cd8c0c730b22ec34d">endianCheck</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_struct_hash_values">HashValues</link> <link linkend="_class_s_h_a256_c_p_p_1a9466f56550cb9725c8fd6be92e5c1b77">calculateHash</link> (FILE *file)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_s_h_a256_c_p_p_1accf77858eb3d4019f13d1e9c40dc9a73">printFileContents</link> (FILE *fileForPrinting)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_s_h_a256_c_p_p_1af6bbbbc8eb2d1d2ce127d9ee41f80d43">endianCheckPrint</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_s_h_a256_c_p_p_1ac2f738d58ae8cbc5ee99963adaf538ca"/><section>
+    <title>SHA256CPP()</title>
+<indexterm><primary>SHA256CPP</primary><secondary>SHA256CPP</secondary></indexterm>
+<indexterm><primary>SHA256CPP</primary><secondary>SHA256CPP</secondary></indexterm>
+<para><computeroutput>SHA256CPP::SHA256CPP ( )</computeroutput></para></section>
+<anchor xml:id="_class_s_h_a256_c_p_p_1a5b3c3cd1fcc19df9f6b855cc05dfe5af"/><section>
+    <title>~SHA256CPP()</title>
+<indexterm><primary>~SHA256CPP</primary><secondary>SHA256CPP</secondary></indexterm>
+<indexterm><primary>SHA256CPP</primary><secondary>~SHA256CPP</secondary></indexterm>
+<para><computeroutput>virtual SHA256CPP::~SHA256CPP ( )<computeroutput>[virtual]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_s_h_a256_c_p_p_1a9466f56550cb9725c8fd6be92e5c1b77"/><section>
+    <title>calculateHash()</title>
+<indexterm><primary>calculateHash</primary><secondary>SHA256CPP</secondary></indexterm>
+<indexterm><primary>SHA256CPP</primary><secondary>calculateHash</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_hash_values">HashValues</link> SHA256CPP::calculateHash (FILE * file)</computeroutput></para></section>
+<anchor xml:id="_class_s_h_a256_c_p_p_1acd60e2902a86486cd8c0c730b22ec34d"/><section>
+    <title>endianCheck()</title>
+<indexterm><primary>endianCheck</primary><secondary>SHA256CPP</secondary></indexterm>
+<indexterm><primary>SHA256CPP</primary><secondary>endianCheck</secondary></indexterm>
+<para><computeroutput>bool SHA256CPP::endianCheck ( )</computeroutput></para></section>
+<anchor xml:id="_class_s_h_a256_c_p_p_1af6bbbbc8eb2d1d2ce127d9ee41f80d43"/><section>
+    <title>endianCheckPrint()</title>
+<indexterm><primary>endianCheckPrint</primary><secondary>SHA256CPP</secondary></indexterm>
+<indexterm><primary>SHA256CPP</primary><secondary>endianCheckPrint</secondary></indexterm>
+<para><computeroutput>void SHA256CPP::endianCheckPrint ( )</computeroutput></para></section>
+<anchor xml:id="_class_s_h_a256_c_p_p_1accf77858eb3d4019f13d1e9c40dc9a73"/><section>
+    <title>printFileContents()</title>
+<indexterm><primary>printFileContents</primary><secondary>SHA256CPP</secondary></indexterm>
+<indexterm><primary>SHA256CPP</primary><secondary>printFileContents</secondary></indexterm>
+<para><computeroutput>void SHA256CPP::printFileContents (FILE * fileForPrinting)</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+C:/Users/mark_/source/repos/fileintegritychecker/headers/<link linkend="__s_h_a256_c_p_p_8h">SHA256CPP.h</link></section>
+</section>

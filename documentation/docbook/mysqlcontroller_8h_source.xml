@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_mysqlcontroller_8h_source" xml:lang="en-US">
+<title>mysqlcontroller.h</title>
+<indexterm><primary>C:/Users/mark_/source/repos/fileintegritychecker/headers/mysqlcontroller.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 
+2 <emphasis role="preprocessor">#ifndef&#32;HEADERS_MYSQLCONTROLLER_H_</emphasis>
+3 <emphasis role="preprocessor">#define&#32;HEADERS_MYSQLCONTROLLER_H_</emphasis>
+4 
+5 <emphasis role="preprocessor">#define&#32;__STDC_WANT_LIB_EXT1__&#32;1</emphasis>
+6 <emphasis role="comment">/*&#32;Standard&#32;C++&#32;includes&#32;*/</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&lt;string.h&gt;</emphasis>
+8 <emphasis role="preprocessor">#include&#32;&lt;stdio.h&gt;</emphasis>
+9 <emphasis role="preprocessor">#include&#32;&lt;stdlib.h&gt;</emphasis>
+10 <emphasis role="preprocessor">#include&#32;&lt;errno.h&gt;</emphasis>
+11 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+12 <emphasis role="preprocessor">#include&#32;&lt;ctime&gt;</emphasis>
+13 <emphasis role="preprocessor">#include&#32;&lt;sstream&gt;</emphasis>
+14 <emphasis role="keyword">using&#32;</emphasis>std::stringstream;
+15 <emphasis role="preprocessor">#include&#32;&quot;mysql_connection.h&quot;</emphasis>
+16 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__s_q_lite_helper_8h">SQLiteHelper.h</link>&quot;</emphasis>
+17 
+18 <emphasis role="preprocessor">#include&#32;&lt;cppconn/driver.h&gt;</emphasis>
+19 <emphasis role="preprocessor">#include&#32;&lt;cppconn/exception.h&gt;</emphasis>
+20 <emphasis role="preprocessor">#include&#32;&lt;cppconn/resultset.h&gt;</emphasis>
+21 <emphasis role="preprocessor">#include&#32;&lt;cppconn/statement.h&gt;</emphasis>
+22 <emphasis role="preprocessor">#include&#32;&lt;cppconn/prepared_statement.h&gt;</emphasis>
+23 
+24 <emphasis role="keyword">using&#32;namespace&#32;</emphasis>std;
+25 
+26 <emphasis role="keyword">class&#32;</emphasis><link linkend="_classmysqlcontroller">mysqlcontroller</link>&#32;{
+27 <emphasis role="keyword">public</emphasis>:
+28 &#32;&#32;&#32;&#32;<link linkend="_classmysqlcontroller_1a891d523d7a39f46e72b16a36c1387767">mysqlcontroller</link>();
+29 &#32;&#32;&#32;&#32;<link linkend="_classmysqlcontroller_1a5660513979df1fce6d3ff042ff477b99">mysqlcontroller</link>(<emphasis role="keywordtype">char</emphasis>*&#32;host,<emphasis role="keywordtype">char</emphasis>*&#32;dbase,<emphasis role="keywordtype">char</emphasis>*&#32;uname,<emphasis role="keywordtype">char</emphasis>*&#32;pwd,<emphasis role="keywordtype">int</emphasis>&#32;port,<emphasis role="keywordtype">char</emphasis>*&#32;mname);
+30 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_classmysqlcontroller_1a5281329cf5af806d612908b406a9ec89">~mysqlcontroller</link>();
+31 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classmysqlcontroller_1ac879ce9833813cd7649059a3d871fedd">setHOSTNAME</link>(<emphasis role="keywordtype">char</emphasis>*&#32;host);
+32 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classmysqlcontroller_1a465f1a74a87fa74d5ab2aefd34bbe941">setDBASENAME</link>(<emphasis role="keywordtype">char</emphasis>*&#32;dbase);
+33 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classmysqlcontroller_1ab095a99557c1d7582c66329398d4bd38">setUSERNAME</link>(<emphasis role="keywordtype">char</emphasis>*&#32;uname);
+34 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classmysqlcontroller_1a39a1970d8c3c3f013487652493a66e5f">setPASSWORD</link>(<emphasis role="keywordtype">char</emphasis>*&#32;pwd);
+35 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classmysqlcontroller_1afd4432161cc947ac73243b5227d49a79">setPORT</link>(<emphasis role="keywordtype">int</emphasis>&#32;port);
+36 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classmysqlcontroller_1a686a2d830775da6da5e8451333b4099f">setMACHINENAME</link>(<emphasis role="keywordtype">char</emphasis>*&#32;mname);
+37 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_classmysqlcontroller_1aa98d95b40af60c2d3654e1734f02f4fd">getHOSTNAME</link>();
+38 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_classmysqlcontroller_1a9fd8e8a368cc3d5e84a371c2a4cd6b7a">getDBASENAME</link>();
+39 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_classmysqlcontroller_1aabe3ab7506b212aa7125a3f81d725414">getUSERNAME</link>();
+40 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_classmysqlcontroller_1ac38c7f7d6f37a4ac287a3997c398966c">getPASSWORD</link>();
+41 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classmysqlcontroller_1a9df4b563e915fb2ba56797ed499dad8b">getPORT</link>();
+42 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_classmysqlcontroller_1a32c523aaf33000a0bb1f42b0c5dcbe57">getMACHINENAME</link>();
+43 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classmysqlcontroller_1a74389e9c368e9f43df261f7050377cb4">initdb</link>();
+44 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classmysqlcontroller_1a053dfe67635af840ec7a787e86b95f41">saveDirectoryName</link>(<emphasis role="keywordtype">string</emphasis>&#32;dirname);&#32;&#32;&#32;&#32;
+45 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classmysqlcontroller_1a8ac76206c0cfc7954cce8011616119ab">saveFileInfo</link>(<emphasis role="keywordtype">string</emphasis>&#32;dirname,&#32;<emphasis role="keywordtype">string</emphasis>&#32;fname,&#32;<emphasis role="keywordtype">string</emphasis>&#32;hashval);
+46 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classmysqlcontroller_1a1158e1c0c82d11cbe200219b4a5a96b3">saveDirectoryName_async</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">string</emphasis>&#32;&amp;dirname);
+47 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classmysqlcontroller_1aad16b25269ed6065b0360c2b8312aea0">saveFileInfo_async</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">string</emphasis>&#32;&amp;dirname,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">string</emphasis>&#32;&amp;fname,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">string</emphasis>&#32;&amp;hashval);
+48 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classmysqlcontroller_1a50702b70c6eb0355c2d169050776b394">deleteDirectoryNames</link>();
+49 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classmysqlcontroller_1a75776ad16ad15a20736e0c1b6adda411">closedb</link>();
+50 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classmysqlcontroller_1a069876969dedc6baf9c5f95cca1ab33d">initPreparedStatements</link>();
+51 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classmysqlcontroller_1a760179764d3008ac64c36e0b4fb26553">closePreparedStatements</link>();
+52 <emphasis role="keyword">private</emphasis>:
+53 &#32;&#32;&#32;&#32;<emphasis role="comment">//char*&#32;getCurrentTime();</emphasis>
+54 &#32;&#32;&#32;&#32;<emphasis role="comment">//void&#32;addVerified(int);</emphasis>
+55 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;filterApostraphe(<emphasis role="keywordtype">string</emphasis>);
+56 &#32;&#32;&#32;&#32;
+57 };
+58 
+59 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

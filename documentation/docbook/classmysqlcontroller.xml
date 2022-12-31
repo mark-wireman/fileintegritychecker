@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classmysqlcontroller" xml:lang="en-US">
+<title>mysqlcontroller Class Reference</title>
+<indexterm><primary>mysqlcontroller</primary></indexterm>
+<para>
+<computeroutput>#include &lt;mysqlcontroller.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classmysqlcontroller_1a891d523d7a39f46e72b16a36c1387767">mysqlcontroller</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="_classmysqlcontroller_1a5660513979df1fce6d3ff042ff477b99">mysqlcontroller</link> (char *host, char *dbase, char *uname, char *pwd, int port, char *mname)</para>
+</listitem>
+            <listitem><para>virtual <link linkend="_classmysqlcontroller_1a5281329cf5af806d612908b406a9ec89">~mysqlcontroller</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classmysqlcontroller_1ac879ce9833813cd7649059a3d871fedd">setHOSTNAME</link> (char *host)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classmysqlcontroller_1a465f1a74a87fa74d5ab2aefd34bbe941">setDBASENAME</link> (char *dbase)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classmysqlcontroller_1ab095a99557c1d7582c66329398d4bd38">setUSERNAME</link> (char *uname)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classmysqlcontroller_1a39a1970d8c3c3f013487652493a66e5f">setPASSWORD</link> (char *pwd)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classmysqlcontroller_1afd4432161cc947ac73243b5227d49a79">setPORT</link> (int port)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classmysqlcontroller_1a686a2d830775da6da5e8451333b4099f">setMACHINENAME</link> (char *mname)</para>
+</listitem>
+            <listitem><para>char * <link linkend="_classmysqlcontroller_1aa98d95b40af60c2d3654e1734f02f4fd">getHOSTNAME</link> ()</para>
+</listitem>
+            <listitem><para>char * <link linkend="_classmysqlcontroller_1a9fd8e8a368cc3d5e84a371c2a4cd6b7a">getDBASENAME</link> ()</para>
+</listitem>
+            <listitem><para>char * <link linkend="_classmysqlcontroller_1aabe3ab7506b212aa7125a3f81d725414">getUSERNAME</link> ()</para>
+</listitem>
+            <listitem><para>char * <link linkend="_classmysqlcontroller_1ac38c7f7d6f37a4ac287a3997c398966c">getPASSWORD</link> ()</para>
+</listitem>
+            <listitem><para>int <link linkend="_classmysqlcontroller_1a9df4b563e915fb2ba56797ed499dad8b">getPORT</link> ()</para>
+</listitem>
+            <listitem><para>char * <link linkend="_classmysqlcontroller_1a32c523aaf33000a0bb1f42b0c5dcbe57">getMACHINENAME</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classmysqlcontroller_1a74389e9c368e9f43df261f7050377cb4">initdb</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classmysqlcontroller_1a053dfe67635af840ec7a787e86b95f41">saveDirectoryName</link> (string dirname)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classmysqlcontroller_1a8ac76206c0cfc7954cce8011616119ab">saveFileInfo</link> (string dirname, string fname, string hashval)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classmysqlcontroller_1a1158e1c0c82d11cbe200219b4a5a96b3">saveDirectoryName_async</link> (const string &amp;dirname)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classmysqlcontroller_1aad16b25269ed6065b0360c2b8312aea0">saveFileInfo_async</link> (const string &amp;dirname, const string &amp;fname, const string &amp;hashval)</para>
+</listitem>
+            <listitem><para>void <link linkend="_classmysqlcontroller_1a50702b70c6eb0355c2d169050776b394">deleteDirectoryNames</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classmysqlcontroller_1a75776ad16ad15a20736e0c1b6adda411">closedb</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classmysqlcontroller_1a069876969dedc6baf9c5f95cca1ab33d">initPreparedStatements</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_classmysqlcontroller_1a760179764d3008ac64c36e0b4fb26553">closePreparedStatements</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classmysqlcontroller_1a891d523d7a39f46e72b16a36c1387767"/><section>
+    <title>mysqlcontroller()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>mysqlcontroller</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>mysqlcontroller</secondary></indexterm>
+<para><computeroutput>mysqlcontroller::mysqlcontroller ( )</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1a5660513979df1fce6d3ff042ff477b99"/><section>
+    <title>mysqlcontroller()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>mysqlcontroller</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>mysqlcontroller</secondary></indexterm>
+<para><computeroutput>mysqlcontroller::mysqlcontroller (char * host, char * dbase, char * uname, char * pwd, int port, char * mname)</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1a5281329cf5af806d612908b406a9ec89"/><section>
+    <title>~mysqlcontroller()</title>
+<indexterm><primary>~mysqlcontroller</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>~mysqlcontroller</secondary></indexterm>
+<para><computeroutput>virtual mysqlcontroller::~mysqlcontroller ( )<computeroutput>[virtual]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classmysqlcontroller_1a75776ad16ad15a20736e0c1b6adda411"/><section>
+    <title>closedb()</title>
+<indexterm><primary>closedb</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>closedb</secondary></indexterm>
+<para><computeroutput>void mysqlcontroller::closedb ( )</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1a760179764d3008ac64c36e0b4fb26553"/><section>
+    <title>closePreparedStatements()</title>
+<indexterm><primary>closePreparedStatements</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>closePreparedStatements</secondary></indexterm>
+<para><computeroutput>void mysqlcontroller::closePreparedStatements ( )</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1a50702b70c6eb0355c2d169050776b394"/><section>
+    <title>deleteDirectoryNames()</title>
+<indexterm><primary>deleteDirectoryNames</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>deleteDirectoryNames</secondary></indexterm>
+<para><computeroutput>void mysqlcontroller::deleteDirectoryNames ( )</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1a9fd8e8a368cc3d5e84a371c2a4cd6b7a"/><section>
+    <title>getDBASENAME()</title>
+<indexterm><primary>getDBASENAME</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>getDBASENAME</secondary></indexterm>
+<para><computeroutput>char * mysqlcontroller::getDBASENAME ( )</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1aa98d95b40af60c2d3654e1734f02f4fd"/><section>
+    <title>getHOSTNAME()</title>
+<indexterm><primary>getHOSTNAME</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>getHOSTNAME</secondary></indexterm>
+<para><computeroutput>char * mysqlcontroller::getHOSTNAME ( )</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1a32c523aaf33000a0bb1f42b0c5dcbe57"/><section>
+    <title>getMACHINENAME()</title>
+<indexterm><primary>getMACHINENAME</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>getMACHINENAME</secondary></indexterm>
+<para><computeroutput>char * mysqlcontroller::getMACHINENAME ( )</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1ac38c7f7d6f37a4ac287a3997c398966c"/><section>
+    <title>getPASSWORD()</title>
+<indexterm><primary>getPASSWORD</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>getPASSWORD</secondary></indexterm>
+<para><computeroutput>char * mysqlcontroller::getPASSWORD ( )</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1a9df4b563e915fb2ba56797ed499dad8b"/><section>
+    <title>getPORT()</title>
+<indexterm><primary>getPORT</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>getPORT</secondary></indexterm>
+<para><computeroutput>int mysqlcontroller::getPORT ( )</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1aabe3ab7506b212aa7125a3f81d725414"/><section>
+    <title>getUSERNAME()</title>
+<indexterm><primary>getUSERNAME</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>getUSERNAME</secondary></indexterm>
+<para><computeroutput>char * mysqlcontroller::getUSERNAME ( )</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1a74389e9c368e9f43df261f7050377cb4"/><section>
+    <title>initdb()</title>
+<indexterm><primary>initdb</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>initdb</secondary></indexterm>
+<para><computeroutput>void mysqlcontroller::initdb ( )</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1a069876969dedc6baf9c5f95cca1ab33d"/><section>
+    <title>initPreparedStatements()</title>
+<indexterm><primary>initPreparedStatements</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>initPreparedStatements</secondary></indexterm>
+<para><computeroutput>void mysqlcontroller::initPreparedStatements ( )</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1a053dfe67635af840ec7a787e86b95f41"/><section>
+    <title>saveDirectoryName()</title>
+<indexterm><primary>saveDirectoryName</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>saveDirectoryName</secondary></indexterm>
+<para><computeroutput>void mysqlcontroller::saveDirectoryName (string dirname)</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1a1158e1c0c82d11cbe200219b4a5a96b3"/><section>
+    <title>saveDirectoryName_async()</title>
+<indexterm><primary>saveDirectoryName_async</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>saveDirectoryName_async</secondary></indexterm>
+<para><computeroutput>void mysqlcontroller::saveDirectoryName_async (const string &amp; dirname)</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1a8ac76206c0cfc7954cce8011616119ab"/><section>
+    <title>saveFileInfo()</title>
+<indexterm><primary>saveFileInfo</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>saveFileInfo</secondary></indexterm>
+<para><computeroutput>void mysqlcontroller::saveFileInfo (string dirname, string fname, string hashval)</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1aad16b25269ed6065b0360c2b8312aea0"/><section>
+    <title>saveFileInfo_async()</title>
+<indexterm><primary>saveFileInfo_async</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>saveFileInfo_async</secondary></indexterm>
+<para><computeroutput>void mysqlcontroller::saveFileInfo_async (const string &amp; dirname, const string &amp; fname, const string &amp; hashval)</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1a465f1a74a87fa74d5ab2aefd34bbe941"/><section>
+    <title>setDBASENAME()</title>
+<indexterm><primary>setDBASENAME</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>setDBASENAME</secondary></indexterm>
+<para><computeroutput>void mysqlcontroller::setDBASENAME (char * dbase)</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1ac879ce9833813cd7649059a3d871fedd"/><section>
+    <title>setHOSTNAME()</title>
+<indexterm><primary>setHOSTNAME</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>setHOSTNAME</secondary></indexterm>
+<para><computeroutput>void mysqlcontroller::setHOSTNAME (char * host)</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1a686a2d830775da6da5e8451333b4099f"/><section>
+    <title>setMACHINENAME()</title>
+<indexterm><primary>setMACHINENAME</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>setMACHINENAME</secondary></indexterm>
+<para><computeroutput>void mysqlcontroller::setMACHINENAME (char * mname)</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1a39a1970d8c3c3f013487652493a66e5f"/><section>
+    <title>setPASSWORD()</title>
+<indexterm><primary>setPASSWORD</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>setPASSWORD</secondary></indexterm>
+<para><computeroutput>void mysqlcontroller::setPASSWORD (char * pwd)</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1afd4432161cc947ac73243b5227d49a79"/><section>
+    <title>setPORT()</title>
+<indexterm><primary>setPORT</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>setPORT</secondary></indexterm>
+<para><computeroutput>void mysqlcontroller::setPORT (int port)</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1ab095a99557c1d7582c66329398d4bd38"/><section>
+    <title>setUSERNAME()</title>
+<indexterm><primary>setUSERNAME</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>setUSERNAME</secondary></indexterm>
+<para><computeroutput>void mysqlcontroller::setUSERNAME (char * uname)</computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+C:/Users/mark_/source/repos/fileintegritychecker/headers/<link linkend="_mysqlcontroller_8h">mysqlcontroller.h</link></section>
+</section>

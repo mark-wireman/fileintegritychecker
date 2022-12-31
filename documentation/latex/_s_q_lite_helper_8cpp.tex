@@ -1,0 +1,317 @@
+\hypertarget{_s_q_lite_helper_8cpp}{}\doxysection{C\+:/\+Users/mark\+\_\+/source/repos/fileintegritychecker/src/\+SQLite\+Helper.cpp File Reference}
+\label{_s_q_lite_helper_8cpp}\index{C:/Users/mark\_/source/repos/fileintegritychecker/src/SQLiteHelper.cpp@{C:/Users/mark\_/source/repos/fileintegritychecker/src/SQLiteHelper.cpp}}
+{\ttfamily \#include \char`\"{}../headers/\+SQLite\+Helper.\+h\char`\"{}}\newline
+Include dependency graph for SQLite\+Helper.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{_s_q_lite_helper_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_aadee09a8afa07a05dc77b8fb183502fe}{sql\+\_\+check\+\_\+if\+\_\+filesize\+\_\+changed}} = \char`\"{}select filesizechanged from files where id=?; \char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_a11a095d4c486bbde5cd5c03fdeef757e}{sql\+\_\+check\+\_\+if\+\_\+filesize\+\_\+changed\+\_\+in\+\_\+files}} = \char`\"{}select id from files where filesize = ? and id = ?; \char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_a30a8474684b57677c7f4ade261d52396}{sql\+\_\+check\+\_\+if\+\_\+hashedval\+\_\+changed}} = \char`\"{}select hashedvaluechanged from files where id=?; \char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_a24430c9279b2f12e6865146481668de6}{sql\+\_\+check\+\_\+if\+\_\+hashedval\+\_\+changed\+\_\+in\+\_\+files}} = \char`\"{}select id from files where hashedvalue = ? and id = ?; \char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_a0b374634088c38fd0277d22cee8a076a}{sql\+\_\+check\+\_\+if\+\_\+datemodified\+\_\+changed}} = \char`\"{}select lastmodifiedchanged from files where id=?; \char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_a2a3a606e5782280c0d3693624d86223a}{sql\+\_\+check\+\_\+if\+\_\+datemodified\+\_\+changed\+\_\+in\+\_\+files}} = \char`\"{}select id from files where lastmodified = ? and id = ?; \char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_a6eaedbf4c3a151599a4dff198e474d86}{sql\+\_\+check\+\_\+if\+\_\+value\+\_\+changed\+\_\+in\+\_\+changes\+\_\+textval}} = \char`\"{}select id from changes where fileid = ? and textvalue = ?; \char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_a6c55458a9f14bda4df0194ad7ea8d24f}{sql\+\_\+check\+\_\+if\+\_\+value\+\_\+changed\+\_\+in\+\_\+changes\+\_\+intval}} = \char`\"{}select id from changes where fileid = ? and intvalue = ?; \char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_a8141fadef4ba0f5b6d6661c5dc0a5edc}{sql\+\_\+get\+\_\+file\+\_\+id}} = \char`\"{}select id from files where filename=? and dirid=?; \char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_ad69bcee87ad4e63344e2788867af9d33}{sql\+\_\+get\+\_\+directory\+\_\+id}} = \char`\"{}select id from directories where dirname=? and \mbox{\hyperlink{mysqlcontroller_8cpp_a305d17d000ed63060cc0e874bf27e05c}{machinename}}= ?; \char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_a970ba9c2ed3ddfaa6961348c39d128db}{sql\+\_\+save\+\_\+newfile\+\_\+nohashedval}} = \char`\"{}insert into files (dirid, dateadded, filename, filesize, lastmodified) VALUES (?,?,?,?,?); \char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_a9881226bc88bfd09be3a2c29af05419f}{sql\+\_\+save\+\_\+newfile\+\_\+hashedval}} = \char`\"{}insert into files (dirid, dateadded, filename, filesize, lastmodified, hashval) VALUES (?,?,?,?,?,?); \char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_a022241ec805998c398b20c90d1a51256}{sql\+\_\+save\+\_\+textval\+\_\+in\+\_\+changes}} = \char`\"{}INSERT INTO changes (fileid,datechanged,textvalue) VALUES (?,?,?); \char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_a1ffdb057e3cdae8e7c5b832f735d97bd}{sql\+\_\+save\+\_\+intval\+\_\+in\+\_\+changes}} = \char`\"{}INSERT INTO changes (fileid,datechanged,intvalue) VALUES (?,?,?); \char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_abea92ed80d2eadb452e3517aa9e4f4b5}{sql\+\_\+set\+\_\+inchanges\+\_\+hashedval}} = \char`\"{}UPDATE files SET hashedvaluechanged=1 WHERE id=?; \char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_a48a30016c73a80ddd5de694dad070638}{sql\+\_\+set\+\_\+inchanges\+\_\+filesize}} = \char`\"{}UPDATE files SET filesizechanged=1 WHERE id=?; \char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_a86296081c599ddc648276a4e8a7699e7}{sql\+\_\+set\+\_\+inchanges\+\_\+lastmodified}} = \char`\"{}UPDATE files SET lastmodifiedchanged=1 WHERE id=?; \char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_a204ff8c5d0354b487b6e77ab17c0e106}{\+\_\+dirname}}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_a865240c40b0ff5596e16d5ff7c709565}{\+\_\+filename}}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_aa424942af01346d64f66002f897ec80e}{\+\_\+machinename}}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_a57cb4a0beb90bcf5df0d725693b1a5b9}{\+\_\+datemodified}}
+\item 
+char $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_ae0d9cf99ed8ba63c3466d6ee724a0f38}{\+\_\+hashedval}}
+\item 
+int \mbox{\hyperlink{_s_q_lite_helper_8cpp_a8fa7c9a40c7098d3a32f6c6a939898ba}{\+\_\+filesize}}
+\item 
+int \mbox{\hyperlink{_s_q_lite_helper_8cpp_a6ff722a0f3f2c0e8e2db123ddba7c66d}{\+\_\+dirid}}
+\item 
+sqlite3\+\_\+stmt $\ast$ \mbox{\hyperlink{_s_q_lite_helper_8cpp_a67d1f816562e1a4851f044e829476aed}{p\+Stmt}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_a57cb4a0beb90bcf5df0d725693b1a5b9}\label{_s_q_lite_helper_8cpp_a57cb4a0beb90bcf5df0d725693b1a5b9}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!\_datemodified@{\_datemodified}}
+\index{\_datemodified@{\_datemodified}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{\_datemodified}{\_datemodified}}
+{\footnotesize\ttfamily char$\ast$ \+\_\+datemodified}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_a6ff722a0f3f2c0e8e2db123ddba7c66d}\label{_s_q_lite_helper_8cpp_a6ff722a0f3f2c0e8e2db123ddba7c66d}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!\_dirid@{\_dirid}}
+\index{\_dirid@{\_dirid}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{\_dirid}{\_dirid}}
+{\footnotesize\ttfamily int \+\_\+dirid}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_a204ff8c5d0354b487b6e77ab17c0e106}\label{_s_q_lite_helper_8cpp_a204ff8c5d0354b487b6e77ab17c0e106}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!\_dirname@{\_dirname}}
+\index{\_dirname@{\_dirname}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{\_dirname}{\_dirname}}
+{\footnotesize\ttfamily char$\ast$ \+\_\+dirname}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_a865240c40b0ff5596e16d5ff7c709565}\label{_s_q_lite_helper_8cpp_a865240c40b0ff5596e16d5ff7c709565}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!\_filename@{\_filename}}
+\index{\_filename@{\_filename}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{\_filename}{\_filename}}
+{\footnotesize\ttfamily char$\ast$ \+\_\+filename}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_a8fa7c9a40c7098d3a32f6c6a939898ba}\label{_s_q_lite_helper_8cpp_a8fa7c9a40c7098d3a32f6c6a939898ba}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!\_filesize@{\_filesize}}
+\index{\_filesize@{\_filesize}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{\_filesize}{\_filesize}}
+{\footnotesize\ttfamily int \+\_\+filesize}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_ae0d9cf99ed8ba63c3466d6ee724a0f38}\label{_s_q_lite_helper_8cpp_ae0d9cf99ed8ba63c3466d6ee724a0f38}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!\_hashedval@{\_hashedval}}
+\index{\_hashedval@{\_hashedval}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{\_hashedval}{\_hashedval}}
+{\footnotesize\ttfamily char$\ast$ \+\_\+hashedval}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_aa424942af01346d64f66002f897ec80e}\label{_s_q_lite_helper_8cpp_aa424942af01346d64f66002f897ec80e}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!\_machinename@{\_machinename}}
+\index{\_machinename@{\_machinename}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{\_machinename}{\_machinename}}
+{\footnotesize\ttfamily char$\ast$ \+\_\+machinename}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_a67d1f816562e1a4851f044e829476aed}\label{_s_q_lite_helper_8cpp_a67d1f816562e1a4851f044e829476aed}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!pStmt@{pStmt}}
+\index{pStmt@{pStmt}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{pStmt}{pStmt}}
+{\footnotesize\ttfamily sqlite3\+\_\+stmt$\ast$ p\+Stmt}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_a0b374634088c38fd0277d22cee8a076a}\label{_s_q_lite_helper_8cpp_a0b374634088c38fd0277d22cee8a076a}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!sql\_check\_if\_datemodified\_changed@{sql\_check\_if\_datemodified\_changed}}
+\index{sql\_check\_if\_datemodified\_changed@{sql\_check\_if\_datemodified\_changed}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{sql\_check\_if\_datemodified\_changed}{sql\_check\_if\_datemodified\_changed}}
+{\footnotesize\ttfamily char$\ast$ sql\+\_\+check\+\_\+if\+\_\+datemodified\+\_\+changed = \char`\"{}select lastmodifiedchanged from files where id=?; \char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_a2a3a606e5782280c0d3693624d86223a}\label{_s_q_lite_helper_8cpp_a2a3a606e5782280c0d3693624d86223a}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!sql\_check\_if\_datemodified\_changed\_in\_files@{sql\_check\_if\_datemodified\_changed\_in\_files}}
+\index{sql\_check\_if\_datemodified\_changed\_in\_files@{sql\_check\_if\_datemodified\_changed\_in\_files}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{sql\_check\_if\_datemodified\_changed\_in\_files}{sql\_check\_if\_datemodified\_changed\_in\_files}}
+{\footnotesize\ttfamily char$\ast$ sql\+\_\+check\+\_\+if\+\_\+datemodified\+\_\+changed\+\_\+in\+\_\+files = \char`\"{}select id from files where lastmodified = ? and id = ?; \char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_aadee09a8afa07a05dc77b8fb183502fe}\label{_s_q_lite_helper_8cpp_aadee09a8afa07a05dc77b8fb183502fe}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!sql\_check\_if\_filesize\_changed@{sql\_check\_if\_filesize\_changed}}
+\index{sql\_check\_if\_filesize\_changed@{sql\_check\_if\_filesize\_changed}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{sql\_check\_if\_filesize\_changed}{sql\_check\_if\_filesize\_changed}}
+{\footnotesize\ttfamily char$\ast$ sql\+\_\+check\+\_\+if\+\_\+filesize\+\_\+changed = \char`\"{}select filesizechanged from files where id=?; \char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_a11a095d4c486bbde5cd5c03fdeef757e}\label{_s_q_lite_helper_8cpp_a11a095d4c486bbde5cd5c03fdeef757e}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!sql\_check\_if\_filesize\_changed\_in\_files@{sql\_check\_if\_filesize\_changed\_in\_files}}
+\index{sql\_check\_if\_filesize\_changed\_in\_files@{sql\_check\_if\_filesize\_changed\_in\_files}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{sql\_check\_if\_filesize\_changed\_in\_files}{sql\_check\_if\_filesize\_changed\_in\_files}}
+{\footnotesize\ttfamily char$\ast$ sql\+\_\+check\+\_\+if\+\_\+filesize\+\_\+changed\+\_\+in\+\_\+files = \char`\"{}select id from files where filesize = ? and id = ?; \char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_a30a8474684b57677c7f4ade261d52396}\label{_s_q_lite_helper_8cpp_a30a8474684b57677c7f4ade261d52396}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!sql\_check\_if\_hashedval\_changed@{sql\_check\_if\_hashedval\_changed}}
+\index{sql\_check\_if\_hashedval\_changed@{sql\_check\_if\_hashedval\_changed}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{sql\_check\_if\_hashedval\_changed}{sql\_check\_if\_hashedval\_changed}}
+{\footnotesize\ttfamily char$\ast$ sql\+\_\+check\+\_\+if\+\_\+hashedval\+\_\+changed = \char`\"{}select hashedvaluechanged from files where id=?; \char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_a24430c9279b2f12e6865146481668de6}\label{_s_q_lite_helper_8cpp_a24430c9279b2f12e6865146481668de6}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!sql\_check\_if\_hashedval\_changed\_in\_files@{sql\_check\_if\_hashedval\_changed\_in\_files}}
+\index{sql\_check\_if\_hashedval\_changed\_in\_files@{sql\_check\_if\_hashedval\_changed\_in\_files}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{sql\_check\_if\_hashedval\_changed\_in\_files}{sql\_check\_if\_hashedval\_changed\_in\_files}}
+{\footnotesize\ttfamily char$\ast$ sql\+\_\+check\+\_\+if\+\_\+hashedval\+\_\+changed\+\_\+in\+\_\+files = \char`\"{}select id from files where hashedvalue = ? and id = ?; \char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_a6c55458a9f14bda4df0194ad7ea8d24f}\label{_s_q_lite_helper_8cpp_a6c55458a9f14bda4df0194ad7ea8d24f}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!sql\_check\_if\_value\_changed\_in\_changes\_intval@{sql\_check\_if\_value\_changed\_in\_changes\_intval}}
+\index{sql\_check\_if\_value\_changed\_in\_changes\_intval@{sql\_check\_if\_value\_changed\_in\_changes\_intval}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{sql\_check\_if\_value\_changed\_in\_changes\_intval}{sql\_check\_if\_value\_changed\_in\_changes\_intval}}
+{\footnotesize\ttfamily char$\ast$ sql\+\_\+check\+\_\+if\+\_\+value\+\_\+changed\+\_\+in\+\_\+changes\+\_\+intval = \char`\"{}select id from changes where fileid = ? and intvalue = ?; \char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_a6eaedbf4c3a151599a4dff198e474d86}\label{_s_q_lite_helper_8cpp_a6eaedbf4c3a151599a4dff198e474d86}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!sql\_check\_if\_value\_changed\_in\_changes\_textval@{sql\_check\_if\_value\_changed\_in\_changes\_textval}}
+\index{sql\_check\_if\_value\_changed\_in\_changes\_textval@{sql\_check\_if\_value\_changed\_in\_changes\_textval}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{sql\_check\_if\_value\_changed\_in\_changes\_textval}{sql\_check\_if\_value\_changed\_in\_changes\_textval}}
+{\footnotesize\ttfamily char$\ast$ sql\+\_\+check\+\_\+if\+\_\+value\+\_\+changed\+\_\+in\+\_\+changes\+\_\+textval = \char`\"{}select id from changes where fileid = ? and textvalue = ?; \char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_ad69bcee87ad4e63344e2788867af9d33}\label{_s_q_lite_helper_8cpp_ad69bcee87ad4e63344e2788867af9d33}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!sql\_get\_directory\_id@{sql\_get\_directory\_id}}
+\index{sql\_get\_directory\_id@{sql\_get\_directory\_id}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{sql\_get\_directory\_id}{sql\_get\_directory\_id}}
+{\footnotesize\ttfamily char$\ast$ sql\+\_\+get\+\_\+directory\+\_\+id = \char`\"{}select id from directories where dirname=? and \mbox{\hyperlink{mysqlcontroller_8cpp_a305d17d000ed63060cc0e874bf27e05c}{machinename}}= ?; \char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_a8141fadef4ba0f5b6d6661c5dc0a5edc}\label{_s_q_lite_helper_8cpp_a8141fadef4ba0f5b6d6661c5dc0a5edc}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!sql\_get\_file\_id@{sql\_get\_file\_id}}
+\index{sql\_get\_file\_id@{sql\_get\_file\_id}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{sql\_get\_file\_id}{sql\_get\_file\_id}}
+{\footnotesize\ttfamily char$\ast$ sql\+\_\+get\+\_\+file\+\_\+id = \char`\"{}select id from files where filename=? and dirid=?; \char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_a1ffdb057e3cdae8e7c5b832f735d97bd}\label{_s_q_lite_helper_8cpp_a1ffdb057e3cdae8e7c5b832f735d97bd}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!sql\_save\_intval\_in\_changes@{sql\_save\_intval\_in\_changes}}
+\index{sql\_save\_intval\_in\_changes@{sql\_save\_intval\_in\_changes}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{sql\_save\_intval\_in\_changes}{sql\_save\_intval\_in\_changes}}
+{\footnotesize\ttfamily char$\ast$ sql\+\_\+save\+\_\+intval\+\_\+in\+\_\+changes = \char`\"{}INSERT INTO changes (fileid,datechanged,intvalue) VALUES (?,?,?); \char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_a9881226bc88bfd09be3a2c29af05419f}\label{_s_q_lite_helper_8cpp_a9881226bc88bfd09be3a2c29af05419f}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!sql\_save\_newfile\_hashedval@{sql\_save\_newfile\_hashedval}}
+\index{sql\_save\_newfile\_hashedval@{sql\_save\_newfile\_hashedval}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{sql\_save\_newfile\_hashedval}{sql\_save\_newfile\_hashedval}}
+{\footnotesize\ttfamily char$\ast$ sql\+\_\+save\+\_\+newfile\+\_\+hashedval = \char`\"{}insert into files (dirid, dateadded, filename, filesize, lastmodified, hashval) VALUES (?,?,?,?,?,?); \char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_a970ba9c2ed3ddfaa6961348c39d128db}\label{_s_q_lite_helper_8cpp_a970ba9c2ed3ddfaa6961348c39d128db}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!sql\_save\_newfile\_nohashedval@{sql\_save\_newfile\_nohashedval}}
+\index{sql\_save\_newfile\_nohashedval@{sql\_save\_newfile\_nohashedval}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{sql\_save\_newfile\_nohashedval}{sql\_save\_newfile\_nohashedval}}
+{\footnotesize\ttfamily char$\ast$ sql\+\_\+save\+\_\+newfile\+\_\+nohashedval = \char`\"{}insert into files (dirid, dateadded, filename, filesize, lastmodified) VALUES (?,?,?,?,?); \char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_a022241ec805998c398b20c90d1a51256}\label{_s_q_lite_helper_8cpp_a022241ec805998c398b20c90d1a51256}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!sql\_save\_textval\_in\_changes@{sql\_save\_textval\_in\_changes}}
+\index{sql\_save\_textval\_in\_changes@{sql\_save\_textval\_in\_changes}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{sql\_save\_textval\_in\_changes}{sql\_save\_textval\_in\_changes}}
+{\footnotesize\ttfamily char$\ast$ sql\+\_\+save\+\_\+textval\+\_\+in\+\_\+changes = \char`\"{}INSERT INTO changes (fileid,datechanged,textvalue) VALUES (?,?,?); \char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_a48a30016c73a80ddd5de694dad070638}\label{_s_q_lite_helper_8cpp_a48a30016c73a80ddd5de694dad070638}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!sql\_set\_inchanges\_filesize@{sql\_set\_inchanges\_filesize}}
+\index{sql\_set\_inchanges\_filesize@{sql\_set\_inchanges\_filesize}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{sql\_set\_inchanges\_filesize}{sql\_set\_inchanges\_filesize}}
+{\footnotesize\ttfamily char$\ast$ sql\+\_\+set\+\_\+inchanges\+\_\+filesize = \char`\"{}UPDATE files SET filesizechanged=1 WHERE id=?; \char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_abea92ed80d2eadb452e3517aa9e4f4b5}\label{_s_q_lite_helper_8cpp_abea92ed80d2eadb452e3517aa9e4f4b5}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!sql\_set\_inchanges\_hashedval@{sql\_set\_inchanges\_hashedval}}
+\index{sql\_set\_inchanges\_hashedval@{sql\_set\_inchanges\_hashedval}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{sql\_set\_inchanges\_hashedval}{sql\_set\_inchanges\_hashedval}}
+{\footnotesize\ttfamily char$\ast$ sql\+\_\+set\+\_\+inchanges\+\_\+hashedval = \char`\"{}UPDATE files SET hashedvaluechanged=1 WHERE id=?; \char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+
+\mbox{\Hypertarget{_s_q_lite_helper_8cpp_a86296081c599ddc648276a4e8a7699e7}\label{_s_q_lite_helper_8cpp_a86296081c599ddc648276a4e8a7699e7}} 
+\index{SQLiteHelper.cpp@{SQLiteHelper.cpp}!sql\_set\_inchanges\_lastmodified@{sql\_set\_inchanges\_lastmodified}}
+\index{sql\_set\_inchanges\_lastmodified@{sql\_set\_inchanges\_lastmodified}!SQLiteHelper.cpp@{SQLiteHelper.cpp}}
+\doxysubsubsection{\texorpdfstring{sql\_set\_inchanges\_lastmodified}{sql\_set\_inchanges\_lastmodified}}
+{\footnotesize\ttfamily char$\ast$ sql\+\_\+set\+\_\+inchanges\+\_\+lastmodified = \char`\"{}UPDATE files SET lastmodifiedchanged=1 WHERE id=?; \char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_s_q_lite_helper_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{_s_q_lite_helper_8cpp_source}{SQLite\+Helper.\+cpp}}.
+

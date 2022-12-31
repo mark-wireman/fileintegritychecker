@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_helper" xml:lang="en-US">
+<title>Helper Class Reference</title>
+<indexterm><primary>Helper</primary></indexterm>
+<para>
+<computeroutput>#include &lt;helper.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Types    </title>
+        <itemizedlist>
+            <listitem><para>enum <link linkend="_class_helper_1a925994da414b49c76b77851bac11a0ed">AttributeToCheck</link> { <link linkend="_class_helper_1a925994da414b49c76b77851bac11a0eda0a2c2ad45a8ef22d0854418220f13f07">HashedVal</link> = 1
+, <link linkend="_class_helper_1a925994da414b49c76b77851bac11a0edad916bef10461ccf8f246674ddc77dd49">FileSize</link> = 2
+, <link linkend="_class_helper_1a925994da414b49c76b77851bac11a0eda06af975a56ed4ed9fcf3afabd41ba0b3">DateModified</link> = 3
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static int <link linkend="_class_helper_1a0f9c4b55b87835fc629ea6327b51202f">checkIfHashvalExistInFiles</link> (const int fileId, const char *hval, sqlite3 *db)</para>
+</listitem>
+            <listitem><para>static int <link linkend="_class_helper_1aa18f3c515ed5d6ce6af10bbaa3686fa7">checkIfHashvalExistInChanges</link> (const int fileId, const char *hval, sqlite3 *db)</para>
+</listitem>
+            <listitem><para>static int <link linkend="_class_helper_1a2e25b7788bfb4d832089068d2d87390d">checkIfFileSizeExistInChanges</link> (const int fileId, const int filesize, sqlite3 *db)</para>
+</listitem>
+            <listitem><para>static int <link linkend="_class_helper_1a986f4e981d6ec7422919c64476cf66d1">checkIfFileSizeIsVerifiedOrModified</link> (const int fileId, sqlite3 *db)</para>
+</listitem>
+            <listitem><para>static int <link linkend="_class_helper_1a2d7b2ef729d42a55c99568958a3362a9">checkIfDateModifiedExistInFiles</link> (const int fileId, const char *datemodified, sqlite3 *db)</para>
+</listitem>
+            <listitem><para>static int <link linkend="_class_helper_1ac980a433560328044e9916d2f5a99e8d">checkIfDateModifiedExistInChanges</link> (const int fileId, const char *datemodified, sqlite3 *db)</para>
+</listitem>
+            <listitem><para>static int <link linkend="_class_helper_1ae449b9e499fa75c53f06522a6155b08a">checkIfAttributeIsVerifiedOrModified</link> (const int fileId, const <link linkend="_class_helper_1a925994da414b49c76b77851bac11a0ed">AttributeToCheck</link> attribute, sqlite3 *db)</para>
+</listitem>
+            <listitem><para>static char * <link linkend="_class_helper_1a21eb1535d481de637af099ba556e40cd">getCurrentTime</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="_helper_8h_source_1l00014">14</link> of file <link linkend="_helper_8h_source">helper.h</link>.</para>
+</section>
+<section>
+<title>Member Enumeration Documentation</title>
+<anchor xml:id="_class_helper_1a925994da414b49c76b77851bac11a0ed"/><section>
+    <title>AttributeToCheck</title>
+<indexterm><primary>AttributeToCheck</primary><secondary>Helper</secondary></indexterm>
+<indexterm><primary>Helper</primary><secondary>AttributeToCheck</secondary></indexterm>
+<para><computeroutput>enum <link linkend="_class_helper_1a925994da414b49c76b77851bac11a0ed">Helper::AttributeToCheck</link></computeroutput></para><informaltable frame="all">
+<title>Enumerator</title>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colname='c1'/>
+      <colspec colname='c2'/>
+<tbody>
+<row><entry><indexterm><primary>HashedVal</primary><secondary>Helper</secondary></indexterm>
+<indexterm><primary>Helper</primary><secondary>HashedVal</secondary></indexterm>
+<anchor xml:id="_class_helper_1a925994da414b49c76b77851bac11a0eda0a2c2ad45a8ef22d0854418220f13f07"/>HashedVal</entry><entry></entry></row><row><entry><indexterm><primary>FileSize</primary><secondary>Helper</secondary></indexterm>
+<indexterm><primary>Helper</primary><secondary>FileSize</secondary></indexterm>
+<anchor xml:id="_class_helper_1a925994da414b49c76b77851bac11a0edad916bef10461ccf8f246674ddc77dd49"/>FileSize</entry><entry></entry></row><row><entry><indexterm><primary>DateModified</primary><secondary>Helper</secondary></indexterm>
+<indexterm><primary>Helper</primary><secondary>DateModified</secondary></indexterm>
+<anchor xml:id="_class_helper_1a925994da414b49c76b77851bac11a0eda06af975a56ed4ed9fcf3afabd41ba0b3"/>DateModified</entry><entry></entry></row>    </tbody>
+    </tgroup>
+</informaltable>
+<para>
+Definition at line <link linkend="_helper_8h_source_1l00016">16</link> of file <link linkend="_helper_8h_source">helper.h</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_helper_1ae449b9e499fa75c53f06522a6155b08a"/><section>
+    <title>checkIfAttributeIsVerifiedOrModified()</title>
+<indexterm><primary>checkIfAttributeIsVerifiedOrModified</primary><secondary>Helper</secondary></indexterm>
+<indexterm><primary>Helper</primary><secondary>checkIfAttributeIsVerifiedOrModified</secondary></indexterm>
+<para><computeroutput>static int Helper::checkIfAttributeIsVerifiedOrModified (const int fileId, const <link linkend="_class_helper_1a925994da414b49c76b77851bac11a0ed">AttributeToCheck</link> attribute, sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_helper_1ac980a433560328044e9916d2f5a99e8d"/><section>
+    <title>checkIfDateModifiedExistInChanges()</title>
+<indexterm><primary>checkIfDateModifiedExistInChanges</primary><secondary>Helper</secondary></indexterm>
+<indexterm><primary>Helper</primary><secondary>checkIfDateModifiedExistInChanges</secondary></indexterm>
+<para><computeroutput>static int Helper::checkIfDateModifiedExistInChanges (const int fileId, const char * datemodified, sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_helper_1a2d7b2ef729d42a55c99568958a3362a9"/><section>
+    <title>checkIfDateModifiedExistInFiles()</title>
+<indexterm><primary>checkIfDateModifiedExistInFiles</primary><secondary>Helper</secondary></indexterm>
+<indexterm><primary>Helper</primary><secondary>checkIfDateModifiedExistInFiles</secondary></indexterm>
+<para><computeroutput>static int Helper::checkIfDateModifiedExistInFiles (const int fileId, const char * datemodified, sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_helper_1a2e25b7788bfb4d832089068d2d87390d"/><section>
+    <title>checkIfFileSizeExistInChanges()</title>
+<indexterm><primary>checkIfFileSizeExistInChanges</primary><secondary>Helper</secondary></indexterm>
+<indexterm><primary>Helper</primary><secondary>checkIfFileSizeExistInChanges</secondary></indexterm>
+<para><computeroutput>static int Helper::checkIfFileSizeExistInChanges (const int fileId, const int filesize, sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_helper_1a986f4e981d6ec7422919c64476cf66d1"/><section>
+    <title>checkIfFileSizeIsVerifiedOrModified()</title>
+<indexterm><primary>checkIfFileSizeIsVerifiedOrModified</primary><secondary>Helper</secondary></indexterm>
+<indexterm><primary>Helper</primary><secondary>checkIfFileSizeIsVerifiedOrModified</secondary></indexterm>
+<para><computeroutput>static int Helper::checkIfFileSizeIsVerifiedOrModified (const int fileId, sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_helper_1aa18f3c515ed5d6ce6af10bbaa3686fa7"/><section>
+    <title>checkIfHashvalExistInChanges()</title>
+<indexterm><primary>checkIfHashvalExistInChanges</primary><secondary>Helper</secondary></indexterm>
+<indexterm><primary>Helper</primary><secondary>checkIfHashvalExistInChanges</secondary></indexterm>
+<para><computeroutput>static int Helper::checkIfHashvalExistInChanges (const int fileId, const char * hval, sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_helper_1a0f9c4b55b87835fc629ea6327b51202f"/><section>
+    <title>checkIfHashvalExistInFiles()</title>
+<indexterm><primary>checkIfHashvalExistInFiles</primary><secondary>Helper</secondary></indexterm>
+<indexterm><primary>Helper</primary><secondary>checkIfHashvalExistInFiles</secondary></indexterm>
+<para><computeroutput>static int Helper::checkIfHashvalExistInFiles (const int fileId, const char * hval, sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_helper_1a21eb1535d481de637af099ba556e40cd"/><section>
+    <title>getCurrentTime()</title>
+<indexterm><primary>getCurrentTime</primary><secondary>Helper</secondary></indexterm>
+<indexterm><primary>Helper</primary><secondary>getCurrentTime</secondary></indexterm>
+<para><computeroutput>static char * Helper::getCurrentTime ( )<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para>
+The documentation for this class was generated from the following file:</para>
+headers/<link linkend="_helper_8h">helper.h</link></section>
+</section>

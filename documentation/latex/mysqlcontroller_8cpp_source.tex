@@ -1,0 +1,275 @@
+\hypertarget{mysqlcontroller_8cpp_source}{}\doxysection{mysqlcontroller.\+cpp}
+\label{mysqlcontroller_8cpp_source}\index{C:/Users/mark\_/source/repos/fileintegritychecker/src/mysqlcontroller.cpp@{C:/Users/mark\_/source/repos/fileintegritychecker/src/mysqlcontroller.cpp}}
+\mbox{\hyperlink{mysqlcontroller_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}../headers/mysqlcontroller.h"{}}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00003}\mbox{\hyperlink{mysqlcontroller_8cpp_ad78224efe1d3fb39b67ca74ad9d9eec7}{00003}} \textcolor{preprocessor}{\#define STRING\_SIZE 65535}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00004}\mbox{\hyperlink{mysqlcontroller_8cpp_a32ff108940138d3b5038cd11fbabf293}{00004}} \textcolor{preprocessor}{\#define SAVEDIRSTOREDPROCSTMT "{}call saveDirectoryDetails(?, ?, ?)"{}}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00005}\mbox{\hyperlink{mysqlcontroller_8cpp_a0e90c82df49e2043941930efcab0fb89}{00005}} \textcolor{preprocessor}{\#define SAVEFILEINFOPROCSTMT "{}call saveFileHashVal(?,?,?,?,?)"{}}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00007}00007 \textcolor{comment}{//MYSQL *connection, mysql;}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00008}\mbox{\hyperlink{mysqlcontroller_8cpp_af203df082d5c6dcaa0c88b07cf86466d}{00008}} \textcolor{keywordtype}{char}* \mbox{\hyperlink{mysqlcontroller_8cpp_af203df082d5c6dcaa0c88b07cf86466d}{hostname}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00009}\mbox{\hyperlink{mysqlcontroller_8cpp_aa1d4dd60015ed611b5141e9472985b88}{00009}} \textcolor{keywordtype}{char}* \mbox{\hyperlink{mysqlcontroller_8cpp_aa1d4dd60015ed611b5141e9472985b88}{dbasename}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00010}\mbox{\hyperlink{mysqlcontroller_8cpp_a9b20c006bd90a09e1465fb668700e81d}{00010}} \textcolor{keywordtype}{char}* \mbox{\hyperlink{mysqlcontroller_8cpp_a9b20c006bd90a09e1465fb668700e81d}{username}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00011}\mbox{\hyperlink{mysqlcontroller_8cpp_a59460a3ff2c12443d1022e5cc0fba85c}{00011}} \textcolor{keywordtype}{char}* \mbox{\hyperlink{mysqlcontroller_8cpp_a59460a3ff2c12443d1022e5cc0fba85c}{password}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00012}\mbox{\hyperlink{mysqlcontroller_8cpp_a305d17d000ed63060cc0e874bf27e05c}{00012}} \textcolor{keywordtype}{char}* \mbox{\hyperlink{mysqlcontroller_8cpp_a305d17d000ed63060cc0e874bf27e05c}{machinename}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00013}\mbox{\hyperlink{mysqlcontroller_8cpp_a63c89c04d1feae07ca35558055155ffb}{00013}} \textcolor{keywordtype}{int} \mbox{\hyperlink{mysqlcontroller_8cpp_a63c89c04d1feae07ca35558055155ffb}{port}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00014}\mbox{\hyperlink{mysqlcontroller_8cpp_a89f234133d3efe315836311cbf21c64b}{00014}} \textcolor{keywordtype}{int} \mbox{\hyperlink{mysqlcontroller_8cpp_a89f234133d3efe315836311cbf21c64b}{state}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00015}00015 \textcolor{comment}{//MYSQL\_STMT *storedProcStmt = NULL;}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00017}\mbox{\hyperlink{mysqlcontroller_8cpp_a689a469da10bca69c80830e8b2785e2c}{00017}} sql::Driver *\mbox{\hyperlink{mysqlcontroller_8cpp_a689a469da10bca69c80830e8b2785e2c}{driver}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00018}\mbox{\hyperlink{mysqlcontroller_8cpp_a9e6d0921c2e7685b6a1d08cb89b727bb}{00018}} sql::Connection *\mbox{\hyperlink{mysqlcontroller_8cpp_a9e6d0921c2e7685b6a1d08cb89b727bb}{con}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00019}\mbox{\hyperlink{mysqlcontroller_8cpp_ab6db88c378faf719a15498d0b3a37b31}{00019}} sql::Statement *\mbox{\hyperlink{mysqlcontroller_8cpp_ab6db88c378faf719a15498d0b3a37b31}{stmt}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00020}\mbox{\hyperlink{mysqlcontroller_8cpp_aafbbfadf03a197580df9925af46a548e}{00020}} sql::ResultSet *\mbox{\hyperlink{mysqlcontroller_8cpp_aafbbfadf03a197580df9925af46a548e}{res}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00021}\mbox{\hyperlink{mysqlcontroller_8cpp_aa6cc4c5575dfc2326a2ed948b3ffed62}{00021}} sql::PreparedStatement *\mbox{\hyperlink{mysqlcontroller_8cpp_aa6cc4c5575dfc2326a2ed948b3ffed62}{savedirprepStmt}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00022}\mbox{\hyperlink{mysqlcontroller_8cpp_adc2d5bbd5830af1932c48244f3c16264}{00022}} sql::PreparedStatement *\mbox{\hyperlink{mysqlcontroller_8cpp_adc2d5bbd5830af1932c48244f3c16264}{savedfileprepStmt}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00028}00028 mysqlcontroller::mysqlcontroller() \{\}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00030}00030 mysqlcontroller::mysqlcontroller(\textcolor{keywordtype}{char}* host, \textcolor{keywordtype}{char}* dbase, \textcolor{keywordtype}{char}* uname, \textcolor{keywordtype}{char}* pwd, \textcolor{keywordtype}{int} portno, \textcolor{keywordtype}{char}* mname)}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00031}00031 \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00032}00032     \mbox{\hyperlink{mysqlcontroller_8cpp_af203df082d5c6dcaa0c88b07cf86466d}{hostname}} = host;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00033}00033     \mbox{\hyperlink{mysqlcontroller_8cpp_aa1d4dd60015ed611b5141e9472985b88}{dbasename}} = dbase;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00034}00034     \mbox{\hyperlink{mysqlcontroller_8cpp_a9b20c006bd90a09e1465fb668700e81d}{username}}= uname;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00035}00035     \mbox{\hyperlink{mysqlcontroller_8cpp_a59460a3ff2c12443d1022e5cc0fba85c}{password}} = pwd;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00036}00036     \mbox{\hyperlink{mysqlcontroller_8cpp_a63c89c04d1feae07ca35558055155ffb}{port}} = portno;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00037}00037     \mbox{\hyperlink{mysqlcontroller_8cpp_a305d17d000ed63060cc0e874bf27e05c}{machinename}} = mname;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00038}00038 \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00044}00044 mysqlcontroller::\string~mysqlcontroller() \{\}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00051}00051 \textcolor{keywordtype}{void} mysqlcontroller::setHOSTNAME(\textcolor{keywordtype}{char}* host) \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00052}00052     \mbox{\hyperlink{mysqlcontroller_8cpp_af203df082d5c6dcaa0c88b07cf86466d}{hostname}} = host;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00053}00053 \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00060}00060 \textcolor{keywordtype}{void} mysqlcontroller::setDBASENAME(\textcolor{keywordtype}{char}* dbase) \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00061}00061     \mbox{\hyperlink{mysqlcontroller_8cpp_aa1d4dd60015ed611b5141e9472985b88}{dbasename}} = dbase;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00062}00062 \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00069}00069 \textcolor{keywordtype}{void} mysqlcontroller::setUSERNAME(\textcolor{keywordtype}{char}* uname) \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00070}00070     \mbox{\hyperlink{mysqlcontroller_8cpp_a9b20c006bd90a09e1465fb668700e81d}{username}} = uname;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00071}00071 \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00078}00078 \textcolor{keywordtype}{void} mysqlcontroller::setPASSWORD(\textcolor{keywordtype}{char}* pwd) \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00079}00079     \mbox{\hyperlink{mysqlcontroller_8cpp_a59460a3ff2c12443d1022e5cc0fba85c}{password}} = pwd;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00080}00080 \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00087}00087 \textcolor{keywordtype}{void} mysqlcontroller::setPORT(\textcolor{keywordtype}{int} portno) \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00088}00088     \mbox{\hyperlink{mysqlcontroller_8cpp_a63c89c04d1feae07ca35558055155ffb}{port}} = portno;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00089}00089 \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00096}00096 \textcolor{keywordtype}{void} mysqlcontroller::setMACHINENAME(\textcolor{keywordtype}{char}* mname) \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00097}00097     \mbox{\hyperlink{mysqlcontroller_8cpp_a305d17d000ed63060cc0e874bf27e05c}{machinename}} = mname;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00098}00098 \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00105}00105 \textcolor{keywordtype}{char}* mysqlcontroller::getHOSTNAME() \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00106}00106     \textcolor{keywordflow}{return} \mbox{\hyperlink{mysqlcontroller_8cpp_af203df082d5c6dcaa0c88b07cf86466d}{hostname}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00107}00107 \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00114}00114 \textcolor{keywordtype}{char}* mysqlcontroller::getDBASENAME() \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00115}00115     \textcolor{keywordflow}{return} \mbox{\hyperlink{mysqlcontroller_8cpp_aa1d4dd60015ed611b5141e9472985b88}{dbasename}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00116}00116 \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00123}00123 \textcolor{keywordtype}{char}* mysqlcontroller::getUSERNAME() \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00124}00124     \textcolor{keywordflow}{return} \mbox{\hyperlink{mysqlcontroller_8cpp_a9b20c006bd90a09e1465fb668700e81d}{username}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00125}00125 \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00132}00132 \textcolor{keywordtype}{char}* mysqlcontroller::getPASSWORD() \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00133}00133     \textcolor{keywordflow}{return} \mbox{\hyperlink{mysqlcontroller_8cpp_a59460a3ff2c12443d1022e5cc0fba85c}{password}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00134}00134 \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00135}00135 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00141}00141 \textcolor{keywordtype}{int} mysqlcontroller::getPORT() \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00142}00142     \textcolor{keywordflow}{return} \mbox{\hyperlink{mysqlcontroller_8cpp_a63c89c04d1feae07ca35558055155ffb}{port}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00143}00143 \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00144}00144 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00150}00150 \textcolor{keywordtype}{char}* mysqlcontroller::getMACHINENAME() \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00151}00151     \textcolor{keywordflow}{return} \mbox{\hyperlink{mysqlcontroller_8cpp_a305d17d000ed63060cc0e874bf27e05c}{machinename}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00152}00152 \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00153}00153 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00158}00158 \textcolor{keywordtype}{void} mysqlcontroller::initPreparedStatements() \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00159}00159 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00160}00160     \mbox{\hyperlink{mysqlcontroller_8cpp_aa6cc4c5575dfc2326a2ed948b3ffed62}{savedirprepStmt}} = \mbox{\hyperlink{mysqlcontroller_8cpp_a9e6d0921c2e7685b6a1d08cb89b727bb}{con}}-\/>prepareStatement(\mbox{\hyperlink{mysqlcontroller_8cpp_a32ff108940138d3b5038cd11fbabf293}{SAVEDIRSTOREDPROCSTMT}});}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00161}00161     \mbox{\hyperlink{mysqlcontroller_8cpp_adc2d5bbd5830af1932c48244f3c16264}{savedfileprepStmt}} = \mbox{\hyperlink{mysqlcontroller_8cpp_a9e6d0921c2e7685b6a1d08cb89b727bb}{con}}-\/>prepareStatement(\mbox{\hyperlink{mysqlcontroller_8cpp_a0e90c82df49e2043941930efcab0fb89}{SAVEFILEINFOPROCSTMT}});}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00162}00162 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00163}00163 \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00164}00164 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00165}00165 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00170}00170 \textcolor{keywordtype}{void} mysqlcontroller::initdb() \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00171}00171     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00172}00172         cout << \textcolor{stringliteral}{"{}Initializing connection to the database."{}} << std::endl;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00173}00173 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00174}00174         \textcolor{keywordtype}{string} connstr = \textcolor{stringliteral}{"{}tcp://"{}} + string(\mbox{\hyperlink{mysqlcontroller_8cpp_af203df082d5c6dcaa0c88b07cf86466d}{hostname}}) + \textcolor{stringliteral}{"{}:"{}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00175}00175         }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00176}00176         \textcolor{keywordflow}{if}(\mbox{\hyperlink{mysqlcontroller_8cpp_a63c89c04d1feae07ca35558055155ffb}{port}} == 0) \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00177}00177             connstr += \textcolor{stringliteral}{"{}3306"{}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00178}00178         \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00179}00179         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00180}00180             connstr += to\_string(\mbox{\hyperlink{mysqlcontroller_8cpp_a63c89c04d1feae07ca35558055155ffb}{port}});}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00181}00181         \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00182}00182 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00183}00183         \textcolor{comment}{/* Create a connection */}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00184}00184         \mbox{\hyperlink{mysqlcontroller_8cpp_a689a469da10bca69c80830e8b2785e2c}{driver}} = get\_driver\_instance();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00185}00185         \mbox{\hyperlink{mysqlcontroller_8cpp_a9e6d0921c2e7685b6a1d08cb89b727bb}{con}} = \mbox{\hyperlink{mysqlcontroller_8cpp_a689a469da10bca69c80830e8b2785e2c}{driver}}-\/>connect(connstr, \mbox{\hyperlink{mysqlcontroller_8cpp_a9b20c006bd90a09e1465fb668700e81d}{username}}, \mbox{\hyperlink{mysqlcontroller_8cpp_a59460a3ff2c12443d1022e5cc0fba85c}{password}});}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00186}00186         \mbox{\hyperlink{mysqlcontroller_8cpp_a9e6d0921c2e7685b6a1d08cb89b727bb}{con}}-\/>setAutoCommit(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00187}00187         \textcolor{comment}{/* Connect to the MySQL test database */}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00188}00188         \mbox{\hyperlink{mysqlcontroller_8cpp_a9e6d0921c2e7685b6a1d08cb89b727bb}{con}}-\/>setSchema(\mbox{\hyperlink{mysqlcontroller_8cpp_aa1d4dd60015ed611b5141e9472985b88}{dbasename}});}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00189}00189         cout << \textcolor{stringliteral}{"{}Successfully connected to database."{}} << endl;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00190}00190     \} \textcolor{keywordflow}{catch} (sql::SQLException \&e) \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00191}00191         cout << \textcolor{stringliteral}{"{}\# ERR: SQLException in "{}} << \_\_FILE\_\_;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00192}00192         cout << \textcolor{stringliteral}{"{}("{}} << \_\_FUNCTION\_\_ << \textcolor{stringliteral}{"{}) on line "{}} << \_\_LINE\_\_ << endl;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00193}00193         cout << \textcolor{stringliteral}{"{}\# ERR: "{}} << e.what();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00194}00194         cout << \textcolor{stringliteral}{"{} (MySQL error code: "{}} << e.getErrorCode();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00195}00195         cout << \textcolor{stringliteral}{"{}, SQLState: "{}} << e.getSQLState() << \textcolor{stringliteral}{"{} )"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00196}00196     \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00197}00197 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00198}00198     cout << endl;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00199}00199 \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00200}00200 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00207}00207 \textcolor{keywordtype}{char}* mysqlcontroller::filterApostraphe(\textcolor{keywordtype}{string} dirname) \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00208}00208     \textcolor{keywordtype}{string} retVal = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00209}00209     \textcolor{keywordtype}{char}* char\_array;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00210}00210 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00211}00211     std::vector<string> result;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00212}00212     std::stringstream s\_stream(dirname); \textcolor{comment}{//create string stream from the string}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00213}00213 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00214}00214     \textcolor{keywordflow}{while}(s\_stream.good()) \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00215}00215        \textcolor{keywordtype}{string} substr;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00216}00216        getline(s\_stream, substr, \textcolor{charliteral}{'\(\backslash\)''}); \textcolor{comment}{//get first string delimited by comma}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00217}00217        result.push\_back(substr);}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00218}00218     \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00219}00219 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00220}00220     \textcolor{keywordflow}{if}(result.size() > 1) \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00221}00221         retVal+=result.at(0);}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00222}00222 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00223}00223         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 1; i<result.size(); i++) \{    \textcolor{comment}{//print all splitted strings}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00224}00224             retVal+=\textcolor{stringliteral}{"{}'"{}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00225}00225             retVal+=\textcolor{stringliteral}{"{}'"{}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00226}00226             retVal+=result.at(i);}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00227}00227         \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00228}00228     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00229}00229         retVal = dirname;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00230}00230     \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00231}00231         }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00232}00232     \textcolor{keywordtype}{int} n = retVal.length();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00233}00233     char\_array = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[n + 1];}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00234}00234 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00235}00235     strcpy(char\_array, retVal.c\_str());}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00236}00236 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00237}00237     \textcolor{keywordflow}{return} char\_array;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00238}00238 \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00239}00239 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00245}00245 \textcolor{keywordtype}{void} mysqlcontroller::saveDirectoryName(\textcolor{keywordtype}{string} dirname) \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00246}00246 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00247}00247     \textcolor{keywordtype}{char}* dirnameverified = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[dirname.length() + 1]; \textcolor{comment}{// filterApostraphe(dirname);}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00248}00248     strcpy(dirnameverified,dirname.c\_str());}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00249}00249     }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00250}00250     initPreparedStatements();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00251}00251     \textcolor{keywordtype}{char}* currenttime = SQLiteHelper::getCurrentTime();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00252}00252 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00253}00253     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00254}00254         \mbox{\hyperlink{mysqlcontroller_8cpp_a9e6d0921c2e7685b6a1d08cb89b727bb}{con}}-\/>setAutoCommit(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00255}00255         \mbox{\hyperlink{mysqlcontroller_8cpp_aa6cc4c5575dfc2326a2ed948b3ffed62}{savedirprepStmt}}-\/>setString(1, dirnameverified);}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00256}00256         \mbox{\hyperlink{mysqlcontroller_8cpp_aa6cc4c5575dfc2326a2ed948b3ffed62}{savedirprepStmt}}-\/>setString(2, currenttime);}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00257}00257         \mbox{\hyperlink{mysqlcontroller_8cpp_aa6cc4c5575dfc2326a2ed948b3ffed62}{savedirprepStmt}}-\/>setString(3, \mbox{\hyperlink{mysqlcontroller_8cpp_a305d17d000ed63060cc0e874bf27e05c}{machinename}});}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00258}00258         \mbox{\hyperlink{mysqlcontroller_8cpp_aa6cc4c5575dfc2326a2ed948b3ffed62}{savedirprepStmt}}-\/>executeUpdate();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00259}00259         \mbox{\hyperlink{mysqlcontroller_8cpp_a9e6d0921c2e7685b6a1d08cb89b727bb}{con}}-\/>commit();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00260}00260         \mbox{\hyperlink{mysqlcontroller_8cpp_a9e6d0921c2e7685b6a1d08cb89b727bb}{con}}-\/>setAutoCommit(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00261}00261     \} \textcolor{keywordflow}{catch} (sql::SQLException \&e) \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00262}00262         cout << \textcolor{stringliteral}{"{}\# ERR: SQLException in "{}} << \_\_FILE\_\_;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00263}00263         cout << \textcolor{stringliteral}{"{}("{}} << \_\_FUNCTION\_\_ << \textcolor{stringliteral}{"{}) on line "{}} << \_\_LINE\_\_ << endl;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00264}00264         cout << \textcolor{stringliteral}{"{}\# ERR: "{}} << e.what();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00265}00265         cout << \textcolor{stringliteral}{"{} (MySQL error code: "{}} << e.getErrorCode();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00266}00266         cout << \textcolor{stringliteral}{"{}, SQLState: "{}} << e.getSQLState() << \textcolor{stringliteral}{"{} )"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00267}00267     \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00268}00268 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00269}00269     closePreparedStatements();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00270}00270 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00271}00271 \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00272}00272 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00278}00278 \textcolor{keywordtype}{void} mysqlcontroller::saveDirectoryName\_async(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&dirname) \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00279}00279     \textcolor{keywordtype}{string} dname = dirname;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00280}00280     saveDirectoryName(dname);}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00281}00281 \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00282}00282 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00290}00290 \textcolor{keywordtype}{void} mysqlcontroller::saveFileInfo\_async(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&dirname, \textcolor{keyword}{const} \textcolor{keywordtype}{string} \&fname, \textcolor{keyword}{const} \textcolor{keywordtype}{string} \&hashval) \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00291}00291     \textcolor{keywordtype}{string} dname = dirname;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00292}00292     \textcolor{keywordtype}{string} filname = fname;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00293}00293     \textcolor{keywordtype}{string} hval = hashval;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00294}00294     \textcolor{keywordtype}{string} currenttime = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00295}00295     }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00296}00296     std::time\_t t = std::time(0);   \textcolor{comment}{// get time now}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00297}00297     std::tm* now = std::localtime(\&t);}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00298}00298     \textcolor{keywordtype}{char} date\_string[100];}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00299}00299     \textcolor{keywordtype}{char} time\_string[100];}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00300}00300 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00301}00301     strftime(date\_string, 50, \textcolor{stringliteral}{"{}\%B \%d, \%Y "{}}, now);}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00302}00302     strftime(time\_string, 50, \textcolor{stringliteral}{"{}\%T"{}}, now);}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00303}00303 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00304}00304     currenttime += date\_string;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00305}00305     currenttime += time\_string;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00306}00306 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00307}00307     \mbox{\hyperlink{mysqlcontroller_8cpp_adc2d5bbd5830af1932c48244f3c16264}{savedfileprepStmt}} = \mbox{\hyperlink{mysqlcontroller_8cpp_a9e6d0921c2e7685b6a1d08cb89b727bb}{con}}-\/>prepareStatement(\mbox{\hyperlink{mysqlcontroller_8cpp_a0e90c82df49e2043941930efcab0fb89}{SAVEFILEINFOPROCSTMT}});}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00308}00308 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00309}00309     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00310}00310         \mbox{\hyperlink{mysqlcontroller_8cpp_a9e6d0921c2e7685b6a1d08cb89b727bb}{con}}-\/>setAutoCommit(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00311}00311         \mbox{\hyperlink{mysqlcontroller_8cpp_adc2d5bbd5830af1932c48244f3c16264}{savedfileprepStmt}}-\/>setString(1, dirname);}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00312}00312         \mbox{\hyperlink{mysqlcontroller_8cpp_adc2d5bbd5830af1932c48244f3c16264}{savedfileprepStmt}}-\/>setString(2, currenttime);}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00313}00313         \mbox{\hyperlink{mysqlcontroller_8cpp_adc2d5bbd5830af1932c48244f3c16264}{savedfileprepStmt}}-\/>setString(3, \mbox{\hyperlink{mysqlcontroller_8cpp_a305d17d000ed63060cc0e874bf27e05c}{machinename}});}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00314}00314         \mbox{\hyperlink{mysqlcontroller_8cpp_adc2d5bbd5830af1932c48244f3c16264}{savedfileprepStmt}}-\/>setString(4, fname);}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00315}00315         \mbox{\hyperlink{mysqlcontroller_8cpp_adc2d5bbd5830af1932c48244f3c16264}{savedfileprepStmt}}-\/>setString(5, hashval);}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00316}00316         \mbox{\hyperlink{mysqlcontroller_8cpp_adc2d5bbd5830af1932c48244f3c16264}{savedfileprepStmt}}-\/>executeUpdate();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00317}00317         \mbox{\hyperlink{mysqlcontroller_8cpp_a9e6d0921c2e7685b6a1d08cb89b727bb}{con}}-\/>commit();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00318}00318         \mbox{\hyperlink{mysqlcontroller_8cpp_a9e6d0921c2e7685b6a1d08cb89b727bb}{con}}-\/>setAutoCommit(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00319}00319     \} \textcolor{keywordflow}{catch} (sql::SQLException \&e) \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00320}00320         cout << \textcolor{stringliteral}{"{}\# ERR: SQLException in "{}} << \_\_FILE\_\_;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00321}00321         cout << \textcolor{stringliteral}{"{}("{}} << \_\_FUNCTION\_\_ << \textcolor{stringliteral}{"{}) on line "{}} << \_\_LINE\_\_ << endl;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00322}00322         cout << \textcolor{stringliteral}{"{}\# ERR: "{}} << e.what();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00323}00323         cout << \textcolor{stringliteral}{"{} (MySQL error code: "{}} << e.getErrorCode();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00324}00324         cout << \textcolor{stringliteral}{"{}, SQLState: "{}} << e.getSQLState() << \textcolor{stringliteral}{"{} )"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00325}00325     \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00326}00326 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00327}00327     \textcolor{keyword}{delete} \mbox{\hyperlink{mysqlcontroller_8cpp_adc2d5bbd5830af1932c48244f3c16264}{savedfileprepStmt}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00328}00328 \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00329}00329 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00337}00337 \textcolor{keywordtype}{void} mysqlcontroller::saveFileInfo(\textcolor{keywordtype}{string} dirname, \textcolor{keywordtype}{string} fname, \textcolor{keywordtype}{string} hashval) \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00338}00338     }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00339}00339     \textcolor{keywordtype}{char}* currenttime = SQLiteHelper::getCurrentTime();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00340}00340 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00341}00341     initPreparedStatements();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00342}00342 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00343}00343     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00344}00344         \mbox{\hyperlink{mysqlcontroller_8cpp_a9e6d0921c2e7685b6a1d08cb89b727bb}{con}}-\/>setAutoCommit(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00345}00345         \mbox{\hyperlink{mysqlcontroller_8cpp_adc2d5bbd5830af1932c48244f3c16264}{savedfileprepStmt}}-\/>setString(1, dirname);}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00346}00346         \mbox{\hyperlink{mysqlcontroller_8cpp_adc2d5bbd5830af1932c48244f3c16264}{savedfileprepStmt}}-\/>setString(2, currenttime);}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00347}00347         \mbox{\hyperlink{mysqlcontroller_8cpp_adc2d5bbd5830af1932c48244f3c16264}{savedfileprepStmt}}-\/>setString(3, \mbox{\hyperlink{mysqlcontroller_8cpp_a305d17d000ed63060cc0e874bf27e05c}{machinename}});}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00348}00348         \mbox{\hyperlink{mysqlcontroller_8cpp_adc2d5bbd5830af1932c48244f3c16264}{savedfileprepStmt}}-\/>setString(4, fname);}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00349}00349         \mbox{\hyperlink{mysqlcontroller_8cpp_adc2d5bbd5830af1932c48244f3c16264}{savedfileprepStmt}}-\/>setString(5, hashval);}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00350}00350         \mbox{\hyperlink{mysqlcontroller_8cpp_adc2d5bbd5830af1932c48244f3c16264}{savedfileprepStmt}}-\/>executeUpdate();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00351}00351         \mbox{\hyperlink{mysqlcontroller_8cpp_a9e6d0921c2e7685b6a1d08cb89b727bb}{con}}-\/>commit();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00352}00352         \mbox{\hyperlink{mysqlcontroller_8cpp_a9e6d0921c2e7685b6a1d08cb89b727bb}{con}}-\/>setAutoCommit(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00353}00353     \} \textcolor{keywordflow}{catch} (sql::SQLException \&e) \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00354}00354         cout << \textcolor{stringliteral}{"{}\# ERR: SQLException in "{}} << \_\_FILE\_\_;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00355}00355         cout << \textcolor{stringliteral}{"{}("{}} << \_\_FUNCTION\_\_ << \textcolor{stringliteral}{"{}) on line "{}} << \_\_LINE\_\_ << endl;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00356}00356         cout << \textcolor{stringliteral}{"{}\# ERR: "{}} << e.what();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00357}00357         cout << \textcolor{stringliteral}{"{} (MySQL error code: "{}} << e.getErrorCode();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00358}00358         cout << \textcolor{stringliteral}{"{}, SQLState: "{}} << e.getSQLState() << \textcolor{stringliteral}{"{} )"{}} << endl;}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00359}00359     \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00360}00360 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00361}00361     closePreparedStatements();}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00362}00362 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00363}00363 \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00364}00364 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00369}00369 \textcolor{keywordtype}{void} mysqlcontroller::closePreparedStatements() \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00370}00370     }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00371}00371     \textcolor{keyword}{delete} \mbox{\hyperlink{mysqlcontroller_8cpp_aa6cc4c5575dfc2326a2ed948b3ffed62}{savedirprepStmt}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00372}00372     \textcolor{keyword}{delete} \mbox{\hyperlink{mysqlcontroller_8cpp_adc2d5bbd5830af1932c48244f3c16264}{savedfileprepStmt}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00373}00373 \}}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00374}00374 }
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00379}00379 \textcolor{keywordtype}{void} mysqlcontroller::closedb() \{}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00380}00380     \textcolor{keyword}{delete} \mbox{\hyperlink{mysqlcontroller_8cpp_aafbbfadf03a197580df9925af46a548e}{res}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00381}00381     \textcolor{keyword}{delete} \mbox{\hyperlink{mysqlcontroller_8cpp_ab6db88c378faf719a15498d0b3a37b31}{stmt}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00382}00382     \textcolor{keyword}{delete} \mbox{\hyperlink{mysqlcontroller_8cpp_a9e6d0921c2e7685b6a1d08cb89b727bb}{con}};}
+\DoxyCodeLine{\Hypertarget{mysqlcontroller_8cpp_source_l00383}00383 \}}
+
+\end{DoxyCode}

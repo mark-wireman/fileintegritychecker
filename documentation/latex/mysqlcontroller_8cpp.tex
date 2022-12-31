@@ -1,0 +1,215 @@
+\hypertarget{mysqlcontroller_8cpp}{}\doxysection{C\+:/\+Users/mark\+\_\+/source/repos/fileintegritychecker/src/mysqlcontroller.cpp File Reference}
+\label{mysqlcontroller_8cpp}\index{C:/Users/mark\_/source/repos/fileintegritychecker/src/mysqlcontroller.cpp@{C:/Users/mark\_/source/repos/fileintegritychecker/src/mysqlcontroller.cpp}}
+{\ttfamily \#include \char`\"{}../headers/mysqlcontroller.\+h\char`\"{}}\newline
+Include dependency graph for mysqlcontroller.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{mysqlcontroller_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mysqlcontroller_8cpp_ad78224efe1d3fb39b67ca74ad9d9eec7}{STRING\+\_\+\+SIZE}}~65535
+\item 
+\#define \mbox{\hyperlink{mysqlcontroller_8cpp_a32ff108940138d3b5038cd11fbabf293}{SAVEDIRSTOREDPROCSTMT}}~\char`\"{}call save\+Directory\+Details(?, ?, ?)\char`\"{}
+\item 
+\#define \mbox{\hyperlink{mysqlcontroller_8cpp_a0e90c82df49e2043941930efcab0fb89}{SAVEFILEINFOPROCSTMT}}~\char`\"{}call save\+File\+Hash\+Val(?,?,?,?,?)\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{mysqlcontroller_8cpp_af203df082d5c6dcaa0c88b07cf86466d}{hostname}}
+\item 
+char $\ast$ \mbox{\hyperlink{mysqlcontroller_8cpp_aa1d4dd60015ed611b5141e9472985b88}{dbasename}}
+\item 
+char $\ast$ \mbox{\hyperlink{mysqlcontroller_8cpp_a9b20c006bd90a09e1465fb668700e81d}{username}}
+\item 
+char $\ast$ \mbox{\hyperlink{mysqlcontroller_8cpp_a59460a3ff2c12443d1022e5cc0fba85c}{password}}
+\item 
+char $\ast$ \mbox{\hyperlink{mysqlcontroller_8cpp_a305d17d000ed63060cc0e874bf27e05c}{machinename}}
+\item 
+int \mbox{\hyperlink{mysqlcontroller_8cpp_a63c89c04d1feae07ca35558055155ffb}{port}}
+\item 
+int \mbox{\hyperlink{mysqlcontroller_8cpp_a89f234133d3efe315836311cbf21c64b}{state}}
+\item 
+sql\+::\+Driver $\ast$ \mbox{\hyperlink{mysqlcontroller_8cpp_a689a469da10bca69c80830e8b2785e2c}{driver}}
+\item 
+sql\+::\+Connection $\ast$ \mbox{\hyperlink{mysqlcontroller_8cpp_a9e6d0921c2e7685b6a1d08cb89b727bb}{con}}
+\item 
+sql\+::\+Statement $\ast$ \mbox{\hyperlink{mysqlcontroller_8cpp_ab6db88c378faf719a15498d0b3a37b31}{stmt}}
+\item 
+sql\+::\+Result\+Set $\ast$ \mbox{\hyperlink{mysqlcontroller_8cpp_aafbbfadf03a197580df9925af46a548e}{res}}
+\item 
+sql\+::\+Prepared\+Statement $\ast$ \mbox{\hyperlink{mysqlcontroller_8cpp_aa6cc4c5575dfc2326a2ed948b3ffed62}{savedirprep\+Stmt}}
+\item 
+sql\+::\+Prepared\+Statement $\ast$ \mbox{\hyperlink{mysqlcontroller_8cpp_adc2d5bbd5830af1932c48244f3c16264}{savedfileprep\+Stmt}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{mysqlcontroller_8cpp_a32ff108940138d3b5038cd11fbabf293}\label{mysqlcontroller_8cpp_a32ff108940138d3b5038cd11fbabf293}} 
+\index{mysqlcontroller.cpp@{mysqlcontroller.cpp}!SAVEDIRSTOREDPROCSTMT@{SAVEDIRSTOREDPROCSTMT}}
+\index{SAVEDIRSTOREDPROCSTMT@{SAVEDIRSTOREDPROCSTMT}!mysqlcontroller.cpp@{mysqlcontroller.cpp}}
+\doxysubsubsection{\texorpdfstring{SAVEDIRSTOREDPROCSTMT}{SAVEDIRSTOREDPROCSTMT}}
+{\footnotesize\ttfamily \#define SAVEDIRSTOREDPROCSTMT~\char`\"{}call save\+Directory\+Details(?, ?, ?)\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{mysqlcontroller_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{mysqlcontroller_8cpp_source}{mysqlcontroller.\+cpp}}.
+
+\mbox{\Hypertarget{mysqlcontroller_8cpp_a0e90c82df49e2043941930efcab0fb89}\label{mysqlcontroller_8cpp_a0e90c82df49e2043941930efcab0fb89}} 
+\index{mysqlcontroller.cpp@{mysqlcontroller.cpp}!SAVEFILEINFOPROCSTMT@{SAVEFILEINFOPROCSTMT}}
+\index{SAVEFILEINFOPROCSTMT@{SAVEFILEINFOPROCSTMT}!mysqlcontroller.cpp@{mysqlcontroller.cpp}}
+\doxysubsubsection{\texorpdfstring{SAVEFILEINFOPROCSTMT}{SAVEFILEINFOPROCSTMT}}
+{\footnotesize\ttfamily \#define SAVEFILEINFOPROCSTMT~\char`\"{}call save\+File\+Hash\+Val(?,?,?,?,?)\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{mysqlcontroller_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{mysqlcontroller_8cpp_source}{mysqlcontroller.\+cpp}}.
+
+\mbox{\Hypertarget{mysqlcontroller_8cpp_ad78224efe1d3fb39b67ca74ad9d9eec7}\label{mysqlcontroller_8cpp_ad78224efe1d3fb39b67ca74ad9d9eec7}} 
+\index{mysqlcontroller.cpp@{mysqlcontroller.cpp}!STRING\_SIZE@{STRING\_SIZE}}
+\index{STRING\_SIZE@{STRING\_SIZE}!mysqlcontroller.cpp@{mysqlcontroller.cpp}}
+\doxysubsubsection{\texorpdfstring{STRING\_SIZE}{STRING\_SIZE}}
+{\footnotesize\ttfamily \#define STRING\+\_\+\+SIZE~65535}
+
+
+
+Definition at line \mbox{\hyperlink{mysqlcontroller_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{mysqlcontroller_8cpp_source}{mysqlcontroller.\+cpp}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{mysqlcontroller_8cpp_a9e6d0921c2e7685b6a1d08cb89b727bb}\label{mysqlcontroller_8cpp_a9e6d0921c2e7685b6a1d08cb89b727bb}} 
+\index{mysqlcontroller.cpp@{mysqlcontroller.cpp}!con@{con}}
+\index{con@{con}!mysqlcontroller.cpp@{mysqlcontroller.cpp}}
+\doxysubsubsection{\texorpdfstring{con}{con}}
+{\footnotesize\ttfamily sql\+::\+Connection$\ast$ con}
+
+
+
+Definition at line \mbox{\hyperlink{mysqlcontroller_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{mysqlcontroller_8cpp_source}{mysqlcontroller.\+cpp}}.
+
+\mbox{\Hypertarget{mysqlcontroller_8cpp_aa1d4dd60015ed611b5141e9472985b88}\label{mysqlcontroller_8cpp_aa1d4dd60015ed611b5141e9472985b88}} 
+\index{mysqlcontroller.cpp@{mysqlcontroller.cpp}!dbasename@{dbasename}}
+\index{dbasename@{dbasename}!mysqlcontroller.cpp@{mysqlcontroller.cpp}}
+\doxysubsubsection{\texorpdfstring{dbasename}{dbasename}}
+{\footnotesize\ttfamily char$\ast$ dbasename}
+
+
+
+Definition at line \mbox{\hyperlink{mysqlcontroller_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{mysqlcontroller_8cpp_source}{mysqlcontroller.\+cpp}}.
+
+\mbox{\Hypertarget{mysqlcontroller_8cpp_a689a469da10bca69c80830e8b2785e2c}\label{mysqlcontroller_8cpp_a689a469da10bca69c80830e8b2785e2c}} 
+\index{mysqlcontroller.cpp@{mysqlcontroller.cpp}!driver@{driver}}
+\index{driver@{driver}!mysqlcontroller.cpp@{mysqlcontroller.cpp}}
+\doxysubsubsection{\texorpdfstring{driver}{driver}}
+{\footnotesize\ttfamily sql\+::\+Driver$\ast$ driver}
+
+
+
+Definition at line \mbox{\hyperlink{mysqlcontroller_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{mysqlcontroller_8cpp_source}{mysqlcontroller.\+cpp}}.
+
+\mbox{\Hypertarget{mysqlcontroller_8cpp_af203df082d5c6dcaa0c88b07cf86466d}\label{mysqlcontroller_8cpp_af203df082d5c6dcaa0c88b07cf86466d}} 
+\index{mysqlcontroller.cpp@{mysqlcontroller.cpp}!hostname@{hostname}}
+\index{hostname@{hostname}!mysqlcontroller.cpp@{mysqlcontroller.cpp}}
+\doxysubsubsection{\texorpdfstring{hostname}{hostname}}
+{\footnotesize\ttfamily char$\ast$ hostname}
+
+
+
+Definition at line \mbox{\hyperlink{mysqlcontroller_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{mysqlcontroller_8cpp_source}{mysqlcontroller.\+cpp}}.
+
+\mbox{\Hypertarget{mysqlcontroller_8cpp_a305d17d000ed63060cc0e874bf27e05c}\label{mysqlcontroller_8cpp_a305d17d000ed63060cc0e874bf27e05c}} 
+\index{mysqlcontroller.cpp@{mysqlcontroller.cpp}!machinename@{machinename}}
+\index{machinename@{machinename}!mysqlcontroller.cpp@{mysqlcontroller.cpp}}
+\doxysubsubsection{\texorpdfstring{machinename}{machinename}}
+{\footnotesize\ttfamily char$\ast$ machinename}
+
+
+
+Definition at line \mbox{\hyperlink{mysqlcontroller_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{mysqlcontroller_8cpp_source}{mysqlcontroller.\+cpp}}.
+
+\mbox{\Hypertarget{mysqlcontroller_8cpp_a59460a3ff2c12443d1022e5cc0fba85c}\label{mysqlcontroller_8cpp_a59460a3ff2c12443d1022e5cc0fba85c}} 
+\index{mysqlcontroller.cpp@{mysqlcontroller.cpp}!password@{password}}
+\index{password@{password}!mysqlcontroller.cpp@{mysqlcontroller.cpp}}
+\doxysubsubsection{\texorpdfstring{password}{password}}
+{\footnotesize\ttfamily char$\ast$ password}
+
+
+
+Definition at line \mbox{\hyperlink{mysqlcontroller_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{mysqlcontroller_8cpp_source}{mysqlcontroller.\+cpp}}.
+
+\mbox{\Hypertarget{mysqlcontroller_8cpp_a63c89c04d1feae07ca35558055155ffb}\label{mysqlcontroller_8cpp_a63c89c04d1feae07ca35558055155ffb}} 
+\index{mysqlcontroller.cpp@{mysqlcontroller.cpp}!port@{port}}
+\index{port@{port}!mysqlcontroller.cpp@{mysqlcontroller.cpp}}
+\doxysubsubsection{\texorpdfstring{port}{port}}
+{\footnotesize\ttfamily int port}
+
+
+
+Definition at line \mbox{\hyperlink{mysqlcontroller_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{mysqlcontroller_8cpp_source}{mysqlcontroller.\+cpp}}.
+
+\mbox{\Hypertarget{mysqlcontroller_8cpp_aafbbfadf03a197580df9925af46a548e}\label{mysqlcontroller_8cpp_aafbbfadf03a197580df9925af46a548e}} 
+\index{mysqlcontroller.cpp@{mysqlcontroller.cpp}!res@{res}}
+\index{res@{res}!mysqlcontroller.cpp@{mysqlcontroller.cpp}}
+\doxysubsubsection{\texorpdfstring{res}{res}}
+{\footnotesize\ttfamily sql\+::\+Result\+Set$\ast$ res}
+
+
+
+Definition at line \mbox{\hyperlink{mysqlcontroller_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{mysqlcontroller_8cpp_source}{mysqlcontroller.\+cpp}}.
+
+\mbox{\Hypertarget{mysqlcontroller_8cpp_adc2d5bbd5830af1932c48244f3c16264}\label{mysqlcontroller_8cpp_adc2d5bbd5830af1932c48244f3c16264}} 
+\index{mysqlcontroller.cpp@{mysqlcontroller.cpp}!savedfileprepStmt@{savedfileprepStmt}}
+\index{savedfileprepStmt@{savedfileprepStmt}!mysqlcontroller.cpp@{mysqlcontroller.cpp}}
+\doxysubsubsection{\texorpdfstring{savedfileprepStmt}{savedfileprepStmt}}
+{\footnotesize\ttfamily sql\+::\+Prepared\+Statement$\ast$ savedfileprep\+Stmt}
+
+
+
+Definition at line \mbox{\hyperlink{mysqlcontroller_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{mysqlcontroller_8cpp_source}{mysqlcontroller.\+cpp}}.
+
+\mbox{\Hypertarget{mysqlcontroller_8cpp_aa6cc4c5575dfc2326a2ed948b3ffed62}\label{mysqlcontroller_8cpp_aa6cc4c5575dfc2326a2ed948b3ffed62}} 
+\index{mysqlcontroller.cpp@{mysqlcontroller.cpp}!savedirprepStmt@{savedirprepStmt}}
+\index{savedirprepStmt@{savedirprepStmt}!mysqlcontroller.cpp@{mysqlcontroller.cpp}}
+\doxysubsubsection{\texorpdfstring{savedirprepStmt}{savedirprepStmt}}
+{\footnotesize\ttfamily sql\+::\+Prepared\+Statement$\ast$ savedirprep\+Stmt}
+
+
+
+Definition at line \mbox{\hyperlink{mysqlcontroller_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{mysqlcontroller_8cpp_source}{mysqlcontroller.\+cpp}}.
+
+\mbox{\Hypertarget{mysqlcontroller_8cpp_a89f234133d3efe315836311cbf21c64b}\label{mysqlcontroller_8cpp_a89f234133d3efe315836311cbf21c64b}} 
+\index{mysqlcontroller.cpp@{mysqlcontroller.cpp}!state@{state}}
+\index{state@{state}!mysqlcontroller.cpp@{mysqlcontroller.cpp}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily int state}
+
+
+
+Definition at line \mbox{\hyperlink{mysqlcontroller_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{mysqlcontroller_8cpp_source}{mysqlcontroller.\+cpp}}.
+
+\mbox{\Hypertarget{mysqlcontroller_8cpp_ab6db88c378faf719a15498d0b3a37b31}\label{mysqlcontroller_8cpp_ab6db88c378faf719a15498d0b3a37b31}} 
+\index{mysqlcontroller.cpp@{mysqlcontroller.cpp}!stmt@{stmt}}
+\index{stmt@{stmt}!mysqlcontroller.cpp@{mysqlcontroller.cpp}}
+\doxysubsubsection{\texorpdfstring{stmt}{stmt}}
+{\footnotesize\ttfamily sql\+::\+Statement$\ast$ stmt}
+
+
+
+Definition at line \mbox{\hyperlink{mysqlcontroller_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{mysqlcontroller_8cpp_source}{mysqlcontroller.\+cpp}}.
+
+\mbox{\Hypertarget{mysqlcontroller_8cpp_a9b20c006bd90a09e1465fb668700e81d}\label{mysqlcontroller_8cpp_a9b20c006bd90a09e1465fb668700e81d}} 
+\index{mysqlcontroller.cpp@{mysqlcontroller.cpp}!username@{username}}
+\index{username@{username}!mysqlcontroller.cpp@{mysqlcontroller.cpp}}
+\doxysubsubsection{\texorpdfstring{username}{username}}
+{\footnotesize\ttfamily char$\ast$ username}
+
+
+
+Definition at line \mbox{\hyperlink{mysqlcontroller_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{mysqlcontroller_8cpp_source}{mysqlcontroller.\+cpp}}.
+

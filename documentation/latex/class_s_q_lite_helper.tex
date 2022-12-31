@@ -1,0 +1,161 @@
+\hypertarget{class_s_q_lite_helper}{}\doxysection{SQLite\+Helper Class Reference}
+\label{class_s_q_lite_helper}\index{SQLiteHelper@{SQLiteHelper}}
+
+
+{\ttfamily \#include $<$SQLite\+Helper.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}} \{ \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f}{Hashed\+Val}} = 1
+, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02}{File\+Size}} = 2
+, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7}{Date\+Modified}} = 3
+, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad}{NONE}} = 4
+ \}
+\item 
+enum \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}} \{ \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809}{Files}} = 1
+, \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17}{Changes}} = 2
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_s_q_lite_helper_ab5c6b4d91ba851773d08383743cbe503}{check\+If\+Attribute\+Is\+In\+Changes}} (const int file\+\_\+id, const \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}} attribute, sqlite3 $\ast$db)
+\item 
+static int \mbox{\hyperlink{class_s_q_lite_helper_a277ba3424168330b7f5b354e477f5de2}{check\+If\+Attribute\+Has\+Changed}} (const int file\+\_\+id, const \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}} attribute, const \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}} table, sqlite3 $\ast$db, const char $\ast$char\+\_\+attr=NULL, const int int\+\_\+attr=0)
+\item 
+static char $\ast$ \mbox{\hyperlink{class_s_q_lite_helper_adbeb0bc39c03a429690faf485a17c2d1}{get\+Current\+Time}} ()
+\item 
+static void \mbox{\hyperlink{class_s_q_lite_helper_a174400575d3038248769856efc9546a8}{set\+Directory\+Name}} (char $\ast$dir\+\_\+name)
+\item 
+static void \mbox{\hyperlink{class_s_q_lite_helper_a0815f283b738dea61f78f0e0dab958ea}{set\+File\+Name}} (char $\ast$file\+\_\+name)
+\item 
+static void \mbox{\hyperlink{class_s_q_lite_helper_a8fc3a476fa41e7601138ed1a87431ab9}{set\+Machine\+Name}} (char $\ast$machine\+\_\+name)
+\item 
+static int \mbox{\hyperlink{class_s_q_lite_helper_adcab3649b5f610ddab96736dc409d653}{get\+Directory\+Id}} (sqlite3 $\ast$db)
+\item 
+static int \mbox{\hyperlink{class_s_q_lite_helper_a42d042748147b7ebe97214069c62ace6}{get\+Directory\+Id}} (sqlite3 $\ast$db, char $\ast$dir\+\_\+name, char $\ast$machine\+\_\+name)
+\item 
+static int \mbox{\hyperlink{class_s_q_lite_helper_a4e69ffbd22c6d9c2df1decfd484e5a83}{get\+File\+Id}} (sqlite3 $\ast$db)
+\item 
+static int \mbox{\hyperlink{class_s_q_lite_helper_abb6a58d490dda33874679f9b6f7a2025}{get\+File\+Id}} (sqlite3 $\ast$db, char $\ast$file\+\_\+name, int dir\+\_\+id)
+\item 
+static int \mbox{\hyperlink{class_s_q_lite_helper_ac43f81918e037ab5b07f773794d8f9af}{save\+File\+Info}} (sqlite3 $\ast$db, const int dir\+\_\+id, const char $\ast$file\+\_\+name, const int file\+\_\+size=0, const char $\ast$date\+\_\+modified=NULL, const char $\ast$hashed\+\_\+val=NULL, const bool is\+New=true, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}} attr\+\_\+to\+\_\+update=\mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad}{Attribute\+To\+Check\+::\+NONE}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}\label{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}} 
+\index{SQLiteHelper@{SQLiteHelper}!AttributeToCheck@{AttributeToCheck}}
+\index{AttributeToCheck@{AttributeToCheck}!SQLiteHelper@{SQLiteHelper}}
+\doxysubsubsection{\texorpdfstring{AttributeToCheck}{AttributeToCheck}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{SQLite\+Helper\+::\+Attribute\+To\+Check}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HashedVal@{HashedVal}!SQLiteHelper@{SQLiteHelper}}\index{SQLiteHelper@{SQLiteHelper}!HashedVal@{HashedVal}}}\mbox{\Hypertarget{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f}\label{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f}} 
+Hashed\+Val&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileSize@{FileSize}!SQLiteHelper@{SQLiteHelper}}\index{SQLiteHelper@{SQLiteHelper}!FileSize@{FileSize}}}\mbox{\Hypertarget{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02}\label{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02}} 
+File\+Size&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DateModified@{DateModified}!SQLiteHelper@{SQLiteHelper}}\index{SQLiteHelper@{SQLiteHelper}!DateModified@{DateModified}}}\mbox{\Hypertarget{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7}\label{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7}} 
+Date\+Modified&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!SQLiteHelper@{SQLiteHelper}}\index{SQLiteHelper@{SQLiteHelper}!NONE@{NONE}}}\mbox{\Hypertarget{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad}\label{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad}} 
+NONE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}\label{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}} 
+\index{SQLiteHelper@{SQLiteHelper}!TableToCheck@{TableToCheck}}
+\index{TableToCheck@{TableToCheck}!SQLiteHelper@{SQLiteHelper}}
+\doxysubsubsection{\texorpdfstring{TableToCheck}{TableToCheck}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{SQLite\+Helper\+::\+Table\+To\+Check}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Files@{Files}!SQLiteHelper@{SQLiteHelper}}\index{SQLiteHelper@{SQLiteHelper}!Files@{Files}}}\mbox{\Hypertarget{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809}\label{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809}} 
+Files&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Changes@{Changes}!SQLiteHelper@{SQLiteHelper}}\index{SQLiteHelper@{SQLiteHelper}!Changes@{Changes}}}\mbox{\Hypertarget{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17}\label{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17}} 
+Changes&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_q_lite_helper_a277ba3424168330b7f5b354e477f5de2}\label{class_s_q_lite_helper_a277ba3424168330b7f5b354e477f5de2}} 
+\index{SQLiteHelper@{SQLiteHelper}!checkIfAttributeHasChanged@{checkIfAttributeHasChanged}}
+\index{checkIfAttributeHasChanged@{checkIfAttributeHasChanged}!SQLiteHelper@{SQLiteHelper}}
+\doxysubsubsection{\texorpdfstring{checkIfAttributeHasChanged()}{checkIfAttributeHasChanged()}}
+{\footnotesize\ttfamily static int SQLite\+Helper\+::check\+If\+Attribute\+Has\+Changed (\begin{DoxyParamCaption}\item[{const int}]{file\+\_\+id,  }\item[{const \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}}}]{attribute,  }\item[{const \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}}}]{table,  }\item[{sqlite3 $\ast$}]{db,  }\item[{const char $\ast$}]{char\+\_\+attr = {\ttfamily NULL},  }\item[{const int}]{int\+\_\+attr = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_s_q_lite_helper_ab5c6b4d91ba851773d08383743cbe503}\label{class_s_q_lite_helper_ab5c6b4d91ba851773d08383743cbe503}} 
+\index{SQLiteHelper@{SQLiteHelper}!checkIfAttributeIsInChanges@{checkIfAttributeIsInChanges}}
+\index{checkIfAttributeIsInChanges@{checkIfAttributeIsInChanges}!SQLiteHelper@{SQLiteHelper}}
+\doxysubsubsection{\texorpdfstring{checkIfAttributeIsInChanges()}{checkIfAttributeIsInChanges()}}
+{\footnotesize\ttfamily static int SQLite\+Helper\+::check\+If\+Attribute\+Is\+In\+Changes (\begin{DoxyParamCaption}\item[{const int}]{file\+\_\+id,  }\item[{const \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}}}]{attribute,  }\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_s_q_lite_helper_adbeb0bc39c03a429690faf485a17c2d1}\label{class_s_q_lite_helper_adbeb0bc39c03a429690faf485a17c2d1}} 
+\index{SQLiteHelper@{SQLiteHelper}!getCurrentTime@{getCurrentTime}}
+\index{getCurrentTime@{getCurrentTime}!SQLiteHelper@{SQLiteHelper}}
+\doxysubsubsection{\texorpdfstring{getCurrentTime()}{getCurrentTime()}}
+{\footnotesize\ttfamily static char $\ast$ SQLite\+Helper\+::get\+Current\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_s_q_lite_helper_adcab3649b5f610ddab96736dc409d653}\label{class_s_q_lite_helper_adcab3649b5f610ddab96736dc409d653}} 
+\index{SQLiteHelper@{SQLiteHelper}!getDirectoryId@{getDirectoryId}}
+\index{getDirectoryId@{getDirectoryId}!SQLiteHelper@{SQLiteHelper}}
+\doxysubsubsection{\texorpdfstring{getDirectoryId()}{getDirectoryId()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static int SQLite\+Helper\+::get\+Directory\+Id (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_s_q_lite_helper_a42d042748147b7ebe97214069c62ace6}\label{class_s_q_lite_helper_a42d042748147b7ebe97214069c62ace6}} 
+\index{SQLiteHelper@{SQLiteHelper}!getDirectoryId@{getDirectoryId}}
+\index{getDirectoryId@{getDirectoryId}!SQLiteHelper@{SQLiteHelper}}
+\doxysubsubsection{\texorpdfstring{getDirectoryId()}{getDirectoryId()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static int SQLite\+Helper\+::get\+Directory\+Id (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{char $\ast$}]{dir\+\_\+name,  }\item[{char $\ast$}]{machine\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_s_q_lite_helper_a4e69ffbd22c6d9c2df1decfd484e5a83}\label{class_s_q_lite_helper_a4e69ffbd22c6d9c2df1decfd484e5a83}} 
+\index{SQLiteHelper@{SQLiteHelper}!getFileId@{getFileId}}
+\index{getFileId@{getFileId}!SQLiteHelper@{SQLiteHelper}}
+\doxysubsubsection{\texorpdfstring{getFileId()}{getFileId()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static int SQLite\+Helper\+::get\+File\+Id (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_s_q_lite_helper_abb6a58d490dda33874679f9b6f7a2025}\label{class_s_q_lite_helper_abb6a58d490dda33874679f9b6f7a2025}} 
+\index{SQLiteHelper@{SQLiteHelper}!getFileId@{getFileId}}
+\index{getFileId@{getFileId}!SQLiteHelper@{SQLiteHelper}}
+\doxysubsubsection{\texorpdfstring{getFileId()}{getFileId()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static int SQLite\+Helper\+::get\+File\+Id (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{char $\ast$}]{file\+\_\+name,  }\item[{int}]{dir\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_s_q_lite_helper_ac43f81918e037ab5b07f773794d8f9af}\label{class_s_q_lite_helper_ac43f81918e037ab5b07f773794d8f9af}} 
+\index{SQLiteHelper@{SQLiteHelper}!saveFileInfo@{saveFileInfo}}
+\index{saveFileInfo@{saveFileInfo}!SQLiteHelper@{SQLiteHelper}}
+\doxysubsubsection{\texorpdfstring{saveFileInfo()}{saveFileInfo()}}
+{\footnotesize\ttfamily static int SQLite\+Helper\+::save\+File\+Info (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{const int}]{dir\+\_\+id,  }\item[{const char $\ast$}]{file\+\_\+name,  }\item[{const int}]{file\+\_\+size = {\ttfamily 0},  }\item[{const char $\ast$}]{date\+\_\+modified = {\ttfamily NULL},  }\item[{const char $\ast$}]{hashed\+\_\+val = {\ttfamily NULL},  }\item[{const bool}]{is\+New = {\ttfamily true},  }\item[{\mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}}}]{attr\+\_\+to\+\_\+update = {\ttfamily \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad}{Attribute\+To\+Check\+::\+NONE}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_s_q_lite_helper_a174400575d3038248769856efc9546a8}\label{class_s_q_lite_helper_a174400575d3038248769856efc9546a8}} 
+\index{SQLiteHelper@{SQLiteHelper}!setDirectoryName@{setDirectoryName}}
+\index{setDirectoryName@{setDirectoryName}!SQLiteHelper@{SQLiteHelper}}
+\doxysubsubsection{\texorpdfstring{setDirectoryName()}{setDirectoryName()}}
+{\footnotesize\ttfamily static void SQLite\+Helper\+::set\+Directory\+Name (\begin{DoxyParamCaption}\item[{char $\ast$}]{dir\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_s_q_lite_helper_a0815f283b738dea61f78f0e0dab958ea}\label{class_s_q_lite_helper_a0815f283b738dea61f78f0e0dab958ea}} 
+\index{SQLiteHelper@{SQLiteHelper}!setFileName@{setFileName}}
+\index{setFileName@{setFileName}!SQLiteHelper@{SQLiteHelper}}
+\doxysubsubsection{\texorpdfstring{setFileName()}{setFileName()}}
+{\footnotesize\ttfamily static void SQLite\+Helper\+::set\+File\+Name (\begin{DoxyParamCaption}\item[{char $\ast$}]{file\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_s_q_lite_helper_a8fc3a476fa41e7601138ed1a87431ab9}\label{class_s_q_lite_helper_a8fc3a476fa41e7601138ed1a87431ab9}} 
+\index{SQLiteHelper@{SQLiteHelper}!setMachineName@{setMachineName}}
+\index{setMachineName@{setMachineName}!SQLiteHelper@{SQLiteHelper}}
+\doxysubsubsection{\texorpdfstring{setMachineName()}{setMachineName()}}
+{\footnotesize\ttfamily static void SQLite\+Helper\+::set\+Machine\+Name (\begin{DoxyParamCaption}\item[{char $\ast$}]{machine\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/mark\+\_\+/source/repos/fileintegritychecker/headers/\mbox{\hyperlink{_s_q_lite_helper_8h}{SQLite\+Helper.\+h}}\end{DoxyCompactItemize}
