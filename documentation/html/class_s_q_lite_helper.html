@@ -92,12 +92,24 @@ $(document).ready(function(){initNavTree('class_s_q_lite_helper.html',''); initR
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="class_s_q_lite_helper-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">SQLiteHelper Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
+<p>The SQL Helper class for the SQLite database.  
+ <a href="class_s_q_lite_helper.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_s_q_lite_helper_8h_source.html">SQLiteHelper.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for SQLiteHelper:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_s_q_lite_helper__coll__graph.png" border="0" usemap="#a_s_q_lite_helper_coll__map" alt="Collaboration graph"/></div>
+<map name="a_s_q_lite_helper_coll__map" id="a_s_q_lite_helper_coll__map">
+<area shape="rect" title="The SQL Helper class for the SQLite database." alt="" coords="5,5,215,324"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -106,29 +118,39 @@ Public Types</h2></td></tr>
 , <a class="el" href="class_s_q_lite_helper.html#a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7">DateModified</a> = 3
 , <a class="el" href="class_s_q_lite_helper.html#a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad">NONE</a> = 4
  }</td></tr>
+<tr class="memdesc:a6ec2e82b83e64f66831dc36a7359c643"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumerator used to set the file attribute to check for changes or to update the value for.  <a href="class_s_q_lite_helper.html#a6ec2e82b83e64f66831dc36a7359c643">More...</a><br /></td></tr>
 <tr class="separator:a6ec2e82b83e64f66831dc36a7359c643"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28ae89546eaa8a7ecfef48dbdb26b2ec"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_lite_helper.html#a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</a> { <a class="el" href="class_s_q_lite_helper.html#a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809">Files</a> = 1
 , <a class="el" href="class_s_q_lite_helper.html#a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17">Changes</a> = 2
  }</td></tr>
+<tr class="memdesc:a28ae89546eaa8a7ecfef48dbdb26b2ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumerator used to set the table to check for file attribute changes.  <a href="class_s_q_lite_helper.html#a28ae89546eaa8a7ecfef48dbdb26b2ec">More...</a><br /></td></tr>
 <tr class="separator:a28ae89546eaa8a7ecfef48dbdb26b2ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ab5c6b4d91ba851773d08383743cbe503"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_lite_helper.html#ab5c6b4d91ba851773d08383743cbe503">checkIfAttributeIsInChanges</a> (const int file_id, const <a class="el" href="class_s_q_lite_helper.html#a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</a> attribute, sqlite3 *db)</td></tr>
+<tr class="memdesc:ab5c6b4d91ba851773d08383743cbe503"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if the provided attribute is in the changes table.  <a href="class_s_q_lite_helper.html#ab5c6b4d91ba851773d08383743cbe503">More...</a><br /></td></tr>
 <tr class="separator:ab5c6b4d91ba851773d08383743cbe503"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a277ba3424168330b7f5b354e477f5de2"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_lite_helper.html#a277ba3424168330b7f5b354e477f5de2">checkIfAttributeHasChanged</a> (const int file_id, const <a class="el" href="class_s_q_lite_helper.html#a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</a> attribute, const <a class="el" href="class_s_q_lite_helper.html#a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</a> table, sqlite3 *db, const char *char_attr=NULL, const int int_attr=0)</td></tr>
+<tr class="memdesc:a277ba3424168330b7f5b354e477f5de2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if the provided attribute has changed its value.  <a href="class_s_q_lite_helper.html#a277ba3424168330b7f5b354e477f5de2">More...</a><br /></td></tr>
 <tr class="separator:a277ba3424168330b7f5b354e477f5de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbeb0bc39c03a429690faf485a17c2d1"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_lite_helper.html#adbeb0bc39c03a429690faf485a17c2d1">getCurrentTime</a> ()</td></tr>
+<tr class="memdesc:adbeb0bc39c03a429690faf485a17c2d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will retrieve the current time.  <a href="class_s_q_lite_helper.html#adbeb0bc39c03a429690faf485a17c2d1">More...</a><br /></td></tr>
 <tr class="separator:adbeb0bc39c03a429690faf485a17c2d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a174400575d3038248769856efc9546a8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_lite_helper.html#a174400575d3038248769856efc9546a8">setDirectoryName</a> (char *dir_name)</td></tr>
+<tr class="memdesc:a174400575d3038248769856efc9546a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the relative directory name.  <a href="class_s_q_lite_helper.html#a174400575d3038248769856efc9546a8">More...</a><br /></td></tr>
 <tr class="separator:a174400575d3038248769856efc9546a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0815f283b738dea61f78f0e0dab958ea"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_lite_helper.html#a0815f283b738dea61f78f0e0dab958ea">setFileName</a> (char *file_name)</td></tr>
+<tr class="memdesc:a0815f283b738dea61f78f0e0dab958ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the absolute file name.  <a href="class_s_q_lite_helper.html#a0815f283b738dea61f78f0e0dab958ea">More...</a><br /></td></tr>
 <tr class="separator:a0815f283b738dea61f78f0e0dab958ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fc3a476fa41e7601138ed1a87431ab9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_lite_helper.html#a8fc3a476fa41e7601138ed1a87431ab9">setMachineName</a> (char *machine_name)</td></tr>
+<tr class="memdesc:a8fc3a476fa41e7601138ed1a87431ab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the machine name where the scanner is running.  <a href="class_s_q_lite_helper.html#a8fc3a476fa41e7601138ed1a87431ab9">More...</a><br /></td></tr>
 <tr class="separator:a8fc3a476fa41e7601138ed1a87431ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcab3649b5f610ddab96736dc409d653"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_lite_helper.html#adcab3649b5f610ddab96736dc409d653">getDirectoryId</a> (sqlite3 *db)</td></tr>
+<tr class="memdesc:adcab3649b5f610ddab96736dc409d653"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the id of the directory from the directories table.  <a href="class_s_q_lite_helper.html#adcab3649b5f610ddab96736dc409d653">More...</a><br /></td></tr>
 <tr class="separator:adcab3649b5f610ddab96736dc409d653"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42d042748147b7ebe97214069c62ace6"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_lite_helper.html#a42d042748147b7ebe97214069c62ace6">getDirectoryId</a> (sqlite3 *db, char *dir_name, char *machine_name)</td></tr>
+<tr class="memdesc:a42d042748147b7ebe97214069c62ace6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the id of the directory from the directories table.  <a href="class_s_q_lite_helper.html#a42d042748147b7ebe97214069c62ace6">More...</a><br /></td></tr>
 <tr class="separator:a42d042748147b7ebe97214069c62ace6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e69ffbd22c6d9c2df1decfd484e5a83"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_lite_helper.html#a4e69ffbd22c6d9c2df1decfd484e5a83">getFileId</a> (sqlite3 *db)</td></tr>
 <tr class="separator:a4e69ffbd22c6d9c2df1decfd484e5a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,8 +158,29 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:abb6a58d490dda33874679f9b6f7a2025"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac43f81918e037ab5b07f773794d8f9af"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_lite_helper.html#ac43f81918e037ab5b07f773794d8f9af">saveFileInfo</a> (sqlite3 *db, const int dir_id, const char *file_name, const int file_size=0, const char *date_modified=NULL, const char *hashed_val=NULL, const bool isNew=true, <a class="el" href="class_s_q_lite_helper.html#a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</a> attr_to_update=<a class="el" href="class_s_q_lite_helper.html#a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad">AttributeToCheck::NONE</a>)</td></tr>
 <tr class="separator:ac43f81918e037ab5b07f773794d8f9af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a0f4192b37fcaff2ba209154127ade345"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_lite_helper.html#a0f4192b37fcaff2ba209154127ade345">didHashedValueChange</a> (const char *hashed_val, <a class="el" href="class_s_q_lite_helper.html#a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</a> table, const int file_id, sqlite3 *db)</td></tr>
+<tr class="separator:a0f4192b37fcaff2ba209154127ade345"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae87be06de4087dcf735e5b12c4eaee9a"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_lite_helper.html#ae87be06de4087dcf735e5b12c4eaee9a">didFileSizeChange</a> (const int file_size, <a class="el" href="class_s_q_lite_helper.html#a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</a> table, const int file_id, sqlite3 *db)</td></tr>
+<tr class="separator:ae87be06de4087dcf735e5b12c4eaee9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac258e856d9f8c033d33bbd4fc8919cd"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_lite_helper.html#aac258e856d9f8c033d33bbd4fc8919cd">didDateModifiedChange</a> (const char *date_modified, <a class="el" href="class_s_q_lite_helper.html#a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</a> table, const int file_id, sqlite3 *db)</td></tr>
+<tr class="separator:aac258e856d9f8c033d33bbd4fc8919cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a416b734c88d6e65e3a358953aea9468a"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_lite_helper.html#a416b734c88d6e65e3a358953aea9468a">saveNewFileInfo</a> (sqlite3 *db)</td></tr>
+<tr class="separator:a416b734c88d6e65e3a358953aea9468a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84b6c0493c0f59b4311ec393464b01ec"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_lite_helper.html#a84b6c0493c0f59b4311ec393464b01ec">saveExistingFileInfo</a> (sqlite3 *db, <a class="el" href="class_s_q_lite_helper.html#a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</a> attr_to_update, const char *text_val=NULL, const int int_val=0)</td></tr>
+<tr class="separator:a84b6c0493c0f59b4311ec393464b01ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95096df7d3e7fb019d18f2a62a10d646"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_lite_helper.html#a95096df7d3e7fb019d18f2a62a10d646">insertTextValueToChanges</a> (sqlite3 *db, const int file_id, const char *text_val, const char *attr_changed)</td></tr>
+<tr class="separator:a95096df7d3e7fb019d18f2a62a10d646"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f5d43ac23996620ac57f3be87fd17cd"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_lite_helper.html#a9f5d43ac23996620ac57f3be87fd17cd">insertIntValueToChanges</a> (sqlite3 *db, const int file_id, const int int_val, const char *attr_changed)</td></tr>
+<tr class="separator:a9f5d43ac23996620ac57f3be87fd17cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4eb63efa7ac69125fd954d5efb23c2c6"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_q_lite_helper.html#a4eb63efa7ac69125fd954d5efb23c2c6">updateChangedInFile</a> (sqlite3 *db, int file_id, <a class="el" href="class_s_q_lite_helper.html#a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</a> attr_to_change)</td></tr>
+<tr class="separator:a4eb63efa7ac69125fd954d5efb23c2c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >The SQL Helper class for the SQLite database. </p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a6ec2e82b83e64f66831dc36a7359c643" name="a6ec2e82b83e64f66831dc36a7359c643"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6ec2e82b83e64f66831dc36a7359c643">&#9670;&#160;</a></span>AttributeToCheck</h2>
 
@@ -149,13 +192,20 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enumerator used to set the file attribute to check for changes or to update the value for. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f" name="a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f"></a>HashedVal&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02" name="a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02"></a>FileSize&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7" name="a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7"></a>DateModified&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad" name="a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad"></a>NONE&#160;</td><td class="fielddoc"></td></tr>
 </table>
-
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{ <a class="code hl_enumvalue" href="class_s_q_lite_helper.html#a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f">HashedVal</a> = 1, <a class="code hl_enumvalue" href="class_s_q_lite_helper.html#a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02">FileSize</a> = 2, <a class="code hl_enumvalue" href="class_s_q_lite_helper.html#a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7">DateModified</a> = 3, <a class="code hl_enumvalue" href="class_s_q_lite_helper.html#a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad">NONE</a> = 4};</div>
+<div class="ttc" id="aclass_s_q_lite_helper_html_a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7"><div class="ttname"><a href="class_s_q_lite_helper.html#a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7">SQLiteHelper::DateModified</a></div><div class="ttdeci">@ DateModified</div><div class="ttdef"><b>Definition:</b> SQLiteHelper.h:22</div></div>
+<div class="ttc" id="aclass_s_q_lite_helper_html_a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f"><div class="ttname"><a href="class_s_q_lite_helper.html#a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f">SQLiteHelper::HashedVal</a></div><div class="ttdeci">@ HashedVal</div><div class="ttdef"><b>Definition:</b> SQLiteHelper.h:22</div></div>
+<div class="ttc" id="aclass_s_q_lite_helper_html_a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad"><div class="ttname"><a href="class_s_q_lite_helper.html#a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad">SQLiteHelper::NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdef"><b>Definition:</b> SQLiteHelper.h:22</div></div>
+<div class="ttc" id="aclass_s_q_lite_helper_html_a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02"><div class="ttname"><a href="class_s_q_lite_helper.html#a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02">SQLiteHelper::FileSize</a></div><div class="ttdeci">@ FileSize</div><div class="ttdef"><b>Definition:</b> SQLiteHelper.h:22</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a28ae89546eaa8a7ecfef48dbdb26b2ec" name="a28ae89546eaa8a7ecfef48dbdb26b2ec"></a>
@@ -169,11 +219,16 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enumerator used to set the table to check for file attribute changes. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809" name="a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809"></a>Files&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17" name="a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17"></a>Changes&#160;</td><td class="fielddoc"></td></tr>
 </table>
-
+<div class="fragment"><div class="line"><span class="lineno">   27</span>{<a class="code hl_enumvalue" href="class_s_q_lite_helper.html#a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809">Files</a> = 1, <a class="code hl_enumvalue" href="class_s_q_lite_helper.html#a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17">Changes</a> = 2};</div>
+<div class="ttc" id="aclass_s_q_lite_helper_html_a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17"><div class="ttname"><a href="class_s_q_lite_helper.html#a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17">SQLiteHelper::Changes</a></div><div class="ttdeci">@ Changes</div><div class="ttdef"><b>Definition:</b> SQLiteHelper.h:27</div></div>
+<div class="ttc" id="aclass_s_q_lite_helper_html_a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809"><div class="ttname"><a href="class_s_q_lite_helper.html#a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809">SQLiteHelper::Files</a></div><div class="ttdeci">@ Files</div><div class="ttdef"><b>Definition:</b> SQLiteHelper.h:27</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -235,6 +290,29 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Determines if the provided attribute has changed its value. </p>
+<div>The logic in the function will first determine the attribute to check using the attribute parameter and then will call the appropriate function to check if the attribute did change.</div> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_id</td><td>The id of the file. </td></tr>
+    <tr><td class="paramname">attribute</td><td>The attribute to check. </td></tr>
+    <tr><td class="paramname">table</td><td>The table to check based on whether the attribute is in the changes or the files table. </td></tr>
+    <tr><td class="paramname">db</td><td>The sqlite3 database object. </td></tr>
+    <tr><td class="paramname">char_attr</td><td>The character value attribute to check. The default is NULL. </td></tr>
+    <tr><td class="paramname">int_attr</td><td>The integer value attribute to check. The default is 0 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_s_q_lite_helper.html#a6ec2e82b83e64f66831dc36a7359c643" title="Enumerator used to set the file attribute to check for changes or to update the value for.">AttributeToCheck</a> </dd>
+<dd>
+<a class="el" href="class_s_q_lite_helper.html#a28ae89546eaa8a7ecfef48dbdb26b2ec" title="Enumerator used to set the table to check for file attribute changes.">TableToCheck</a> </dd>
+<dd>
+<a class="el" href="class_s_q_lite_helper.html#a0f4192b37fcaff2ba209154127ade345">didHashedValueChange()</a> </dd>
+<dd>
+<a class="el" href="class_s_q_lite_helper.html#ae87be06de4087dcf735e5b12c4eaee9a">didFileSizeChange()</a> </dd>
+<dd>
+<a class="el" href="class_s_q_lite_helper.html#aac258e856d9f8c033d33bbd4fc8919cd">didDateModifiedChange()</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if changed, 0 if not </dd></dl>
+
 </div>
 </div>
 <a id="ab5c6b4d91ba851773d08383743cbe503" name="ab5c6b4d91ba851773d08383743cbe503"></a>
@@ -277,6 +355,191 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Determines if the provided attribute is in the changes table. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_id</td><td>The id of the file. </td></tr>
+    <tr><td class="paramname">attribute</td><td>The attribute to check. </td></tr>
+    <tr><td class="paramname">db</td><td>The sqlite3 database object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if is in the changes table, 0 if not </dd></dl>
+
+</div>
+</div>
+<a id="aac258e856d9f8c033d33bbd4fc8919cd" name="aac258e856d9f8c033d33bbd4fc8919cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac258e856d9f8c033d33bbd4fc8919cd">&#9670;&#160;</a></span>didDateModifiedChange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int SQLiteHelper::didDateModifiedChange </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>date_modified</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_s_q_lite_helper.html#a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</a>&#160;</td>
+          <td class="paramname"><em>table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>file_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sqlite3 *&#160;</td>
+          <td class="paramname"><em>db</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date_modified</td><td></td></tr>
+    <tr><td class="paramname">table</td><td></td></tr>
+    <tr><td class="paramname">file_id</td><td></td></tr>
+    <tr><td class="paramname">db</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="ae87be06de4087dcf735e5b12c4eaee9a" name="ae87be06de4087dcf735e5b12c4eaee9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae87be06de4087dcf735e5b12c4eaee9a">&#9670;&#160;</a></span>didFileSizeChange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int SQLiteHelper::didFileSizeChange </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>file_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_s_q_lite_helper.html#a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</a>&#160;</td>
+          <td class="paramname"><em>table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>file_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sqlite3 *&#160;</td>
+          <td class="paramname"><em>db</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_size</td><td></td></tr>
+    <tr><td class="paramname">table</td><td></td></tr>
+    <tr><td class="paramname">file_id</td><td></td></tr>
+    <tr><td class="paramname">db</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a0f4192b37fcaff2ba209154127ade345" name="a0f4192b37fcaff2ba209154127ade345"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f4192b37fcaff2ba209154127ade345">&#9670;&#160;</a></span>didHashedValueChange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int SQLiteHelper::didHashedValueChange </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>hashed_val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_s_q_lite_helper.html#a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</a>&#160;</td>
+          <td class="paramname"><em>table</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>file_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sqlite3 *&#160;</td>
+          <td class="paramname"><em>db</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hashed_val</td><td></td></tr>
+    <tr><td class="paramname">table</td><td></td></tr>
+    <tr><td class="paramname">file_id</td><td></td></tr>
+    <tr><td class="paramname">db</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
 </div>
 </div>
 <a id="adbeb0bc39c03a429690faf485a17c2d1" name="adbeb0bc39c03a429690faf485a17c2d1"></a>
@@ -301,6 +564,9 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Will retrieve the current time. </p>
+<dl class="section return"><dt>Returns</dt><dd>Current time in B d, Y T format. Example: December 12, 2020 20:10:05 </dd></dl>
 
 </div>
 </div>
@@ -327,6 +593,15 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Retrieves the id of the directory from the directories table. </p>
+<div><b>PRECONDITION:</b> Call to <a class="el" href="class_s_q_lite_helper.html#a174400575d3038248769856efc9546a8" title="Sets the relative directory name.">setDirectoryName()</a> to set the directory to check.</div> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td>sqlite3 database object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if directory does not exist in directories table, otherwise the directory id will be returned. </dd></dl>
 
 </div>
 </div>
@@ -370,6 +645,17 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Retrieves the id of the directory from the directories table. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td>sqlite3 database object </td></tr>
+    <tr><td class="paramname">dir_name</td><td>Relative name of the directory. </td></tr>
+    <tr><td class="paramname">machine_name</td><td>The machine name where the scanner is running. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if directory does not exist in directories table, otherwise the directory id will be returned. </dd></dl>
+
 </div>
 </div>
 <a id="a4e69ffbd22c6d9c2df1decfd484e5a83" name="a4e69ffbd22c6d9c2df1decfd484e5a83"></a>
@@ -395,6 +681,13 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -437,6 +730,189 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td></td></tr>
+    <tr><td class="paramname">file_name</td><td></td></tr>
+    <tr><td class="paramname">dir_id</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a9f5d43ac23996620ac57f3be87fd17cd" name="a9f5d43ac23996620ac57f3be87fd17cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f5d43ac23996620ac57f3be87fd17cd">&#9670;&#160;</a></span>insertIntValueToChanges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int SQLiteHelper::insertIntValueToChanges </td>
+          <td>(</td>
+          <td class="paramtype">sqlite3 *&#160;</td>
+          <td class="paramname"><em>db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>file_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>int_val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>attr_changed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td></td></tr>
+    <tr><td class="paramname">file_id</td><td></td></tr>
+    <tr><td class="paramname">int_val</td><td></td></tr>
+    <tr><td class="paramname">attr_changed</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a95096df7d3e7fb019d18f2a62a10d646" name="a95096df7d3e7fb019d18f2a62a10d646"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95096df7d3e7fb019d18f2a62a10d646">&#9670;&#160;</a></span>insertTextValueToChanges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int SQLiteHelper::insertTextValueToChanges </td>
+          <td>(</td>
+          <td class="paramtype">sqlite3 *&#160;</td>
+          <td class="paramname"><em>db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>file_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>text_val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>attr_changed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td></td></tr>
+    <tr><td class="paramname">file_id</td><td></td></tr>
+    <tr><td class="paramname">text_val</td><td></td></tr>
+    <tr><td class="paramname">attr_changed</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a84b6c0493c0f59b4311ec393464b01ec" name="a84b6c0493c0f59b4311ec393464b01ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84b6c0493c0f59b4311ec393464b01ec">&#9670;&#160;</a></span>saveExistingFileInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int SQLiteHelper::saveExistingFileInfo </td>
+          <td>(</td>
+          <td class="paramtype">sqlite3 *&#160;</td>
+          <td class="paramname"><em>db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_s_q_lite_helper.html#a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</a>&#160;</td>
+          <td class="paramname"><em>attr_to_update</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>text_val</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>int_val</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td></td></tr>
+    <tr><td class="paramname">attr_to_update</td><td></td></tr>
+    <tr><td class="paramname">text_val</td><td></td></tr>
+    <tr><td class="paramname">int_val</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -509,6 +985,58 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td></td></tr>
+    <tr><td class="paramname">dir_id</td><td></td></tr>
+    <tr><td class="paramname">file_name</td><td></td></tr>
+    <tr><td class="paramname">file_size</td><td></td></tr>
+    <tr><td class="paramname">date_modified</td><td></td></tr>
+    <tr><td class="paramname">hashed_val</td><td></td></tr>
+    <tr><td class="paramname">isNew</td><td></td></tr>
+    <tr><td class="paramname">attr_to_update</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_s_q_lite_helper.html#a416b734c88d6e65e3a358953aea9468a">saveNewFileInfo()</a> </dd>
+<dd>
+<a class="el" href="class_s_q_lite_helper.html#a84b6c0493c0f59b4311ec393464b01ec">saveExistingFileInfo()</a> </dd>
+<dd>
+<a class="el" href="class_s_q_lite_helper.html#a6ec2e82b83e64f66831dc36a7359c643" title="Enumerator used to set the file attribute to check for changes or to update the value for.">AttributeToCheck</a> </dd></dl>
+
+</div>
+</div>
+<a id="a416b734c88d6e65e3a358953aea9468a" name="a416b734c88d6e65e3a358953aea9468a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a416b734c88d6e65e3a358953aea9468a">&#9670;&#160;</a></span>saveNewFileInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int SQLiteHelper::saveNewFileInfo </td>
+          <td>(</td>
+          <td class="paramtype">sqlite3 *&#160;</td>
+          <td class="paramname"><em>db</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -536,6 +1064,14 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Sets the relative directory name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dir_name</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a0815f283b738dea61f78f0e0dab958ea" name="a0815f283b738dea61f78f0e0dab958ea"></a>
@@ -561,6 +1097,14 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Sets the absolute file name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_name</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -588,11 +1132,67 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Sets the machine name where the scanner is running. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">machine_name</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/mark_/source/repos/fileintegritychecker/headers/<a class="el" href="_s_q_lite_helper_8h_source.html">SQLiteHelper.h</a></li>
-</ul>
+<a id="a4eb63efa7ac69125fd954d5efb23c2c6" name="a4eb63efa7ac69125fd954d5efb23c2c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eb63efa7ac69125fd954d5efb23c2c6">&#9670;&#160;</a></span>updateChangedInFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int SQLiteHelper::updateChangedInFile </td>
+          <td>(</td>
+          <td class="paramtype">sqlite3 *&#160;</td>
+          <td class="paramname"><em>db</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>file_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_s_q_lite_helper.html#a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</a>&#160;</td>
+          <td class="paramname"><em>attr_to_change</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">db</td><td></td></tr>
+    <tr><td class="paramname">file_id</td><td></td></tr>
+    <tr><td class="paramname">attr_to_change</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -24,6 +24,8 @@ This graph shows which files directly or indirectly include this file:<para>
     <title>Classes    </title>
         <itemizedlist>
             <listitem><para>class <link linkend="_class_s_q_lite_helper">SQLiteHelper</link></para>
+
+<para>The SQL Helper class for the SQLite database. </para>
 </listitem>
         </itemizedlist>
 </simplesect>

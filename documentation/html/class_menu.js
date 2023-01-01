@@ -12,5 +12,14 @@ var class_menu =
     [ "getPROCESSHASHVALS", "class_menu.html#a7296588596f0d05634bb6b6a26d51000", null ],
     [ "getUSERNAME", "class_menu.html#a7b3f2bde7bf5297d47409c7fa7f8c940", null ],
     [ "ParseArguments", "class_menu.html#a50f39bd5a994cb64421bfacbf6aed5e8", null ],
-    [ "PrintMenu", "class_menu.html#acbe5ec7e6202dec08ca26f4898df8040", null ]
+    [ "PrintMenu", "class_menu.html#acbe5ec7e6202dec08ca26f4898df8040", null ],
+    [ "dbasefilename", "class_menu.html#a3ff2979249504fbed7989ee73b4f58a6", null ],
+    [ "dbasehost", "class_menu.html#a05ecb7899e5f3ae7345dae98bc27553c", null ],
+    [ "dbasetype", "class_menu.html#a0cc46cd227e7fcecf4413b9afe58d29d", null ],
+    [ "mname", "class_menu.html#ab67d5fb0837589bb4d6dac62131a72a4", null ],
+    [ "parentdir", "class_menu.html#a00e9ec31107eb8cbef31f3f198f168a2", null ],
+    [ "portno", "class_menu.html#ab170c7e84e5d2da91880820ccbc12abf", null ],
+    [ "processhashvals", "class_menu.html#aa094dcb11114277b2e0921587c2bcb12", null ],
+    [ "pwd", "class_menu.html#a3851b8c999f1ed310c57b306d6bc2a03", null ],
+    [ "uname", "class_menu.html#abfa524748149194d31f3a760ab8765fd", null ]
 ];

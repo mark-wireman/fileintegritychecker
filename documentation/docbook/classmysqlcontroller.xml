@@ -5,6 +5,15 @@
 <para>
 <computeroutput>#include &lt;mysqlcontroller.h&gt;</computeroutput>
 </para>
+Collaboration diagram for mysqlcontroller:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classmysqlcontroller__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
@@ -58,6 +67,13 @@
 </listitem>
         </itemizedlist>
 </simplesect>
+<simplesect>
+    <title>Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>char * <link linkend="_classmysqlcontroller_1a116a7441f9bae6f7ef1e0676bd211a7e">filterApostraphe</link> (string)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
 <section>
 <title>Constructor &amp; Destructor Documentation</title>
 <anchor xml:id="_classmysqlcontroller_1a891d523d7a39f46e72b16a36c1387767"/><section>
@@ -93,6 +109,11 @@
 <indexterm><primary>deleteDirectoryNames</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>deleteDirectoryNames</secondary></indexterm>
 <para><computeroutput>void mysqlcontroller::deleteDirectoryNames ( )</computeroutput></para></section>
+<anchor xml:id="_classmysqlcontroller_1a116a7441f9bae6f7ef1e0676bd211a7e"/><section>
+    <title>filterApostraphe()</title>
+<indexterm><primary>filterApostraphe</primary><secondary>mysqlcontroller</secondary></indexterm>
+<indexterm><primary>mysqlcontroller</primary><secondary>filterApostraphe</secondary></indexterm>
+<para><computeroutput>char * mysqlcontroller::filterApostraphe (string )<computeroutput>[private]</computeroutput></computeroutput></para></section>
 <anchor xml:id="_classmysqlcontroller_1a9fd8e8a368cc3d5e84a371c2a4cd6b7a"/><section>
     <title>getDBASENAME()</title>
 <indexterm><primary>getDBASENAME</primary><secondary>mysqlcontroller</secondary></indexterm>
@@ -183,7 +204,5 @@
 <indexterm><primary>setUSERNAME</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>setUSERNAME</secondary></indexterm>
 <para><computeroutput>void mysqlcontroller::setUSERNAME (char * uname)</computeroutput></para></section>
-<para>
-The documentation for this class was generated from the following file:</para>
-C:/Users/mark_/source/repos/fileintegritychecker/headers/<link linkend="_mysqlcontroller_8h">mysqlcontroller.h</link></section>
+</section>
 </section>

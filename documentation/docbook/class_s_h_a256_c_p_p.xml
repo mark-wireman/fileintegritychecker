@@ -5,6 +5,15 @@
 <para>
 <computeroutput>#include &lt;SHA256CPP.h&gt;</computeroutput>
 </para>
+Collaboration diagram for SHA256CPP:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_h_a256_c_p_p__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
@@ -19,6 +28,31 @@
             <listitem><para>void <link linkend="_class_s_h_a256_c_p_p_1accf77858eb3d4019f13d1e9c40dc9a73">printFileContents</link> (FILE *fileForPrinting)</para>
 </listitem>
             <listitem><para>void <link linkend="_class_s_h_a256_c_p_p_1af6bbbbc8eb2d1d2ce127d9ee41f80d43">endianCheckPrint</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>uint32_t <link linkend="_class_s_h_a256_c_p_p_1ac70dfb32d56867b6f8790242c3202c06">sig0</link> (uint32_t x)</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_class_s_h_a256_c_p_p_1ad8bbe4f9babe02201d94d63fd65cc832">sig1</link> (uint32_t x)</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_class_s_h_a256_c_p_p_1ab1a29784c317f21287def4327f83c342">rotr</link> (uint32_t n, uint16_t x)</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_class_s_h_a256_c_p_p_1a0ba361bc6a4f925454dfcd14fcb95f58">shr</link> (uint32_t n, uint16_t x)</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_class_s_h_a256_c_p_p_1ae5224ffbd7fb6ab5d05a846e3c7e4bd3">SIG0</link> (uint32_t x)</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_class_s_h_a256_c_p_p_1ad8ea0d3bc89a2622dd230b9fb42c8463">SIG1</link> (uint32_t x)</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_class_s_h_a256_c_p_p_1a4f63d4fc8d0f9267cd3d4c70fb61b2f3">Ch</link> (uint32_t x, uint32_t y, uint32_t z)</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_class_s_h_a256_c_p_p_1a76c44344a60f168d02bf8a5888bf02ad">Maj</link> (uint32_t x, uint32_t y, uint32_t z)</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_s_h_a256_c_p_p_1a5064c84992660bbd9e98f46511d780d8">calcFileSize</link> (FILE *file)</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_s_h_a256_c_p_p_1af0be644c9e466da786edad451fb16c14">fillMessageBlock</link> (FILE *file, union <link linkend="_unionmessage_block">messageBlock</link> *msgBlock, enum <link linkend="__s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959">status</link> *state, uint64_t *numBits)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -37,11 +71,21 @@
 </section>
 <section>
 <title>Member Function Documentation</title>
+<anchor xml:id="_class_s_h_a256_c_p_p_1a5064c84992660bbd9e98f46511d780d8"/><section>
+    <title>calcFileSize()</title>
+<indexterm><primary>calcFileSize</primary><secondary>SHA256CPP</secondary></indexterm>
+<indexterm><primary>SHA256CPP</primary><secondary>calcFileSize</secondary></indexterm>
+<para><computeroutput>int SHA256CPP::calcFileSize (FILE * file)<computeroutput>[private]</computeroutput></computeroutput></para></section>
 <anchor xml:id="_class_s_h_a256_c_p_p_1a9466f56550cb9725c8fd6be92e5c1b77"/><section>
     <title>calculateHash()</title>
 <indexterm><primary>calculateHash</primary><secondary>SHA256CPP</secondary></indexterm>
 <indexterm><primary>SHA256CPP</primary><secondary>calculateHash</secondary></indexterm>
 <para><computeroutput><link linkend="_struct_hash_values">HashValues</link> SHA256CPP::calculateHash (FILE * file)</computeroutput></para></section>
+<anchor xml:id="_class_s_h_a256_c_p_p_1a4f63d4fc8d0f9267cd3d4c70fb61b2f3"/><section>
+    <title>Ch()</title>
+<indexterm><primary>Ch</primary><secondary>SHA256CPP</secondary></indexterm>
+<indexterm><primary>SHA256CPP</primary><secondary>Ch</secondary></indexterm>
+<para><computeroutput>uint32_t SHA256CPP::Ch (uint32_t x, uint32_t y, uint32_t z)<computeroutput>[private]</computeroutput></computeroutput></para></section>
 <anchor xml:id="_class_s_h_a256_c_p_p_1acd60e2902a86486cd8c0c730b22ec34d"/><section>
     <title>endianCheck()</title>
 <indexterm><primary>endianCheck</primary><secondary>SHA256CPP</secondary></indexterm>
@@ -52,12 +96,50 @@
 <indexterm><primary>endianCheckPrint</primary><secondary>SHA256CPP</secondary></indexterm>
 <indexterm><primary>SHA256CPP</primary><secondary>endianCheckPrint</secondary></indexterm>
 <para><computeroutput>void SHA256CPP::endianCheckPrint ( )</computeroutput></para></section>
+<anchor xml:id="_class_s_h_a256_c_p_p_1af0be644c9e466da786edad451fb16c14"/><section>
+    <title>fillMessageBlock()</title>
+<indexterm><primary>fillMessageBlock</primary><secondary>SHA256CPP</secondary></indexterm>
+<indexterm><primary>SHA256CPP</primary><secondary>fillMessageBlock</secondary></indexterm>
+<para><computeroutput>int SHA256CPP::fillMessageBlock (FILE * file, union <link linkend="_unionmessage_block">messageBlock</link> * msgBlock, enum <link linkend="__s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959">status</link> * state, uint64_t * numBits)<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_s_h_a256_c_p_p_1a76c44344a60f168d02bf8a5888bf02ad"/><section>
+    <title>Maj()</title>
+<indexterm><primary>Maj</primary><secondary>SHA256CPP</secondary></indexterm>
+<indexterm><primary>SHA256CPP</primary><secondary>Maj</secondary></indexterm>
+<para><computeroutput>uint32_t SHA256CPP::Maj (uint32_t x, uint32_t y, uint32_t z)<computeroutput>[private]</computeroutput></computeroutput></para></section>
 <anchor xml:id="_class_s_h_a256_c_p_p_1accf77858eb3d4019f13d1e9c40dc9a73"/><section>
     <title>printFileContents()</title>
 <indexterm><primary>printFileContents</primary><secondary>SHA256CPP</secondary></indexterm>
 <indexterm><primary>SHA256CPP</primary><secondary>printFileContents</secondary></indexterm>
 <para><computeroutput>void SHA256CPP::printFileContents (FILE * fileForPrinting)</computeroutput></para></section>
-<para>
-The documentation for this class was generated from the following file:</para>
-C:/Users/mark_/source/repos/fileintegritychecker/headers/<link linkend="__s_h_a256_c_p_p_8h">SHA256CPP.h</link></section>
+<anchor xml:id="_class_s_h_a256_c_p_p_1ab1a29784c317f21287def4327f83c342"/><section>
+    <title>rotr()</title>
+<indexterm><primary>rotr</primary><secondary>SHA256CPP</secondary></indexterm>
+<indexterm><primary>SHA256CPP</primary><secondary>rotr</secondary></indexterm>
+<para><computeroutput>uint32_t SHA256CPP::rotr (uint32_t n, uint16_t x)<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_s_h_a256_c_p_p_1a0ba361bc6a4f925454dfcd14fcb95f58"/><section>
+    <title>shr()</title>
+<indexterm><primary>shr</primary><secondary>SHA256CPP</secondary></indexterm>
+<indexterm><primary>SHA256CPP</primary><secondary>shr</secondary></indexterm>
+<para><computeroutput>uint32_t SHA256CPP::shr (uint32_t n, uint16_t x)<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_s_h_a256_c_p_p_1ac70dfb32d56867b6f8790242c3202c06"/><section>
+    <title>sig0()</title>
+<indexterm><primary>sig0</primary><secondary>SHA256CPP</secondary></indexterm>
+<indexterm><primary>SHA256CPP</primary><secondary>sig0</secondary></indexterm>
+<para><computeroutput>uint32_t SHA256CPP::sig0 (uint32_t x)<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_s_h_a256_c_p_p_1ae5224ffbd7fb6ab5d05a846e3c7e4bd3"/><section>
+    <title>SIG0()</title>
+<indexterm><primary>SIG0</primary><secondary>SHA256CPP</secondary></indexterm>
+<indexterm><primary>SHA256CPP</primary><secondary>SIG0</secondary></indexterm>
+<para><computeroutput>uint32_t SHA256CPP::SIG0 (uint32_t x)<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_s_h_a256_c_p_p_1ad8bbe4f9babe02201d94d63fd65cc832"/><section>
+    <title>sig1()</title>
+<indexterm><primary>sig1</primary><secondary>SHA256CPP</secondary></indexterm>
+<indexterm><primary>SHA256CPP</primary><secondary>sig1</secondary></indexterm>
+<para><computeroutput>uint32_t SHA256CPP::sig1 (uint32_t x)<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_s_h_a256_c_p_p_1ad8ea0d3bc89a2622dd230b9fb42c8463"/><section>
+    <title>SIG1()</title>
+<indexterm><primary>SIG1</primary><secondary>SHA256CPP</secondary></indexterm>
+<indexterm><primary>SHA256CPP</primary><secondary>SIG1</secondary></indexterm>
+<para><computeroutput>uint32_t SHA256CPP::SIG1 (uint32_t x)<computeroutput>[private]</computeroutput></computeroutput></para></section>
+</section>
 </section>

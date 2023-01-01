@@ -32,22 +32,22 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 28 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classfileintegritychecker_1a8cc50a2938d11837ec1ee0250e73fa6d">numberoffiles</link>&#32;=&#32;0;
 29 
 30 <emphasis role="keyword">private</emphasis>:
-31 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;parentdir;
-32 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dbasehost;
-33 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dbase;
-34 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;uname;
-35 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;pwd;
-36 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;portno;
-37 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;mname;
-38 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dbasetype;
-39 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dbasefilename;
-40 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;usehashvals&#32;=&#32;0;
-41 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;numberofnewdirectories&#32;=&#32;0;
-42 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;numberofverifieddirectories&#32;=&#32;0;
+31 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_classfileintegritychecker_1a23b4005e258b5038e68452c6d895a185">parentdir</link>;
+32 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_classfileintegritychecker_1a5258b64047e22c2f82fb13e908b0c080">dbasehost</link>;
+33 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_classfileintegritychecker_1a2d1e27b35a85dc13f1619dedaf53c4c8">dbase</link>;
+34 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_classfileintegritychecker_1abb322369f0338dafa1c8f92b95cda730">uname</link>;
+35 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_classfileintegritychecker_1a6137942fb3ff1790d622310840e9dc6c">pwd</link>;
+36 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_classfileintegritychecker_1a6948be4b723e374ddce7273697c9dae7">portno</link>;
+37 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_classfileintegritychecker_1aaa47205a07b1d35b7bf6a145a99207e9">mname</link>;
+38 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_classfileintegritychecker_1a5b7a655ace1a445aaf32984dde0cd14a">dbasetype</link>;
+39 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_classfileintegritychecker_1a02a1a1e0e235f6ca153171030b60d319">dbasefilename</link>;
+40 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classfileintegritychecker_1a754ca74fc0280d60adcf7099e7913813">usehashvals</link>&#32;=&#32;0;
+41 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classfileintegritychecker_1a00bbf08cd81818d0c048f1bddfdcd9b1">numberofnewdirectories</link>&#32;=&#32;0;
+42 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classfileintegritychecker_1a0c490abca9b7cb896f2efb06cd74b431">numberofverifieddirectories</link>&#32;=&#32;0;
 43 &#32;&#32;&#32;&#32;
-44 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;verbose_output&#32;=&#32;<emphasis role="keyword">false</emphasis>;
-45 &#32;&#32;&#32;&#32;<link linkend="_classmysqlcontroller">mysqlcontroller</link>*&#32;mysqlctl;
-46 &#32;&#32;&#32;&#32;<link linkend="_classsqlite3controller">sqlite3controller</link>*&#32;sqlitectl;
-47 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;get_directories_files(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">string</emphasis>&amp;&#32;s,&#32;<emphasis role="keywordtype">int</emphasis>&#32;level&#32;=&#32;0);
+44 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_classfileintegritychecker_1a6a433c2b64e97b2ca080db41a9df49c2">verbose_output</link>&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+45 &#32;&#32;&#32;&#32;<link linkend="_classmysqlcontroller">mysqlcontroller</link>*&#32;<link linkend="_classfileintegritychecker_1a73cb3d6b1f3fccb340dba68b56241ecd">mysqlctl</link>;
+46 &#32;&#32;&#32;&#32;<link linkend="_classsqlite3controller">sqlite3controller</link>*&#32;<link linkend="_classfileintegritychecker_1a106e283f11f9f3c0788f9e43c3a0d3f0">sqlitectl</link>;
+47 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classfileintegritychecker_1af2fb66e054e9f613677746f6f3dde0a3">get_directories_files</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">string</emphasis>&amp;&#32;s,&#32;<emphasis role="keywordtype">int</emphasis>&#32;level&#32;=&#32;0);
 48 };
 </programlisting></section>

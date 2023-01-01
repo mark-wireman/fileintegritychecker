@@ -34,15 +34,15 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 30 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_menu_1a34eb19b4584c6139b1d0fbc7811ba68a">getDBASEFILENAME</link>();
 31 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_menu_1a7296588596f0d05634bb6b6a26d51000">getPROCESSHASHVALS</link>();
 32 <emphasis role="keyword">private</emphasis>:
-33 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;parentdir&#32;=&#32;NULL;
-34 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dbasehost&#32;=&#32;NULL;
-35 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;uname&#32;=&#32;NULL;
-36 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;pwd&#32;=&#32;NULL;
-37 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;portno&#32;=&#32;NULL;
-38 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;mname&#32;=&#32;NULL;
-39 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dbasetype&#32;=&#32;NULL;
-40 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dbasefilename&#32;=&#32;NULL;
-41 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;processhashvals&#32;=&#32;0;
+33 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_menu_1a00e9ec31107eb8cbef31f3f198f168a2">parentdir</link>&#32;=&#32;NULL;
+34 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_menu_1a05ecb7899e5f3ae7345dae98bc27553c">dbasehost</link>&#32;=&#32;NULL;
+35 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_menu_1abfa524748149194d31f3a760ab8765fd">uname</link>&#32;=&#32;NULL;
+36 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_menu_1a3851b8c999f1ed310c57b306d6bc2a03">pwd</link>&#32;=&#32;NULL;
+37 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_menu_1ab170c7e84e5d2da91880820ccbc12abf">portno</link>&#32;=&#32;NULL;
+38 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_menu_1ab67d5fb0837589bb4d6dac62131a72a4">mname</link>&#32;=&#32;NULL;
+39 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_menu_1a0cc46cd227e7fcecf4413b9afe58d29d">dbasetype</link>&#32;=&#32;NULL;
+40 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_menu_1a3ff2979249504fbed7989ee73b4f58a6">dbasefilename</link>&#32;=&#32;NULL;
+41 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_menu_1aa094dcb11114277b2e0921587c2bcb12">processhashvals</link>&#32;=&#32;0;
 42 };
 43 
 44 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;MENU_H_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>

@@ -5,6 +5,15 @@
 <para>
 <computeroutput>#include &lt;SHA256CPP.h&gt;</computeroutput>
 </para>
+Collaboration diagram for messageBlock:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="unionmessage_block__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 <simplesect>
     <title>Public Attributes    </title>
         <itemizedlist>
@@ -33,7 +42,5 @@
 <indexterm><primary>t</primary><secondary>messageBlock</secondary></indexterm>
 <indexterm><primary>messageBlock</primary><secondary>t</secondary></indexterm>
 <para><computeroutput>uint32_t messageBlock::t[16]</computeroutput></para></section>
-<para>
-The documentation for this union was generated from the following file:</para>
-C:/Users/mark_/source/repos/fileintegritychecker/headers/<link linkend="__s_h_a256_c_p_p_8h">SHA256CPP.h</link></section>
+</section>
 </section>

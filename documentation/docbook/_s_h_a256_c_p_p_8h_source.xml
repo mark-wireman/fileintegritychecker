@@ -54,20 +54,20 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 50 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_s_h_a256_c_p_p_1af6bbbbc8eb2d1d2ce127d9ee41f80d43">endianCheckPrint</link>();
 51 
 52 <emphasis role="keyword">private</emphasis>:
-53 &#32;&#32;&#32;&#32;uint32_t&#32;sig0(uint32_t&#32;x);
-54 &#32;&#32;&#32;&#32;uint32_t&#32;sig1(uint32_t&#32;x);
+53 &#32;&#32;&#32;&#32;uint32_t&#32;<link linkend="_class_s_h_a256_c_p_p_1ac70dfb32d56867b6f8790242c3202c06">sig0</link>(uint32_t&#32;x);
+54 &#32;&#32;&#32;&#32;uint32_t&#32;<link linkend="_class_s_h_a256_c_p_p_1ad8bbe4f9babe02201d94d63fd65cc832">sig1</link>(uint32_t&#32;x);
 55 
-56 &#32;&#32;&#32;&#32;uint32_t&#32;rotr(uint32_t&#32;n,&#32;uint16_t&#32;x);
-57 &#32;&#32;&#32;&#32;uint32_t&#32;shr(uint32_t&#32;n,&#32;uint16_t&#32;x);
+56 &#32;&#32;&#32;&#32;uint32_t&#32;<link linkend="_class_s_h_a256_c_p_p_1ab1a29784c317f21287def4327f83c342">rotr</link>(uint32_t&#32;n,&#32;uint16_t&#32;x);
+57 &#32;&#32;&#32;&#32;uint32_t&#32;<link linkend="_class_s_h_a256_c_p_p_1a0ba361bc6a4f925454dfcd14fcb95f58">shr</link>(uint32_t&#32;n,&#32;uint16_t&#32;x);
 58 
-59 &#32;&#32;&#32;&#32;uint32_t&#32;SIG0(uint32_t&#32;x);
-60 &#32;&#32;&#32;&#32;uint32_t&#32;SIG1(uint32_t&#32;x);
+59 &#32;&#32;&#32;&#32;uint32_t&#32;<link linkend="_class_s_h_a256_c_p_p_1ae5224ffbd7fb6ab5d05a846e3c7e4bd3">SIG0</link>(uint32_t&#32;x);
+60 &#32;&#32;&#32;&#32;uint32_t&#32;<link linkend="_class_s_h_a256_c_p_p_1ad8ea0d3bc89a2622dd230b9fb42c8463">SIG1</link>(uint32_t&#32;x);
 61 
-62 &#32;&#32;&#32;&#32;uint32_t&#32;Ch(uint32_t&#32;x,uint32_t&#32;y,uint32_t&#32;z);
-63 &#32;&#32;&#32;&#32;uint32_t&#32;Maj(uint32_t&#32;x,uint32_t&#32;y,uint32_t&#32;z);
+62 &#32;&#32;&#32;&#32;uint32_t&#32;<link linkend="_class_s_h_a256_c_p_p_1a4f63d4fc8d0f9267cd3d4c70fb61b2f3">Ch</link>(uint32_t&#32;x,uint32_t&#32;y,uint32_t&#32;z);
+63 &#32;&#32;&#32;&#32;uint32_t&#32;<link linkend="_class_s_h_a256_c_p_p_1a76c44344a60f168d02bf8a5888bf02ad">Maj</link>(uint32_t&#32;x,uint32_t&#32;y,uint32_t&#32;z);
 64 &#32;&#32;&#32;&#32;
-65 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;calcFileSize(FILE&#32;*file);
-66 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;fillMessageBlock(FILE&#32;*file,&#32;<emphasis role="keyword">union</emphasis>&#32;<link linkend="_unionmessage_block">messageBlock</link>&#32;*msgBlock,&#32;<emphasis role="keyword">enum</emphasis>&#32;<link linkend="__s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959">status</link>&#32;*state,&#32;uint64_t&#32;*numBits);
+65 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_h_a256_c_p_p_1a5064c84992660bbd9e98f46511d780d8">calcFileSize</link>(FILE&#32;*file);
+66 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_h_a256_c_p_p_1af0be644c9e466da786edad451fb16c14">fillMessageBlock</link>(FILE&#32;*file,&#32;<emphasis role="keyword">union</emphasis>&#32;<link linkend="_unionmessage_block">messageBlock</link>&#32;*msgBlock,&#32;<emphasis role="keyword">enum</emphasis>&#32;<link linkend="__s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959">status</link>&#32;*state,&#32;uint64_t&#32;*numBits);
 67 };
 68 
 69 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;HEADERS_SHA256CPP_H_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>

@@ -9,47 +9,55 @@ Sqlite3 Controller class.
 
 {\ttfamily \#include $<$sqlite3controller.\+h$>$}
 
+
+
+Collaboration diagram for sqlite3controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classsqlite3controller__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classsqlite3controller_a5e12813ef2d44e41238dfd8d4bbbea9a}{sqlite3controller}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classsqlite3controller_a5e12813ef2d44e41238dfd8d4bbbea9a}{sqlite3controller\+::sqlite3controller}} object. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classsqlite3controller_aa85b2bdd95d168c27a28476e07d36d88}{sqlite3controller}} (char $\ast$databasename, char $\ast$machinename)
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classsqlite3controller_a5e12813ef2d44e41238dfd8d4bbbea9a}{sqlite3controller\+::sqlite3controller}} object. The constructor is initialized with the name of the SQLite database and the name of the machine the File\+Integrity\+Checker application is running on. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{classsqlite3controller_a0517049f3235b533cbcc1f2d68a42844}{$\sim$sqlite3controller}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classsqlite3controller_a5e12813ef2d44e41238dfd8d4bbbea9a}{sqlite3controller\+::sqlite3controller}} object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classsqlite3controller_a7d6ff837161930eb903754d5688f1b9b}{initdb}} ()
 \begin{DoxyCompactList}\small\item\em Initializes the SQLite database with the supplied databasename. The function will determine if the SQLite database already exists. If it does exist then the database is opened. If it does not exist, the database will be created and then a call to create\+Tables is made to create the tables required to store the data. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classsqlite3controller_ab092ae9a83a7a124a5ca19a202f6243a}{closedb}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Close the database after use. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classsqlite3controller_ac0c940ac721d94e09be08e38eb0e5ca4}{set\+DATABASENAME}} (char $\ast$dbasename)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the name of the SQLite database. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classsqlite3controller_a87910e834388b6f11c8493f10fd6a576}{set\+MACHINENAME}} (char $\ast$machinename)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the machine name where the File\+Integrity\+Application is running on. \end{DoxyCompactList}\item 
 char $\ast$ \mbox{\hyperlink{classsqlite3controller_a6ffbf500e8d1d203bd264e221ee833a2}{get\+DATABASENAME}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the name of the SQLite database. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classsqlite3controller_a9aa0232afbc7a8d2b71d330c607c5b40}{create\+Tables}} ()
 \begin{DoxyCompactList}\small\item\em This is called when a new SQLite database is created. The following tables are created\+:~\newline
 . \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classsqlite3controller_ad24d1eff1c881ec79c608d4fbd5207b3}{save\+\_\+file\+\_\+info}} (const char $\ast$fname, const char $\ast$dirname, char $\ast$lastmodified, uintmax\+\_\+t filesize, const char $\ast$hashval=NULL)
-\item 
+\begin{DoxyCompactList}\small\item\em Save the details of the file. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classsqlite3controller_a6bda68c0ea1d995b4fcf60965ab433a6}{save\+\_\+dir\+\_\+info}} (const char $\ast$dirname)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Save the details of the directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-char $\ast$ \mbox{\hyperlink{classsqlite3controller_add1047a4808cc535544154fffe9206a7}{get\+Previous\+Hashval}} (const int file\+Id)
-\item 
 int \mbox{\hyperlink{classsqlite3controller_afad285c88925ab4bb987583563c11d8a}{check\+If\+Directory\+Exist}} (const char $\ast$dirname)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the directory exists in the database. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classsqlite3controller_a96b9af7291ed73ed8b7da9b3e36c5983}{check\+If\+File\+Exist}} (const char $\ast$fname, const char $\ast$dirname)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Checks if the file exists in the database. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Sqlite3 Controller class. 
 
-The class that handles the SQL functions for creating, updating, and adding files and directories to a Sqlite3 database. 
+The class that handles the SQL functions for creating, updating, and adding files and directories attributes to a Sqlite3 database. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classsqlite3controller_a5e12813ef2d44e41238dfd8d4bbbea9a}\label{classsqlite3controller_a5e12813ef2d44e41238dfd8d4bbbea9a}} 
@@ -58,17 +66,36 @@ The class that handles the SQL functions for creating, updating, and adding file
 \doxysubsubsection{\texorpdfstring{sqlite3controller()}{sqlite3controller()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily sqlite3controller\+::sqlite3controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Construct a new \mbox{\hyperlink{classsqlite3controller_a5e12813ef2d44e41238dfd8d4bbbea9a}{sqlite3controller\+::sqlite3controller}} object. 
+
 \mbox{\Hypertarget{classsqlite3controller_aa85b2bdd95d168c27a28476e07d36d88}\label{classsqlite3controller_aa85b2bdd95d168c27a28476e07d36d88}} 
 \index{sqlite3controller@{sqlite3controller}!sqlite3controller@{sqlite3controller}}
 \index{sqlite3controller@{sqlite3controller}!sqlite3controller@{sqlite3controller}}
 \doxysubsubsection{\texorpdfstring{sqlite3controller()}{sqlite3controller()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily sqlite3controller\+::sqlite3controller (\begin{DoxyParamCaption}\item[{char $\ast$}]{databasename,  }\item[{char $\ast$}]{machinename }\end{DoxyParamCaption})}
 
+
+
+Construct a new \mbox{\hyperlink{classsqlite3controller_a5e12813ef2d44e41238dfd8d4bbbea9a}{sqlite3controller\+::sqlite3controller}} object. The constructor is initialized with the name of the SQLite database and the name of the machine the File\+Integrity\+Checker application is running on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em databasename} & \\
+\hline
+{\em machinename} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classsqlite3controller_a0517049f3235b533cbcc1f2d68a42844}\label{classsqlite3controller_a0517049f3235b533cbcc1f2d68a42844}} 
 \index{sqlite3controller@{sqlite3controller}!````~sqlite3controller@{$\sim$sqlite3controller}}
 \index{````~sqlite3controller@{$\sim$sqlite3controller}!sqlite3controller@{sqlite3controller}}
 \doxysubsubsection{\texorpdfstring{$\sim$sqlite3controller()}{~sqlite3controller()}}
 {\footnotesize\ttfamily virtual sqlite3controller\+::$\sim$sqlite3controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroy the \mbox{\hyperlink{classsqlite3controller_a5e12813ef2d44e41238dfd8d4bbbea9a}{sqlite3controller\+::sqlite3controller}} object. 
 
 
 
@@ -79,17 +106,47 @@ The class that handles the SQL functions for creating, updating, and adding file
 \doxysubsubsection{\texorpdfstring{checkIfDirectoryExist()}{checkIfDirectoryExist()}}
 {\footnotesize\ttfamily int sqlite3controller\+::check\+If\+Directory\+Exist (\begin{DoxyParamCaption}\item[{const char $\ast$}]{dirname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Checks if the directory exists in the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dirname} & Relative name of the directory \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 for yes, 0 for no 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classsqlite3controller_a96b9af7291ed73ed8b7da9b3e36c5983}\label{classsqlite3controller_a96b9af7291ed73ed8b7da9b3e36c5983}} 
 \index{sqlite3controller@{sqlite3controller}!checkIfFileExist@{checkIfFileExist}}
 \index{checkIfFileExist@{checkIfFileExist}!sqlite3controller@{sqlite3controller}}
 \doxysubsubsection{\texorpdfstring{checkIfFileExist()}{checkIfFileExist()}}
 {\footnotesize\ttfamily int sqlite3controller\+::check\+If\+File\+Exist (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fname,  }\item[{const char $\ast$}]{dirname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Checks if the file exists in the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & Absolute name of the file name. \\
+\hline
+{\em dirname} & Relative name of the directory. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 for yes, 0 for no 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classsqlite3controller_ab092ae9a83a7a124a5ca19a202f6243a}\label{classsqlite3controller_ab092ae9a83a7a124a5ca19a202f6243a}} 
 \index{sqlite3controller@{sqlite3controller}!closedb@{closedb}}
 \index{closedb@{closedb}!sqlite3controller@{sqlite3controller}}
 \doxysubsubsection{\texorpdfstring{closedb()}{closedb()}}
 {\footnotesize\ttfamily void sqlite3controller\+::closedb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Close the database after use. 
 
 \mbox{\Hypertarget{classsqlite3controller_a9aa0232afbc7a8d2b71d330c607c5b40}\label{classsqlite3controller_a9aa0232afbc7a8d2b71d330c607c5b40}} 
 \index{sqlite3controller@{sqlite3controller}!createTables@{createTables}}
@@ -115,7 +172,7 @@ This is called when a new SQLite database is created. The following tables are c
 id&the auto generated id for the directory entry \\\cline{1-2}
 dirname&relative path and name of the directory \\\cline{1-2}
 dateadded&the date the directory was added to the table \\\cline{1-2}
-status&Either NEW or VERIFIED. A NEW status is set when a directory is seen by the scanner the first time. VERIFIED is the scanner verifies the directory was seen again. \\\cline{1-2}
+status&Either NEW or VERIFIED. A NEW status is set when a directory is seen by the scanner the first time. VERIFIED if the scanner verifies the directory was seen again. \\\cline{1-2}
 dataverified&This is the date the VERIFIED directory was verified by the scanner. \\\cline{1-2}
 machinename&name of the machine where the scanner is running.\\\cline{1-2}
 \end{longtabu}
@@ -130,9 +187,9 @@ machinename&name of the machine where the scanner is running.\\\cline{1-2}
 \hline
 \cellcolor{\tableheadbgcolor}\textbf{ Field name}&\cellcolor{\tableheadbgcolor}\textbf{ Description }\\\cline{1-2}
 \endhead
-id&the auto generated id for the directory entry \\\cline{1-2}
+id&the auto generated id for the file entry \\\cline{1-2}
 dirid&The ID of the Directory where the file is located. \\\cline{1-2}
-dateadded&the date the directory was added to the table \\\cline{1-2}
+dateadded&the date the file was added to the table \\\cline{1-2}
 filename&The absolute name of the file. The relative path can be pulled together using the directory reference via the dirid. \\\cline{1-2}
 hashedvalue&The hashed value of the file if the hashed value flag is set to true. The default value is NOVAL. \\\cline{1-2}
 hashedvaluechanged&A flag to indicate the hashed value changed and all changes are added to the changes table. \\\cline{1-2}
@@ -141,21 +198,36 @@ hashedvaluechanged&A flag to indicate the last modified changed and all changes 
 filesize&The file size of the file in bytes. \\\cline{1-2}
 filesizechanged&A flag to indicate the file size changed and all changes are added to the changes table.\\\cline{1-2}
 \end{longtabu}
-\begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{_menu_8h}{Menu.\+h}} 
-\end{DoxySeeAlso}
+{\bfseries{changes Table -\/ used to store the changed attributes for files.}} \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Field name}&\cellcolor{\tableheadbgcolor}\textbf{ Description }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Field name}&\cellcolor{\tableheadbgcolor}\textbf{ Description }\\\cline{1-2}
+\endhead
+id&the auto generated id for the change entry \\\cline{1-2}
+fileid&The ID of the file that has changed. \\\cline{1-2}
+datechanged&the date the change was added to the table \\\cline{1-2}
+textvalue&The text value that has changed. The default value is NULL. \\\cline{1-2}
+intvalue&The integer value that has changed. The default value is -\/1. \\\cline{1-2}
+attributechanged&The file attribute that changed.\\\cline{1-2}
+\end{longtabu}
 \mbox{\Hypertarget{classsqlite3controller_a6ffbf500e8d1d203bd264e221ee833a2}\label{classsqlite3controller_a6ffbf500e8d1d203bd264e221ee833a2}} 
 \index{sqlite3controller@{sqlite3controller}!getDATABASENAME@{getDATABASENAME}}
 \index{getDATABASENAME@{getDATABASENAME}!sqlite3controller@{sqlite3controller}}
 \doxysubsubsection{\texorpdfstring{getDATABASENAME()}{getDATABASENAME()}}
 {\footnotesize\ttfamily char $\ast$ sqlite3controller\+::get\+DATABASENAME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classsqlite3controller_add1047a4808cc535544154fffe9206a7}\label{classsqlite3controller_add1047a4808cc535544154fffe9206a7}} 
-\index{sqlite3controller@{sqlite3controller}!getPreviousHashval@{getPreviousHashval}}
-\index{getPreviousHashval@{getPreviousHashval}!sqlite3controller@{sqlite3controller}}
-\doxysubsubsection{\texorpdfstring{getPreviousHashval()}{getPreviousHashval()}}
-{\footnotesize\ttfamily char $\ast$ sqlite3controller\+::get\+Previous\+Hashval (\begin{DoxyParamCaption}\item[{const int}]{file\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+Returns the name of the SQLite database. 
+
+\begin{DoxyReturn}{Returns}
+char$\ast$ 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classsqlite3controller_a7d6ff837161930eb903754d5688f1b9b}\label{classsqlite3controller_a7d6ff837161930eb903754d5688f1b9b}} 
 \index{sqlite3controller@{sqlite3controller}!initdb@{initdb}}
 \index{initdb@{initdb}!sqlite3controller@{sqlite3controller}}
@@ -175,18 +247,69 @@ Initializes the SQLite database with the supplied databasename. The function wil
 \doxysubsubsection{\texorpdfstring{save\_dir\_info()}{save\_dir\_info()}}
 {\footnotesize\ttfamily int sqlite3controller\+::save\+\_\+dir\+\_\+info (\begin{DoxyParamCaption}\item[{const char $\ast$}]{dirname }\end{DoxyParamCaption})}
 
+
+
+Save the details of the directory. 
+
+This is the main entry point to saving the directory details. A call is made to check\+If\+Directory exists to determine if the directory was previously discovered. If the directory exists, then the directory is marked as VERIFIED. 
+\begin{DoxyParams}{Parameters}
+{\em dirname} & Relative path with the directory name. Example\+: /foo/bar/parent \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A 0 is returned if saved successfully. A -\/1 indicates an error occurred and unable to save the directory information. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsqlite3controller_afad285c88925ab4bb987583563c11d8a}{check\+If\+Directory\+Exist()}} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{classsqlite3controller_ad24d1eff1c881ec79c608d4fbd5207b3}\label{classsqlite3controller_ad24d1eff1c881ec79c608d4fbd5207b3}} 
 \index{sqlite3controller@{sqlite3controller}!save\_file\_info@{save\_file\_info}}
 \index{save\_file\_info@{save\_file\_info}!sqlite3controller@{sqlite3controller}}
 \doxysubsubsection{\texorpdfstring{save\_file\_info()}{save\_file\_info()}}
 {\footnotesize\ttfamily int sqlite3controller\+::save\+\_\+file\+\_\+info (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fname,  }\item[{const char $\ast$}]{dirname,  }\item[{char $\ast$}]{lastmodified,  }\item[{uintmax\+\_\+t}]{filesize,  }\item[{const char $\ast$}]{hashval = {\ttfamily NULL} }\end{DoxyParamCaption})}
 
+
+
+Save the details of the file. 
+
+This is the main entry point to saving the file details. If the file is new then all of the required attributes are sent to \mbox{\hyperlink{class_s_q_lite_helper_ac43f81918e037ab5b07f773794d8f9af}{SQLite\+Helper\+::save\+File\+Info}}. If the file exists, then the provided attributes are sent to \mbox{\hyperlink{class_s_q_lite_helper_ac43f81918e037ab5b07f773794d8f9af}{SQLite\+Helper\+::save\+File\+Info}}. 
+\begin{DoxyParams}{Parameters}
+{\em fname} & Absolute file name. foo.\+bar \\
+\hline
+{\em dirname} & Relative path with the directory name. Example\+: /foo/bar/parent \\
+\hline
+{\em lastmodified} & The last modified date of the file. \\
+\hline
+{\em filesize} & The size of the file in bytes. \\
+\hline
+{\em hashval} & The hashed value of the file. The default value is NULL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A 0 is returned if saved successfully. A -\/1 indicates an error occurred and unable to save the file information. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsqlite3controller_afad285c88925ab4bb987583563c11d8a}{check\+If\+Directory\+Exist()}} 
+
+\mbox{\hyperlink{class_s_q_lite_helper_a4e69ffbd22c6d9c2df1decfd484e5a83}{SQLite\+Helper\+::get\+File\+Id()}} 
+
+\mbox{\hyperlink{class_s_q_lite_helper_ac43f81918e037ab5b07f773794d8f9af}{SQLite\+Helper\+::save\+File\+Info()}} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{classsqlite3controller_ac0c940ac721d94e09be08e38eb0e5ca4}\label{classsqlite3controller_ac0c940ac721d94e09be08e38eb0e5ca4}} 
 \index{sqlite3controller@{sqlite3controller}!setDATABASENAME@{setDATABASENAME}}
 \index{setDATABASENAME@{setDATABASENAME}!sqlite3controller@{sqlite3controller}}
 \doxysubsubsection{\texorpdfstring{setDATABASENAME()}{setDATABASENAME()}}
 {\footnotesize\ttfamily void sqlite3controller\+::set\+DATABASENAME (\begin{DoxyParamCaption}\item[{char $\ast$}]{dbasename }\end{DoxyParamCaption})}
 
+
+
+Sets the name of the SQLite database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dbasename} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classsqlite3controller_a87910e834388b6f11c8493f10fd6a576}\label{classsqlite3controller_a87910e834388b6f11c8493f10fd6a576}} 
 \index{sqlite3controller@{sqlite3controller}!setMACHINENAME@{setMACHINENAME}}
 \index{setMACHINENAME@{setMACHINENAME}!sqlite3controller@{sqlite3controller}}
@@ -195,6 +318,10 @@ Initializes the SQLite database with the supplied databasename. The function wil
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
-\item 
-C\+:/\+Users/mark\+\_\+/source/repos/fileintegritychecker/headers/\mbox{\hyperlink{sqlite3controller_8h}{sqlite3controller.\+h}}\end{DoxyCompactItemize}
+Sets the machine name where the File\+Integrity\+Application is running on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em machinename} & \\
+\hline
+\end{DoxyParams}

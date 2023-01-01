@@ -4,6 +4,16 @@
 
 {\ttfamily \#include $<$SHA256\+CPP.\+h$>$}
 
+
+
+Collaboration diagram for SHA256\+CPP\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{class_s_h_a256_c_p_p__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -18,6 +28,29 @@ bool \mbox{\hyperlink{class_s_h_a256_c_p_p_acd60e2902a86486cd8c0c730b22ec34d}{en
 void \mbox{\hyperlink{class_s_h_a256_c_p_p_accf77858eb3d4019f13d1e9c40dc9a73}{print\+File\+Contents}} (FILE $\ast$file\+For\+Printing)
 \item 
 void \mbox{\hyperlink{class_s_h_a256_c_p_p_af6bbbbc8eb2d1d2ce127d9ee41f80d43}{endian\+Check\+Print}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_s_h_a256_c_p_p_ac70dfb32d56867b6f8790242c3202c06}{sig0}} (uint32\+\_\+t x)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_s_h_a256_c_p_p_ad8bbe4f9babe02201d94d63fd65cc832}{sig1}} (uint32\+\_\+t x)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_s_h_a256_c_p_p_ab1a29784c317f21287def4327f83c342}{rotr}} (uint32\+\_\+t n, uint16\+\_\+t x)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_s_h_a256_c_p_p_a0ba361bc6a4f925454dfcd14fcb95f58}{shr}} (uint32\+\_\+t n, uint16\+\_\+t x)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_s_h_a256_c_p_p_ae5224ffbd7fb6ab5d05a846e3c7e4bd3}{SIG0}} (uint32\+\_\+t x)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_s_h_a256_c_p_p_ad8ea0d3bc89a2622dd230b9fb42c8463}{SIG1}} (uint32\+\_\+t x)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_s_h_a256_c_p_p_a4f63d4fc8d0f9267cd3d4c70fb61b2f3}{Ch}} (uint32\+\_\+t x, uint32\+\_\+t y, uint32\+\_\+t z)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_s_h_a256_c_p_p_a76c44344a60f168d02bf8a5888bf02ad}{Maj}} (uint32\+\_\+t x, uint32\+\_\+t y, uint32\+\_\+t z)
+\item 
+int \mbox{\hyperlink{class_s_h_a256_c_p_p_a5064c84992660bbd9e98f46511d780d8}{calc\+File\+Size}} (FILE $\ast$file)
+\item 
+int \mbox{\hyperlink{class_s_h_a256_c_p_p_af0be644c9e466da786edad451fb16c14}{fill\+Message\+Block}} (FILE $\ast$file, union \mbox{\hyperlink{unionmessage_block}{message\+Block}} $\ast$msg\+Block, enum \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959}{status}} $\ast$state, uint64\+\_\+t $\ast$num\+Bits)
 \end{DoxyCompactItemize}
 
 
@@ -37,11 +70,23 @@ void \mbox{\hyperlink{class_s_h_a256_c_p_p_af6bbbbc8eb2d1d2ce127d9ee41f80d43}{en
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_h_a256_c_p_p_a5064c84992660bbd9e98f46511d780d8}\label{class_s_h_a256_c_p_p_a5064c84992660bbd9e98f46511d780d8}} 
+\index{SHA256CPP@{SHA256CPP}!calcFileSize@{calcFileSize}}
+\index{calcFileSize@{calcFileSize}!SHA256CPP@{SHA256CPP}}
+\doxysubsubsection{\texorpdfstring{calcFileSize()}{calcFileSize()}}
+{\footnotesize\ttfamily int SHA256\+CPP\+::calc\+File\+Size (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{class_s_h_a256_c_p_p_a9466f56550cb9725c8fd6be92e5c1b77}\label{class_s_h_a256_c_p_p_a9466f56550cb9725c8fd6be92e5c1b77}} 
 \index{SHA256CPP@{SHA256CPP}!calculateHash@{calculateHash}}
 \index{calculateHash@{calculateHash}!SHA256CPP@{SHA256CPP}}
 \doxysubsubsection{\texorpdfstring{calculateHash()}{calculateHash()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{struct_hash_values}{Hash\+Values}} SHA256\+CPP\+::calculate\+Hash (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{file }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_s_h_a256_c_p_p_a4f63d4fc8d0f9267cd3d4c70fb61b2f3}\label{class_s_h_a256_c_p_p_a4f63d4fc8d0f9267cd3d4c70fb61b2f3}} 
+\index{SHA256CPP@{SHA256CPP}!Ch@{Ch}}
+\index{Ch@{Ch}!SHA256CPP@{SHA256CPP}}
+\doxysubsubsection{\texorpdfstring{Ch()}{Ch()}}
+{\footnotesize\ttfamily uint32\+\_\+t SHA256\+CPP\+::\+Ch (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x,  }\item[{uint32\+\_\+t}]{y,  }\item[{uint32\+\_\+t}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 \mbox{\Hypertarget{class_s_h_a256_c_p_p_acd60e2902a86486cd8c0c730b22ec34d}\label{class_s_h_a256_c_p_p_acd60e2902a86486cd8c0c730b22ec34d}} 
 \index{SHA256CPP@{SHA256CPP}!endianCheck@{endianCheck}}
@@ -55,14 +100,57 @@ void \mbox{\hyperlink{class_s_h_a256_c_p_p_af6bbbbc8eb2d1d2ce127d9ee41f80d43}{en
 \doxysubsubsection{\texorpdfstring{endianCheckPrint()}{endianCheckPrint()}}
 {\footnotesize\ttfamily void SHA256\+CPP\+::endian\+Check\+Print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+\mbox{\Hypertarget{class_s_h_a256_c_p_p_af0be644c9e466da786edad451fb16c14}\label{class_s_h_a256_c_p_p_af0be644c9e466da786edad451fb16c14}} 
+\index{SHA256CPP@{SHA256CPP}!fillMessageBlock@{fillMessageBlock}}
+\index{fillMessageBlock@{fillMessageBlock}!SHA256CPP@{SHA256CPP}}
+\doxysubsubsection{\texorpdfstring{fillMessageBlock()}{fillMessageBlock()}}
+{\footnotesize\ttfamily int SHA256\+CPP\+::fill\+Message\+Block (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{file,  }\item[{union \mbox{\hyperlink{unionmessage_block}{message\+Block}} $\ast$}]{msg\+Block,  }\item[{enum \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959}{status}} $\ast$}]{state,  }\item[{uint64\+\_\+t $\ast$}]{num\+Bits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_s_h_a256_c_p_p_a76c44344a60f168d02bf8a5888bf02ad}\label{class_s_h_a256_c_p_p_a76c44344a60f168d02bf8a5888bf02ad}} 
+\index{SHA256CPP@{SHA256CPP}!Maj@{Maj}}
+\index{Maj@{Maj}!SHA256CPP@{SHA256CPP}}
+\doxysubsubsection{\texorpdfstring{Maj()}{Maj()}}
+{\footnotesize\ttfamily uint32\+\_\+t SHA256\+CPP\+::\+Maj (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x,  }\item[{uint32\+\_\+t}]{y,  }\item[{uint32\+\_\+t}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{class_s_h_a256_c_p_p_accf77858eb3d4019f13d1e9c40dc9a73}\label{class_s_h_a256_c_p_p_accf77858eb3d4019f13d1e9c40dc9a73}} 
 \index{SHA256CPP@{SHA256CPP}!printFileContents@{printFileContents}}
 \index{printFileContents@{printFileContents}!SHA256CPP@{SHA256CPP}}
 \doxysubsubsection{\texorpdfstring{printFileContents()}{printFileContents()}}
 {\footnotesize\ttfamily void SHA256\+CPP\+::print\+File\+Contents (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{file\+For\+Printing }\end{DoxyParamCaption})}
 
+\mbox{\Hypertarget{class_s_h_a256_c_p_p_ab1a29784c317f21287def4327f83c342}\label{class_s_h_a256_c_p_p_ab1a29784c317f21287def4327f83c342}} 
+\index{SHA256CPP@{SHA256CPP}!rotr@{rotr}}
+\index{rotr@{rotr}!SHA256CPP@{SHA256CPP}}
+\doxysubsubsection{\texorpdfstring{rotr()}{rotr()}}
+{\footnotesize\ttfamily uint32\+\_\+t SHA256\+CPP\+::rotr (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{n,  }\item[{uint16\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+\mbox{\Hypertarget{class_s_h_a256_c_p_p_a0ba361bc6a4f925454dfcd14fcb95f58}\label{class_s_h_a256_c_p_p_a0ba361bc6a4f925454dfcd14fcb95f58}} 
+\index{SHA256CPP@{SHA256CPP}!shr@{shr}}
+\index{shr@{shr}!SHA256CPP@{SHA256CPP}}
+\doxysubsubsection{\texorpdfstring{shr()}{shr()}}
+{\footnotesize\ttfamily uint32\+\_\+t SHA256\+CPP\+::shr (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{n,  }\item[{uint16\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
-\item 
-C\+:/\+Users/mark\+\_\+/source/repos/fileintegritychecker/headers/\mbox{\hyperlink{_s_h_a256_c_p_p_8h}{SHA256\+CPP.\+h}}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{class_s_h_a256_c_p_p_ac70dfb32d56867b6f8790242c3202c06}\label{class_s_h_a256_c_p_p_ac70dfb32d56867b6f8790242c3202c06}} 
+\index{SHA256CPP@{SHA256CPP}!sig0@{sig0}}
+\index{sig0@{sig0}!SHA256CPP@{SHA256CPP}}
+\doxysubsubsection{\texorpdfstring{sig0()}{sig0()}}
+{\footnotesize\ttfamily uint32\+\_\+t SHA256\+CPP\+::sig0 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_s_h_a256_c_p_p_ae5224ffbd7fb6ab5d05a846e3c7e4bd3}\label{class_s_h_a256_c_p_p_ae5224ffbd7fb6ab5d05a846e3c7e4bd3}} 
+\index{SHA256CPP@{SHA256CPP}!SIG0@{SIG0}}
+\index{SIG0@{SIG0}!SHA256CPP@{SHA256CPP}}
+\doxysubsubsection{\texorpdfstring{SIG0()}{SIG0()}}
+{\footnotesize\ttfamily uint32\+\_\+t SHA256\+CPP\+::\+SIG0 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_s_h_a256_c_p_p_ad8bbe4f9babe02201d94d63fd65cc832}\label{class_s_h_a256_c_p_p_ad8bbe4f9babe02201d94d63fd65cc832}} 
+\index{SHA256CPP@{SHA256CPP}!sig1@{sig1}}
+\index{sig1@{sig1}!SHA256CPP@{SHA256CPP}}
+\doxysubsubsection{\texorpdfstring{sig1()}{sig1()}}
+{\footnotesize\ttfamily uint32\+\_\+t SHA256\+CPP\+::sig1 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_s_h_a256_c_p_p_ad8ea0d3bc89a2622dd230b9fb42c8463}\label{class_s_h_a256_c_p_p_ad8ea0d3bc89a2622dd230b9fb42c8463}} 
+\index{SHA256CPP@{SHA256CPP}!SIG1@{SIG1}}
+\index{SIG1@{SIG1}!SHA256CPP@{SHA256CPP}}
+\doxysubsubsection{\texorpdfstring{SIG1()}{SIG1()}}
+{\footnotesize\ttfamily uint32\+\_\+t SHA256\+CPP\+::\+SIG1 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+

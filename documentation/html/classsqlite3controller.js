@@ -8,7 +8,6 @@ var classsqlite3controller =
     [ "closedb", "classsqlite3controller.html#ab092ae9a83a7a124a5ca19a202f6243a", null ],
     [ "createTables", "classsqlite3controller.html#a9aa0232afbc7a8d2b71d330c607c5b40", null ],
     [ "getDATABASENAME", "classsqlite3controller.html#a6ffbf500e8d1d203bd264e221ee833a2", null ],
-    [ "getPreviousHashval", "classsqlite3controller.html#add1047a4808cc535544154fffe9206a7", null ],
     [ "initdb", "classsqlite3controller.html#a7d6ff837161930eb903754d5688f1b9b", null ],
     [ "save_dir_info", "classsqlite3controller.html#a6bda68c0ea1d995b4fcf60965ab433a6", null ],
     [ "save_file_info", "classsqlite3controller.html#ad24d1eff1c881ec79c608d4fbd5207b3", null ],

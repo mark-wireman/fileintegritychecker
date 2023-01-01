@@ -4,6 +4,16 @@
 
 {\ttfamily \#include $<$fileintegritychecker.\+h$>$}
 
+
+
+Collaboration diagram for fileintegritychecker\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfileintegritychecker__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,6 +35,44 @@ void \mbox{\hyperlink{classfileintegritychecker_aeb559134d644a9263fc9ab8a25ecf33
 long int \mbox{\hyperlink{classfileintegritychecker_a084e0e1a26d35c85d16ecfccc84ee031}{numberofdirectories}} = 0
 \item 
 long int \mbox{\hyperlink{classfileintegritychecker_a8cc50a2938d11837ec1ee0250e73fa6d}{numberoffiles}} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classfileintegritychecker_af2fb66e054e9f613677746f6f3dde0a3}{get\+\_\+directories\+\_\+files}} (const string \&s, int level=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{classfileintegritychecker_a23b4005e258b5038e68452c6d895a185}{parentdir}}
+\item 
+char $\ast$ \mbox{\hyperlink{classfileintegritychecker_a5258b64047e22c2f82fb13e908b0c080}{dbasehost}}
+\item 
+char $\ast$ \mbox{\hyperlink{classfileintegritychecker_a2d1e27b35a85dc13f1619dedaf53c4c8}{dbase}}
+\item 
+char $\ast$ \mbox{\hyperlink{classfileintegritychecker_abb322369f0338dafa1c8f92b95cda730}{uname}}
+\item 
+char $\ast$ \mbox{\hyperlink{classfileintegritychecker_a6137942fb3ff1790d622310840e9dc6c}{pwd}}
+\item 
+char $\ast$ \mbox{\hyperlink{classfileintegritychecker_a6948be4b723e374ddce7273697c9dae7}{portno}}
+\item 
+char $\ast$ \mbox{\hyperlink{classfileintegritychecker_aaa47205a07b1d35b7bf6a145a99207e9}{mname}}
+\item 
+char $\ast$ \mbox{\hyperlink{classfileintegritychecker_a5b7a655ace1a445aaf32984dde0cd14a}{dbasetype}}
+\item 
+char $\ast$ \mbox{\hyperlink{classfileintegritychecker_a02a1a1e0e235f6ca153171030b60d319}{dbasefilename}}
+\item 
+int \mbox{\hyperlink{classfileintegritychecker_a754ca74fc0280d60adcf7099e7913813}{usehashvals}} = 0
+\item 
+long int \mbox{\hyperlink{classfileintegritychecker_a00bbf08cd81818d0c048f1bddfdcd9b1}{numberofnewdirectories}} = 0
+\item 
+long int \mbox{\hyperlink{classfileintegritychecker_a0c490abca9b7cb896f2efb06cd74b431}{numberofverifieddirectories}} = 0
+\item 
+bool \mbox{\hyperlink{classfileintegritychecker_a6a433c2b64e97b2ca080db41a9df49c2}{verbose\+\_\+output}} = false
+\item 
+\mbox{\hyperlink{classmysqlcontroller}{mysqlcontroller}} $\ast$ \mbox{\hyperlink{classfileintegritychecker_a73cb3d6b1f3fccb340dba68b56241ecd}{mysqlctl}}
+\item 
+\mbox{\hyperlink{classsqlite3controller}{sqlite3controller}} $\ast$ \mbox{\hyperlink{classfileintegritychecker_a106e283f11f9f3c0788f9e43c3a0d3f0}{sqlitectl}}
 \end{DoxyCompactItemize}
 
 
@@ -50,6 +98,12 @@ long int \mbox{\hyperlink{classfileintegritychecker_a8cc50a2938d11837ec1ee0250e7
 \doxysubsubsection{\texorpdfstring{closeDatabaseConnections()}{closeDatabaseConnections()}}
 {\footnotesize\ttfamily void fileintegritychecker\+::close\+Database\+Connections (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+\mbox{\Hypertarget{classfileintegritychecker_af2fb66e054e9f613677746f6f3dde0a3}\label{classfileintegritychecker_af2fb66e054e9f613677746f6f3dde0a3}} 
+\index{fileintegritychecker@{fileintegritychecker}!get\_directories\_files@{get\_directories\_files}}
+\index{get\_directories\_files@{get\_directories\_files}!fileintegritychecker@{fileintegritychecker}}
+\doxysubsubsection{\texorpdfstring{get\_directories\_files()}{get\_directories\_files()}}
+{\footnotesize\ttfamily void fileintegritychecker\+::get\+\_\+directories\+\_\+files (\begin{DoxyParamCaption}\item[{const string \&}]{s,  }\item[{int}]{level = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classfileintegritychecker_ab064f5cb87b4a7d8c557a32d764a131a}\label{classfileintegritychecker_ab064f5cb87b4a7d8c557a32d764a131a}} 
 \index{fileintegritychecker@{fileintegritychecker}!processFiles@{processFiles}}
 \index{processFiles@{processFiles}!fileintegritychecker@{fileintegritychecker}}
@@ -71,6 +125,42 @@ long int \mbox{\hyperlink{classfileintegritychecker_a8cc50a2938d11837ec1ee0250e7
 
 
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classfileintegritychecker_a2d1e27b35a85dc13f1619dedaf53c4c8}\label{classfileintegritychecker_a2d1e27b35a85dc13f1619dedaf53c4c8}} 
+\index{fileintegritychecker@{fileintegritychecker}!dbase@{dbase}}
+\index{dbase@{dbase}!fileintegritychecker@{fileintegritychecker}}
+\doxysubsubsection{\texorpdfstring{dbase}{dbase}}
+{\footnotesize\ttfamily char$\ast$ fileintegritychecker\+::dbase\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classfileintegritychecker_a02a1a1e0e235f6ca153171030b60d319}\label{classfileintegritychecker_a02a1a1e0e235f6ca153171030b60d319}} 
+\index{fileintegritychecker@{fileintegritychecker}!dbasefilename@{dbasefilename}}
+\index{dbasefilename@{dbasefilename}!fileintegritychecker@{fileintegritychecker}}
+\doxysubsubsection{\texorpdfstring{dbasefilename}{dbasefilename}}
+{\footnotesize\ttfamily char$\ast$ fileintegritychecker\+::dbasefilename\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classfileintegritychecker_a5258b64047e22c2f82fb13e908b0c080}\label{classfileintegritychecker_a5258b64047e22c2f82fb13e908b0c080}} 
+\index{fileintegritychecker@{fileintegritychecker}!dbasehost@{dbasehost}}
+\index{dbasehost@{dbasehost}!fileintegritychecker@{fileintegritychecker}}
+\doxysubsubsection{\texorpdfstring{dbasehost}{dbasehost}}
+{\footnotesize\ttfamily char$\ast$ fileintegritychecker\+::dbasehost\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classfileintegritychecker_a5b7a655ace1a445aaf32984dde0cd14a}\label{classfileintegritychecker_a5b7a655ace1a445aaf32984dde0cd14a}} 
+\index{fileintegritychecker@{fileintegritychecker}!dbasetype@{dbasetype}}
+\index{dbasetype@{dbasetype}!fileintegritychecker@{fileintegritychecker}}
+\doxysubsubsection{\texorpdfstring{dbasetype}{dbasetype}}
+{\footnotesize\ttfamily char$\ast$ fileintegritychecker\+::dbasetype\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classfileintegritychecker_aaa47205a07b1d35b7bf6a145a99207e9}\label{classfileintegritychecker_aaa47205a07b1d35b7bf6a145a99207e9}} 
+\index{fileintegritychecker@{fileintegritychecker}!mname@{mname}}
+\index{mname@{mname}!fileintegritychecker@{fileintegritychecker}}
+\doxysubsubsection{\texorpdfstring{mname}{mname}}
+{\footnotesize\ttfamily char$\ast$ fileintegritychecker\+::mname\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classfileintegritychecker_a73cb3d6b1f3fccb340dba68b56241ecd}\label{classfileintegritychecker_a73cb3d6b1f3fccb340dba68b56241ecd}} 
+\index{fileintegritychecker@{fileintegritychecker}!mysqlctl@{mysqlctl}}
+\index{mysqlctl@{mysqlctl}!fileintegritychecker@{fileintegritychecker}}
+\doxysubsubsection{\texorpdfstring{mysqlctl}{mysqlctl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmysqlcontroller}{mysqlcontroller}}$\ast$ fileintegritychecker\+::mysqlctl\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classfileintegritychecker_a084e0e1a26d35c85d16ecfccc84ee031}\label{classfileintegritychecker_a084e0e1a26d35c85d16ecfccc84ee031}} 
 \index{fileintegritychecker@{fileintegritychecker}!numberofdirectories@{numberofdirectories}}
 \index{numberofdirectories@{numberofdirectories}!fileintegritychecker@{fileintegritychecker}}
@@ -83,8 +173,57 @@ long int \mbox{\hyperlink{classfileintegritychecker_a8cc50a2938d11837ec1ee0250e7
 \doxysubsubsection{\texorpdfstring{numberoffiles}{numberoffiles}}
 {\footnotesize\ttfamily long int fileintegritychecker\+::numberoffiles = 0}
 
+\mbox{\Hypertarget{classfileintegritychecker_a00bbf08cd81818d0c048f1bddfdcd9b1}\label{classfileintegritychecker_a00bbf08cd81818d0c048f1bddfdcd9b1}} 
+\index{fileintegritychecker@{fileintegritychecker}!numberofnewdirectories@{numberofnewdirectories}}
+\index{numberofnewdirectories@{numberofnewdirectories}!fileintegritychecker@{fileintegritychecker}}
+\doxysubsubsection{\texorpdfstring{numberofnewdirectories}{numberofnewdirectories}}
+{\footnotesize\ttfamily long int fileintegritychecker\+::numberofnewdirectories = 0\hspace{0.3cm}{\ttfamily [private]}}
 
+\mbox{\Hypertarget{classfileintegritychecker_a0c490abca9b7cb896f2efb06cd74b431}\label{classfileintegritychecker_a0c490abca9b7cb896f2efb06cd74b431}} 
+\index{fileintegritychecker@{fileintegritychecker}!numberofverifieddirectories@{numberofverifieddirectories}}
+\index{numberofverifieddirectories@{numberofverifieddirectories}!fileintegritychecker@{fileintegritychecker}}
+\doxysubsubsection{\texorpdfstring{numberofverifieddirectories}{numberofverifieddirectories}}
+{\footnotesize\ttfamily long int fileintegritychecker\+::numberofverifieddirectories = 0\hspace{0.3cm}{\ttfamily [private]}}
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
-\item 
-C\+:/\+Users/mark\+\_\+/source/repos/fileintegritychecker/headers/\mbox{\hyperlink{fileintegritychecker_8h}{fileintegritychecker.\+h}}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{classfileintegritychecker_a23b4005e258b5038e68452c6d895a185}\label{classfileintegritychecker_a23b4005e258b5038e68452c6d895a185}} 
+\index{fileintegritychecker@{fileintegritychecker}!parentdir@{parentdir}}
+\index{parentdir@{parentdir}!fileintegritychecker@{fileintegritychecker}}
+\doxysubsubsection{\texorpdfstring{parentdir}{parentdir}}
+{\footnotesize\ttfamily char$\ast$ fileintegritychecker\+::parentdir\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classfileintegritychecker_a6948be4b723e374ddce7273697c9dae7}\label{classfileintegritychecker_a6948be4b723e374ddce7273697c9dae7}} 
+\index{fileintegritychecker@{fileintegritychecker}!portno@{portno}}
+\index{portno@{portno}!fileintegritychecker@{fileintegritychecker}}
+\doxysubsubsection{\texorpdfstring{portno}{portno}}
+{\footnotesize\ttfamily char$\ast$ fileintegritychecker\+::portno\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classfileintegritychecker_a6137942fb3ff1790d622310840e9dc6c}\label{classfileintegritychecker_a6137942fb3ff1790d622310840e9dc6c}} 
+\index{fileintegritychecker@{fileintegritychecker}!pwd@{pwd}}
+\index{pwd@{pwd}!fileintegritychecker@{fileintegritychecker}}
+\doxysubsubsection{\texorpdfstring{pwd}{pwd}}
+{\footnotesize\ttfamily char$\ast$ fileintegritychecker\+::pwd\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classfileintegritychecker_a106e283f11f9f3c0788f9e43c3a0d3f0}\label{classfileintegritychecker_a106e283f11f9f3c0788f9e43c3a0d3f0}} 
+\index{fileintegritychecker@{fileintegritychecker}!sqlitectl@{sqlitectl}}
+\index{sqlitectl@{sqlitectl}!fileintegritychecker@{fileintegritychecker}}
+\doxysubsubsection{\texorpdfstring{sqlitectl}{sqlitectl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsqlite3controller}{sqlite3controller}}$\ast$ fileintegritychecker\+::sqlitectl\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classfileintegritychecker_abb322369f0338dafa1c8f92b95cda730}\label{classfileintegritychecker_abb322369f0338dafa1c8f92b95cda730}} 
+\index{fileintegritychecker@{fileintegritychecker}!uname@{uname}}
+\index{uname@{uname}!fileintegritychecker@{fileintegritychecker}}
+\doxysubsubsection{\texorpdfstring{uname}{uname}}
+{\footnotesize\ttfamily char$\ast$ fileintegritychecker\+::uname\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classfileintegritychecker_a754ca74fc0280d60adcf7099e7913813}\label{classfileintegritychecker_a754ca74fc0280d60adcf7099e7913813}} 
+\index{fileintegritychecker@{fileintegritychecker}!usehashvals@{usehashvals}}
+\index{usehashvals@{usehashvals}!fileintegritychecker@{fileintegritychecker}}
+\doxysubsubsection{\texorpdfstring{usehashvals}{usehashvals}}
+{\footnotesize\ttfamily int fileintegritychecker\+::usehashvals = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classfileintegritychecker_a6a433c2b64e97b2ca080db41a9df49c2}\label{classfileintegritychecker_a6a433c2b64e97b2ca080db41a9df49c2}} 
+\index{fileintegritychecker@{fileintegritychecker}!verbose\_output@{verbose\_output}}
+\index{verbose\_output@{verbose\_output}!fileintegritychecker@{fileintegritychecker}}
+\doxysubsubsection{\texorpdfstring{verbose\_output}{verbose\_output}}
+{\footnotesize\ttfamily bool fileintegritychecker\+::verbose\+\_\+output = false\hspace{0.3cm}{\ttfamily [private]}}
+

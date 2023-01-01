@@ -24,23 +24,34 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 20 
 27 <emphasis role="keyword">class&#32;</emphasis><link linkend="_classsqlite3controller">sqlite3controller</link>&#32;{
 28 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
-29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classsqlite3controller_1a5e12813ef2d44e41238dfd8d4bbbea9a">sqlite3controller</link>();
-30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classsqlite3controller_1aa85b2bdd95d168c27a28476e07d36d88">sqlite3controller</link>(<emphasis role="keywordtype">char</emphasis>*&#32;databasename,&#32;<emphasis role="keywordtype">char</emphasis>*&#32;machinename);
-31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_classsqlite3controller_1a0517049f3235b533cbcc1f2d68a42844">~sqlite3controller</link>();
-39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classsqlite3controller_1a7d6ff837161930eb903754d5688f1b9b">initdb</link>();
-40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classsqlite3controller_1ab092ae9a83a7a124a5ca19a202f6243a">closedb</link>();
-41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classsqlite3controller_1ac0c940ac721d94e09be08e38eb0e5ca4">setDATABASENAME</link>(<emphasis role="keywordtype">char</emphasis>*&#32;dbasename);
-42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classsqlite3controller_1a87910e834388b6f11c8493f10fd6a576">setMACHINENAME</link>(<emphasis role="keywordtype">char</emphasis>*&#32;machinename);
-43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_classsqlite3controller_1a6ffbf500e8d1d203bd264e221ee833a2">getDATABASENAME</link>();
-70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classsqlite3controller_1a9aa0232afbc7a8d2b71d330c607c5b40">createTables</link>();
-71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classsqlite3controller_1ad24d1eff1c881ec79c608d4fbd5207b3">save_file_info</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;fname,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dirname,&#32;<emphasis role="keywordtype">char</emphasis>*&#32;lastmodified,&#32;uintmax_t&#32;filesize,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;hashval&#32;=&#32;NULL);
-72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classsqlite3controller_1a6bda68c0ea1d995b4fcf60965ab433a6">save_dir_info</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dirname);
-73 &#32;&#32;&#32;&#32;<emphasis role="keyword">protected</emphasis>:
-74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_classsqlite3controller_1add1047a4808cc535544154fffe9206a7">getPreviousHashval</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;fileId);
-75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classsqlite3controller_1afad285c88925ab4bb987583563c11d8a">checkIfDirectoryExist</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dirname);
-76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classsqlite3controller_1a96b9af7291ed73ed8b7da9b3e36c5983">checkIfFileExist</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;fname,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dirname);
-77 
-78 };
-79 
-80 <emphasis role="preprocessor">#endif</emphasis>
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classsqlite3controller_1a5e12813ef2d44e41238dfd8d4bbbea9a">sqlite3controller</link>();
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classsqlite3controller_1aa85b2bdd95d168c27a28476e07d36d88">sqlite3controller</link>(<emphasis role="keywordtype">char</emphasis>*&#32;databasename,&#32;<emphasis role="keywordtype">char</emphasis>*&#32;machinename);
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_classsqlite3controller_1a0517049f3235b533cbcc1f2d68a42844">~sqlite3controller</link>();
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classsqlite3controller_1a7d6ff837161930eb903754d5688f1b9b">initdb</link>();
+56 
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classsqlite3controller_1ab092ae9a83a7a124a5ca19a202f6243a">closedb</link>();
+61 
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classsqlite3controller_1ac0c940ac721d94e09be08e38eb0e5ca4">setDATABASENAME</link>(<emphasis role="keywordtype">char</emphasis>*&#32;dbasename);
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classsqlite3controller_1a87910e834388b6f11c8493f10fd6a576">setMACHINENAME</link>(<emphasis role="keywordtype">char</emphasis>*&#32;machinename);
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_classsqlite3controller_1a6ffbf500e8d1d203bd264e221ee833a2">getDATABASENAME</link>();
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classsqlite3controller_1a9aa0232afbc7a8d2b71d330c607c5b40">createTables</link>();
+116 
+131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classsqlite3controller_1ad24d1eff1c881ec79c608d4fbd5207b3">save_file_info</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;fname,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dirname,&#32;<emphasis role="keywordtype">char</emphasis>*&#32;lastmodified,&#32;uintmax_t&#32;filesize,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;hashval&#32;=&#32;NULL);
+132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classsqlite3controller_1a6bda68c0ea1d995b4fcf60965ab433a6">save_dir_info</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dirname);
+142 &#32;&#32;&#32;&#32;<emphasis role="keyword">protected</emphasis>:
+148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classsqlite3controller_1afad285c88925ab4bb987583563c11d8a">checkIfDirectoryExist</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dirname);
+149 
+156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_classsqlite3controller_1a96b9af7291ed73ed8b7da9b3e36c5983">checkIfFileExist</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;fname,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dirname);
+157 
+158 };
+159 
+160 <emphasis role="preprocessor">#endif</emphasis>
 </programlisting></section>

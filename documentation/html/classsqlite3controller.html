@@ -101,47 +101,64 @@ $(document).ready(function(){initNavTree('classsqlite3controller.html',''); init
  <a href="classsqlite3controller.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="sqlite3controller_8h_source.html">sqlite3controller.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for sqlite3controller:</div>
+<div class="dyncontent">
+<div class="center"><img src="classsqlite3controller__coll__graph.png" border="0" usemap="#asqlite3controller_coll__map" alt="Collaboration graph"/></div>
+<map name="asqlite3controller_coll__map" id="asqlite3controller_coll__map">
+<area shape="rect" title="Sqlite3 Controller class." alt="" coords="5,5,173,236"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5e12813ef2d44e41238dfd8d4bbbea9a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsqlite3controller.html#a5e12813ef2d44e41238dfd8d4bbbea9a">sqlite3controller</a> ()</td></tr>
+<tr class="memdesc:a5e12813ef2d44e41238dfd8d4bbbea9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classsqlite3controller.html#a5e12813ef2d44e41238dfd8d4bbbea9a" title="Construct a new sqlite3controller::sqlite3controller object.">sqlite3controller::sqlite3controller</a> object.  <a href="classsqlite3controller.html#a5e12813ef2d44e41238dfd8d4bbbea9a">More...</a><br /></td></tr>
 <tr class="separator:a5e12813ef2d44e41238dfd8d4bbbea9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa85b2bdd95d168c27a28476e07d36d88"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsqlite3controller.html#aa85b2bdd95d168c27a28476e07d36d88">sqlite3controller</a> (char *databasename, char *machinename)</td></tr>
+<tr class="memdesc:aa85b2bdd95d168c27a28476e07d36d88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classsqlite3controller.html#a5e12813ef2d44e41238dfd8d4bbbea9a" title="Construct a new sqlite3controller::sqlite3controller object.">sqlite3controller::sqlite3controller</a> object. The constructor is initialized with the name of the SQLite database and the name of the machine the FileIntegrityChecker application is running on.  <a href="classsqlite3controller.html#aa85b2bdd95d168c27a28476e07d36d88">More...</a><br /></td></tr>
 <tr class="separator:aa85b2bdd95d168c27a28476e07d36d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0517049f3235b533cbcc1f2d68a42844"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsqlite3controller.html#a0517049f3235b533cbcc1f2d68a42844">~sqlite3controller</a> ()</td></tr>
+<tr class="memdesc:a0517049f3235b533cbcc1f2d68a42844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classsqlite3controller.html#a5e12813ef2d44e41238dfd8d4bbbea9a" title="Construct a new sqlite3controller::sqlite3controller object.">sqlite3controller::sqlite3controller</a> object.  <a href="classsqlite3controller.html#a0517049f3235b533cbcc1f2d68a42844">More...</a><br /></td></tr>
 <tr class="separator:a0517049f3235b533cbcc1f2d68a42844"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d6ff837161930eb903754d5688f1b9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsqlite3controller.html#a7d6ff837161930eb903754d5688f1b9b">initdb</a> ()</td></tr>
 <tr class="memdesc:a7d6ff837161930eb903754d5688f1b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the SQLite database with the supplied databasename. The function will determine if the SQLite database already exists. If it does exist then the database is opened. If it does not exist, the database will be created and then a call to createTables is made to create the tables required to store the data.  <a href="classsqlite3controller.html#a7d6ff837161930eb903754d5688f1b9b">More...</a><br /></td></tr>
 <tr class="separator:a7d6ff837161930eb903754d5688f1b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab092ae9a83a7a124a5ca19a202f6243a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsqlite3controller.html#ab092ae9a83a7a124a5ca19a202f6243a">closedb</a> ()</td></tr>
+<tr class="memdesc:ab092ae9a83a7a124a5ca19a202f6243a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Close the database after use.  <a href="classsqlite3controller.html#ab092ae9a83a7a124a5ca19a202f6243a">More...</a><br /></td></tr>
 <tr class="separator:ab092ae9a83a7a124a5ca19a202f6243a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0c940ac721d94e09be08e38eb0e5ca4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsqlite3controller.html#ac0c940ac721d94e09be08e38eb0e5ca4">setDATABASENAME</a> (char *dbasename)</td></tr>
+<tr class="memdesc:ac0c940ac721d94e09be08e38eb0e5ca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the name of the SQLite database.  <a href="classsqlite3controller.html#ac0c940ac721d94e09be08e38eb0e5ca4">More...</a><br /></td></tr>
 <tr class="separator:ac0c940ac721d94e09be08e38eb0e5ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87910e834388b6f11c8493f10fd6a576"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsqlite3controller.html#a87910e834388b6f11c8493f10fd6a576">setMACHINENAME</a> (char *machinename)</td></tr>
+<tr class="memdesc:a87910e834388b6f11c8493f10fd6a576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the machine name where the FileIntegrityApplication is running on.  <a href="classsqlite3controller.html#a87910e834388b6f11c8493f10fd6a576">More...</a><br /></td></tr>
 <tr class="separator:a87910e834388b6f11c8493f10fd6a576"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ffbf500e8d1d203bd264e221ee833a2"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsqlite3controller.html#a6ffbf500e8d1d203bd264e221ee833a2">getDATABASENAME</a> ()</td></tr>
+<tr class="memdesc:a6ffbf500e8d1d203bd264e221ee833a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name of the SQLite database.  <a href="classsqlite3controller.html#a6ffbf500e8d1d203bd264e221ee833a2">More...</a><br /></td></tr>
 <tr class="separator:a6ffbf500e8d1d203bd264e221ee833a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9aa0232afbc7a8d2b71d330c607c5b40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsqlite3controller.html#a9aa0232afbc7a8d2b71d330c607c5b40">createTables</a> ()</td></tr>
 <tr class="memdesc:a9aa0232afbc7a8d2b71d330c607c5b40"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is called when a new SQLite database is created. The following tables are created:<br  />
 .  <a href="classsqlite3controller.html#a9aa0232afbc7a8d2b71d330c607c5b40">More...</a><br /></td></tr>
 <tr class="separator:a9aa0232afbc7a8d2b71d330c607c5b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad24d1eff1c881ec79c608d4fbd5207b3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsqlite3controller.html#ad24d1eff1c881ec79c608d4fbd5207b3">save_file_info</a> (const char *fname, const char *dirname, char *lastmodified, uintmax_t filesize, const char *hashval=NULL)</td></tr>
+<tr class="memdesc:ad24d1eff1c881ec79c608d4fbd5207b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the details of the file.  <a href="classsqlite3controller.html#ad24d1eff1c881ec79c608d4fbd5207b3">More...</a><br /></td></tr>
 <tr class="separator:ad24d1eff1c881ec79c608d4fbd5207b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bda68c0ea1d995b4fcf60965ab433a6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsqlite3controller.html#a6bda68c0ea1d995b4fcf60965ab433a6">save_dir_info</a> (const char *dirname)</td></tr>
+<tr class="memdesc:a6bda68c0ea1d995b4fcf60965ab433a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the details of the directory.  <a href="classsqlite3controller.html#a6bda68c0ea1d995b4fcf60965ab433a6">More...</a><br /></td></tr>
 <tr class="separator:a6bda68c0ea1d995b4fcf60965ab433a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:add1047a4808cc535544154fffe9206a7"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsqlite3controller.html#add1047a4808cc535544154fffe9206a7">getPreviousHashval</a> (const int fileId)</td></tr>
-<tr class="separator:add1047a4808cc535544154fffe9206a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afad285c88925ab4bb987583563c11d8a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsqlite3controller.html#afad285c88925ab4bb987583563c11d8a">checkIfDirectoryExist</a> (const char *dirname)</td></tr>
+<tr class="memdesc:afad285c88925ab4bb987583563c11d8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the directory exists in the database.  <a href="classsqlite3controller.html#afad285c88925ab4bb987583563c11d8a">More...</a><br /></td></tr>
 <tr class="separator:afad285c88925ab4bb987583563c11d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96b9af7291ed73ed8b7da9b3e36c5983"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsqlite3controller.html#a96b9af7291ed73ed8b7da9b3e36c5983">checkIfFileExist</a> (const char *fname, const char *dirname)</td></tr>
+<tr class="memdesc:a96b9af7291ed73ed8b7da9b3e36c5983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the file exists in the database.  <a href="classsqlite3controller.html#a96b9af7291ed73ed8b7da9b3e36c5983">More...</a><br /></td></tr>
 <tr class="separator:a96b9af7291ed73ed8b7da9b3e36c5983"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Sqlite3 Controller class. </p>
-<p >The class that handles the SQL functions for creating, updating, and adding files and directories to a Sqlite3 database. </p>
+<p >The class that handles the SQL functions for creating, updating, and adding files and directories attributes to a Sqlite3 database. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5e12813ef2d44e41238dfd8d4bbbea9a" name="a5e12813ef2d44e41238dfd8d4bbbea9a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5e12813ef2d44e41238dfd8d4bbbea9a">&#9670;&#160;</a></span>sqlite3controller() <span class="overload">[1/2]</span></h2>
@@ -157,6 +174,8 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classsqlite3controller.html#a5e12813ef2d44e41238dfd8d4bbbea9a" title="Construct a new sqlite3controller::sqlite3controller object.">sqlite3controller::sqlite3controller</a> object. </p>
 
 </div>
 </div>
@@ -186,6 +205,15 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Construct a new <a class="el" href="classsqlite3controller.html#a5e12813ef2d44e41238dfd8d4bbbea9a" title="Construct a new sqlite3controller::sqlite3controller object.">sqlite3controller::sqlite3controller</a> object. The constructor is initialized with the name of the SQLite database and the name of the machine the FileIntegrityChecker application is running on. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">databasename</td><td></td></tr>
+    <tr><td class="paramname">machinename</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a0517049f3235b533cbcc1f2d68a42844" name="a0517049f3235b533cbcc1f2d68a42844"></a>
@@ -210,6 +238,8 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Destroy the <a class="el" href="classsqlite3controller.html#a5e12813ef2d44e41238dfd8d4bbbea9a" title="Construct a new sqlite3controller::sqlite3controller object.">sqlite3controller::sqlite3controller</a> object. </p>
 
 </div>
 </div>
@@ -237,6 +267,15 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Checks if the directory exists in the database. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dirname</td><td>Relative name of the directory </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 for yes, 0 for no </dd></dl>
 
 </div>
 </div>
@@ -274,6 +313,16 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Checks if the file exists in the database. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fname</td><td>Absolute name of the file name. </td></tr>
+    <tr><td class="paramname">dirname</td><td>Relative name of the directory. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 for yes, 0 for no </dd></dl>
+
 </div>
 </div>
 <a id="ab092ae9a83a7a124a5ca19a202f6243a" name="ab092ae9a83a7a124a5ca19a202f6243a"></a>
@@ -290,6 +339,8 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Close the database after use. </p>
 
 </div>
 </div>
@@ -320,7 +371,7 @@ Protected Member Functions</h2></td></tr>
 <tr>
 <td>dateadded</td><td>the date the directory was added to the table </td></tr>
 <tr>
-<td>status</td><td>Either NEW or VERIFIED. A NEW status is set when a directory is seen by the scanner the first time. VERIFIED is the scanner verifies the directory was seen again. </td></tr>
+<td>status</td><td>Either NEW or VERIFIED. A NEW status is set when a directory is seen by the scanner the first time. VERIFIED if the scanner verifies the directory was seen again. </td></tr>
 <tr>
 <td>dataverified</td><td>This is the date the VERIFIED directory was verified by the scanner. </td></tr>
 <tr>
@@ -331,11 +382,11 @@ Protected Member Functions</h2></td></tr>
 <tr>
 <th>Field name</th><th>Description </th></tr>
 <tr>
-<td>id</td><td>the auto generated id for the directory entry </td></tr>
+<td>id</td><td>the auto generated id for the file entry </td></tr>
 <tr>
 <td>dirid</td><td>The ID of the Directory where the file is located. </td></tr>
 <tr>
-<td>dateadded</td><td>the date the directory was added to the table </td></tr>
+<td>dateadded</td><td>the date the file was added to the table </td></tr>
 <tr>
 <td>filename</td><td>The absolute name of the file. The relative path can be pulled together using the directory reference via the dirid. </td></tr>
 <tr>
@@ -351,7 +402,22 @@ Protected Member Functions</h2></td></tr>
 <tr>
 <td>filesizechanged</td><td>A flag to indicate the file size changed and all changes are added to the changes table.</td></tr>
 </table>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_menu_8h.html">Menu.h</a> </dd></dl>
+<div align="center"><b>changes Table - used to store the changed attributes for files.</b></div> <table class="doxtable">
+<tr>
+<th>Field name</th><th>Description </th></tr>
+<tr>
+<td>id</td><td>the auto generated id for the change entry </td></tr>
+<tr>
+<td>fileid</td><td>The ID of the file that has changed. </td></tr>
+<tr>
+<td>datechanged</td><td>the date the change was added to the table </td></tr>
+<tr>
+<td>textvalue</td><td>The text value that has changed. The default value is NULL. </td></tr>
+<tr>
+<td>intvalue</td><td>The integer value that has changed. The default value is -1. </td></tr>
+<tr>
+<td>attributechanged</td><td>The file attribute that changed.</td></tr>
+</table>
 
 </div>
 </div>
@@ -370,31 +436,8 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="add1047a4808cc535544154fffe9206a7" name="add1047a4808cc535544154fffe9206a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add1047a4808cc535544154fffe9206a7">&#9670;&#160;</a></span>getPreviousHashval()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">char * sqlite3controller::getPreviousHashval </td>
-          <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>fileId</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Returns the name of the SQLite database. </p>
+<dl class="section return"><dt>Returns</dt><dd>char* </dd></dl>
 
 </div>
 </div>
@@ -433,6 +476,16 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Save the details of the directory. </p>
+<div>This is the main entry point to saving the directory details. A call is made to checkIfDirectory exists to determine if the directory was previously discovered.</div> <div>If the directory exists, then the directory is marked as VERIFIED.</div> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dirname</td><td>Relative path with the directory name. Example: /foo/bar/parent </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A 0 is returned if saved successfully. A -1 indicates an error occurred and unable to save the directory information. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsqlite3controller.html#afad285c88925ab4bb987583563c11d8a" title="Checks if the directory exists in the database.">checkIfDirectoryExist()</a> </dd></dl>
 
 </div>
 </div>
@@ -480,6 +533,24 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Save the details of the file. </p>
+<div>This is the main entry point to saving the file details. If the file is new then all of the required attributes are sent to <a class="el" href="class_s_q_lite_helper.html#ac43f81918e037ab5b07f773794d8f9af">SQLiteHelper::saveFileInfo</a>.</div> <div>If the file exists, then the provided attributes are sent to <a class="el" href="class_s_q_lite_helper.html#ac43f81918e037ab5b07f773794d8f9af">SQLiteHelper::saveFileInfo</a>.</div> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fname</td><td>Absolute file name. foo.bar </td></tr>
+    <tr><td class="paramname">dirname</td><td>Relative path with the directory name. Example: /foo/bar/parent </td></tr>
+    <tr><td class="paramname">lastmodified</td><td>The last modified date of the file. </td></tr>
+    <tr><td class="paramname">filesize</td><td>The size of the file in bytes. </td></tr>
+    <tr><td class="paramname">hashval</td><td>The hashed value of the file. The default value is NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A 0 is returned if saved successfully. A -1 indicates an error occurred and unable to save the file information. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classsqlite3controller.html#afad285c88925ab4bb987583563c11d8a" title="Checks if the directory exists in the database.">checkIfDirectoryExist()</a> </dd>
+<dd>
+<a class="el" href="class_s_q_lite_helper.html#a4e69ffbd22c6d9c2df1decfd484e5a83">SQLiteHelper::getFileId()</a> </dd>
+<dd>
+<a class="el" href="class_s_q_lite_helper.html#ac43f81918e037ab5b07f773794d8f9af">SQLiteHelper::saveFileInfo()</a> </dd></dl>
+
 </div>
 </div>
 <a id="ac0c940ac721d94e09be08e38eb0e5ca4" name="ac0c940ac721d94e09be08e38eb0e5ca4"></a>
@@ -497,6 +568,14 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets the name of the SQLite database. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dbasename</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -516,11 +595,16 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets the machine name where the FileIntegrityApplication is running on. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">machinename</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/mark_/source/repos/fileintegritychecker/headers/<a class="el" href="sqlite3controller_8h_source.html">sqlite3controller.h</a></li>
-</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

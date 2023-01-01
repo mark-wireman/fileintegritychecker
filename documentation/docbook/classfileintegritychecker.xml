@@ -5,6 +5,15 @@
 <para>
 <computeroutput>#include &lt;fileintegritychecker.h&gt;</computeroutput>
 </para>
+Collaboration diagram for fileintegritychecker:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classfileintegritychecker__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
@@ -31,6 +40,48 @@
 </listitem>
         </itemizedlist>
 </simplesect>
+<simplesect>
+    <title>Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_classfileintegritychecker_1af2fb66e054e9f613677746f6f3dde0a3">get_directories_files</link> (const string &amp;s, int level=0)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>char * <link linkend="_classfileintegritychecker_1a23b4005e258b5038e68452c6d895a185">parentdir</link></para>
+</listitem>
+            <listitem><para>char * <link linkend="_classfileintegritychecker_1a5258b64047e22c2f82fb13e908b0c080">dbasehost</link></para>
+</listitem>
+            <listitem><para>char * <link linkend="_classfileintegritychecker_1a2d1e27b35a85dc13f1619dedaf53c4c8">dbase</link></para>
+</listitem>
+            <listitem><para>char * <link linkend="_classfileintegritychecker_1abb322369f0338dafa1c8f92b95cda730">uname</link></para>
+</listitem>
+            <listitem><para>char * <link linkend="_classfileintegritychecker_1a6137942fb3ff1790d622310840e9dc6c">pwd</link></para>
+</listitem>
+            <listitem><para>char * <link linkend="_classfileintegritychecker_1a6948be4b723e374ddce7273697c9dae7">portno</link></para>
+</listitem>
+            <listitem><para>char * <link linkend="_classfileintegritychecker_1aaa47205a07b1d35b7bf6a145a99207e9">mname</link></para>
+</listitem>
+            <listitem><para>char * <link linkend="_classfileintegritychecker_1a5b7a655ace1a445aaf32984dde0cd14a">dbasetype</link></para>
+</listitem>
+            <listitem><para>char * <link linkend="_classfileintegritychecker_1a02a1a1e0e235f6ca153171030b60d319">dbasefilename</link></para>
+</listitem>
+            <listitem><para>int <link linkend="_classfileintegritychecker_1a754ca74fc0280d60adcf7099e7913813">usehashvals</link> = 0</para>
+</listitem>
+            <listitem><para>long int <link linkend="_classfileintegritychecker_1a00bbf08cd81818d0c048f1bddfdcd9b1">numberofnewdirectories</link> = 0</para>
+</listitem>
+            <listitem><para>long int <link linkend="_classfileintegritychecker_1a0c490abca9b7cb896f2efb06cd74b431">numberofverifieddirectories</link> = 0</para>
+</listitem>
+            <listitem><para>bool <link linkend="_classfileintegritychecker_1a6a433c2b64e97b2ca080db41a9df49c2">verbose_output</link> = false</para>
+</listitem>
+            <listitem><para><link linkend="_classmysqlcontroller">mysqlcontroller</link> * <link linkend="_classfileintegritychecker_1a73cb3d6b1f3fccb340dba68b56241ecd">mysqlctl</link></para>
+</listitem>
+            <listitem><para><link linkend="_classsqlite3controller">sqlite3controller</link> * <link linkend="_classfileintegritychecker_1a106e283f11f9f3c0788f9e43c3a0d3f0">sqlitectl</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
 <section>
 <title>Constructor &amp; Destructor Documentation</title>
 <anchor xml:id="_classfileintegritychecker_1a4f113638831295eab7ae564155dc2c3c"/><section>
@@ -51,6 +102,12 @@
 <indexterm><primary>closeDatabaseConnections</primary><secondary>fileintegritychecker</secondary></indexterm>
 <indexterm><primary>fileintegritychecker</primary><secondary>closeDatabaseConnections</secondary></indexterm>
 <para><computeroutput>void fileintegritychecker::closeDatabaseConnections ( )</computeroutput></para></section>
+<anchor xml:id="_classfileintegritychecker_1af2fb66e054e9f613677746f6f3dde0a3"/><section>
+    <title>get_directories_files()</title>
+<indexterm><primary>get_directories_files</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>get_directories_files</secondary></indexterm>
+<para><computeroutput>void fileintegritychecker::get_directories_files (const string &amp; s, int level = <computeroutput>0</computeroutput>
+)<computeroutput>[private]</computeroutput></computeroutput></para></section>
 <anchor xml:id="_classfileintegritychecker_1ab064f5cb87b4a7d8c557a32d764a131a"/><section>
     <title>processFiles()</title>
 <indexterm><primary>processFiles</primary><secondary>fileintegritychecker</secondary></indexterm>
@@ -69,6 +126,36 @@
 </section>
 <section>
 <title>Member Data Documentation</title>
+<anchor xml:id="_classfileintegritychecker_1a2d1e27b35a85dc13f1619dedaf53c4c8"/><section>
+    <title>dbase</title>
+<indexterm><primary>dbase</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>dbase</secondary></indexterm>
+<para><computeroutput>char* fileintegritychecker::dbase<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classfileintegritychecker_1a02a1a1e0e235f6ca153171030b60d319"/><section>
+    <title>dbasefilename</title>
+<indexterm><primary>dbasefilename</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>dbasefilename</secondary></indexterm>
+<para><computeroutput>char* fileintegritychecker::dbasefilename<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classfileintegritychecker_1a5258b64047e22c2f82fb13e908b0c080"/><section>
+    <title>dbasehost</title>
+<indexterm><primary>dbasehost</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>dbasehost</secondary></indexterm>
+<para><computeroutput>char* fileintegritychecker::dbasehost<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classfileintegritychecker_1a5b7a655ace1a445aaf32984dde0cd14a"/><section>
+    <title>dbasetype</title>
+<indexterm><primary>dbasetype</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>dbasetype</secondary></indexterm>
+<para><computeroutput>char* fileintegritychecker::dbasetype<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classfileintegritychecker_1aaa47205a07b1d35b7bf6a145a99207e9"/><section>
+    <title>mname</title>
+<indexterm><primary>mname</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>mname</secondary></indexterm>
+<para><computeroutput>char* fileintegritychecker::mname<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classfileintegritychecker_1a73cb3d6b1f3fccb340dba68b56241ecd"/><section>
+    <title>mysqlctl</title>
+<indexterm><primary>mysqlctl</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>mysqlctl</secondary></indexterm>
+<para><computeroutput><link linkend="_classmysqlcontroller">mysqlcontroller</link>* fileintegritychecker::mysqlctl<computeroutput>[private]</computeroutput></computeroutput></para></section>
 <anchor xml:id="_classfileintegritychecker_1a084e0e1a26d35c85d16ecfccc84ee031"/><section>
     <title>numberofdirectories</title>
 <indexterm><primary>numberofdirectories</primary><secondary>fileintegritychecker</secondary></indexterm>
@@ -79,7 +166,50 @@
 <indexterm><primary>numberoffiles</primary><secondary>fileintegritychecker</secondary></indexterm>
 <indexterm><primary>fileintegritychecker</primary><secondary>numberoffiles</secondary></indexterm>
 <para><computeroutput>long int fileintegritychecker::numberoffiles = 0</computeroutput></para></section>
-<para>
-The documentation for this class was generated from the following file:</para>
-C:/Users/mark_/source/repos/fileintegritychecker/headers/<link linkend="_fileintegritychecker_8h">fileintegritychecker.h</link></section>
+<anchor xml:id="_classfileintegritychecker_1a00bbf08cd81818d0c048f1bddfdcd9b1"/><section>
+    <title>numberofnewdirectories</title>
+<indexterm><primary>numberofnewdirectories</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>numberofnewdirectories</secondary></indexterm>
+<para><computeroutput>long int fileintegritychecker::numberofnewdirectories = 0<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classfileintegritychecker_1a0c490abca9b7cb896f2efb06cd74b431"/><section>
+    <title>numberofverifieddirectories</title>
+<indexterm><primary>numberofverifieddirectories</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>numberofverifieddirectories</secondary></indexterm>
+<para><computeroutput>long int fileintegritychecker::numberofverifieddirectories = 0<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classfileintegritychecker_1a23b4005e258b5038e68452c6d895a185"/><section>
+    <title>parentdir</title>
+<indexterm><primary>parentdir</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>parentdir</secondary></indexterm>
+<para><computeroutput>char* fileintegritychecker::parentdir<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classfileintegritychecker_1a6948be4b723e374ddce7273697c9dae7"/><section>
+    <title>portno</title>
+<indexterm><primary>portno</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>portno</secondary></indexterm>
+<para><computeroutput>char* fileintegritychecker::portno<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classfileintegritychecker_1a6137942fb3ff1790d622310840e9dc6c"/><section>
+    <title>pwd</title>
+<indexterm><primary>pwd</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>pwd</secondary></indexterm>
+<para><computeroutput>char* fileintegritychecker::pwd<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classfileintegritychecker_1a106e283f11f9f3c0788f9e43c3a0d3f0"/><section>
+    <title>sqlitectl</title>
+<indexterm><primary>sqlitectl</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>sqlitectl</secondary></indexterm>
+<para><computeroutput><link linkend="_classsqlite3controller">sqlite3controller</link>* fileintegritychecker::sqlitectl<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classfileintegritychecker_1abb322369f0338dafa1c8f92b95cda730"/><section>
+    <title>uname</title>
+<indexterm><primary>uname</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>uname</secondary></indexterm>
+<para><computeroutput>char* fileintegritychecker::uname<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classfileintegritychecker_1a754ca74fc0280d60adcf7099e7913813"/><section>
+    <title>usehashvals</title>
+<indexterm><primary>usehashvals</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>usehashvals</secondary></indexterm>
+<para><computeroutput>int fileintegritychecker::usehashvals = 0<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_classfileintegritychecker_1a6a433c2b64e97b2ca080db41a9df49c2"/><section>
+    <title>verbose_output</title>
+<indexterm><primary>verbose_output</primary><secondary>fileintegritychecker</secondary></indexterm>
+<indexterm><primary>fileintegritychecker</primary><secondary>verbose_output</secondary></indexterm>
+<para><computeroutput>bool fileintegritychecker::verbose_output = false<computeroutput>[private]</computeroutput></computeroutput></para></section>
+</section>
 </section>

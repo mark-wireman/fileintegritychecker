@@ -20,8 +20,8 @@ char* sql_get_directory_id = "select id from directories where dirname=? and mac
 char* sql_save_newfile_nohashedval = "insert into files (dirid, dateadded, filename, filesize, lastmodified) VALUES (?,?,?,?,?); ";
 char* sql_save_newfile_hashedval = "insert into files (dirid, dateadded, filename, filesize, lastmodified, hashval) VALUES (?,?,?,?,?,?); ";
 
-char* sql_save_textval_in_changes = "INSERT INTO changes (fileid,datechanged,textvalue) VALUES (?,?,?); ";
-char* sql_save_intval_in_changes = "INSERT INTO changes (fileid,datechanged,intvalue) VALUES (?,?,?); ";
+char* sql_save_textval_in_changes = "INSERT INTO changes (fileid,datechanged,textvalue,attributechanged) VALUES (?,?,?,?); ";
+char* sql_save_intval_in_changes = "INSERT INTO changes (fileid,datechanged,intvalue,attributechanged) VALUES (?,?,?,?); ";
 
 char* sql_set_inchanges_hashedval = "UPDATE files SET hashedvaluechanged=1 WHERE id=?; ";
 char* sql_set_inchanges_filesize = "UPDATE files SET filesizechanged=1 WHERE id=?; ";
@@ -419,7 +419,7 @@ int SQLiteHelper::saveNewFileInfo(sqlite3* db) {
         sqlite3_bind_text(pStmt, 5, _datemodified, -1, NULL);
         
         if (_hashedval != NULL) {
-            sqlite3_bind_text(pStmt, 7, _hashedval, -1, NULL);
+            sqlite3_bind_text(pStmt, 6, _hashedval, -1, NULL);
         }
     }
     else {
@@ -438,16 +438,16 @@ int SQLiteHelper::saveNewFileInfo(sqlite3* db) {
         }
     }
     else if (rc == SQLITE_ERROR) {
-        printf("\nIn saveNewFileInfo execution failed: %s\n", sqlite3_errmsg(db));
+        printf("\nIn SQLiteHelper::saveNewFileInfo execution failed: %s\n", sqlite3_errmsg(db));
     }
     else if (rc == SQLITE_MISUSE) {
-        cout << "\nA MISUSE has been deteced in saveNewFileInfo." << endl;
+        cout << "\nA MISUSE has been deteced in SQLiteHelper::saveNewFileInfo." << endl;
     }
     else if (rc == SQLITE_DONE) {
-        cout << "\nsqlite3_step executed successfully in saveNewFileInfo." << endl;
+        cout << "\nsqlite3_step executed successfully in SQLiteHelper::saveNewFileInfo." << endl;
     }
     else {
-        cout << "\nNot sure what happened in saveNewFileInfo." << endl;
+        cout << "\nNot sure what happened in SQLiteHelper::saveNewFileInfo." << endl;
     }
 
     sqlite3_finalize(pStmt);
@@ -481,7 +481,7 @@ int SQLiteHelper::saveExistingFileInfo(sqlite3* db, AttributeToCheck attr_to_upd
         
         if (has_changes == 0) {
             //fprintf(stderr, "\nInside has_changes with value of %d and text value %s\n", has_changes, text_val);
-            retVal = insertTextValueToChanges(db, fileId, text_val);
+            retVal = insertTextValueToChanges(db, fileId, text_val,"hashedvalue");
         }
         break;
     case 2:
@@ -495,7 +495,7 @@ int SQLiteHelper::saveExistingFileInfo(sqlite3* db, AttributeToCheck attr_to_upd
         
         if (has_changes == 0) {
             //fprintf(stderr, "\nInside has_changes with value of %d and int value %d\n", has_changes, int_val);
-            retVal = insertIntValueToChanges(db, fileId, int_val);
+            retVal = insertIntValueToChanges(db, fileId, int_val, "filesize");
         }
         break;
     case 3:
@@ -509,7 +509,7 @@ int SQLiteHelper::saveExistingFileInfo(sqlite3* db, AttributeToCheck attr_to_upd
         
         if (has_changes == 0) {
             //fprintf(stderr, "\nInside has_changes with value of %d and text value %s\n", has_changes, text_val);
-            retVal = insertTextValueToChanges(db, fileId, text_val);
+            retVal = insertTextValueToChanges(db, fileId, text_val,"lastmodified");
         }
         break;
     default:
@@ -523,7 +523,7 @@ int SQLiteHelper::saveExistingFileInfo(sqlite3* db, AttributeToCheck attr_to_upd
     return retVal;
 }
 
-int SQLiteHelper::insertTextValueToChanges(sqlite3* db, const int file_id, const char* text_val) {
+int SQLiteHelper::insertTextValueToChanges(sqlite3* db, const int file_id, const char* text_val, const char* attr_changed) {
     char* zErrMsg = 0;
     int rc;
     sqlite3_stmt* pStmt;
@@ -535,6 +535,7 @@ int SQLiteHelper::insertTextValueToChanges(sqlite3* db, const int file_id, const
         sqlite3_bind_int(pStmt, 1, file_id);
         sqlite3_bind_text(pStmt, 2, current_time, -1, NULL);
         sqlite3_bind_text(pStmt, 3, text_val, -1, NULL);
+        sqlite3_bind_text(pStmt, 4, attr_changed, -1, NULL);
     }
     else {
 
@@ -570,7 +571,7 @@ int SQLiteHelper::insertTextValueToChanges(sqlite3* db, const int file_id, const
     return 0;
 }
 
-int SQLiteHelper::insertIntValueToChanges(sqlite3* db, const int file_id, const int int_val) {
+int SQLiteHelper::insertIntValueToChanges(sqlite3* db, const int file_id, const int int_val, const char* attr_changed) {
     char* zErrMsg = 0;
     int rc;
     sqlite3_stmt* pStmt;
@@ -582,6 +583,7 @@ int SQLiteHelper::insertIntValueToChanges(sqlite3* db, const int file_id, const 
         sqlite3_bind_int(pStmt, 1, file_id);
         sqlite3_bind_text(pStmt, 2, current_time, -1, NULL);
         sqlite3_bind_int(pStmt, 3, int_val);
+        sqlite3_bind_text(pStmt, 4, attr_changed, -1, NULL);
     }
     else {
 

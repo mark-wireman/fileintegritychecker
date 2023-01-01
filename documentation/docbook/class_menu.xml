@@ -5,6 +5,15 @@
 <para>
 <computeroutput>#include &lt;Menu.h&gt;</computeroutput>
 </para>
+Collaboration diagram for Menu:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_menu__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
@@ -33,6 +42,29 @@
             <listitem><para>char * <link linkend="_class_menu_1a34eb19b4584c6139b1d0fbc7811ba68a">getDBASEFILENAME</link> ()</para>
 </listitem>
             <listitem><para>int <link linkend="_class_menu_1a7296588596f0d05634bb6b6a26d51000">getPROCESSHASHVALS</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Private Attributes    </title>
+        <itemizedlist>
+            <listitem><para>char * <link linkend="_class_menu_1a00e9ec31107eb8cbef31f3f198f168a2">parentdir</link> = NULL</para>
+</listitem>
+            <listitem><para>char * <link linkend="_class_menu_1a05ecb7899e5f3ae7345dae98bc27553c">dbasehost</link> = NULL</para>
+</listitem>
+            <listitem><para>char * <link linkend="_class_menu_1abfa524748149194d31f3a760ab8765fd">uname</link> = NULL</para>
+</listitem>
+            <listitem><para>char * <link linkend="_class_menu_1a3851b8c999f1ed310c57b306d6bc2a03">pwd</link> = NULL</para>
+</listitem>
+            <listitem><para>char * <link linkend="_class_menu_1ab170c7e84e5d2da91880820ccbc12abf">portno</link> = NULL</para>
+</listitem>
+            <listitem><para>char * <link linkend="_class_menu_1ab67d5fb0837589bb4d6dac62131a72a4">mname</link> = NULL</para>
+</listitem>
+            <listitem><para>char * <link linkend="_class_menu_1a0cc46cd227e7fcecf4413b9afe58d29d">dbasetype</link> = NULL</para>
+</listitem>
+            <listitem><para>char * <link linkend="_class_menu_1a3ff2979249504fbed7989ee73b4f58a6">dbasefilename</link> = NULL</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_menu_1aa094dcb11114277b2e0921587c2bcb12">processhashvals</link> = 0</para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -106,7 +138,53 @@
 <indexterm><primary>PrintMenu</primary><secondary>Menu</secondary></indexterm>
 <indexterm><primary>Menu</primary><secondary>PrintMenu</secondary></indexterm>
 <para><computeroutput>void Menu::PrintMenu ( )</computeroutput></para></section>
-<para>
-The documentation for this class was generated from the following file:</para>
-C:/Users/mark_/source/repos/fileintegritychecker/headers/<link linkend="__menu_8h">Menu.h</link></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_menu_1a3ff2979249504fbed7989ee73b4f58a6"/><section>
+    <title>dbasefilename</title>
+<indexterm><primary>dbasefilename</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>dbasefilename</secondary></indexterm>
+<para><computeroutput>char* Menu::dbasefilename = NULL<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_menu_1a05ecb7899e5f3ae7345dae98bc27553c"/><section>
+    <title>dbasehost</title>
+<indexterm><primary>dbasehost</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>dbasehost</secondary></indexterm>
+<para><computeroutput>char* Menu::dbasehost = NULL<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_menu_1a0cc46cd227e7fcecf4413b9afe58d29d"/><section>
+    <title>dbasetype</title>
+<indexterm><primary>dbasetype</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>dbasetype</secondary></indexterm>
+<para><computeroutput>char* Menu::dbasetype = NULL<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_menu_1ab67d5fb0837589bb4d6dac62131a72a4"/><section>
+    <title>mname</title>
+<indexterm><primary>mname</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>mname</secondary></indexterm>
+<para><computeroutput>char* Menu::mname = NULL<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_menu_1a00e9ec31107eb8cbef31f3f198f168a2"/><section>
+    <title>parentdir</title>
+<indexterm><primary>parentdir</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>parentdir</secondary></indexterm>
+<para><computeroutput>char* Menu::parentdir = NULL<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_menu_1ab170c7e84e5d2da91880820ccbc12abf"/><section>
+    <title>portno</title>
+<indexterm><primary>portno</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>portno</secondary></indexterm>
+<para><computeroutput>char* Menu::portno = NULL<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_menu_1aa094dcb11114277b2e0921587c2bcb12"/><section>
+    <title>processhashvals</title>
+<indexterm><primary>processhashvals</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>processhashvals</secondary></indexterm>
+<para><computeroutput>int Menu::processhashvals = 0<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_menu_1a3851b8c999f1ed310c57b306d6bc2a03"/><section>
+    <title>pwd</title>
+<indexterm><primary>pwd</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>pwd</secondary></indexterm>
+<para><computeroutput>char* Menu::pwd = NULL<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<anchor xml:id="_class_menu_1abfa524748149194d31f3a760ab8765fd"/><section>
+    <title>uname</title>
+<indexterm><primary>uname</primary><secondary>Menu</secondary></indexterm>
+<indexterm><primary>Menu</primary><secondary>uname</secondary></indexterm>
+<para><computeroutput>char* Menu::uname = NULL<computeroutput>[private]</computeroutput></computeroutput></para></section>
+</section>
 </section>

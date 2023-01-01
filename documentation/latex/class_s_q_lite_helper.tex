@@ -2,8 +2,23 @@
 \label{class_s_q_lite_helper}\index{SQLiteHelper@{SQLiteHelper}}
 
 
+The SQL Helper class for the SQLite database.  
+
+
+
+
 {\ttfamily \#include $<$SQLite\+Helper.\+h$>$}
 
+
+
+Collaboration diagram for SQLite\+Helper\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{class_s_q_lite_helper__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -12,37 +27,59 @@ enum \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{A
 , \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7}{Date\+Modified}} = 3
 , \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad}{NONE}} = 4
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Enumerator used to set the file attribute to check for changes or to update the value for. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}} \{ \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809}{Files}} = 1
 , \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17}{Changes}} = 2
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Enumerator used to set the table to check for file attribute changes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static int \mbox{\hyperlink{class_s_q_lite_helper_ab5c6b4d91ba851773d08383743cbe503}{check\+If\+Attribute\+Is\+In\+Changes}} (const int file\+\_\+id, const \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}} attribute, sqlite3 $\ast$db)
-\item 
+\begin{DoxyCompactList}\small\item\em Determines if the provided attribute is in the changes table. \end{DoxyCompactList}\item 
 static int \mbox{\hyperlink{class_s_q_lite_helper_a277ba3424168330b7f5b354e477f5de2}{check\+If\+Attribute\+Has\+Changed}} (const int file\+\_\+id, const \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}} attribute, const \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}} table, sqlite3 $\ast$db, const char $\ast$char\+\_\+attr=NULL, const int int\+\_\+attr=0)
-\item 
+\begin{DoxyCompactList}\small\item\em Determines if the provided attribute has changed its value. \end{DoxyCompactList}\item 
 static char $\ast$ \mbox{\hyperlink{class_s_q_lite_helper_adbeb0bc39c03a429690faf485a17c2d1}{get\+Current\+Time}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Will retrieve the current time. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_s_q_lite_helper_a174400575d3038248769856efc9546a8}{set\+Directory\+Name}} (char $\ast$dir\+\_\+name)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the relative directory name. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_s_q_lite_helper_a0815f283b738dea61f78f0e0dab958ea}{set\+File\+Name}} (char $\ast$file\+\_\+name)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the absolute file name. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_s_q_lite_helper_a8fc3a476fa41e7601138ed1a87431ab9}{set\+Machine\+Name}} (char $\ast$machine\+\_\+name)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the machine name where the scanner is running. \end{DoxyCompactList}\item 
 static int \mbox{\hyperlink{class_s_q_lite_helper_adcab3649b5f610ddab96736dc409d653}{get\+Directory\+Id}} (sqlite3 $\ast$db)
-\item 
+\begin{DoxyCompactList}\small\item\em Retrieves the id of the directory from the directories table. \end{DoxyCompactList}\item 
 static int \mbox{\hyperlink{class_s_q_lite_helper_a42d042748147b7ebe97214069c62ace6}{get\+Directory\+Id}} (sqlite3 $\ast$db, char $\ast$dir\+\_\+name, char $\ast$machine\+\_\+name)
-\item 
+\begin{DoxyCompactList}\small\item\em Retrieves the id of the directory from the directories table. \end{DoxyCompactList}\item 
 static int \mbox{\hyperlink{class_s_q_lite_helper_a4e69ffbd22c6d9c2df1decfd484e5a83}{get\+File\+Id}} (sqlite3 $\ast$db)
 \item 
 static int \mbox{\hyperlink{class_s_q_lite_helper_abb6a58d490dda33874679f9b6f7a2025}{get\+File\+Id}} (sqlite3 $\ast$db, char $\ast$file\+\_\+name, int dir\+\_\+id)
 \item 
 static int \mbox{\hyperlink{class_s_q_lite_helper_ac43f81918e037ab5b07f773794d8f9af}{save\+File\+Info}} (sqlite3 $\ast$db, const int dir\+\_\+id, const char $\ast$file\+\_\+name, const int file\+\_\+size=0, const char $\ast$date\+\_\+modified=NULL, const char $\ast$hashed\+\_\+val=NULL, const bool is\+New=true, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}} attr\+\_\+to\+\_\+update=\mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad}{Attribute\+To\+Check\+::\+NONE}})
 \end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_s_q_lite_helper_a0f4192b37fcaff2ba209154127ade345}{did\+Hashed\+Value\+Change}} (const char $\ast$hashed\+\_\+val, \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}} table, const int file\+\_\+id, sqlite3 $\ast$db)
+\item 
+static int \mbox{\hyperlink{class_s_q_lite_helper_ae87be06de4087dcf735e5b12c4eaee9a}{did\+File\+Size\+Change}} (const int file\+\_\+size, \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}} table, const int file\+\_\+id, sqlite3 $\ast$db)
+\item 
+static int \mbox{\hyperlink{class_s_q_lite_helper_aac258e856d9f8c033d33bbd4fc8919cd}{did\+Date\+Modified\+Change}} (const char $\ast$date\+\_\+modified, \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}} table, const int file\+\_\+id, sqlite3 $\ast$db)
+\item 
+static int \mbox{\hyperlink{class_s_q_lite_helper_a416b734c88d6e65e3a358953aea9468a}{save\+New\+File\+Info}} (sqlite3 $\ast$db)
+\item 
+static int \mbox{\hyperlink{class_s_q_lite_helper_a84b6c0493c0f59b4311ec393464b01ec}{save\+Existing\+File\+Info}} (sqlite3 $\ast$db, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}} attr\+\_\+to\+\_\+update, const char $\ast$text\+\_\+val=NULL, const int int\+\_\+val=0)
+\item 
+static int \mbox{\hyperlink{class_s_q_lite_helper_a95096df7d3e7fb019d18f2a62a10d646}{insert\+Text\+Value\+To\+Changes}} (sqlite3 $\ast$db, const int file\+\_\+id, const char $\ast$text\+\_\+val, const char $\ast$attr\+\_\+changed)
+\item 
+static int \mbox{\hyperlink{class_s_q_lite_helper_a9f5d43ac23996620ac57f3be87fd17cd}{insert\+Int\+Value\+To\+Changes}} (sqlite3 $\ast$db, const int file\+\_\+id, const int int\+\_\+val, const char $\ast$attr\+\_\+changed)
+\item 
+static int \mbox{\hyperlink{class_s_q_lite_helper_a4eb63efa7ac69125fd954d5efb23c2c6}{update\+Changed\+In\+File}} (sqlite3 $\ast$db, int file\+\_\+id, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}} attr\+\_\+to\+\_\+change)
+\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+The SQL Helper class for the SQLite database. 
 
 \doxysubsection{Member Enumeration Documentation}
 \mbox{\Hypertarget{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}\label{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}} 
@@ -50,6 +87,10 @@ static int \mbox{\hyperlink{class_s_q_lite_helper_ac43f81918e037ab5b07f773794d8f
 \index{AttributeToCheck@{AttributeToCheck}!SQLiteHelper@{SQLiteHelper}}
 \doxysubsubsection{\texorpdfstring{AttributeToCheck}{AttributeToCheck}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{SQLite\+Helper\+::\+Attribute\+To\+Check}}}
+
+
+
+Enumerator used to set the file attribute to check for changes or to update the value for. 
 
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{HashedVal@{HashedVal}!SQLiteHelper@{SQLiteHelper}}\index{SQLiteHelper@{SQLiteHelper}!HashedVal@{HashedVal}}}\mbox{\Hypertarget{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f}\label{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f}} 
@@ -69,11 +110,20 @@ NONE&\\
 \hline
 
 \end{DoxyEnumFields}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22 \{ \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f}{HashedVal}} = 1, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02}{FileSize}} = 2, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7}{DateModified}} = 3, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad}{NONE}} = 4\};}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}\label{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}} 
 \index{SQLiteHelper@{SQLiteHelper}!TableToCheck@{TableToCheck}}
 \index{TableToCheck@{TableToCheck}!SQLiteHelper@{SQLiteHelper}}
 \doxysubsubsection{\texorpdfstring{TableToCheck}{TableToCheck}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{SQLite\+Helper\+::\+Table\+To\+Check}}}
+
+
+
+Enumerator used to set the table to check for file attribute changes. 
 
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{Files@{Files}!SQLiteHelper@{SQLiteHelper}}\index{SQLiteHelper@{SQLiteHelper}!Files@{Files}}}\mbox{\Hypertarget{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809}\label{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809}} 
@@ -86,6 +136,11 @@ Changes&\\
 
 \end{DoxyEnumFields}
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{27 \{\mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809}{Files}} = 1, \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17}{Changes}} = 2\};}
+
+\end{DoxyCode}
+
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_s_q_lite_helper_a277ba3424168330b7f5b354e477f5de2}\label{class_s_q_lite_helper_a277ba3424168330b7f5b354e477f5de2}} 
@@ -94,60 +149,345 @@ Changes&\\
 \doxysubsubsection{\texorpdfstring{checkIfAttributeHasChanged()}{checkIfAttributeHasChanged()}}
 {\footnotesize\ttfamily static int SQLite\+Helper\+::check\+If\+Attribute\+Has\+Changed (\begin{DoxyParamCaption}\item[{const int}]{file\+\_\+id,  }\item[{const \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}}}]{attribute,  }\item[{const \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}}}]{table,  }\item[{sqlite3 $\ast$}]{db,  }\item[{const char $\ast$}]{char\+\_\+attr = {\ttfamily NULL},  }\item[{const int}]{int\+\_\+attr = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Determines if the provided attribute has changed its value. 
+
+The logic in the function will first determine the attribute to check using the attribute parameter and then will call the appropriate function to check if the attribute did change. 
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+id} & The id of the file. \\
+\hline
+{\em attribute} & The attribute to check. \\
+\hline
+{\em table} & The table to check based on whether the attribute is in the changes or the files table. \\
+\hline
+{\em db} & The sqlite3 database object. \\
+\hline
+{\em char\+\_\+attr} & The character value attribute to check. The default is NULL. \\
+\hline
+{\em int\+\_\+attr} & The integer value attribute to check. The default is 0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}} 
+
+\mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}} 
+
+\mbox{\hyperlink{class_s_q_lite_helper_a0f4192b37fcaff2ba209154127ade345}{did\+Hashed\+Value\+Change()}} 
+
+\mbox{\hyperlink{class_s_q_lite_helper_ae87be06de4087dcf735e5b12c4eaee9a}{did\+File\+Size\+Change()}} 
+
+\mbox{\hyperlink{class_s_q_lite_helper_aac258e856d9f8c033d33bbd4fc8919cd}{did\+Date\+Modified\+Change()}} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+1 if changed, 0 if not 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_s_q_lite_helper_ab5c6b4d91ba851773d08383743cbe503}\label{class_s_q_lite_helper_ab5c6b4d91ba851773d08383743cbe503}} 
 \index{SQLiteHelper@{SQLiteHelper}!checkIfAttributeIsInChanges@{checkIfAttributeIsInChanges}}
 \index{checkIfAttributeIsInChanges@{checkIfAttributeIsInChanges}!SQLiteHelper@{SQLiteHelper}}
 \doxysubsubsection{\texorpdfstring{checkIfAttributeIsInChanges()}{checkIfAttributeIsInChanges()}}
 {\footnotesize\ttfamily static int SQLite\+Helper\+::check\+If\+Attribute\+Is\+In\+Changes (\begin{DoxyParamCaption}\item[{const int}]{file\+\_\+id,  }\item[{const \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}}}]{attribute,  }\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Determines if the provided attribute is in the changes table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+id} & The id of the file. \\
+\hline
+{\em attribute} & The attribute to check. \\
+\hline
+{\em db} & The sqlite3 database object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if is in the changes table, 0 if not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_s_q_lite_helper_aac258e856d9f8c033d33bbd4fc8919cd}\label{class_s_q_lite_helper_aac258e856d9f8c033d33bbd4fc8919cd}} 
+\index{SQLiteHelper@{SQLiteHelper}!didDateModifiedChange@{didDateModifiedChange}}
+\index{didDateModifiedChange@{didDateModifiedChange}!SQLiteHelper@{SQLiteHelper}}
+\doxysubsubsection{\texorpdfstring{didDateModifiedChange()}{didDateModifiedChange()}}
+{\footnotesize\ttfamily static int SQLite\+Helper\+::did\+Date\+Modified\+Change (\begin{DoxyParamCaption}\item[{const char $\ast$}]{date\+\_\+modified,  }\item[{\mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}}}]{table,  }\item[{const int}]{file\+\_\+id,  }\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em date\+\_\+modified} & \\
+\hline
+{\em table} & \\
+\hline
+{\em file\+\_\+id} & \\
+\hline
+{\em db} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_s_q_lite_helper_ae87be06de4087dcf735e5b12c4eaee9a}\label{class_s_q_lite_helper_ae87be06de4087dcf735e5b12c4eaee9a}} 
+\index{SQLiteHelper@{SQLiteHelper}!didFileSizeChange@{didFileSizeChange}}
+\index{didFileSizeChange@{didFileSizeChange}!SQLiteHelper@{SQLiteHelper}}
+\doxysubsubsection{\texorpdfstring{didFileSizeChange()}{didFileSizeChange()}}
+{\footnotesize\ttfamily static int SQLite\+Helper\+::did\+File\+Size\+Change (\begin{DoxyParamCaption}\item[{const int}]{file\+\_\+size,  }\item[{\mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}}}]{table,  }\item[{const int}]{file\+\_\+id,  }\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+size} & \\
+\hline
+{\em table} & \\
+\hline
+{\em file\+\_\+id} & \\
+\hline
+{\em db} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_s_q_lite_helper_a0f4192b37fcaff2ba209154127ade345}\label{class_s_q_lite_helper_a0f4192b37fcaff2ba209154127ade345}} 
+\index{SQLiteHelper@{SQLiteHelper}!didHashedValueChange@{didHashedValueChange}}
+\index{didHashedValueChange@{didHashedValueChange}!SQLiteHelper@{SQLiteHelper}}
+\doxysubsubsection{\texorpdfstring{didHashedValueChange()}{didHashedValueChange()}}
+{\footnotesize\ttfamily static int SQLite\+Helper\+::did\+Hashed\+Value\+Change (\begin{DoxyParamCaption}\item[{const char $\ast$}]{hashed\+\_\+val,  }\item[{\mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}}}]{table,  }\item[{const int}]{file\+\_\+id,  }\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em hashed\+\_\+val} & \\
+\hline
+{\em table} & \\
+\hline
+{\em file\+\_\+id} & \\
+\hline
+{\em db} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_s_q_lite_helper_adbeb0bc39c03a429690faf485a17c2d1}\label{class_s_q_lite_helper_adbeb0bc39c03a429690faf485a17c2d1}} 
 \index{SQLiteHelper@{SQLiteHelper}!getCurrentTime@{getCurrentTime}}
 \index{getCurrentTime@{getCurrentTime}!SQLiteHelper@{SQLiteHelper}}
 \doxysubsubsection{\texorpdfstring{getCurrentTime()}{getCurrentTime()}}
 {\footnotesize\ttfamily static char $\ast$ SQLite\+Helper\+::get\+Current\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Will retrieve the current time. 
+
+\begin{DoxyReturn}{Returns}
+Current time in B d, Y T format. Example\+: December 12, 2020 20\+:10\+:05 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_s_q_lite_helper_adcab3649b5f610ddab96736dc409d653}\label{class_s_q_lite_helper_adcab3649b5f610ddab96736dc409d653}} 
 \index{SQLiteHelper@{SQLiteHelper}!getDirectoryId@{getDirectoryId}}
 \index{getDirectoryId@{getDirectoryId}!SQLiteHelper@{SQLiteHelper}}
 \doxysubsubsection{\texorpdfstring{getDirectoryId()}{getDirectoryId()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily static int SQLite\+Helper\+::get\+Directory\+Id (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Retrieves the id of the directory from the directories table. 
+
+{\bfseries{PRECONDITION\+:}} Call to \mbox{\hyperlink{class_s_q_lite_helper_a174400575d3038248769856efc9546a8}{set\+Directory\+Name()}} to set the directory to check. 
+\begin{DoxyParams}{Parameters}
+{\em db} & sqlite3 database object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if directory does not exist in directories table, otherwise the directory id will be returned. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_s_q_lite_helper_a42d042748147b7ebe97214069c62ace6}\label{class_s_q_lite_helper_a42d042748147b7ebe97214069c62ace6}} 
 \index{SQLiteHelper@{SQLiteHelper}!getDirectoryId@{getDirectoryId}}
 \index{getDirectoryId@{getDirectoryId}!SQLiteHelper@{SQLiteHelper}}
 \doxysubsubsection{\texorpdfstring{getDirectoryId()}{getDirectoryId()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily static int SQLite\+Helper\+::get\+Directory\+Id (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{char $\ast$}]{dir\+\_\+name,  }\item[{char $\ast$}]{machine\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Retrieves the id of the directory from the directories table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & sqlite3 database object \\
+\hline
+{\em dir\+\_\+name} & Relative name of the directory. \\
+\hline
+{\em machine\+\_\+name} & The machine name where the scanner is running. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if directory does not exist in directories table, otherwise the directory id will be returned. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_s_q_lite_helper_a4e69ffbd22c6d9c2df1decfd484e5a83}\label{class_s_q_lite_helper_a4e69ffbd22c6d9c2df1decfd484e5a83}} 
 \index{SQLiteHelper@{SQLiteHelper}!getFileId@{getFileId}}
 \index{getFileId@{getFileId}!SQLiteHelper@{SQLiteHelper}}
 \doxysubsubsection{\texorpdfstring{getFileId()}{getFileId()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily static int SQLite\+Helper\+::get\+File\+Id (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+\begin{DoxyParams}{Parameters}
+{\em db} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_s_q_lite_helper_abb6a58d490dda33874679f9b6f7a2025}\label{class_s_q_lite_helper_abb6a58d490dda33874679f9b6f7a2025}} 
 \index{SQLiteHelper@{SQLiteHelper}!getFileId@{getFileId}}
 \index{getFileId@{getFileId}!SQLiteHelper@{SQLiteHelper}}
 \doxysubsubsection{\texorpdfstring{getFileId()}{getFileId()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily static int SQLite\+Helper\+::get\+File\+Id (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{char $\ast$}]{file\+\_\+name,  }\item[{int}]{dir\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+\begin{DoxyParams}{Parameters}
+{\em db} & \\
+\hline
+{\em file\+\_\+name} & \\
+\hline
+{\em dir\+\_\+id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_s_q_lite_helper_a9f5d43ac23996620ac57f3be87fd17cd}\label{class_s_q_lite_helper_a9f5d43ac23996620ac57f3be87fd17cd}} 
+\index{SQLiteHelper@{SQLiteHelper}!insertIntValueToChanges@{insertIntValueToChanges}}
+\index{insertIntValueToChanges@{insertIntValueToChanges}!SQLiteHelper@{SQLiteHelper}}
+\doxysubsubsection{\texorpdfstring{insertIntValueToChanges()}{insertIntValueToChanges()}}
+{\footnotesize\ttfamily static int SQLite\+Helper\+::insert\+Int\+Value\+To\+Changes (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{const int}]{file\+\_\+id,  }\item[{const int}]{int\+\_\+val,  }\item[{const char $\ast$}]{attr\+\_\+changed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & \\
+\hline
+{\em file\+\_\+id} & \\
+\hline
+{\em int\+\_\+val} & \\
+\hline
+{\em attr\+\_\+changed} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_s_q_lite_helper_a95096df7d3e7fb019d18f2a62a10d646}\label{class_s_q_lite_helper_a95096df7d3e7fb019d18f2a62a10d646}} 
+\index{SQLiteHelper@{SQLiteHelper}!insertTextValueToChanges@{insertTextValueToChanges}}
+\index{insertTextValueToChanges@{insertTextValueToChanges}!SQLiteHelper@{SQLiteHelper}}
+\doxysubsubsection{\texorpdfstring{insertTextValueToChanges()}{insertTextValueToChanges()}}
+{\footnotesize\ttfamily static int SQLite\+Helper\+::insert\+Text\+Value\+To\+Changes (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{const int}]{file\+\_\+id,  }\item[{const char $\ast$}]{text\+\_\+val,  }\item[{const char $\ast$}]{attr\+\_\+changed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & \\
+\hline
+{\em file\+\_\+id} & \\
+\hline
+{\em text\+\_\+val} & \\
+\hline
+{\em attr\+\_\+changed} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_s_q_lite_helper_a84b6c0493c0f59b4311ec393464b01ec}\label{class_s_q_lite_helper_a84b6c0493c0f59b4311ec393464b01ec}} 
+\index{SQLiteHelper@{SQLiteHelper}!saveExistingFileInfo@{saveExistingFileInfo}}
+\index{saveExistingFileInfo@{saveExistingFileInfo}!SQLiteHelper@{SQLiteHelper}}
+\doxysubsubsection{\texorpdfstring{saveExistingFileInfo()}{saveExistingFileInfo()}}
+{\footnotesize\ttfamily static int SQLite\+Helper\+::save\+Existing\+File\+Info (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{\mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}}}]{attr\+\_\+to\+\_\+update,  }\item[{const char $\ast$}]{text\+\_\+val = {\ttfamily NULL},  }\item[{const int}]{int\+\_\+val = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & \\
+\hline
+{\em attr\+\_\+to\+\_\+update} & \\
+\hline
+{\em text\+\_\+val} & \\
+\hline
+{\em int\+\_\+val} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_s_q_lite_helper_ac43f81918e037ab5b07f773794d8f9af}\label{class_s_q_lite_helper_ac43f81918e037ab5b07f773794d8f9af}} 
 \index{SQLiteHelper@{SQLiteHelper}!saveFileInfo@{saveFileInfo}}
 \index{saveFileInfo@{saveFileInfo}!SQLiteHelper@{SQLiteHelper}}
 \doxysubsubsection{\texorpdfstring{saveFileInfo()}{saveFileInfo()}}
 {\footnotesize\ttfamily static int SQLite\+Helper\+::save\+File\+Info (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{const int}]{dir\+\_\+id,  }\item[{const char $\ast$}]{file\+\_\+name,  }\item[{const int}]{file\+\_\+size = {\ttfamily 0},  }\item[{const char $\ast$}]{date\+\_\+modified = {\ttfamily NULL},  }\item[{const char $\ast$}]{hashed\+\_\+val = {\ttfamily NULL},  }\item[{const bool}]{is\+New = {\ttfamily true},  }\item[{\mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}}}]{attr\+\_\+to\+\_\+update = {\ttfamily \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad}{Attribute\+To\+Check\+::\+NONE}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+\begin{DoxyParams}{Parameters}
+{\em db} & \\
+\hline
+{\em dir\+\_\+id} & \\
+\hline
+{\em file\+\_\+name} & \\
+\hline
+{\em file\+\_\+size} & \\
+\hline
+{\em date\+\_\+modified} & \\
+\hline
+{\em hashed\+\_\+val} & \\
+\hline
+{\em is\+New} & \\
+\hline
+{\em attr\+\_\+to\+\_\+update} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_s_q_lite_helper_a416b734c88d6e65e3a358953aea9468a}{save\+New\+File\+Info()}} 
+
+\mbox{\hyperlink{class_s_q_lite_helper_a84b6c0493c0f59b4311ec393464b01ec}{save\+Existing\+File\+Info()}} 
+
+\mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_s_q_lite_helper_a416b734c88d6e65e3a358953aea9468a}\label{class_s_q_lite_helper_a416b734c88d6e65e3a358953aea9468a}} 
+\index{SQLiteHelper@{SQLiteHelper}!saveNewFileInfo@{saveNewFileInfo}}
+\index{saveNewFileInfo@{saveNewFileInfo}!SQLiteHelper@{SQLiteHelper}}
+\doxysubsubsection{\texorpdfstring{saveNewFileInfo()}{saveNewFileInfo()}}
+{\footnotesize\ttfamily static int SQLite\+Helper\+::save\+New\+File\+Info (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_s_q_lite_helper_a174400575d3038248769856efc9546a8}\label{class_s_q_lite_helper_a174400575d3038248769856efc9546a8}} 
 \index{SQLiteHelper@{SQLiteHelper}!setDirectoryName@{setDirectoryName}}
 \index{setDirectoryName@{setDirectoryName}!SQLiteHelper@{SQLiteHelper}}
 \doxysubsubsection{\texorpdfstring{setDirectoryName()}{setDirectoryName()}}
 {\footnotesize\ttfamily static void SQLite\+Helper\+::set\+Directory\+Name (\begin{DoxyParamCaption}\item[{char $\ast$}]{dir\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Sets the relative directory name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+\_\+name} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_s_q_lite_helper_a0815f283b738dea61f78f0e0dab958ea}\label{class_s_q_lite_helper_a0815f283b738dea61f78f0e0dab958ea}} 
 \index{SQLiteHelper@{SQLiteHelper}!setFileName@{setFileName}}
 \index{setFileName@{setFileName}!SQLiteHelper@{SQLiteHelper}}
 \doxysubsubsection{\texorpdfstring{setFileName()}{setFileName()}}
 {\footnotesize\ttfamily static void SQLite\+Helper\+::set\+File\+Name (\begin{DoxyParamCaption}\item[{char $\ast$}]{file\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Sets the absolute file name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_s_q_lite_helper_a8fc3a476fa41e7601138ed1a87431ab9}\label{class_s_q_lite_helper_a8fc3a476fa41e7601138ed1a87431ab9}} 
 \index{SQLiteHelper@{SQLiteHelper}!setMachineName@{setMachineName}}
 \index{setMachineName@{setMachineName}!SQLiteHelper@{SQLiteHelper}}
@@ -156,6 +496,28 @@ Changes&\\
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
-\item 
-C\+:/\+Users/mark\+\_\+/source/repos/fileintegritychecker/headers/\mbox{\hyperlink{_s_q_lite_helper_8h}{SQLite\+Helper.\+h}}\end{DoxyCompactItemize}
+Sets the machine name where the scanner is running. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em machine\+\_\+name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_s_q_lite_helper_a4eb63efa7ac69125fd954d5efb23c2c6}\label{class_s_q_lite_helper_a4eb63efa7ac69125fd954d5efb23c2c6}} 
+\index{SQLiteHelper@{SQLiteHelper}!updateChangedInFile@{updateChangedInFile}}
+\index{updateChangedInFile@{updateChangedInFile}!SQLiteHelper@{SQLiteHelper}}
+\doxysubsubsection{\texorpdfstring{updateChangedInFile()}{updateChangedInFile()}}
+{\footnotesize\ttfamily static int SQLite\+Helper\+::update\+Changed\+In\+File (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{int}]{file\+\_\+id,  }\item[{\mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}}}]{attr\+\_\+to\+\_\+change }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & \\
+\hline
+{\em file\+\_\+id} & \\
+\hline
+{\em attr\+\_\+to\+\_\+change} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}

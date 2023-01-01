@@ -3,7 +3,21 @@
 <title>SQLiteHelper Class Reference</title>
 <indexterm><primary>SQLiteHelper</primary></indexterm>
 <para>
+
+<para>The SQL Helper class for the SQLite database. </para>
+ 
+</para>
+<para>
 <computeroutput>#include &lt;SQLiteHelper.h&gt;</computeroutput>
+</para>
+Collaboration diagram for SQLiteHelper:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
 </para>
 <simplesect>
     <title>Public Types    </title>
@@ -13,10 +27,14 @@
 , <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7">DateModified</link> = 3
 , <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad">NONE</link> = 4
  }</para>
+
+<para>Enumerator used to set the file attribute to check for changes or to update the value for. </para>
 </listitem>
             <listitem><para>enum <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> { <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809">Files</link> = 1
 , <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17">Changes</link> = 2
  }</para>
+
+<para>Enumerator used to set the table to check for file attribute changes. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -24,20 +42,36 @@
     <title>Static Public Member Functions    </title>
         <itemizedlist>
             <listitem><para>static int <link linkend="_class_s_q_lite_helper_1ab5c6b4d91ba851773d08383743cbe503">checkIfAttributeIsInChanges</link> (const int file_id, const <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attribute, sqlite3 *db)</para>
+
+<para>Determines if the provided attribute is in the changes table. </para>
 </listitem>
             <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a277ba3424168330b7f5b354e477f5de2">checkIfAttributeHasChanged</link> (const int file_id, const <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attribute, const <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, sqlite3 *db, const char *char_attr=NULL, const int int_attr=0)</para>
+
+<para>Determines if the provided attribute has changed its value. </para>
 </listitem>
             <listitem><para>static char * <link linkend="_class_s_q_lite_helper_1adbeb0bc39c03a429690faf485a17c2d1">getCurrentTime</link> ()</para>
+
+<para>Will retrieve the current time. </para>
 </listitem>
             <listitem><para>static void <link linkend="_class_s_q_lite_helper_1a174400575d3038248769856efc9546a8">setDirectoryName</link> (char *dir_name)</para>
+
+<para>Sets the relative directory name. </para>
 </listitem>
             <listitem><para>static void <link linkend="_class_s_q_lite_helper_1a0815f283b738dea61f78f0e0dab958ea">setFileName</link> (char *file_name)</para>
+
+<para>Sets the absolute file name. </para>
 </listitem>
             <listitem><para>static void <link linkend="_class_s_q_lite_helper_1a8fc3a476fa41e7601138ed1a87431ab9">setMachineName</link> (char *machine_name)</para>
+
+<para>Sets the machine name where the scanner is running. </para>
 </listitem>
             <listitem><para>static int <link linkend="_class_s_q_lite_helper_1adcab3649b5f610ddab96736dc409d653">getDirectoryId</link> (sqlite3 *db)</para>
+
+<para>Retrieves the id of the directory from the directories table. </para>
 </listitem>
             <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a42d042748147b7ebe97214069c62ace6">getDirectoryId</link> (sqlite3 *db, char *dir_name, char *machine_name)</para>
+
+<para>Retrieves the id of the directory from the directories table. </para>
 </listitem>
             <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a4e69ffbd22c6d9c2df1decfd484e5a83">getFileId</link> (sqlite3 *db)</para>
 </listitem>
@@ -47,13 +81,43 @@
 </listitem>
         </itemizedlist>
 </simplesect>
+<simplesect>
+    <title>Static Private Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a0f4192b37fcaff2ba209154127ade345">didHashedValueChange</link> (const char *hashed_val, <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, const int file_id, sqlite3 *db)</para>
+</listitem>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1ae87be06de4087dcf735e5b12c4eaee9a">didFileSizeChange</link> (const int file_size, <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, const int file_id, sqlite3 *db)</para>
+</listitem>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1aac258e856d9f8c033d33bbd4fc8919cd">didDateModifiedChange</link> (const char *date_modified, <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, const int file_id, sqlite3 *db)</para>
+</listitem>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a416b734c88d6e65e3a358953aea9468a">saveNewFileInfo</link> (sqlite3 *db)</para>
+</listitem>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a84b6c0493c0f59b4311ec393464b01ec">saveExistingFileInfo</link> (sqlite3 *db, <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attr_to_update, const char *text_val=NULL, const int int_val=0)</para>
+</listitem>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a95096df7d3e7fb019d18f2a62a10d646">insertTextValueToChanges</link> (sqlite3 *db, const int file_id, const char *text_val, const char *attr_changed)</para>
+</listitem>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a9f5d43ac23996620ac57f3be87fd17cd">insertIntValueToChanges</link> (sqlite3 *db, const int file_id, const int int_val, const char *attr_changed)</para>
+</listitem>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a4eb63efa7ac69125fd954d5efb23c2c6">updateChangedInFile</link> (sqlite3 *db, int file_id, <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attr_to_change)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The SQL Helper class for the SQLite database. </para>
+</section>
 <section>
 <title>Member Enumeration Documentation</title>
 <anchor xml:id="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643"/><section>
     <title>AttributeToCheck</title>
 <indexterm><primary>AttributeToCheck</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>AttributeToCheck</secondary></indexterm>
-<para><computeroutput>enum <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">SQLiteHelper::AttributeToCheck</link></computeroutput></para><informaltable frame="all">
+<para><computeroutput>enum <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">SQLiteHelper::AttributeToCheck</link></computeroutput></para><para>
+
+<para>Enumerator used to set the file attribute to check for changes or to update the value for. </para>
+</para>
+<informaltable frame="all">
 <title>Enumerator</title>
     <tgroup cols="2" align="left" colsep="1" rowsep="1">
       <colspec colname='c1'/>
@@ -70,12 +134,17 @@
 <anchor xml:id="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad"/>NONE</entry><entry></entry></row>    </tbody>
     </tgroup>
 </informaltable>
-</section>
+<programlisting linenumbering="unnumbered">22 {&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f">HashedVal</link>&#32;=&#32;1,&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02">FileSize</link>&#32;=&#32;2,&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7">DateModified</link>&#32;=&#32;3,&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad">NONE</link>&#32;=&#32;4};
+</programlisting></section>
 <anchor xml:id="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec"/><section>
     <title>TableToCheck</title>
 <indexterm><primary>TableToCheck</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>TableToCheck</secondary></indexterm>
-<para><computeroutput>enum <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">SQLiteHelper::TableToCheck</link></computeroutput></para><informaltable frame="all">
+<para><computeroutput>enum <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">SQLiteHelper::TableToCheck</link></computeroutput></para><para>
+
+<para>Enumerator used to set the table to check for file attribute changes. </para>
+</para>
+<informaltable frame="all">
 <title>Enumerator</title>
     <tgroup cols="2" align="left" colsep="1" rowsep="1">
       <colspec colname='c1'/>
@@ -88,7 +157,8 @@
 <anchor xml:id="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17"/>Changes</entry><entry></entry></row>    </tbody>
     </tgroup>
 </informaltable>
-</section>
+<programlisting linenumbering="unnumbered">27 {<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809">Files</link>&#32;=&#32;1,&#32;<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17">Changes</link>&#32;=&#32;2};
+</programlisting></section>
 </section>
 <section>
 <title>Member Function Documentation</title>
@@ -98,37 +168,564 @@
 <indexterm><primary>SQLiteHelper</primary><secondary>checkIfAttributeHasChanged</secondary></indexterm>
 <para><computeroutput>static int SQLiteHelper::checkIfAttributeHasChanged (const int file_id, const <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attribute, const <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, sqlite3 * db, const char * char_attr = <computeroutput>NULL</computeroutput>
 , const int int_attr = <computeroutput>0</computeroutput>
-)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Determines if the provided attribute has changed its value. </para>
+</para>
+
+<para>The logic in the function will first determine the attribute to check using the attribute parameter and then will call the appropriate function to check if the attribute did change. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>file_id</entry><entry>
+<para>The id of the file. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>attribute</entry><entry>
+<para>The attribute to check. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>table</entry><entry>
+<para>The table to check based on whether the attribute is in the changes or the files table. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>db</entry><entry>
+<para>The sqlite3 database object. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>char_attr</entry><entry>
+<para>The character value attribute to check. The default is NULL. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>int_attr</entry><entry>
+<para>The integer value attribute to check. The default is 0 </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>See also</title>
+
+<para><link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> </para>
+
+<para><link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> </para>
+
+<para><link linkend="_class_s_q_lite_helper_1a0f4192b37fcaff2ba209154127ade345">didHashedValueChange()</link> </para>
+
+<para><link linkend="_class_s_q_lite_helper_1ae87be06de4087dcf735e5b12c4eaee9a">didFileSizeChange()</link> </para>
+
+<para><link linkend="_class_s_q_lite_helper_1aac258e856d9f8c033d33bbd4fc8919cd">didDateModifiedChange()</link> </para>
+</formalpara>
+<formalpara><title>Returns</title>
+
+<para>1 if changed, 0 if not </para>
+</formalpara>
+</para>
+</section>
 <anchor xml:id="_class_s_q_lite_helper_1ab5c6b4d91ba851773d08383743cbe503"/><section>
     <title>checkIfAttributeIsInChanges()</title>
 <indexterm><primary>checkIfAttributeIsInChanges</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>checkIfAttributeIsInChanges</secondary></indexterm>
-<para><computeroutput>static int SQLiteHelper::checkIfAttributeIsInChanges (const int file_id, const <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attribute, sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para><computeroutput>static int SQLiteHelper::checkIfAttributeIsInChanges (const int file_id, const <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attribute, sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Determines if the provided attribute is in the changes table. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>file_id</entry><entry>
+<para>The id of the file. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>attribute</entry><entry>
+<para>The attribute to check. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>db</entry><entry>
+<para>The sqlite3 database object. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>1 if is in the changes table, 0 if not </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_s_q_lite_helper_1aac258e856d9f8c033d33bbd4fc8919cd"/><section>
+    <title>didDateModifiedChange()</title>
+<indexterm><primary>didDateModifiedChange</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>didDateModifiedChange</secondary></indexterm>
+<para><computeroutput>static int SQLiteHelper::didDateModifiedChange (const char * date_modified, <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, const int file_id, sqlite3 * db)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>date_modified</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>table</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>file_id</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>db</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_s_q_lite_helper_1ae87be06de4087dcf735e5b12c4eaee9a"/><section>
+    <title>didFileSizeChange()</title>
+<indexterm><primary>didFileSizeChange</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>didFileSizeChange</secondary></indexterm>
+<para><computeroutput>static int SQLiteHelper::didFileSizeChange (const int file_size, <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, const int file_id, sqlite3 * db)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>file_size</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>table</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>file_id</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>db</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_s_q_lite_helper_1a0f4192b37fcaff2ba209154127ade345"/><section>
+    <title>didHashedValueChange()</title>
+<indexterm><primary>didHashedValueChange</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>didHashedValueChange</secondary></indexterm>
+<para><computeroutput>static int SQLiteHelper::didHashedValueChange (const char * hashed_val, <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, const int file_id, sqlite3 * db)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>hashed_val</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>table</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>file_id</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>db</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+</section>
 <anchor xml:id="_class_s_q_lite_helper_1adbeb0bc39c03a429690faf485a17c2d1"/><section>
     <title>getCurrentTime()</title>
 <indexterm><primary>getCurrentTime</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>getCurrentTime</secondary></indexterm>
-<para><computeroutput>static char * SQLiteHelper::getCurrentTime ( )<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para><computeroutput>static char * SQLiteHelper::getCurrentTime ( )<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Will retrieve the current time. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Current time in B d, Y T format. Example: December 12, 2020 20:10:05 </para>
+</formalpara>
+</para>
+</section>
 <anchor xml:id="_class_s_q_lite_helper_1adcab3649b5f610ddab96736dc409d653"/><section>
     <title>getDirectoryId()<computeroutput>[1/2]</computeroutput></title>
 <indexterm><primary>getDirectoryId</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>getDirectoryId</secondary></indexterm>
-<para><computeroutput>static int SQLiteHelper::getDirectoryId (sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para><computeroutput>static int SQLiteHelper::getDirectoryId (sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Retrieves the id of the directory from the directories table. </para>
+</para>
+
+<para><emphasis role="bold">PRECONDITION:</emphasis> Call to <link linkend="_class_s_q_lite_helper_1a174400575d3038248769856efc9546a8">setDirectoryName()</link> to set the directory to check. 
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>db</entry><entry>
+<para>sqlite3 database object </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 if directory does not exist in directories table, otherwise the directory id will be returned. </para>
+</formalpara>
+</para>
+</section>
 <anchor xml:id="_class_s_q_lite_helper_1a42d042748147b7ebe97214069c62ace6"/><section>
     <title>getDirectoryId()<computeroutput>[2/2]</computeroutput></title>
 <indexterm><primary>getDirectoryId</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>getDirectoryId</secondary></indexterm>
-<para><computeroutput>static int SQLiteHelper::getDirectoryId (sqlite3 * db, char * dir_name, char * machine_name)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para><computeroutput>static int SQLiteHelper::getDirectoryId (sqlite3 * db, char * dir_name, char * machine_name)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Retrieves the id of the directory from the directories table. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>db</entry><entry>
+<para>sqlite3 database object </para>
+</entry>
+                            </row>
+                            <row>
+<entry>dir_name</entry><entry>
+<para>Relative name of the directory. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>machine_name</entry><entry>
+<para>The machine name where the scanner is running. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>0 if directory does not exist in directories table, otherwise the directory id will be returned. </para>
+</formalpara>
+</para>
+</section>
 <anchor xml:id="_class_s_q_lite_helper_1a4e69ffbd22c6d9c2df1decfd484e5a83"/><section>
     <title>getFileId()<computeroutput>[1/2]</computeroutput></title>
 <indexterm><primary>getFileId</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>getFileId</secondary></indexterm>
-<para><computeroutput>static int SQLiteHelper::getFileId (sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para><computeroutput>static int SQLiteHelper::getFileId (sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>db</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+</section>
 <anchor xml:id="_class_s_q_lite_helper_1abb6a58d490dda33874679f9b6f7a2025"/><section>
     <title>getFileId()<computeroutput>[2/2]</computeroutput></title>
 <indexterm><primary>getFileId</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>getFileId</secondary></indexterm>
-<para><computeroutput>static int SQLiteHelper::getFileId (sqlite3 * db, char * file_name, int dir_id)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para><computeroutput>static int SQLiteHelper::getFileId (sqlite3 * db, char * file_name, int dir_id)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>db</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>file_name</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>dir_id</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_s_q_lite_helper_1a9f5d43ac23996620ac57f3be87fd17cd"/><section>
+    <title>insertIntValueToChanges()</title>
+<indexterm><primary>insertIntValueToChanges</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>insertIntValueToChanges</secondary></indexterm>
+<para><computeroutput>static int SQLiteHelper::insertIntValueToChanges (sqlite3 * db, const int file_id, const int int_val, const char * attr_changed)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>db</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>file_id</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>int_val</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>attr_changed</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_s_q_lite_helper_1a95096df7d3e7fb019d18f2a62a10d646"/><section>
+    <title>insertTextValueToChanges()</title>
+<indexterm><primary>insertTextValueToChanges</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>insertTextValueToChanges</secondary></indexterm>
+<para><computeroutput>static int SQLiteHelper::insertTextValueToChanges (sqlite3 * db, const int file_id, const char * text_val, const char * attr_changed)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>db</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>file_id</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>text_val</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>attr_changed</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_s_q_lite_helper_1a84b6c0493c0f59b4311ec393464b01ec"/><section>
+    <title>saveExistingFileInfo()</title>
+<indexterm><primary>saveExistingFileInfo</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>saveExistingFileInfo</secondary></indexterm>
+<para><computeroutput>static int SQLiteHelper::saveExistingFileInfo (sqlite3 * db, <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attr_to_update, const char * text_val = <computeroutput>NULL</computeroutput>
+, const int int_val = <computeroutput>0</computeroutput>
+)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>db</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>attr_to_update</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>text_val</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>int_val</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+</section>
 <anchor xml:id="_class_s_q_lite_helper_1ac43f81918e037ab5b07f773794d8f9af"/><section>
     <title>saveFileInfo()</title>
 <indexterm><primary>saveFileInfo</primary><secondary>SQLiteHelper</secondary></indexterm>
@@ -138,23 +735,240 @@
 , const char * hashed_val = <computeroutput>NULL</computeroutput>
 , const bool isNew = <computeroutput>true</computeroutput>
 , <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attr_to_update = <computeroutput><link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad">AttributeToCheck::NONE</link></computeroutput>
-)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>db</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>dir_id</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>file_name</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>file_size</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>date_modified</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>hashed_val</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>isNew</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>attr_to_update</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="_class_s_q_lite_helper_1a416b734c88d6e65e3a358953aea9468a">saveNewFileInfo()</link> </para>
+
+<para><link linkend="_class_s_q_lite_helper_1a84b6c0493c0f59b4311ec393464b01ec">saveExistingFileInfo()</link> </para>
+
+<para><link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_s_q_lite_helper_1a416b734c88d6e65e3a358953aea9468a"/><section>
+    <title>saveNewFileInfo()</title>
+<indexterm><primary>saveNewFileInfo</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>saveNewFileInfo</secondary></indexterm>
+<para><computeroutput>static int SQLiteHelper::saveNewFileInfo (sqlite3 * db)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>db</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+</section>
 <anchor xml:id="_class_s_q_lite_helper_1a174400575d3038248769856efc9546a8"/><section>
     <title>setDirectoryName()</title>
 <indexterm><primary>setDirectoryName</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>setDirectoryName</secondary></indexterm>
-<para><computeroutput>static void SQLiteHelper::setDirectoryName (char * dir_name)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para><computeroutput>static void SQLiteHelper::setDirectoryName (char * dir_name)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Sets the relative directory name. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>dir_name</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
 <anchor xml:id="_class_s_q_lite_helper_1a0815f283b738dea61f78f0e0dab958ea"/><section>
     <title>setFileName()</title>
 <indexterm><primary>setFileName</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>setFileName</secondary></indexterm>
-<para><computeroutput>static void SQLiteHelper::setFileName (char * file_name)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para><computeroutput>static void SQLiteHelper::setFileName (char * file_name)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Sets the absolute file name. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>file_name</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
 <anchor xml:id="_class_s_q_lite_helper_1a8fc3a476fa41e7601138ed1a87431ab9"/><section>
     <title>setMachineName()</title>
 <indexterm><primary>setMachineName</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>setMachineName</secondary></indexterm>
-<para><computeroutput>static void SQLiteHelper::setMachineName (char * machine_name)<computeroutput>[static]</computeroutput></computeroutput></para></section>
+<para><computeroutput>static void SQLiteHelper::setMachineName (char * machine_name)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Sets the machine name where the scanner is running. </para>
+</para>
+
 <para>
-The documentation for this class was generated from the following file:</para>
-C:/Users/mark_/source/repos/fileintegritychecker/headers/<link linkend="__s_q_lite_helper_8h">SQLiteHelper.h</link></section>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>machine_name</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_s_q_lite_helper_1a4eb63efa7ac69125fd954d5efb23c2c6"/><section>
+    <title>updateChangedInFile()</title>
+<indexterm><primary>updateChangedInFile</primary><secondary>SQLiteHelper</secondary></indexterm>
+<indexterm><primary>SQLiteHelper</primary><secondary>updateChangedInFile</secondary></indexterm>
+<para><computeroutput>static int SQLiteHelper::updateChangedInFile (sqlite3 * db, int file_id, <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attr_to_change)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>db</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>file_id</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>attr_to_change</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+</section>
+</section>
 </section>

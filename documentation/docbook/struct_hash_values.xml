@@ -5,6 +5,15 @@
 <para>
 <computeroutput>#include &lt;SHA256CPP.h&gt;</computeroutput>
 </para>
+Collaboration diagram for HashValues:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_hash_values__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 <simplesect>
     <title>Public Attributes    </title>
         <itemizedlist>
@@ -19,7 +28,5 @@
 <indexterm><primary>H</primary><secondary>HashValues</secondary></indexterm>
 <indexterm><primary>HashValues</primary><secondary>H</secondary></indexterm>
 <para><computeroutput>uint32_t HashValues::H[8]</computeroutput></para></section>
-<para>
-The documentation for this struct was generated from the following file:</para>
-C:/Users/mark_/source/repos/fileintegritychecker/headers/<link linkend="__s_h_a256_c_p_p_8h">SHA256CPP.h</link></section>
+</section>
 </section>

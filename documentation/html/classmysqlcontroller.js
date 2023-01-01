@@ -6,6 +6,7 @@ var classmysqlcontroller =
     [ "closedb", "classmysqlcontroller.html#a75776ad16ad15a20736e0c1b6adda411", null ],
     [ "closePreparedStatements", "classmysqlcontroller.html#a760179764d3008ac64c36e0b4fb26553", null ],
     [ "deleteDirectoryNames", "classmysqlcontroller.html#a50702b70c6eb0355c2d169050776b394", null ],
+    [ "filterApostraphe", "classmysqlcontroller.html#a116a7441f9bae6f7ef1e0676bd211a7e", null ],
     [ "getDBASENAME", "classmysqlcontroller.html#a9fd8e8a368cc3d5e84a371c2a4cd6b7a", null ],
     [ "getHOSTNAME", "classmysqlcontroller.html#aa98d95b40af60c2d3654e1734f02f4fd", null ],
     [ "getMACHINENAME", "classmysqlcontroller.html#a32c523aaf33000a0bb1f42b0c5dcbe57", null ],
