@@ -12,7 +12,13 @@ pool:
 steps:
 - script: |
     sudo apt install default-libmysqlclient-dev
+  displayName: 'Install mysqlclient dev'
+- script: |
     sudo apt install sqlite3
-    sudo find / -name "libmysqlcppconn.*" 2>&1 | grep -v "Permission denied"
+  displayName: 'Install sqlite3'
+- script: |
+    sudo find / -name "libmysqlcppconn.*"
+  displayName: 'Find libmysqlcppconn'
+- script: |
     make
   displayName: 'make'
