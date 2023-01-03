@@ -8,14 +8,10 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-- task: CmdLine@2
-  inputs:
-    script: |
-      sudo apt install default-libmysqlclient-dev
-      
-      sudo apt install sqlite3
 
 steps:
 - script: |
+    sudo apt install default-libmysqlclient-dev
+    sudo apt install sqlite3
     make
   displayName: 'make'
