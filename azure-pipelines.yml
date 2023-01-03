@@ -11,6 +11,9 @@ pool:
 
 steps:
 - script: |
+    sudo apt install libzstd
+  displayName: 'Install Pre-requisites'
+- script: |
     sudo apt install default-libmysqlclient-dev
     sudo apt install libmysqlcppconn-dev
   displayName: 'Install mysqlclient dev'
