@@ -13,5 +13,6 @@ steps:
 - script: |
     sudo apt install default-libmysqlclient-dev
     sudo apt install sqlite3
+    sudo find / -name "libmysqlcppconn.*" 2>&1 | grep -v "Permission denied"
     make
   displayName: 'make'
