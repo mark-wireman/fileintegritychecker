@@ -21,8 +21,5 @@ steps:
     sudo apt install sqlite3
   displayName: 'Install sqlite3'
 - script: |
-    sudo find / -name "libmysqlcppconn.*"
-  displayName: 'Find libmysqlcppconn'
-- script: |
     make
   displayName: 'make'
