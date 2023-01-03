@@ -1,6 +1,6 @@
-\hypertarget{fileintegritychecker_8h_source}{}\doxysection{fileintegritychecker.\+h}
+\doxysection{fileintegritychecker.\+h}
 \label{fileintegritychecker_8h_source}\index{C:/Users/mark\_/source/repos/fileintegritychecker/headers/fileintegritychecker.h@{C:/Users/mark\_/source/repos/fileintegritychecker/headers/fileintegritychecker.h}}
-\mbox{\hyperlink{fileintegritychecker_8h}{Go to the documentation of this file.}}
+\textbf{ Go to the documentation of this file.}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#include <iostream>}}
 \DoxyCodeLine{2 \textcolor{preprocessor}{\#include <cstdint>}}
@@ -14,41 +14,41 @@
 \DoxyCodeLine{10 \textcolor{preprocessor}{\#include <sys/types.h>}}
 \DoxyCodeLine{11 \textcolor{preprocessor}{\#include <future>}}
 \DoxyCodeLine{12 \textcolor{preprocessor}{\#include <chrono>}}
-\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_h_a256_c_p_p_8h}{SHA256CPP.h}}"{}}}
-\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_menu_8h}{Menu.h}}"{}}}
-\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mysqlcontroller_8h}{mysqlcontroller.h}}"{}}}
-\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{sqlite3controller_8h}{sqlite3controller.h}}"{}}}
-\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_q_lite_helper_8h}{SQLiteHelper.h}}"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}SHA256CPP.h"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}Menu.h"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}mysqlcontroller.h"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}sqlite3controller.h"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}SQLiteHelper.h"{}}}
 \DoxyCodeLine{18 }
-\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classfileintegritychecker}{fileintegritychecker}} \{}
+\DoxyCodeLine{19 \textcolor{keyword}{class }fileintegritychecker \{}
 \DoxyCodeLine{20 \textcolor{keyword}{public}:}
-\DoxyCodeLine{21     \mbox{\hyperlink{classfileintegritychecker_a4f113638831295eab7ae564155dc2c3c}{fileintegritychecker}}();}
-\DoxyCodeLine{22     \textcolor{keyword}{virtual} \mbox{\hyperlink{classfileintegritychecker_abf6a40bce2f3466f8bddc9a5ed02fe1d}{\string~fileintegritychecker}}();}
-\DoxyCodeLine{23     \textcolor{keywordtype}{void} \mbox{\hyperlink{classfileintegritychecker_af19f4b1b0f37b3645f0aa27ce201538d}{setParamVals}}(\mbox{\hyperlink{class_menu}{Menu}}* m);}
-\DoxyCodeLine{24     \textcolor{keywordtype}{void} \mbox{\hyperlink{classfileintegritychecker_ad83727702919ed588145f7e9f9f183d7}{setDatabaseConnections}}();}
-\DoxyCodeLine{25     \textcolor{keywordtype}{void} \mbox{\hyperlink{classfileintegritychecker_ab064f5cb87b4a7d8c557a32d764a131a}{processFiles}}();}
-\DoxyCodeLine{26     \textcolor{keywordtype}{void} \mbox{\hyperlink{classfileintegritychecker_aeb559134d644a9263fc9ab8a25ecf333}{closeDatabaseConnections}}();}
-\DoxyCodeLine{27     \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} \mbox{\hyperlink{classfileintegritychecker_a084e0e1a26d35c85d16ecfccc84ee031}{numberofdirectories}} = 0;}
-\DoxyCodeLine{28     \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} \mbox{\hyperlink{classfileintegritychecker_a8cc50a2938d11837ec1ee0250e73fa6d}{numberoffiles}} = 0;}
+\DoxyCodeLine{21     fileintegritychecker();}
+\DoxyCodeLine{22     \textcolor{keyword}{virtual} \string~fileintegritychecker();}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} setParamVals(Menu* m);}
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} setDatabaseConnections();}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} processFiles();}
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} closeDatabaseConnections();}
+\DoxyCodeLine{27     \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} numberofdirectories = 0;}
+\DoxyCodeLine{28     \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} numberoffiles = 0;}
 \DoxyCodeLine{29 }
 \DoxyCodeLine{30 \textcolor{keyword}{private}:}
-\DoxyCodeLine{31     \textcolor{keywordtype}{char}* \mbox{\hyperlink{classfileintegritychecker_a23b4005e258b5038e68452c6d895a185}{parentdir}};}
-\DoxyCodeLine{32     \textcolor{keywordtype}{char}* \mbox{\hyperlink{classfileintegritychecker_a5258b64047e22c2f82fb13e908b0c080}{dbasehost}};}
-\DoxyCodeLine{33     \textcolor{keywordtype}{char}* \mbox{\hyperlink{classfileintegritychecker_a2d1e27b35a85dc13f1619dedaf53c4c8}{dbase}};}
-\DoxyCodeLine{34     \textcolor{keywordtype}{char}* \mbox{\hyperlink{classfileintegritychecker_abb322369f0338dafa1c8f92b95cda730}{uname}};}
-\DoxyCodeLine{35     \textcolor{keywordtype}{char}* \mbox{\hyperlink{classfileintegritychecker_a6137942fb3ff1790d622310840e9dc6c}{pwd}};}
-\DoxyCodeLine{36     \textcolor{keywordtype}{char}* \mbox{\hyperlink{classfileintegritychecker_a6948be4b723e374ddce7273697c9dae7}{portno}};}
-\DoxyCodeLine{37     \textcolor{keywordtype}{char}* \mbox{\hyperlink{classfileintegritychecker_aaa47205a07b1d35b7bf6a145a99207e9}{mname}};}
-\DoxyCodeLine{38     \textcolor{keywordtype}{char}* \mbox{\hyperlink{classfileintegritychecker_a5b7a655ace1a445aaf32984dde0cd14a}{dbasetype}};}
-\DoxyCodeLine{39     \textcolor{keywordtype}{char}* \mbox{\hyperlink{classfileintegritychecker_a02a1a1e0e235f6ca153171030b60d319}{dbasefilename}};}
-\DoxyCodeLine{40     \textcolor{keywordtype}{int} \mbox{\hyperlink{classfileintegritychecker_a754ca74fc0280d60adcf7099e7913813}{usehashvals}} = 0;}
-\DoxyCodeLine{41     \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} \mbox{\hyperlink{classfileintegritychecker_a00bbf08cd81818d0c048f1bddfdcd9b1}{numberofnewdirectories}} = 0;}
-\DoxyCodeLine{42     \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} \mbox{\hyperlink{classfileintegritychecker_a0c490abca9b7cb896f2efb06cd74b431}{numberofverifieddirectories}} = 0;}
+\DoxyCodeLine{31     \textcolor{keywordtype}{char}* parentdir;}
+\DoxyCodeLine{32     \textcolor{keywordtype}{char}* dbasehost;}
+\DoxyCodeLine{33     \textcolor{keywordtype}{char}* dbase;}
+\DoxyCodeLine{34     \textcolor{keywordtype}{char}* uname;}
+\DoxyCodeLine{35     \textcolor{keywordtype}{char}* pwd;}
+\DoxyCodeLine{36     \textcolor{keywordtype}{char}* portno;}
+\DoxyCodeLine{37     \textcolor{keywordtype}{char}* mname;}
+\DoxyCodeLine{38     \textcolor{keywordtype}{char}* dbasetype;}
+\DoxyCodeLine{39     \textcolor{keywordtype}{char}* dbasefilename;}
+\DoxyCodeLine{40     \textcolor{keywordtype}{int} usehashvals = 0;}
+\DoxyCodeLine{41     \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} numberofnewdirectories = 0;}
+\DoxyCodeLine{42     \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} numberofverifieddirectories = 0;}
 \DoxyCodeLine{43     }
-\DoxyCodeLine{44     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classfileintegritychecker_a6a433c2b64e97b2ca080db41a9df49c2}{verbose\_output}} = \textcolor{keyword}{false};}
-\DoxyCodeLine{45     \mbox{\hyperlink{classmysqlcontroller}{mysqlcontroller}}* \mbox{\hyperlink{classfileintegritychecker_a73cb3d6b1f3fccb340dba68b56241ecd}{mysqlctl}};}
-\DoxyCodeLine{46     \mbox{\hyperlink{classsqlite3controller}{sqlite3controller}}* \mbox{\hyperlink{classfileintegritychecker_a106e283f11f9f3c0788f9e43c3a0d3f0}{sqlitectl}};}
-\DoxyCodeLine{47     \textcolor{keywordtype}{void} \mbox{\hyperlink{classfileintegritychecker_af2fb66e054e9f613677746f6f3dde0a3}{get\_directories\_files}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& s, \textcolor{keywordtype}{int} level = 0);}
+\DoxyCodeLine{44     \textcolor{keywordtype}{bool} verbose\_output = \textcolor{keyword}{false};}
+\DoxyCodeLine{45     mysqlcontroller* mysqlctl;}
+\DoxyCodeLine{46     sqlite3controller* sqlitectl;}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} get\_directories\_files(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& s, \textcolor{keywordtype}{int} level = 0);}
 \DoxyCodeLine{48 \};}
 
 \end{DoxyCode}

@@ -2,7 +2,7 @@ var classsqlite3controller =
 [
     [ "sqlite3controller", "classsqlite3controller.html#a5e12813ef2d44e41238dfd8d4bbbea9a", null ],
     [ "sqlite3controller", "classsqlite3controller.html#aa85b2bdd95d168c27a28476e07d36d88", null ],
-    [ "~sqlite3controller", "classsqlite3controller.html#a0517049f3235b533cbcc1f2d68a42844", null ],
+    [ "~sqlite3controller", "classsqlite3controller.html#a02bd62582a0c53efbe5b08ce570e42d0", null ],
     [ "checkIfDirectoryExist", "classsqlite3controller.html#afad285c88925ab4bb987583563c11d8a", null ],
     [ "checkIfFileExist", "classsqlite3controller.html#a96b9af7291ed73ed8b7da9b3e36c5983", null ],
     [ "closedb", "classsqlite3controller.html#ab092ae9a83a7a124a5ca19a202f6243a", null ],

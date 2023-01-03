@@ -1,0 +1,17 @@
+<map id="sqlite3controller::save_file_info" name="sqlite3controller::save_file_info">
+<area shape="rect" id="node1" title="Save the details of the file." alt="" coords="5,73,127,113"/>
+<area shape="rect" id="node2" href="$classsqlite3controller.html#afad285c88925ab4bb987583563c11d8a" title="Checks if the directory exists in the database." alt="" coords="189,16,335,56"/>
+<area shape="rect" id="node3" href="$class_s_q_lite_helper.html#a59fc305207ad616bafef83b54b102153" title="Returns the id of the file if the file exists in the files table." alt="" coords="665,19,821,45"/>
+<area shape="rect" id="node4" href="$class_s_q_lite_helper.html#a10508781dbcc903c632e83c1527da36f" title="Entry point to saving the file information." alt="" coords="175,198,349,223"/>
+<area shape="rect" id="node5" href="$class_s_q_lite_helper.html#af16a7fbd53573503bfa21c97eea53efb" title=" " alt="" coords="407,191,587,231"/>
+<area shape="rect" id="node15" href="$class_s_q_lite_helper.html#a843ad9e365ed3bc8d6d8baf38600fdc0" title=" " alt="" coords="397,347,596,373"/>
+<area shape="rect" id="node6" href="$class_s_q_lite_helper.html#a373f87d1a12fb0d1014b4e01a7288521" title="Determines if the provided attribute has changed its value." alt="" coords="644,69,841,109"/>
+<area shape="rect" id="node10" href="$class_s_q_lite_helper.html#a6329b4efc28fd0442a6cc25246cc4fb5" title="Determines if the provided attribute is in the changes table." alt="" coords="644,133,841,173"/>
+<area shape="rect" id="node11" href="$class_s_q_lite_helper.html#a33630720f2df387b6c543d33473138e4" title="Will retrieve the current time." alt="" coords="893,319,1087,345"/>
+<area shape="rect" id="node12" href="$class_s_q_lite_helper.html#a53e8c824b040560b8bb1393a853f265a" title=" " alt="" coords="649,248,836,288"/>
+<area shape="rect" id="node13" href="$class_s_q_lite_helper.html#a65965633aef3f5a34884740c497a61dc" title=" " alt="" coords="661,312,825,352"/>
+<area shape="rect" id="node14" href="$class_s_q_lite_helper.html#a7f4941d87b3ea71d1691f62b0113999a" title=" " alt="" coords="644,376,841,416"/>
+<area shape="rect" id="node7" href="$class_s_q_lite_helper.html#ad0fbfec9fab919ce001e2ca3a2f3d2d3" title=" " alt="" coords="891,5,1089,45"/>
+<area shape="rect" id="node8" href="$class_s_q_lite_helper.html#ab551977b252cab42efd1f3b06676d7b1" title=" " alt="" coords="905,69,1075,109"/>
+<area shape="rect" id="node9" href="$class_s_q_lite_helper.html#aa733abbf8352e42fbcda544c13b5e4f1" title=" " alt="" coords="889,133,1091,173"/>
+</map>

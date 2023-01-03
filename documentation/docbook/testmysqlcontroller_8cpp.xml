@@ -24,8 +24,27 @@
     <title>main()</title>
 <indexterm><primary>main</primary><secondary>testmysqlcontroller.cpp</secondary></indexterm>
 <indexterm><primary>testmysqlcontroller.cpp</primary><secondary>main</secondary></indexterm>
-<para><computeroutput>int main (int argc, char * argv[])</computeroutput></para><para>
-Definition at line <link linkend="_testmysqlcontroller_8cpp_source_1l00009">9</link> of file <link linkend="_testmysqlcontroller_8cpp_source">testmysqlcontroller.cpp</link>.</para>
+<para><computeroutput>int main (int argc, char * argv[])</computeroutput></para><programlisting linenumbering="unnumbered">9 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+10 &#32;&#32;&#32;&#32;<link linkend="_classmysqlcontroller">mysqlcontroller</link>&#32;*msc;
+11 &#32;&#32;&#32;&#32;msc&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classmysqlcontroller">mysqlcontroller</link>();
+12 &#32;&#32;&#32;&#32;msc-&gt;<link linkend="_classmysqlcontroller_1ac879ce9833813cd7649059a3d871fedd">setHOSTNAME</link>(<emphasis role="stringliteral">&quot;192.168.86.115&quot;</emphasis>);
+13 &#32;&#32;&#32;&#32;msc-&gt;<link linkend="_classmysqlcontroller_1a465f1a74a87fa74d5ab2aefd34bbe941">setDBASENAME</link>(<emphasis role="stringliteral">&quot;mysql&quot;</emphasis>);
+14 &#32;&#32;&#32;&#32;msc-&gt;<link linkend="_classmysqlcontroller_1afd4432161cc947ac73243b5227d49a79">setPORT</link>(3306);
+15 &#32;&#32;&#32;&#32;msc-&gt;<link linkend="_classmysqlcontroller_1ab095a99557c1d7582c66329398d4bd38">setUSERNAME</link>(<emphasis role="stringliteral">&quot;mwireman&quot;</emphasis>);
+16 &#32;&#32;&#32;&#32;msc-&gt;<link linkend="_classmysqlcontroller_1a39a1970d8c3c3f013487652493a66e5f">setPASSWORD</link>(<emphasis role="stringliteral">&quot;shinobu5&quot;</emphasis>);
+17 &#32;&#32;&#32;&#32;msc-&gt;<link linkend="_classmysqlcontroller_1a74389e9c368e9f43df261f7050377cb4">initdb</link>();
+18 
+19 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>(0);
+20 }
+</programlisting>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="testmysqlcontroller_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 </section>
 </section>
 </section>

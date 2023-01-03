@@ -18,10 +18,14 @@ Collaboration diagram for mysqlcontroller:<para>
     <title>Public Member Functions    </title>
         <itemizedlist>
             <listitem><para><link linkend="_classmysqlcontroller_1a891d523d7a39f46e72b16a36c1387767">mysqlcontroller</link> ()</para>
+
+<para>Construct a new <link linkend="_classmysqlcontroller_1a891d523d7a39f46e72b16a36c1387767">mysqlcontroller::mysqlcontroller</link> object. </para>
 </listitem>
-            <listitem><para><link linkend="_classmysqlcontroller_1a5660513979df1fce6d3ff042ff477b99">mysqlcontroller</link> (char *host, char *dbase, char *uname, char *pwd, int port, char *mname)</para>
+            <listitem><para><link linkend="_classmysqlcontroller_1a5660513979df1fce6d3ff042ff477b99">mysqlcontroller</link> (char *host, char *dbase, char *uname, char *pwd, int <link linkend="_mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb">port</link>, char *mname)</para>
 </listitem>
-            <listitem><para>virtual <link linkend="_classmysqlcontroller_1a5281329cf5af806d612908b406a9ec89">~mysqlcontroller</link> ()</para>
+            <listitem><para>virtual <link linkend="_classmysqlcontroller_1a8564c141c9be749a42a5269ac37a6d63">~mysqlcontroller</link> ()</para>
+
+<para>Destroy <link linkend="_classmysqlcontroller_1a891d523d7a39f46e72b16a36c1387767">mysqlcontroller::mysqlcontroller</link> object. </para>
 </listitem>
             <listitem><para>void <link linkend="_classmysqlcontroller_1ac879ce9833813cd7649059a3d871fedd">setHOSTNAME</link> (char *host)</para>
 </listitem>
@@ -31,7 +35,7 @@ Collaboration diagram for mysqlcontroller:<para>
 </listitem>
             <listitem><para>void <link linkend="_classmysqlcontroller_1a39a1970d8c3c3f013487652493a66e5f">setPASSWORD</link> (char *pwd)</para>
 </listitem>
-            <listitem><para>void <link linkend="_classmysqlcontroller_1afd4432161cc947ac73243b5227d49a79">setPORT</link> (int port)</para>
+            <listitem><para>void <link linkend="_classmysqlcontroller_1afd4432161cc947ac73243b5227d49a79">setPORT</link> (int <link linkend="_mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb">port</link>)</para>
 </listitem>
             <listitem><para>void <link linkend="_classmysqlcontroller_1a686a2d830775da6da5e8451333b4099f">setMACHINENAME</link> (char *mname)</para>
 </listitem>
@@ -80,17 +84,35 @@ Collaboration diagram for mysqlcontroller:<para>
     <title>mysqlcontroller()<computeroutput>[1/2]</computeroutput></title>
 <indexterm><primary>mysqlcontroller</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>mysqlcontroller</secondary></indexterm>
-<para><computeroutput>mysqlcontroller::mysqlcontroller ( )</computeroutput></para></section>
+<para><computeroutput>mysqlcontroller::mysqlcontroller ( )</computeroutput></para><para>
+
+<para>Construct a new <link linkend="_classmysqlcontroller_1a891d523d7a39f46e72b16a36c1387767">mysqlcontroller::mysqlcontroller</link> object. </para>
+</para>
+<programlisting linenumbering="unnumbered">28 {}
+</programlisting></section>
 <anchor xml:id="_classmysqlcontroller_1a5660513979df1fce6d3ff042ff477b99"/><section>
     <title>mysqlcontroller()<computeroutput>[2/2]</computeroutput></title>
 <indexterm><primary>mysqlcontroller</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>mysqlcontroller</secondary></indexterm>
-<para><computeroutput>mysqlcontroller::mysqlcontroller (char * host, char * dbase, char * uname, char * pwd, int port, char * mname)</computeroutput></para></section>
-<anchor xml:id="_classmysqlcontroller_1a5281329cf5af806d612908b406a9ec89"/><section>
+<para><computeroutput>mysqlcontroller::mysqlcontroller (char * host, char * dbase, char * uname, char * pwd, int port, char * mname)</computeroutput></para><programlisting linenumbering="unnumbered">31 {
+32 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1af203df082d5c6dcaa0c88b07cf86466d">hostname</link>&#32;=&#32;host;
+33 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1aa1d4dd60015ed611b5141e9472985b88">dbasename</link>&#32;=&#32;dbase;
+34 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9b20c006bd90a09e1465fb668700e81d">username</link>=&#32;uname;
+35 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a59460a3ff2c12443d1022e5cc0fba85c">password</link>&#32;=&#32;pwd;
+36 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb">port</link>&#32;=&#32;portno;
+37 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c">machinename</link>&#32;=&#32;mname;
+38 }
+</programlisting></section>
+<anchor xml:id="_classmysqlcontroller_1a8564c141c9be749a42a5269ac37a6d63"/><section>
     <title>~mysqlcontroller()</title>
 <indexterm><primary>~mysqlcontroller</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>~mysqlcontroller</secondary></indexterm>
-<para><computeroutput>virtual mysqlcontroller::~mysqlcontroller ( )<computeroutput>[virtual]</computeroutput></computeroutput></para></section>
+<para><computeroutput>mysqlcontroller::~mysqlcontroller ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destroy <link linkend="_classmysqlcontroller_1a891d523d7a39f46e72b16a36c1387767">mysqlcontroller::mysqlcontroller</link> object. </para>
+</para>
+<programlisting linenumbering="unnumbered">44 {}
+</programlisting></section>
 </section>
 <section>
 <title>Member Function Documentation</title>
@@ -98,12 +120,40 @@ Collaboration diagram for mysqlcontroller:<para>
     <title>closedb()</title>
 <indexterm><primary>closedb</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>closedb</secondary></indexterm>
-<para><computeroutput>void mysqlcontroller::closedb ( )</computeroutput></para></section>
+<para><computeroutput>void mysqlcontroller::closedb ( )</computeroutput></para><programlisting linenumbering="unnumbered">379 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+380 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1aafbbfadf03a197580df9925af46a548e">res</link>;
+381 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1ab6db88c378faf719a15498d0b3a37b31">stmt</link>;
+382 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>;
+383 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classmysqlcontroller_a75776ad16ad15a20736e0c1b6adda411_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_classmysqlcontroller_1a760179764d3008ac64c36e0b4fb26553"/><section>
     <title>closePreparedStatements()</title>
 <indexterm><primary>closePreparedStatements</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>closePreparedStatements</secondary></indexterm>
-<para><computeroutput>void mysqlcontroller::closePreparedStatements ( )</computeroutput></para></section>
+<para><computeroutput>void mysqlcontroller::closePreparedStatements ( )</computeroutput></para><programlisting linenumbering="unnumbered">369 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+370 &#32;&#32;&#32;&#32;
+371 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62">savedirprepStmt</link>;
+372 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>;
+373 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classmysqlcontroller_a760179764d3008ac64c36e0b4fb26553_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_classmysqlcontroller_1a50702b70c6eb0355c2d169050776b394"/><section>
     <title>deleteDirectoryNames()</title>
 <indexterm><primary>deleteDirectoryNames</primary><secondary>mysqlcontroller</secondary></indexterm>
@@ -113,96 +163,716 @@ Collaboration diagram for mysqlcontroller:<para>
     <title>filterApostraphe()</title>
 <indexterm><primary>filterApostraphe</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>filterApostraphe</secondary></indexterm>
-<para><computeroutput>char * mysqlcontroller::filterApostraphe (string )<computeroutput>[private]</computeroutput></computeroutput></para></section>
+<para><computeroutput>char * mysqlcontroller::filterApostraphe (string dirname)<computeroutput>[private]</computeroutput></computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>dirname</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>char* </para>
+</formalpara>
+</para>
+<programlisting linenumbering="unnumbered">207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+208 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;retVal&#32;=&#32;<emphasis role="stringliteral">&quot;&quot;</emphasis>;
+209 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;char_array;
+210 
+211 &#32;&#32;&#32;&#32;std::vector&lt;string&gt;&#32;result;
+212 &#32;&#32;&#32;&#32;std::stringstream&#32;s_stream(dirname);&#32;<emphasis role="comment">//create&#32;string&#32;stream&#32;from&#32;the&#32;string</emphasis>
+213 
+214 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>(s_stream.good())&#32;{
+215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;substr;
+216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;getline(s_stream,&#32;substr,&#32;<emphasis role="charliteral">&apos;\&apos;&apos;</emphasis>);&#32;<emphasis role="comment">//get&#32;first&#32;string&#32;delimited&#32;by&#32;comma</emphasis>
+217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;result.push_back(substr);
+218 &#32;&#32;&#32;&#32;}
+219 
+220 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(result.size()&#32;&gt;&#32;1)&#32;{
+221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal+=result.at(0);
+222 
+223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keywordtype">int</emphasis>&#32;i&#32;=&#32;1;&#32;i&lt;result.size();&#32;i++)&#32;{&#32;&#32;&#32;&#32;<emphasis role="comment">//print&#32;all&#32;splitted&#32;strings</emphasis>
+224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal+=<emphasis role="stringliteral">&quot;&apos;&quot;</emphasis>;
+225 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal+=<emphasis role="stringliteral">&quot;&apos;&quot;</emphasis>;
+226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal+=result.at(i);
+227 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+228 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;dirname;
+230 &#32;&#32;&#32;&#32;}
+231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+232 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n&#32;=&#32;retVal.length();
+233 &#32;&#32;&#32;&#32;char_array&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>[n&#32;+&#32;1];
+234 
+235 &#32;&#32;&#32;&#32;strcpy(char_array,&#32;retVal.c_str());
+236 
+237 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;char_array;
+238 }
+</programlisting></section>
 <anchor xml:id="_classmysqlcontroller_1a9fd8e8a368cc3d5e84a371c2a4cd6b7a"/><section>
     <title>getDBASENAME()</title>
 <indexterm><primary>getDBASENAME</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>getDBASENAME</secondary></indexterm>
-<para><computeroutput>char * mysqlcontroller::getDBASENAME ( )</computeroutput></para></section>
+<para><computeroutput>char * mysqlcontroller::getDBASENAME ( )</computeroutput></para>
+<para><formalpara><title>Returns</title>
+
+<para>char* </para>
+</formalpara>
+</para>
+<programlisting linenumbering="unnumbered">114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+115 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1aa1d4dd60015ed611b5141e9472985b88">dbasename</link>;
+116 }
+</programlisting></section>
 <anchor xml:id="_classmysqlcontroller_1aa98d95b40af60c2d3654e1734f02f4fd"/><section>
     <title>getHOSTNAME()</title>
 <indexterm><primary>getHOSTNAME</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>getHOSTNAME</secondary></indexterm>
-<para><computeroutput>char * mysqlcontroller::getHOSTNAME ( )</computeroutput></para></section>
+<para><computeroutput>char * mysqlcontroller::getHOSTNAME ( )</computeroutput></para>
+<para><formalpara><title>Returns</title>
+
+<para>char* </para>
+</formalpara>
+</para>
+<programlisting linenumbering="unnumbered">105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+106 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1af203df082d5c6dcaa0c88b07cf86466d">hostname</link>;
+107 }
+</programlisting></section>
 <anchor xml:id="_classmysqlcontroller_1a32c523aaf33000a0bb1f42b0c5dcbe57"/><section>
     <title>getMACHINENAME()</title>
 <indexterm><primary>getMACHINENAME</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>getMACHINENAME</secondary></indexterm>
-<para><computeroutput>char * mysqlcontroller::getMACHINENAME ( )</computeroutput></para></section>
+<para><computeroutput>char * mysqlcontroller::getMACHINENAME ( )</computeroutput></para>
+<para><formalpara><title>Returns</title>
+
+<para>char* </para>
+</formalpara>
+</para>
+<programlisting linenumbering="unnumbered">150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+151 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c">machinename</link>;
+152 }
+</programlisting></section>
 <anchor xml:id="_classmysqlcontroller_1ac38c7f7d6f37a4ac287a3997c398966c"/><section>
     <title>getPASSWORD()</title>
 <indexterm><primary>getPASSWORD</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>getPASSWORD</secondary></indexterm>
-<para><computeroutput>char * mysqlcontroller::getPASSWORD ( )</computeroutput></para></section>
+<para><computeroutput>char * mysqlcontroller::getPASSWORD ( )</computeroutput></para>
+<para><formalpara><title>Returns</title>
+
+<para>char* </para>
+</formalpara>
+</para>
+<programlisting linenumbering="unnumbered">132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+133 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1a59460a3ff2c12443d1022e5cc0fba85c">password</link>;
+134 }
+</programlisting></section>
 <anchor xml:id="_classmysqlcontroller_1a9df4b563e915fb2ba56797ed499dad8b"/><section>
     <title>getPORT()</title>
 <indexterm><primary>getPORT</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>getPORT</secondary></indexterm>
-<para><computeroutput>int mysqlcontroller::getPORT ( )</computeroutput></para></section>
+<para><computeroutput>int mysqlcontroller::getPORT ( )</computeroutput></para>
+<para><formalpara><title>Returns</title>
+
+<para>int </para>
+</formalpara>
+</para>
+<programlisting linenumbering="unnumbered">141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+142 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb">port</link>;
+143 }
+</programlisting></section>
 <anchor xml:id="_classmysqlcontroller_1aabe3ab7506b212aa7125a3f81d725414"/><section>
     <title>getUSERNAME()</title>
 <indexterm><primary>getUSERNAME</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>getUSERNAME</secondary></indexterm>
-<para><computeroutput>char * mysqlcontroller::getUSERNAME ( )</computeroutput></para></section>
+<para><computeroutput>char * mysqlcontroller::getUSERNAME ( )</computeroutput></para>
+<para><formalpara><title>Returns</title>
+
+<para>char* </para>
+</formalpara>
+</para>
+<programlisting linenumbering="unnumbered">123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+124 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1a9b20c006bd90a09e1465fb668700e81d">username</link>;
+125 }
+</programlisting></section>
 <anchor xml:id="_classmysqlcontroller_1a74389e9c368e9f43df261f7050377cb4"/><section>
     <title>initdb()</title>
 <indexterm><primary>initdb</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>initdb</secondary></indexterm>
-<para><computeroutput>void mysqlcontroller::initdb ( )</computeroutput></para></section>
+<para><computeroutput>void mysqlcontroller::initdb ( )</computeroutput></para><programlisting linenumbering="unnumbered">170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+171 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>&#32;{
+172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Initializing&#32;connection&#32;to&#32;the&#32;database.&quot;</emphasis>&#32;&lt;&lt;&#32;std::endl;
+173 
+174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;connstr&#32;=&#32;<emphasis role="stringliteral">&quot;tcp://&quot;</emphasis>&#32;+&#32;string(<link linkend="_mysqlcontroller_8cpp_1af203df082d5c6dcaa0c88b07cf86466d">hostname</link>)&#32;+&#32;<emphasis role="stringliteral">&quot;:&quot;</emphasis>;
+175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(<link linkend="_mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb">port</link>&#32;==&#32;0)&#32;{
+177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;connstr&#32;+=&#32;<emphasis role="stringliteral">&quot;3306&quot;</emphasis>;
+178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;connstr&#32;+=&#32;to_string(<link linkend="_mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb">port</link>);
+181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+182 
+183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Create&#32;a&#32;connection&#32;*/</emphasis>
+184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a689a469da10bca69c80830e8b2785e2c">driver</link>&#32;=&#32;get_driver_instance();
+185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>&#32;=&#32;<link linkend="_mysqlcontroller_8cpp_1a689a469da10bca69c80830e8b2785e2c">driver</link>-&gt;connect(connstr,&#32;<link linkend="_mysqlcontroller_8cpp_1a9b20c006bd90a09e1465fb668700e81d">username</link>,&#32;<link linkend="_mysqlcontroller_8cpp_1a59460a3ff2c12443d1022e5cc0fba85c">password</link>);
+186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;setAutoCommit(<emphasis role="keyword">false</emphasis>);
+187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">/*&#32;Connect&#32;to&#32;the&#32;MySQL&#32;test&#32;database&#32;*/</emphasis>
+188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;setSchema(<link linkend="_mysqlcontroller_8cpp_1aa1d4dd60015ed611b5141e9472985b88">dbasename</link>);
+189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Successfully&#32;connected&#32;to&#32;database.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+190 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(sql::SQLException&#32;&amp;e)&#32;{
+191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;#&#32;ERR:&#32;SQLException&#32;in&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;__FILE__;
+192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;(&quot;</emphasis>&#32;&lt;&lt;&#32;__FUNCTION__&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;)&#32;on&#32;line&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;__LINE__&#32;&lt;&lt;&#32;endl;
+193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;#&#32;ERR:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.what();
+194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;(MySQL&#32;error&#32;code:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.getErrorCode();
+195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;SQLState:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.getSQLState()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;)&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+196 &#32;&#32;&#32;&#32;}
+197 
+198 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;endl;
+199 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classmysqlcontroller_a74389e9c368e9f43df261f7050377cb4_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_classmysqlcontroller_1a069876969dedc6baf9c5f95cca1ab33d"/><section>
     <title>initPreparedStatements()</title>
 <indexterm><primary>initPreparedStatements</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>initPreparedStatements</secondary></indexterm>
-<para><computeroutput>void mysqlcontroller::initPreparedStatements ( )</computeroutput></para></section>
+<para><computeroutput>void mysqlcontroller::initPreparedStatements ( )</computeroutput></para><programlisting linenumbering="unnumbered">158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+159 
+160 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62">savedirprepStmt</link>&#32;=&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;prepareStatement(<link linkend="_mysqlcontroller_8cpp_1a32ff108940138d3b5038cd11fbabf293">SAVEDIRSTOREDPROCSTMT</link>);
+161 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>&#32;=&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;prepareStatement(<link linkend="_mysqlcontroller_8cpp_1a0e90c82df49e2043941930efcab0fb89">SAVEFILEINFOPROCSTMT</link>);
+162 
+163 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classmysqlcontroller_a069876969dedc6baf9c5f95cca1ab33d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_classmysqlcontroller_1a053dfe67635af840ec7a787e86b95f41"/><section>
     <title>saveDirectoryName()</title>
 <indexterm><primary>saveDirectoryName</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>saveDirectoryName</secondary></indexterm>
-<para><computeroutput>void mysqlcontroller::saveDirectoryName (string dirname)</computeroutput></para></section>
+<para><computeroutput>void mysqlcontroller::saveDirectoryName (string dirname)</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>dirname</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<programlisting linenumbering="unnumbered">245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+246 
+247 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dirnameverified&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>[dirname.length()&#32;+&#32;1];&#32;<emphasis role="comment">//&#32;filterApostraphe(dirname);</emphasis>
+248 &#32;&#32;&#32;&#32;strcpy(dirnameverified,dirname.c_str());
+249 &#32;&#32;&#32;&#32;
+250 &#32;&#32;&#32;&#32;<link linkend="_classmysqlcontroller_1a069876969dedc6baf9c5f95cca1ab33d">initPreparedStatements</link>();
+251 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;currenttime&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a33630720f2df387b6c543d33473138e4">SQLiteHelper::getCurrentTime</link>();
+252 
+253 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>&#32;{
+254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;setAutoCommit(<emphasis role="keyword">false</emphasis>);
+255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62">savedirprepStmt</link>-&gt;setString(1,&#32;dirnameverified);
+256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62">savedirprepStmt</link>-&gt;setString(2,&#32;currenttime);
+257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62">savedirprepStmt</link>-&gt;setString(3,&#32;<link linkend="_mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c">machinename</link>);
+258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62">savedirprepStmt</link>-&gt;executeUpdate();
+259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;commit();
+260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;setAutoCommit(<emphasis role="keyword">true</emphasis>);
+261 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(sql::SQLException&#32;&amp;e)&#32;{
+262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;#&#32;ERR:&#32;SQLException&#32;in&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;__FILE__;
+263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;(&quot;</emphasis>&#32;&lt;&lt;&#32;__FUNCTION__&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;)&#32;on&#32;line&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;__LINE__&#32;&lt;&lt;&#32;endl;
+264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;#&#32;ERR:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.what();
+265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;(MySQL&#32;error&#32;code:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.getErrorCode();
+266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;SQLState:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.getSQLState()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;)&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+267 &#32;&#32;&#32;&#32;}
+268 
+269 &#32;&#32;&#32;&#32;<link linkend="_classmysqlcontroller_1a760179764d3008ac64c36e0b4fb26553">closePreparedStatements</link>();
+270 
+271 }
+</programlisting>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classmysqlcontroller_a053dfe67635af840ec7a787e86b95f41_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classmysqlcontroller_a053dfe67635af840ec7a787e86b95f41_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_classmysqlcontroller_1a1158e1c0c82d11cbe200219b4a5a96b3"/><section>
     <title>saveDirectoryName_async()</title>
 <indexterm><primary>saveDirectoryName_async</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>saveDirectoryName_async</secondary></indexterm>
-<para><computeroutput>void mysqlcontroller::saveDirectoryName_async (const string &amp; dirname)</computeroutput></para></section>
+<para><computeroutput>void mysqlcontroller::saveDirectoryName_async (const string &amp; dirname)</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>dirname</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<programlisting linenumbering="unnumbered">278 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+279 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;dname&#32;=&#32;dirname;
+280 &#32;&#32;&#32;&#32;<link linkend="_classmysqlcontroller_1a053dfe67635af840ec7a787e86b95f41">saveDirectoryName</link>(dname);
+281 }
+</programlisting>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classmysqlcontroller_a1158e1c0c82d11cbe200219b4a5a96b3_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classmysqlcontroller_a1158e1c0c82d11cbe200219b4a5a96b3_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_classmysqlcontroller_1a8ac76206c0cfc7954cce8011616119ab"/><section>
     <title>saveFileInfo()</title>
 <indexterm><primary>saveFileInfo</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>saveFileInfo</secondary></indexterm>
-<para><computeroutput>void mysqlcontroller::saveFileInfo (string dirname, string fname, string hashval)</computeroutput></para></section>
+<para><computeroutput>void mysqlcontroller::saveFileInfo (string dirname, string fname, string hashval)</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>dirname</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>fname</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>hashval</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<programlisting linenumbering="unnumbered">337 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+338 &#32;&#32;&#32;&#32;
+339 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;currenttime&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a33630720f2df387b6c543d33473138e4">SQLiteHelper::getCurrentTime</link>();
+340 
+341 &#32;&#32;&#32;&#32;<link linkend="_classmysqlcontroller_1a069876969dedc6baf9c5f95cca1ab33d">initPreparedStatements</link>();
+342 
+343 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>&#32;{
+344 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;setAutoCommit(<emphasis role="keyword">false</emphasis>);
+345 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;setString(1,&#32;dirname);
+346 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;setString(2,&#32;currenttime);
+347 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;setString(3,&#32;<link linkend="_mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c">machinename</link>);
+348 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;setString(4,&#32;fname);
+349 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;setString(5,&#32;hashval);
+350 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;executeUpdate();
+351 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;commit();
+352 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;setAutoCommit(<emphasis role="keyword">true</emphasis>);
+353 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(sql::SQLException&#32;&amp;e)&#32;{
+354 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;#&#32;ERR:&#32;SQLException&#32;in&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;__FILE__;
+355 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;(&quot;</emphasis>&#32;&lt;&lt;&#32;__FUNCTION__&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;)&#32;on&#32;line&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;__LINE__&#32;&lt;&lt;&#32;endl;
+356 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;#&#32;ERR:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.what();
+357 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;(MySQL&#32;error&#32;code:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.getErrorCode();
+358 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;SQLState:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.getSQLState()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;)&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+359 &#32;&#32;&#32;&#32;}
+360 
+361 &#32;&#32;&#32;&#32;<link linkend="_classmysqlcontroller_1a760179764d3008ac64c36e0b4fb26553">closePreparedStatements</link>();
+362 
+363 }
+</programlisting>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classmysqlcontroller_a8ac76206c0cfc7954cce8011616119ab_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_classmysqlcontroller_1aad16b25269ed6065b0360c2b8312aea0"/><section>
     <title>saveFileInfo_async()</title>
 <indexterm><primary>saveFileInfo_async</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>saveFileInfo_async</secondary></indexterm>
-<para><computeroutput>void mysqlcontroller::saveFileInfo_async (const string &amp; dirname, const string &amp; fname, const string &amp; hashval)</computeroutput></para></section>
+<para><computeroutput>void mysqlcontroller::saveFileInfo_async (const string &amp; dirname, const string &amp; fname, const string &amp; hashval)</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>dirname</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>fname</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>hashval</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<programlisting linenumbering="unnumbered">290 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+291 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;dname&#32;=&#32;dirname;
+292 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;filname&#32;=&#32;fname;
+293 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;hval&#32;=&#32;hashval;
+294 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;currenttime&#32;=&#32;<emphasis role="stringliteral">&quot;&quot;</emphasis>;
+295 &#32;&#32;&#32;&#32;
+296 &#32;&#32;&#32;&#32;std::time_t&#32;t&#32;=&#32;std::time(0);&#32;&#32;&#32;<emphasis role="comment">//&#32;get&#32;time&#32;now</emphasis>
+297 &#32;&#32;&#32;&#32;std::tm*&#32;now&#32;=&#32;std::localtime(&amp;t);
+298 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;date_string[100];
+299 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;time_string[100];
+300 
+301 &#32;&#32;&#32;&#32;strftime(date_string,&#32;50,&#32;<emphasis role="stringliteral">&quot;%B&#32;%d,&#32;%Y&#32;&quot;</emphasis>,&#32;now);
+302 &#32;&#32;&#32;&#32;strftime(time_string,&#32;50,&#32;<emphasis role="stringliteral">&quot;%T&quot;</emphasis>,&#32;now);
+303 
+304 &#32;&#32;&#32;&#32;currenttime&#32;+=&#32;date_string;
+305 &#32;&#32;&#32;&#32;currenttime&#32;+=&#32;time_string;
+306 
+307 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>&#32;=&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;prepareStatement(<link linkend="_mysqlcontroller_8cpp_1a0e90c82df49e2043941930efcab0fb89">SAVEFILEINFOPROCSTMT</link>);
+308 
+309 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>&#32;{
+310 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;setAutoCommit(<emphasis role="keyword">false</emphasis>);
+311 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;setString(1,&#32;dirname);
+312 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;setString(2,&#32;currenttime);
+313 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;setString(3,&#32;<link linkend="_mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c">machinename</link>);
+314 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;setString(4,&#32;fname);
+315 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;setString(5,&#32;hashval);
+316 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>-&gt;executeUpdate();
+317 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;commit();
+318 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9e6d0921c2e7685b6a1d08cb89b727bb">con</link>-&gt;setAutoCommit(<emphasis role="keyword">true</emphasis>);
+319 &#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(sql::SQLException&#32;&amp;e)&#32;{
+320 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;#&#32;ERR:&#32;SQLException&#32;in&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;__FILE__;
+321 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;(&quot;</emphasis>&#32;&lt;&lt;&#32;__FUNCTION__&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;)&#32;on&#32;line&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;__LINE__&#32;&lt;&lt;&#32;endl;
+322 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;#&#32;ERR:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.what();
+323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;(MySQL&#32;error&#32;code:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.getErrorCode();
+324 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;,&#32;SQLState:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;e.getSQLState()&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;)&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+325 &#32;&#32;&#32;&#32;}
+326 
+327 &#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;<link linkend="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264">savedfileprepStmt</link>;
+328 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classmysqlcontroller_aad16b25269ed6065b0360c2b8312aea0_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_classmysqlcontroller_1a465f1a74a87fa74d5ab2aefd34bbe941"/><section>
     <title>setDBASENAME()</title>
 <indexterm><primary>setDBASENAME</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>setDBASENAME</secondary></indexterm>
-<para><computeroutput>void mysqlcontroller::setDBASENAME (char * dbase)</computeroutput></para></section>
+<para><computeroutput>void mysqlcontroller::setDBASENAME (char * dbase)</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>dbase</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<programlisting linenumbering="unnumbered">60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+61 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1aa1d4dd60015ed611b5141e9472985b88">dbasename</link>&#32;=&#32;dbase;
+62 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classmysqlcontroller_a465f1a74a87fa74d5ab2aefd34bbe941_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_classmysqlcontroller_1ac879ce9833813cd7649059a3d871fedd"/><section>
     <title>setHOSTNAME()</title>
 <indexterm><primary>setHOSTNAME</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>setHOSTNAME</secondary></indexterm>
-<para><computeroutput>void mysqlcontroller::setHOSTNAME (char * host)</computeroutput></para></section>
+<para><computeroutput>void mysqlcontroller::setHOSTNAME (char * host)</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>host</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<programlisting linenumbering="unnumbered">51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+52 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1af203df082d5c6dcaa0c88b07cf86466d">hostname</link>&#32;=&#32;host;
+53 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classmysqlcontroller_ac879ce9833813cd7649059a3d871fedd_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_classmysqlcontroller_1a686a2d830775da6da5e8451333b4099f"/><section>
     <title>setMACHINENAME()</title>
 <indexterm><primary>setMACHINENAME</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>setMACHINENAME</secondary></indexterm>
-<para><computeroutput>void mysqlcontroller::setMACHINENAME (char * mname)</computeroutput></para></section>
+<para><computeroutput>void mysqlcontroller::setMACHINENAME (char * mname)</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>mname</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<programlisting linenumbering="unnumbered">96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+97 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c">machinename</link>&#32;=&#32;mname;
+98 }
+</programlisting></section>
 <anchor xml:id="_classmysqlcontroller_1a39a1970d8c3c3f013487652493a66e5f"/><section>
     <title>setPASSWORD()</title>
 <indexterm><primary>setPASSWORD</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>setPASSWORD</secondary></indexterm>
-<para><computeroutput>void mysqlcontroller::setPASSWORD (char * pwd)</computeroutput></para></section>
+<para><computeroutput>void mysqlcontroller::setPASSWORD (char * pwd)</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pwd</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<programlisting linenumbering="unnumbered">78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+79 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a59460a3ff2c12443d1022e5cc0fba85c">password</link>&#32;=&#32;pwd;
+80 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classmysqlcontroller_a39a1970d8c3c3f013487652493a66e5f_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_classmysqlcontroller_1afd4432161cc947ac73243b5227d49a79"/><section>
     <title>setPORT()</title>
 <indexterm><primary>setPORT</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>setPORT</secondary></indexterm>
-<para><computeroutput>void mysqlcontroller::setPORT (int port)</computeroutput></para></section>
+<para><computeroutput>void mysqlcontroller::setPORT (int portno)</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>portno</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<programlisting linenumbering="unnumbered">87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+88 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb">port</link>&#32;=&#32;portno;
+89 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classmysqlcontroller_afd4432161cc947ac73243b5227d49a79_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_classmysqlcontroller_1ab095a99557c1d7582c66329398d4bd38"/><section>
     <title>setUSERNAME()</title>
 <indexterm><primary>setUSERNAME</primary><secondary>mysqlcontroller</secondary></indexterm>
 <indexterm><primary>mysqlcontroller</primary><secondary>setUSERNAME</secondary></indexterm>
-<para><computeroutput>void mysqlcontroller::setUSERNAME (char * uname)</computeroutput></para></section>
+<para><computeroutput>void mysqlcontroller::setUSERNAME (char * uname)</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>uname</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<programlisting linenumbering="unnumbered">69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+70 &#32;&#32;&#32;&#32;<link linkend="_mysqlcontroller_8cpp_1a9b20c006bd90a09e1465fb668700e81d">username</link>&#32;=&#32;uname;
+71 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classmysqlcontroller_ab095a99557c1d7582c66329398d4bd38_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 </section>
 </section>

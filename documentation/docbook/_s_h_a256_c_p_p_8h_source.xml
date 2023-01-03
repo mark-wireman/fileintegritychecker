@@ -47,7 +47,7 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 43 {
 44 <emphasis role="keyword">public</emphasis>:
 45 &#32;&#32;&#32;&#32;<link linkend="_class_s_h_a256_c_p_p_1ac2f738d58ae8cbc5ee99963adaf538ca">SHA256CPP</link>();
-46 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_class_s_h_a256_c_p_p_1a5b3c3cd1fcc19df9f6b855cc05dfe5af">~SHA256CPP</link>();
+46 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_class_s_h_a256_c_p_p_1aff6f658beaeaa61fb3f31bc0c8517be6">~SHA256CPP</link>();
 47 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_s_h_a256_c_p_p_1acd60e2902a86486cd8c0c730b22ec34d">endianCheck</link>();
 48 &#32;&#32;&#32;&#32;<link linkend="_struct_hash_values">HashValues</link>&#32;<link linkend="_class_s_h_a256_c_p_p_1a9466f56550cb9725c8fd6be92e5c1b77">calculateHash</link>(FILE&#32;*file);
 49 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_s_h_a256_c_p_p_1accf77858eb3d4019f13d1e9c40dc9a73">printFileContents</link>(FILE&#32;*fileForPrinting);
@@ -67,7 +67,7 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 63 &#32;&#32;&#32;&#32;uint32_t&#32;<link linkend="_class_s_h_a256_c_p_p_1a76c44344a60f168d02bf8a5888bf02ad">Maj</link>(uint32_t&#32;x,uint32_t&#32;y,uint32_t&#32;z);
 64 &#32;&#32;&#32;&#32;
 65 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_h_a256_c_p_p_1a5064c84992660bbd9e98f46511d780d8">calcFileSize</link>(FILE&#32;*file);
-66 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_h_a256_c_p_p_1af0be644c9e466da786edad451fb16c14">fillMessageBlock</link>(FILE&#32;*file,&#32;<emphasis role="keyword">union</emphasis>&#32;<link linkend="_unionmessage_block">messageBlock</link>&#32;*msgBlock,&#32;<emphasis role="keyword">enum</emphasis>&#32;<link linkend="__s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959">status</link>&#32;*state,&#32;uint64_t&#32;*numBits);
+66 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_h_a256_c_p_p_1af0be644c9e466da786edad451fb16c14">fillMessageBlock</link>(FILE&#32;*file,&#32;<emphasis role="keyword">union</emphasis>&#32;<link linkend="_unionmessage_block">messageBlock</link>&#32;*msgBlock,&#32;<emphasis role="keyword">enum</emphasis>&#32;<link linkend="__s_h_a256_c_p_p_8h_1a015eb90e0de9f16e87bd149d4b9ce959">status</link>&#32;*<link linkend="_mysqlcontroller_8cpp_1a89f234133d3efe315836311cbf21c64b">state</link>,&#32;uint64_t&#32;*numBits);
 67 };
 68 
 69 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;HEADERS_SHA256CPP_H_&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>

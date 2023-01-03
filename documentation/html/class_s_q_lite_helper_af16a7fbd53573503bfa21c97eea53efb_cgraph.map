@@ -1,0 +1,13 @@
+<map id="SQLiteHelper::saveExistingFileInfo" name="SQLiteHelper::saveExistingFileInfo">
+<area shape="rect" id="node1" title=" " alt="" coords="5,241,185,281"/>
+<area shape="rect" id="node2" href="$class_s_q_lite_helper.html#a373f87d1a12fb0d1014b4e01a7288521" title="Determines if the provided attribute has changed its value." alt="" coords="233,69,431,109"/>
+<area shape="rect" id="node6" href="$class_s_q_lite_helper.html#a6329b4efc28fd0442a6cc25246cc4fb5" title="Determines if the provided attribute is in the changes table." alt="" coords="233,133,431,173"/>
+<area shape="rect" id="node7" href="$class_s_q_lite_helper.html#a33630720f2df387b6c543d33473138e4" title="Will retrieve the current time." alt="" coords="482,338,677,363"/>
+<area shape="rect" id="node8" href="$class_s_q_lite_helper.html#a59fc305207ad616bafef83b54b102153" title="Returns the id of the file if the file exists in the files table." alt="" coords="254,249,410,274"/>
+<area shape="rect" id="node9" href="$class_s_q_lite_helper.html#a53e8c824b040560b8bb1393a853f265a" title=" " alt="" coords="239,299,425,339"/>
+<area shape="rect" id="node10" href="$class_s_q_lite_helper.html#a65965633aef3f5a34884740c497a61dc" title=" " alt="" coords="250,363,414,403"/>
+<area shape="rect" id="node11" href="$class_s_q_lite_helper.html#a7f4941d87b3ea71d1691f62b0113999a" title=" " alt="" coords="233,427,431,467"/>
+<area shape="rect" id="node3" href="$class_s_q_lite_helper.html#ad0fbfec9fab919ce001e2ca3a2f3d2d3" title=" " alt="" coords="480,5,679,45"/>
+<area shape="rect" id="node4" href="$class_s_q_lite_helper.html#ab551977b252cab42efd1f3b06676d7b1" title=" " alt="" coords="494,69,665,109"/>
+<area shape="rect" id="node5" href="$class_s_q_lite_helper.html#aa733abbf8352e42fbcda544c13b5e4f1" title=" " alt="" coords="479,133,680,173"/>
+</map>

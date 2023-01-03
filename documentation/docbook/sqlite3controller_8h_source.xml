@@ -26,18 +26,18 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 28 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
 32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classsqlite3controller_1a5e12813ef2d44e41238dfd8d4bbbea9a">sqlite3controller</link>();
 33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classsqlite3controller_1aa85b2bdd95d168c27a28476e07d36d88">sqlite3controller</link>(<emphasis role="keywordtype">char</emphasis>*&#32;databasename,&#32;<emphasis role="keywordtype">char</emphasis>*&#32;machinename);
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classsqlite3controller_1a5e12813ef2d44e41238dfd8d4bbbea9a">sqlite3controller</link>(<emphasis role="keywordtype">char</emphasis>*&#32;databasename,&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c">machinename</link>);
 41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_classsqlite3controller_1a0517049f3235b533cbcc1f2d68a42844">~sqlite3controller</link>();
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_classsqlite3controller_1a02bd62582a0c53efbe5b08ce570e42d0">~sqlite3controller</link>();
 46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
 47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
 55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classsqlite3controller_1a7d6ff837161930eb903754d5688f1b9b">initdb</link>();
 56 
 60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classsqlite3controller_1ab092ae9a83a7a124a5ca19a202f6243a">closedb</link>();
 61 
-66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classsqlite3controller_1ac0c940ac721d94e09be08e38eb0e5ca4">setDATABASENAME</link>(<emphasis role="keywordtype">char</emphasis>*&#32;dbasename);
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classsqlite3controller_1ac0c940ac721d94e09be08e38eb0e5ca4">setDATABASENAME</link>(<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_mysqlcontroller_8cpp_1aa1d4dd60015ed611b5141e9472985b88">dbasename</link>);
 67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classsqlite3controller_1a87910e834388b6f11c8493f10fd6a576">setMACHINENAME</link>(<emphasis role="keywordtype">char</emphasis>*&#32;machinename);
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classsqlite3controller_1a87910e834388b6f11c8493f10fd6a576">setMACHINENAME</link>(<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c">machinename</link>);
 73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
 79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_classsqlite3controller_1a6ffbf500e8d1d203bd264e221ee833a2">getDATABASENAME</link>();
 80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;

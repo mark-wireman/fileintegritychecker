@@ -1,0 +1,80 @@
+.TH "C:/Users/mark_/source/repos/fileintegritychecker/main.cpp" 3 "Sun Jan 1 2023" "Version 1.0" "File Integrity Checker" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/mark_/source/repos/fileintegritychecker/main.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <cstdio>\fP
+.br
+\fC#include 'headers/Menu\&.h'\fP
+.br
+\fC#include 'headers/fileintegritychecker\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int main (int argc, char * argv[])"
+
+.PP
+.nf
+6 {
+7 
+8     time_t start, end;
+9     double time_taken = 0\&.0;
+10     int menuresult = 0;
+11     fileintegritychecker* fic; 
+12     Menu* m;
+13 
+14     cout << "Starting processing\&.\&.\&.\&." << endl;
+15     time(&start);
+16 
+17     m = new Menu();
+18 
+19     if (argc >= 3) {
+20         menuresult = m->ParseArguments(argc, argv);
+21         if (menuresult == -1) {
+22             m->PrintMenu();
+23             return 0;
+24         }
+25     }
+26     else {
+27         m->PrintMenu();
+28         return 0;
+29     }
+30     
+31     fic = new fileintegritychecker();
+32     fic->setParamVals(m);
+33     fic->setDatabaseConnections();
+34     fic->processFiles();
+35     fic->closeDatabaseConnections();
+36 
+37     time(&end);
+38 
+39     // Calculating total time taken by the program\&.
+40     time_taken = double(end - start);
+41     int n = time_taken;
+42     n = n % (24 * 3600);
+43     int hour = n / 3600;
+44     n %= 3600;
+45     int minutes = n / 60;
+46     n %= 60;
+47     int seconds = n;
+48     cout << "Time taken is: " << hour << " " << "hours " << minutes << " " << "minutes " << seconds << " " << "seconds " << endl;
+49     cout << "Total directories processed: " << fic->numberofdirectories << " \&." << endl;
+50     cout << "Total files processed: " << fic->numberoffiles << " \&." << endl;
+51 
+52     return 0;
+53 }
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for File Integrity Checker from the source code\&.

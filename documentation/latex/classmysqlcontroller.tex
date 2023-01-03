@@ -1,4 +1,4 @@
-\hypertarget{classmysqlcontroller}{}\doxysection{mysqlcontroller Class Reference}
+\doxysection{mysqlcontroller Class Reference}
 \label{classmysqlcontroller}\index{mysqlcontroller@{mysqlcontroller}}
 
 
@@ -6,223 +6,736 @@
 
 
 
-Collaboration diagram for mysqlcontroller\+:
-\nopagebreak
+Collaboration diagram for mysqlcontroller\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=198pt]{classmysqlcontroller__coll__graph}
+\includegraphics[width=227pt]{classmysqlcontroller__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classmysqlcontroller_a891d523d7a39f46e72b16a36c1387767}{mysqlcontroller}} ()
+\textbf{ mysqlcontroller} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxyref{mysqlcontroller\+::mysqlcontroller}{p.}{classmysqlcontroller_a891d523d7a39f46e72b16a36c1387767} object. \end{DoxyCompactList}\item 
+\textbf{ mysqlcontroller} (char $\ast$host, char $\ast$dbase, char $\ast$uname, char $\ast$pwd, int \textbf{ port}, char $\ast$mname)
 \item 
-\mbox{\hyperlink{classmysqlcontroller_a5660513979df1fce6d3ff042ff477b99}{mysqlcontroller}} (char $\ast$host, char $\ast$dbase, char $\ast$uname, char $\ast$pwd, int port, char $\ast$mname)
+virtual \textbf{ $\sim$mysqlcontroller} ()
+\begin{DoxyCompactList}\small\item\em Destroy \doxyref{mysqlcontroller\+::mysqlcontroller}{p.}{classmysqlcontroller_a891d523d7a39f46e72b16a36c1387767} object. \end{DoxyCompactList}\item 
+void \textbf{ set\+HOSTNAME} (char $\ast$host)
 \item 
-virtual \mbox{\hyperlink{classmysqlcontroller_a5281329cf5af806d612908b406a9ec89}{$\sim$mysqlcontroller}} ()
+void \textbf{ set\+DBASENAME} (char $\ast$dbase)
 \item 
-void \mbox{\hyperlink{classmysqlcontroller_ac879ce9833813cd7649059a3d871fedd}{set\+HOSTNAME}} (char $\ast$host)
+void \textbf{ set\+USERNAME} (char $\ast$uname)
 \item 
-void \mbox{\hyperlink{classmysqlcontroller_a465f1a74a87fa74d5ab2aefd34bbe941}{set\+DBASENAME}} (char $\ast$dbase)
+void \textbf{ set\+PASSWORD} (char $\ast$pwd)
 \item 
-void \mbox{\hyperlink{classmysqlcontroller_ab095a99557c1d7582c66329398d4bd38}{set\+USERNAME}} (char $\ast$uname)
+void \textbf{ set\+PORT} (int \textbf{ port})
 \item 
-void \mbox{\hyperlink{classmysqlcontroller_a39a1970d8c3c3f013487652493a66e5f}{set\+PASSWORD}} (char $\ast$pwd)
+void \textbf{ set\+MACHINENAME} (char $\ast$mname)
 \item 
-void \mbox{\hyperlink{classmysqlcontroller_afd4432161cc947ac73243b5227d49a79}{set\+PORT}} (int port)
+char $\ast$ \textbf{ get\+HOSTNAME} ()
 \item 
-void \mbox{\hyperlink{classmysqlcontroller_a686a2d830775da6da5e8451333b4099f}{set\+MACHINENAME}} (char $\ast$mname)
+char $\ast$ \textbf{ get\+DBASENAME} ()
 \item 
-char $\ast$ \mbox{\hyperlink{classmysqlcontroller_aa98d95b40af60c2d3654e1734f02f4fd}{get\+HOSTNAME}} ()
+char $\ast$ \textbf{ get\+USERNAME} ()
 \item 
-char $\ast$ \mbox{\hyperlink{classmysqlcontroller_a9fd8e8a368cc3d5e84a371c2a4cd6b7a}{get\+DBASENAME}} ()
+char $\ast$ \textbf{ get\+PASSWORD} ()
 \item 
-char $\ast$ \mbox{\hyperlink{classmysqlcontroller_aabe3ab7506b212aa7125a3f81d725414}{get\+USERNAME}} ()
+int \textbf{ get\+PORT} ()
 \item 
-char $\ast$ \mbox{\hyperlink{classmysqlcontroller_ac38c7f7d6f37a4ac287a3997c398966c}{get\+PASSWORD}} ()
+char $\ast$ \textbf{ get\+MACHINENAME} ()
 \item 
-int \mbox{\hyperlink{classmysqlcontroller_a9df4b563e915fb2ba56797ed499dad8b}{get\+PORT}} ()
+void \textbf{ initdb} ()
 \item 
-char $\ast$ \mbox{\hyperlink{classmysqlcontroller_a32c523aaf33000a0bb1f42b0c5dcbe57}{get\+MACHINENAME}} ()
+void \textbf{ save\+Directory\+Name} (string dirname)
 \item 
-void \mbox{\hyperlink{classmysqlcontroller_a74389e9c368e9f43df261f7050377cb4}{initdb}} ()
+void \textbf{ save\+File\+Info} (string dirname, string fname, string hashval)
 \item 
-void \mbox{\hyperlink{classmysqlcontroller_a053dfe67635af840ec7a787e86b95f41}{save\+Directory\+Name}} (string dirname)
+void \textbf{ save\+Directory\+Name\+\_\+async} (const string \&dirname)
 \item 
-void \mbox{\hyperlink{classmysqlcontroller_a8ac76206c0cfc7954cce8011616119ab}{save\+File\+Info}} (string dirname, string fname, string hashval)
+void \textbf{ save\+File\+Info\+\_\+async} (const string \&dirname, const string \&fname, const string \&hashval)
 \item 
-void \mbox{\hyperlink{classmysqlcontroller_a1158e1c0c82d11cbe200219b4a5a96b3}{save\+Directory\+Name\+\_\+async}} (const string \&dirname)
+void \textbf{ delete\+Directory\+Names} ()
 \item 
-void \mbox{\hyperlink{classmysqlcontroller_aad16b25269ed6065b0360c2b8312aea0}{save\+File\+Info\+\_\+async}} (const string \&dirname, const string \&fname, const string \&hashval)
+void \textbf{ closedb} ()
 \item 
-void \mbox{\hyperlink{classmysqlcontroller_a50702b70c6eb0355c2d169050776b394}{delete\+Directory\+Names}} ()
+void \textbf{ init\+Prepared\+Statements} ()
 \item 
-void \mbox{\hyperlink{classmysqlcontroller_a75776ad16ad15a20736e0c1b6adda411}{closedb}} ()
-\item 
-void \mbox{\hyperlink{classmysqlcontroller_a069876969dedc6baf9c5f95cca1ab33d}{init\+Prepared\+Statements}} ()
-\item 
-void \mbox{\hyperlink{classmysqlcontroller_a760179764d3008ac64c36e0b4fb26553}{close\+Prepared\+Statements}} ()
+void \textbf{ close\+Prepared\+Statements} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-char $\ast$ \mbox{\hyperlink{classmysqlcontroller_a116a7441f9bae6f7ef1e0676bd211a7e}{filter\+Apostraphe}} (string)
+char $\ast$ \textbf{ filter\+Apostraphe} (string)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classmysqlcontroller_a891d523d7a39f46e72b16a36c1387767}\label{classmysqlcontroller_a891d523d7a39f46e72b16a36c1387767}} 
+\mbox{\label{classmysqlcontroller_a891d523d7a39f46e72b16a36c1387767}} 
 \index{mysqlcontroller@{mysqlcontroller}!mysqlcontroller@{mysqlcontroller}}
 \index{mysqlcontroller@{mysqlcontroller}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{mysqlcontroller()}{mysqlcontroller()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{mysqlcontroller()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily mysqlcontroller\+::mysqlcontroller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_a5660513979df1fce6d3ff042ff477b99}\label{classmysqlcontroller_a5660513979df1fce6d3ff042ff477b99}} 
+
+
+Construct a new \doxyref{mysqlcontroller\+::mysqlcontroller}{p.}{classmysqlcontroller_a891d523d7a39f46e72b16a36c1387767} object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{28 \{\}}
+
+\end{DoxyCode}
+\mbox{\label{classmysqlcontroller_a5660513979df1fce6d3ff042ff477b99}} 
 \index{mysqlcontroller@{mysqlcontroller}!mysqlcontroller@{mysqlcontroller}}
 \index{mysqlcontroller@{mysqlcontroller}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{mysqlcontroller()}{mysqlcontroller()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{mysqlcontroller()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily mysqlcontroller\+::mysqlcontroller (\begin{DoxyParamCaption}\item[{char $\ast$}]{host,  }\item[{char $\ast$}]{dbase,  }\item[{char $\ast$}]{uname,  }\item[{char $\ast$}]{pwd,  }\item[{int}]{port,  }\item[{char $\ast$}]{mname }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_a5281329cf5af806d612908b406a9ec89}\label{classmysqlcontroller_a5281329cf5af806d612908b406a9ec89}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{31 \{}
+\DoxyCodeLine{32     hostname = host;}
+\DoxyCodeLine{33     dbasename = dbase;}
+\DoxyCodeLine{34     username= uname;}
+\DoxyCodeLine{35     password = pwd;}
+\DoxyCodeLine{36     port = portno;}
+\DoxyCodeLine{37     machinename = mname;}
+\DoxyCodeLine{38 \}}
+
+\end{DoxyCode}
+\mbox{\label{classmysqlcontroller_a8564c141c9be749a42a5269ac37a6d63}} 
 \index{mysqlcontroller@{mysqlcontroller}!````~mysqlcontroller@{$\sim$mysqlcontroller}}
 \index{````~mysqlcontroller@{$\sim$mysqlcontroller}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{$\sim$mysqlcontroller()}{~mysqlcontroller()}}
-{\footnotesize\ttfamily virtual mysqlcontroller\+::$\sim$mysqlcontroller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+\doxysubsubsection{$\sim$mysqlcontroller()}
+{\footnotesize\ttfamily mysqlcontroller\+::$\sim$mysqlcontroller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Destroy \doxyref{mysqlcontroller\+::mysqlcontroller}{p.}{classmysqlcontroller_a891d523d7a39f46e72b16a36c1387767} object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{44 \{\}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classmysqlcontroller_a75776ad16ad15a20736e0c1b6adda411}\label{classmysqlcontroller_a75776ad16ad15a20736e0c1b6adda411}} 
+\mbox{\label{classmysqlcontroller_a75776ad16ad15a20736e0c1b6adda411}} 
 \index{mysqlcontroller@{mysqlcontroller}!closedb@{closedb}}
 \index{closedb@{closedb}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{closedb()}{closedb()}}
+\doxysubsubsection{closedb()}
 {\footnotesize\ttfamily void mysqlcontroller\+::closedb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_a760179764d3008ac64c36e0b4fb26553}\label{classmysqlcontroller_a760179764d3008ac64c36e0b4fb26553}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{379                               \{}
+\DoxyCodeLine{380     \textcolor{keyword}{delete} res;}
+\DoxyCodeLine{381     \textcolor{keyword}{delete} stmt;}
+\DoxyCodeLine{382     \textcolor{keyword}{delete} con;}
+\DoxyCodeLine{383 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmysqlcontroller_a75776ad16ad15a20736e0c1b6adda411_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classmysqlcontroller_a760179764d3008ac64c36e0b4fb26553}} 
 \index{mysqlcontroller@{mysqlcontroller}!closePreparedStatements@{closePreparedStatements}}
 \index{closePreparedStatements@{closePreparedStatements}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{closePreparedStatements()}{closePreparedStatements()}}
+\doxysubsubsection{closePreparedStatements()}
 {\footnotesize\ttfamily void mysqlcontroller\+::close\+Prepared\+Statements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_a50702b70c6eb0355c2d169050776b394}\label{classmysqlcontroller_a50702b70c6eb0355c2d169050776b394}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{369                                               \{}
+\DoxyCodeLine{370     }
+\DoxyCodeLine{371     \textcolor{keyword}{delete} savedirprepStmt;}
+\DoxyCodeLine{372     \textcolor{keyword}{delete} savedfileprepStmt;}
+\DoxyCodeLine{373 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmysqlcontroller_a760179764d3008ac64c36e0b4fb26553_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classmysqlcontroller_a50702b70c6eb0355c2d169050776b394}} 
 \index{mysqlcontroller@{mysqlcontroller}!deleteDirectoryNames@{deleteDirectoryNames}}
 \index{deleteDirectoryNames@{deleteDirectoryNames}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{deleteDirectoryNames()}{deleteDirectoryNames()}}
+\doxysubsubsection{deleteDirectoryNames()}
 {\footnotesize\ttfamily void mysqlcontroller\+::delete\+Directory\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_a116a7441f9bae6f7ef1e0676bd211a7e}\label{classmysqlcontroller_a116a7441f9bae6f7ef1e0676bd211a7e}} 
+\mbox{\label{classmysqlcontroller_a116a7441f9bae6f7ef1e0676bd211a7e}} 
 \index{mysqlcontroller@{mysqlcontroller}!filterApostraphe@{filterApostraphe}}
 \index{filterApostraphe@{filterApostraphe}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{filterApostraphe()}{filterApostraphe()}}
-{\footnotesize\ttfamily char $\ast$ mysqlcontroller\+::filter\+Apostraphe (\begin{DoxyParamCaption}\item[{string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+\doxysubsubsection{filterApostraphe()}
+{\footnotesize\ttfamily char $\ast$ mysqlcontroller\+::filter\+Apostraphe (\begin{DoxyParamCaption}\item[{string}]{dirname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classmysqlcontroller_a9fd8e8a368cc3d5e84a371c2a4cd6b7a}\label{classmysqlcontroller_a9fd8e8a368cc3d5e84a371c2a4cd6b7a}} 
+
+\begin{DoxyParams}{Parameters}
+{\em dirname} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char$\ast$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{207                                                       \{}
+\DoxyCodeLine{208     \textcolor{keywordtype}{string} retVal = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{209     \textcolor{keywordtype}{char}* char\_array;}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211     std::vector<string> result;}
+\DoxyCodeLine{212     std::stringstream s\_stream(dirname); \textcolor{comment}{//create string stream from the string}}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214     \textcolor{keywordflow}{while}(s\_stream.good()) \{}
+\DoxyCodeLine{215        \textcolor{keywordtype}{string} substr;}
+\DoxyCodeLine{216        getline(s\_stream, substr, \textcolor{charliteral}{'\(\backslash\)''}); \textcolor{comment}{//get first string delimited by comma}}
+\DoxyCodeLine{217        result.push\_back(substr);}
+\DoxyCodeLine{218     \}}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220     \textcolor{keywordflow}{if}(result.size() > 1) \{}
+\DoxyCodeLine{221         retVal+=result.at(0);}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 1; i<result.size(); i++) \{    \textcolor{comment}{//print all splitted strings}}
+\DoxyCodeLine{224             retVal+=\textcolor{stringliteral}{"{}'"{}};}
+\DoxyCodeLine{225             retVal+=\textcolor{stringliteral}{"{}'"{}};}
+\DoxyCodeLine{226             retVal+=result.at(i);}
+\DoxyCodeLine{227         \}}
+\DoxyCodeLine{228     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{229         retVal = dirname;}
+\DoxyCodeLine{230     \}}
+\DoxyCodeLine{231         }
+\DoxyCodeLine{232     \textcolor{keywordtype}{int} n = retVal.length();}
+\DoxyCodeLine{233     char\_array = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[n + 1];}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235     strcpy(char\_array, retVal.c\_str());}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237     \textcolor{keywordflow}{return} char\_array;}
+\DoxyCodeLine{238 \}}
+
+\end{DoxyCode}
+\mbox{\label{classmysqlcontroller_a9fd8e8a368cc3d5e84a371c2a4cd6b7a}} 
 \index{mysqlcontroller@{mysqlcontroller}!getDBASENAME@{getDBASENAME}}
 \index{getDBASENAME@{getDBASENAME}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{getDBASENAME()}{getDBASENAME()}}
+\doxysubsubsection{getDBASENAME()}
 {\footnotesize\ttfamily char $\ast$ mysqlcontroller\+::get\+DBASENAME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_aa98d95b40af60c2d3654e1734f02f4fd}\label{classmysqlcontroller_aa98d95b40af60c2d3654e1734f02f4fd}} 
+\begin{DoxyReturn}{Returns}
+char$\ast$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{114                                     \{}
+\DoxyCodeLine{115     \textcolor{keywordflow}{return} dbasename;}
+\DoxyCodeLine{116 \}}
+
+\end{DoxyCode}
+\mbox{\label{classmysqlcontroller_aa98d95b40af60c2d3654e1734f02f4fd}} 
 \index{mysqlcontroller@{mysqlcontroller}!getHOSTNAME@{getHOSTNAME}}
 \index{getHOSTNAME@{getHOSTNAME}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{getHOSTNAME()}{getHOSTNAME()}}
+\doxysubsubsection{getHOSTNAME()}
 {\footnotesize\ttfamily char $\ast$ mysqlcontroller\+::get\+HOSTNAME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_a32c523aaf33000a0bb1f42b0c5dcbe57}\label{classmysqlcontroller_a32c523aaf33000a0bb1f42b0c5dcbe57}} 
+\begin{DoxyReturn}{Returns}
+char$\ast$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{105                                    \{}
+\DoxyCodeLine{106     \textcolor{keywordflow}{return} hostname;}
+\DoxyCodeLine{107 \}}
+
+\end{DoxyCode}
+\mbox{\label{classmysqlcontroller_a32c523aaf33000a0bb1f42b0c5dcbe57}} 
 \index{mysqlcontroller@{mysqlcontroller}!getMACHINENAME@{getMACHINENAME}}
 \index{getMACHINENAME@{getMACHINENAME}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{getMACHINENAME()}{getMACHINENAME()}}
+\doxysubsubsection{getMACHINENAME()}
 {\footnotesize\ttfamily char $\ast$ mysqlcontroller\+::get\+MACHINENAME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_ac38c7f7d6f37a4ac287a3997c398966c}\label{classmysqlcontroller_ac38c7f7d6f37a4ac287a3997c398966c}} 
+\begin{DoxyReturn}{Returns}
+char$\ast$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{150                                       \{}
+\DoxyCodeLine{151     \textcolor{keywordflow}{return} machinename;}
+\DoxyCodeLine{152 \}}
+
+\end{DoxyCode}
+\mbox{\label{classmysqlcontroller_ac38c7f7d6f37a4ac287a3997c398966c}} 
 \index{mysqlcontroller@{mysqlcontroller}!getPASSWORD@{getPASSWORD}}
 \index{getPASSWORD@{getPASSWORD}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{getPASSWORD()}{getPASSWORD()}}
+\doxysubsubsection{getPASSWORD()}
 {\footnotesize\ttfamily char $\ast$ mysqlcontroller\+::get\+PASSWORD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_a9df4b563e915fb2ba56797ed499dad8b}\label{classmysqlcontroller_a9df4b563e915fb2ba56797ed499dad8b}} 
+\begin{DoxyReturn}{Returns}
+char$\ast$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{132                                    \{}
+\DoxyCodeLine{133     \textcolor{keywordflow}{return} password;}
+\DoxyCodeLine{134 \}}
+
+\end{DoxyCode}
+\mbox{\label{classmysqlcontroller_a9df4b563e915fb2ba56797ed499dad8b}} 
 \index{mysqlcontroller@{mysqlcontroller}!getPORT@{getPORT}}
 \index{getPORT@{getPORT}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{getPORT()}{getPORT()}}
+\doxysubsubsection{getPORT()}
 {\footnotesize\ttfamily int mysqlcontroller\+::get\+PORT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_aabe3ab7506b212aa7125a3f81d725414}\label{classmysqlcontroller_aabe3ab7506b212aa7125a3f81d725414}} 
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{141                              \{}
+\DoxyCodeLine{142     \textcolor{keywordflow}{return} port;}
+\DoxyCodeLine{143 \}}
+
+\end{DoxyCode}
+\mbox{\label{classmysqlcontroller_aabe3ab7506b212aa7125a3f81d725414}} 
 \index{mysqlcontroller@{mysqlcontroller}!getUSERNAME@{getUSERNAME}}
 \index{getUSERNAME@{getUSERNAME}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{getUSERNAME()}{getUSERNAME()}}
+\doxysubsubsection{getUSERNAME()}
 {\footnotesize\ttfamily char $\ast$ mysqlcontroller\+::get\+USERNAME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_a74389e9c368e9f43df261f7050377cb4}\label{classmysqlcontroller_a74389e9c368e9f43df261f7050377cb4}} 
+\begin{DoxyReturn}{Returns}
+char$\ast$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{123                                    \{}
+\DoxyCodeLine{124     \textcolor{keywordflow}{return} username;}
+\DoxyCodeLine{125 \}}
+
+\end{DoxyCode}
+\mbox{\label{classmysqlcontroller_a74389e9c368e9f43df261f7050377cb4}} 
 \index{mysqlcontroller@{mysqlcontroller}!initdb@{initdb}}
 \index{initdb@{initdb}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{initdb()}{initdb()}}
+\doxysubsubsection{initdb()}
 {\footnotesize\ttfamily void mysqlcontroller\+::initdb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_a069876969dedc6baf9c5f95cca1ab33d}\label{classmysqlcontroller_a069876969dedc6baf9c5f95cca1ab33d}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{170                              \{}
+\DoxyCodeLine{171     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{172         cout << \textcolor{stringliteral}{"{}Initializing connection to the database."{}} << std::endl;}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174         \textcolor{keywordtype}{string} connstr = \textcolor{stringliteral}{"{}tcp://"{}} + string(hostname) + \textcolor{stringliteral}{"{}:"{}};}
+\DoxyCodeLine{175         }
+\DoxyCodeLine{176         \textcolor{keywordflow}{if}(port == 0) \{}
+\DoxyCodeLine{177             connstr += \textcolor{stringliteral}{"{}3306"{}};}
+\DoxyCodeLine{178         \}}
+\DoxyCodeLine{179         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{180             connstr += to\_string(port);}
+\DoxyCodeLine{181         \}}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183         \textcolor{comment}{/* Create a connection */}}
+\DoxyCodeLine{184         driver = get\_driver\_instance();}
+\DoxyCodeLine{185         con = driver-\/>connect(connstr, username, password);}
+\DoxyCodeLine{186         con-\/>setAutoCommit(\textcolor{keyword}{false});}
+\DoxyCodeLine{187         \textcolor{comment}{/* Connect to the MySQL test database */}}
+\DoxyCodeLine{188         con-\/>setSchema(dbasename);}
+\DoxyCodeLine{189         cout << \textcolor{stringliteral}{"{}Successfully connected to database."{}} << endl;}
+\DoxyCodeLine{190     \} \textcolor{keywordflow}{catch} (sql::SQLException \&e) \{}
+\DoxyCodeLine{191         cout << \textcolor{stringliteral}{"{}\# ERR: SQLException in "{}} << \_\_FILE\_\_;}
+\DoxyCodeLine{192         cout << \textcolor{stringliteral}{"{}("{}} << \_\_FUNCTION\_\_ << \textcolor{stringliteral}{"{}) on line "{}} << \_\_LINE\_\_ << endl;}
+\DoxyCodeLine{193         cout << \textcolor{stringliteral}{"{}\# ERR: "{}} << e.what();}
+\DoxyCodeLine{194         cout << \textcolor{stringliteral}{"{} (MySQL error code: "{}} << e.getErrorCode();}
+\DoxyCodeLine{195         cout << \textcolor{stringliteral}{"{}, SQLState: "{}} << e.getSQLState() << \textcolor{stringliteral}{"{} )"{}} << endl;}
+\DoxyCodeLine{196     \}}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198     cout << endl;}
+\DoxyCodeLine{199 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmysqlcontroller_a74389e9c368e9f43df261f7050377cb4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classmysqlcontroller_a069876969dedc6baf9c5f95cca1ab33d}} 
 \index{mysqlcontroller@{mysqlcontroller}!initPreparedStatements@{initPreparedStatements}}
 \index{initPreparedStatements@{initPreparedStatements}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{initPreparedStatements()}{initPreparedStatements()}}
+\doxysubsubsection{initPreparedStatements()}
 {\footnotesize\ttfamily void mysqlcontroller\+::init\+Prepared\+Statements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_a053dfe67635af840ec7a787e86b95f41}\label{classmysqlcontroller_a053dfe67635af840ec7a787e86b95f41}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{158                                              \{}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     savedirprepStmt = con-\/>prepareStatement(SAVEDIRSTOREDPROCSTMT);}
+\DoxyCodeLine{161     savedfileprepStmt = con-\/>prepareStatement(SAVEFILEINFOPROCSTMT);}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmysqlcontroller_a069876969dedc6baf9c5f95cca1ab33d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classmysqlcontroller_a053dfe67635af840ec7a787e86b95f41}} 
 \index{mysqlcontroller@{mysqlcontroller}!saveDirectoryName@{saveDirectoryName}}
 \index{saveDirectoryName@{saveDirectoryName}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{saveDirectoryName()}{saveDirectoryName()}}
+\doxysubsubsection{saveDirectoryName()}
 {\footnotesize\ttfamily void mysqlcontroller\+::save\+Directory\+Name (\begin{DoxyParamCaption}\item[{string}]{dirname }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_a1158e1c0c82d11cbe200219b4a5a96b3}\label{classmysqlcontroller_a1158e1c0c82d11cbe200219b4a5a96b3}} 
+
+\begin{DoxyParams}{Parameters}
+{\em dirname} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{245                                                       \{}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247     \textcolor{keywordtype}{char}* dirnameverified = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[dirname.length() + 1]; \textcolor{comment}{// filterApostraphe(dirname);}}
+\DoxyCodeLine{248     strcpy(dirnameverified,dirname.c\_str());}
+\DoxyCodeLine{249     }
+\DoxyCodeLine{250     initPreparedStatements();}
+\DoxyCodeLine{251     \textcolor{keywordtype}{char}* currenttime = SQLiteHelper::getCurrentTime();}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{254         con-\/>setAutoCommit(\textcolor{keyword}{false});}
+\DoxyCodeLine{255         savedirprepStmt-\/>setString(1, dirnameverified);}
+\DoxyCodeLine{256         savedirprepStmt-\/>setString(2, currenttime);}
+\DoxyCodeLine{257         savedirprepStmt-\/>setString(3, machinename);}
+\DoxyCodeLine{258         savedirprepStmt-\/>executeUpdate();}
+\DoxyCodeLine{259         con-\/>commit();}
+\DoxyCodeLine{260         con-\/>setAutoCommit(\textcolor{keyword}{true});}
+\DoxyCodeLine{261     \} \textcolor{keywordflow}{catch} (sql::SQLException \&e) \{}
+\DoxyCodeLine{262         cout << \textcolor{stringliteral}{"{}\# ERR: SQLException in "{}} << \_\_FILE\_\_;}
+\DoxyCodeLine{263         cout << \textcolor{stringliteral}{"{}("{}} << \_\_FUNCTION\_\_ << \textcolor{stringliteral}{"{}) on line "{}} << \_\_LINE\_\_ << endl;}
+\DoxyCodeLine{264         cout << \textcolor{stringliteral}{"{}\# ERR: "{}} << e.what();}
+\DoxyCodeLine{265         cout << \textcolor{stringliteral}{"{} (MySQL error code: "{}} << e.getErrorCode();}
+\DoxyCodeLine{266         cout << \textcolor{stringliteral}{"{}, SQLState: "{}} << e.getSQLState() << \textcolor{stringliteral}{"{} )"{}} << endl;}
+\DoxyCodeLine{267     \}}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269     closePreparedStatements();}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmysqlcontroller_a053dfe67635af840ec7a787e86b95f41_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmysqlcontroller_a053dfe67635af840ec7a787e86b95f41_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classmysqlcontroller_a1158e1c0c82d11cbe200219b4a5a96b3}} 
 \index{mysqlcontroller@{mysqlcontroller}!saveDirectoryName\_async@{saveDirectoryName\_async}}
 \index{saveDirectoryName\_async@{saveDirectoryName\_async}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{saveDirectoryName\_async()}{saveDirectoryName\_async()}}
+\doxysubsubsection{saveDirectoryName\_async()}
 {\footnotesize\ttfamily void mysqlcontroller\+::save\+Directory\+Name\+\_\+async (\begin{DoxyParamCaption}\item[{const string \&}]{dirname }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_a8ac76206c0cfc7954cce8011616119ab}\label{classmysqlcontroller_a8ac76206c0cfc7954cce8011616119ab}} 
+
+\begin{DoxyParams}{Parameters}
+{\em dirname} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{278                                                                    \{}
+\DoxyCodeLine{279     \textcolor{keywordtype}{string} dname = dirname;}
+\DoxyCodeLine{280     saveDirectoryName(dname);}
+\DoxyCodeLine{281 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmysqlcontroller_a1158e1c0c82d11cbe200219b4a5a96b3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmysqlcontroller_a1158e1c0c82d11cbe200219b4a5a96b3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classmysqlcontroller_a8ac76206c0cfc7954cce8011616119ab}} 
 \index{mysqlcontroller@{mysqlcontroller}!saveFileInfo@{saveFileInfo}}
 \index{saveFileInfo@{saveFileInfo}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{saveFileInfo()}{saveFileInfo()}}
+\doxysubsubsection{saveFileInfo()}
 {\footnotesize\ttfamily void mysqlcontroller\+::save\+File\+Info (\begin{DoxyParamCaption}\item[{string}]{dirname,  }\item[{string}]{fname,  }\item[{string}]{hashval }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_aad16b25269ed6065b0360c2b8312aea0}\label{classmysqlcontroller_aad16b25269ed6065b0360c2b8312aea0}} 
+
+\begin{DoxyParams}{Parameters}
+{\em dirname} & \\
+\hline
+{\em fname} & \\
+\hline
+{\em hashval} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{337                                                                                \{}
+\DoxyCodeLine{338     }
+\DoxyCodeLine{339     \textcolor{keywordtype}{char}* currenttime = SQLiteHelper::getCurrentTime();}
+\DoxyCodeLine{340 }
+\DoxyCodeLine{341     initPreparedStatements();}
+\DoxyCodeLine{342 }
+\DoxyCodeLine{343     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{344         con-\/>setAutoCommit(\textcolor{keyword}{false});}
+\DoxyCodeLine{345         savedfileprepStmt-\/>setString(1, dirname);}
+\DoxyCodeLine{346         savedfileprepStmt-\/>setString(2, currenttime);}
+\DoxyCodeLine{347         savedfileprepStmt-\/>setString(3, machinename);}
+\DoxyCodeLine{348         savedfileprepStmt-\/>setString(4, fname);}
+\DoxyCodeLine{349         savedfileprepStmt-\/>setString(5, hashval);}
+\DoxyCodeLine{350         savedfileprepStmt-\/>executeUpdate();}
+\DoxyCodeLine{351         con-\/>commit();}
+\DoxyCodeLine{352         con-\/>setAutoCommit(\textcolor{keyword}{true});}
+\DoxyCodeLine{353     \} \textcolor{keywordflow}{catch} (sql::SQLException \&e) \{}
+\DoxyCodeLine{354         cout << \textcolor{stringliteral}{"{}\# ERR: SQLException in "{}} << \_\_FILE\_\_;}
+\DoxyCodeLine{355         cout << \textcolor{stringliteral}{"{}("{}} << \_\_FUNCTION\_\_ << \textcolor{stringliteral}{"{}) on line "{}} << \_\_LINE\_\_ << endl;}
+\DoxyCodeLine{356         cout << \textcolor{stringliteral}{"{}\# ERR: "{}} << e.what();}
+\DoxyCodeLine{357         cout << \textcolor{stringliteral}{"{} (MySQL error code: "{}} << e.getErrorCode();}
+\DoxyCodeLine{358         cout << \textcolor{stringliteral}{"{}, SQLState: "{}} << e.getSQLState() << \textcolor{stringliteral}{"{} )"{}} << endl;}
+\DoxyCodeLine{359     \}}
+\DoxyCodeLine{360 }
+\DoxyCodeLine{361     closePreparedStatements();}
+\DoxyCodeLine{362 }
+\DoxyCodeLine{363 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmysqlcontroller_a8ac76206c0cfc7954cce8011616119ab_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classmysqlcontroller_aad16b25269ed6065b0360c2b8312aea0}} 
 \index{mysqlcontroller@{mysqlcontroller}!saveFileInfo\_async@{saveFileInfo\_async}}
 \index{saveFileInfo\_async@{saveFileInfo\_async}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{saveFileInfo\_async()}{saveFileInfo\_async()}}
+\doxysubsubsection{saveFileInfo\_async()}
 {\footnotesize\ttfamily void mysqlcontroller\+::save\+File\+Info\+\_\+async (\begin{DoxyParamCaption}\item[{const string \&}]{dirname,  }\item[{const string \&}]{fname,  }\item[{const string \&}]{hashval }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_a465f1a74a87fa74d5ab2aefd34bbe941}\label{classmysqlcontroller_a465f1a74a87fa74d5ab2aefd34bbe941}} 
+
+\begin{DoxyParams}{Parameters}
+{\em dirname} & \\
+\hline
+{\em fname} & \\
+\hline
+{\em hashval} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{290                                                                                                           \{}
+\DoxyCodeLine{291     \textcolor{keywordtype}{string} dname = dirname;}
+\DoxyCodeLine{292     \textcolor{keywordtype}{string} filname = fname;}
+\DoxyCodeLine{293     \textcolor{keywordtype}{string} hval = hashval;}
+\DoxyCodeLine{294     \textcolor{keywordtype}{string} currenttime = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{295     }
+\DoxyCodeLine{296     std::time\_t t = std::time(0);   \textcolor{comment}{// get time now}}
+\DoxyCodeLine{297     std::tm* now = std::localtime(\&t);}
+\DoxyCodeLine{298     \textcolor{keywordtype}{char} date\_string[100];}
+\DoxyCodeLine{299     \textcolor{keywordtype}{char} time\_string[100];}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301     strftime(date\_string, 50, \textcolor{stringliteral}{"{}\%B \%d, \%Y "{}}, now);}
+\DoxyCodeLine{302     strftime(time\_string, 50, \textcolor{stringliteral}{"{}\%T"{}}, now);}
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304     currenttime += date\_string;}
+\DoxyCodeLine{305     currenttime += time\_string;}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307     savedfileprepStmt = con-\/>prepareStatement(SAVEFILEINFOPROCSTMT);}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{310         con-\/>setAutoCommit(\textcolor{keyword}{false});}
+\DoxyCodeLine{311         savedfileprepStmt-\/>setString(1, dirname);}
+\DoxyCodeLine{312         savedfileprepStmt-\/>setString(2, currenttime);}
+\DoxyCodeLine{313         savedfileprepStmt-\/>setString(3, machinename);}
+\DoxyCodeLine{314         savedfileprepStmt-\/>setString(4, fname);}
+\DoxyCodeLine{315         savedfileprepStmt-\/>setString(5, hashval);}
+\DoxyCodeLine{316         savedfileprepStmt-\/>executeUpdate();}
+\DoxyCodeLine{317         con-\/>commit();}
+\DoxyCodeLine{318         con-\/>setAutoCommit(\textcolor{keyword}{true});}
+\DoxyCodeLine{319     \} \textcolor{keywordflow}{catch} (sql::SQLException \&e) \{}
+\DoxyCodeLine{320         cout << \textcolor{stringliteral}{"{}\# ERR: SQLException in "{}} << \_\_FILE\_\_;}
+\DoxyCodeLine{321         cout << \textcolor{stringliteral}{"{}("{}} << \_\_FUNCTION\_\_ << \textcolor{stringliteral}{"{}) on line "{}} << \_\_LINE\_\_ << endl;}
+\DoxyCodeLine{322         cout << \textcolor{stringliteral}{"{}\# ERR: "{}} << e.what();}
+\DoxyCodeLine{323         cout << \textcolor{stringliteral}{"{} (MySQL error code: "{}} << e.getErrorCode();}
+\DoxyCodeLine{324         cout << \textcolor{stringliteral}{"{}, SQLState: "{}} << e.getSQLState() << \textcolor{stringliteral}{"{} )"{}} << endl;}
+\DoxyCodeLine{325     \}}
+\DoxyCodeLine{326 }
+\DoxyCodeLine{327     \textcolor{keyword}{delete} savedfileprepStmt;}
+\DoxyCodeLine{328 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmysqlcontroller_aad16b25269ed6065b0360c2b8312aea0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classmysqlcontroller_a465f1a74a87fa74d5ab2aefd34bbe941}} 
 \index{mysqlcontroller@{mysqlcontroller}!setDBASENAME@{setDBASENAME}}
 \index{setDBASENAME@{setDBASENAME}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{setDBASENAME()}{setDBASENAME()}}
+\doxysubsubsection{setDBASENAME()}
 {\footnotesize\ttfamily void mysqlcontroller\+::set\+DBASENAME (\begin{DoxyParamCaption}\item[{char $\ast$}]{dbase }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_ac879ce9833813cd7649059a3d871fedd}\label{classmysqlcontroller_ac879ce9833813cd7649059a3d871fedd}} 
+
+\begin{DoxyParams}{Parameters}
+{\em dbase} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{60                                               \{}
+\DoxyCodeLine{61     dbasename = dbase;}
+\DoxyCodeLine{62 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classmysqlcontroller_a465f1a74a87fa74d5ab2aefd34bbe941_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classmysqlcontroller_ac879ce9833813cd7649059a3d871fedd}} 
 \index{mysqlcontroller@{mysqlcontroller}!setHOSTNAME@{setHOSTNAME}}
 \index{setHOSTNAME@{setHOSTNAME}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{setHOSTNAME()}{setHOSTNAME()}}
+\doxysubsubsection{setHOSTNAME()}
 {\footnotesize\ttfamily void mysqlcontroller\+::set\+HOSTNAME (\begin{DoxyParamCaption}\item[{char $\ast$}]{host }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_a686a2d830775da6da5e8451333b4099f}\label{classmysqlcontroller_a686a2d830775da6da5e8451333b4099f}} 
+
+\begin{DoxyParams}{Parameters}
+{\em host} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{51                                             \{}
+\DoxyCodeLine{52     hostname = host;}
+\DoxyCodeLine{53 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{classmysqlcontroller_ac879ce9833813cd7649059a3d871fedd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classmysqlcontroller_a686a2d830775da6da5e8451333b4099f}} 
 \index{mysqlcontroller@{mysqlcontroller}!setMACHINENAME@{setMACHINENAME}}
 \index{setMACHINENAME@{setMACHINENAME}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{setMACHINENAME()}{setMACHINENAME()}}
+\doxysubsubsection{setMACHINENAME()}
 {\footnotesize\ttfamily void mysqlcontroller\+::set\+MACHINENAME (\begin{DoxyParamCaption}\item[{char $\ast$}]{mname }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_a39a1970d8c3c3f013487652493a66e5f}\label{classmysqlcontroller_a39a1970d8c3c3f013487652493a66e5f}} 
+
+\begin{DoxyParams}{Parameters}
+{\em mname} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{96                                                 \{}
+\DoxyCodeLine{97     machinename = mname;}
+\DoxyCodeLine{98 \}}
+
+\end{DoxyCode}
+\mbox{\label{classmysqlcontroller_a39a1970d8c3c3f013487652493a66e5f}} 
 \index{mysqlcontroller@{mysqlcontroller}!setPASSWORD@{setPASSWORD}}
 \index{setPASSWORD@{setPASSWORD}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{setPASSWORD()}{setPASSWORD()}}
+\doxysubsubsection{setPASSWORD()}
 {\footnotesize\ttfamily void mysqlcontroller\+::set\+PASSWORD (\begin{DoxyParamCaption}\item[{char $\ast$}]{pwd }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_afd4432161cc947ac73243b5227d49a79}\label{classmysqlcontroller_afd4432161cc947ac73243b5227d49a79}} 
+
+\begin{DoxyParams}{Parameters}
+{\em pwd} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{78                                            \{}
+\DoxyCodeLine{79     password = pwd;}
+\DoxyCodeLine{80 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{classmysqlcontroller_a39a1970d8c3c3f013487652493a66e5f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classmysqlcontroller_afd4432161cc947ac73243b5227d49a79}} 
 \index{mysqlcontroller@{mysqlcontroller}!setPORT@{setPORT}}
 \index{setPORT@{setPORT}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{setPORT()}{setPORT()}}
-{\footnotesize\ttfamily void mysqlcontroller\+::set\+PORT (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})}
+\doxysubsubsection{setPORT()}
+{\footnotesize\ttfamily void mysqlcontroller\+::set\+PORT (\begin{DoxyParamCaption}\item[{int}]{portno }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classmysqlcontroller_ab095a99557c1d7582c66329398d4bd38}\label{classmysqlcontroller_ab095a99557c1d7582c66329398d4bd38}} 
+
+\begin{DoxyParams}{Parameters}
+{\em portno} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{87                                         \{}
+\DoxyCodeLine{88     port = portno;}
+\DoxyCodeLine{89 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{classmysqlcontroller_afd4432161cc947ac73243b5227d49a79_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classmysqlcontroller_ab095a99557c1d7582c66329398d4bd38}} 
 \index{mysqlcontroller@{mysqlcontroller}!setUSERNAME@{setUSERNAME}}
 \index{setUSERNAME@{setUSERNAME}!mysqlcontroller@{mysqlcontroller}}
-\doxysubsubsection{\texorpdfstring{setUSERNAME()}{setUSERNAME()}}
+\doxysubsubsection{setUSERNAME()}
 {\footnotesize\ttfamily void mysqlcontroller\+::set\+USERNAME (\begin{DoxyParamCaption}\item[{char $\ast$}]{uname }\end{DoxyParamCaption})}
 
+
+\begin{DoxyParams}{Parameters}
+{\em uname} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{69                                              \{}
+\DoxyCodeLine{70     username = uname;}
+\DoxyCodeLine{71 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classmysqlcontroller_ab095a99557c1d7582c66329398d4bd38_icgraph}
+\end{center}
+\end{figure}

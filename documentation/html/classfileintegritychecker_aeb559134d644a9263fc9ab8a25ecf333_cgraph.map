@@ -1,0 +1,5 @@
+<map id="fileintegritychecker::closeDatabaseConnections" name="fileintegritychecker::closeDatabaseConnections">
+<area shape="rect" id="node1" title=" " alt="" coords="5,27,193,67"/>
+<area shape="rect" id="node2" href="$classmysqlcontroller.html#a75776ad16ad15a20736e0c1b6adda411" title=" " alt="" coords="241,5,404,31"/>
+<area shape="rect" id="node3" href="$classsqlite3controller.html#ab092ae9a83a7a124a5ca19a202f6243a" title="Close the database after use." alt="" coords="262,55,383,95"/>
+</map>

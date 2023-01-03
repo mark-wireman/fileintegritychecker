@@ -1,4 +1,4 @@
-\hypertarget{class_menu}{}\doxysection{Menu Class Reference}
+\doxysection{Menu Class Reference}
 \label{class_menu}\index{Menu@{Menu}}
 
 
@@ -6,8 +6,7 @@
 
 
 
-Collaboration diagram for Menu\+:
-\nopagebreak
+Collaboration diagram for Menu\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,191 +16,497 @@ Collaboration diagram for Menu\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_menu_ad466dd83355124a6ed958430450bfe94}{Menu}} ()
+\textbf{ Menu} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxyref{Menu}{p.}{class_menu}\+:\+: \doxyref{Menu}{p.}{class_menu} object. \end{DoxyCompactList}\item 
+virtual \textbf{ $\sim$\+Menu} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxyref{Menu}{p.}{class_menu}\+:\+: \doxyref{Menu}{p.}{class_menu} object. \end{DoxyCompactList}\item 
+int \textbf{ Parse\+Arguments} (int argc, char $\ast$argv[$\,$])
 \item 
-virtual \mbox{\hyperlink{class_menu_a5bf168cbb40e28e718ced8f248b3d37a}{$\sim$\+Menu}} ()
+void \textbf{ Print\+Menu} ()
 \item 
-int \mbox{\hyperlink{class_menu_a50f39bd5a994cb64421bfacbf6aed5e8}{Parse\+Arguments}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+char $\ast$ \textbf{ get\+DATABASEHOSTNAME} ()
 \item 
-void \mbox{\hyperlink{class_menu_acbe5ec7e6202dec08ca26f4898df8040}{Print\+Menu}} ()
+char $\ast$ \textbf{ get\+USERNAME} ()
 \item 
-char $\ast$ \mbox{\hyperlink{class_menu_aca44a03905fb898515c88a49b4fca849}{get\+DATABASEHOSTNAME}} ()
+char $\ast$ \textbf{ get\+PASSWORD} ()
 \item 
-char $\ast$ \mbox{\hyperlink{class_menu_a7b3f2bde7bf5297d47409c7fa7f8c940}{get\+USERNAME}} ()
+char $\ast$ \textbf{ get\+PORT} ()
 \item 
-char $\ast$ \mbox{\hyperlink{class_menu_a08a81ab79febb5e1f74a21853717cbae}{get\+PASSWORD}} ()
+char $\ast$ \textbf{ get\+MACHINENAME} ()
 \item 
-char $\ast$ \mbox{\hyperlink{class_menu_ac8fe61db0d8a3f32fbb161abdeee4668}{get\+PORT}} ()
+char $\ast$ \textbf{ get\+PARENTDIR} ()
 \item 
-char $\ast$ \mbox{\hyperlink{class_menu_ab2ce4cac489c6da0f08eb4bd0753a555}{get\+MACHINENAME}} ()
+char $\ast$ \textbf{ get\+DBASETYPE} ()
 \item 
-char $\ast$ \mbox{\hyperlink{class_menu_ac07eb59a5697f449133f2d4caf95947c}{get\+PARENTDIR}} ()
+char $\ast$ \textbf{ get\+DBASEFILENAME} ()
 \item 
-char $\ast$ \mbox{\hyperlink{class_menu_a1f0c07508ea10698ae7af1caad692d52}{get\+DBASETYPE}} ()
-\item 
-char $\ast$ \mbox{\hyperlink{class_menu_a34eb19b4584c6139b1d0fbc7811ba68a}{get\+DBASEFILENAME}} ()
-\item 
-int \mbox{\hyperlink{class_menu_a7296588596f0d05634bb6b6a26d51000}{get\+PROCESSHASHVALS}} ()
+int \textbf{ get\+PROCESSHASHVALS} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-char $\ast$ \mbox{\hyperlink{class_menu_a00e9ec31107eb8cbef31f3f198f168a2}{parentdir}} = NULL
+char $\ast$ \textbf{ parentdir} = NULL
 \item 
-char $\ast$ \mbox{\hyperlink{class_menu_a05ecb7899e5f3ae7345dae98bc27553c}{dbasehost}} = NULL
+char $\ast$ \textbf{ dbasehost} = NULL
 \item 
-char $\ast$ \mbox{\hyperlink{class_menu_abfa524748149194d31f3a760ab8765fd}{uname}} = NULL
+char $\ast$ \textbf{ uname} = NULL
 \item 
-char $\ast$ \mbox{\hyperlink{class_menu_a3851b8c999f1ed310c57b306d6bc2a03}{pwd}} = NULL
+char $\ast$ \textbf{ pwd} = NULL
 \item 
-char $\ast$ \mbox{\hyperlink{class_menu_ab170c7e84e5d2da91880820ccbc12abf}{portno}} = NULL
+char $\ast$ \textbf{ portno} = NULL
 \item 
-char $\ast$ \mbox{\hyperlink{class_menu_ab67d5fb0837589bb4d6dac62131a72a4}{mname}} = NULL
+char $\ast$ \textbf{ mname} = NULL
 \item 
-char $\ast$ \mbox{\hyperlink{class_menu_a0cc46cd227e7fcecf4413b9afe58d29d}{dbasetype}} = NULL
+char $\ast$ \textbf{ dbasetype} = NULL
 \item 
-char $\ast$ \mbox{\hyperlink{class_menu_a3ff2979249504fbed7989ee73b4f58a6}{dbasefilename}} = NULL
+char $\ast$ \textbf{ dbasefilename} = NULL
 \item 
-int \mbox{\hyperlink{class_menu_aa094dcb11114277b2e0921587c2bcb12}{processhashvals}} = 0
+int \textbf{ processhashvals} = 0
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_menu_ad466dd83355124a6ed958430450bfe94}\label{class_menu_ad466dd83355124a6ed958430450bfe94}} 
+\mbox{\label{class_menu_ad466dd83355124a6ed958430450bfe94}} 
 \index{Menu@{Menu}!Menu@{Menu}}
 \index{Menu@{Menu}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{Menu()}{Menu()}}
+\doxysubsubsection{Menu()}
 {\footnotesize\ttfamily Menu\+::\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_menu_a5bf168cbb40e28e718ced8f248b3d37a}\label{class_menu_a5bf168cbb40e28e718ced8f248b3d37a}} 
+
+
+Construct a new \doxyref{Menu}{p.}{class_menu}\+:\+: \doxyref{Menu}{p.}{class_menu} object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14            \{}
+\DoxyCodeLine{15     }
+\DoxyCodeLine{16 \}}
+
+\end{DoxyCode}
+\mbox{\label{class_menu_a831387f51358cfb88cd018e1777bc980}} 
 \index{Menu@{Menu}!````~Menu@{$\sim$Menu}}
 \index{````~Menu@{$\sim$Menu}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{$\sim$Menu()}{~Menu()}}
-{\footnotesize\ttfamily virtual Menu\+::$\sim$\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+\doxysubsubsection{$\sim$Menu()}
+{\footnotesize\ttfamily Menu\+::$\sim$\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Destroy the \doxyref{Menu}{p.}{class_menu}\+:\+: \doxyref{Menu}{p.}{class_menu} object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22             \{}
+\DoxyCodeLine{23     }
+\DoxyCodeLine{24 \}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_menu_aca44a03905fb898515c88a49b4fca849}\label{class_menu_aca44a03905fb898515c88a49b4fca849}} 
+\mbox{\label{class_menu_aca44a03905fb898515c88a49b4fca849}} 
 \index{Menu@{Menu}!getDATABASEHOSTNAME@{getDATABASEHOSTNAME}}
 \index{getDATABASEHOSTNAME@{getDATABASEHOSTNAME}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{getDATABASEHOSTNAME()}{getDATABASEHOSTNAME()}}
+\doxysubsubsection{getDATABASEHOSTNAME()}
 {\footnotesize\ttfamily char $\ast$ Menu\+::get\+DATABASEHOSTNAME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_menu_a34eb19b4584c6139b1d0fbc7811ba68a}\label{class_menu_a34eb19b4584c6139b1d0fbc7811ba68a}} 
+\begin{DoxyReturn}{Returns}
+char$\ast$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{31                                 \{}
+\DoxyCodeLine{32     \textcolor{keywordflow}{return} this-\/>dbasehost;}
+\DoxyCodeLine{33 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_aca44a03905fb898515c88a49b4fca849_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_menu_a34eb19b4584c6139b1d0fbc7811ba68a}} 
 \index{Menu@{Menu}!getDBASEFILENAME@{getDBASEFILENAME}}
 \index{getDBASEFILENAME@{getDBASEFILENAME}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{getDBASEFILENAME()}{getDBASEFILENAME()}}
+\doxysubsubsection{getDBASEFILENAME()}
 {\footnotesize\ttfamily char $\ast$ Menu\+::get\+DBASEFILENAME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_menu_a1f0c07508ea10698ae7af1caad692d52}\label{class_menu_a1f0c07508ea10698ae7af1caad692d52}} 
+\begin{DoxyReturn}{Returns}
+char$\ast$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{94                              \{}
+\DoxyCodeLine{95     \textcolor{keywordflow}{return} this-\/>dbasefilename;}
+\DoxyCodeLine{96 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_a34eb19b4584c6139b1d0fbc7811ba68a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_menu_a1f0c07508ea10698ae7af1caad692d52}} 
 \index{Menu@{Menu}!getDBASETYPE@{getDBASETYPE}}
 \index{getDBASETYPE@{getDBASETYPE}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{getDBASETYPE()}{getDBASETYPE()}}
+\doxysubsubsection{getDBASETYPE()}
 {\footnotesize\ttfamily char $\ast$ Menu\+::get\+DBASETYPE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_menu_ab2ce4cac489c6da0f08eb4bd0753a555}\label{class_menu_ab2ce4cac489c6da0f08eb4bd0753a555}} 
+\begin{DoxyReturn}{Returns}
+char$\ast$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{85                          \{}
+\DoxyCodeLine{86     \textcolor{keywordflow}{return} this-\/>dbasetype;}
+\DoxyCodeLine{87 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_a1f0c07508ea10698ae7af1caad692d52_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_menu_ab2ce4cac489c6da0f08eb4bd0753a555}} 
 \index{Menu@{Menu}!getMACHINENAME@{getMACHINENAME}}
 \index{getMACHINENAME@{getMACHINENAME}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{getMACHINENAME()}{getMACHINENAME()}}
+\doxysubsubsection{getMACHINENAME()}
 {\footnotesize\ttfamily char $\ast$ Menu\+::get\+MACHINENAME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_menu_ac07eb59a5697f449133f2d4caf95947c}\label{class_menu_ac07eb59a5697f449133f2d4caf95947c}} 
+\begin{DoxyReturn}{Returns}
+char$\ast$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40                            \{}
+\DoxyCodeLine{41     \textcolor{keywordflow}{return} this-\/>mname;}
+\DoxyCodeLine{42 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_ab2ce4cac489c6da0f08eb4bd0753a555_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_menu_ac07eb59a5697f449133f2d4caf95947c}} 
 \index{Menu@{Menu}!getPARENTDIR@{getPARENTDIR}}
 \index{getPARENTDIR@{getPARENTDIR}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{getPARENTDIR()}{getPARENTDIR()}}
+\doxysubsubsection{getPARENTDIR()}
 {\footnotesize\ttfamily char $\ast$ Menu\+::get\+PARENTDIR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_menu_a08a81ab79febb5e1f74a21853717cbae}\label{class_menu_a08a81ab79febb5e1f74a21853717cbae}} 
+\begin{DoxyReturn}{Returns}
+char$\ast$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{76                          \{}
+\DoxyCodeLine{77     \textcolor{keywordflow}{return} this-\/>parentdir;}
+\DoxyCodeLine{78 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_ac07eb59a5697f449133f2d4caf95947c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_menu_a08a81ab79febb5e1f74a21853717cbae}} 
 \index{Menu@{Menu}!getPASSWORD@{getPASSWORD}}
 \index{getPASSWORD@{getPASSWORD}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{getPASSWORD()}{getPASSWORD()}}
+\doxysubsubsection{getPASSWORD()}
 {\footnotesize\ttfamily char $\ast$ Menu\+::get\+PASSWORD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_menu_ac8fe61db0d8a3f32fbb161abdeee4668}\label{class_menu_ac8fe61db0d8a3f32fbb161abdeee4668}} 
+\begin{DoxyReturn}{Returns}
+char$\ast$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{49                         \{}
+\DoxyCodeLine{50     \textcolor{keywordflow}{return} this-\/>pwd;}
+\DoxyCodeLine{51 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_a08a81ab79febb5e1f74a21853717cbae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_menu_ac8fe61db0d8a3f32fbb161abdeee4668}} 
 \index{Menu@{Menu}!getPORT@{getPORT}}
 \index{getPORT@{getPORT}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{getPORT()}{getPORT()}}
+\doxysubsubsection{getPORT()}
 {\footnotesize\ttfamily char $\ast$ Menu\+::get\+PORT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_menu_a7296588596f0d05634bb6b6a26d51000}\label{class_menu_a7296588596f0d05634bb6b6a26d51000}} 
+\begin{DoxyReturn}{Returns}
+char$\ast$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{67                     \{}
+\DoxyCodeLine{68     \textcolor{keywordflow}{return} this-\/>portno;}
+\DoxyCodeLine{69 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_ac8fe61db0d8a3f32fbb161abdeee4668_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_menu_a7296588596f0d05634bb6b6a26d51000}} 
 \index{Menu@{Menu}!getPROCESSHASHVALS@{getPROCESSHASHVALS}}
 \index{getPROCESSHASHVALS@{getPROCESSHASHVALS}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{getPROCESSHASHVALS()}{getPROCESSHASHVALS()}}
+\doxysubsubsection{getPROCESSHASHVALS()}
 {\footnotesize\ttfamily int Menu\+::get\+PROCESSHASHVALS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_menu_a7b3f2bde7bf5297d47409c7fa7f8c940}\label{class_menu_a7b3f2bde7bf5297d47409c7fa7f8c940}} 
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{103                              \{}
+\DoxyCodeLine{104     \textcolor{keywordflow}{return} this-\/>processhashvals;}
+\DoxyCodeLine{105 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_a7296588596f0d05634bb6b6a26d51000_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_menu_a7b3f2bde7bf5297d47409c7fa7f8c940}} 
 \index{Menu@{Menu}!getUSERNAME@{getUSERNAME}}
 \index{getUSERNAME@{getUSERNAME}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{getUSERNAME()}{getUSERNAME()}}
+\doxysubsubsection{getUSERNAME()}
 {\footnotesize\ttfamily char $\ast$ Menu\+::get\+USERNAME (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_menu_a50f39bd5a994cb64421bfacbf6aed5e8}\label{class_menu_a50f39bd5a994cb64421bfacbf6aed5e8}} 
+\begin{DoxyReturn}{Returns}
+char$\ast$ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{58                         \{}
+\DoxyCodeLine{59     \textcolor{keywordflow}{return} this-\/>uname;}
+\DoxyCodeLine{60 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_a7b3f2bde7bf5297d47409c7fa7f8c940_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_menu_a50f39bd5a994cb64421bfacbf6aed5e8}} 
 \index{Menu@{Menu}!ParseArguments@{ParseArguments}}
 \index{ParseArguments@{ParseArguments}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{ParseArguments()}{ParseArguments()}}
-{\footnotesize\ttfamily int Menu\+::\+Parse\+Arguments (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+\doxysubsubsection{ParseArguments()}
+{\footnotesize\ttfamily int Menu\+::\+Parse\+Arguments (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv[$\,$] }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_menu_acbe5ec7e6202dec08ca26f4898df8040}\label{class_menu_acbe5ec7e6202dec08ca26f4898df8040}} 
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & \\
+\hline
+{\em argv} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{144                                                \{}
+\DoxyCodeLine{145     \textcolor{keywordtype}{int} retVal = 0;}
+\DoxyCodeLine{146     \textcolor{keywordtype}{int} dbaseset = -\/1;}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} argumentcount = 1; argumentcount < argc; argumentcount++ ) \{}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150         \textcolor{keywordflow}{if}(strcmp(argv[argumentcount],\textcolor{stringliteral}{"{}-\/dir"{}}) == 0) \{}
+\DoxyCodeLine{151             this-\/>parentdir = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[strlen(argv[argumentcount+1])];}
+\DoxyCodeLine{152             this-\/>parentdir = argv[argumentcount+1];}
+\DoxyCodeLine{153         \}}
+\DoxyCodeLine{154         \textcolor{keywordflow}{if}(strcmp(argv[argumentcount],\textcolor{stringliteral}{"{}-\/host"{}}) == 0) \{}
+\DoxyCodeLine{155             this-\/>dbasehost = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[strlen(argv[argumentcount+1])];}
+\DoxyCodeLine{156             this-\/>dbasehost = argv[argumentcount+1];}
+\DoxyCodeLine{157         \}}
+\DoxyCodeLine{158         \textcolor{keywordflow}{if}(strcmp(argv[argumentcount],\textcolor{stringliteral}{"{}-\/username"{}}) == 0) \{}
+\DoxyCodeLine{159             this-\/>uname = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[strlen(argv[argumentcount+1])];}
+\DoxyCodeLine{160             this-\/>uname = argv[argumentcount+1];}
+\DoxyCodeLine{161         \}}
+\DoxyCodeLine{162         \textcolor{keywordflow}{if}(strcmp(argv[argumentcount],\textcolor{stringliteral}{"{}-\/password"{}}) == 0) \{}
+\DoxyCodeLine{163             this-\/>pwd = (\textcolor{keywordtype}{char}*)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})*strlen(argv[argumentcount+1]));}
+\DoxyCodeLine{164             this-\/>pwd = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[strlen(argv[argumentcount+1])];}
+\DoxyCodeLine{165             this-\/>pwd = argv[argumentcount+1];}
+\DoxyCodeLine{166         \}}
+\DoxyCodeLine{167         \textcolor{keywordflow}{if}(strcmp(argv[argumentcount],\textcolor{stringliteral}{"{}-\/port"{}}) == 0) \{}
+\DoxyCodeLine{168             this-\/>portno = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[strlen(argv[argumentcount+1])];}
+\DoxyCodeLine{169             this-\/>portno = argv[argumentcount+1];}
+\DoxyCodeLine{170         \}}
+\DoxyCodeLine{171         \textcolor{keywordflow}{if}(strcmp(argv[argumentcount],\textcolor{stringliteral}{"{}-\/machine"{}}) == 0) \{}
+\DoxyCodeLine{172             this-\/>mname = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[strlen(argv[argumentcount+1])];}
+\DoxyCodeLine{173             this-\/>mname = argv[argumentcount+1];}
+\DoxyCodeLine{174         \}}
+\DoxyCodeLine{175         \textcolor{keywordflow}{if}(strcmp(argv[argumentcount],\textcolor{stringliteral}{"{}-\/dbasetype"{}}) == 0) \{}
+\DoxyCodeLine{176             this-\/>dbasetype = (\textcolor{keywordtype}{char}*)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})*strlen(argv[argumentcount+1]));}
+\DoxyCodeLine{177             this-\/>dbasetype = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[strlen(argv[argumentcount+1])];}
+\DoxyCodeLine{178             this-\/>dbasetype = argv[argumentcount+1];}
+\DoxyCodeLine{179             cout << \textcolor{stringliteral}{"{}dbasetype is: "{}} << this-\/>dbasetype << endl;}
+\DoxyCodeLine{180         \}}
+\DoxyCodeLine{181         \textcolor{keywordflow}{if} (strcmp(argv[argumentcount], \textcolor{stringliteral}{"{}-\/dbasefilename"{}}) == 0) \{}
+\DoxyCodeLine{182             this-\/>dbasefilename = (\textcolor{keywordtype}{char}*)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}) * strlen(argv[argumentcount + 1]));}
+\DoxyCodeLine{183             this-\/>dbasefilename = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[strlen(argv[argumentcount + 1])];}
+\DoxyCodeLine{184             this-\/>dbasefilename = argv[argumentcount + 1];}
+\DoxyCodeLine{185             cout << \textcolor{stringliteral}{"{}dbasefilename is: "{}} << this-\/>dbasefilename << endl;}
+\DoxyCodeLine{186         \}}
+\DoxyCodeLine{187         \textcolor{keywordflow}{if}(strcmp(argv[argumentcount],\textcolor{stringliteral}{"{}-\/usehashvals"{}}) == 0) \{}
+\DoxyCodeLine{188             this-\/>processhashvals = 1;}
+\DoxyCodeLine{189         \}}
+\DoxyCodeLine{190     \}}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192     \textcolor{keywordflow}{if}(strcmp(this-\/>dbasetype,\textcolor{stringliteral}{"{}mysql"{}}) == 0) \{}
+\DoxyCodeLine{193         cout << \textcolor{stringliteral}{"{}MySQL database set."{}} << endl;}
+\DoxyCodeLine{194         \textcolor{keywordflow}{if}(this-\/>dbasehost == NULL || this-\/>portno == NULL || this-\/>uname == NULL || this-\/>pwd == NULL) \{}
+\DoxyCodeLine{195             cout << \textcolor{stringliteral}{"{}Missing either host, port, username, or passoword for the mysql database type. Please try again"{}} << endl;}
+\DoxyCodeLine{196             retVal = -\/1;}
+\DoxyCodeLine{197         \}}
+\DoxyCodeLine{198         dbaseset = 0;}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200     \}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202     \textcolor{keywordflow}{if}(strcmp(this-\/>dbasetype,\textcolor{stringliteral}{"{}sqlite"{}}) == 0) \{}
+\DoxyCodeLine{203         cout << \textcolor{stringliteral}{"{}Sqlite3 database set."{}} << endl;}
+\DoxyCodeLine{204         \textcolor{keywordflow}{if}(this-\/>dbasefilename == NULL) \{}
+\DoxyCodeLine{205             cout << \textcolor{stringliteral}{"{}Missing dbasefilename. Please try again"{}} << endl;}
+\DoxyCodeLine{206             retVal = -\/1;}
+\DoxyCodeLine{207         \}}
+\DoxyCodeLine{208         dbaseset = 0;}
+\DoxyCodeLine{209     \}}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211     \textcolor{keywordflow}{if}(dbaseset == -\/1)}
+\DoxyCodeLine{212     \{}
+\DoxyCodeLine{213         retVal = dbaseset;}
+\DoxyCodeLine{214     \}}
+\DoxyCodeLine{215     }
+\DoxyCodeLine{216     \textcolor{keywordflow}{return} retVal;}
+\DoxyCodeLine{217 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{class_menu_a50f39bd5a994cb64421bfacbf6aed5e8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_menu_acbe5ec7e6202dec08ca26f4898df8040}} 
 \index{Menu@{Menu}!PrintMenu@{PrintMenu}}
 \index{PrintMenu@{PrintMenu}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{PrintMenu()}{PrintMenu()}}
+\doxysubsubsection{PrintMenu()}
 {\footnotesize\ttfamily void Menu\+::\+Print\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{111                      \{}
+\DoxyCodeLine{112     }
+\DoxyCodeLine{113     cout << \textcolor{stringliteral}{"{}Usage: fileintegritychecker [-\/dir -\/dbasetype -\/machine] optional: [-\/dbasefilename -\/host -\/port -\/user -\/pwd]"{}} << endl;}
+\DoxyCodeLine{114     cout << \textcolor{stringliteral}{"{}\(\backslash\)t-\/dir The directory to start the search"{}} << endl;}
+\DoxyCodeLine{115     cout << \textcolor{stringliteral}{"{}\(\backslash\)t-\/dbasetype Either mysql or sqlite."{}} << endl; }
+\DoxyCodeLine{116     cout << \textcolor{stringliteral}{"{}\(\backslash\)t\(\backslash\)tIf mysql the -\/host, -\/port, -\/user, and -\/pwd are required."{}} << endl;}
+\DoxyCodeLine{117     cout << \textcolor{stringliteral}{"{}\(\backslash\)t\(\backslash\)tIf sqlite the -\/dbasefilename is required."{}} << endl;}
+\DoxyCodeLine{118     cout << \textcolor{stringliteral}{"{}\(\backslash\)t-\/machine Name of machine that is being searched."{}} << endl;}
+\DoxyCodeLine{119     cout << endl;        }
+\DoxyCodeLine{120     cout << \textcolor{stringliteral}{"{}Optional:"{}} << endl;}
+\DoxyCodeLine{121     cout << \textcolor{stringliteral}{"{}\(\backslash\)t-\/usehashvals Calculate hashedvalues to detect changes. NOTE: This will significantly increase processing time. Default is set to not use hashedvalues."{}} << endl;}
+\DoxyCodeLine{122     cout << \textcolor{stringliteral}{"{}\(\backslash\)t-\/dbasefilename Location and Database file name for the SQLite3 file."{}} << endl;}
+\DoxyCodeLine{123     cout << \textcolor{stringliteral}{"{}\(\backslash\)t-\/host MySQL server name or IP."{}} << endl;}
+\DoxyCodeLine{124     cout << \textcolor{stringliteral}{"{}\(\backslash\)t-\/port Port number for the MySQL server (Most MySQL servers default to 3306)."{}} << endl;}
+\DoxyCodeLine{125     cout << \textcolor{stringliteral}{"{}\(\backslash\)t-\/user Username for the MySQL server."{}} << endl;}
+\DoxyCodeLine{126     cout << \textcolor{stringliteral}{"{}\(\backslash\)t-\/pwd  Password of the MySQL server user."{}} << endl;}
+\DoxyCodeLine{127     cout << endl;}
+\DoxyCodeLine{128     cout << \textcolor{stringliteral}{"{}Example:"{}} << endl;}
+\DoxyCodeLine{129     cout << \textcolor{stringliteral}{"{}\(\backslash\)tFor mysql dbasetype -\/"{}} << endl;}
+\DoxyCodeLine{130     cout << \textcolor{stringliteral}{"{}\(\backslash\)t\(\backslash\)tfileintegritychecker -\/dir /home -\/dbasetype mysql -\/machine MyMachineName -\/host 127.0.0.1 -\/port 3306 -\/user user -\/pwd password"{}} << endl;}
+\DoxyCodeLine{131     cout << endl;}
+\DoxyCodeLine{132     cout << \textcolor{stringliteral}{"{}\(\backslash\)tFor sqlite dbasetype -\/"{}} << endl;}
+\DoxyCodeLine{133     cout << \textcolor{stringliteral}{"{}\(\backslash\)t\(\backslash\)tfileintegritychecker -\/dir /home -\/dbasetype sqlite -\/machine MyMachineName -\/dbasefilename dirname/dbasefilename.db"{}} << endl;}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{class_menu_acbe5ec7e6202dec08ca26f4898df8040_icgraph}
+\end{center}
+\end{figure}
+
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_menu_a3ff2979249504fbed7989ee73b4f58a6}\label{class_menu_a3ff2979249504fbed7989ee73b4f58a6}} 
+\mbox{\label{class_menu_a3ff2979249504fbed7989ee73b4f58a6}} 
 \index{Menu@{Menu}!dbasefilename@{dbasefilename}}
 \index{dbasefilename@{dbasefilename}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{dbasefilename}{dbasefilename}}
+\doxysubsubsection{dbasefilename}
 {\footnotesize\ttfamily char$\ast$ Menu\+::dbasefilename = NULL\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_menu_a05ecb7899e5f3ae7345dae98bc27553c}\label{class_menu_a05ecb7899e5f3ae7345dae98bc27553c}} 
+\mbox{\label{class_menu_a05ecb7899e5f3ae7345dae98bc27553c}} 
 \index{Menu@{Menu}!dbasehost@{dbasehost}}
 \index{dbasehost@{dbasehost}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{dbasehost}{dbasehost}}
+\doxysubsubsection{dbasehost}
 {\footnotesize\ttfamily char$\ast$ Menu\+::dbasehost = NULL\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_menu_a0cc46cd227e7fcecf4413b9afe58d29d}\label{class_menu_a0cc46cd227e7fcecf4413b9afe58d29d}} 
+\mbox{\label{class_menu_a0cc46cd227e7fcecf4413b9afe58d29d}} 
 \index{Menu@{Menu}!dbasetype@{dbasetype}}
 \index{dbasetype@{dbasetype}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{dbasetype}{dbasetype}}
+\doxysubsubsection{dbasetype}
 {\footnotesize\ttfamily char$\ast$ Menu\+::dbasetype = NULL\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_menu_ab67d5fb0837589bb4d6dac62131a72a4}\label{class_menu_ab67d5fb0837589bb4d6dac62131a72a4}} 
+\mbox{\label{class_menu_ab67d5fb0837589bb4d6dac62131a72a4}} 
 \index{Menu@{Menu}!mname@{mname}}
 \index{mname@{mname}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{mname}{mname}}
+\doxysubsubsection{mname}
 {\footnotesize\ttfamily char$\ast$ Menu\+::mname = NULL\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_menu_a00e9ec31107eb8cbef31f3f198f168a2}\label{class_menu_a00e9ec31107eb8cbef31f3f198f168a2}} 
+\mbox{\label{class_menu_a00e9ec31107eb8cbef31f3f198f168a2}} 
 \index{Menu@{Menu}!parentdir@{parentdir}}
 \index{parentdir@{parentdir}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{parentdir}{parentdir}}
+\doxysubsubsection{parentdir}
 {\footnotesize\ttfamily char$\ast$ Menu\+::parentdir = NULL\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_menu_ab170c7e84e5d2da91880820ccbc12abf}\label{class_menu_ab170c7e84e5d2da91880820ccbc12abf}} 
+\mbox{\label{class_menu_ab170c7e84e5d2da91880820ccbc12abf}} 
 \index{Menu@{Menu}!portno@{portno}}
 \index{portno@{portno}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{portno}{portno}}
+\doxysubsubsection{portno}
 {\footnotesize\ttfamily char$\ast$ Menu\+::portno = NULL\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_menu_aa094dcb11114277b2e0921587c2bcb12}\label{class_menu_aa094dcb11114277b2e0921587c2bcb12}} 
+\mbox{\label{class_menu_aa094dcb11114277b2e0921587c2bcb12}} 
 \index{Menu@{Menu}!processhashvals@{processhashvals}}
 \index{processhashvals@{processhashvals}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{processhashvals}{processhashvals}}
+\doxysubsubsection{processhashvals}
 {\footnotesize\ttfamily int Menu\+::processhashvals = 0\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_menu_a3851b8c999f1ed310c57b306d6bc2a03}\label{class_menu_a3851b8c999f1ed310c57b306d6bc2a03}} 
+\mbox{\label{class_menu_a3851b8c999f1ed310c57b306d6bc2a03}} 
 \index{Menu@{Menu}!pwd@{pwd}}
 \index{pwd@{pwd}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{pwd}{pwd}}
+\doxysubsubsection{pwd}
 {\footnotesize\ttfamily char$\ast$ Menu\+::pwd = NULL\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_menu_abfa524748149194d31f3a760ab8765fd}\label{class_menu_abfa524748149194d31f3a760ab8765fd}} 
+\mbox{\label{class_menu_abfa524748149194d31f3a760ab8765fd}} 
 \index{Menu@{Menu}!uname@{uname}}
 \index{uname@{uname}!Menu@{Menu}}
-\doxysubsubsection{\texorpdfstring{uname}{uname}}
+\doxysubsubsection{uname}
 {\footnotesize\ttfamily char$\ast$ Menu\+::uname = NULL\hspace{0.3cm}{\ttfamily [private]}}
 

@@ -1,0 +1,4 @@
+<map id="SQLiteHelper::getFileId" name="SQLiteHelper::getFileId">
+<area shape="rect" id="node1" title="Returns the id of the file if the file exists in the files table." alt="" coords="5,5,161,31"/>
+<area shape="rect" id="node2" href="$class_s_q_lite_helper.html#a59fc305207ad616bafef83b54b102153" title="Returns the id of the file if the file exists in the files table." alt="" coords="209,5,365,31"/>
+</map>

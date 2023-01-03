@@ -1,0 +1,4 @@
+<map id="sqlite3controller::initdb" name="sqlite3controller::initdb">
+<area shape="rect" id="node1" title="Initializes the SQLite database with the supplied databasename. The function will determine if the SQ..." alt="" coords="5,5,127,45"/>
+<area shape="rect" id="node2" href="$classsqlite3controller.html#a9aa0232afbc7a8d2b71d330c607c5b40" title="This is called when a new SQLite database is created. The following tables are created: ." alt="" coords="175,5,296,45"/>
+</map>

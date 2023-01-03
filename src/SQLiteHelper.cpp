@@ -1,3 +1,7 @@
+/**
+* @file SQLiteHelper.cpp
+*/
+
 #include "../headers/SQLiteHelper.h"
 
 using namespace::std;

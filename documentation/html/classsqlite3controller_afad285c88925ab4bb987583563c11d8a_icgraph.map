@@ -1,0 +1,9 @@
+<map id="sqlite3controller::checkIfDirectoryExist" name="sqlite3controller::checkIfDirectoryExist">
+<area shape="rect" id="node1" title="Checks if the directory exists in the database." alt="" coords="645,69,791,109"/>
+<area shape="rect" id="node2" href="$classsqlite3controller.html#a96b9af7291ed73ed8b7da9b3e36c5983" title="Checks if the file exists in the database." alt="" coords="476,5,597,45"/>
+<area shape="rect" id="node3" href="$classsqlite3controller.html#a6bda68c0ea1d995b4fcf60965ab433a6" title="Save the details of the directory." alt="" coords="476,133,597,173"/>
+<area shape="rect" id="node7" href="$classsqlite3controller.html#ad24d1eff1c881ec79c608d4fbd5207b3" title="Save the details of the file." alt="" coords="476,69,597,109"/>
+<area shape="rect" id="node4" href="$classfileintegritychecker.html#af2fb66e054e9f613677746f6f3dde0a3" title="Get the directories files object." alt="" coords="283,76,428,116"/>
+<area shape="rect" id="node5" href="$classfileintegritychecker.html#ab064f5cb87b4a7d8c557a32d764a131a" title=" " alt="" coords="104,105,235,145"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,113,56,138"/>
+</map>

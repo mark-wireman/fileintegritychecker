@@ -1,8 +1,8 @@
 <map id="fileintegritychecker" name="fileintegritychecker">
-<area shape="rect" id="node1" title=" " alt="" coords="232,416,432,559"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,101,45,141"/>
-<area shape="rect" id="node3" title=" " alt="" coords="183,101,243,141"/>
-<area shape="rect" id="node4" title=" " alt="" coords="305,101,356,141"/>
-<area shape="rect" id="node5" href="$classmysqlcontroller.html" title=" " alt="" coords="380,13,537,229"/>
-<area shape="rect" id="node6" href="$classsqlite3controller.html" title="Sqlite3 Controller class." alt="" coords="561,5,729,236"/>
+<area shape="rect" id="node1" title=" " alt="" coords="245,592,445,735"/>
+<area shape="rect" id="node2" title=" " alt="" coords="19,189,59,229"/>
+<area shape="rect" id="node3" title=" " alt="" coords="197,189,257,229"/>
+<area shape="rect" id="node4" title=" " alt="" coords="309,189,360,229"/>
+<area shape="rect" id="node5" href="$classmysqlcontroller.html" title=" " alt="" coords="385,5,581,412"/>
+<area shape="rect" id="node6" href="$classsqlite3controller.html" title="Sqlite3 Controller class." alt="" coords="605,93,773,324"/>
 </map>

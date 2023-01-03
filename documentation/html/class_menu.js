@@ -1,7 +1,7 @@
 var class_menu =
 [
     [ "Menu", "class_menu.html#ad466dd83355124a6ed958430450bfe94", null ],
-    [ "~Menu", "class_menu.html#a5bf168cbb40e28e718ced8f248b3d37a", null ],
+    [ "~Menu", "class_menu.html#a831387f51358cfb88cd018e1777bc980", null ],
     [ "getDATABASEHOSTNAME", "class_menu.html#aca44a03905fb898515c88a49b4fca849", null ],
     [ "getDBASEFILENAME", "class_menu.html#a34eb19b4584c6139b1d0fbc7811ba68a", null ],
     [ "getDBASETYPE", "class_menu.html#a1f0c07508ea10698ae7af1caad692d52", null ],

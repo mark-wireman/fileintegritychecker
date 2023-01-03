@@ -23,7 +23,7 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 19 <emphasis role="keyword">class&#32;</emphasis><link linkend="_classfileintegritychecker">fileintegritychecker</link>&#32;{
 20 <emphasis role="keyword">public</emphasis>:
 21 &#32;&#32;&#32;&#32;<link linkend="_classfileintegritychecker_1a4f113638831295eab7ae564155dc2c3c">fileintegritychecker</link>();
-22 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_classfileintegritychecker_1abf6a40bce2f3466f8bddc9a5ed02fe1d">~fileintegritychecker</link>();
+22 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_classfileintegritychecker_1af6ac155d2d02e2da5af89272baf0d292">~fileintegritychecker</link>();
 23 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classfileintegritychecker_1af19f4b1b0f37b3645f0aa27ce201538d">setParamVals</link>(<link linkend="_class_menu">Menu</link>*&#32;m);
 24 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classfileintegritychecker_1ad83727702919ed588145f7e9f9f183d7">setDatabaseConnections</link>();
 25 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classfileintegritychecker_1ab064f5cb87b4a7d8c557a32d764a131a">processFiles</link>();

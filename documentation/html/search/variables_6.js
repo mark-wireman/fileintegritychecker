@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['s_0',['s',['../unionmessage_block.html#a650ca0815e457fcda932238399372548',1,'messageBlock']]],
-  ['sqlitectl_1',['sqlitectl',['../classfileintegritychecker.html#a106e283f11f9f3c0788f9e43c3a0d3f0',1,'fileintegritychecker']]]
+  ['numberofdirectories_0',['numberofdirectories',['../classfileintegritychecker.html#a084e0e1a26d35c85d16ecfccc84ee031',1,'fileintegritychecker']]],
+  ['numberoffiles_1',['numberoffiles',['../classfileintegritychecker.html#a8cc50a2938d11837ec1ee0250e73fa6d',1,'fileintegritychecker']]],
+  ['numberofnewdirectories_2',['numberofnewdirectories',['../classfileintegritychecker.html#a00bbf08cd81818d0c048f1bddfdcd9b1',1,'fileintegritychecker']]],
+  ['numberofverifieddirectories_3',['numberofverifieddirectories',['../classfileintegritychecker.html#a0c490abca9b7cb896f2efb06cd74b431',1,'fileintegritychecker']]]
 ];

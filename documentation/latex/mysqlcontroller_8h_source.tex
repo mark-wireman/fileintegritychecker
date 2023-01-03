@@ -1,6 +1,6 @@
-\hypertarget{mysqlcontroller_8h_source}{}\doxysection{mysqlcontroller.\+h}
+\doxysection{mysqlcontroller.\+h}
 \label{mysqlcontroller_8h_source}\index{C:/Users/mark\_/source/repos/fileintegritychecker/headers/mysqlcontroller.h@{C:/Users/mark\_/source/repos/fileintegritychecker/headers/mysqlcontroller.h}}
-\mbox{\hyperlink{mysqlcontroller_8h}{Go to the documentation of this file.}}
+\textbf{ Go to the documentation of this file.}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 }
 \DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef HEADERS\_MYSQLCONTROLLER\_H\_}}
@@ -17,7 +17,7 @@
 \DoxyCodeLine{13 \textcolor{preprocessor}{\#include <sstream>}}
 \DoxyCodeLine{14 \textcolor{keyword}{using }std::stringstream;}
 \DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}mysql\_connection.h"{}}}
-\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_s_q_lite_helper_8h}{SQLiteHelper.h}}"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}SQLiteHelper.h"{}}}
 \DoxyCodeLine{17 }
 \DoxyCodeLine{18 \textcolor{preprocessor}{\#include <cppconn/driver.h>}}
 \DoxyCodeLine{19 \textcolor{preprocessor}{\#include <cppconn/exception.h>}}
@@ -27,36 +27,36 @@
 \DoxyCodeLine{23 }
 \DoxyCodeLine{24 \textcolor{keyword}{using namespace }std;}
 \DoxyCodeLine{25 }
-\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classmysqlcontroller}{mysqlcontroller}} \{}
+\DoxyCodeLine{26 \textcolor{keyword}{class }mysqlcontroller \{}
 \DoxyCodeLine{27 \textcolor{keyword}{public}:}
-\DoxyCodeLine{28     \mbox{\hyperlink{classmysqlcontroller_a891d523d7a39f46e72b16a36c1387767}{mysqlcontroller}}();}
-\DoxyCodeLine{29     \mbox{\hyperlink{classmysqlcontroller_a5660513979df1fce6d3ff042ff477b99}{mysqlcontroller}}(\textcolor{keywordtype}{char}* host,\textcolor{keywordtype}{char}* dbase,\textcolor{keywordtype}{char}* uname,\textcolor{keywordtype}{char}* pwd,\textcolor{keywordtype}{int} port,\textcolor{keywordtype}{char}* mname);}
-\DoxyCodeLine{30     \textcolor{keyword}{virtual} \mbox{\hyperlink{classmysqlcontroller_a5281329cf5af806d612908b406a9ec89}{\string~mysqlcontroller}}();}
-\DoxyCodeLine{31     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmysqlcontroller_ac879ce9833813cd7649059a3d871fedd}{setHOSTNAME}}(\textcolor{keywordtype}{char}* host);}
-\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmysqlcontroller_a465f1a74a87fa74d5ab2aefd34bbe941}{setDBASENAME}}(\textcolor{keywordtype}{char}* dbase);}
-\DoxyCodeLine{33     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmysqlcontroller_ab095a99557c1d7582c66329398d4bd38}{setUSERNAME}}(\textcolor{keywordtype}{char}* uname);}
-\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmysqlcontroller_a39a1970d8c3c3f013487652493a66e5f}{setPASSWORD}}(\textcolor{keywordtype}{char}* pwd);}
-\DoxyCodeLine{35     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmysqlcontroller_afd4432161cc947ac73243b5227d49a79}{setPORT}}(\textcolor{keywordtype}{int} port);}
-\DoxyCodeLine{36     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmysqlcontroller_a686a2d830775da6da5e8451333b4099f}{setMACHINENAME}}(\textcolor{keywordtype}{char}* mname);}
-\DoxyCodeLine{37     \textcolor{keywordtype}{char}* \mbox{\hyperlink{classmysqlcontroller_aa98d95b40af60c2d3654e1734f02f4fd}{getHOSTNAME}}();}
-\DoxyCodeLine{38     \textcolor{keywordtype}{char}* \mbox{\hyperlink{classmysqlcontroller_a9fd8e8a368cc3d5e84a371c2a4cd6b7a}{getDBASENAME}}();}
-\DoxyCodeLine{39     \textcolor{keywordtype}{char}* \mbox{\hyperlink{classmysqlcontroller_aabe3ab7506b212aa7125a3f81d725414}{getUSERNAME}}();}
-\DoxyCodeLine{40     \textcolor{keywordtype}{char}* \mbox{\hyperlink{classmysqlcontroller_ac38c7f7d6f37a4ac287a3997c398966c}{getPASSWORD}}();}
-\DoxyCodeLine{41     \textcolor{keywordtype}{int} \mbox{\hyperlink{classmysqlcontroller_a9df4b563e915fb2ba56797ed499dad8b}{getPORT}}();}
-\DoxyCodeLine{42     \textcolor{keywordtype}{char}* \mbox{\hyperlink{classmysqlcontroller_a32c523aaf33000a0bb1f42b0c5dcbe57}{getMACHINENAME}}();}
-\DoxyCodeLine{43     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmysqlcontroller_a74389e9c368e9f43df261f7050377cb4}{initdb}}();}
-\DoxyCodeLine{44     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmysqlcontroller_a053dfe67635af840ec7a787e86b95f41}{saveDirectoryName}}(\textcolor{keywordtype}{string} dirname);    }
-\DoxyCodeLine{45     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmysqlcontroller_a8ac76206c0cfc7954cce8011616119ab}{saveFileInfo}}(\textcolor{keywordtype}{string} dirname, \textcolor{keywordtype}{string} fname, \textcolor{keywordtype}{string} hashval);}
-\DoxyCodeLine{46     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmysqlcontroller_a1158e1c0c82d11cbe200219b4a5a96b3}{saveDirectoryName\_async}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&dirname);}
-\DoxyCodeLine{47     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmysqlcontroller_aad16b25269ed6065b0360c2b8312aea0}{saveFileInfo\_async}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&dirname, \textcolor{keyword}{const} \textcolor{keywordtype}{string} \&fname, \textcolor{keyword}{const} \textcolor{keywordtype}{string} \&hashval);}
-\DoxyCodeLine{48     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmysqlcontroller_a50702b70c6eb0355c2d169050776b394}{deleteDirectoryNames}}();}
-\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmysqlcontroller_a75776ad16ad15a20736e0c1b6adda411}{closedb}}();}
-\DoxyCodeLine{50     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmysqlcontroller_a069876969dedc6baf9c5f95cca1ab33d}{initPreparedStatements}}();}
-\DoxyCodeLine{51     \textcolor{keywordtype}{void} \mbox{\hyperlink{classmysqlcontroller_a760179764d3008ac64c36e0b4fb26553}{closePreparedStatements}}();}
+\DoxyCodeLine{28     mysqlcontroller();}
+\DoxyCodeLine{29     mysqlcontroller(\textcolor{keywordtype}{char}* host,\textcolor{keywordtype}{char}* dbase,\textcolor{keywordtype}{char}* uname,\textcolor{keywordtype}{char}* pwd,\textcolor{keywordtype}{int} port,\textcolor{keywordtype}{char}* mname);}
+\DoxyCodeLine{30     \textcolor{keyword}{virtual} \string~mysqlcontroller();}
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} setHOSTNAME(\textcolor{keywordtype}{char}* host);}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} setDBASENAME(\textcolor{keywordtype}{char}* dbase);}
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} setUSERNAME(\textcolor{keywordtype}{char}* uname);}
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} setPASSWORD(\textcolor{keywordtype}{char}* pwd);}
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} setPORT(\textcolor{keywordtype}{int} port);}
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} setMACHINENAME(\textcolor{keywordtype}{char}* mname);}
+\DoxyCodeLine{37     \textcolor{keywordtype}{char}* getHOSTNAME();}
+\DoxyCodeLine{38     \textcolor{keywordtype}{char}* getDBASENAME();}
+\DoxyCodeLine{39     \textcolor{keywordtype}{char}* getUSERNAME();}
+\DoxyCodeLine{40     \textcolor{keywordtype}{char}* getPASSWORD();}
+\DoxyCodeLine{41     \textcolor{keywordtype}{int} getPORT();}
+\DoxyCodeLine{42     \textcolor{keywordtype}{char}* getMACHINENAME();}
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} initdb();}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} saveDirectoryName(\textcolor{keywordtype}{string} dirname);    }
+\DoxyCodeLine{45     \textcolor{keywordtype}{void} saveFileInfo(\textcolor{keywordtype}{string} dirname, \textcolor{keywordtype}{string} fname, \textcolor{keywordtype}{string} hashval);}
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} saveDirectoryName\_async(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&dirname);}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} saveFileInfo\_async(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&dirname, \textcolor{keyword}{const} \textcolor{keywordtype}{string} \&fname, \textcolor{keyword}{const} \textcolor{keywordtype}{string} \&hashval);}
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} deleteDirectoryNames();}
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} closedb();}
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} initPreparedStatements();}
+\DoxyCodeLine{51     \textcolor{keywordtype}{void} closePreparedStatements();}
 \DoxyCodeLine{52 \textcolor{keyword}{private}:}
 \DoxyCodeLine{53     \textcolor{comment}{//char* getCurrentTime();}}
 \DoxyCodeLine{54     \textcolor{comment}{//void addVerified(int);}}
-\DoxyCodeLine{55     \textcolor{keywordtype}{char}* \mbox{\hyperlink{classmysqlcontroller_a116a7441f9bae6f7ef1e0676bd211a7e}{filterApostraphe}}(\textcolor{keywordtype}{string});}
+\DoxyCodeLine{55     \textcolor{keywordtype}{char}* filterApostraphe(\textcolor{keywordtype}{string});}
 \DoxyCodeLine{56     }
 \DoxyCodeLine{57 \};}
 \DoxyCodeLine{58 }

@@ -1,4 +1,4 @@
-.TH "Menu" 3 "Sat Dec 10 2022" "fileintegritychecker" \" -*- nroff -*-
+.TH "Menu" 3 "Sun Jan 1 2023" "Version 1.0" "File Integrity Checker" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -14,9 +14,11 @@ Menu
 .ti -1c
 .RI "\fBMenu\fP ()"
 .br
+.RI "Construct a new \fBMenu\fP:: \fBMenu\fP object\&. "
 .ti -1c
 .RI "virtual \fB~Menu\fP ()"
 .br
+.RI "Destroy the \fBMenu\fP:: \fBMenu\fP object\&. "
 .ti -1c
 .RI "int \fBParseArguments\fP (int argc, char *argv[])"
 .br
@@ -51,40 +53,340 @@ Menu
 .RI "int \fBgetPROCESSHASHVALS\fP ()"
 .br
 .in -1c
-.SH "Detailed Description"
-.PP 
-Definition at line \fB17\fP of file \fBMenu\&.h\fP\&.
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "char * \fBparentdir\fP = NULL"
+.br
+.ti -1c
+.RI "char * \fBdbasehost\fP = NULL"
+.br
+.ti -1c
+.RI "char * \fBuname\fP = NULL"
+.br
+.ti -1c
+.RI "char * \fBpwd\fP = NULL"
+.br
+.ti -1c
+.RI "char * \fBportno\fP = NULL"
+.br
+.ti -1c
+.RI "char * \fBmname\fP = NULL"
+.br
+.ti -1c
+.RI "char * \fBdbasetype\fP = NULL"
+.br
+.ti -1c
+.RI "char * \fBdbasefilename\fP = NULL"
+.br
+.ti -1c
+.RI "int \fBprocesshashvals\fP = 0"
+.br
+.in -1c
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "Menu::Menu ()"
 
-.SS "virtual Menu::~Menu ()\fC [virtual]\fP"
+.PP
+Construct a new \fBMenu\fP:: \fBMenu\fP object\&. 
+.PP
+.nf
+14            {
+15     
+16 }
+.fi
+.SS "Menu::~Menu ()\fC [virtual]\fP"
 
+.PP
+Destroy the \fBMenu\fP:: \fBMenu\fP object\&. 
+.PP
+.nf
+22             {
+23     
+24 }
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "char * Menu::getDATABASEHOSTNAME ()"
 
+.PP
+\fBReturns\fP
+.RS 4
+char* 
+.RE
+.PP
+
+.PP
+.nf
+31                                 {
+32     return this->dbasehost;
+33 }
+.fi
 .SS "char * Menu::getDBASEFILENAME ()"
 
+.PP
+\fBReturns\fP
+.RS 4
+char* 
+.RE
+.PP
+
+.PP
+.nf
+94                              {
+95     return this->dbasefilename;
+96 }
+.fi
 .SS "char * Menu::getDBASETYPE ()"
 
+.PP
+\fBReturns\fP
+.RS 4
+char* 
+.RE
+.PP
+
+.PP
+.nf
+85                          {
+86     return this->dbasetype;
+87 }
+.fi
 .SS "char * Menu::getMACHINENAME ()"
 
+.PP
+\fBReturns\fP
+.RS 4
+char* 
+.RE
+.PP
+
+.PP
+.nf
+40                            {
+41     return this->mname;
+42 }
+.fi
 .SS "char * Menu::getPARENTDIR ()"
 
+.PP
+\fBReturns\fP
+.RS 4
+char* 
+.RE
+.PP
+
+.PP
+.nf
+76                          {
+77     return this->parentdir;
+78 }
+.fi
 .SS "char * Menu::getPASSWORD ()"
 
+.PP
+\fBReturns\fP
+.RS 4
+char* 
+.RE
+.PP
+
+.PP
+.nf
+49                         {
+50     return this->pwd;
+51 }
+.fi
 .SS "char * Menu::getPORT ()"
 
+.PP
+\fBReturns\fP
+.RS 4
+char* 
+.RE
+.PP
+
+.PP
+.nf
+67                     {
+68     return this->portno;
+69 }
+.fi
 .SS "int Menu::getPROCESSHASHVALS ()"
 
+.PP
+\fBReturns\fP
+.RS 4
+int 
+.RE
+.PP
+
+.PP
+.nf
+103                              {
+104     return this->processhashvals;
+105 }
+.fi
 .SS "char * Menu::getUSERNAME ()"
 
+.PP
+\fBReturns\fP
+.RS 4
+char* 
+.RE
+.PP
+
+.PP
+.nf
+58                         {
+59     return this->uname;
+60 }
+.fi
 .SS "int Menu::ParseArguments (int argc, char * argv[])"
 
+.PP
+\fBParameters\fP
+.RS 4
+\fIargc\fP 
+.br
+\fIargv\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+int 
+.RE
+.PP
+
+.PP
+.nf
+144                                                {
+145     int retVal = 0;
+146     int dbaseset = -1;
+147 
+148     for( int argumentcount = 1; argumentcount < argc; argumentcount++ ) {
+149 
+150         if(strcmp(argv[argumentcount],"-dir") == 0) {
+151             this->parentdir = new char[strlen(argv[argumentcount+1])];
+152             this->parentdir = argv[argumentcount+1];
+153         }
+154         if(strcmp(argv[argumentcount],"-host") == 0) {
+155             this->dbasehost = new char[strlen(argv[argumentcount+1])];
+156             this->dbasehost = argv[argumentcount+1];
+157         }
+158         if(strcmp(argv[argumentcount],"-username") == 0) {
+159             this->uname = new char[strlen(argv[argumentcount+1])];
+160             this->uname = argv[argumentcount+1];
+161         }
+162         if(strcmp(argv[argumentcount],"-password") == 0) {
+163             this->pwd = (char*)malloc(sizeof(char)*strlen(argv[argumentcount+1]));
+164             this->pwd = new char[strlen(argv[argumentcount+1])];
+165             this->pwd = argv[argumentcount+1];
+166         }
+167         if(strcmp(argv[argumentcount],"-port") == 0) {
+168             this->portno = new char[strlen(argv[argumentcount+1])];
+169             this->portno = argv[argumentcount+1];
+170         }
+171         if(strcmp(argv[argumentcount],"-machine") == 0) {
+172             this->mname = new char[strlen(argv[argumentcount+1])];
+173             this->mname = argv[argumentcount+1];
+174         }
+175         if(strcmp(argv[argumentcount],"-dbasetype") == 0) {
+176             this->dbasetype = (char*)malloc(sizeof(char)*strlen(argv[argumentcount+1]));
+177             this->dbasetype = new char[strlen(argv[argumentcount+1])];
+178             this->dbasetype = argv[argumentcount+1];
+179             cout << "dbasetype is: " << this->dbasetype << endl;
+180         }
+181         if (strcmp(argv[argumentcount], "-dbasefilename") == 0) {
+182             this->dbasefilename = (char*)malloc(sizeof(char) * strlen(argv[argumentcount + 1]));
+183             this->dbasefilename = new char[strlen(argv[argumentcount + 1])];
+184             this->dbasefilename = argv[argumentcount + 1];
+185             cout << "dbasefilename is: " << this->dbasefilename << endl;
+186         }
+187         if(strcmp(argv[argumentcount],"-usehashvals") == 0) {
+188             this->processhashvals = 1;
+189         }
+190     }
+191 
+192     if(strcmp(this->dbasetype,"mysql") == 0) {
+193         cout << "MySQL database set\&." << endl;
+194         if(this->dbasehost == NULL || this->portno == NULL || this->uname == NULL || this->pwd == NULL) {
+195             cout << "Missing either host, port, username, or passoword for the mysql database type\&. Please try again" << endl;
+196             retVal = -1;
+197         }
+198         dbaseset = 0;
+199 
+200     }
+201 
+202     if(strcmp(this->dbasetype,"sqlite") == 0) {
+203         cout << "Sqlite3 database set\&." << endl;
+204         if(this->dbasefilename == NULL) {
+205             cout << "Missing dbasefilename\&. Please try again" << endl;
+206             retVal = -1;
+207         }
+208         dbaseset = 0;
+209     }
+210 
+211     if(dbaseset == -1)
+212     {
+213         retVal = dbaseset;
+214     }
+215     
+216     return retVal;
+217 }
+.fi
 .SS "void Menu::PrintMenu ()"
+
+.PP
+.nf
+111                      {
+112     
+113     cout << "Usage: fileintegritychecker [-dir -dbasetype -machine] optional: [-dbasefilename -host -port -user -pwd]" << endl;
+114     cout << "\t-dir The directory to start the search" << endl;
+115     cout << "\t-dbasetype Either mysql or sqlite\&." << endl; 
+116     cout << "\t\tIf mysql the -host, -port, -user, and -pwd are required\&." << endl;
+117     cout << "\t\tIf sqlite the -dbasefilename is required\&." << endl;
+118     cout << "\t-machine Name of machine that is being searched\&." << endl;
+119     cout << endl;        
+120     cout << "Optional:" << endl;
+121     cout << "\t-usehashvals Calculate hashedvalues to detect changes\&. NOTE: This will significantly increase processing time\&. Default is set to not use hashedvalues\&." << endl;
+122     cout << "\t-dbasefilename Location and Database file name for the SQLite3 file\&." << endl;
+123     cout << "\t-host MySQL server name or IP\&." << endl;
+124     cout << "\t-port Port number for the MySQL server (Most MySQL servers default to 3306)\&." << endl;
+125     cout << "\t-user Username for the MySQL server\&." << endl;
+126     cout << "\t-pwd  Password of the MySQL server user\&." << endl;
+127     cout << endl;
+128     cout << "Example:" << endl;
+129     cout << "\tFor mysql dbasetype -" << endl;
+130     cout << "\t\tfileintegritychecker -dir /home -dbasetype mysql -machine MyMachineName -host 127\&.0\&.0\&.1 -port 3306 -user user -pwd password" << endl;
+131     cout << endl;
+132     cout << "\tFor sqlite dbasetype -" << endl;
+133     cout << "\t\tfileintegritychecker -dir /home -dbasetype sqlite -machine MyMachineName -dbasefilename dirname/dbasefilename\&.db" << endl;
+134 
+135 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "char* Menu::dbasefilename = NULL\fC [private]\fP"
+
+.SS "char* Menu::dbasehost = NULL\fC [private]\fP"
+
+.SS "char* Menu::dbasetype = NULL\fC [private]\fP"
+
+.SS "char* Menu::mname = NULL\fC [private]\fP"
+
+.SS "char* Menu::parentdir = NULL\fC [private]\fP"
+
+.SS "char* Menu::portno = NULL\fC [private]\fP"
+
+.SS "int Menu::processhashvals = 0\fC [private]\fP"
+
+.SS "char* Menu::pwd = NULL\fC [private]\fP"
+
+.SS "char* Menu::uname = NULL\fC [private]\fP"
 
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for fileintegritychecker from the source code\&.
+Generated automatically by Doxygen for File Integrity Checker from the source code\&.

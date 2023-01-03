@@ -1,0 +1,5 @@
+<map id="sqlite3controller::initdb" name="sqlite3controller::initdb">
+<area shape="rect" id="node1" title="Initializes the SQLite database with the supplied databasename. The function will determine if the SQ..." alt="" coords="327,5,448,45"/>
+<area shape="rect" id="node2" href="$classfileintegritychecker.html#ad83727702919ed588145f7e9f9f183d7" title=" " alt="" coords="104,5,279,45"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,56,38"/>
+</map>

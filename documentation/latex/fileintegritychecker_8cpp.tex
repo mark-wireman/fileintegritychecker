@@ -1,60 +1,96 @@
-\hypertarget{fileintegritychecker_8cpp}{}\doxysection{C\+:/\+Users/mark\+\_\+/source/repos/fileintegritychecker/src/fileintegritychecker.cpp File Reference}
+\doxysection{C\+:/\+Users/mark\+\_\+/source/repos/fileintegritychecker/src/fileintegritychecker.cpp File Reference}
 \label{fileintegritychecker_8cpp}\index{C:/Users/mark\_/source/repos/fileintegritychecker/src/fileintegritychecker.cpp@{C:/Users/mark\_/source/repos/fileintegritychecker/src/fileintegritychecker.cpp}}
 {\ttfamily \#include \char`\"{}../headers/fileintegritychecker.\+h\char`\"{}}\newline
-Include dependency graph for fileintegritychecker.\+cpp\+:
-\nopagebreak
+Include dependency graph for fileintegritychecker.\+cpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=232pt]{fileintegritychecker_8cpp__incl}
+\includegraphics[width=350pt]{fileintegritychecker_8cpp__incl}
 \end{center}
 \end{figure}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{fileintegritychecker_8cpp_ac1535592e39e7edf0cafbd5e695ea622}{MAXCHAR}}~100000
+\#define \textbf{ MAXCHAR}~100000
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename TP $>$ }\\std\+::time\+\_\+t \mbox{\hyperlink{fileintegritychecker_8cpp_aa0c7e6e475d4dd6b5f4dd0f04be4fbfa}{to\+\_\+time\+\_\+t}} (TP tp)
+{\footnotesize template$<$typename TP $>$ }\\std\+::time\+\_\+t \textbf{ to\+\_\+time\+\_\+t} (TP tp)
 \item 
-char $\ast$ \mbox{\hyperlink{fileintegritychecker_8cpp_ac01cc26ee78680a5119ba192f7b4ea53}{to\+\_\+char\+\_\+time\+\_\+t}} (std\+::time\+\_\+t time)
+char $\ast$ \textbf{ to\+\_\+char\+\_\+time\+\_\+t} (std\+::time\+\_\+t time)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{fileintegritychecker_8cpp_ac1535592e39e7edf0cafbd5e695ea622}\label{fileintegritychecker_8cpp_ac1535592e39e7edf0cafbd5e695ea622}} 
+\mbox{\label{fileintegritychecker_8cpp_ac1535592e39e7edf0cafbd5e695ea622}} 
 \index{fileintegritychecker.cpp@{fileintegritychecker.cpp}!MAXCHAR@{MAXCHAR}}
 \index{MAXCHAR@{MAXCHAR}!fileintegritychecker.cpp@{fileintegritychecker.cpp}}
-\doxysubsubsection{\texorpdfstring{MAXCHAR}{MAXCHAR}}
+\doxysubsubsection{MAXCHAR}
 {\footnotesize\ttfamily \#define MAXCHAR~100000}
 
 
 
-Definition at line \mbox{\hyperlink{fileintegritychecker_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{fileintegritychecker_8cpp_source}{fileintegritychecker.\+cpp}}.
-
-
-
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{fileintegritychecker_8cpp_ac01cc26ee78680a5119ba192f7b4ea53}\label{fileintegritychecker_8cpp_ac01cc26ee78680a5119ba192f7b4ea53}} 
+\mbox{\label{fileintegritychecker_8cpp_ac01cc26ee78680a5119ba192f7b4ea53}} 
 \index{fileintegritychecker.cpp@{fileintegritychecker.cpp}!to\_char\_time\_t@{to\_char\_time\_t}}
 \index{to\_char\_time\_t@{to\_char\_time\_t}!fileintegritychecker.cpp@{fileintegritychecker.cpp}}
-\doxysubsubsection{\texorpdfstring{to\_char\_time\_t()}{to\_char\_time\_t()}}
+\doxysubsubsection{to\_char\_time\_t()}
 {\footnotesize\ttfamily char $\ast$ to\+\_\+char\+\_\+time\+\_\+t (\begin{DoxyParamCaption}\item[{std\+::time\+\_\+t}]{time }\end{DoxyParamCaption})}
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21     \textcolor{keywordtype}{string} retVal;}
+\DoxyCodeLine{22     \textcolor{keywordtype}{char}* char\_array;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     tm* now = localtime(\&time);}
+\DoxyCodeLine{25     \textcolor{keywordtype}{char} date\_string[100];}
+\DoxyCodeLine{26     \textcolor{keywordtype}{char} time\_string[100];}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     strftime(date\_string, 50, \textcolor{stringliteral}{"{}\%B \%d, \%Y "{}}, now);}
+\DoxyCodeLine{29     strftime(time\_string, 50, \textcolor{stringliteral}{"{}\%T"{}}, now);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     retVal += date\_string;}
+\DoxyCodeLine{32     retVal += time\_string;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{keywordtype}{int} n = retVal.length();}
+\DoxyCodeLine{35     char\_array = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[n + 1];}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     strcpy(char\_array, retVal.c\_str());}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{keywordflow}{return} char\_array;}
+\DoxyCodeLine{40 \}}
 
-Definition at line \mbox{\hyperlink{fileintegritychecker_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{fileintegritychecker_8cpp_source}{fileintegritychecker.\+cpp}}.
-
-\mbox{\Hypertarget{fileintegritychecker_8cpp_aa0c7e6e475d4dd6b5f4dd0f04be4fbfa}\label{fileintegritychecker_8cpp_aa0c7e6e475d4dd6b5f4dd0f04be4fbfa}} 
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fileintegritychecker_8cpp_ac01cc26ee78680a5119ba192f7b4ea53_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{fileintegritychecker_8cpp_aa0c7e6e475d4dd6b5f4dd0f04be4fbfa}} 
 \index{fileintegritychecker.cpp@{fileintegritychecker.cpp}!to\_time\_t@{to\_time\_t}}
 \index{to\_time\_t@{to\_time\_t}!fileintegritychecker.cpp@{fileintegritychecker.cpp}}
-\doxysubsubsection{\texorpdfstring{to\_time\_t()}{to\_time\_t()}}
+\doxysubsubsection{to\_time\_t()}
 {\footnotesize\ttfamily template$<$typename TP $>$ \\
 std\+::time\+\_\+t to\+\_\+time\+\_\+t (\begin{DoxyParamCaption}\item[{TP}]{tp }\end{DoxyParamCaption})}
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     \textcolor{keyword}{using namespace }std::chrono;}
+\DoxyCodeLine{14     \textcolor{keyword}{auto} sctp = time\_point\_cast<system\_clock::duration>(tp -\/ TP::clock::now()}
+\DoxyCodeLine{15         + system\_clock::now());}
+\DoxyCodeLine{16     \textcolor{keywordflow}{return} system\_clock::to\_time\_t(sctp);}
+\DoxyCodeLine{17 \}}
 
-Definition at line \mbox{\hyperlink{fileintegritychecker_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{fileintegritychecker_8cpp_source}{fileintegritychecker.\+cpp}}.
-
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fileintegritychecker_8cpp_aa0c7e6e475d4dd6b5f4dd0f04be4fbfa_icgraph}
+\end{center}
+\end{figure}

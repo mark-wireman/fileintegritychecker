@@ -2,7 +2,7 @@ var classmysqlcontroller =
 [
     [ "mysqlcontroller", "classmysqlcontroller.html#a891d523d7a39f46e72b16a36c1387767", null ],
     [ "mysqlcontroller", "classmysqlcontroller.html#a5660513979df1fce6d3ff042ff477b99", null ],
-    [ "~mysqlcontroller", "classmysqlcontroller.html#a5281329cf5af806d612908b406a9ec89", null ],
+    [ "~mysqlcontroller", "classmysqlcontroller.html#a8564c141c9be749a42a5269ac37a6d63", null ],
     [ "closedb", "classmysqlcontroller.html#a75776ad16ad15a20736e0c1b6adda411", null ],
     [ "closePreparedStatements", "classmysqlcontroller.html#a760179764d3008ac64c36e0b4fb26553", null ],
     [ "deleteDirectoryNames", "classmysqlcontroller.html#a50702b70c6eb0355c2d169050776b394", null ],

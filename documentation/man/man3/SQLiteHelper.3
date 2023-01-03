@@ -1,0 +1,1177 @@
+.TH "SQLiteHelper" 3 "Sun Jan 1 2023" "Version 1.0" "File Integrity Checker" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SQLiteHelper \- The SQL Helper class for the SQLite database\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SQLiteHelper\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAttributeToCheck\fP { \fBHashedVal\fP = 1, \fBFileSize\fP = 2, \fBDateModified\fP = 3, \fBNONE\fP = 4 }"
+.br
+.RI "Enumerator used to set the file attribute to check for changes or to update the value for\&. "
+.ti -1c
+.RI "enum \fBTableToCheck\fP { \fBFiles\fP = 1, \fBChanges\fP = 2 }"
+.br
+.RI "Enumerator used to set the table to check for file attribute changes\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBcheckIfAttributeIsInChanges\fP (const int file_id, const \fBAttributeToCheck\fP attribute, sqlite3 *\fBdb\fP)"
+.br
+.RI "Determines if the provided attribute is in the changes table\&. "
+.ti -1c
+.RI "static int \fBcheckIfAttributeHasChanged\fP (const int file_id, const \fBAttributeToCheck\fP attribute, const \fBTableToCheck\fP table, sqlite3 *\fBdb\fP, const char *char_attr=NULL, const int int_attr=0)"
+.br
+.RI "Determines if the provided attribute has changed its value\&. "
+.ti -1c
+.RI "static char * \fBgetCurrentTime\fP ()"
+.br
+.RI "Will retrieve the current time\&. "
+.ti -1c
+.RI "static void \fBsetDirectoryName\fP (char *dir_name)"
+.br
+.RI "Sets the relative directory name\&. "
+.ti -1c
+.RI "static void \fBsetFileName\fP (char *file_name)"
+.br
+.RI "Sets the absolute file name\&. "
+.ti -1c
+.RI "static void \fBsetMachineName\fP (char *machine_name)"
+.br
+.RI "Sets the machine name where the scanner is running\&. "
+.ti -1c
+.RI "static int \fBgetDirectoryId\fP (sqlite3 *\fBdb\fP)"
+.br
+.RI "Retrieves the id of the directory from the directories table\&. "
+.ti -1c
+.RI "static int \fBgetDirectoryId\fP (sqlite3 *\fBdb\fP, char *dir_name, char *machine_name)"
+.br
+.RI "Retrieves the id of the directory from the directories table\&. "
+.ti -1c
+.RI "static int \fBgetFileId\fP (sqlite3 *\fBdb\fP)"
+.br
+.RI "Returns the id of the file if the file exists in the files table\&. "
+.ti -1c
+.RI "static int \fBgetFileId\fP (sqlite3 *\fBdb\fP, char *file_name, int dir_id)"
+.br
+.RI "Returns the id of the file if the file exists in the files table\&. "
+.ti -1c
+.RI "static int \fBsaveFileInfo\fP (sqlite3 *\fBdb\fP, const int dir_id, const char *file_name, const int file_size=0, const char *date_modified=NULL, const char *hashed_val=NULL, const bool isNew=true, \fBAttributeToCheck\fP attr_to_update=\fBAttributeToCheck::NONE\fP)"
+.br
+.RI "Entry point to saving the file information\&. "
+.in -1c
+.SS "Static Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBdidHashedValueChange\fP (const char *hashed_val, \fBTableToCheck\fP table, const int file_id, sqlite3 *\fBdb\fP)"
+.br
+.ti -1c
+.RI "static int \fBdidFileSizeChange\fP (const int file_size, \fBTableToCheck\fP table, const int file_id, sqlite3 *\fBdb\fP)"
+.br
+.ti -1c
+.RI "static int \fBdidDateModifiedChange\fP (const char *date_modified, \fBTableToCheck\fP table, const int file_id, sqlite3 *\fBdb\fP)"
+.br
+.ti -1c
+.RI "static int \fBsaveNewFileInfo\fP (sqlite3 *\fBdb\fP)"
+.br
+.ti -1c
+.RI "static int \fBsaveExistingFileInfo\fP (sqlite3 *\fBdb\fP, \fBAttributeToCheck\fP attr_to_update, const char *text_val=NULL, const int int_val=0)"
+.br
+.ti -1c
+.RI "static int \fBinsertTextValueToChanges\fP (sqlite3 *\fBdb\fP, const int file_id, const char *text_val, const char *attr_changed)"
+.br
+.ti -1c
+.RI "static int \fBinsertIntValueToChanges\fP (sqlite3 *\fBdb\fP, const int file_id, const int int_val, const char *attr_changed)"
+.br
+.ti -1c
+.RI "static int \fBupdateChangedInFile\fP (sqlite3 *\fBdb\fP, int file_id, \fBAttributeToCheck\fP attr_to_change)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The SQL Helper class for the SQLite database\&. 
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBSQLiteHelper::AttributeToCheck\fP"
+
+.PP
+Enumerator used to set the file attribute to check for changes or to update the value for\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIHashedVal \fP\fP
+.TP
+\fB\fIFileSize \fP\fP
+.TP
+\fB\fIDateModified \fP\fP
+.TP
+\fB\fINONE \fP\fP
+.PP
+.nf
+26 { HashedVal = 1, FileSize = 2, DateModified = 3, NONE = 4};
+.fi
+.SS "enum \fBSQLiteHelper::TableToCheck\fP"
+
+.PP
+Enumerator used to set the table to check for file attribute changes\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIFiles \fP\fP
+.TP
+\fB\fIChanges \fP\fP
+.PP
+.nf
+31 {Files = 1, Changes = 2};
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "int SQLiteHelper::checkIfAttributeHasChanged (const int file_id, const \fBAttributeToCheck\fP attribute, const \fBTableToCheck\fP table, sqlite3 * db, const char * char_attr = \fCNULL\fP, const int int_attr = \fC0\fP)\fC [static]\fP"
+
+.PP
+Determines if the provided attribute has changed its value\&. The logic in the function will first determine the attribute to check using the attribute parameter and then will call the appropriate function to check if the attribute did change\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfile_id\fP The id of the file\&. 
+.br
+\fIattribute\fP The attribute to check\&. 
+.br
+\fItable\fP The table to check based on whether the attribute is in the changes or the files table\&. 
+.br
+\fIdb\fP The sqlite3 database object\&. 
+.br
+\fIchar_attr\fP The character value attribute to check\&. The default is NULL\&. 
+.br
+\fIint_attr\fP The integer value attribute to check\&. The default is 0 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBAttributeToCheck\fP 
+.PP
+\fBTableToCheck\fP 
+.PP
+\fBdidHashedValueChange()\fP 
+.PP
+\fBdidFileSizeChange()\fP 
+.PP
+\fBdidDateModifiedChange()\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+1 if changed, 0 if not 
+.RE
+.PP
+
+.PP
+.nf
+45                                                                                                                                                                                   {
+46     int retVal = 0;
+47 
+48     switch(attribute) {
+49     case 1: //Hashedval
+50         retVal = didHashedValueChange(char_attr, table, file_id, db);
+51         break;
+52     case 2: //Filesize
+53         retVal = didFileSizeChange(int_attr, table, file_id, db);
+54         break;
+55     case 3: //Datemodified
+56         retVal = didDateModifiedChange(char_attr, table, file_id, db);
+57         break;
+58     default:
+59         retVal = -1;
+60     }
+61 
+62     //fprintf(stderr, "\nReturn value from checkIfAttributeHasChanged is %d", retVal);
+63     
+64     return retVal;
+65 }
+.fi
+.SS "int SQLiteHelper::checkIfAttributeIsInChanges (const int file_id, const \fBAttributeToCheck\fP attribute, sqlite3 * db)\fC [static]\fP"
+
+.PP
+Determines if the provided attribute is in the changes table\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfile_id\fP The id of the file\&. 
+.br
+\fIattribute\fP The attribute to check\&. 
+.br
+\fIdb\fP The sqlite3 database object\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+1 if is in the changes table, 0 if not 
+.RE
+.PP
+
+.PP
+.nf
+67                                                                                                               {
+68     char* zErrMsg = 0;
+69     int rc;
+70     sqlite3_stmt* pStmt;
+71     char* sql_stmt;
+72     
+73     int retVal = 0;
+74 
+75     switch (attribute) {
+76     case 1: //Hashedval
+77         rc = sqlite3_prepare_v3(db, sql_check_if_hashedval_changed, -1, 0, &pStmt, NULL);
+78         break;
+79     case 2: //Filesize
+80         rc = sqlite3_prepare_v3(db, sql_check_if_filesize_changed, -1, 0, &pStmt, NULL);
+81         break;
+82     case 3: //Datemodified
+83         rc = sqlite3_prepare_v3(db, sql_check_if_datemodified_changed, -1, 0, &pStmt, NULL);
+84         break;
+85     default:
+86         retVal = -1;
+87     }
+88 
+89     if (rc == SQLITE_OK) {
+90         sqlite3_bind_int(pStmt, 1, file_id);
+91     }
+92     else {
+93 
+94         fprintf(stderr, "checkIfAttributeIsInChanges::Failed to execute statement: %s\n", sqlite3_errmsg(db));
+95         return -1;
+96     }
+97 
+98     while (sqlite3_step(pStmt) == SQLITE_ROW)
+99     {
+100         retVal = sqlite3_column_int(pStmt, 0);
+101     }
+102 
+103     return retVal;
+104 }
+.fi
+.SS "int SQLiteHelper::didDateModifiedChange (const char * date_modified, \fBTableToCheck\fP table, const int file_id, sqlite3 * db)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIdate_modified\fP 
+.br
+\fItable\fP 
+.br
+\fIfile_id\fP 
+.br
+\fIdb\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.RE
+.PP
+
+.PP
+.nf
+189                                                                                                                      {
+190     int retVal = 0;
+191 
+192     char* zErrMsg = 0;
+193     int rc;
+194     sqlite3_stmt* pStmt;
+195    
+196 
+197     if (table == 1) {
+198         rc = sqlite3_prepare_v3(db, sql_check_if_datemodified_changed_in_files, -1, 0, &pStmt, NULL);
+199     }
+200     else if (table == 2) {
+201         rc = sqlite3_prepare_v3(db, sql_check_if_value_changed_in_changes_textval, -1, 0, &pStmt, NULL);
+202     }
+203     else
+204     {
+205         return -1;
+206     }
+207 
+208 
+209     if (rc == SQLITE_OK) {
+210         sqlite3_bind_text(pStmt, 1, date_modified, -1, NULL);
+211         sqlite3_bind_int(pStmt, 2, file_id);
+212     }
+213     else {
+214 
+215         fprintf(stderr, "didDateModifiedChange::Failed to execute statement: %s\n", sqlite3_errmsg(db));
+216         return -1;
+217     }
+218 
+219     while (sqlite3_step(pStmt) == SQLITE_ROW)
+220     {
+221         retVal = sqlite3_column_int(pStmt, 0);
+222     }
+223 
+224     sqlite3_finalize(pStmt);
+225 
+226     return retVal;
+227 }
+.fi
+.SS "int SQLiteHelper::didFileSizeChange (const int file_size, \fBTableToCheck\fP table, const int file_id, sqlite3 * db)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIfile_size\fP 
+.br
+\fItable\fP 
+.br
+\fIfile_id\fP 
+.br
+\fIdb\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.RE
+.PP
+
+.PP
+.nf
+149                                                                                                            {
+150     int retVal = 0;
+151 
+152     char* zErrMsg = 0;
+153     int rc;
+154     sqlite3_stmt* pStmt;
+155     
+156 
+157     if (table == 1) {
+158         rc = sqlite3_prepare_v3(db, sql_check_if_filesize_changed_in_files, -1, 0, &pStmt, NULL);
+159     }
+160     else if (table == 2) {
+161         rc = sqlite3_prepare_v3(db, sql_check_if_value_changed_in_changes_intval, -1, 0, &pStmt, NULL);
+162     }
+163     else
+164     {
+165         return -1;
+166     }
+167 
+168 
+169     if (rc == SQLITE_OK) {
+170         sqlite3_bind_int(pStmt, 1, file_size);
+171         sqlite3_bind_int(pStmt, 2, file_id);
+172     }
+173     else {
+174 
+175         fprintf(stderr, "didFileSizeChange::Failed to execute statement: %s\n", sqlite3_errmsg(db));
+176         return -1;
+177     }
+178 
+179     while (sqlite3_step(pStmt) == SQLITE_ROW)
+180     {
+181         retVal = sqlite3_column_int(pStmt, 0);
+182     }
+183 
+184     sqlite3_finalize(pStmt);
+185 
+186     return retVal;
+187 }
+.fi
+.SS "int SQLiteHelper::didHashedValueChange (const char * hashed_val, \fBTableToCheck\fP table, const int file_id, sqlite3 * db)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIhashed_val\fP 
+.br
+\fItable\fP 
+.br
+\fIfile_id\fP 
+.br
+\fIdb\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.RE
+.PP
+
+.PP
+.nf
+106                                                                                                                  {
+107     int retVal = 0;
+108 
+109     char* zErrMsg = 0;
+110     int rc;
+111     sqlite3_stmt* pStmt;
+112     
+113 
+114     if (table == 1) {
+115         rc = sqlite3_prepare_v3(db, sql_check_if_hashedval_changed_in_files, -1, 0, &pStmt, NULL);
+116     }
+117     else if (table == 2) {
+118         rc = sqlite3_prepare_v3(db, sql_check_if_value_changed_in_changes_textval, -1, 0, &pStmt, NULL);
+119     }
+120     else
+121     {
+122         return -1;
+123     }
+124     
+125 
+126     if (rc == SQLITE_OK) {
+127         
+128         sqlite3_bind_text(pStmt, 1, hashed_val, -1, NULL);
+129         sqlite3_bind_int(pStmt, 2, file_id);
+130         
+131     }
+132     else {
+133 
+134         fprintf(stderr, "didHashedValueChange::Failed to execute statement: %s\n", sqlite3_errmsg(db));
+135         return -1;
+136     }
+137 
+138     while (sqlite3_step(pStmt) == SQLITE_ROW)
+139     {
+140         retVal = sqlite3_column_int(pStmt, 0);
+141     }
+142 
+143     sqlite3_finalize(pStmt);
+144 
+145     
+146     return retVal;
+147 }
+.fi
+.SS "char * SQLiteHelper::getCurrentTime ()\fC [static]\fP"
+
+.PP
+Will retrieve the current time\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Current time in B d, Y T format\&. Example: December 12, 2020 20:10:05
+.PP
+char* 
+.RE
+.PP
+
+.PP
+.nf
+334                                    {
+335     string retVal;
+336     char* char_array;
+337 
+338     time_t t = time(0);   // get time now
+339     tm* now = localtime(&t);
+340     char date_string[100];
+341     char time_string[100];
+342 
+343     strftime(date_string, 50, "%B %d, %Y ", now);
+344     strftime(time_string, 50, "%T", now);
+345 
+346     retVal += date_string;
+347     retVal += time_string;
+348 
+349     int n = retVal\&.length();
+350     char_array = new char[n + 1];
+351 
+352     strcpy(char_array, retVal\&.c_str());
+353     
+354     return char_array;
+355 }
+.fi
+.SS "int SQLiteHelper::getDirectoryId (sqlite3 * db)\fC [static]\fP"
+
+.PP
+Retrieves the id of the directory from the directories table\&. \fBPRECONDITION:\fP Call to \fBsetDirectoryName()\fP to set the directory to check\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdb\fP sqlite3 database object 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 if directory does not exist in directories table, otherwise the directory id will be returned\&. 
+.RE
+.PP
+
+.PP
+.nf
+245                                             {
+246     char* zErrMsg = 0;
+247     int rc;
+248     sqlite3_stmt* pStmt;
+249     int retVal = 0;
+250 
+251     rc = sqlite3_prepare_v3(db, sql_get_directory_id, -1, 0, &pStmt, NULL);
+252 
+253     if (rc == SQLITE_OK) {
+254         sqlite3_bind_text(pStmt, 1, _dirname, -1, NULL);
+255         sqlite3_bind_text(pStmt, 2, _machinename, -1, NULL);
+256     }
+257     else {
+258 
+259         fprintf(stderr, "getDirectoryId::Failed to execute statement: %s\n", sqlite3_errmsg(db));
+260         return -1;
+261     }
+262 
+263     while (sqlite3_step(pStmt) == SQLITE_ROW)
+264     {
+265         retVal = sqlite3_column_int(pStmt, 0);
+266     }
+267 
+268     sqlite3_finalize(pStmt);
+269 
+270     return retVal;
+271 }
+.fi
+.SS "int SQLiteHelper::getDirectoryId (sqlite3 * db, char * dir_name, char * machine_name)\fC [static]\fP"
+
+.PP
+Retrieves the id of the directory from the directories table\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdb\fP sqlite3 database object 
+.br
+\fIdir_name\fP Relative name of the directory\&. 
+.br
+\fImachine_name\fP The machine name where the scanner is running\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 if directory does not exist in directories table, otherwise the directory id will be returned\&. 
+.RE
+.PP
+
+.PP
+.nf
+273                                                                                 {
+274     int retVal = 0;
+275 
+276     _dirname = (char*)malloc(strlen(dir_name) + 1);
+277     strcpy(_dirname, dir_name);
+278 
+279     _machinename = (char*)malloc(strlen(machine_name) + 1);
+280     strcpy(_machinename, machine_name);
+281 
+282     retVal = getDirectoryId(db);
+283 
+284     return retVal;
+285 
+286 }
+.fi
+.SS "int SQLiteHelper::getFileId (sqlite3 * db)\fC [static]\fP"
+
+.PP
+Returns the id of the file if the file exists in the files table\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdb\fP The sqlite3 database object\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 if file does not exist in files table, otherwise the file id will be returned\&. 
+.RE
+.PP
+
+.PP
+.nf
+288                                        {
+289     char* zErrMsg = 0;
+290     int rc;
+291     sqlite3_stmt* pStmt;
+292     int retVal = 0;
+293 
+294     rc = sqlite3_prepare_v3(db, sql_get_file_id, -1, 0, &pStmt, NULL);
+295 
+296     if (rc == SQLITE_OK) {
+297         sqlite3_bind_text(pStmt, 1, _filename, -1, NULL);
+298         sqlite3_bind_int(pStmt, 2, _dirid);
+299     }
+300     else {
+301 
+302         fprintf(stderr, "getFileId::Failed to execute statement: %s\n", sqlite3_errmsg(db));
+303         return -1;
+304     }
+305 
+306     while (sqlite3_step(pStmt) == SQLITE_ROW)
+307     {
+308         retVal = sqlite3_column_int(pStmt, 0);
+309     }
+310 
+311     sqlite3_finalize(pStmt);
+312 
+313     return retVal;
+314 }
+.fi
+.SS "int SQLiteHelper::getFileId (sqlite3 * db, char * file_name, int dir_id)\fC [static]\fP"
+
+.PP
+Returns the id of the file if the file exists in the files table\&. \fBNOTE:\fP Will call the \fBgetFileId(sqlite3* db)\fP method after setting the directory id and file name at the class level\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdb\fP sqlite3 database object 
+.br
+\fIfile_name\fP Absolute name of the file 
+.br
+\fIdir_id\fP Id of the Directory where the file is located 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+0 if file does not exist in files table, otherwise the file id will be returned\&. 
+.RE
+.PP
+
+.PP
+.nf
+316                                                                     {
+317     int retVal = 0;
+318 
+319     _filename = (char*)malloc(strlen(file_name) + 1);
+320     strcpy(_filename, file_name);
+321     _dirid = dir_id;
+322 
+323     retVal = getFileId(db);
+324 
+325     return retVal;
+326 }
+.fi
+.SS "int SQLiteHelper::insertIntValueToChanges (sqlite3 * db, const int file_id, const int int_val, const char * attr_changed)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIdb\fP 
+.br
+\fIfile_id\fP 
+.br
+\fIint_val\fP 
+.br
+\fIattr_changed\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.RE
+.PP
+
+.PP
+.nf
+578                                                                                                                      {
+579     char* zErrMsg = 0;
+580     int rc;
+581     sqlite3_stmt* pStmt;
+582     char* current_time = getCurrentTime();
+583 
+584     rc = sqlite3_prepare_v3(db, sql_save_intval_in_changes, -1, 0, &pStmt, NULL);
+585 
+586     if (rc == SQLITE_OK) {
+587         sqlite3_bind_int(pStmt, 1, file_id);
+588         sqlite3_bind_text(pStmt, 2, current_time, -1, NULL);
+589         sqlite3_bind_int(pStmt, 3, int_val);
+590         sqlite3_bind_text(pStmt, 4, attr_changed, -1, NULL);
+591     }
+592     else {
+593 
+594         fprintf(stderr, "insertIntValueToChanges::Failed to execute statement: %s\n", sqlite3_errmsg(db));
+595         sqlite3_finalize(pStmt);
+596         return -1;
+597     }
+598 
+599     rc = sqlite3_step(pStmt);
+600 
+601     if (rc == SQLITE_BUSY) {
+602         cout << "\nDatabase is busy" << endl;
+603         while (rc == SQLITE_BUSY)
+604         {
+605             rc = sqlite3_step(pStmt);
+606         }
+607     }
+608     else if (rc == SQLITE_ERROR) {
+609         printf("\nIn insertIntValueToChanges execution failed: %s\n", sqlite3_errmsg(db));
+610     }
+611     else if (rc == SQLITE_MISUSE) {
+612         cout << "\nA MISUSE has been deteced in insertIntValueToChanges\&." << endl;
+613     }
+614     else if (rc == SQLITE_DONE) {
+615         cout << "\nsqlite3_step executed successfully\&." << endl;
+616     }
+617     else {
+618         cout << "\nNot sure what happened in insertIntValueToChanges\&." << endl;
+619     }
+620 
+621     sqlite3_finalize(pStmt);
+622 
+623     return 0;
+624 }
+.fi
+.SS "int SQLiteHelper::insertTextValueToChanges (sqlite3 * db, const int file_id, const char * text_val, const char * attr_changed)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIdb\fP 
+.br
+\fIfile_id\fP 
+.br
+\fItext_val\fP 
+.br
+\fIattr_changed\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.RE
+.PP
+
+.PP
+.nf
+530                                                                                                                          {
+531     char* zErrMsg = 0;
+532     int rc;
+533     sqlite3_stmt* pStmt;
+534     char* current_time = getCurrentTime();
+535     
+536     rc = sqlite3_prepare_v3(db, sql_save_textval_in_changes, -1, 0, &pStmt, NULL);
+537 
+538     if (rc == SQLITE_OK) {
+539         sqlite3_bind_int(pStmt, 1, file_id);
+540         sqlite3_bind_text(pStmt, 2, current_time, -1, NULL);
+541         sqlite3_bind_text(pStmt, 3, text_val, -1, NULL);
+542         sqlite3_bind_text(pStmt, 4, attr_changed, -1, NULL);
+543     }
+544     else {
+545 
+546         fprintf(stderr, "insertTextValueToChanges::Failed to execute statement: %s\n", sqlite3_errmsg(db));
+547         sqlite3_finalize(pStmt);
+548         return -1;
+549     }
+550 
+551     rc = sqlite3_step(pStmt);
+552 
+553     if (rc == SQLITE_BUSY) {
+554         cout << "\nDatabase is busy" << endl;
+555         while (rc == SQLITE_BUSY)
+556         {
+557             rc = sqlite3_step(pStmt);
+558         }
+559     }
+560     else if (rc == SQLITE_ERROR) {
+561         printf("\nIn insertTextValuetoChanges execution failed: %s\n", sqlite3_errmsg(db));
+562     }
+563     else if (rc == SQLITE_MISUSE) {
+564         cout << "\nA MISUSE has been deteced in insertTextValuetoChanges\&." << endl;
+565     }
+566     else if (rc == SQLITE_DONE) {
+567         cout << "\nsqlite3_step executed successfully\&." << endl;
+568     }
+569     else {
+570         cout << "\nNot sure what happened in insertTextValuetoChanges\&." << endl;
+571     }
+572 
+573     sqlite3_finalize(pStmt);
+574 
+575     return 0;
+576 }
+.fi
+.SS "int SQLiteHelper::saveExistingFileInfo (sqlite3 * db, \fBAttributeToCheck\fP attr_to_update, const char * text_val = \fCNULL\fP, const int int_val = \fC0\fP)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIdb\fP 
+.br
+\fIattr_to_update\fP 
+.br
+\fItext_val\fP 
+.br
+\fIint_val\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.RE
+.PP
+
+.PP
+.nf
+462                                                                                                                             {
+463     int retVal = 0;
+464 
+465     char* zErrMsg = 0;
+466     int rc;
+467     sqlite3_stmt* pStmt;
+468     
+469     char* current_time = getCurrentTime();
+470     int fileId = getFileId(db);
+471     
+472     int in_changes = checkIfAttributeIsInChanges(fileId, attr_to_update, db);
+473     int has_changes = 0;
+474 
+475     switch (attr_to_update)
+476     {
+477     case 1:
+478 
+479         if (!in_changes) {
+480             has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableToCheck::Files, db, text_val);
+481         }
+482         else {
+483             has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableToCheck::Changes, db, text_val);
+484         }
+485         
+486         if (has_changes == 0) {
+487             //fprintf(stderr, "\nInside has_changes with value of %d and text value %s\n", has_changes, text_val);
+488             retVal = insertTextValueToChanges(db, fileId, text_val,"hashedvalue");
+489         }
+490         break;
+491     case 2:
+492         
+493         if (!in_changes) {
+494             has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableToCheck::Files, db, NULL, int_val);
+495         }
+496         else {
+497             has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableToCheck::Changes, db, NULL, int_val);
+498         }
+499         
+500         if (has_changes == 0) {
+501             //fprintf(stderr, "\nInside has_changes with value of %d and int value %d\n", has_changes, int_val);
+502             retVal = insertIntValueToChanges(db, fileId, int_val, "filesize");
+503         }
+504         break;
+505     case 3:
+506 
+507         if (!in_changes) {
+508             has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableToCheck::Files, db, text_val);
+509         }
+510         else {
+511             has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableToCheck::Changes, db, text_val);
+512         }
+513         
+514         if (has_changes == 0) {
+515             //fprintf(stderr, "\nInside has_changes with value of %d and text value %s\n", has_changes, text_val);
+516             retVal = insertTextValueToChanges(db, fileId, text_val,"lastmodified");
+517         }
+518         break;
+519     default:
+520         break;
+521     }
+522 
+523     if (!in_changes && has_changes == 0) {
+524         retVal = updateChangedInFile(db, fileId, attr_to_update);
+525     }
+526 
+527     return retVal;
+528 }
+.fi
+.SS "int SQLiteHelper::saveFileInfo (sqlite3 * db, const int dir_id, const char * file_name, const int file_size = \fC0\fP, const char * date_modified = \fCNULL\fP, const char * hashed_val = \fCNULL\fP, const bool isNew = \fCtrue\fP, \fBAttributeToCheck\fP attr_to_update = \fC\fBAttributeToCheck::NONE\fP\fP)\fC [static]\fP"
+
+.PP
+Entry point to saving the file information\&.  
+.PP
+\fBParameters\fP
+.RS 4
+\fIdb\fP sqlite3 database object\&. 
+.br
+\fIdir_id\fP Id of the directory from the directories table\&. 
+.br
+\fIfile_name\fP Absolute name of the file\&. 
+.br
+\fIfile_size\fP File size of the file in bytes\&. Default value is 0\&. 
+.br
+\fIdate_modified\fP Date the file was last modified\&. Default value is NULL\&. 
+.br
+\fIhashed_val\fP 
+.br
+\fIisNew\fP Determines if the file information being added is for a new file or an existing file\&. Default value is true\&. 
+.br
+\fIattr_to_update\fP The attribute to update if the isNew = false\&. Default value is NONE\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBsaveNewFileInfo()\fP 
+.PP
+\fBsaveExistingFileInfo()\fP 
+.PP
+\fBAttributeToCheck\fP 
+.RE
+.PP
+
+.PP
+.nf
+357                                                                                                                                                                                                               {
+358     int retVal = 0;
+359     int hasChanged = 0;
+360 
+361     _dirid = dir_id;
+362     _filename = (char*)malloc(strlen(file_name)+1);
+363     strcpy(_filename,file_name);
+364     _filesize = file_size;
+365 
+366     if (date_modified != NULL) {
+367         _datemodified = (char*)malloc(strlen(date_modified) + 1);
+368         strcpy(_datemodified, date_modified);
+369     }
+370     
+371     if (hashed_val != NULL) {
+372         //fprintf(stderr, "\nGetting ready to store hashedvalue into _hashedval with value of %s\n", _hashedval);
+373         _hashedval = (char*)malloc(strlen(hashed_val) + 1);
+374         strcpy(_hashedval, (char*)hashed_val);
+375     }
+376     
+377     if (isNew) {
+378         saveNewFileInfo(db);
+379     }
+380     else {
+381         switch (attr_to_update)
+382         {
+383         case 1:
+384             //fprintf(stderr, "\nGetting ready to save hashedvalue of %s\n", _hashedval);
+385             saveExistingFileInfo(db, attr_to_update,_hashedval);
+386             break;
+387         case 2:
+388             saveExistingFileInfo(db, attr_to_update,NULL,_filesize);
+389             break;
+390         case 3:
+391             saveExistingFileInfo(db, attr_to_update, _datemodified);
+392             break;
+393         default:
+394             break;
+395         }
+396         //saveExistingFileInfo(db, attr_to_update);
+397     }
+398 
+399     return retVal;
+400 }
+.fi
+.SS "int SQLiteHelper::saveNewFileInfo (sqlite3 * db)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIdb\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.RE
+.PP
+
+.PP
+.nf
+402                                              {
+403     int retVal = 0;
+404     char* zErrMsg = 0;
+405     int rc;
+406     sqlite3_stmt* pStmt;
+407     
+408     char* current_time = getCurrentTime();
+409 
+410     if (_hashedval == NULL) {
+411         rc = sqlite3_prepare_v3(db, sql_save_newfile_nohashedval, -1, 0, &pStmt, NULL);
+412     }
+413     else {
+414         rc = sqlite3_prepare_v3(db, sql_save_newfile_hashedval, -1, 0, &pStmt, NULL);
+415     }
+416 
+417     //dirid, dateadded, filename, filesize, lastmodified
+418     if (rc == SQLITE_OK) {
+419         sqlite3_bind_int(pStmt, 1, _dirid);
+420         sqlite3_bind_text(pStmt, 2, current_time, -1, NULL);
+421         sqlite3_bind_text(pStmt, 3, _filename, -1, NULL);
+422         sqlite3_bind_int(pStmt, 4, _filesize);
+423         sqlite3_bind_text(pStmt, 5, _datemodified, -1, NULL);
+424         
+425         if (_hashedval != NULL) {
+426             sqlite3_bind_text(pStmt, 6, _hashedval, -1, NULL);
+427         }
+428     }
+429     else {
+430 
+431         //fprintf(stderr, "saveNewFileInfo::Failed to execute statement: %s\n", sqlite3_errmsg(db));
+432         retVal = -1;
+433     }
+434 
+435     rc = sqlite3_step(pStmt);
+436 
+437     if (rc == SQLITE_BUSY) {
+438         cout << "\nDatabase is busy" << endl;
+439         while (rc == SQLITE_BUSY)
+440         {
+441             rc = sqlite3_step(pStmt);
+442         }
+443     }
+444     else if (rc == SQLITE_ERROR) {
+445         printf("\nIn SQLiteHelper::saveNewFileInfo execution failed: %s\n", sqlite3_errmsg(db));
+446     }
+447     else if (rc == SQLITE_MISUSE) {
+448         cout << "\nA MISUSE has been deteced in SQLiteHelper::saveNewFileInfo\&." << endl;
+449     }
+450     else if (rc == SQLITE_DONE) {
+451         cout << "\nsqlite3_step executed successfully in SQLiteHelper::saveNewFileInfo\&." << endl;
+452     }
+453     else {
+454         cout << "\nNot sure what happened in SQLiteHelper::saveNewFileInfo\&." << endl;
+455     }
+456 
+457     sqlite3_finalize(pStmt);
+458     
+459     return retVal;
+460 }
+.fi
+.SS "void SQLiteHelper::setDirectoryName (char * dir_name)\fC [static]\fP"
+
+.PP
+Sets the relative directory name\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdir_name\fP 
+.RE
+.PP
+
+.PP
+.nf
+230                                                   {
+231     _dirname = (char*)malloc(strlen(dir_name) + 1);
+232     strcpy(_dirname, dir_name);
+233 }
+.fi
+.SS "void SQLiteHelper::setFileName (char * file_name)\fC [static]\fP"
+
+.PP
+Sets the absolute file name\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfile_name\fP 
+.RE
+.PP
+
+.PP
+.nf
+235                                               {
+236     _filename = (char*)malloc(strlen(file_name) + 1);
+237     strcpy(_filename, file_name);
+238 }
+.fi
+.SS "void SQLiteHelper::setMachineName (char * machine_name)\fC [static]\fP"
+
+.PP
+Sets the machine name where the scanner is running\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImachine_name\fP 
+.RE
+.PP
+
+.PP
+.nf
+240                                                     {
+241     _machinename = (char*)malloc(strlen(machine_name) + 1);
+242     strcpy(_machinename, machine_name);
+243 }
+.fi
+.SS "int SQLiteHelper::updateChangedInFile (sqlite3 * db, int file_id, \fBAttributeToCheck\fP attr_to_change)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIdb\fP 
+.br
+\fIfile_id\fP 
+.br
+\fIattr_to_change\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+.RE
+.PP
+
+.PP
+.nf
+626                                                                                                {
+627     char* zErrMsg = 0;
+628     int rc;
+629     sqlite3_stmt* pStmt;
+630     int retVal = 0;
+631     char* current_time = getCurrentTime();
+632     char* sql_stmt;
+633     
+634     switch (attr_to_change)
+635     {
+636     case 1:
+637         rc = sqlite3_prepare_v3(db, sql_set_inchanges_hashedval, -1, 0, &pStmt, NULL);
+638         break;
+639     case 2:
+640         rc = sqlite3_prepare_v3(db, sql_set_inchanges_filesize, -1, 0, &pStmt, NULL);
+641         break;
+642     case 3:
+643         rc = sqlite3_prepare_v3(db, sql_set_inchanges_lastmodified, -1, 0, &pStmt, NULL);
+644         break;
+645     default:
+646         return -1;
+647         cout << "Unknown attribute\&. Nothing saved\&." << endl;
+648         break;
+649     }
+650 
+651     if (rc == SQLITE_OK) {
+652         sqlite3_bind_int(pStmt, 1, file_id);
+653     }
+654     else {
+655         fprintf(stderr, "updateChangedInFiles:Failed to execute statement: %s\n", sqlite3_errmsg(db));
+656         sqlite3_finalize(pStmt);
+657         return -1;
+658     }
+659 
+660     rc = sqlite3_step(pStmt);
+661 
+662     if (rc == SQLITE_BUSY) {
+663         cout << "\nDatabase is busy" << endl;
+664         while (rc == SQLITE_BUSY)
+665         {
+666             rc = sqlite3_step(pStmt);
+667         }
+668     }
+669     else if (rc == SQLITE_ERROR) {
+670         printf("\nIn updateChangedInFiles execution failed: %s\n", sqlite3_errmsg(db));
+671     }
+672     else if (rc == SQLITE_MISUSE) {
+673         cout << "\nA MISUSE has been deteced in updateChangedInFiles\&." << endl;
+674     }
+675     else if (rc == SQLITE_DONE) {
+676         cout << "\nsqlite3_step executed successfully\&." << endl;
+677     }
+678     else {
+679         cout << "\nNot sure what happened in updateChangedInFiles\&." << endl;
+680     }
+681 
+682     sqlite3_finalize(pStmt);
+683 
+684     return 0;
+685 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for File Integrity Checker from the source code\&.

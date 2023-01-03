@@ -1,4 +1,4 @@
-.TH "SHA256CPP" 3 "Sat Dec 10 2022" "fileintegritychecker" \" -*- nroff -*-
+.TH "SHA256CPP" 3 "Sun Jan 1 2023" "Version 1.0" "File Integrity Checker" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -14,9 +14,11 @@ SHA256CPP
 .ti -1c
 .RI "\fBSHA256CPP\fP ()"
 .br
+.RI "Construct a new \fBSHA256CPP::SHA256CPP\fP object\&. "
 .ti -1c
 .RI "virtual \fB~SHA256CPP\fP ()"
 .br
+.RI "Destroy the \fBSHA256CPP::SHA256CPP\fP object\&. "
 .ti -1c
 .RI "bool \fBendianCheck\fP ()"
 .br
@@ -30,26 +32,636 @@ SHA256CPP
 .RI "void \fBendianCheckPrint\fP ()"
 .br
 .in -1c
-.SH "Detailed Description"
-.PP 
-Definition at line \fB42\fP of file \fBSHA256CPP\&.h\fP\&.
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "uint32_t \fBsig0\fP (uint32_t x)"
+.br
+.ti -1c
+.RI "uint32_t \fBsig1\fP (uint32_t x)"
+.br
+.ti -1c
+.RI "uint32_t \fBrotr\fP (uint32_t n, uint16_t x)"
+.br
+.RI "Rotate bits right\&. "
+.ti -1c
+.RI "uint32_t \fBshr\fP (uint32_t n, uint16_t x)"
+.br
+.RI "Shift bits right\&. "
+.ti -1c
+.RI "uint32_t \fBSIG0\fP (uint32_t x)"
+.br
+.ti -1c
+.RI "uint32_t \fBSIG1\fP (uint32_t x)"
+.br
+.ti -1c
+.RI "uint32_t \fBCh\fP (uint32_t x, uint32_t y, uint32_t z)"
+.br
+.RI "Choose\&. "
+.ti -1c
+.RI "uint32_t \fBMaj\fP (uint32_t x, uint32_t y, uint32_t z)"
+.br
+.RI "Majority decision\&. "
+.ti -1c
+.RI "int \fBcalcFileSize\fP (FILE *file)"
+.br
+.ti -1c
+.RI "int \fBfillMessageBlock\fP (FILE *file, union \fBmessageBlock\fP *msgBlock, enum \fBstatus\fP *\fBstate\fP, uint64_t *numBits)"
+.br
+.in -1c
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "SHA256CPP::SHA256CPP ()"
 
-.SS "virtual SHA256CPP::~SHA256CPP ()\fC [virtual]\fP"
+.PP
+Construct a new \fBSHA256CPP::SHA256CPP\fP object\&. 
+.PP
+.nf
+8 {}
+.fi
+.SS "SHA256CPP::~SHA256CPP ()\fC [virtual]\fP"
 
+.PP
+Destroy the \fBSHA256CPP::SHA256CPP\fP object\&. 
+.PP
+.nf
+14 {}
+.fi
 .SH "Member Function Documentation"
 .PP 
+.SS "int SHA256CPP::calcFileSize (FILE * file)\fC [private]\fP"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIfile\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+int 
+.RE
+.PP
+
+.PP
+.nf
+351                                       {
+352     int prev=ftell(file);
+353     fseek(file, 0L, SEEK_END);
+354     int size=ftell(file);
+355     fseek(file,prev,SEEK_SET); 
+356     return size;
+357 }
+.fi
 .SS "\fBHashValues\fP SHA256CPP::calculateHash (FILE * file)"
 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfile\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+\fBHashValues\fP 
+.RE
+.PP
+
+.PP
+.nf
+51                                               {
+52     // Variables
+53     // The current message block
+54     union messageBlock msgBlock;
+55 
+56     // The number of bits read from the file
+57     uint64_t numBits = 0;
+58 
+59     // The state of the program
+60     enum status state = READ;
+61 
+62     //printf("\n Starting SHA256 algorithm\&.\&.\&.\&.\n");
+63 
+64     // Declare the K constant
+65     // Defined in Section 4\&.2\&.2
+66     uint32_t K[] =
+67     {
+68         0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 
+69         0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
+70         0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3,
+71         0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,
+72         0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc,
+73         0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,
+74         0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7, 
+75         0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967, 
+76         0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13,
+77         0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,
+78         0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3,
+79         0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,
+80         0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5,
+81         0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3, 
+82         0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208,
+83         0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2
+84     };
+85 
+86     // Message schedule
+87     uint32_t W[64];
+88 
+89     // Working variables
+90     uint32_t a, b, c, d, e, f, g, h;
+91 
+92     // Temp variables
+93     uint32_t T1;
+94     uint32_t T2;
+95 
+96     // Hash values
+97     // Taken from https://nvlpubs\&.nist\&.gov/nistpubs/FIPS/NIST\&.FIPS\&.180-4\&.pdf
+98     //array<uint32_t,8> H;
+99     //static uint32_t H[8];
+100     struct HashValues HVals;
+101     HVals\&.H[0] = 0x6a09e667;
+102     HVals\&.H[1] = 0xbb67ae85;
+103     HVals\&.H[2] = 0x3c6ef372;
+104     HVals\&.H[3] = 0xa54ff53a;
+105     HVals\&.H[4] = 0x510e527f;
+106     HVals\&.H[5] = 0x9b05688c;
+107     HVals\&.H[6] = 0x1f83d9ab;
+108     HVals\&.H[7] = 0x5be0cd19;
+109 
+110     // The current message block
+111 
+112     // For loop to iterate through the message block 
+113     int j;
+114     int o;
+115 
+116     //printf("\n Initalized variables\&.\&.\&. Entering loops\n");
+117 
+118     while(fillMessageBlock(file, &msgBlock, &state, &numBits))
+119     {
+120         for(j=0; j<16; j++)
+121         {   
+122             // Fist check for big or little endian
+123             // If our system is big endian we dont need to do any conversion
+124             if(endianCheck()==true)
+125             {
+126                 W[j] = msgBlock\&.t[j];
+127             }
+128             else
+129             {
+130                 // Add the current message block to our messag schedule
+131                 // Convert to big endian first
+132                 W[j] = byteSwap32(msgBlock\&.t[j]);
+133             }
+134            
+135         }
+136 
+137         for (j=16; j<64; j++)
+138         {
+139             // Step 1
+140             W[j] = sig1(W[j-2]) + W[j-7] + sig0(W[j-15]) + W[j-16];
+141         }
+142 
+143 
+144         // Initalize a\&.\&.h
+145         // Step 2
+146         a=HVals\&.H[0];
+147         b=HVals\&.H[1];
+148         c=HVals\&.H[2];
+149         d=HVals\&.H[3];
+150         e=HVals\&.H[4];
+151         f=HVals\&.H[5];
+152         g=HVals\&.H[6];
+153         h=HVals\&.H[7];
+154 
+155         // For loop
+156         // Step 3
+157         for(j = 0; j < 64; j++)
+158         {
+159             // Creating new variables
+160             T1 = h + SIG1(e) + Ch(e,f,g) + K[j] + W[j];
+161             T2 = SIG0(a) + Maj(a,b,c);
+162             h = g;
+163             g = f;
+164             f = e;
+165             e = d + T1;
+166             d = c;
+167             c = b;
+168             b = a;
+169             a = T1 + T2;
+170         }
+171 
+172         // Step 4
+173         HVals\&.H[0] = a + HVals\&.H[0];
+174         HVals\&.H[1] = b + HVals\&.H[1];
+175         HVals\&.H[2] = c + HVals\&.H[2];
+176         HVals\&.H[3] = d + HVals\&.H[3];
+177         HVals\&.H[4] = e + HVals\&.H[4];
+178         HVals\&.H[5] = f + HVals\&.H[5];
+179         HVals\&.H[6] = g + HVals\&.H[6];
+180         HVals\&.H[7] = h + HVals\&.H[7];
+181     
+182     }// end while
+183     
+184     return HVals;
+185 }
+.fi
+.SS "uint32_t SHA256CPP::Ch (uint32_t x, uint32_t y, uint32_t z)\fC [private]\fP"
+
+.PP
+Choose\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP 
+.br
+\fIy\fP 
+.br
+\fIz\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+uint32_t 
+.RE
+.PP
+
+.PP
+.nf
+437 {
+438     return ((x & y) ^ (~(x)&z));
+439 }
+.fi
 .SS "bool SHA256CPP::endianCheck ()"
 
+.PP
+\fBReturns\fP
+.RS 4
+true 
+.PP
+false 
+.RE
+.PP
+
+.PP
+.nf
+35                             {
+36     int num = 1;
+37 
+38     if(*(char *)&num == 1) {
+39             return false;
+40     } else {
+41             return true;
+42     }
+43 }
+.fi
 .SS "void SHA256CPP::endianCheckPrint ()"
 
+.PP
+.nf
+20                                  {
+21     int num = 1;
+22     if(*(char *)&num == 1) {
+23             printf("\n Your system is Little-Endian!\n");
+24     } else {
+25             printf("Your system is Big-Endian!\n");
+26     }
+27 };
+.fi
+.SS "int SHA256CPP::fillMessageBlock (FILE * file, union \fBmessageBlock\fP * msgBlock, enum \fBstatus\fP * state, uint64_t * numBits)\fC [private]\fP"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIfile\fP 
+.br
+\fImsgBlock\fP 
+.br
+\fIstate\fP 
+.br
+\fInumBits\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+int 
+.RE
+.PP
+
+.PP
+.nf
+196                                                                                                                {
+197     // Variables
+198     uint64_t numBytes;
+199     int i;
+200 
+201     // If we've finished padding and processing all the message blocks, exit
+202     if(*state == FINISH)
+203     {
+204         //printf("\n State = FINISH\&.\n");
+205         return 0;
+206     }
+207 
+208     // Handle our PAD0 and PAD1 states
+209     // Check if we need another block full of padding
+210     if(*state == PAD0 || *state == PAD1)
+211     {
+212         //printf("\n State = PAD0 or PAD1\&.\n");
+213 
+214         // Set the first 56 bytes to all zero bits
+215         for(i=0; i<56; i++)
+216         {
+217             msgBlock->e[i] = 0x00;
+218         }
+219 
+220         // Set the last 64 bits to an integer (should be big endian)
+221         msgBlock->s[7] = byteSwap64(*numBits);
+222 
+223         // Set the state to finish
+224         *state = FINISH;
+225 
+226         // If state is PAD1, set the first bit of msgBlock to 1
+227         if(*state == PAD1)
+228         {
+229             // 0x80 = 10000000
+230             msgBlock->e[0] = 0x80;
+231         }
+232 
+233         // keep the loop in SHA256 going for one more iteration
+234         return 1;
+235     }
+236 
+237     // Read bytes instead of characters
+238     // Read until the end of the file
+239     numBytes = fread(msgBlock->e, 1, 64, file);
+240     
+241     
+242     // Keep track of the number of bytes we've read
+243     *numBits = *numBits + (numBytes * 8);
+244     
+245     // If theres enough room to finish the padding
+246     if(numBytes < 56)
+247     {
+248         // 0x80 = 10000000
+249         // Add the one bit, as per the standard before padding with 0s
+250         msgBlock->e[numBytes] = 0x80;
+251 
+252         // Add 0 bits until the last 64 bits
+253         while(numBytes < 56)
+254         {
+255             // Add the index into our block
+256             numBytes = numBytes +1;
+257             
+258             // Add enough zeroes so that there are 64 bits left at the end
+259             msgBlock->e[numBytes] = 0x00;
+260         }
+261 
+262         // Store the length of the file in bits as a (Should be big endian) unsigned 64 bit int
+263         msgBlock->s[7] = byteSwap64(*numBits);
+264 
+265         // Change the state of our program
+266         *state = FINISH;
+267     }
+268     // Otherwise, check if we can put some padding into this message block
+269     else if(numBytes < 64)
+270     {   
+271         // Set the state to PAD0
+272         *state = PAD0;
+273         
+274         // 0x80 = 10000000
+275         // Add the one bit into the current message block
+276         msgBlock->e[numBytes] = 0x80;
+277 
+278         // Pad the rest of the message block with 0 bits
+279         while(numBytes < 64)
+280         {
+281             numBytes = numBytes + 1;
+282             msgBlock->e[numBytes] = 0x00;
+283         }
+284     }
+285     // Otherwise if we're at the end of the file, need to create a new message block full of padding
+286     else if(feof(file))
+287     {
+288         // Set the state to PAD1
+289         // We need a message Block full of padding
+290         *state = PAD1;
+291     }
+292     
+293     // Print padding
+294     /*
+295     printf("\n--- PADDING --- \n");
+296     for (int i=0; i<64; i++)
+297     {
+298        printf("%x", msgBlock\&.e[i]);
+299     }
+300     printf("\n");
+301     */
+302     return 1;
+303 }
+.fi
+.SS "uint32_t SHA256CPP::Maj (uint32_t x, uint32_t y, uint32_t z)\fC [private]\fP"
+
+.PP
+Majority decision\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP 
+.br
+\fIy\fP 
+.br
+\fIz\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+uint32_t 
+.RE
+.PP
+
+.PP
+.nf
+450 {
+451     return ((x & y) ^ (x & z) ^ (y & z));
+452 }
+.fi
 .SS "void SHA256CPP::printFileContents (FILE * fileForPrinting)"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIfileForPrinting\fP 
+.RE
+.PP
+
+.PP
+.nf
+310                                                        {
+311     // Variables
+312     char fileContents[MAXCHAR];
+313     char fileContentsAsString[MAXCHAR];
+314     long fileSize;
+315 
+316     // First check to make sure the file could be found
+317     if (fileForPrinting == NULL){
+318         printf("\n Could not open file");
+319     }
+320     else
+321     {
+322         // Calculate the size of the file
+323         fileSize = calcFileSize(fileForPrinting);
+324 
+325         printf("\n File Size (characters): %d \n", fileSize);
+326 
+327         printf("\n ============= File Contents ============= \n");
+328 
+329         // While there is still stuff to read from the file
+330         while(fgets(fileContents, MAXCHAR, fileForPrinting) != NULL)
+331         {
+332             // Print the contents of the file
+333             printf(" %s\n", fileContents);
+334         };
+335         
+336         printf("\n ========================================= \n");
+337 
+338         fclose(fileForPrinting);
+339 
+340         // Close the file 
+341         return;
+342     }
+343 }
+.fi
+.SS "uint32_t SHA256CPP::rotr (uint32_t x, uint16_t a)\fC [private]\fP"
+
+.PP
+Rotate bits right\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP 
+.br
+\fIa\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+uint32_t 
+.RE
+.PP
+
+.PP
+.nf
+390 {
+391     return (x >> a) | (x << (32 - a));
+392 }
+.fi
+.SS "uint32_t SHA256CPP::shr (uint32_t x, uint16_t b)\fC [private]\fP"
+
+.PP
+Shift bits right\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP 
+.br
+\fIb\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+uint32_t 
+.RE
+.PP
+
+.PP
+.nf
+402 {
+403     return (x >> b);
+404 }
+.fi
+.SS "uint32_t SHA256CPP::sig0 (uint32_t x)\fC [private]\fP"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+uint32_t 
+.RE
+.PP
+
+.PP
+.nf
+366 {
+367     // Section 3\&.2
+368     return (rotr(x, 7) ^ rotr(x, 18) ^ shr(x, 3));
+369 }
+.fi
+.SS "uint32_t SHA256CPP::SIG0 (uint32_t x)\fC [private]\fP"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+uint32_t 
+.RE
+.PP
+
+.PP
+.nf
+413 {
+414     return (rotr(x, 2) ^ rotr(x, 13) ^ rotr(x, 22));
+415 }
+.fi
+.SS "uint32_t SHA256CPP::sig1 (uint32_t x)\fC [private]\fP"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+uint32_t 
+.RE
+.PP
+
+.PP
+.nf
+378 {
+379     return (rotr(x, 17) ^ rotr(x, 19) ^ shr(x, 10));
+380 }
+.fi
+.SS "uint32_t SHA256CPP::SIG1 (uint32_t x)\fC [private]\fP"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+uint32_t 
+.RE
+.PP
+
+.PP
+.nf
+424 {
+425     return (rotr(x, 6) ^ rotr(x, 11) ^ rotr(x, 25));
+426 }
+.fi
 
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for fileintegritychecker from the source code\&.
+Generated automatically by Doxygen for File Integrity Checker from the source code\&.

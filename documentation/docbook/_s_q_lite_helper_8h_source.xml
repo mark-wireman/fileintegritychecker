@@ -2,65 +2,66 @@
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_q_lite_helper_8h_source" xml:lang="en-US">
 <title>SQLiteHelper.h</title>
 <indexterm><primary>C:/Users/mark_/source/repos/fileintegritychecker/headers/SQLiteHelper.h</primary></indexterm>
-Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;HEADERS_SQLITEHELPER_H_</emphasis>
-2 <emphasis role="preprocessor">#define&#32;HEADERS_SQLITEHELPER_H_</emphasis>
-3 
-4 <emphasis role="preprocessor">#define&#32;__STDC_WANT_LIB_EXT1__&#32;1</emphasis>
-5 
-6 <emphasis role="preprocessor">#include&#32;&lt;stdio.h&gt;</emphasis>
-7 <emphasis role="preprocessor">#include&#32;&lt;stdlib.h&gt;</emphasis>
-8 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
-9 <emphasis role="preprocessor">#include&#32;&lt;cstdint&gt;</emphasis>
-10 <emphasis role="preprocessor">#include&#32;&lt;fstream&gt;</emphasis>
-11 <emphasis role="preprocessor">#include&#32;&lt;cstring&gt;</emphasis>
-12 <emphasis role="preprocessor">#include&#32;&lt;sqlite3.h&gt;</emphasis>
-13 
-17 <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_s_q_lite_helper">SQLiteHelper</link>&#32;{
-18 <emphasis role="keyword">public</emphasis>:
-22 &#32;&#32;&#32;&#32;<emphasis role="keyword">enum</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link>&#32;{&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f">HashedVal</link>&#32;=&#32;1,&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02">FileSize</link>&#32;=&#32;2,&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7">DateModified</link>&#32;=&#32;3,&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad">NONE</link>&#32;=&#32;4};
-23 &#32;&#32;&#32;&#32;
-27 &#32;&#32;&#32;&#32;<emphasis role="keyword">enum</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link>&#32;{<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809">Files</link>&#32;=&#32;1,&#32;<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17">Changes</link>&#32;=&#32;2};
-28 &#32;&#32;&#32;&#32;
-37 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1ab5c6b4d91ba851773d08383743cbe503">checkIfAttributeIsInChanges</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link>&#32;attribute,&#32;sqlite3&#32;*db);
-38 &#32;&#32;&#32;&#32;
-55 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a277ba3424168330b7f5b354e477f5de2">checkIfAttributeHasChanged</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link>&#32;attribute,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link>&#32;table,&#32;sqlite3*&#32;db,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;char_attr&#32;=&#32;NULL,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;int_attr&#32;=&#32;0);
-56 
-61 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_s_q_lite_helper_1adbeb0bc39c03a429690faf485a17c2d1">getCurrentTime</link>();
-62 
-67 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a174400575d3038248769856efc9546a8">setDirectoryName</link>(<emphasis role="keywordtype">char</emphasis>*&#32;dir_name);
-68 &#32;&#32;&#32;&#32;
-73 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a0815f283b738dea61f78f0e0dab958ea">setFileName</link>(<emphasis role="keywordtype">char</emphasis>*&#32;file_name);
-74 &#32;&#32;&#32;&#32;
-79 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a8fc3a476fa41e7601138ed1a87431ab9">setMachineName</link>(<emphasis role="keywordtype">char</emphasis>*&#32;machine_name);
-80 
-87 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1adcab3649b5f610ddab96736dc409d653">getDirectoryId</link>(sqlite3*&#32;db);
-88 &#32;&#32;&#32;&#32;
-96 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a42d042748147b7ebe97214069c62ace6">getDirectoryId</link>(sqlite3*&#32;db,&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dir_name,&#32;<emphasis role="keywordtype">char</emphasis>*&#32;machine_name);
-97 &#32;&#32;&#32;&#32;
-103 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a4e69ffbd22c6d9c2df1decfd484e5a83">getFileId</link>(sqlite3*&#32;db);
-104 &#32;&#32;&#32;&#32;
-112 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1abb6a58d490dda33874679f9b6f7a2025">getFileId</link>(sqlite3*&#32;db,&#32;<emphasis role="keywordtype">char</emphasis>*&#32;file_name,&#32;<emphasis role="keywordtype">int</emphasis>&#32;dir_id);
-113 
-129 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1ac43f81918e037ab5b07f773794d8f9af">saveFileInfo</link>(sqlite3*&#32;db,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;dir_id,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;file_name,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_size&#32;=&#32;0,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;date_modified&#32;=&#32;NULL,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;hashed_val&#32;=&#32;NULL,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;isNew&#32;=&#32;<emphasis role="keyword">true</emphasis>,&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link>&#32;attr_to_update&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad">AttributeToCheck::NONE</link>);
-130 &#32;&#32;&#32;&#32;
-131 <emphasis role="keyword">private</emphasis>:
-140 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a0f4192b37fcaff2ba209154127ade345">didHashedValueChange</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;hashed_val,&#32;<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link>&#32;table,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;sqlite3*&#32;db);
-141 &#32;&#32;&#32;&#32;
-150 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1ae87be06de4087dcf735e5b12c4eaee9a">didFileSizeChange</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_size,&#32;<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link>&#32;table,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;sqlite3*&#32;db);
-151 &#32;&#32;&#32;&#32;
-160 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1aac258e856d9f8c033d33bbd4fc8919cd">didDateModifiedChange</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;date_modified,&#32;<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link>&#32;table,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;sqlite3*&#32;db);
-161 &#32;&#32;&#32;&#32;
-167 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a416b734c88d6e65e3a358953aea9468a">saveNewFileInfo</link>(sqlite3*&#32;db);
-168 &#32;&#32;&#32;&#32;
-177 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a84b6c0493c0f59b4311ec393464b01ec">saveExistingFileInfo</link>(sqlite3*&#32;db,&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link>&#32;attr_to_update,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;text_val&#32;=&#32;NULL,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;int_val&#32;=&#32;0);
-178 &#32;&#32;&#32;&#32;
-187 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a95096df7d3e7fb019d18f2a62a10d646">insertTextValueToChanges</link>(sqlite3*&#32;db,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;text_val,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;attr_changed);
-188 &#32;&#32;&#32;&#32;
-197 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a9f5d43ac23996620ac57f3be87fd17cd">insertIntValueToChanges</link>(sqlite3*&#32;db,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;int_val,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;attr_changed);
-198 &#32;&#32;&#32;&#32;
-206 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a4eb63efa7ac69125fd954d5efb23c2c6">updateChangedInFile</link>(sqlite3*&#32;db,&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link>&#32;attr_to_change);
-207 
-208 };
-209 
-210 <emphasis role="preprocessor">#endif</emphasis>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 
+5 <emphasis role="preprocessor">#ifndef&#32;HEADERS_SQLITEHELPER_H_</emphasis>
+6 <emphasis role="preprocessor">#define&#32;HEADERS_SQLITEHELPER_H_</emphasis>
+7 
+8 <emphasis role="preprocessor">#define&#32;__STDC_WANT_LIB_EXT1__&#32;1</emphasis>
+9 
+10 <emphasis role="preprocessor">#include&#32;&lt;stdio.h&gt;</emphasis>
+11 <emphasis role="preprocessor">#include&#32;&lt;stdlib.h&gt;</emphasis>
+12 <emphasis role="preprocessor">#include&#32;&lt;iostream&gt;</emphasis>
+13 <emphasis role="preprocessor">#include&#32;&lt;cstdint&gt;</emphasis>
+14 <emphasis role="preprocessor">#include&#32;&lt;fstream&gt;</emphasis>
+15 <emphasis role="preprocessor">#include&#32;&lt;cstring&gt;</emphasis>
+16 <emphasis role="preprocessor">#include&#32;&lt;sqlite3.h&gt;</emphasis>
+17 
+21 <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_s_q_lite_helper">SQLiteHelper</link>&#32;{
+22 <emphasis role="keyword">public</emphasis>:
+26 &#32;&#32;&#32;&#32;<emphasis role="keyword">enum</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link>&#32;{&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f">HashedVal</link>&#32;=&#32;1,&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02">FileSize</link>&#32;=&#32;2,&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7">DateModified</link>&#32;=&#32;3,&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad">NONE</link>&#32;=&#32;4};
+27 &#32;&#32;&#32;&#32;
+31 &#32;&#32;&#32;&#32;<emphasis role="keyword">enum</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link>&#32;{<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809">Files</link>&#32;=&#32;1,&#32;<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17">Changes</link>&#32;=&#32;2};
+32 &#32;&#32;&#32;&#32;
+41 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a6329b4efc28fd0442a6cc25246cc4fb5">checkIfAttributeIsInChanges</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link>&#32;attribute,&#32;sqlite3&#32;*<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+42 &#32;&#32;&#32;&#32;
+59 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a373f87d1a12fb0d1014b4e01a7288521">checkIfAttributeHasChanged</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link>&#32;attribute,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link>&#32;table,&#32;sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;char_attr&#32;=&#32;NULL,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;int_attr&#32;=&#32;0);
+60 
+65 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_s_q_lite_helper_1a33630720f2df387b6c543d33473138e4">getCurrentTime</link>();
+66 
+71 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a190dc1ee6382b8d506cbd1ee6ee59e37">setDirectoryName</link>(<emphasis role="keywordtype">char</emphasis>*&#32;dir_name);
+72 &#32;&#32;&#32;&#32;
+77 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1afee8872bcc8c1b58c274374331ccc3aa">setFileName</link>(<emphasis role="keywordtype">char</emphasis>*&#32;file_name);
+78 &#32;&#32;&#32;&#32;
+83 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1ab269da2fbf803659b63e7161dfbf0a18">setMachineName</link>(<emphasis role="keywordtype">char</emphasis>*&#32;machine_name);
+84 
+91 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1afdfb80facf1c802161aa1627d286f322">getDirectoryId</link>(sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+92 &#32;&#32;&#32;&#32;
+100 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1afdfb80facf1c802161aa1627d286f322">getDirectoryId</link>(sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<emphasis role="keywordtype">char</emphasis>*&#32;dir_name,&#32;<emphasis role="keywordtype">char</emphasis>*&#32;machine_name);
+101 &#32;&#32;&#32;&#32;
+107 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a59fc305207ad616bafef83b54b102153">getFileId</link>(sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+108 &#32;&#32;&#32;&#32;
+117 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a59fc305207ad616bafef83b54b102153">getFileId</link>(sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<emphasis role="keywordtype">char</emphasis>*&#32;file_name,&#32;<emphasis role="keywordtype">int</emphasis>&#32;dir_id);
+118 
+135 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a10508781dbcc903c632e83c1527da36f">saveFileInfo</link>(sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;dir_id,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;file_name,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_size&#32;=&#32;0,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;date_modified&#32;=&#32;NULL,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;hashed_val&#32;=&#32;NULL,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;isNew&#32;=&#32;<emphasis role="keyword">true</emphasis>,&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link>&#32;attr_to_update&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad">AttributeToCheck::NONE</link>);
+136 &#32;&#32;&#32;&#32;
+137 <emphasis role="keyword">private</emphasis>:
+146 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1aa733abbf8352e42fbcda544c13b5e4f1">didHashedValueChange</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;hashed_val,&#32;<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link>&#32;table,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+147 &#32;&#32;&#32;&#32;
+156 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1ab551977b252cab42efd1f3b06676d7b1">didFileSizeChange</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_size,&#32;<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link>&#32;table,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+157 &#32;&#32;&#32;&#32;
+166 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1ad0fbfec9fab919ce001e2ca3a2f3d2d3">didDateModifiedChange</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;date_modified,&#32;<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link>&#32;table,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+167 &#32;&#32;&#32;&#32;
+173 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a843ad9e365ed3bc8d6d8baf38600fdc0">saveNewFileInfo</link>(sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+174 &#32;&#32;&#32;&#32;
+183 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1af16a7fbd53573503bfa21c97eea53efb">saveExistingFileInfo</link>(sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link>&#32;attr_to_update,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;text_val&#32;=&#32;NULL,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;int_val&#32;=&#32;0);
+184 &#32;&#32;&#32;&#32;
+193 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a65965633aef3f5a34884740c497a61dc">insertTextValueToChanges</link>(sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;text_val,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;attr_changed);
+194 &#32;&#32;&#32;&#32;
+203 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a53e8c824b040560b8bb1393a853f265a">insertIntValueToChanges</link>(sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;int_val,&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>*&#32;attr_changed);
+204 &#32;&#32;&#32;&#32;
+212 &#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_s_q_lite_helper_1a7f4941d87b3ea71d1691f62b0113999a">updateChangedInFile</link>(sqlite3*&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;file_id,&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link>&#32;attr_to_change);
+213 
+214 };
+215 
+216 <emphasis role="preprocessor">#endif</emphasis>
 </programlisting></section>

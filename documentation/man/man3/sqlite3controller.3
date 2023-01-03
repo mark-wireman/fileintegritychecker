@@ -1,4 +1,4 @@
-.TH "sqlite3controller" 3 "Sat Dec 10 2022" "fileintegritychecker" \" -*- nroff -*-
+.TH "sqlite3controller" 3 "Sun Jan 1 2023" "Version 1.0" "File Integrity Checker" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,115 +15,570 @@ sqlite3controller \- Sqlite3 Controller class\&.
 .ti -1c
 .RI "\fBsqlite3controller\fP ()"
 .br
+.RI "Construct a new \fBsqlite3controller::sqlite3controller\fP object\&. "
 .ti -1c
-.RI "\fBsqlite3controller\fP (char *databasename, char *machinename)"
+.RI "\fBsqlite3controller\fP (char *databasename, char *\fBmachinename\fP)"
 .br
+.RI "Construct a new \fBsqlite3controller::sqlite3controller\fP object\&. The constructor is initialized with the name of the SQLite database and the name of the machine the FileIntegrityChecker application is running on\&. "
 .ti -1c
 .RI "virtual \fB~sqlite3controller\fP ()"
 .br
+.RI "Destroy the \fBsqlite3controller::sqlite3controller\fP object\&. "
 .ti -1c
 .RI "void \fBinitdb\fP ()"
 .br
+.RI "Initializes the SQLite database with the supplied databasename\&. The function will determine if the SQLite database already exists\&. If it does exist then the database is opened\&. If it does not exist, the database will be created and then a call to createTables is made to create the tables required to store the data\&. "
 .ti -1c
 .RI "void \fBclosedb\fP ()"
 .br
+.RI "Close the database after use\&. "
 .ti -1c
-.RI "void \fBsetDATABASENAME\fP (char *dbasename)"
+.RI "void \fBsetDATABASENAME\fP (char *\fBdbasename\fP)"
 .br
+.RI "Sets the name of the SQLite database\&. "
 .ti -1c
-.RI "void \fBsetMACHINENAME\fP (char *machinename)"
+.RI "void \fBsetMACHINENAME\fP (char *\fBmachinename\fP)"
 .br
+.RI "Sets the machine name where the FileIntegrityApplication is running on\&. "
 .ti -1c
 .RI "char * \fBgetDATABASENAME\fP ()"
 .br
-.ti -1c
-.RI "char * \fBgetMACHINENAME\fP ()"
-.br
+.RI "Returns the name of the SQLite database\&. "
 .ti -1c
 .RI "void \fBcreateTables\fP ()"
 .br
-.ti -1c
-.RI "int \fBsave_file_info\fP (const char *fname, const char *dirname, char *lastmodified, uintmax_t filesize, const char *hashval)"
+.RI "This is called when a new SQLite database is created\&. The following tables are created:
 .br
+\&. "
+.ti -1c
+.RI "int \fBsave_file_info\fP (const char *fname, const char *dirname, char *lastmodified, uintmax_t filesize, const char *hashval=NULL)"
+.br
+.RI "Save the details of the file\&. "
 .ti -1c
 .RI "int \fBsave_dir_info\fP (const char *dirname)"
 .br
+.RI "Save the details of the directory\&. "
 .in -1c
 .SS "Protected Member Functions"
 
 .in +1c
 .ti -1c
-.RI "char * \fBgetPreviousHashval\fP (const int fileId)"
-.br
-.ti -1c
 .RI "int \fBcheckIfDirectoryExist\fP (const char *dirname)"
 .br
-.ti -1c
-.RI "int \fBcheckIfHashvalExist\fP (const int fileId, const char *hval)"
-.br
+.RI "Checks if the directory exists in the database\&. "
 .ti -1c
 .RI "int \fBcheckIfFileExist\fP (const char *fname, const char *dirname)"
 .br
-.ti -1c
-.RI "void \fBfileUpdateSameHashVal\fP (int fileId)"
-.br
-.ti -1c
-.RI "void \fBfileUpdateNewHashVal\fP (int fileId, const char *prevhashval, const char *newhashval)"
-.br
-.ti -1c
-.RI "void \fBfileAddNew\fP (const char *fname, int dirId, const char *hashval, uintmax_t fsize, char *date_modified)"
-.br
+.RI "Checks if the file exists in the database\&. "
 .in -1c
 .SH "Detailed Description"
 .PP 
 Sqlite3 Controller class\&. 
 
-The class that handles the SQL functions for creating, updating, and adding files and directories to a Sqlite3 database\&. 
-.PP
-Definition at line \fB27\fP of file \fBsqlite3controller\&.h\fP\&.
+The class that handles the SQL functions for creating, updating, and adding files and directories attributes to a Sqlite3 database\&. 
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "sqlite3controller::sqlite3controller ()"
 
+.PP
+Construct a new \fBsqlite3controller::sqlite3controller\fP object\&. 
+.PP
+.nf
+10 {}
+.fi
 .SS "sqlite3controller::sqlite3controller (char * databasename, char * machinename)"
 
-.SS "virtual sqlite3controller::~sqlite3controller ()\fC [virtual]\fP"
+.PP
+Construct a new \fBsqlite3controller::sqlite3controller\fP object\&. The constructor is initialized with the name of the SQLite database and the name of the machine the FileIntegrityChecker application is running on\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdatabasename\fP 
+.br
+\fImachinename\fP 
+.RE
+.PP
 
+.PP
+.nf
+12                                                                           {
+13     sqlite3_mname = machinename;
+14     sqlite3_dbasename = databasename;
+15 }
+.fi
+.SS "sqlite3controller::~sqlite3controller ()\fC [virtual]\fP"
+
+.PP
+Destroy the \fBsqlite3controller::sqlite3controller\fP object\&. 
+.PP
+.nf
+18 {}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "int sqlite3controller::checkIfDirectoryExist (const char * dirname)\fC [protected]\fP"
 
+.PP
+Checks if the directory exists in the database\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdirname\fP Relative name of the directory 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+1 for yes, 0 for no
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIdirname\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+int 
+.RE
+.PP
+
+.PP
+.nf
+128                                                                 {
+129     char *zErrMsg = 0;
+130     int rc;
+131     char *sql = "SELECT id FROM directories WHERE dirname = ? AND machinename = ?; ";
+132     sqlite3_stmt * pStmt;
+133     int retVal = 0;
+134 
+135     rc = sqlite3_prepare_v3(db, sql, -1, 0, &pStmt, NULL);
+136     
+137     if (rc == SQLITE_OK) {        
+138         sqlite3_bind_text(pStmt, 1, dirname, -1, NULL);
+139         sqlite3_bind_text(pStmt, 2, sqlite3_mname, -1, NULL);
+140     } else {
+141         
+142         fprintf(stderr, "Failed to execute statement: %s\n", sqlite3_errmsg(db));
+143         return -1;
+144     }
+145 
+146     while(sqlite3_step(pStmt) == SQLITE_ROW)
+147     {
+148         retVal = sqlite3_column_int(pStmt,0);
+149     }
+150 
+151     sqlite3_finalize(pStmt);
+152 
+153     return retVal;
+154 
+155 }
+.fi
 .SS "int sqlite3controller::checkIfFileExist (const char * fname, const char * dirname)\fC [protected]\fP"
 
-.SS "int sqlite3controller::checkIfHashvalExist (const int fileId, const char * hval)\fC [protected]\fP"
+.PP
+Checks if the file exists in the database\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfname\fP Absolute name of the file name\&. 
+.br
+\fIdirname\fP Relative name of the directory\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+1 for yes, 0 for no
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIfname\fP 
+.br
+\fIdirname\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+int 
+.RE
+.PP
 
+.PP
+.nf
+165                                                                               {
+166     char *zErrMsg = 0;
+167     int rc;
+168     char *sql = "SELECT id FROM files WHERE dirid = ? AND filename = ?; ";
+169     sqlite3_stmt * pStmt;
+170     int retVal = 0;
+171 
+172     int dirId = checkIfDirectoryExist(dirname);
+173 
+174     rc = sqlite3_prepare_v3(db, sql, -1, 0, &pStmt, NULL);
+175     
+176     if (rc == SQLITE_OK) {        
+177         sqlite3_bind_int(pStmt, 1, dirId);
+178         sqlite3_bind_text(pStmt, 2, fname, -1, NULL);
+179         sqlite3_bind_text(pStmt, 3, sqlite3_mname, -1, NULL);
+180     } else {
+181         
+182         fprintf(stderr, "Failed to execute statement: %s\n", sqlite3_errmsg(db));
+183         return -1;
+184     }
+185 
+186     rc = sqlite3_step(pStmt);
+187     
+188     while(sqlite3_step(pStmt) == SQLITE_ROW)
+189     {
+190         retVal = sqlite3_column_int(pStmt,0);
+191     }
+192         
+193     sqlite3_finalize(pStmt);
+194 
+195     return retVal;
+196 
+197 }
+.fi
 .SS "void sqlite3controller::closedb ()"
 
+.PP
+Close the database after use\&. 
+.PP
+.nf
+53                                 {
+54     sqlite3_close_v2(db);
+55 }
+.fi
 .SS "void sqlite3controller::createTables ()"
 
-.SS "void sqlite3controller::fileAddNew (const char * fname, int dirId, const char * hashval, uintmax_t fsize, char * date_modified)\fC [protected]\fP"
-
-.SS "void sqlite3controller::fileUpdateNewHashVal (int fileId, const char * prevhashval, const char * newhashval)\fC [protected]\fP"
-
-.SS "void sqlite3controller::fileUpdateSameHashVal (int fileId)\fC [protected]\fP"
-
+.PP
+This is called when a new SQLite database is created\&. The following tables are created:
+.br
+\&. \fBdirectories Table - used to store the details of the directories found during the scan\&.\fP Field nameDescription idthe auto generated id for the directory entry dirnamerelative path and name of the directory dateaddedthe date the directory was added to the table statusEither NEW or VERIFIED\&. A NEW status is set when a directory is seen by the scanner the first time\&. VERIFIED if the scanner verifies the directory was seen again\&. dataverifiedThis is the date the VERIFIED directory was verified by the scanner\&. machinenamename of the machine where the scanner is running\&.
+.br
+ \fBfiles Table - used to store the details of the files found during the scan\&.\fP Field nameDescription idthe auto generated id for the file entry diridThe ID of the Directory where the file is located\&. dateaddedthe date the file was added to the table filenameThe absolute name of the file\&. The relative path can be pulled together using the directory reference via the dirid\&. hashedvalueThe hashed value of the file if the hashed value flag is set to true\&. The default value is NOVAL\&. hashedvaluechangedA flag to indicate the hashed value changed and all changes are added to the changes table\&. lastmodifiedThe date the file was last modified\&. hashedvaluechangedA flag to indicate the last modified changed and all changes are added to the changes table\&. filesizeThe file size of the file in bytes\&. filesizechangedA flag to indicate the file size changed and all changes are added to the changes table\&.\fBchanges Table - used to store the changed attributes for files\&.\fP Field nameDescription idthe auto generated id for the change entry fileidThe ID of the file that has changed\&. datechangedthe date the change was added to the table textvalueThe text value that has changed\&. The default value is NULL\&. intvalueThe integer value that has changed\&. The default value is -1\&. attributechangedThe file attribute that changed\&.
+.PP
+.nf
+58                                      {
+59     int rc;
+60     char *dirtable_sql;
+61     char *filetable_sql;
+62     char *changestable_sql;
+63     char *zErrMsg = 0;
+64 
+65     dirtable_sql = "CREATE TABLE IF NOT EXISTS directories("  \
+66       "id INTEGER PRIMARY KEY AUTOINCREMENT," \
+67       "dirname           TEXT," \
+68       "dateadded         TEXT," \
+69       "status        CHAR(50) DEFAULT 'NEW'," \
+70       "dateverified      TEXT," \ 
+71       "machinename       TEXT);";
+72 
+73     filetable_sql = "CREATE TABLE IF NOT EXISTS files("  \
+74       "id INTEGER PRIMARY KEY AUTOINCREMENT," \
+75       "dirid           int DEFAULT 0," \
+76       "dateadded         TEXT," \
+77       "filename      TEXT," \
+78       "hashedvalue      TEXT DEFAULT 'NOVAL'," \
+79       "hashedvaluechanged      int DEFAULT 0," \
+80       "lastmodified      TEXT," \
+81       "lastmodifiedchanged      int DEFAULT 0," \
+82       "filesize    int," \
+83       "filesizechanged int DEFAULT 0); ";
+84 
+85     changestable_sql = "CREATE TABLE IF NOT EXISTS changes(" \
+86       "id INTEGER PRIMARY KEY AUTOINCREMENT," \
+87       "fileid int DEFAULT 0," \
+88       "datechanged TEXT DEFAULT NULL," \
+89       "attributechanged TEXT DEFAULT NULL," \
+90       "textvalue TEXT DEFAULT NULL," \
+91       "intvalue INT DEFAULT -1);";
+92 
+93     /* Execute SQL statement */
+94     rc = sqlite3_exec(db, dirtable_sql, NULL, 0, &zErrMsg);
+95    
+96     if( rc != SQLITE_OK ){
+97         fprintf(stderr, "SQL error: %s\n", zErrMsg);
+98         sqlite3_free(zErrMsg);
+99     } else {
+100         fprintf(stdout, "Table created successfully\n");
+101     }
+102 
+103     rc = sqlite3_exec(db, filetable_sql, NULL, 0, &zErrMsg);
+104     
+105     if( rc != SQLITE_OK ){
+106         fprintf(stderr, "SQL error: %s\n", zErrMsg);
+107         sqlite3_free(zErrMsg);
+108     } else {
+109         fprintf(stdout, "Table created successfully\n");
+110     }
+111 
+112     rc = sqlite3_exec(db, changestable_sql, NULL, 0, &zErrMsg);
+113     
+114     if( rc != SQLITE_OK ){
+115         fprintf(stderr, "SQL error: %s\n", zErrMsg);
+116         sqlite3_free(zErrMsg);
+117     } else {
+118         fprintf(stdout, "Table created successfully\n");
+119     }
+120 }
+.fi
 .SS "char * sqlite3controller::getDATABASENAME ()"
 
-.SS "char * sqlite3controller::getMACHINENAME ()"
+.PP
+Returns the name of the SQLite database\&. 
+.PP
+\fBReturns\fP
+.RS 4
+char* 
+.RE
+.PP
 
-.SS "char * sqlite3controller::getPreviousHashval (const int fileId)\fC [protected]\fP"
-
+.PP
+.nf
+31                                          {
+32     return sqlite3_dbasename;
+33 }
+.fi
 .SS "void sqlite3controller::initdb ()"
 
+.PP
+Initializes the SQLite database with the supplied databasename\&. The function will determine if the SQLite database already exists\&. If it does exist then the database is opened\&. If it does not exist, the database will be created and then a call to createTables is made to create the tables required to store the data\&. 
+.PP
+\fBSee also\fP
+.RS 4
+\fBcreateTables()\fP 
+.RE
+.PP
+
+.PP
+.nf
+37                                {
+38     char *zErrMsg = 0;
+39     int rc;
+40    
+41     /* Open database */
+42     rc = sqlite3_open_v2(sqlite3_dbasename, &db, SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE, NULL);
+43    
+44     if( rc ) {
+45         fprintf(stderr, "\nIn initdb can't open database: %s\n", sqlite3_errmsg(db));
+46     } else {
+47         fprintf(stderr, "\nOpened database successfully\n");
+48         createTables();
+49     }
+50 
+51 }
+.fi
 .SS "int sqlite3controller::save_dir_info (const char * dirname)"
 
-.SS "int sqlite3controller::save_file_info (const char * fname, const char * dirname, char * lastmodified, uintmax_t filesize, const char * hashval)"
+.PP
+Save the details of the directory\&. This is the main entry point to saving the directory details\&. A call is made to checkIfDirectory exists to determine if the directory was previously discovered\&. If the directory exists, then the directory is marked as VERIFIED\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdirname\fP Relative path with the directory name\&. Example: /foo/bar/parent 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A 0 is returned if saved successfully\&. A -1 indicates an error occurred and unable to save the directory information\&. 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBcheckIfDirectoryExist()\fP
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIdirname\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+int 
+.RE
+.PP
 
+.PP
+.nf
+244                                                         {
+245     char *zErrMsg = 0;
+246     int rc;
+247     char *diradd_sql;
+248     sqlite3_stmt *pStmt;
+249     
+250     int dirExists = checkIfDirectoryExist(dirname);
+251 
+252     if(dirExists > 1) {
+253         diradd_sql = "UPDATE directories set dateverified=?, status='VERIFIED' WHERE id=?; ";
+254     } else if(dirExists == 0) {
+255         diradd_sql = "INSERT INTO directories (dirname,dateadded,machinename) VALUES (?,?,? ); ";
+256     } else {
+257         return -1;
+258     }
+259 
+260     rc = sqlite3_prepare_v3(db, diradd_sql, -1, 0, &pStmt, NULL);
+261     
+262     if (rc == SQLITE_OK) {
+263         if(dirExists > 1) {
+264             sqlite3_bind_text(pStmt, 1, SQLiteHelper::getCurrentTime(), -1, NULL);
+265             sqlite3_bind_int(pStmt, 2, dirExists);
+266         } else {
+267             sqlite3_bind_text(pStmt, 1, dirname, -1, NULL);
+268             sqlite3_bind_text(pStmt, 2, SQLiteHelper::getCurrentTime(), -1, NULL);
+269             sqlite3_bind_text(pStmt, 3, sqlite3_mname, -1, NULL);
+270         }
+271     } else {
+272         
+273         fprintf(stderr, "Failed to execute statement: %s\n", sqlite3_errmsg(db));
+274         return -1;
+275     }
+276 
+277     rc = sqlite3_step(pStmt);
+278     
+279     if (rc == SQLITE_BUSY) {
+280         cout << "\nDatabase is busy" << endl;
+281         while (rc == SQLITE_BUSY)
+282         {
+283             rc = sqlite3_step(pStmt);
+284         }
+285     }
+286     else if (rc == SQLITE_ERROR) {
+287         printf("\nIn save_dir_info execution failed: %s\n", sqlite3_errmsg(db));
+288     }
+289     else if (rc == SQLITE_MISUSE) {
+290         cout << "\nA MISUSE has been deteced in save_dir_info\&." << endl;
+291     }
+292     else if (rc == SQLITE_DONE) {
+293         cout << "\nsqlite3_step executed successfully\&." << endl;
+294     }
+295     else {
+296         cout << "\nNot sure what happened\&." << endl;
+297     }
+298         
+299     sqlite3_finalize(pStmt);
+300 
+301     return 0;  
+302 
+303 }
+.fi
+.SS "int sqlite3controller::save_file_info (const char * fname, const char * dirname, char * lastmodified, uintmax_t filesize, const char * hashval = \fCNULL\fP)"
+
+.PP
+Save the details of the file\&. This is the main entry point to saving the file details\&. If the file is new then all of the required attributes are sent to \fBSQLiteHelper::saveFileInfo\fP\&. If the file exists, then the provided attributes are sent to \fBSQLiteHelper::saveFileInfo\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfname\fP Absolute file name\&. foo\&.bar 
+.br
+\fIdirname\fP Relative path with the directory name\&. Example: /foo/bar/parent 
+.br
+\fIlastmodified\fP The last modified date of the file\&. 
+.br
+\fIfilesize\fP The size of the file in bytes\&. 
+.br
+\fIhashval\fP The hashed value of the file\&. The default value is NULL\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A 0 is returned if saved successfully\&. A -1 indicates an error occurred and unable to save the file information\&. 
+.RE
+.PP
+\fBSee also\fP
+.RS 4
+\fBcheckIfDirectoryExist()\fP 
+.PP
+\fBSQLiteHelper::getFileId()\fP 
+.PP
+\fBSQLiteHelper::saveFileInfo()\fP
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIfname\fP 
+.br
+\fIdirname\fP 
+.br
+\fIlastmodified\fP 
+.br
+\fIfilesize\fP 
+.br
+\fIhashval\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+int 
+.RE
+.PP
+
+.PP
+.nf
+211                                                                                                                                          {
+212     
+213 
+214     int dir_id = checkIfDirectoryExist(dirname);
+215     int fileExists = SQLiteHelper::getFileId(db, (char*)fname, dir_id);
+216 
+217     if(fileExists > 0) {
+218         if (lastmodified != NULL) {
+219             SQLiteHelper::saveFileInfo(db, dir_id, fname, filesize,lastmodified, NULL, false, SQLiteHelper::AttributeToCheck::DateModified);
+220         }
+221         if (hashval != NULL) {
+222             //fprintf(stderr, "\nReceived hashedvalue of %s\n", hashval);
+223             SQLiteHelper::saveFileInfo(db, dir_id, fname, filesize, NULL, hashval, false, SQLiteHelper::AttributeToCheck::HashedVal);
+224         }
+225         if (filesize > 0) {
+226             SQLiteHelper::saveFileInfo(db, dir_id, fname, filesize, lastmodified, NULL, false, SQLiteHelper::AttributeToCheck::FileSize);
+227         }
+228     } else if(fileExists == 0) {
+229         SQLiteHelper::saveFileInfo(db, dir_id, fname, filesize, lastmodified, hashval, true);
+230     } else {
+231         return -1;
+232     }
+233 
+234     return 0;
+235 
+236 }
+.fi
 .SS "void sqlite3controller::setDATABASENAME (char * dbasename)"
 
+.PP
+Sets the name of the SQLite database\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdbasename\fP 
+.RE
+.PP
+
+.PP
+.nf
+21                                                           {
+22     sqlite3_dbasename = databasename;
+23 }
+.fi
 .SS "void sqlite3controller::setMACHINENAME (char * machinename)"
+
+.PP
+Sets the machine name where the FileIntegrityApplication is running on\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImachinename\fP 
+.RE
+.PP
+
+.PP
+.nf
+26                                                         {
+27     sqlite3_mname = machinename;
+28 }
+.fi
 
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for fileintegritychecker from the source code\&.
+Generated automatically by Doxygen for File Integrity Checker from the source code\&.

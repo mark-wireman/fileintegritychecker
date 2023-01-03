@@ -41,64 +41,70 @@ Collaboration diagram for SQLiteHelper:<para>
 <simplesect>
     <title>Static Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1ab5c6b4d91ba851773d08383743cbe503">checkIfAttributeIsInChanges</link> (const int file_id, const <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attribute, sqlite3 *db)</para>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a6329b4efc28fd0442a6cc25246cc4fb5">checkIfAttributeIsInChanges</link> (const int file_id, const <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attribute, sqlite3 *<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>)</para>
 
 <para>Determines if the provided attribute is in the changes table. </para>
 </listitem>
-            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a277ba3424168330b7f5b354e477f5de2">checkIfAttributeHasChanged</link> (const int file_id, const <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attribute, const <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, sqlite3 *db, const char *char_attr=NULL, const int int_attr=0)</para>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a373f87d1a12fb0d1014b4e01a7288521">checkIfAttributeHasChanged</link> (const int file_id, const <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attribute, const <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, sqlite3 *<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>, const char *char_attr=NULL, const int int_attr=0)</para>
 
 <para>Determines if the provided attribute has changed its value. </para>
 </listitem>
-            <listitem><para>static char * <link linkend="_class_s_q_lite_helper_1adbeb0bc39c03a429690faf485a17c2d1">getCurrentTime</link> ()</para>
+            <listitem><para>static char * <link linkend="_class_s_q_lite_helper_1a33630720f2df387b6c543d33473138e4">getCurrentTime</link> ()</para>
 
 <para>Will retrieve the current time. </para>
 </listitem>
-            <listitem><para>static void <link linkend="_class_s_q_lite_helper_1a174400575d3038248769856efc9546a8">setDirectoryName</link> (char *dir_name)</para>
+            <listitem><para>static void <link linkend="_class_s_q_lite_helper_1a190dc1ee6382b8d506cbd1ee6ee59e37">setDirectoryName</link> (char *dir_name)</para>
 
 <para>Sets the relative directory name. </para>
 </listitem>
-            <listitem><para>static void <link linkend="_class_s_q_lite_helper_1a0815f283b738dea61f78f0e0dab958ea">setFileName</link> (char *file_name)</para>
+            <listitem><para>static void <link linkend="_class_s_q_lite_helper_1afee8872bcc8c1b58c274374331ccc3aa">setFileName</link> (char *file_name)</para>
 
 <para>Sets the absolute file name. </para>
 </listitem>
-            <listitem><para>static void <link linkend="_class_s_q_lite_helper_1a8fc3a476fa41e7601138ed1a87431ab9">setMachineName</link> (char *machine_name)</para>
+            <listitem><para>static void <link linkend="_class_s_q_lite_helper_1ab269da2fbf803659b63e7161dfbf0a18">setMachineName</link> (char *machine_name)</para>
 
 <para>Sets the machine name where the scanner is running. </para>
 </listitem>
-            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1adcab3649b5f610ddab96736dc409d653">getDirectoryId</link> (sqlite3 *db)</para>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1afdfb80facf1c802161aa1627d286f322">getDirectoryId</link> (sqlite3 *<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>)</para>
 
 <para>Retrieves the id of the directory from the directories table. </para>
 </listitem>
-            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a42d042748147b7ebe97214069c62ace6">getDirectoryId</link> (sqlite3 *db, char *dir_name, char *machine_name)</para>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1aefefe3d1f0fc6debc943d28f654fce12">getDirectoryId</link> (sqlite3 *<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>, char *dir_name, char *machine_name)</para>
 
 <para>Retrieves the id of the directory from the directories table. </para>
 </listitem>
-            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a4e69ffbd22c6d9c2df1decfd484e5a83">getFileId</link> (sqlite3 *db)</para>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a59fc305207ad616bafef83b54b102153">getFileId</link> (sqlite3 *<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>)</para>
+
+<para>Returns the id of the file if the file exists in the files table. </para>
 </listitem>
-            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1abb6a58d490dda33874679f9b6f7a2025">getFileId</link> (sqlite3 *db, char *file_name, int dir_id)</para>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1ae7ff51ba0b3f52d1725b68842168e65f">getFileId</link> (sqlite3 *<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>, char *file_name, int dir_id)</para>
+
+<para>Returns the id of the file if the file exists in the files table. </para>
 </listitem>
-            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1ac43f81918e037ab5b07f773794d8f9af">saveFileInfo</link> (sqlite3 *db, const int dir_id, const char *file_name, const int file_size=0, const char *date_modified=NULL, const char *hashed_val=NULL, const bool isNew=true, <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attr_to_update=<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad">AttributeToCheck::NONE</link>)</para>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a10508781dbcc903c632e83c1527da36f">saveFileInfo</link> (sqlite3 *<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>, const int dir_id, const char *file_name, const int file_size=0, const char *date_modified=NULL, const char *hashed_val=NULL, const bool isNew=true, <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attr_to_update=<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad">AttributeToCheck::NONE</link>)</para>
+
+<para>Entry point to saving the file information. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Static Private Member Functions    </title>
         <itemizedlist>
-            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a0f4192b37fcaff2ba209154127ade345">didHashedValueChange</link> (const char *hashed_val, <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, const int file_id, sqlite3 *db)</para>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1aa733abbf8352e42fbcda544c13b5e4f1">didHashedValueChange</link> (const char *hashed_val, <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, const int file_id, sqlite3 *<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>)</para>
 </listitem>
-            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1ae87be06de4087dcf735e5b12c4eaee9a">didFileSizeChange</link> (const int file_size, <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, const int file_id, sqlite3 *db)</para>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1ab551977b252cab42efd1f3b06676d7b1">didFileSizeChange</link> (const int file_size, <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, const int file_id, sqlite3 *<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>)</para>
 </listitem>
-            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1aac258e856d9f8c033d33bbd4fc8919cd">didDateModifiedChange</link> (const char *date_modified, <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, const int file_id, sqlite3 *db)</para>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1ad0fbfec9fab919ce001e2ca3a2f3d2d3">didDateModifiedChange</link> (const char *date_modified, <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, const int file_id, sqlite3 *<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>)</para>
 </listitem>
-            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a416b734c88d6e65e3a358953aea9468a">saveNewFileInfo</link> (sqlite3 *db)</para>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a843ad9e365ed3bc8d6d8baf38600fdc0">saveNewFileInfo</link> (sqlite3 *<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>)</para>
 </listitem>
-            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a84b6c0493c0f59b4311ec393464b01ec">saveExistingFileInfo</link> (sqlite3 *db, <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attr_to_update, const char *text_val=NULL, const int int_val=0)</para>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1af16a7fbd53573503bfa21c97eea53efb">saveExistingFileInfo</link> (sqlite3 *<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>, <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attr_to_update, const char *text_val=NULL, const int int_val=0)</para>
 </listitem>
-            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a95096df7d3e7fb019d18f2a62a10d646">insertTextValueToChanges</link> (sqlite3 *db, const int file_id, const char *text_val, const char *attr_changed)</para>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a65965633aef3f5a34884740c497a61dc">insertTextValueToChanges</link> (sqlite3 *<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>, const int file_id, const char *text_val, const char *attr_changed)</para>
 </listitem>
-            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a9f5d43ac23996620ac57f3be87fd17cd">insertIntValueToChanges</link> (sqlite3 *db, const int file_id, const int int_val, const char *attr_changed)</para>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a53e8c824b040560b8bb1393a853f265a">insertIntValueToChanges</link> (sqlite3 *<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>, const int file_id, const int int_val, const char *attr_changed)</para>
 </listitem>
-            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a4eb63efa7ac69125fd954d5efb23c2c6">updateChangedInFile</link> (sqlite3 *db, int file_id, <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attr_to_change)</para>
+            <listitem><para>static int <link linkend="_class_s_q_lite_helper_1a7f4941d87b3ea71d1691f62b0113999a">updateChangedInFile</link> (sqlite3 *<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>, int file_id, <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attr_to_change)</para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -134,7 +140,7 @@ Collaboration diagram for SQLiteHelper:<para>
 <anchor xml:id="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad"/>NONE</entry><entry></entry></row>    </tbody>
     </tgroup>
 </informaltable>
-<programlisting linenumbering="unnumbered">22 {&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f">HashedVal</link>&#32;=&#32;1,&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02">FileSize</link>&#32;=&#32;2,&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7">DateModified</link>&#32;=&#32;3,&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad">NONE</link>&#32;=&#32;4};
+<programlisting linenumbering="unnumbered">26 {&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f">HashedVal</link>&#32;=&#32;1,&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02">FileSize</link>&#32;=&#32;2,&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7">DateModified</link>&#32;=&#32;3,&#32;<link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad">NONE</link>&#32;=&#32;4};
 </programlisting></section>
 <anchor xml:id="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec"/><section>
     <title>TableToCheck</title>
@@ -157,16 +163,16 @@ Collaboration diagram for SQLiteHelper:<para>
 <anchor xml:id="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17"/>Changes</entry><entry></entry></row>    </tbody>
     </tgroup>
 </informaltable>
-<programlisting linenumbering="unnumbered">27 {<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809">Files</link>&#32;=&#32;1,&#32;<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17">Changes</link>&#32;=&#32;2};
+<programlisting linenumbering="unnumbered">31 {<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809">Files</link>&#32;=&#32;1,&#32;<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17">Changes</link>&#32;=&#32;2};
 </programlisting></section>
 </section>
 <section>
 <title>Member Function Documentation</title>
-<anchor xml:id="_class_s_q_lite_helper_1a277ba3424168330b7f5b354e477f5de2"/><section>
+<anchor xml:id="_class_s_q_lite_helper_1a373f87d1a12fb0d1014b4e01a7288521"/><section>
     <title>checkIfAttributeHasChanged()</title>
 <indexterm><primary>checkIfAttributeHasChanged</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>checkIfAttributeHasChanged</secondary></indexterm>
-<para><computeroutput>static int SQLiteHelper::checkIfAttributeHasChanged (const int file_id, const <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attribute, const <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, sqlite3 * db, const char * char_attr = <computeroutput>NULL</computeroutput>
+<para><computeroutput>int SQLiteHelper::checkIfAttributeHasChanged (const int file_id, const <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attribute, const <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, sqlite3 * db, const char * char_attr = <computeroutput>NULL</computeroutput>
 , const int int_attr = <computeroutput>0</computeroutput>
 )<computeroutput>[static]</computeroutput></computeroutput></para><para>
 
@@ -224,23 +230,62 @@ Parameters</title>
 
 <para><link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> </para>
 
-<para><link linkend="_class_s_q_lite_helper_1a0f4192b37fcaff2ba209154127ade345">didHashedValueChange()</link> </para>
+<para><link linkend="_class_s_q_lite_helper_1aa733abbf8352e42fbcda544c13b5e4f1">didHashedValueChange()</link> </para>
 
-<para><link linkend="_class_s_q_lite_helper_1ae87be06de4087dcf735e5b12c4eaee9a">didFileSizeChange()</link> </para>
+<para><link linkend="_class_s_q_lite_helper_1ab551977b252cab42efd1f3b06676d7b1">didFileSizeChange()</link> </para>
 
-<para><link linkend="_class_s_q_lite_helper_1aac258e856d9f8c033d33bbd4fc8919cd">didDateModifiedChange()</link> </para>
+<para><link linkend="_class_s_q_lite_helper_1ad0fbfec9fab919ce001e2ca3a2f3d2d3">didDateModifiedChange()</link> </para>
 </formalpara>
 <formalpara><title>Returns</title>
 
 <para>1 if changed, 0 if not </para>
 </formalpara>
 </para>
+<programlisting linenumbering="unnumbered">45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+46 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+47 
+48 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>(attribute)&#32;{
+49 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;1:&#32;<emphasis role="comment">//Hashedval</emphasis>
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;<link linkend="_class_s_q_lite_helper_1aa733abbf8352e42fbcda544c13b5e4f1">didHashedValueChange</link>(char_attr,&#32;table,&#32;file_id,&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+52 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;2:&#32;<emphasis role="comment">//Filesize</emphasis>
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;<link linkend="_class_s_q_lite_helper_1ab551977b252cab42efd1f3b06676d7b1">didFileSizeChange</link>(int_attr,&#32;table,&#32;file_id,&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+55 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;3:&#32;<emphasis role="comment">//Datemodified</emphasis>
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;<link linkend="_class_s_q_lite_helper_1ad0fbfec9fab919ce001e2ca3a2f3d2d3">didDateModifiedChange</link>(char_attr,&#32;table,&#32;file_id,&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+58 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">default</emphasis>:
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;-1;
+60 &#32;&#32;&#32;&#32;}
+61 
+62 &#32;&#32;&#32;&#32;<emphasis role="comment">//fprintf(stderr,&#32;&quot;\nReturn&#32;value&#32;from&#32;checkIfAttributeHasChanged&#32;is&#32;%d&quot;,&#32;retVal);</emphasis>
+63 &#32;&#32;&#32;&#32;
+64 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+65 }
+</programlisting>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_a373f87d1a12fb0d1014b4e01a7288521_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_a373f87d1a12fb0d1014b4e01a7288521_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 </section>
-<anchor xml:id="_class_s_q_lite_helper_1ab5c6b4d91ba851773d08383743cbe503"/><section>
+<anchor xml:id="_class_s_q_lite_helper_1a6329b4efc28fd0442a6cc25246cc4fb5"/><section>
     <title>checkIfAttributeIsInChanges()</title>
 <indexterm><primary>checkIfAttributeIsInChanges</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>checkIfAttributeIsInChanges</secondary></indexterm>
-<para><computeroutput>static int SQLiteHelper::checkIfAttributeIsInChanges (const int file_id, const <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attribute, sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+<para><computeroutput>int SQLiteHelper::checkIfAttributeIsInChanges (const int file_id, const <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attribute, sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para><para>
 
 <para>Determines if the provided attribute is in the changes table. </para>
 </para>
@@ -280,12 +325,59 @@ Parameters</title>
 <para>1 if is in the changes table, 0 if not </para>
 </formalpara>
 </para>
+<programlisting linenumbering="unnumbered">67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+68 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+69 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+70 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+71 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;sql_stmt;
+72 &#32;&#32;&#32;&#32;
+73 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+74 
+75 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>&#32;(attribute)&#32;{
+76 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;1:&#32;<emphasis role="comment">//Hashedval</emphasis>
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a30a8474684b57677c7f4ade261d52396">sql_check_if_hashedval_changed</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+79 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;2:&#32;<emphasis role="comment">//Filesize</emphasis>
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1aadee09a8afa07a05dc77b8fb183502fe">sql_check_if_filesize_changed</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+82 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;3:&#32;<emphasis role="comment">//Datemodified</emphasis>
+83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a0b374634088c38fd0277d22cee8a076a">sql_check_if_datemodified_changed</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+85 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">default</emphasis>:
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;-1;
+87 &#32;&#32;&#32;&#32;}
+88 
+89 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_OK)&#32;{
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;1,&#32;file_id);
+91 &#32;&#32;&#32;&#32;}
+92 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+93 
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis role="stringliteral">&quot;checkIfAttributeIsInChanges::Failed&#32;to&#32;execute&#32;statement:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+96 &#32;&#32;&#32;&#32;}
+97 
+98 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>)&#32;==&#32;SQLITE_ROW)
+99 &#32;&#32;&#32;&#32;{
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;sqlite3_column_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;0);
+101 &#32;&#32;&#32;&#32;}
+102 
+103 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+104 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_a6329b4efc28fd0442a6cc25246cc4fb5_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 </section>
-<anchor xml:id="_class_s_q_lite_helper_1aac258e856d9f8c033d33bbd4fc8919cd"/><section>
+<anchor xml:id="_class_s_q_lite_helper_1ad0fbfec9fab919ce001e2ca3a2f3d2d3"/><section>
     <title>didDateModifiedChange()</title>
 <indexterm><primary>didDateModifiedChange</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>didDateModifiedChange</secondary></indexterm>
-<para><computeroutput>static int SQLiteHelper::didDateModifiedChange (const char * date_modified, <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, const int file_id, sqlite3 * db)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
+<para><computeroutput>int SQLiteHelper::didDateModifiedChange (const char * date_modified, <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, const int file_id, sqlite3 * db)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
 <para>
                 <formalpara>
                     <title>
@@ -326,12 +418,60 @@ Parameters</title>
 <para></para>
 </formalpara>
 </para>
+<programlisting linenumbering="unnumbered">189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+190 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+191 
+192 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+193 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+194 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+195 &#32;&#32;&#32;
+196 
+197 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(table&#32;==&#32;1)&#32;{
+198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a2a3a606e5782280c0d3693624d86223a">sql_check_if_datemodified_changed_in_files</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+199 &#32;&#32;&#32;&#32;}
+200 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(table&#32;==&#32;2)&#32;{
+201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a6eaedbf4c3a151599a4dff198e474d86">sql_check_if_value_changed_in_changes_textval</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+202 &#32;&#32;&#32;&#32;}
+203 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+204 &#32;&#32;&#32;&#32;{
+205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+206 &#32;&#32;&#32;&#32;}
+207 
+208 
+209 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_OK)&#32;{
+210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;1,&#32;date_modified,&#32;-1,&#32;NULL);
+211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;2,&#32;file_id);
+212 &#32;&#32;&#32;&#32;}
+213 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+214 
+215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis role="stringliteral">&quot;didDateModifiedChange::Failed&#32;to&#32;execute&#32;statement:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+217 &#32;&#32;&#32;&#32;}
+218 
+219 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>)&#32;==&#32;SQLITE_ROW)
+220 &#32;&#32;&#32;&#32;{
+221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;sqlite3_column_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;0);
+222 &#32;&#32;&#32;&#32;}
+223 
+224 &#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+225 
+226 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+227 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_ad0fbfec9fab919ce001e2ca3a2f3d2d3_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 </section>
-<anchor xml:id="_class_s_q_lite_helper_1ae87be06de4087dcf735e5b12c4eaee9a"/><section>
+<anchor xml:id="_class_s_q_lite_helper_1ab551977b252cab42efd1f3b06676d7b1"/><section>
     <title>didFileSizeChange()</title>
 <indexterm><primary>didFileSizeChange</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>didFileSizeChange</secondary></indexterm>
-<para><computeroutput>static int SQLiteHelper::didFileSizeChange (const int file_size, <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, const int file_id, sqlite3 * db)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
+<para><computeroutput>int SQLiteHelper::didFileSizeChange (const int file_size, <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, const int file_id, sqlite3 * db)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
 <para>
                 <formalpara>
                     <title>
@@ -372,12 +512,60 @@ Parameters</title>
 <para></para>
 </formalpara>
 </para>
+<programlisting linenumbering="unnumbered">149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+150 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+151 
+152 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+153 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+154 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+155 &#32;&#32;&#32;&#32;
+156 
+157 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(table&#32;==&#32;1)&#32;{
+158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a11a095d4c486bbde5cd5c03fdeef757e">sql_check_if_filesize_changed_in_files</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+159 &#32;&#32;&#32;&#32;}
+160 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(table&#32;==&#32;2)&#32;{
+161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a6c55458a9f14bda4df0194ad7ea8d24f">sql_check_if_value_changed_in_changes_intval</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+162 &#32;&#32;&#32;&#32;}
+163 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+164 &#32;&#32;&#32;&#32;{
+165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+166 &#32;&#32;&#32;&#32;}
+167 
+168 
+169 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_OK)&#32;{
+170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;1,&#32;file_size);
+171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;2,&#32;file_id);
+172 &#32;&#32;&#32;&#32;}
+173 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+174 
+175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis role="stringliteral">&quot;didFileSizeChange::Failed&#32;to&#32;execute&#32;statement:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+177 &#32;&#32;&#32;&#32;}
+178 
+179 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>)&#32;==&#32;SQLITE_ROW)
+180 &#32;&#32;&#32;&#32;{
+181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;sqlite3_column_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;0);
+182 &#32;&#32;&#32;&#32;}
+183 
+184 &#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+185 
+186 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+187 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_ab551977b252cab42efd1f3b06676d7b1_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 </section>
-<anchor xml:id="_class_s_q_lite_helper_1a0f4192b37fcaff2ba209154127ade345"/><section>
+<anchor xml:id="_class_s_q_lite_helper_1aa733abbf8352e42fbcda544c13b5e4f1"/><section>
     <title>didHashedValueChange()</title>
 <indexterm><primary>didHashedValueChange</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>didHashedValueChange</secondary></indexterm>
-<para><computeroutput>static int SQLiteHelper::didHashedValueChange (const char * hashed_val, <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, const int file_id, sqlite3 * db)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
+<para><computeroutput>int SQLiteHelper::didHashedValueChange (const char * hashed_val, <link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ec">TableToCheck</link> table, const int file_id, sqlite3 * db)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
 <para>
                 <formalpara>
                     <title>
@@ -418,32 +606,116 @@ Parameters</title>
 <para></para>
 </formalpara>
 </para>
+<programlisting linenumbering="unnumbered">106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+107 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+108 
+109 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+110 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+111 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+112 &#32;&#32;&#32;&#32;
+113 
+114 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(table&#32;==&#32;1)&#32;{
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a24430c9279b2f12e6865146481668de6">sql_check_if_hashedval_changed_in_files</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+116 &#32;&#32;&#32;&#32;}
+117 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(table&#32;==&#32;2)&#32;{
+118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a6eaedbf4c3a151599a4dff198e474d86">sql_check_if_value_changed_in_changes_textval</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+119 &#32;&#32;&#32;&#32;}
+120 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+121 &#32;&#32;&#32;&#32;{
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+123 &#32;&#32;&#32;&#32;}
+124 &#32;&#32;&#32;&#32;
+125 
+126 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_OK)&#32;{
+127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;1,&#32;hashed_val,&#32;-1,&#32;NULL);
+129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;2,&#32;file_id);
+130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+131 &#32;&#32;&#32;&#32;}
+132 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+133 
+134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis role="stringliteral">&quot;didHashedValueChange::Failed&#32;to&#32;execute&#32;statement:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+136 &#32;&#32;&#32;&#32;}
+137 
+138 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>)&#32;==&#32;SQLITE_ROW)
+139 &#32;&#32;&#32;&#32;{
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;sqlite3_column_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;0);
+141 &#32;&#32;&#32;&#32;}
+142 
+143 &#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+144 
+145 &#32;&#32;&#32;&#32;
+146 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+147 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_aa733abbf8352e42fbcda544c13b5e4f1_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 </section>
-<anchor xml:id="_class_s_q_lite_helper_1adbeb0bc39c03a429690faf485a17c2d1"/><section>
+<anchor xml:id="_class_s_q_lite_helper_1a33630720f2df387b6c543d33473138e4"/><section>
     <title>getCurrentTime()</title>
 <indexterm><primary>getCurrentTime</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>getCurrentTime</secondary></indexterm>
-<para><computeroutput>static char * SQLiteHelper::getCurrentTime ( )<computeroutput>[static]</computeroutput></computeroutput></para><para>
+<para><computeroutput>char * SQLiteHelper::getCurrentTime ( )<computeroutput>[static]</computeroutput></computeroutput></para><para>
 
 <para>Will retrieve the current time. </para>
 </para>
 
 <para><formalpara><title>Returns</title>
 
-<para>Current time in B d, Y T format. Example: December 12, 2020 20:10:05 </para>
+<para>Current time in B d, Y T format. Example: December 12, 2020 20:10:05</para>
+
+<para>char* </para>
 </formalpara>
 </para>
+<programlisting linenumbering="unnumbered">334 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+335 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;retVal;
+336 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;char_array;
+337 
+338 &#32;&#32;&#32;&#32;time_t&#32;t&#32;=&#32;time(0);&#32;&#32;&#32;<emphasis role="comment">//&#32;get&#32;time&#32;now</emphasis>
+339 &#32;&#32;&#32;&#32;tm*&#32;now&#32;=&#32;localtime(&amp;t);
+340 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;date_string[100];
+341 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;time_string[100];
+342 
+343 &#32;&#32;&#32;&#32;strftime(date_string,&#32;50,&#32;<emphasis role="stringliteral">&quot;%B&#32;%d,&#32;%Y&#32;&quot;</emphasis>,&#32;now);
+344 &#32;&#32;&#32;&#32;strftime(time_string,&#32;50,&#32;<emphasis role="stringliteral">&quot;%T&quot;</emphasis>,&#32;now);
+345 
+346 &#32;&#32;&#32;&#32;retVal&#32;+=&#32;date_string;
+347 &#32;&#32;&#32;&#32;retVal&#32;+=&#32;time_string;
+348 
+349 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n&#32;=&#32;retVal.length();
+350 &#32;&#32;&#32;&#32;char_array&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>[n&#32;+&#32;1];
+351 
+352 &#32;&#32;&#32;&#32;strcpy(char_array,&#32;retVal.c_str());
+353 &#32;&#32;&#32;&#32;
+354 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;char_array;
+355 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_a33630720f2df387b6c543d33473138e4_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 </section>
-<anchor xml:id="_class_s_q_lite_helper_1adcab3649b5f610ddab96736dc409d653"/><section>
+<anchor xml:id="_class_s_q_lite_helper_1afdfb80facf1c802161aa1627d286f322"/><section>
     <title>getDirectoryId()<computeroutput>[1/2]</computeroutput></title>
 <indexterm><primary>getDirectoryId</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>getDirectoryId</secondary></indexterm>
-<para><computeroutput>static int SQLiteHelper::getDirectoryId (sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+<para><computeroutput>int SQLiteHelper::getDirectoryId (sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para><para>
 
 <para>Retrieves the id of the directory from the directories table. </para>
 </para>
 
-<para><emphasis role="bold">PRECONDITION:</emphasis> Call to <link linkend="_class_s_q_lite_helper_1a174400575d3038248769856efc9546a8">setDirectoryName()</link> to set the directory to check. 
+<para><emphasis role="bold">PRECONDITION:</emphasis> Call to <link linkend="_class_s_q_lite_helper_1a190dc1ee6382b8d506cbd1ee6ee59e37">setDirectoryName()</link> to set the directory to check. 
                 <formalpara>
                     <title>
 Parameters</title>
@@ -468,12 +740,48 @@ Parameters</title>
 <para>0 if directory does not exist in directories table, otherwise the directory id will be returned. </para>
 </formalpara>
 </para>
+<programlisting linenumbering="unnumbered">245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+246 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+247 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+248 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+249 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+250 
+251 &#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1ad69bcee87ad4e63344e2788867af9d33">sql_get_directory_id</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+252 
+253 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_OK)&#32;{
+254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;1,&#32;<link linkend="__s_q_lite_helper_8cpp_1a204ff8c5d0354b487b6e77ab17c0e106">_dirname</link>,&#32;-1,&#32;NULL);
+255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;2,&#32;<link linkend="__s_q_lite_helper_8cpp_1aa424942af01346d64f66002f897ec80e">_machinename</link>,&#32;-1,&#32;NULL);
+256 &#32;&#32;&#32;&#32;}
+257 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+258 
+259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis role="stringliteral">&quot;getDirectoryId::Failed&#32;to&#32;execute&#32;statement:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+261 &#32;&#32;&#32;&#32;}
+262 
+263 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>)&#32;==&#32;SQLITE_ROW)
+264 &#32;&#32;&#32;&#32;{
+265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;sqlite3_column_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;0);
+266 &#32;&#32;&#32;&#32;}
+267 
+268 &#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+269 
+270 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+271 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_afdfb80facf1c802161aa1627d286f322_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 </section>
-<anchor xml:id="_class_s_q_lite_helper_1a42d042748147b7ebe97214069c62ace6"/><section>
+<anchor xml:id="_class_s_q_lite_helper_1aefefe3d1f0fc6debc943d28f654fce12"/><section>
     <title>getDirectoryId()<computeroutput>[2/2]</computeroutput></title>
 <indexterm><primary>getDirectoryId</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>getDirectoryId</secondary></indexterm>
-<para><computeroutput>static int SQLiteHelper::getDirectoryId (sqlite3 * db, char * dir_name, char * machine_name)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+<para><computeroutput>int SQLiteHelper::getDirectoryId (sqlite3 * db, char * dir_name, char * machine_name)<computeroutput>[static]</computeroutput></computeroutput></para><para>
 
 <para>Retrieves the id of the directory from the directories table. </para>
 </para>
@@ -513,12 +821,39 @@ Parameters</title>
 <para>0 if directory does not exist in directories table, otherwise the directory id will be returned. </para>
 </formalpara>
 </para>
+<programlisting linenumbering="unnumbered">273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+274 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+275 
+276 &#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1a204ff8c5d0354b487b6e77ab17c0e106">_dirname</link>&#32;=&#32;(<emphasis role="keywordtype">char</emphasis>*)malloc(strlen(dir_name)&#32;+&#32;1);
+277 &#32;&#32;&#32;&#32;strcpy(<link linkend="__s_q_lite_helper_8cpp_1a204ff8c5d0354b487b6e77ab17c0e106">_dirname</link>,&#32;dir_name);
+278 
+279 &#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1aa424942af01346d64f66002f897ec80e">_machinename</link>&#32;=&#32;(<emphasis role="keywordtype">char</emphasis>*)malloc(strlen(machine_name)&#32;+&#32;1);
+280 &#32;&#32;&#32;&#32;strcpy(<link linkend="__s_q_lite_helper_8cpp_1aa424942af01346d64f66002f897ec80e">_machinename</link>,&#32;machine_name);
+281 
+282 &#32;&#32;&#32;&#32;retVal&#32;=&#32;<link linkend="_class_s_q_lite_helper_1afdfb80facf1c802161aa1627d286f322">getDirectoryId</link>(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+283 
+284 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+285 
+286 }
+</programlisting>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_aefefe3d1f0fc6debc943d28f654fce12_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 </section>
-<anchor xml:id="_class_s_q_lite_helper_1a4e69ffbd22c6d9c2df1decfd484e5a83"/><section>
+<anchor xml:id="_class_s_q_lite_helper_1a59fc305207ad616bafef83b54b102153"/><section>
     <title>getFileId()<computeroutput>[1/2]</computeroutput></title>
 <indexterm><primary>getFileId</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>getFileId</secondary></indexterm>
-<para><computeroutput>static int SQLiteHelper::getFileId (sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para><computeroutput>int SQLiteHelper::getFileId (sqlite3 * db)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Returns the id of the file if the file exists in the files table. </para>
+</para>
+
 <para>
                 <formalpara>
                     <title>
@@ -531,7 +866,7 @@ Parameters</title>
                         <tbody>
                             <row>
 <entry>db</entry><entry>
-<para></para>
+<para>The sqlite3 database object. </para>
 </entry>
                             </row>
                         </tbody>
@@ -541,16 +876,56 @@ Parameters</title>
                 </formalpara>
                 <formalpara><title>Returns</title>
 
-<para></para>
+<para>0 if file does not exist in files table, otherwise the file id will be returned. </para>
 </formalpara>
 </para>
+<programlisting linenumbering="unnumbered">288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+289 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+290 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+291 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+292 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+293 
+294 &#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a8141fadef4ba0f5b6d6661c5dc0a5edc">sql_get_file_id</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+295 
+296 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_OK)&#32;{
+297 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;1,&#32;<link linkend="__s_q_lite_helper_8cpp_1a865240c40b0ff5596e16d5ff7c709565">_filename</link>,&#32;-1,&#32;NULL);
+298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;2,&#32;<link linkend="__s_q_lite_helper_8cpp_1a6ff722a0f3f2c0e8e2db123ddba7c66d">_dirid</link>);
+299 &#32;&#32;&#32;&#32;}
+300 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+301 
+302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis role="stringliteral">&quot;getFileId::Failed&#32;to&#32;execute&#32;statement:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+304 &#32;&#32;&#32;&#32;}
+305 
+306 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>)&#32;==&#32;SQLITE_ROW)
+307 &#32;&#32;&#32;&#32;{
+308 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;sqlite3_column_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;0);
+309 &#32;&#32;&#32;&#32;}
+310 
+311 &#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+312 
+313 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+314 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_a59fc305207ad616bafef83b54b102153_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 </section>
-<anchor xml:id="_class_s_q_lite_helper_1abb6a58d490dda33874679f9b6f7a2025"/><section>
+<anchor xml:id="_class_s_q_lite_helper_1ae7ff51ba0b3f52d1725b68842168e65f"/><section>
     <title>getFileId()<computeroutput>[2/2]</computeroutput></title>
 <indexterm><primary>getFileId</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>getFileId</secondary></indexterm>
-<para><computeroutput>static int SQLiteHelper::getFileId (sqlite3 * db, char * file_name, int dir_id)<computeroutput>[static]</computeroutput></computeroutput></para>
-<para>
+<para><computeroutput>int SQLiteHelper::getFileId (sqlite3 * db, char * file_name, int dir_id)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Returns the id of the file if the file exists in the files table. </para>
+</para>
+
+<para><emphasis role="bold">NOTE:</emphasis> Will call the <link linkend="_class_s_q_lite_helper_1a59fc305207ad616bafef83b54b102153">getFileId(sqlite3* db)</link> method after setting the directory id and file name at the class level. 
                 <formalpara>
                     <title>
 Parameters</title>
@@ -562,17 +937,17 @@ Parameters</title>
                         <tbody>
                             <row>
 <entry>db</entry><entry>
-<para></para>
+<para>sqlite3 database object </para>
 </entry>
                             </row>
                             <row>
 <entry>file_name</entry><entry>
-<para></para>
+<para>Absolute name of the file </para>
 </entry>
                             </row>
                             <row>
 <entry>dir_id</entry><entry>
-<para></para>
+<para>Id of the Directory where the file is located </para>
 </entry>
                             </row>
                         </tbody>
@@ -582,15 +957,35 @@ Parameters</title>
                 </formalpara>
                 <formalpara><title>Returns</title>
 
-<para></para>
+<para>0 if file does not exist in files table, otherwise the file id will be returned. </para>
 </formalpara>
 </para>
+<programlisting linenumbering="unnumbered">316 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+317 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+318 
+319 &#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1a865240c40b0ff5596e16d5ff7c709565">_filename</link>&#32;=&#32;(<emphasis role="keywordtype">char</emphasis>*)malloc(strlen(file_name)&#32;+&#32;1);
+320 &#32;&#32;&#32;&#32;strcpy(<link linkend="__s_q_lite_helper_8cpp_1a865240c40b0ff5596e16d5ff7c709565">_filename</link>,&#32;file_name);
+321 &#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1a6ff722a0f3f2c0e8e2db123ddba7c66d">_dirid</link>&#32;=&#32;dir_id;
+322 
+323 &#32;&#32;&#32;&#32;retVal&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a59fc305207ad616bafef83b54b102153">getFileId</link>(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+324 
+325 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+326 }
+</programlisting>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_ae7ff51ba0b3f52d1725b68842168e65f_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 </section>
-<anchor xml:id="_class_s_q_lite_helper_1a9f5d43ac23996620ac57f3be87fd17cd"/><section>
+<anchor xml:id="_class_s_q_lite_helper_1a53e8c824b040560b8bb1393a853f265a"/><section>
     <title>insertIntValueToChanges()</title>
 <indexterm><primary>insertIntValueToChanges</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>insertIntValueToChanges</secondary></indexterm>
-<para><computeroutput>static int SQLiteHelper::insertIntValueToChanges (sqlite3 * db, const int file_id, const int int_val, const char * attr_changed)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
+<para><computeroutput>int SQLiteHelper::insertIntValueToChanges (sqlite3 * db, const int file_id, const int int_val, const char * attr_changed)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
 <para>
                 <formalpara>
                     <title>
@@ -631,12 +1026,77 @@ Parameters</title>
 <para></para>
 </formalpara>
 </para>
+<programlisting linenumbering="unnumbered">578 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+579 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+580 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+581 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+582 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;current_time&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a33630720f2df387b6c543d33473138e4">getCurrentTime</link>();
+583 
+584 &#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a1ffdb057e3cdae8e7c5b832f735d97bd">sql_save_intval_in_changes</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+585 
+586 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_OK)&#32;{
+587 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;1,&#32;file_id);
+588 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;2,&#32;current_time,&#32;-1,&#32;NULL);
+589 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;3,&#32;int_val);
+590 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;4,&#32;attr_changed,&#32;-1,&#32;NULL);
+591 &#32;&#32;&#32;&#32;}
+592 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+593 
+594 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis role="stringliteral">&quot;insertIntValueToChanges::Failed&#32;to&#32;execute&#32;statement:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+595 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+596 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+597 &#32;&#32;&#32;&#32;}
+598 
+599 &#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+600 
+601 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_BUSY)&#32;{
+602 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nDatabase&#32;is&#32;busy&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+603 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(rc&#32;==&#32;SQLITE_BUSY)
+604 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+605 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+606 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+607 &#32;&#32;&#32;&#32;}
+608 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_ERROR)&#32;{
+609 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;\nIn&#32;insertIntValueToChanges&#32;execution&#32;failed:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+610 &#32;&#32;&#32;&#32;}
+611 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_MISUSE)&#32;{
+612 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nA&#32;MISUSE&#32;has&#32;been&#32;deteced&#32;in&#32;insertIntValueToChanges.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+613 &#32;&#32;&#32;&#32;}
+614 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_DONE)&#32;{
+615 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nsqlite3_step&#32;executed&#32;successfully.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+616 &#32;&#32;&#32;&#32;}
+617 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+618 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nNot&#32;sure&#32;what&#32;happened&#32;in&#32;insertIntValueToChanges.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+619 &#32;&#32;&#32;&#32;}
+620 
+621 &#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+622 
+623 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+624 }
+</programlisting>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_a53e8c824b040560b8bb1393a853f265a_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_a53e8c824b040560b8bb1393a853f265a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 </section>
-<anchor xml:id="_class_s_q_lite_helper_1a95096df7d3e7fb019d18f2a62a10d646"/><section>
+<anchor xml:id="_class_s_q_lite_helper_1a65965633aef3f5a34884740c497a61dc"/><section>
     <title>insertTextValueToChanges()</title>
 <indexterm><primary>insertTextValueToChanges</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>insertTextValueToChanges</secondary></indexterm>
-<para><computeroutput>static int SQLiteHelper::insertTextValueToChanges (sqlite3 * db, const int file_id, const char * text_val, const char * attr_changed)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
+<para><computeroutput>int SQLiteHelper::insertTextValueToChanges (sqlite3 * db, const int file_id, const char * text_val, const char * attr_changed)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
 <para>
                 <formalpara>
                     <title>
@@ -677,12 +1137,77 @@ Parameters</title>
 <para></para>
 </formalpara>
 </para>
+<programlisting linenumbering="unnumbered">530 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+531 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+532 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+533 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+534 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;current_time&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a33630720f2df387b6c543d33473138e4">getCurrentTime</link>();
+535 &#32;&#32;&#32;&#32;
+536 &#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a022241ec805998c398b20c90d1a51256">sql_save_textval_in_changes</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+537 
+538 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_OK)&#32;{
+539 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;1,&#32;file_id);
+540 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;2,&#32;current_time,&#32;-1,&#32;NULL);
+541 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;3,&#32;text_val,&#32;-1,&#32;NULL);
+542 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;4,&#32;attr_changed,&#32;-1,&#32;NULL);
+543 &#32;&#32;&#32;&#32;}
+544 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+545 
+546 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis role="stringliteral">&quot;insertTextValueToChanges::Failed&#32;to&#32;execute&#32;statement:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+547 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+548 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+549 &#32;&#32;&#32;&#32;}
+550 
+551 &#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+552 
+553 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_BUSY)&#32;{
+554 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nDatabase&#32;is&#32;busy&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+555 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(rc&#32;==&#32;SQLITE_BUSY)
+556 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+557 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+558 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+559 &#32;&#32;&#32;&#32;}
+560 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_ERROR)&#32;{
+561 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;\nIn&#32;insertTextValuetoChanges&#32;execution&#32;failed:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+562 &#32;&#32;&#32;&#32;}
+563 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_MISUSE)&#32;{
+564 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nA&#32;MISUSE&#32;has&#32;been&#32;deteced&#32;in&#32;insertTextValuetoChanges.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+565 &#32;&#32;&#32;&#32;}
+566 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_DONE)&#32;{
+567 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nsqlite3_step&#32;executed&#32;successfully.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+568 &#32;&#32;&#32;&#32;}
+569 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+570 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nNot&#32;sure&#32;what&#32;happened&#32;in&#32;insertTextValuetoChanges.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+571 &#32;&#32;&#32;&#32;}
+572 
+573 &#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+574 
+575 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+576 }
+</programlisting>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_a65965633aef3f5a34884740c497a61dc_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_a65965633aef3f5a34884740c497a61dc_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 </section>
-<anchor xml:id="_class_s_q_lite_helper_1a84b6c0493c0f59b4311ec393464b01ec"/><section>
+<anchor xml:id="_class_s_q_lite_helper_1af16a7fbd53573503bfa21c97eea53efb"/><section>
     <title>saveExistingFileInfo()</title>
 <indexterm><primary>saveExistingFileInfo</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>saveExistingFileInfo</secondary></indexterm>
-<para><computeroutput>static int SQLiteHelper::saveExistingFileInfo (sqlite3 * db, <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attr_to_update, const char * text_val = <computeroutput>NULL</computeroutput>
+<para><computeroutput>int SQLiteHelper::saveExistingFileInfo (sqlite3 * db, <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attr_to_update, const char * text_val = <computeroutput>NULL</computeroutput>
 , const int int_val = <computeroutput>0</computeroutput>
 )<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
 <para>
@@ -725,18 +1250,107 @@ Parameters</title>
 <para></para>
 </formalpara>
 </para>
+<programlisting linenumbering="unnumbered">462 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+463 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+464 
+465 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+466 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+467 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+468 &#32;&#32;&#32;&#32;
+469 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;current_time&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a33630720f2df387b6c543d33473138e4">getCurrentTime</link>();
+470 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;fileId&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a59fc305207ad616bafef83b54b102153">getFileId</link>(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+471 &#32;&#32;&#32;&#32;
+472 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;in_changes&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a6329b4efc28fd0442a6cc25246cc4fb5">checkIfAttributeIsInChanges</link>(fileId,&#32;attr_to_update,&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+473 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;has_changes&#32;=&#32;0;
+474 
+475 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>&#32;(attr_to_update)
+476 &#32;&#32;&#32;&#32;{
+477 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;1:
+478 
+479 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!in_changes)&#32;{
+480 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;has_changes&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a373f87d1a12fb0d1014b4e01a7288521">checkIfAttributeHasChanged</link>(fileId,&#32;attr_to_update,&#32;<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809">TableToCheck::Files</link>,&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;text_val);
+481 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+482 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+483 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;has_changes&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a373f87d1a12fb0d1014b4e01a7288521">checkIfAttributeHasChanged</link>(fileId,&#32;attr_to_update,&#32;<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17">TableToCheck::Changes</link>,&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;text_val);
+484 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+485 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+486 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(has_changes&#32;==&#32;0)&#32;{
+487 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//fprintf(stderr,&#32;&quot;\nInside&#32;has_changes&#32;with&#32;value&#32;of&#32;%d&#32;and&#32;text&#32;value&#32;%s\n&quot;,&#32;has_changes,&#32;text_val);</emphasis>
+488 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a65965633aef3f5a34884740c497a61dc">insertTextValueToChanges</link>(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;fileId,&#32;text_val,<emphasis role="stringliteral">&quot;hashedvalue&quot;</emphasis>);
+489 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+490 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+491 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;2:
+492 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+493 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!in_changes)&#32;{
+494 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;has_changes&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a373f87d1a12fb0d1014b4e01a7288521">checkIfAttributeHasChanged</link>(fileId,&#32;attr_to_update,&#32;<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809">TableToCheck::Files</link>,&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;NULL,&#32;int_val);
+495 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+496 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+497 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;has_changes&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a373f87d1a12fb0d1014b4e01a7288521">checkIfAttributeHasChanged</link>(fileId,&#32;attr_to_update,&#32;<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17">TableToCheck::Changes</link>,&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;NULL,&#32;int_val);
+498 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+499 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+500 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(has_changes&#32;==&#32;0)&#32;{
+501 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//fprintf(stderr,&#32;&quot;\nInside&#32;has_changes&#32;with&#32;value&#32;of&#32;%d&#32;and&#32;int&#32;value&#32;%d\n&quot;,&#32;has_changes,&#32;int_val);</emphasis>
+502 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a53e8c824b040560b8bb1393a853f265a">insertIntValueToChanges</link>(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;fileId,&#32;int_val,&#32;<emphasis role="stringliteral">&quot;filesize&quot;</emphasis>);
+503 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+504 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+505 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;3:
+506 
+507 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!in_changes)&#32;{
+508 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;has_changes&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a373f87d1a12fb0d1014b4e01a7288521">checkIfAttributeHasChanged</link>(fileId,&#32;attr_to_update,&#32;<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809">TableToCheck::Files</link>,&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;text_val);
+509 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+510 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+511 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;has_changes&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a373f87d1a12fb0d1014b4e01a7288521">checkIfAttributeHasChanged</link>(fileId,&#32;attr_to_update,&#32;<link linkend="_class_s_q_lite_helper_1a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17">TableToCheck::Changes</link>,&#32;<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;text_val);
+512 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+513 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+514 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(has_changes&#32;==&#32;0)&#32;{
+515 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//fprintf(stderr,&#32;&quot;\nInside&#32;has_changes&#32;with&#32;value&#32;of&#32;%d&#32;and&#32;text&#32;value&#32;%s\n&quot;,&#32;has_changes,&#32;text_val);</emphasis>
+516 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a65965633aef3f5a34884740c497a61dc">insertTextValueToChanges</link>(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;fileId,&#32;text_val,<emphasis role="stringliteral">&quot;lastmodified&quot;</emphasis>);
+517 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+518 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+519 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">default</emphasis>:
+520 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+521 &#32;&#32;&#32;&#32;}
+522 
+523 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!in_changes&#32;&amp;&amp;&#32;has_changes&#32;==&#32;0)&#32;{
+524 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a7f4941d87b3ea71d1691f62b0113999a">updateChangedInFile</link>(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;fileId,&#32;attr_to_update);
+525 &#32;&#32;&#32;&#32;}
+526 
+527 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+528 }
+</programlisting>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_af16a7fbd53573503bfa21c97eea53efb_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_af16a7fbd53573503bfa21c97eea53efb_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 </section>
-<anchor xml:id="_class_s_q_lite_helper_1ac43f81918e037ab5b07f773794d8f9af"/><section>
+<anchor xml:id="_class_s_q_lite_helper_1a10508781dbcc903c632e83c1527da36f"/><section>
     <title>saveFileInfo()</title>
 <indexterm><primary>saveFileInfo</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>saveFileInfo</secondary></indexterm>
-<para><computeroutput>static int SQLiteHelper::saveFileInfo (sqlite3 * db, const int dir_id, const char * file_name, const int file_size = <computeroutput>0</computeroutput>
+<para><computeroutput>int SQLiteHelper::saveFileInfo (sqlite3 * db, const int dir_id, const char * file_name, const int file_size = <computeroutput>0</computeroutput>
 , const char * date_modified = <computeroutput>NULL</computeroutput>
 , const char * hashed_val = <computeroutput>NULL</computeroutput>
 , const bool isNew = <computeroutput>true</computeroutput>
 , <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attr_to_update = <computeroutput><link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad">AttributeToCheck::NONE</link></computeroutput>
-)<computeroutput>[static]</computeroutput></computeroutput></para>
-<para>
+)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Entry point to saving the file information. </para>
+</para>
+
+<para> 
                 <formalpara>
                     <title>
 Parameters</title>
@@ -748,27 +1362,27 @@ Parameters</title>
                         <tbody>
                             <row>
 <entry>db</entry><entry>
-<para></para>
+<para>sqlite3 database object. </para>
 </entry>
                             </row>
                             <row>
 <entry>dir_id</entry><entry>
-<para></para>
+<para>Id of the directory from the directories table. </para>
 </entry>
                             </row>
                             <row>
 <entry>file_name</entry><entry>
-<para></para>
+<para>Absolute name of the file. </para>
 </entry>
                             </row>
                             <row>
 <entry>file_size</entry><entry>
-<para></para>
+<para>File size of the file in bytes. Default value is 0. </para>
 </entry>
                             </row>
                             <row>
 <entry>date_modified</entry><entry>
-<para></para>
+<para>Date the file was last modified. Default value is NULL. </para>
 </entry>
                             </row>
                             <row>
@@ -778,12 +1392,12 @@ Parameters</title>
                             </row>
                             <row>
 <entry>isNew</entry><entry>
-<para></para>
+<para>Determines if the file information being added is for a new file or an existing file. Default value is true. </para>
 </entry>
                             </row>
                             <row>
 <entry>attr_to_update</entry><entry>
-<para></para>
+<para>The attribute to update if the isNew = false. Default value is NONE. </para>
 </entry>
                             </row>
                         </tbody>
@@ -797,19 +1411,81 @@ Parameters</title>
 </formalpara>
 <formalpara><title>See also</title>
 
-<para><link linkend="_class_s_q_lite_helper_1a416b734c88d6e65e3a358953aea9468a">saveNewFileInfo()</link> </para>
+<para><link linkend="_class_s_q_lite_helper_1a843ad9e365ed3bc8d6d8baf38600fdc0">saveNewFileInfo()</link> </para>
 
-<para><link linkend="_class_s_q_lite_helper_1a84b6c0493c0f59b4311ec393464b01ec">saveExistingFileInfo()</link> </para>
+<para><link linkend="_class_s_q_lite_helper_1af16a7fbd53573503bfa21c97eea53efb">saveExistingFileInfo()</link> </para>
 
 <para><link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> </para>
 </formalpara>
 </para>
+<programlisting linenumbering="unnumbered">357 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+358 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+359 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;hasChanged&#32;=&#32;0;
+360 
+361 &#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1a6ff722a0f3f2c0e8e2db123ddba7c66d">_dirid</link>&#32;=&#32;dir_id;
+362 &#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1a865240c40b0ff5596e16d5ff7c709565">_filename</link>&#32;=&#32;(<emphasis role="keywordtype">char</emphasis>*)malloc(strlen(file_name)+1);
+363 &#32;&#32;&#32;&#32;strcpy(<link linkend="__s_q_lite_helper_8cpp_1a865240c40b0ff5596e16d5ff7c709565">_filename</link>,file_name);
+364 &#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1a8fa7c9a40c7098d3a32f6c6a939898ba">_filesize</link>&#32;=&#32;file_size;
+365 
+366 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(date_modified&#32;!=&#32;NULL)&#32;{
+367 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1a57cb4a0beb90bcf5df0d725693b1a5b9">_datemodified</link>&#32;=&#32;(<emphasis role="keywordtype">char</emphasis>*)malloc(strlen(date_modified)&#32;+&#32;1);
+368 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;strcpy(<link linkend="__s_q_lite_helper_8cpp_1a57cb4a0beb90bcf5df0d725693b1a5b9">_datemodified</link>,&#32;date_modified);
+369 &#32;&#32;&#32;&#32;}
+370 &#32;&#32;&#32;&#32;
+371 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(hashed_val&#32;!=&#32;NULL)&#32;{
+372 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//fprintf(stderr,&#32;&quot;\nGetting&#32;ready&#32;to&#32;store&#32;hashedvalue&#32;into&#32;_hashedval&#32;with&#32;value&#32;of&#32;%s\n&quot;,&#32;_hashedval);</emphasis>
+373 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1ae0d9cf99ed8ba63c3466d6ee724a0f38">_hashedval</link>&#32;=&#32;(<emphasis role="keywordtype">char</emphasis>*)malloc(strlen(hashed_val)&#32;+&#32;1);
+374 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;strcpy(<link linkend="__s_q_lite_helper_8cpp_1ae0d9cf99ed8ba63c3466d6ee724a0f38">_hashedval</link>,&#32;(<emphasis role="keywordtype">char</emphasis>*)hashed_val);
+375 &#32;&#32;&#32;&#32;}
+376 &#32;&#32;&#32;&#32;
+377 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(isNew)&#32;{
+378 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_s_q_lite_helper_1a843ad9e365ed3bc8d6d8baf38600fdc0">saveNewFileInfo</link>(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>);
+379 &#32;&#32;&#32;&#32;}
+380 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+381 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>&#32;(attr_to_update)
+382 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+383 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;1:
+384 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//fprintf(stderr,&#32;&quot;\nGetting&#32;ready&#32;to&#32;save&#32;hashedvalue&#32;of&#32;%s\n&quot;,&#32;_hashedval);</emphasis>
+385 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_s_q_lite_helper_1af16a7fbd53573503bfa21c97eea53efb">saveExistingFileInfo</link>(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;attr_to_update,<link linkend="__s_q_lite_helper_8cpp_1ae0d9cf99ed8ba63c3466d6ee724a0f38">_hashedval</link>);
+386 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+387 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;2:
+388 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_s_q_lite_helper_1af16a7fbd53573503bfa21c97eea53efb">saveExistingFileInfo</link>(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;attr_to_update,NULL,<link linkend="__s_q_lite_helper_8cpp_1a8fa7c9a40c7098d3a32f6c6a939898ba">_filesize</link>);
+389 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+390 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;3:
+391 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_s_q_lite_helper_1af16a7fbd53573503bfa21c97eea53efb">saveExistingFileInfo</link>(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;attr_to_update,&#32;<link linkend="__s_q_lite_helper_8cpp_1a57cb4a0beb90bcf5df0d725693b1a5b9">_datemodified</link>);
+392 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+393 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">default</emphasis>:
+394 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+395 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+396 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//saveExistingFileInfo(db,&#32;attr_to_update);</emphasis>
+397 &#32;&#32;&#32;&#32;}
+398 
+399 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+400 }
+</programlisting>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_a10508781dbcc903c632e83c1527da36f_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_a10508781dbcc903c632e83c1527da36f_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 </section>
-<anchor xml:id="_class_s_q_lite_helper_1a416b734c88d6e65e3a358953aea9468a"/><section>
+<anchor xml:id="_class_s_q_lite_helper_1a843ad9e365ed3bc8d6d8baf38600fdc0"/><section>
     <title>saveNewFileInfo()</title>
 <indexterm><primary>saveNewFileInfo</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>saveNewFileInfo</secondary></indexterm>
-<para><computeroutput>static int SQLiteHelper::saveNewFileInfo (sqlite3 * db)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
+<para><computeroutput>int SQLiteHelper::saveNewFileInfo (sqlite3 * db)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
 <para>
                 <formalpara>
                     <title>
@@ -835,12 +1511,89 @@ Parameters</title>
 <para></para>
 </formalpara>
 </para>
+<programlisting linenumbering="unnumbered">402 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+403 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+404 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+405 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+406 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+407 &#32;&#32;&#32;&#32;
+408 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;current_time&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a33630720f2df387b6c543d33473138e4">getCurrentTime</link>();
+409 
+410 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__s_q_lite_helper_8cpp_1ae0d9cf99ed8ba63c3466d6ee724a0f38">_hashedval</link>&#32;==&#32;NULL)&#32;{
+411 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a970ba9c2ed3ddfaa6961348c39d128db">sql_save_newfile_nohashedval</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+412 &#32;&#32;&#32;&#32;}
+413 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+414 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a9881226bc88bfd09be3a2c29af05419f">sql_save_newfile_hashedval</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+415 &#32;&#32;&#32;&#32;}
+416 
+417 &#32;&#32;&#32;&#32;<emphasis role="comment">//dirid,&#32;dateadded,&#32;filename,&#32;filesize,&#32;lastmodified</emphasis>
+418 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_OK)&#32;{
+419 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;1,&#32;<link linkend="__s_q_lite_helper_8cpp_1a6ff722a0f3f2c0e8e2db123ddba7c66d">_dirid</link>);
+420 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;2,&#32;current_time,&#32;-1,&#32;NULL);
+421 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;3,&#32;<link linkend="__s_q_lite_helper_8cpp_1a865240c40b0ff5596e16d5ff7c709565">_filename</link>,&#32;-1,&#32;NULL);
+422 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;4,&#32;<link linkend="__s_q_lite_helper_8cpp_1a8fa7c9a40c7098d3a32f6c6a939898ba">_filesize</link>);
+423 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;5,&#32;<link linkend="__s_q_lite_helper_8cpp_1a57cb4a0beb90bcf5df0d725693b1a5b9">_datemodified</link>,&#32;-1,&#32;NULL);
+424 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+425 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="__s_q_lite_helper_8cpp_1ae0d9cf99ed8ba63c3466d6ee724a0f38">_hashedval</link>&#32;!=&#32;NULL)&#32;{
+426 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_text(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;6,&#32;<link linkend="__s_q_lite_helper_8cpp_1ae0d9cf99ed8ba63c3466d6ee724a0f38">_hashedval</link>,&#32;-1,&#32;NULL);
+427 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+428 &#32;&#32;&#32;&#32;}
+429 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+430 
+431 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//fprintf(stderr,&#32;&quot;saveNewFileInfo::Failed&#32;to&#32;execute&#32;statement:&#32;%s\n&quot;,&#32;sqlite3_errmsg(db));</emphasis>
+432 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;-1;
+433 &#32;&#32;&#32;&#32;}
+434 
+435 &#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+436 
+437 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_BUSY)&#32;{
+438 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nDatabase&#32;is&#32;busy&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+439 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(rc&#32;==&#32;SQLITE_BUSY)
+440 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+441 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+442 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+443 &#32;&#32;&#32;&#32;}
+444 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_ERROR)&#32;{
+445 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;\nIn&#32;SQLiteHelper::saveNewFileInfo&#32;execution&#32;failed:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+446 &#32;&#32;&#32;&#32;}
+447 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_MISUSE)&#32;{
+448 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nA&#32;MISUSE&#32;has&#32;been&#32;deteced&#32;in&#32;SQLiteHelper::saveNewFileInfo.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+449 &#32;&#32;&#32;&#32;}
+450 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_DONE)&#32;{
+451 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nsqlite3_step&#32;executed&#32;successfully&#32;in&#32;SQLiteHelper::saveNewFileInfo.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+452 &#32;&#32;&#32;&#32;}
+453 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+454 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nNot&#32;sure&#32;what&#32;happened&#32;in&#32;SQLiteHelper::saveNewFileInfo.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+455 &#32;&#32;&#32;&#32;}
+456 
+457 &#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+458 &#32;&#32;&#32;&#32;
+459 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+460 }
+</programlisting>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_a843ad9e365ed3bc8d6d8baf38600fdc0_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_a843ad9e365ed3bc8d6d8baf38600fdc0_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 </section>
-<anchor xml:id="_class_s_q_lite_helper_1a174400575d3038248769856efc9546a8"/><section>
+<anchor xml:id="_class_s_q_lite_helper_1a190dc1ee6382b8d506cbd1ee6ee59e37"/><section>
     <title>setDirectoryName()</title>
 <indexterm><primary>setDirectoryName</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>setDirectoryName</secondary></indexterm>
-<para><computeroutput>static void SQLiteHelper::setDirectoryName (char * dir_name)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+<para><computeroutput>void SQLiteHelper::setDirectoryName (char * dir_name)<computeroutput>[static]</computeroutput></computeroutput></para><para>
 
 <para>Sets the relative directory name. </para>
 </para>
@@ -866,12 +1619,16 @@ Parameters</title>
                     </para>
                 </formalpara>
                 </para>
-</section>
-<anchor xml:id="_class_s_q_lite_helper_1a0815f283b738dea61f78f0e0dab958ea"/><section>
+<programlisting linenumbering="unnumbered">230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+231 &#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1a204ff8c5d0354b487b6e77ab17c0e106">_dirname</link>&#32;=&#32;(<emphasis role="keywordtype">char</emphasis>*)malloc(strlen(dir_name)&#32;+&#32;1);
+232 &#32;&#32;&#32;&#32;strcpy(<link linkend="__s_q_lite_helper_8cpp_1a204ff8c5d0354b487b6e77ab17c0e106">_dirname</link>,&#32;dir_name);
+233 }
+</programlisting></section>
+<anchor xml:id="_class_s_q_lite_helper_1afee8872bcc8c1b58c274374331ccc3aa"/><section>
     <title>setFileName()</title>
 <indexterm><primary>setFileName</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>setFileName</secondary></indexterm>
-<para><computeroutput>static void SQLiteHelper::setFileName (char * file_name)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+<para><computeroutput>void SQLiteHelper::setFileName (char * file_name)<computeroutput>[static]</computeroutput></computeroutput></para><para>
 
 <para>Sets the absolute file name. </para>
 </para>
@@ -897,12 +1654,16 @@ Parameters</title>
                     </para>
                 </formalpara>
                 </para>
-</section>
-<anchor xml:id="_class_s_q_lite_helper_1a8fc3a476fa41e7601138ed1a87431ab9"/><section>
+<programlisting linenumbering="unnumbered">235 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+236 &#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1a865240c40b0ff5596e16d5ff7c709565">_filename</link>&#32;=&#32;(<emphasis role="keywordtype">char</emphasis>*)malloc(strlen(file_name)&#32;+&#32;1);
+237 &#32;&#32;&#32;&#32;strcpy(<link linkend="__s_q_lite_helper_8cpp_1a865240c40b0ff5596e16d5ff7c709565">_filename</link>,&#32;file_name);
+238 }
+</programlisting></section>
+<anchor xml:id="_class_s_q_lite_helper_1ab269da2fbf803659b63e7161dfbf0a18"/><section>
     <title>setMachineName()</title>
 <indexterm><primary>setMachineName</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>setMachineName</secondary></indexterm>
-<para><computeroutput>static void SQLiteHelper::setMachineName (char * machine_name)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+<para><computeroutput>void SQLiteHelper::setMachineName (char * machine_name)<computeroutput>[static]</computeroutput></computeroutput></para><para>
 
 <para>Sets the machine name where the scanner is running. </para>
 </para>
@@ -928,12 +1689,16 @@ Parameters</title>
                     </para>
                 </formalpara>
                 </para>
-</section>
-<anchor xml:id="_class_s_q_lite_helper_1a4eb63efa7ac69125fd954d5efb23c2c6"/><section>
+<programlisting linenumbering="unnumbered">240 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+241 &#32;&#32;&#32;&#32;<link linkend="__s_q_lite_helper_8cpp_1aa424942af01346d64f66002f897ec80e">_machinename</link>&#32;=&#32;(<emphasis role="keywordtype">char</emphasis>*)malloc(strlen(machine_name)&#32;+&#32;1);
+242 &#32;&#32;&#32;&#32;strcpy(<link linkend="__s_q_lite_helper_8cpp_1aa424942af01346d64f66002f897ec80e">_machinename</link>,&#32;machine_name);
+243 }
+</programlisting></section>
+<anchor xml:id="_class_s_q_lite_helper_1a7f4941d87b3ea71d1691f62b0113999a"/><section>
     <title>updateChangedInFile()</title>
 <indexterm><primary>updateChangedInFile</primary><secondary>SQLiteHelper</secondary></indexterm>
 <indexterm><primary>SQLiteHelper</primary><secondary>updateChangedInFile</secondary></indexterm>
-<para><computeroutput>static int SQLiteHelper::updateChangedInFile (sqlite3 * db, int file_id, <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attr_to_change)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
+<para><computeroutput>int SQLiteHelper::updateChangedInFile (sqlite3 * db, int file_id, <link linkend="_class_s_q_lite_helper_1a6ec2e82b83e64f66831dc36a7359c643">AttributeToCheck</link> attr_to_change)<computeroutput>[static]</computeroutput>, <computeroutput>[private]</computeroutput></computeroutput></para>
 <para>
                 <formalpara>
                     <title>
@@ -968,6 +1733,84 @@ Parameters</title>
 
 <para></para>
 </formalpara>
+</para>
+<programlisting linenumbering="unnumbered">626 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+627 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;zErrMsg&#32;=&#32;0;
+628 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;rc;
+629 &#32;&#32;&#32;&#32;sqlite3_stmt*&#32;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>;
+630 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+631 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;current_time&#32;=&#32;<link linkend="_class_s_q_lite_helper_1a33630720f2df387b6c543d33473138e4">getCurrentTime</link>();
+632 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;sql_stmt;
+633 &#32;&#32;&#32;&#32;
+634 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">switch</emphasis>&#32;(attr_to_change)
+635 &#32;&#32;&#32;&#32;{
+636 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;1:
+637 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1abea92ed80d2eadb452e3517aa9e4f4b5">sql_set_inchanges_hashedval</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+638 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+639 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;2:
+640 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a48a30016c73a80ddd5de694dad070638">sql_set_inchanges_filesize</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+641 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+642 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">case</emphasis>&#32;3:
+643 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_prepare_v3(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>,&#32;<link linkend="__s_q_lite_helper_8cpp_1a86296081c599ddc648276a4e8a7699e7">sql_set_inchanges_lastmodified</link>,&#32;-1,&#32;0,&#32;&amp;<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;NULL);
+644 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+645 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">default</emphasis>:
+646 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+647 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Unknown&#32;attribute.&#32;Nothing&#32;saved.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+648 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">break</emphasis>;
+649 &#32;&#32;&#32;&#32;}
+650 
+651 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_OK)&#32;{
+652 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_bind_int(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>,&#32;1,&#32;file_id);
+653 &#32;&#32;&#32;&#32;}
+654 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+655 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fprintf(stderr,&#32;<emphasis role="stringliteral">&quot;updateChangedInFiles:Failed&#32;to&#32;execute&#32;statement:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+656 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+657 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;-1;
+658 &#32;&#32;&#32;&#32;}
+659 
+660 &#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+661 
+662 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_BUSY)&#32;{
+663 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nDatabase&#32;is&#32;busy&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+664 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">while</emphasis>&#32;(rc&#32;==&#32;SQLITE_BUSY)
+665 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+666 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rc&#32;=&#32;sqlite3_step(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+667 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+668 &#32;&#32;&#32;&#32;}
+669 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_ERROR)&#32;{
+670 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;\nIn&#32;updateChangedInFiles&#32;execution&#32;failed:&#32;%s\n&quot;</emphasis>,&#32;sqlite3_errmsg(<link linkend="_sqlite3controller_8cpp_1ad6e663497d2c934364b3bcf07496b30b">db</link>));
+671 &#32;&#32;&#32;&#32;}
+672 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_MISUSE)&#32;{
+673 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nA&#32;MISUSE&#32;has&#32;been&#32;deteced&#32;in&#32;updateChangedInFiles.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+674 &#32;&#32;&#32;&#32;}
+675 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(rc&#32;==&#32;SQLITE_DONE)&#32;{
+676 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nsqlite3_step&#32;executed&#32;successfully.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+677 &#32;&#32;&#32;&#32;}
+678 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+679 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\nNot&#32;sure&#32;what&#32;happened&#32;in&#32;updateChangedInFiles.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+680 &#32;&#32;&#32;&#32;}
+681 
+682 &#32;&#32;&#32;&#32;sqlite3_finalize(<link linkend="__s_q_lite_helper_8cpp_1a67d1f816562e1a4851f044e829476aed">pStmt</link>);
+683 
+684 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+685 }
+</programlisting>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_a7f4941d87b3ea71d1691f62b0113999a_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_s_q_lite_helper_a7f4941d87b3ea71d1691f62b0113999a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
 </para>
 </section>
 </section>

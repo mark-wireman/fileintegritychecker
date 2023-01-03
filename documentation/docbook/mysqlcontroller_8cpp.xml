@@ -59,23 +59,17 @@
     <title>SAVEDIRSTOREDPROCSTMT</title>
 <indexterm><primary>SAVEDIRSTOREDPROCSTMT</primary><secondary>mysqlcontroller.cpp</secondary></indexterm>
 <indexterm><primary>mysqlcontroller.cpp</primary><secondary>SAVEDIRSTOREDPROCSTMT</secondary></indexterm>
-<para><computeroutput>#define SAVEDIRSTOREDPROCSTMT&#160;&#160;&#160;&quot;call saveDirectoryDetails(?, ?, ?)&quot;</computeroutput></para><para>
-Definition at line <link linkend="_mysqlcontroller_8cpp_source_1l00004">4</link> of file <link linkend="_mysqlcontroller_8cpp_source">mysqlcontroller.cpp</link>.</para>
-</section>
+<para><computeroutput>#define SAVEDIRSTOREDPROCSTMT&#160;&#160;&#160;&quot;call saveDirectoryDetails(?, ?, ?)&quot;</computeroutput></para></section>
 <anchor xml:id="_mysqlcontroller_8cpp_1a0e90c82df49e2043941930efcab0fb89"/><section>
     <title>SAVEFILEINFOPROCSTMT</title>
 <indexterm><primary>SAVEFILEINFOPROCSTMT</primary><secondary>mysqlcontroller.cpp</secondary></indexterm>
 <indexterm><primary>mysqlcontroller.cpp</primary><secondary>SAVEFILEINFOPROCSTMT</secondary></indexterm>
-<para><computeroutput>#define SAVEFILEINFOPROCSTMT&#160;&#160;&#160;&quot;call saveFileHashVal(?,?,?,?,?)&quot;</computeroutput></para><para>
-Definition at line <link linkend="_mysqlcontroller_8cpp_source_1l00005">5</link> of file <link linkend="_mysqlcontroller_8cpp_source">mysqlcontroller.cpp</link>.</para>
-</section>
+<para><computeroutput>#define SAVEFILEINFOPROCSTMT&#160;&#160;&#160;&quot;call saveFileHashVal(?,?,?,?,?)&quot;</computeroutput></para></section>
 <anchor xml:id="_mysqlcontroller_8cpp_1ad78224efe1d3fb39b67ca74ad9d9eec7"/><section>
     <title>STRING_SIZE</title>
 <indexterm><primary>STRING_SIZE</primary><secondary>mysqlcontroller.cpp</secondary></indexterm>
 <indexterm><primary>mysqlcontroller.cpp</primary><secondary>STRING_SIZE</secondary></indexterm>
-<para><computeroutput>#define STRING_SIZE&#160;&#160;&#160;65535</computeroutput></para><para>
-Definition at line <link linkend="_mysqlcontroller_8cpp_source_1l00003">3</link> of file <link linkend="_mysqlcontroller_8cpp_source">mysqlcontroller.cpp</link>.</para>
-</section>
+<para><computeroutput>#define STRING_SIZE&#160;&#160;&#160;65535</computeroutput></para></section>
 </section>
 <section>
 <title>Variable Documentation</title>
@@ -83,92 +77,66 @@ Definition at line <link linkend="_mysqlcontroller_8cpp_source_1l00003">3</link>
     <title>con</title>
 <indexterm><primary>con</primary><secondary>mysqlcontroller.cpp</secondary></indexterm>
 <indexterm><primary>mysqlcontroller.cpp</primary><secondary>con</secondary></indexterm>
-<para><computeroutput>sql::Connection* con</computeroutput></para><para>
-Definition at line <link linkend="_mysqlcontroller_8cpp_source_1l00018">18</link> of file <link linkend="_mysqlcontroller_8cpp_source">mysqlcontroller.cpp</link>.</para>
-</section>
+<para><computeroutput>sql::Connection* con</computeroutput></para></section>
 <anchor xml:id="_mysqlcontroller_8cpp_1aa1d4dd60015ed611b5141e9472985b88"/><section>
     <title>dbasename</title>
 <indexterm><primary>dbasename</primary><secondary>mysqlcontroller.cpp</secondary></indexterm>
 <indexterm><primary>mysqlcontroller.cpp</primary><secondary>dbasename</secondary></indexterm>
-<para><computeroutput>char* dbasename</computeroutput></para><para>
-Definition at line <link linkend="_mysqlcontroller_8cpp_source_1l00009">9</link> of file <link linkend="_mysqlcontroller_8cpp_source">mysqlcontroller.cpp</link>.</para>
-</section>
+<para><computeroutput>char* dbasename</computeroutput></para></section>
 <anchor xml:id="_mysqlcontroller_8cpp_1a689a469da10bca69c80830e8b2785e2c"/><section>
     <title>driver</title>
 <indexterm><primary>driver</primary><secondary>mysqlcontroller.cpp</secondary></indexterm>
 <indexterm><primary>mysqlcontroller.cpp</primary><secondary>driver</secondary></indexterm>
-<para><computeroutput>sql::Driver* driver</computeroutput></para><para>
-Definition at line <link linkend="_mysqlcontroller_8cpp_source_1l00017">17</link> of file <link linkend="_mysqlcontroller_8cpp_source">mysqlcontroller.cpp</link>.</para>
-</section>
+<para><computeroutput>sql::Driver* driver</computeroutput></para></section>
 <anchor xml:id="_mysqlcontroller_8cpp_1af203df082d5c6dcaa0c88b07cf86466d"/><section>
     <title>hostname</title>
 <indexterm><primary>hostname</primary><secondary>mysqlcontroller.cpp</secondary></indexterm>
 <indexterm><primary>mysqlcontroller.cpp</primary><secondary>hostname</secondary></indexterm>
-<para><computeroutput>char* hostname</computeroutput></para><para>
-Definition at line <link linkend="_mysqlcontroller_8cpp_source_1l00008">8</link> of file <link linkend="_mysqlcontroller_8cpp_source">mysqlcontroller.cpp</link>.</para>
-</section>
+<para><computeroutput>char* hostname</computeroutput></para></section>
 <anchor xml:id="_mysqlcontroller_8cpp_1a305d17d000ed63060cc0e874bf27e05c"/><section>
     <title>machinename</title>
 <indexterm><primary>machinename</primary><secondary>mysqlcontroller.cpp</secondary></indexterm>
 <indexterm><primary>mysqlcontroller.cpp</primary><secondary>machinename</secondary></indexterm>
-<para><computeroutput>char* machinename</computeroutput></para><para>
-Definition at line <link linkend="_mysqlcontroller_8cpp_source_1l00012">12</link> of file <link linkend="_mysqlcontroller_8cpp_source">mysqlcontroller.cpp</link>.</para>
-</section>
+<para><computeroutput>char* machinename</computeroutput></para></section>
 <anchor xml:id="_mysqlcontroller_8cpp_1a59460a3ff2c12443d1022e5cc0fba85c"/><section>
     <title>password</title>
 <indexterm><primary>password</primary><secondary>mysqlcontroller.cpp</secondary></indexterm>
 <indexterm><primary>mysqlcontroller.cpp</primary><secondary>password</secondary></indexterm>
-<para><computeroutput>char* password</computeroutput></para><para>
-Definition at line <link linkend="_mysqlcontroller_8cpp_source_1l00011">11</link> of file <link linkend="_mysqlcontroller_8cpp_source">mysqlcontroller.cpp</link>.</para>
-</section>
+<para><computeroutput>char* password</computeroutput></para></section>
 <anchor xml:id="_mysqlcontroller_8cpp_1a63c89c04d1feae07ca35558055155ffb"/><section>
     <title>port</title>
 <indexterm><primary>port</primary><secondary>mysqlcontroller.cpp</secondary></indexterm>
 <indexterm><primary>mysqlcontroller.cpp</primary><secondary>port</secondary></indexterm>
-<para><computeroutput>int port</computeroutput></para><para>
-Definition at line <link linkend="_mysqlcontroller_8cpp_source_1l00013">13</link> of file <link linkend="_mysqlcontroller_8cpp_source">mysqlcontroller.cpp</link>.</para>
-</section>
+<para><computeroutput>int port</computeroutput></para></section>
 <anchor xml:id="_mysqlcontroller_8cpp_1aafbbfadf03a197580df9925af46a548e"/><section>
     <title>res</title>
 <indexterm><primary>res</primary><secondary>mysqlcontroller.cpp</secondary></indexterm>
 <indexterm><primary>mysqlcontroller.cpp</primary><secondary>res</secondary></indexterm>
-<para><computeroutput>sql::ResultSet* res</computeroutput></para><para>
-Definition at line <link linkend="_mysqlcontroller_8cpp_source_1l00020">20</link> of file <link linkend="_mysqlcontroller_8cpp_source">mysqlcontroller.cpp</link>.</para>
-</section>
+<para><computeroutput>sql::ResultSet* res</computeroutput></para></section>
 <anchor xml:id="_mysqlcontroller_8cpp_1adc2d5bbd5830af1932c48244f3c16264"/><section>
     <title>savedfileprepStmt</title>
 <indexterm><primary>savedfileprepStmt</primary><secondary>mysqlcontroller.cpp</secondary></indexterm>
 <indexterm><primary>mysqlcontroller.cpp</primary><secondary>savedfileprepStmt</secondary></indexterm>
-<para><computeroutput>sql::PreparedStatement* savedfileprepStmt</computeroutput></para><para>
-Definition at line <link linkend="_mysqlcontroller_8cpp_source_1l00022">22</link> of file <link linkend="_mysqlcontroller_8cpp_source">mysqlcontroller.cpp</link>.</para>
-</section>
+<para><computeroutput>sql::PreparedStatement* savedfileprepStmt</computeroutput></para></section>
 <anchor xml:id="_mysqlcontroller_8cpp_1aa6cc4c5575dfc2326a2ed948b3ffed62"/><section>
     <title>savedirprepStmt</title>
 <indexterm><primary>savedirprepStmt</primary><secondary>mysqlcontroller.cpp</secondary></indexterm>
 <indexterm><primary>mysqlcontroller.cpp</primary><secondary>savedirprepStmt</secondary></indexterm>
-<para><computeroutput>sql::PreparedStatement* savedirprepStmt</computeroutput></para><para>
-Definition at line <link linkend="_mysqlcontroller_8cpp_source_1l00021">21</link> of file <link linkend="_mysqlcontroller_8cpp_source">mysqlcontroller.cpp</link>.</para>
-</section>
+<para><computeroutput>sql::PreparedStatement* savedirprepStmt</computeroutput></para></section>
 <anchor xml:id="_mysqlcontroller_8cpp_1a89f234133d3efe315836311cbf21c64b"/><section>
     <title>state</title>
 <indexterm><primary>state</primary><secondary>mysqlcontroller.cpp</secondary></indexterm>
 <indexterm><primary>mysqlcontroller.cpp</primary><secondary>state</secondary></indexterm>
-<para><computeroutput>int state</computeroutput></para><para>
-Definition at line <link linkend="_mysqlcontroller_8cpp_source_1l00014">14</link> of file <link linkend="_mysqlcontroller_8cpp_source">mysqlcontroller.cpp</link>.</para>
-</section>
+<para><computeroutput>int state</computeroutput></para></section>
 <anchor xml:id="_mysqlcontroller_8cpp_1ab6db88c378faf719a15498d0b3a37b31"/><section>
     <title>stmt</title>
 <indexterm><primary>stmt</primary><secondary>mysqlcontroller.cpp</secondary></indexterm>
 <indexterm><primary>mysqlcontroller.cpp</primary><secondary>stmt</secondary></indexterm>
-<para><computeroutput>sql::Statement* stmt</computeroutput></para><para>
-Definition at line <link linkend="_mysqlcontroller_8cpp_source_1l00019">19</link> of file <link linkend="_mysqlcontroller_8cpp_source">mysqlcontroller.cpp</link>.</para>
-</section>
+<para><computeroutput>sql::Statement* stmt</computeroutput></para></section>
 <anchor xml:id="_mysqlcontroller_8cpp_1a9b20c006bd90a09e1465fb668700e81d"/><section>
     <title>username</title>
 <indexterm><primary>username</primary><secondary>mysqlcontroller.cpp</secondary></indexterm>
 <indexterm><primary>mysqlcontroller.cpp</primary><secondary>username</secondary></indexterm>
-<para><computeroutput>char* username</computeroutput></para><para>
-Definition at line <link linkend="_mysqlcontroller_8cpp_source_1l00010">10</link> of file <link linkend="_mysqlcontroller_8cpp_source">mysqlcontroller.cpp</link>.</para>
-</section>
+<para><computeroutput>char* username</computeroutput></para></section>
 </section>
 </section>

@@ -28,22 +28,16 @@
     <title>db</title>
 <indexterm><primary>db</primary><secondary>sqlite3controller.cpp</secondary></indexterm>
 <indexterm><primary>sqlite3controller.cpp</primary><secondary>db</secondary></indexterm>
-<para><computeroutput>sqlite3* db</computeroutput></para><para>
-Definition at line <link linkend="_sqlite3controller_8cpp_source_1l00006">6</link> of file <link linkend="_sqlite3controller_8cpp_source">sqlite3controller.cpp</link>.</para>
-</section>
+<para><computeroutput>sqlite3* db</computeroutput></para></section>
 <anchor xml:id="_sqlite3controller_8cpp_1a89983a6d628aa726003d2a29bc372df4"/><section>
     <title>sqlite3_dbasename</title>
 <indexterm><primary>sqlite3_dbasename</primary><secondary>sqlite3controller.cpp</secondary></indexterm>
 <indexterm><primary>sqlite3controller.cpp</primary><secondary>sqlite3_dbasename</secondary></indexterm>
-<para><computeroutput>char* sqlite3_dbasename</computeroutput></para><para>
-Definition at line <link linkend="_sqlite3controller_8cpp_source_1l00007">7</link> of file <link linkend="_sqlite3controller_8cpp_source">sqlite3controller.cpp</link>.</para>
-</section>
+<para><computeroutput>char* sqlite3_dbasename</computeroutput></para></section>
 <anchor xml:id="_sqlite3controller_8cpp_1aadf24962fe0ba651d19e77bd6ed61b51"/><section>
     <title>sqlite3_mname</title>
 <indexterm><primary>sqlite3_mname</primary><secondary>sqlite3controller.cpp</secondary></indexterm>
 <indexterm><primary>sqlite3controller.cpp</primary><secondary>sqlite3_mname</secondary></indexterm>
-<para><computeroutput>char* sqlite3_mname</computeroutput></para><para>
-Definition at line <link linkend="_sqlite3controller_8cpp_source_1l00008">8</link> of file <link linkend="_sqlite3controller_8cpp_source">sqlite3controller.cpp</link>.</para>
-</section>
+<para><computeroutput>char* sqlite3_mname</computeroutput></para></section>
 </section>
 </section>

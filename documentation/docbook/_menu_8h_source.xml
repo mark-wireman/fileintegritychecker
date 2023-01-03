@@ -21,7 +21,7 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 17 <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_menu">Menu</link>&#32;{
 18 <emphasis role="keyword">public</emphasis>:
 19 &#32;&#32;&#32;&#32;<link linkend="_class_menu_1ad466dd83355124a6ed958430450bfe94">Menu</link>();
-20 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_class_menu_1a5bf168cbb40e28e718ced8f248b3d37a">~Menu</link>();
+20 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<link linkend="_class_menu_1a831387f51358cfb88cd018e1777bc980">~Menu</link>();
 21 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_menu_1a50f39bd5a994cb64421bfacbf6aed5e8">ParseArguments</link>(<emphasis role="keywordtype">int</emphasis>&#32;argc,&#32;<emphasis role="keywordtype">char</emphasis>&#32;*argv[]);
 22 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_menu_1acbe5ec7e6202dec08ca26f4898df8040">PrintMenu</link>();
 23 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;<link linkend="_class_menu_1aca44a03905fb898515c88a49b4fca849">getDATABASEHOSTNAME</link>();

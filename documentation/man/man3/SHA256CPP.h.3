@@ -1,8 +1,8 @@
-.TH "headers/SHA256CPP.h" 3 "Sat Dec 10 2022" "fileintegritychecker" \" -*- nroff -*-
+.TH "C:/Users/mark_/source/repos/fileintegritychecker/headers/SHA256CPP.h" 3 "Sun Jan 1 2023" "Version 1.0" "File Integrity Checker" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-headers/SHA256CPP.h
+C:/Users/mark_/source/repos/fileintegritychecker/headers/SHA256CPP.h
 .SH SYNOPSIS
 .br
 .PP
@@ -56,23 +56,17 @@ headers/SHA256CPP.h
 .PP 
 .SS "#define byteSwap32(x)   (((x) >> 24) | (((x)&0x00FF0000) >> 8) | (((x)&0x0000FF00) << 8) | ((x) << 24))"
 
-.PP
-Definition at line \fB11\fP of file \fBSHA256CPP\&.h\fP\&.
 .SS "#define byteSwap64(x)"
 \fBValue:\fP
 .PP
 .nf
-   ((((x) >> 56) & 0x00000000000000FF) | (((x) >> 40) & 0x000000000000FF00) | \
+ ((((x) >> 56) & 0x00000000000000FF) | (((x) >> 40) & 0x000000000000FF00) | \
      (((x) >> 24) & 0x0000000000FF0000) | (((x) >> 8) & 0x00000000FF000000) |  \
      (((x) << 8) & 0x000000FF00000000) | (((x) << 24) & 0x0000FF0000000000) |  \
      (((x) << 40) & 0x00FF000000000000) | (((x) << 56) & 0xFF00000000000000))
 .fi
-.PP
-Definition at line \fB12\fP of file \fBSHA256CPP\&.h\fP\&.
 .SS "#define MAXCHAR   100000"
 
-.PP
-Definition at line \fB18\fP of file \fBSHA256CPP\&.h\fP\&.
 .SH "Enumeration Type Documentation"
 .PP 
 .SS "enum \fBstatus\fP"
@@ -89,7 +83,14 @@ Definition at line \fB18\fP of file \fBSHA256CPP\&.h\fP\&.
 .TP
 \fB\fIFINISH \fP\fP
 .PP
-Definition at line \fB34\fP of file \fBSHA256CPP\&.h\fP\&.
+.nf
+35 {
+36     READ, 
+37     PAD0,
+38     PAD1,
+39     FINISH
+40 };
+.fi
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for fileintegritychecker from the source code\&.
+Generated automatically by Doxygen for File Integrity Checker from the source code\&.

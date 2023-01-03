@@ -18,8 +18,12 @@ Collaboration diagram for Menu:<para>
     <title>Public Member Functions    </title>
         <itemizedlist>
             <listitem><para><link linkend="_class_menu_1ad466dd83355124a6ed958430450bfe94">Menu</link> ()</para>
+
+<para>Construct a new <link linkend="_class_menu">Menu</link>:: <link linkend="_class_menu">Menu</link> object. </para>
 </listitem>
-            <listitem><para>virtual <link linkend="_class_menu_1a5bf168cbb40e28e718ced8f248b3d37a">~Menu</link> ()</para>
+            <listitem><para>virtual <link linkend="_class_menu_1a831387f51358cfb88cd018e1777bc980">~Menu</link> ()</para>
+
+<para>Destroy the <link linkend="_class_menu">Menu</link>:: <link linkend="_class_menu">Menu</link> object. </para>
 </listitem>
             <listitem><para>int <link linkend="_class_menu_1a50f39bd5a994cb64421bfacbf6aed5e8">ParseArguments</link> (int argc, char *argv[])</para>
 </listitem>
@@ -74,12 +78,26 @@ Collaboration diagram for Menu:<para>
     <title>Menu()</title>
 <indexterm><primary>Menu</primary><secondary>Menu</secondary></indexterm>
 <indexterm><primary>Menu</primary><secondary>Menu</secondary></indexterm>
-<para><computeroutput>Menu::Menu ( )</computeroutput></para></section>
-<anchor xml:id="_class_menu_1a5bf168cbb40e28e718ced8f248b3d37a"/><section>
+<para><computeroutput>Menu::Menu ( )</computeroutput></para><para>
+
+<para>Construct a new <link linkend="_class_menu">Menu</link>:: <link linkend="_class_menu">Menu</link> object. </para>
+</para>
+<programlisting linenumbering="unnumbered">14 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+15 &#32;&#32;&#32;&#32;
+16 }
+</programlisting></section>
+<anchor xml:id="_class_menu_1a831387f51358cfb88cd018e1777bc980"/><section>
     <title>~Menu()</title>
 <indexterm><primary>~Menu</primary><secondary>Menu</secondary></indexterm>
 <indexterm><primary>Menu</primary><secondary>~Menu</secondary></indexterm>
-<para><computeroutput>virtual Menu::~Menu ( )<computeroutput>[virtual]</computeroutput></computeroutput></para></section>
+<para><computeroutput>Menu::~Menu ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destroy the <link linkend="_class_menu">Menu</link>:: <link linkend="_class_menu">Menu</link> object. </para>
+</para>
+<programlisting linenumbering="unnumbered">22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+23 &#32;&#32;&#32;&#32;
+24 }
+</programlisting></section>
 </section>
 <section>
 <title>Member Function Documentation</title>
@@ -87,57 +105,367 @@ Collaboration diagram for Menu:<para>
     <title>getDATABASEHOSTNAME()</title>
 <indexterm><primary>getDATABASEHOSTNAME</primary><secondary>Menu</secondary></indexterm>
 <indexterm><primary>Menu</primary><secondary>getDATABASEHOSTNAME</secondary></indexterm>
-<para><computeroutput>char * Menu::getDATABASEHOSTNAME ( )</computeroutput></para></section>
+<para><computeroutput>char * Menu::getDATABASEHOSTNAME ( )</computeroutput></para>
+<para><formalpara><title>Returns</title>
+
+<para>char* </para>
+</formalpara>
+</para>
+<programlisting linenumbering="unnumbered">31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+32 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;this-&gt;<link linkend="_class_menu_1a05ecb7899e5f3ae7345dae98bc27553c">dbasehost</link>;
+33 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_menu_aca44a03905fb898515c88a49b4fca849_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_class_menu_1a34eb19b4584c6139b1d0fbc7811ba68a"/><section>
     <title>getDBASEFILENAME()</title>
 <indexterm><primary>getDBASEFILENAME</primary><secondary>Menu</secondary></indexterm>
 <indexterm><primary>Menu</primary><secondary>getDBASEFILENAME</secondary></indexterm>
-<para><computeroutput>char * Menu::getDBASEFILENAME ( )</computeroutput></para></section>
+<para><computeroutput>char * Menu::getDBASEFILENAME ( )</computeroutput></para>
+<para><formalpara><title>Returns</title>
+
+<para>char* </para>
+</formalpara>
+</para>
+<programlisting linenumbering="unnumbered">94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+95 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;this-&gt;<link linkend="_class_menu_1a3ff2979249504fbed7989ee73b4f58a6">dbasefilename</link>;
+96 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_menu_a34eb19b4584c6139b1d0fbc7811ba68a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_class_menu_1a1f0c07508ea10698ae7af1caad692d52"/><section>
     <title>getDBASETYPE()</title>
 <indexterm><primary>getDBASETYPE</primary><secondary>Menu</secondary></indexterm>
 <indexterm><primary>Menu</primary><secondary>getDBASETYPE</secondary></indexterm>
-<para><computeroutput>char * Menu::getDBASETYPE ( )</computeroutput></para></section>
+<para><computeroutput>char * Menu::getDBASETYPE ( )</computeroutput></para>
+<para><formalpara><title>Returns</title>
+
+<para>char* </para>
+</formalpara>
+</para>
+<programlisting linenumbering="unnumbered">85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+86 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;this-&gt;<link linkend="_class_menu_1a0cc46cd227e7fcecf4413b9afe58d29d">dbasetype</link>;
+87 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_menu_a1f0c07508ea10698ae7af1caad692d52_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_class_menu_1ab2ce4cac489c6da0f08eb4bd0753a555"/><section>
     <title>getMACHINENAME()</title>
 <indexterm><primary>getMACHINENAME</primary><secondary>Menu</secondary></indexterm>
 <indexterm><primary>Menu</primary><secondary>getMACHINENAME</secondary></indexterm>
-<para><computeroutput>char * Menu::getMACHINENAME ( )</computeroutput></para></section>
+<para><computeroutput>char * Menu::getMACHINENAME ( )</computeroutput></para>
+<para><formalpara><title>Returns</title>
+
+<para>char* </para>
+</formalpara>
+</para>
+<programlisting linenumbering="unnumbered">40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+41 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;this-&gt;<link linkend="_class_menu_1ab67d5fb0837589bb4d6dac62131a72a4">mname</link>;
+42 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_menu_ab2ce4cac489c6da0f08eb4bd0753a555_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_class_menu_1ac07eb59a5697f449133f2d4caf95947c"/><section>
     <title>getPARENTDIR()</title>
 <indexterm><primary>getPARENTDIR</primary><secondary>Menu</secondary></indexterm>
 <indexterm><primary>Menu</primary><secondary>getPARENTDIR</secondary></indexterm>
-<para><computeroutput>char * Menu::getPARENTDIR ( )</computeroutput></para></section>
+<para><computeroutput>char * Menu::getPARENTDIR ( )</computeroutput></para>
+<para><formalpara><title>Returns</title>
+
+<para>char* </para>
+</formalpara>
+</para>
+<programlisting linenumbering="unnumbered">76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+77 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;this-&gt;<link linkend="_class_menu_1a00e9ec31107eb8cbef31f3f198f168a2">parentdir</link>;
+78 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_menu_ac07eb59a5697f449133f2d4caf95947c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_class_menu_1a08a81ab79febb5e1f74a21853717cbae"/><section>
     <title>getPASSWORD()</title>
 <indexterm><primary>getPASSWORD</primary><secondary>Menu</secondary></indexterm>
 <indexterm><primary>Menu</primary><secondary>getPASSWORD</secondary></indexterm>
-<para><computeroutput>char * Menu::getPASSWORD ( )</computeroutput></para></section>
+<para><computeroutput>char * Menu::getPASSWORD ( )</computeroutput></para>
+<para><formalpara><title>Returns</title>
+
+<para>char* </para>
+</formalpara>
+</para>
+<programlisting linenumbering="unnumbered">49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+50 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;this-&gt;<link linkend="_class_menu_1a3851b8c999f1ed310c57b306d6bc2a03">pwd</link>;
+51 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_menu_a08a81ab79febb5e1f74a21853717cbae_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_class_menu_1ac8fe61db0d8a3f32fbb161abdeee4668"/><section>
     <title>getPORT()</title>
 <indexterm><primary>getPORT</primary><secondary>Menu</secondary></indexterm>
 <indexterm><primary>Menu</primary><secondary>getPORT</secondary></indexterm>
-<para><computeroutput>char * Menu::getPORT ( )</computeroutput></para></section>
+<para><computeroutput>char * Menu::getPORT ( )</computeroutput></para>
+<para><formalpara><title>Returns</title>
+
+<para>char* </para>
+</formalpara>
+</para>
+<programlisting linenumbering="unnumbered">67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+68 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;this-&gt;<link linkend="_class_menu_1ab170c7e84e5d2da91880820ccbc12abf">portno</link>;
+69 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_menu_ac8fe61db0d8a3f32fbb161abdeee4668_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_class_menu_1a7296588596f0d05634bb6b6a26d51000"/><section>
     <title>getPROCESSHASHVALS()</title>
 <indexterm><primary>getPROCESSHASHVALS</primary><secondary>Menu</secondary></indexterm>
 <indexterm><primary>Menu</primary><secondary>getPROCESSHASHVALS</secondary></indexterm>
-<para><computeroutput>int Menu::getPROCESSHASHVALS ( )</computeroutput></para></section>
+<para><computeroutput>int Menu::getPROCESSHASHVALS ( )</computeroutput></para>
+<para><formalpara><title>Returns</title>
+
+<para>int </para>
+</formalpara>
+</para>
+<programlisting linenumbering="unnumbered">103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+104 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;this-&gt;<link linkend="_class_menu_1aa094dcb11114277b2e0921587c2bcb12">processhashvals</link>;
+105 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_menu_a7296588596f0d05634bb6b6a26d51000_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_class_menu_1a7b3f2bde7bf5297d47409c7fa7f8c940"/><section>
     <title>getUSERNAME()</title>
 <indexterm><primary>getUSERNAME</primary><secondary>Menu</secondary></indexterm>
 <indexterm><primary>Menu</primary><secondary>getUSERNAME</secondary></indexterm>
-<para><computeroutput>char * Menu::getUSERNAME ( )</computeroutput></para></section>
+<para><computeroutput>char * Menu::getUSERNAME ( )</computeroutput></para>
+<para><formalpara><title>Returns</title>
+
+<para>char* </para>
+</formalpara>
+</para>
+<programlisting linenumbering="unnumbered">58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+59 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;this-&gt;<link linkend="_class_menu_1abfa524748149194d31f3a760ab8765fd">uname</link>;
+60 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_menu_a7b3f2bde7bf5297d47409c7fa7f8c940_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_class_menu_1a50f39bd5a994cb64421bfacbf6aed5e8"/><section>
     <title>ParseArguments()</title>
 <indexterm><primary>ParseArguments</primary><secondary>Menu</secondary></indexterm>
 <indexterm><primary>Menu</primary><secondary>ParseArguments</secondary></indexterm>
-<para><computeroutput>int Menu::ParseArguments (int argc, char * argv[])</computeroutput></para></section>
+<para><computeroutput>int Menu::ParseArguments (int argc, char * argv[])</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>argc</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>argv</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>int </para>
+</formalpara>
+</para>
+<programlisting linenumbering="unnumbered">144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+145 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;retVal&#32;=&#32;0;
+146 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;dbaseset&#32;=&#32;-1;
+147 
+148 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(&#32;<emphasis role="keywordtype">int</emphasis>&#32;argumentcount&#32;=&#32;1;&#32;argumentcount&#32;&lt;&#32;argc;&#32;argumentcount++&#32;)&#32;{
+149 
+150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(strcmp(argv[argumentcount],<emphasis role="stringliteral">&quot;-dir&quot;</emphasis>)&#32;==&#32;0)&#32;{
+151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_menu_1a00e9ec31107eb8cbef31f3f198f168a2">parentdir</link>&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>[strlen(argv[argumentcount+1])];
+152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_menu_1a00e9ec31107eb8cbef31f3f198f168a2">parentdir</link>&#32;=&#32;argv[argumentcount+1];
+153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(strcmp(argv[argumentcount],<emphasis role="stringliteral">&quot;-host&quot;</emphasis>)&#32;==&#32;0)&#32;{
+155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_menu_1a05ecb7899e5f3ae7345dae98bc27553c">dbasehost</link>&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>[strlen(argv[argumentcount+1])];
+156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_menu_1a05ecb7899e5f3ae7345dae98bc27553c">dbasehost</link>&#32;=&#32;argv[argumentcount+1];
+157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(strcmp(argv[argumentcount],<emphasis role="stringliteral">&quot;-username&quot;</emphasis>)&#32;==&#32;0)&#32;{
+159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_menu_1abfa524748149194d31f3a760ab8765fd">uname</link>&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>[strlen(argv[argumentcount+1])];
+160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_menu_1abfa524748149194d31f3a760ab8765fd">uname</link>&#32;=&#32;argv[argumentcount+1];
+161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(strcmp(argv[argumentcount],<emphasis role="stringliteral">&quot;-password&quot;</emphasis>)&#32;==&#32;0)&#32;{
+163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_menu_1a3851b8c999f1ed310c57b306d6bc2a03">pwd</link>&#32;=&#32;(<emphasis role="keywordtype">char</emphasis>*)malloc(<emphasis role="keyword">sizeof</emphasis>(<emphasis role="keywordtype">char</emphasis>)*strlen(argv[argumentcount+1]));
+164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_menu_1a3851b8c999f1ed310c57b306d6bc2a03">pwd</link>&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>[strlen(argv[argumentcount+1])];
+165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_menu_1a3851b8c999f1ed310c57b306d6bc2a03">pwd</link>&#32;=&#32;argv[argumentcount+1];
+166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(strcmp(argv[argumentcount],<emphasis role="stringliteral">&quot;-port&quot;</emphasis>)&#32;==&#32;0)&#32;{
+168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_menu_1ab170c7e84e5d2da91880820ccbc12abf">portno</link>&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>[strlen(argv[argumentcount+1])];
+169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_menu_1ab170c7e84e5d2da91880820ccbc12abf">portno</link>&#32;=&#32;argv[argumentcount+1];
+170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(strcmp(argv[argumentcount],<emphasis role="stringliteral">&quot;-machine&quot;</emphasis>)&#32;==&#32;0)&#32;{
+172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_menu_1ab67d5fb0837589bb4d6dac62131a72a4">mname</link>&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>[strlen(argv[argumentcount+1])];
+173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_menu_1ab67d5fb0837589bb4d6dac62131a72a4">mname</link>&#32;=&#32;argv[argumentcount+1];
+174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(strcmp(argv[argumentcount],<emphasis role="stringliteral">&quot;-dbasetype&quot;</emphasis>)&#32;==&#32;0)&#32;{
+176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_menu_1a0cc46cd227e7fcecf4413b9afe58d29d">dbasetype</link>&#32;=&#32;(<emphasis role="keywordtype">char</emphasis>*)malloc(<emphasis role="keyword">sizeof</emphasis>(<emphasis role="keywordtype">char</emphasis>)*strlen(argv[argumentcount+1]));
+177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_menu_1a0cc46cd227e7fcecf4413b9afe58d29d">dbasetype</link>&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>[strlen(argv[argumentcount+1])];
+178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_menu_1a0cc46cd227e7fcecf4413b9afe58d29d">dbasetype</link>&#32;=&#32;argv[argumentcount+1];
+179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;dbasetype&#32;is:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;this-&gt;<link linkend="_class_menu_1a0cc46cd227e7fcecf4413b9afe58d29d">dbasetype</link>&#32;&lt;&lt;&#32;endl;
+180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(strcmp(argv[argumentcount],&#32;<emphasis role="stringliteral">&quot;-dbasefilename&quot;</emphasis>)&#32;==&#32;0)&#32;{
+182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_menu_1a3ff2979249504fbed7989ee73b4f58a6">dbasefilename</link>&#32;=&#32;(<emphasis role="keywordtype">char</emphasis>*)malloc(<emphasis role="keyword">sizeof</emphasis>(<emphasis role="keywordtype">char</emphasis>)&#32;*&#32;strlen(argv[argumentcount&#32;+&#32;1]));
+183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_menu_1a3ff2979249504fbed7989ee73b4f58a6">dbasefilename</link>&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>[strlen(argv[argumentcount&#32;+&#32;1])];
+184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_menu_1a3ff2979249504fbed7989ee73b4f58a6">dbasefilename</link>&#32;=&#32;argv[argumentcount&#32;+&#32;1];
+185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;dbasefilename&#32;is:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;this-&gt;<link linkend="_class_menu_1a3ff2979249504fbed7989ee73b4f58a6">dbasefilename</link>&#32;&lt;&lt;&#32;endl;
+186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(strcmp(argv[argumentcount],<emphasis role="stringliteral">&quot;-usehashvals&quot;</emphasis>)&#32;==&#32;0)&#32;{
+188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_class_menu_1aa094dcb11114277b2e0921587c2bcb12">processhashvals</link>&#32;=&#32;1;
+189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+190 &#32;&#32;&#32;&#32;}
+191 
+192 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(strcmp(this-&gt;<link linkend="_class_menu_1a0cc46cd227e7fcecf4413b9afe58d29d">dbasetype</link>,<emphasis role="stringliteral">&quot;mysql&quot;</emphasis>)&#32;==&#32;0)&#32;{
+193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;MySQL&#32;database&#32;set.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(this-&gt;<link linkend="_class_menu_1a05ecb7899e5f3ae7345dae98bc27553c">dbasehost</link>&#32;==&#32;NULL&#32;||&#32;this-&gt;<link linkend="_class_menu_1ab170c7e84e5d2da91880820ccbc12abf">portno</link>&#32;==&#32;NULL&#32;||&#32;this-&gt;<link linkend="_class_menu_1abfa524748149194d31f3a760ab8765fd">uname</link>&#32;==&#32;NULL&#32;||&#32;this-&gt;<link linkend="_class_menu_1a3851b8c999f1ed310c57b306d6bc2a03">pwd</link>&#32;==&#32;NULL)&#32;{
+195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Missing&#32;either&#32;host,&#32;port,&#32;username,&#32;or&#32;passoword&#32;for&#32;the&#32;mysql&#32;database&#32;type.&#32;Please&#32;try&#32;again&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+196 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;-1;
+197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dbaseset&#32;=&#32;0;
+199 
+200 &#32;&#32;&#32;&#32;}
+201 
+202 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(strcmp(this-&gt;<link linkend="_class_menu_1a0cc46cd227e7fcecf4413b9afe58d29d">dbasetype</link>,<emphasis role="stringliteral">&quot;sqlite&quot;</emphasis>)&#32;==&#32;0)&#32;{
+203 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Sqlite3&#32;database&#32;set.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(this-&gt;<link linkend="_class_menu_1a3ff2979249504fbed7989ee73b4f58a6">dbasefilename</link>&#32;==&#32;NULL)&#32;{
+205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Missing&#32;dbasefilename.&#32;Please&#32;try&#32;again&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+206 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;-1;
+207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dbaseset&#32;=&#32;0;
+209 &#32;&#32;&#32;&#32;}
+210 
+211 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(dbaseset&#32;==&#32;-1)
+212 &#32;&#32;&#32;&#32;{
+213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;retVal&#32;=&#32;dbaseset;
+214 &#32;&#32;&#32;&#32;}
+215 &#32;&#32;&#32;&#32;
+216 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;retVal;
+217 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_menu_a50f39bd5a994cb64421bfacbf6aed5e8_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_class_menu_1acbe5ec7e6202dec08ca26f4898df8040"/><section>
     <title>PrintMenu()</title>
 <indexterm><primary>PrintMenu</primary><secondary>Menu</secondary></indexterm>
 <indexterm><primary>Menu</primary><secondary>PrintMenu</secondary></indexterm>
-<para><computeroutput>void Menu::PrintMenu ( )</computeroutput></para></section>
+<para><computeroutput>void Menu::PrintMenu ( )</computeroutput></para><programlisting linenumbering="unnumbered">111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+112 &#32;&#32;&#32;&#32;
+113 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Usage:&#32;fileintegritychecker&#32;[-dir&#32;-dbasetype&#32;-machine]&#32;optional:&#32;[-dbasefilename&#32;-host&#32;-port&#32;-user&#32;-pwd]&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+114 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\t-dir&#32;The&#32;directory&#32;to&#32;start&#32;the&#32;search&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+115 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\t-dbasetype&#32;Either&#32;mysql&#32;or&#32;sqlite.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;&#32;
+116 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\t\tIf&#32;mysql&#32;the&#32;-host,&#32;-port,&#32;-user,&#32;and&#32;-pwd&#32;are&#32;required.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+117 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\t\tIf&#32;sqlite&#32;the&#32;-dbasefilename&#32;is&#32;required.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+118 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\t-machine&#32;Name&#32;of&#32;machine&#32;that&#32;is&#32;being&#32;searched.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+119 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;endl;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+120 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Optional:&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+121 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\t-usehashvals&#32;Calculate&#32;hashedvalues&#32;to&#32;detect&#32;changes.&#32;NOTE:&#32;This&#32;will&#32;significantly&#32;increase&#32;processing&#32;time.&#32;Default&#32;is&#32;set&#32;to&#32;not&#32;use&#32;hashedvalues.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+122 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\t-dbasefilename&#32;Location&#32;and&#32;Database&#32;file&#32;name&#32;for&#32;the&#32;SQLite3&#32;file.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+123 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\t-host&#32;MySQL&#32;server&#32;name&#32;or&#32;IP.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+124 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\t-port&#32;Port&#32;number&#32;for&#32;the&#32;MySQL&#32;server&#32;(Most&#32;MySQL&#32;servers&#32;default&#32;to&#32;3306).&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+125 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\t-user&#32;Username&#32;for&#32;the&#32;MySQL&#32;server.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+126 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\t-pwd&#32;&#32;Password&#32;of&#32;the&#32;MySQL&#32;server&#32;user.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+127 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;endl;
+128 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Example:&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+129 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\tFor&#32;mysql&#32;dbasetype&#32;-&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+130 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\t\tfileintegritychecker&#32;-dir&#32;/home&#32;-dbasetype&#32;mysql&#32;-machine&#32;MyMachineName&#32;-host&#32;127.0.0.1&#32;-port&#32;3306&#32;-user&#32;user&#32;-pwd&#32;password&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+131 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;endl;
+132 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\tFor&#32;sqlite&#32;dbasetype&#32;-&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+133 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\t\tfileintegritychecker&#32;-dir&#32;/home&#32;-dbasetype&#32;sqlite&#32;-machine&#32;MyMachineName&#32;-dbasefilename&#32;dirname/dbasefilename.db&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+134 
+135 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_menu_acbe5ec7e6202dec08ca26f4898df8040_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 </section>
 <section>
 <title>Member Data Documentation</title>

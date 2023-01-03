@@ -19,9 +19,11 @@ Collaboration diagram for fileintegritychecker:<para>
         <itemizedlist>
             <listitem><para><link linkend="_classfileintegritychecker_1a4f113638831295eab7ae564155dc2c3c">fileintegritychecker</link> ()</para>
 </listitem>
-            <listitem><para>virtual <link linkend="_classfileintegritychecker_1abf6a40bce2f3466f8bddc9a5ed02fe1d">~fileintegritychecker</link> ()</para>
+            <listitem><para>virtual <link linkend="_classfileintegritychecker_1af6ac155d2d02e2da5af89272baf0d292">~fileintegritychecker</link> ()</para>
 </listitem>
             <listitem><para>void <link linkend="_classfileintegritychecker_1af19f4b1b0f37b3645f0aa27ce201538d">setParamVals</link> (<link linkend="_class_menu">Menu</link> *m)</para>
+
+<para>Set the Param Vals object. </para>
 </listitem>
             <listitem><para>void <link linkend="_classfileintegritychecker_1ad83727702919ed588145f7e9f9f183d7">setDatabaseConnections</link> ()</para>
 </listitem>
@@ -44,6 +46,8 @@ Collaboration diagram for fileintegritychecker:<para>
     <title>Private Member Functions    </title>
         <itemizedlist>
             <listitem><para>void <link linkend="_classfileintegritychecker_1af2fb66e054e9f613677746f6f3dde0a3">get_directories_files</link> (const string &amp;s, int level=0)</para>
+
+<para>Get the directories files object. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -88,12 +92,14 @@ Collaboration diagram for fileintegritychecker:<para>
     <title>fileintegritychecker()</title>
 <indexterm><primary>fileintegritychecker</primary><secondary>fileintegritychecker</secondary></indexterm>
 <indexterm><primary>fileintegritychecker</primary><secondary>fileintegritychecker</secondary></indexterm>
-<para><computeroutput>fileintegritychecker::fileintegritychecker ( )</computeroutput></para></section>
-<anchor xml:id="_classfileintegritychecker_1abf6a40bce2f3466f8bddc9a5ed02fe1d"/><section>
+<para><computeroutput>fileintegritychecker::fileintegritychecker ( )</computeroutput></para><programlisting linenumbering="unnumbered">205 {}
+</programlisting></section>
+<anchor xml:id="_classfileintegritychecker_1af6ac155d2d02e2da5af89272baf0d292"/><section>
     <title>~fileintegritychecker()</title>
 <indexterm><primary>~fileintegritychecker</primary><secondary>fileintegritychecker</secondary></indexterm>
 <indexterm><primary>fileintegritychecker</primary><secondary>~fileintegritychecker</secondary></indexterm>
-<para><computeroutput>virtual fileintegritychecker::~fileintegritychecker ( )<computeroutput>[virtual]</computeroutput></computeroutput></para></section>
+<para><computeroutput>fileintegritychecker::~fileintegritychecker ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><programlisting linenumbering="unnumbered">207 {}
+</programlisting></section>
 </section>
 <section>
 <title>Member Function Documentation</title>
@@ -101,28 +107,300 @@ Collaboration diagram for fileintegritychecker:<para>
     <title>closeDatabaseConnections()</title>
 <indexterm><primary>closeDatabaseConnections</primary><secondary>fileintegritychecker</secondary></indexterm>
 <indexterm><primary>fileintegritychecker</primary><secondary>closeDatabaseConnections</secondary></indexterm>
-<para><computeroutput>void fileintegritychecker::closeDatabaseConnections ( )</computeroutput></para></section>
+<para><computeroutput>void fileintegritychecker::closeDatabaseConnections ( )</computeroutput></para><programlisting linenumbering="unnumbered">176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+177 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(strcmp(this-&gt;<link linkend="_classfileintegritychecker_1a5b7a655ace1a445aaf32984dde0cd14a">dbasetype</link>,&#32;<emphasis role="stringliteral">&quot;mysql&quot;</emphasis>)&#32;==&#32;0)&#32;{
+178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_classfileintegritychecker_1a73cb3d6b1f3fccb340dba68b56241ecd">mysqlctl</link>-&gt;<link linkend="_classmysqlcontroller_1a75776ad16ad15a20736e0c1b6adda411">closedb</link>();
+179 &#32;&#32;&#32;&#32;}
+180 
+181 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(strcmp(this-&gt;<link linkend="_classfileintegritychecker_1a5b7a655ace1a445aaf32984dde0cd14a">dbasetype</link>,&#32;<emphasis role="stringliteral">&quot;sqlite&quot;</emphasis>)&#32;==&#32;0)&#32;{
+182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_classfileintegritychecker_1a106e283f11f9f3c0788f9e43c3a0d3f0">sqlitectl</link>-&gt;<link linkend="_classsqlite3controller_1ab092ae9a83a7a124a5ca19a202f6243a">closedb</link>();
+183 &#32;&#32;&#32;&#32;}
+184 }
+</programlisting>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classfileintegritychecker_aeb559134d644a9263fc9ab8a25ecf333_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classfileintegritychecker_aeb559134d644a9263fc9ab8a25ecf333_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_classfileintegritychecker_1af2fb66e054e9f613677746f6f3dde0a3"/><section>
     <title>get_directories_files()</title>
 <indexterm><primary>get_directories_files</primary><secondary>fileintegritychecker</secondary></indexterm>
 <indexterm><primary>fileintegritychecker</primary><secondary>get_directories_files</secondary></indexterm>
 <para><computeroutput>void fileintegritychecker::get_directories_files (const string &amp; s, int level = <computeroutput>0</computeroutput>
-)<computeroutput>[private]</computeroutput></computeroutput></para></section>
+)<computeroutput>[private]</computeroutput></computeroutput></para><para>
+
+<para>Get the directories files object. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>s</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                            <row>
+<entry>level</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<programlisting linenumbering="unnumbered">48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+49 &#32;&#32;&#32;&#32;
+50 &#32;&#32;&#32;&#32;
+51 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;error_code&#32;=&#32;std::error_code();
+52 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&amp;&#32;entry&#32;:&#32;fs::directory_iterator(s,fs::directory_options::skip_permission_denied,&#32;error_code))&#32;{
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//cout&#32;&lt;&lt;&#32;&quot;.&quot;;</emphasis>
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(!error_code)&#32;{
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(!entry.is_symlink()&#32;&amp;&amp;&#32;entry.is_directory()){
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&#32;dirname&#32;=&#32;<emphasis role="stringliteral">&quot;/&quot;</emphasis>&#32;+&#32;entry.path().relative_path().string();
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Dir:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;dirname&#32;&lt;&lt;&#32;endl;
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(strcmp(this-&gt;<link linkend="_classfileintegritychecker_1a5b7a655ace1a445aaf32984dde0cd14a">dbasetype</link>,<emphasis role="stringliteral">&quot;mysql&quot;</emphasis>)&#32;==&#32;0)&#32;{
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;dirsaveasync&#32;=&#32;std::async(std::launch::async,&#32;&amp;<link linkend="_classmysqlcontroller_1a1158e1c0c82d11cbe200219b4a5a96b3">mysqlcontroller::saveDirectoryName_async</link>,&#32;this-&gt;<link linkend="_classfileintegritychecker_1a73cb3d6b1f3fccb340dba68b56241ecd">mysqlctl</link>,&#32;dirname);
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dirsaveasync.wait();
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(strcmp(this-&gt;<link linkend="_classfileintegritychecker_1a5b7a655ace1a445aaf32984dde0cd14a">dbasetype</link>,<emphasis role="stringliteral">&quot;sqlite&quot;</emphasis>)&#32;==&#32;0)&#32;{
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_classfileintegritychecker_1a106e283f11f9f3c0788f9e43c3a0d3f0">sqlitectl</link>-&gt;<link linkend="_classsqlite3controller_1a6bda68c0ea1d995b4fcf60965ab433a6">save_dir_info</link>(dirname.c_str());
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;&#32;&#32;&#32;
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classfileintegritychecker_1a084e0e1a26d35c85d16ecfccc84ee031">numberofdirectories</link>++;
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_classfileintegritychecker_1af2fb66e054e9f613677746f6f3dde0a3">get_directories_files</link>(dirname,&#32;level+1);
+67 
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(entry.is_regular_file())&#32;{
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&#32;dname&#32;=&#32;s;
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&#32;filename&#32;=&#32;<emphasis role="stringliteral">&quot;/&quot;</emphasis>&#32;+&#32;&#32;entry.path().relative_path().string();
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&#32;ftime&#32;=&#32;entry.last_write_time();
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::time_t&#32;ctime&#32;=&#32;<link linkend="_fileintegritychecker_8cpp_1aa0c7e6e475d4dd6b5f4dd0f04be4fbfa">to_time_t</link>(ftime);
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;time&#32;=&#32;<link linkend="_fileintegritychecker_8cpp_1ac01cc26ee78680a5119ba192f7b4ea53">to_char_time_t</link>(ctime);
+75 
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;uintmax_t&#32;fsize&#32;=&#32;entry.file_size();
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_classfileintegritychecker_1a8cc50a2938d11837ec1ee0250e73fa6d">numberoffiles</link>++;
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\tFile:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;filename&#32;&lt;&lt;&#32;endl;
+79 
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<link linkend="_classfileintegritychecker_1a754ca74fc0280d60adcf7099e7913813">usehashvals</link>&#32;==&#32;0)&#32;{
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(strcmp(this-&gt;<link linkend="_classfileintegritychecker_1a5b7a655ace1a445aaf32984dde0cd14a">dbasetype</link>,&#32;<emphasis role="stringliteral">&quot;sqlite&quot;</emphasis>)&#32;==&#32;0)&#32;{
+82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_classfileintegritychecker_1a106e283f11f9f3c0788f9e43c3a0d3f0">sqlitectl</link>-&gt;<link linkend="_classsqlite3controller_1ad24d1eff1c881ec79c608d4fbd5207b3">save_file_info</link>(filename.c_str(),dname.c_str(),&#32;time,&#32;fsize);
+83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+86 
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;FILE*&#32;file&#32;=&#32;fopen(filename.c_str(),&#32;<emphasis role="stringliteral">&quot;r&quot;</emphasis>);
+88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(file&#32;==&#32;NULL)&#32;{
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;printf(<emphasis role="stringliteral">&quot;\tUnable&#32;to&#32;open&#32;file.&#32;Moving&#32;on...\n&quot;</emphasis>);
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_s_h_a256_c_p_p">SHA256CPP</link>*&#32;sha256_obj&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_class_s_h_a256_c_p_p">SHA256CPP</link>();
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_struct_hash_values">HashValues</link>&#32;hashVals;
+95 
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hashVals&#32;=&#32;sha256_obj-&gt;<link linkend="_class_s_h_a256_c_p_p_1a9466f56550cb9725c8fd6be92e5c1b77">calculateHash</link>(file);
+97 
+98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fclose(file);
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">delete</emphasis>&#32;sha256_obj;
+100 
+101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;hashedvals&#32;=&#32;to_string(hashVals.<link linkend="_struct_hash_values_1a33327f22884b787dcb01088a9fb847a4">H</link>[0]);
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hashedvals&#32;+=&#32;to_string(hashVals.<link linkend="_struct_hash_values_1a33327f22884b787dcb01088a9fb847a4">H</link>[1]);
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hashedvals&#32;+=&#32;to_string(hashVals.<link linkend="_struct_hash_values_1a33327f22884b787dcb01088a9fb847a4">H</link>[2]);
+104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hashedvals&#32;+=&#32;to_string(hashVals.<link linkend="_struct_hash_values_1a33327f22884b787dcb01088a9fb847a4">H</link>[3]);
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hashedvals&#32;+=&#32;to_string(hashVals.<link linkend="_struct_hash_values_1a33327f22884b787dcb01088a9fb847a4">H</link>[4]);
+106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hashedvals&#32;+=&#32;to_string(hashVals.<link linkend="_struct_hash_values_1a33327f22884b787dcb01088a9fb847a4">H</link>[5]);
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hashedvals&#32;+=&#32;to_string(hashVals.<link linkend="_struct_hash_values_1a33327f22884b787dcb01088a9fb847a4">H</link>[6]);
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;hashedvals&#32;+=&#32;to_string(hashVals.<link linkend="_struct_hash_values_1a33327f22884b787dcb01088a9fb847a4">H</link>[7]);
+109 
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(strcmp(this-&gt;<link linkend="_classfileintegritychecker_1a5b7a655ace1a445aaf32984dde0cd14a">dbasetype</link>,&#32;<emphasis role="stringliteral">&quot;mysql&quot;</emphasis>)&#32;==&#32;0)&#32;{
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;filesaveasync&#32;=&#32;std::async(std::launch::async,&#32;&amp;<link linkend="_classmysqlcontroller_1aad16b25269ed6065b0360c2b8312aea0">mysqlcontroller::saveFileInfo_async</link>,&#32;this-&gt;<link linkend="_classfileintegritychecker_1a73cb3d6b1f3fccb340dba68b56241ecd">mysqlctl</link>,&#32;dname,&#32;entry.path().filename().string(),&#32;hashedvals);
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;filesaveasync.wait();
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+114 
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(strcmp(this-&gt;<link linkend="_classfileintegritychecker_1a5b7a655ace1a445aaf32984dde0cd14a">dbasetype</link>,&#32;<emphasis role="stringliteral">&quot;sqlite&quot;</emphasis>)&#32;==&#32;0)&#32;{
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//fprintf(stderr,&#32;&quot;Saving&#32;hashedvalue&#32;of&#32;%s&quot;,&#32;hashedvals.c_str());</emphasis>
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_classfileintegritychecker_1a106e283f11f9f3c0788f9e43c3a0d3f0">sqlitectl</link>-&gt;<link linkend="_classsqlite3controller_1ad24d1eff1c881ec79c608d4fbd5207b3">save_file_info</link>(filename.c_str(),&#32;dname.c_str(),&#32;time,&#32;fsize,&#32;(<emphasis role="keywordtype">char</emphasis>*)hashedvals.c_str());
+118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+119 
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;
+123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Do&#32;nothing</emphasis>
+125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">auto</emphasis>&#32;unknown&#32;=&#32;<emphasis role="stringliteral">&quot;/&quot;</emphasis>&#32;+&#32;&#32;entry.path().relative_path().string();
+126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;\tUnknown:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;unknown&#32;&lt;&lt;&#32;endl;
+127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;#&#32;ERR:&#32;DirectoryIterator&#32;in&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;__FILE__;
+130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;(&quot;</emphasis>&#32;&lt;&lt;&#32;__FUNCTION__&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;)&#32;on&#32;line&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;__LINE__&#32;&lt;&lt;&#32;endl;
+131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;#&#32;ERROR&#32;Code:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;error_code.category().name();
+132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;ERROR&#32;Details:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;error_code.category().message(error_code.value())&#32;&lt;&lt;&#32;endl;
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;ERROR&#32;accessing:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;entry.path().relative_path().string()&#32;&lt;&lt;&#32;endl;
+134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}&#32;&#32;&#32;&#32;
+135 &#32;&#32;&#32;&#32;}
+136 &#32;&#32;&#32;&#32;
+137 }
+</programlisting>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classfileintegritychecker_af2fb66e054e9f613677746f6f3dde0a3_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classfileintegritychecker_af2fb66e054e9f613677746f6f3dde0a3_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_classfileintegritychecker_1ab064f5cb87b4a7d8c557a32d764a131a"/><section>
     <title>processFiles()</title>
 <indexterm><primary>processFiles</primary><secondary>fileintegritychecker</secondary></indexterm>
 <indexterm><primary>fileintegritychecker</primary><secondary>processFiles</secondary></indexterm>
-<para><computeroutput>void fileintegritychecker::processFiles ( )</computeroutput></para></section>
+<para><computeroutput>void fileintegritychecker::processFiles ( )</computeroutput></para><programlisting linenumbering="unnumbered">186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+187 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;pDir&#32;=&#32;this-&gt;<link linkend="_classfileintegritychecker_1a23b4005e258b5038e68452c6d895a185">parentdir</link>;
+188 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;pDir&#32;&lt;&lt;&#32;endl;
+189 
+190 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(strcmp(this-&gt;<link linkend="_classfileintegritychecker_1a5b7a655ace1a445aaf32984dde0cd14a">dbasetype</link>,&#32;<emphasis role="stringliteral">&quot;mysql&quot;</emphasis>)&#32;==&#32;0)&#32;{
+191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;dirsaveasync&#32;=&#32;std::async(std::launch::async,&#32;&amp;<link linkend="_classmysqlcontroller_1a1158e1c0c82d11cbe200219b4a5a96b3">mysqlcontroller::saveDirectoryName_async</link>,&#32;this-&gt;<link linkend="_classfileintegritychecker_1a73cb3d6b1f3fccb340dba68b56241ecd">mysqlctl</link>,&#32;pDir.c_str());
+192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;dirsaveasync.wait();
+193 &#32;&#32;&#32;&#32;}
+194 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(strcmp(this-&gt;<link linkend="_classfileintegritychecker_1a5b7a655ace1a445aaf32984dde0cd14a">dbasetype</link>,&#32;<emphasis role="stringliteral">&quot;sqlite&quot;</emphasis>)&#32;==&#32;0)&#32;{
+195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_classfileintegritychecker_1a106e283f11f9f3c0788f9e43c3a0d3f0">sqlitectl</link>-&gt;<link linkend="_classsqlite3controller_1a6bda68c0ea1d995b4fcf60965ab433a6">save_dir_info</link>(pDir.c_str());
+196 &#32;&#32;&#32;&#32;}
+197 
+198 &#32;&#32;&#32;&#32;<link linkend="_classfileintegritychecker_1a084e0e1a26d35c85d16ecfccc84ee031">numberofdirectories</link>++;
+199 &#32;&#32;&#32;&#32;
+200 &#32;&#32;&#32;&#32;this-&gt;<link linkend="_classfileintegritychecker_1af2fb66e054e9f613677746f6f3dde0a3">get_directories_files</link>(pDir);
+201 
+202 &#32;&#32;&#32;&#32;
+203 }
+</programlisting>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classfileintegritychecker_ab064f5cb87b4a7d8c557a32d764a131a_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classfileintegritychecker_ab064f5cb87b4a7d8c557a32d764a131a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_classfileintegritychecker_1ad83727702919ed588145f7e9f9f183d7"/><section>
     <title>setDatabaseConnections()</title>
 <indexterm><primary>setDatabaseConnections</primary><secondary>fileintegritychecker</secondary></indexterm>
 <indexterm><primary>fileintegritychecker</primary><secondary>setDatabaseConnections</secondary></indexterm>
-<para><computeroutput>void fileintegritychecker::setDatabaseConnections ( )</computeroutput></para></section>
+<para><computeroutput>void fileintegritychecker::setDatabaseConnections ( )</computeroutput></para><programlisting linenumbering="unnumbered">164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+165 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(strcmp(this-&gt;<link linkend="_classfileintegritychecker_1a5b7a655ace1a445aaf32984dde0cd14a">dbasetype</link>,&#32;<emphasis role="stringliteral">&quot;mysql&quot;</emphasis>)&#32;==&#32;0)&#32;{
+166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_classfileintegritychecker_1a73cb3d6b1f3fccb340dba68b56241ecd">mysqlctl</link>&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classmysqlcontroller">mysqlcontroller</link>(this-&gt;<link linkend="_classfileintegritychecker_1a5258b64047e22c2f82fb13e908b0c080">dbasehost</link>,&#32;<emphasis role="stringliteral">&quot;fileintegritychecker&quot;</emphasis>,&#32;this-&gt;<link linkend="_classfileintegritychecker_1abb322369f0338dafa1c8f92b95cda730">uname</link>,&#32;this-&gt;<link linkend="_classfileintegritychecker_1a6137942fb3ff1790d622310840e9dc6c">pwd</link>,&#32;3306,&#32;this-&gt;<link linkend="_classfileintegritychecker_1aaa47205a07b1d35b7bf6a145a99207e9">mname</link>);
+167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_classfileintegritychecker_1a73cb3d6b1f3fccb340dba68b56241ecd">mysqlctl</link>-&gt;<link linkend="_classmysqlcontroller_1a74389e9c368e9f43df261f7050377cb4">initdb</link>();
+168 &#32;&#32;&#32;&#32;}
+169 
+170 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(strcmp(this-&gt;<link linkend="_classfileintegritychecker_1a5b7a655ace1a445aaf32984dde0cd14a">dbasetype</link>,&#32;<emphasis role="stringliteral">&quot;sqlite&quot;</emphasis>)&#32;==&#32;0)&#32;{
+171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_classfileintegritychecker_1a106e283f11f9f3c0788f9e43c3a0d3f0">sqlitectl</link>&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classsqlite3controller">sqlite3controller</link>(this-&gt;<link linkend="_classfileintegritychecker_1a02a1a1e0e235f6ca153171030b60d319">dbasefilename</link>,&#32;this-&gt;<link linkend="_classfileintegritychecker_1aaa47205a07b1d35b7bf6a145a99207e9">mname</link>);
+172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_classfileintegritychecker_1a106e283f11f9f3c0788f9e43c3a0d3f0">sqlitectl</link>-&gt;<link linkend="_classsqlite3controller_1a7d6ff837161930eb903754d5688f1b9b">initdb</link>();
+173 &#32;&#32;&#32;&#32;}
+174 }
+</programlisting>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classfileintegritychecker_ad83727702919ed588145f7e9f9f183d7_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classfileintegritychecker_ad83727702919ed588145f7e9f9f183d7_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 <anchor xml:id="_classfileintegritychecker_1af19f4b1b0f37b3645f0aa27ce201538d"/><section>
     <title>setParamVals()</title>
 <indexterm><primary>setParamVals</primary><secondary>fileintegritychecker</secondary></indexterm>
 <indexterm><primary>fileintegritychecker</primary><secondary>setParamVals</secondary></indexterm>
-<para><computeroutput>void fileintegritychecker::setParamVals (<link linkend="_class_menu">Menu</link> * m)</computeroutput></para></section>
+<para><computeroutput>void fileintegritychecker::setParamVals (<link linkend="_class_menu">Menu</link> * _menu)</computeroutput></para><para>
+
+<para>Set the Param Vals object. </para>
+</para>
+<programlisting linenumbering="unnumbered">143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+144 &#32;&#32;&#32;this-&gt;<link linkend="_classfileintegritychecker_1a23b4005e258b5038e68452c6d895a185">parentdir</link>&#32;=&#32;_menu-&gt;<link linkend="_class_menu_1ac07eb59a5697f449133f2d4caf95947c">getPARENTDIR</link>();
+145 &#32;&#32;&#32;this-&gt;<link linkend="_classfileintegritychecker_1a5b7a655ace1a445aaf32984dde0cd14a">dbasetype</link>&#32;=&#32;_menu-&gt;<link linkend="_class_menu_1a1f0c07508ea10698ae7af1caad692d52">getDBASETYPE</link>();
+146 &#32;&#32;&#32;this-&gt;<link linkend="_classfileintegritychecker_1aaa47205a07b1d35b7bf6a145a99207e9">mname</link>&#32;=&#32;_menu-&gt;<link linkend="_class_menu_1ab2ce4cac489c6da0f08eb4bd0753a555">getMACHINENAME</link>();
+147 
+148 &#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(strcmp(this-&gt;<link linkend="_classfileintegritychecker_1a5b7a655ace1a445aaf32984dde0cd14a">dbasetype</link>,<emphasis role="stringliteral">&quot;mysql&quot;</emphasis>)&#32;==&#32;0)&#32;{
+149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_classfileintegritychecker_1a5258b64047e22c2f82fb13e908b0c080">dbasehost</link>&#32;=&#32;_menu-&gt;<link linkend="_class_menu_1aca44a03905fb898515c88a49b4fca849">getDATABASEHOSTNAME</link>();
+150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_classfileintegritychecker_1abb322369f0338dafa1c8f92b95cda730">uname</link>&#32;=&#32;_menu-&gt;<link linkend="_class_menu_1a7b3f2bde7bf5297d47409c7fa7f8c940">getUSERNAME</link>();
+151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_classfileintegritychecker_1a6137942fb3ff1790d622310840e9dc6c">pwd</link>&#32;=&#32;_menu-&gt;<link linkend="_class_menu_1a08a81ab79febb5e1f74a21853717cbae">getPASSWORD</link>();
+152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_classfileintegritychecker_1a6948be4b723e374ddce7273697c9dae7">portno</link>&#32;=&#32;_menu-&gt;<link linkend="_class_menu_1ac8fe61db0d8a3f32fbb161abdeee4668">getPORT</link>();
+153 &#32;&#32;&#32;}
+154 &#32;&#32;&#32;
+155 &#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>(strcmp(this-&gt;<link linkend="_classfileintegritychecker_1a5b7a655ace1a445aaf32984dde0cd14a">dbasetype</link>,<emphasis role="stringliteral">&quot;sqlite&quot;</emphasis>)&#32;==&#32;0)&#32;{
+156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;this-&gt;<link linkend="_classfileintegritychecker_1a02a1a1e0e235f6ca153171030b60d319">dbasefilename</link>&#32;=&#32;_menu-&gt;<link linkend="_class_menu_1a34eb19b4584c6139b1d0fbc7811ba68a">getDBASEFILENAME</link>();
+157 &#32;&#32;&#32;}
+158 
+159 &#32;&#32;&#32;this-&gt;<link linkend="_classfileintegritychecker_1a754ca74fc0280d60adcf7099e7913813">usehashvals</link>&#32;=&#32;_menu-&gt;<link linkend="_class_menu_1a7296588596f0d05634bb6b6a26d51000">getPROCESSHASHVALS</link>();
+160 
+161 }
+</programlisting>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classfileintegritychecker_af19f4b1b0f37b3645f0aa27ce201538d_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="classfileintegritychecker_af19f4b1b0f37b3645f0aa27ce201538d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
 </section>
 <section>
 <title>Member Data Documentation</title>

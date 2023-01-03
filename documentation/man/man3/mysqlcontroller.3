@@ -1,4 +1,4 @@
-.TH "mysqlcontroller" 3 "Sat Dec 10 2022" "fileintegritychecker" \" -*- nroff -*-
+.TH "mysqlcontroller" 3 "Sun Jan 1 2023" "Version 1.0" "File Integrity Checker" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -14,12 +14,14 @@ mysqlcontroller
 .ti -1c
 .RI "\fBmysqlcontroller\fP ()"
 .br
+.RI "Construct a new \fBmysqlcontroller::mysqlcontroller\fP object\&. "
 .ti -1c
-.RI "\fBmysqlcontroller\fP (char *host, char *dbase, char *uname, char *pwd, int port, char *mname)"
+.RI "\fBmysqlcontroller\fP (char *host, char *dbase, char *uname, char *pwd, int \fBport\fP, char *mname)"
 .br
 .ti -1c
 .RI "virtual \fB~mysqlcontroller\fP ()"
 .br
+.RI "Destroy \fBmysqlcontroller::mysqlcontroller\fP object\&. "
 .ti -1c
 .RI "void \fBsetHOSTNAME\fP (char *host)"
 .br
@@ -33,7 +35,7 @@ mysqlcontroller
 .RI "void \fBsetPASSWORD\fP (char *pwd)"
 .br
 .ti -1c
-.RI "void \fBsetPORT\fP (int port)"
+.RI "void \fBsetPORT\fP (int \fBport\fP)"
 .br
 .ti -1c
 .RI "void \fBsetMACHINENAME\fP (char *mname)"
@@ -84,62 +86,498 @@ mysqlcontroller
 .RI "void \fBclosePreparedStatements\fP ()"
 .br
 .in -1c
-.SH "Detailed Description"
-.PP 
-Definition at line \fB26\fP of file \fBmysqlcontroller\&.h\fP\&.
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBfilterApostraphe\fP (string)"
+.br
+.in -1c
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "mysqlcontroller::mysqlcontroller ()"
 
+.PP
+Construct a new \fBmysqlcontroller::mysqlcontroller\fP object\&. 
+.PP
+.nf
+28 {}
+.fi
 .SS "mysqlcontroller::mysqlcontroller (char * host, char * dbase, char * uname, char * pwd, int port, char * mname)"
 
-.SS "virtual mysqlcontroller::~mysqlcontroller ()\fC [virtual]\fP"
+.PP
+.nf
+31 {
+32     hostname = host;
+33     dbasename = dbase;
+34     username= uname;
+35     password = pwd;
+36     port = portno;
+37     machinename = mname;
+38 }
+.fi
+.SS "mysqlcontroller::~mysqlcontroller ()\fC [virtual]\fP"
 
+.PP
+Destroy \fBmysqlcontroller::mysqlcontroller\fP object\&. 
+.PP
+.nf
+44 {}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "void mysqlcontroller::closedb ()"
 
+.PP
+.nf
+379                               {
+380     delete res;
+381     delete stmt;
+382     delete con;
+383 }
+.fi
 .SS "void mysqlcontroller::closePreparedStatements ()"
 
+.PP
+.nf
+369                                               {
+370     
+371     delete savedirprepStmt;
+372     delete savedfileprepStmt;
+373 }
+.fi
 .SS "void mysqlcontroller::deleteDirectoryNames ()"
 
+.SS "char * mysqlcontroller::filterApostraphe (string dirname)\fC [private]\fP"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIdirname\fP 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+char* 
+.RE
+.PP
+
+.PP
+.nf
+207                                                       {
+208     string retVal = "";
+209     char* char_array;
+210 
+211     std::vector<string> result;
+212     std::stringstream s_stream(dirname); //create string stream from the string
+213 
+214     while(s_stream\&.good()) {
+215        string substr;
+216        getline(s_stream, substr, '\''); //get first string delimited by comma
+217        result\&.push_back(substr);
+218     }
+219 
+220     if(result\&.size() > 1) {
+221         retVal+=result\&.at(0);
+222 
+223         for(int i = 1; i<result\&.size(); i++) {    //print all splitted strings
+224             retVal+="'";
+225             retVal+="'";
+226             retVal+=result\&.at(i);
+227         }
+228     } else {
+229         retVal = dirname;
+230     }
+231         
+232     int n = retVal\&.length();
+233     char_array = new char[n + 1];
+234 
+235     strcpy(char_array, retVal\&.c_str());
+236 
+237     return char_array;
+238 }
+.fi
 .SS "char * mysqlcontroller::getDBASENAME ()"
 
+.PP
+\fBReturns\fP
+.RS 4
+char* 
+.RE
+.PP
+
+.PP
+.nf
+114                                     {
+115     return dbasename;
+116 }
+.fi
 .SS "char * mysqlcontroller::getHOSTNAME ()"
 
+.PP
+\fBReturns\fP
+.RS 4
+char* 
+.RE
+.PP
+
+.PP
+.nf
+105                                    {
+106     return hostname;
+107 }
+.fi
 .SS "char * mysqlcontroller::getMACHINENAME ()"
 
+.PP
+\fBReturns\fP
+.RS 4
+char* 
+.RE
+.PP
+
+.PP
+.nf
+150                                       {
+151     return machinename;
+152 }
+.fi
 .SS "char * mysqlcontroller::getPASSWORD ()"
 
+.PP
+\fBReturns\fP
+.RS 4
+char* 
+.RE
+.PP
+
+.PP
+.nf
+132                                    {
+133     return password;
+134 }
+.fi
 .SS "int mysqlcontroller::getPORT ()"
 
+.PP
+\fBReturns\fP
+.RS 4
+int 
+.RE
+.PP
+
+.PP
+.nf
+141                              {
+142     return port;
+143 }
+.fi
 .SS "char * mysqlcontroller::getUSERNAME ()"
 
+.PP
+\fBReturns\fP
+.RS 4
+char* 
+.RE
+.PP
+
+.PP
+.nf
+123                                    {
+124     return username;
+125 }
+.fi
 .SS "void mysqlcontroller::initdb ()"
 
+.PP
+.nf
+170                              {
+171     try {
+172         cout << "Initializing connection to the database\&." << std::endl;
+173 
+174         string connstr = "tcp://" + string(hostname) + ":";
+175         
+176         if(port == 0) {
+177             connstr += "3306";
+178         }
+179         else {
+180             connstr += to_string(port);
+181         }
+182 
+183         /* Create a connection */
+184         driver = get_driver_instance();
+185         con = driver->connect(connstr, username, password);
+186         con->setAutoCommit(false);
+187         /* Connect to the MySQL test database */
+188         con->setSchema(dbasename);
+189         cout << "Successfully connected to database\&." << endl;
+190     } catch (sql::SQLException &e) {
+191         cout << "# ERR: SQLException in " << __FILE__;
+192         cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
+193         cout << "# ERR: " << e\&.what();
+194         cout << " (MySQL error code: " << e\&.getErrorCode();
+195         cout << ", SQLState: " << e\&.getSQLState() << " )" << endl;
+196     }
+197 
+198     cout << endl;
+199 }
+.fi
 .SS "void mysqlcontroller::initPreparedStatements ()"
 
+.PP
+.nf
+158                                              {
+159 
+160     savedirprepStmt = con->prepareStatement(SAVEDIRSTOREDPROCSTMT);
+161     savedfileprepStmt = con->prepareStatement(SAVEFILEINFOPROCSTMT);
+162 
+163 }
+.fi
 .SS "void mysqlcontroller::saveDirectoryName (string dirname)"
 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdirname\fP 
+.RE
+.PP
+
+.PP
+.nf
+245                                                       {
+246 
+247     char* dirnameverified = new char[dirname\&.length() + 1]; // filterApostraphe(dirname);
+248     strcpy(dirnameverified,dirname\&.c_str());
+249     
+250     initPreparedStatements();
+251     char* currenttime = SQLiteHelper::getCurrentTime();
+252 
+253     try {
+254         con->setAutoCommit(false);
+255         savedirprepStmt->setString(1, dirnameverified);
+256         savedirprepStmt->setString(2, currenttime);
+257         savedirprepStmt->setString(3, machinename);
+258         savedirprepStmt->executeUpdate();
+259         con->commit();
+260         con->setAutoCommit(true);
+261     } catch (sql::SQLException &e) {
+262         cout << "# ERR: SQLException in " << __FILE__;
+263         cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
+264         cout << "# ERR: " << e\&.what();
+265         cout << " (MySQL error code: " << e\&.getErrorCode();
+266         cout << ", SQLState: " << e\&.getSQLState() << " )" << endl;
+267     }
+268 
+269     closePreparedStatements();
+270 
+271 }
+.fi
 .SS "void mysqlcontroller::saveDirectoryName_async (const string & dirname)"
 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdirname\fP 
+.RE
+.PP
+
+.PP
+.nf
+278                                                                    {
+279     string dname = dirname;
+280     saveDirectoryName(dname);
+281 }
+.fi
 .SS "void mysqlcontroller::saveFileInfo (string dirname, string fname, string hashval)"
 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdirname\fP 
+.br
+\fIfname\fP 
+.br
+\fIhashval\fP 
+.RE
+.PP
+
+.PP
+.nf
+337                                                                                {
+338     
+339     char* currenttime = SQLiteHelper::getCurrentTime();
+340 
+341     initPreparedStatements();
+342 
+343     try {
+344         con->setAutoCommit(false);
+345         savedfileprepStmt->setString(1, dirname);
+346         savedfileprepStmt->setString(2, currenttime);
+347         savedfileprepStmt->setString(3, machinename);
+348         savedfileprepStmt->setString(4, fname);
+349         savedfileprepStmt->setString(5, hashval);
+350         savedfileprepStmt->executeUpdate();
+351         con->commit();
+352         con->setAutoCommit(true);
+353     } catch (sql::SQLException &e) {
+354         cout << "# ERR: SQLException in " << __FILE__;
+355         cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
+356         cout << "# ERR: " << e\&.what();
+357         cout << " (MySQL error code: " << e\&.getErrorCode();
+358         cout << ", SQLState: " << e\&.getSQLState() << " )" << endl;
+359     }
+360 
+361     closePreparedStatements();
+362 
+363 }
+.fi
 .SS "void mysqlcontroller::saveFileInfo_async (const string & dirname, const string & fname, const string & hashval)"
 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdirname\fP 
+.br
+\fIfname\fP 
+.br
+\fIhashval\fP 
+.RE
+.PP
+
+.PP
+.nf
+290                                                                                                           {
+291     string dname = dirname;
+292     string filname = fname;
+293     string hval = hashval;
+294     string currenttime = "";
+295     
+296     std::time_t t = std::time(0);   // get time now
+297     std::tm* now = std::localtime(&t);
+298     char date_string[100];
+299     char time_string[100];
+300 
+301     strftime(date_string, 50, "%B %d, %Y ", now);
+302     strftime(time_string, 50, "%T", now);
+303 
+304     currenttime += date_string;
+305     currenttime += time_string;
+306 
+307     savedfileprepStmt = con->prepareStatement(SAVEFILEINFOPROCSTMT);
+308 
+309     try {
+310         con->setAutoCommit(false);
+311         savedfileprepStmt->setString(1, dirname);
+312         savedfileprepStmt->setString(2, currenttime);
+313         savedfileprepStmt->setString(3, machinename);
+314         savedfileprepStmt->setString(4, fname);
+315         savedfileprepStmt->setString(5, hashval);
+316         savedfileprepStmt->executeUpdate();
+317         con->commit();
+318         con->setAutoCommit(true);
+319     } catch (sql::SQLException &e) {
+320         cout << "# ERR: SQLException in " << __FILE__;
+321         cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
+322         cout << "# ERR: " << e\&.what();
+323         cout << " (MySQL error code: " << e\&.getErrorCode();
+324         cout << ", SQLState: " << e\&.getSQLState() << " )" << endl;
+325     }
+326 
+327     delete savedfileprepStmt;
+328 }
+.fi
 .SS "void mysqlcontroller::setDBASENAME (char * dbase)"
 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdbase\fP 
+.RE
+.PP
+
+.PP
+.nf
+60                                               {
+61     dbasename = dbase;
+62 }
+.fi
 .SS "void mysqlcontroller::setHOSTNAME (char * host)"
 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhost\fP 
+.RE
+.PP
+
+.PP
+.nf
+51                                             {
+52     hostname = host;
+53 }
+.fi
 .SS "void mysqlcontroller::setMACHINENAME (char * mname)"
 
+.PP
+\fBParameters\fP
+.RS 4
+\fImname\fP 
+.RE
+.PP
+
+.PP
+.nf
+96                                                 {
+97     machinename = mname;
+98 }
+.fi
 .SS "void mysqlcontroller::setPASSWORD (char * pwd)"
 
-.SS "void mysqlcontroller::setPORT (int port)"
+.PP
+\fBParameters\fP
+.RS 4
+\fIpwd\fP 
+.RE
+.PP
 
+.PP
+.nf
+78                                            {
+79     password = pwd;
+80 }
+.fi
+.SS "void mysqlcontroller::setPORT (int portno)"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIportno\fP 
+.RE
+.PP
+
+.PP
+.nf
+87                                         {
+88     port = portno;
+89 }
+.fi
 .SS "void mysqlcontroller::setUSERNAME (char * uname)"
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIuname\fP 
+.RE
+.PP
+
+.PP
+.nf
+69                                              {
+70     username = uname;
+71 }
+.fi
 
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for fileintegritychecker from the source code\&.
+Generated automatically by Doxygen for File Integrity Checker from the source code\&.

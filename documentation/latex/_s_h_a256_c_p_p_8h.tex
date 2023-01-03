@@ -1,4 +1,4 @@
-\hypertarget{_s_h_a256_c_p_p_8h}{}\doxysection{C\+:/\+Users/mark\+\_\+/source/repos/fileintegritychecker/headers/\+SHA256\+CPP.h File Reference}
+\doxysection{C\+:/\+Users/mark\+\_\+/source/repos/fileintegritychecker/headers/\+SHA256\+CPP.h File Reference}
 \label{_s_h_a256_c_p_p_8h}\index{C:/Users/mark\_/source/repos/fileintegritychecker/headers/SHA256CPP.h@{C:/Users/mark\_/source/repos/fileintegritychecker/headers/SHA256CPP.h}}
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
@@ -6,62 +6,60 @@
 {\ttfamily \#include $<$inttypes.\+h$>$}\newline
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
 {\ttfamily \#include $<$array$>$}\newline
-Include dependency graph for SHA256\+CPP.\+h\+:
-\nopagebreak
+Include dependency graph for SHA256\+CPP.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{_s_h_a256_c_p_p_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=268pt]{_s_h_a256_c_p_p_8h__dep__incl}
+\includegraphics[width=350pt]{_s_h_a256_c_p_p_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{struct_hash_values}{Hash\+Values}}
+struct \textbf{ Hash\+Values}
 \item 
-union \mbox{\hyperlink{unionmessage_block}{message\+Block}}
+union \textbf{ message\+Block}
 \item 
-class \mbox{\hyperlink{class_s_h_a256_c_p_p}{SHA256\+CPP}}
+class \textbf{ SHA256\+CPP}
 \end{DoxyCompactItemize}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{_s_h_a256_c_p_p_8h_af69af86b63bfa5f9ae02b9ade66929e9}{byte\+Swap32}}(x)~(((x) $>$$>$ 24) $\vert$ (((x)\&0x00\+FF0000) $>$$>$ 8) $\vert$ (((x)\&0x0000\+FF00) $<$$<$ 8) $\vert$ ((x) $<$$<$ 24))
+\#define \textbf{ byte\+Swap32}(x)~(((x) $>$$>$ 24) $\vert$ (((x)\&0x00\+FF0000) $>$$>$ 8) $\vert$ (((x)\&0x0000\+FF00) $<$$<$ 8) $\vert$ ((x) $<$$<$ 24))
 \item 
-\#define \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a317cf659e36d8c74574a1617e1c6bce1}{byte\+Swap64}}(x)
+\#define \textbf{ byte\+Swap64}(x)
 \item 
-\#define \mbox{\hyperlink{_s_h_a256_c_p_p_8h_ac1535592e39e7edf0cafbd5e695ea622}{MAXCHAR}}~100000
+\#define \textbf{ MAXCHAR}~100000
 \end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959}{status}} \{ \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959acb9be765f361bb7efb9073730aac92c6}{READ}}
-, \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959a24c954e013ccb8f230031742d8193f55}{PAD0}}
-, \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959a7af380b5255ed8fbb4f1943b92048b15}{PAD1}}
-, \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959a8b9af67858708d770f017e4aae85900d}{FINISH}}
+enum \textbf{ status} \{ \textbf{ READ}
+, \textbf{ PAD0}
+, \textbf{ PAD1}
+, \textbf{ FINISH}
  \}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{_s_h_a256_c_p_p_8h_af69af86b63bfa5f9ae02b9ade66929e9}\label{_s_h_a256_c_p_p_8h_af69af86b63bfa5f9ae02b9ade66929e9}} 
+\mbox{\label{_s_h_a256_c_p_p_8h_af69af86b63bfa5f9ae02b9ade66929e9}} 
 \index{SHA256CPP.h@{SHA256CPP.h}!byteSwap32@{byteSwap32}}
 \index{byteSwap32@{byteSwap32}!SHA256CPP.h@{SHA256CPP.h}}
-\doxysubsubsection{\texorpdfstring{byteSwap32}{byteSwap32}}
+\doxysubsubsection{byteSwap32}
 {\footnotesize\ttfamily \#define byte\+Swap32(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(((x) $>$$>$ 24) $\vert$ (((x)\&0x00\+FF0000) $>$$>$ 8) $\vert$ (((x)\&0x0000\+FF00) $<$$<$ 8) $\vert$ ((x) $<$$<$ 24))}
 
-\mbox{\Hypertarget{_s_h_a256_c_p_p_8h_a317cf659e36d8c74574a1617e1c6bce1}\label{_s_h_a256_c_p_p_8h_a317cf659e36d8c74574a1617e1c6bce1}} 
+\mbox{\label{_s_h_a256_c_p_p_8h_a317cf659e36d8c74574a1617e1c6bce1}} 
 \index{SHA256CPP.h@{SHA256CPP.h}!byteSwap64@{byteSwap64}}
 \index{byteSwap64@{byteSwap64}!SHA256CPP.h@{SHA256CPP.h}}
-\doxysubsubsection{\texorpdfstring{byteSwap64}{byteSwap64}}
+\doxysubsubsection{byteSwap64}
 {\footnotesize\ttfamily \#define byte\+Swap64(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
 
 {\bfseries Value\+:}
@@ -72,35 +70,35 @@ enum \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959}{stat
 \DoxyCodeLine{     (((x) << 40) \& 0x00FF000000000000) | (((x) << 56) \& 0xFF00000000000000))}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{_s_h_a256_c_p_p_8h_ac1535592e39e7edf0cafbd5e695ea622}\label{_s_h_a256_c_p_p_8h_ac1535592e39e7edf0cafbd5e695ea622}} 
+\mbox{\label{_s_h_a256_c_p_p_8h_ac1535592e39e7edf0cafbd5e695ea622}} 
 \index{SHA256CPP.h@{SHA256CPP.h}!MAXCHAR@{MAXCHAR}}
 \index{MAXCHAR@{MAXCHAR}!SHA256CPP.h@{SHA256CPP.h}}
-\doxysubsubsection{\texorpdfstring{MAXCHAR}{MAXCHAR}}
+\doxysubsubsection{MAXCHAR}
 {\footnotesize\ttfamily \#define MAXCHAR~100000}
 
 
 
 \doxysubsection{Enumeration Type Documentation}
-\mbox{\Hypertarget{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959}\label{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959}} 
+\mbox{\label{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959}} 
 \index{SHA256CPP.h@{SHA256CPP.h}!status@{status}}
 \index{status@{status}!SHA256CPP.h@{SHA256CPP.h}}
-\doxysubsubsection{\texorpdfstring{status}{status}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959}{status}}}
+\doxysubsubsection{status}
+{\footnotesize\ttfamily enum \textbf{ status}}
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{READ@{READ}!SHA256CPP.h@{SHA256CPP.h}}\index{SHA256CPP.h@{SHA256CPP.h}!READ@{READ}}}\mbox{\Hypertarget{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959acb9be765f361bb7efb9073730aac92c6}\label{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959acb9be765f361bb7efb9073730aac92c6}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{READ@{READ}!SHA256CPP.h@{SHA256CPP.h}}\index{SHA256CPP.h@{SHA256CPP.h}!READ@{READ}}}\mbox{\label{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959acb9be765f361bb7efb9073730aac92c6}} 
 READ&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{PAD0@{PAD0}!SHA256CPP.h@{SHA256CPP.h}}\index{SHA256CPP.h@{SHA256CPP.h}!PAD0@{PAD0}}}\mbox{\Hypertarget{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959a24c954e013ccb8f230031742d8193f55}\label{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959a24c954e013ccb8f230031742d8193f55}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAD0@{PAD0}!SHA256CPP.h@{SHA256CPP.h}}\index{SHA256CPP.h@{SHA256CPP.h}!PAD0@{PAD0}}}\mbox{\label{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959a24c954e013ccb8f230031742d8193f55}} 
 PAD0&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{PAD1@{PAD1}!SHA256CPP.h@{SHA256CPP.h}}\index{SHA256CPP.h@{SHA256CPP.h}!PAD1@{PAD1}}}\mbox{\Hypertarget{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959a7af380b5255ed8fbb4f1943b92048b15}\label{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959a7af380b5255ed8fbb4f1943b92048b15}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAD1@{PAD1}!SHA256CPP.h@{SHA256CPP.h}}\index{SHA256CPP.h@{SHA256CPP.h}!PAD1@{PAD1}}}\mbox{\label{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959a7af380b5255ed8fbb4f1943b92048b15}} 
 PAD1&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{FINISH@{FINISH}!SHA256CPP.h@{SHA256CPP.h}}\index{SHA256CPP.h@{SHA256CPP.h}!FINISH@{FINISH}}}\mbox{\Hypertarget{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959a8b9af67858708d770f017e4aae85900d}\label{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959a8b9af67858708d770f017e4aae85900d}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FINISH@{FINISH}!SHA256CPP.h@{SHA256CPP.h}}\index{SHA256CPP.h@{SHA256CPP.h}!FINISH@{FINISH}}}\mbox{\label{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959a8b9af67858708d770f017e4aae85900d}} 
 FINISH&\\
 \hline
 
@@ -108,10 +106,10 @@ FINISH&\\
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{35 \{}
-\DoxyCodeLine{36     \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959acb9be765f361bb7efb9073730aac92c6}{READ}}, }
-\DoxyCodeLine{37     \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959a24c954e013ccb8f230031742d8193f55}{PAD0}},}
-\DoxyCodeLine{38     \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959a7af380b5255ed8fbb4f1943b92048b15}{PAD1}},}
-\DoxyCodeLine{39     \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959a8b9af67858708d770f017e4aae85900d}{FINISH}}}
+\DoxyCodeLine{36     READ, }
+\DoxyCodeLine{37     PAD0,}
+\DoxyCodeLine{38     PAD1,}
+\DoxyCodeLine{39     FINISH}
 \DoxyCodeLine{40 \};}
 
 \end{DoxyCode}

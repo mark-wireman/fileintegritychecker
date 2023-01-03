@@ -1,4 +1,4 @@
-\hypertarget{classfileintegritychecker}{}\doxysection{fileintegritychecker Class Reference}
+\doxysection{fileintegritychecker Class Reference}
 \label{classfileintegritychecker}\index{fileintegritychecker@{fileintegritychecker}}
 
 
@@ -6,8 +6,7 @@
 
 
 
-Collaboration diagram for fileintegritychecker\+:
-\nopagebreak
+Collaboration diagram for fileintegritychecker\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,213 +16,475 @@ Collaboration diagram for fileintegritychecker\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classfileintegritychecker_a4f113638831295eab7ae564155dc2c3c}{fileintegritychecker}} ()
+\textbf{ fileintegritychecker} ()
 \item 
-virtual \mbox{\hyperlink{classfileintegritychecker_abf6a40bce2f3466f8bddc9a5ed02fe1d}{$\sim$fileintegritychecker}} ()
+virtual \textbf{ $\sim$fileintegritychecker} ()
 \item 
-void \mbox{\hyperlink{classfileintegritychecker_af19f4b1b0f37b3645f0aa27ce201538d}{set\+Param\+Vals}} (\mbox{\hyperlink{class_menu}{Menu}} $\ast$m)
+void \textbf{ set\+Param\+Vals} (\textbf{ Menu} $\ast$m)
+\begin{DoxyCompactList}\small\item\em Set the Param Vals object. \end{DoxyCompactList}\item 
+void \textbf{ set\+Database\+Connections} ()
 \item 
-void \mbox{\hyperlink{classfileintegritychecker_ad83727702919ed588145f7e9f9f183d7}{set\+Database\+Connections}} ()
+void \textbf{ process\+Files} ()
 \item 
-void \mbox{\hyperlink{classfileintegritychecker_ab064f5cb87b4a7d8c557a32d764a131a}{process\+Files}} ()
-\item 
-void \mbox{\hyperlink{classfileintegritychecker_aeb559134d644a9263fc9ab8a25ecf333}{close\+Database\+Connections}} ()
+void \textbf{ close\+Database\+Connections} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-long int \mbox{\hyperlink{classfileintegritychecker_a084e0e1a26d35c85d16ecfccc84ee031}{numberofdirectories}} = 0
+long int \textbf{ numberofdirectories} = 0
 \item 
-long int \mbox{\hyperlink{classfileintegritychecker_a8cc50a2938d11837ec1ee0250e73fa6d}{numberoffiles}} = 0
+long int \textbf{ numberoffiles} = 0
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{classfileintegritychecker_af2fb66e054e9f613677746f6f3dde0a3}{get\+\_\+directories\+\_\+files}} (const string \&s, int level=0)
-\end{DoxyCompactItemize}
+void \textbf{ get\+\_\+directories\+\_\+files} (const string \&s, int level=0)
+\begin{DoxyCompactList}\small\item\em Get the directories files object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-char $\ast$ \mbox{\hyperlink{classfileintegritychecker_a23b4005e258b5038e68452c6d895a185}{parentdir}}
+char $\ast$ \textbf{ parentdir}
 \item 
-char $\ast$ \mbox{\hyperlink{classfileintegritychecker_a5258b64047e22c2f82fb13e908b0c080}{dbasehost}}
+char $\ast$ \textbf{ dbasehost}
 \item 
-char $\ast$ \mbox{\hyperlink{classfileintegritychecker_a2d1e27b35a85dc13f1619dedaf53c4c8}{dbase}}
+char $\ast$ \textbf{ dbase}
 \item 
-char $\ast$ \mbox{\hyperlink{classfileintegritychecker_abb322369f0338dafa1c8f92b95cda730}{uname}}
+char $\ast$ \textbf{ uname}
 \item 
-char $\ast$ \mbox{\hyperlink{classfileintegritychecker_a6137942fb3ff1790d622310840e9dc6c}{pwd}}
+char $\ast$ \textbf{ pwd}
 \item 
-char $\ast$ \mbox{\hyperlink{classfileintegritychecker_a6948be4b723e374ddce7273697c9dae7}{portno}}
+char $\ast$ \textbf{ portno}
 \item 
-char $\ast$ \mbox{\hyperlink{classfileintegritychecker_aaa47205a07b1d35b7bf6a145a99207e9}{mname}}
+char $\ast$ \textbf{ mname}
 \item 
-char $\ast$ \mbox{\hyperlink{classfileintegritychecker_a5b7a655ace1a445aaf32984dde0cd14a}{dbasetype}}
+char $\ast$ \textbf{ dbasetype}
 \item 
-char $\ast$ \mbox{\hyperlink{classfileintegritychecker_a02a1a1e0e235f6ca153171030b60d319}{dbasefilename}}
+char $\ast$ \textbf{ dbasefilename}
 \item 
-int \mbox{\hyperlink{classfileintegritychecker_a754ca74fc0280d60adcf7099e7913813}{usehashvals}} = 0
+int \textbf{ usehashvals} = 0
 \item 
-long int \mbox{\hyperlink{classfileintegritychecker_a00bbf08cd81818d0c048f1bddfdcd9b1}{numberofnewdirectories}} = 0
+long int \textbf{ numberofnewdirectories} = 0
 \item 
-long int \mbox{\hyperlink{classfileintegritychecker_a0c490abca9b7cb896f2efb06cd74b431}{numberofverifieddirectories}} = 0
+long int \textbf{ numberofverifieddirectories} = 0
 \item 
-bool \mbox{\hyperlink{classfileintegritychecker_a6a433c2b64e97b2ca080db41a9df49c2}{verbose\+\_\+output}} = false
+bool \textbf{ verbose\+\_\+output} = false
 \item 
-\mbox{\hyperlink{classmysqlcontroller}{mysqlcontroller}} $\ast$ \mbox{\hyperlink{classfileintegritychecker_a73cb3d6b1f3fccb340dba68b56241ecd}{mysqlctl}}
+\textbf{ mysqlcontroller} $\ast$ \textbf{ mysqlctl}
 \item 
-\mbox{\hyperlink{classsqlite3controller}{sqlite3controller}} $\ast$ \mbox{\hyperlink{classfileintegritychecker_a106e283f11f9f3c0788f9e43c3a0d3f0}{sqlitectl}}
+\textbf{ sqlite3controller} $\ast$ \textbf{ sqlitectl}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classfileintegritychecker_a4f113638831295eab7ae564155dc2c3c}\label{classfileintegritychecker_a4f113638831295eab7ae564155dc2c3c}} 
+\mbox{\label{classfileintegritychecker_a4f113638831295eab7ae564155dc2c3c}} 
 \index{fileintegritychecker@{fileintegritychecker}!fileintegritychecker@{fileintegritychecker}}
 \index{fileintegritychecker@{fileintegritychecker}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{fileintegritychecker()}{fileintegritychecker()}}
+\doxysubsubsection{fileintegritychecker()}
 {\footnotesize\ttfamily fileintegritychecker\+::fileintegritychecker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfileintegritychecker_abf6a40bce2f3466f8bddc9a5ed02fe1d}\label{classfileintegritychecker_abf6a40bce2f3466f8bddc9a5ed02fe1d}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{205 \{\}}
+
+\end{DoxyCode}
+\mbox{\label{classfileintegritychecker_af6ac155d2d02e2da5af89272baf0d292}} 
 \index{fileintegritychecker@{fileintegritychecker}!````~fileintegritychecker@{$\sim$fileintegritychecker}}
 \index{````~fileintegritychecker@{$\sim$fileintegritychecker}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{$\sim$fileintegritychecker()}{~fileintegritychecker()}}
-{\footnotesize\ttfamily virtual fileintegritychecker\+::$\sim$fileintegritychecker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+\doxysubsubsection{$\sim$fileintegritychecker()}
+{\footnotesize\ttfamily fileintegritychecker\+::$\sim$fileintegritychecker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{207 \{\}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classfileintegritychecker_aeb559134d644a9263fc9ab8a25ecf333}\label{classfileintegritychecker_aeb559134d644a9263fc9ab8a25ecf333}} 
+\mbox{\label{classfileintegritychecker_aeb559134d644a9263fc9ab8a25ecf333}} 
 \index{fileintegritychecker@{fileintegritychecker}!closeDatabaseConnections@{closeDatabaseConnections}}
 \index{closeDatabaseConnections@{closeDatabaseConnections}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{closeDatabaseConnections()}{closeDatabaseConnections()}}
+\doxysubsubsection{closeDatabaseConnections()}
 {\footnotesize\ttfamily void fileintegritychecker\+::close\+Database\+Connections (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfileintegritychecker_af2fb66e054e9f613677746f6f3dde0a3}\label{classfileintegritychecker_af2fb66e054e9f613677746f6f3dde0a3}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{176                                                     \{}
+\DoxyCodeLine{177     \textcolor{keywordflow}{if} (strcmp(this-\/>dbasetype, \textcolor{stringliteral}{"{}mysql"{}}) == 0) \{}
+\DoxyCodeLine{178         this-\/>mysqlctl-\/>closedb();}
+\DoxyCodeLine{179     \}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181     \textcolor{keywordflow}{if} (strcmp(this-\/>dbasetype, \textcolor{stringliteral}{"{}sqlite"{}}) == 0) \{}
+\DoxyCodeLine{182         this-\/>sqlitectl-\/>closedb();}
+\DoxyCodeLine{183     \}}
+\DoxyCodeLine{184 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfileintegritychecker_aeb559134d644a9263fc9ab8a25ecf333_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{classfileintegritychecker_aeb559134d644a9263fc9ab8a25ecf333_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classfileintegritychecker_af2fb66e054e9f613677746f6f3dde0a3}} 
 \index{fileintegritychecker@{fileintegritychecker}!get\_directories\_files@{get\_directories\_files}}
 \index{get\_directories\_files@{get\_directories\_files}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{get\_directories\_files()}{get\_directories\_files()}}
+\doxysubsubsection{get\_directories\_files()}
 {\footnotesize\ttfamily void fileintegritychecker\+::get\+\_\+directories\+\_\+files (\begin{DoxyParamCaption}\item[{const string \&}]{s,  }\item[{int}]{level = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classfileintegritychecker_ab064f5cb87b4a7d8c557a32d764a131a}\label{classfileintegritychecker_ab064f5cb87b4a7d8c557a32d764a131a}} 
+
+
+Get the directories files object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \\
+\hline
+{\em level} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{48                                                                            \{}
+\DoxyCodeLine{49     }
+\DoxyCodeLine{50     }
+\DoxyCodeLine{51     \textcolor{keyword}{auto} error\_code = std::error\_code();}
+\DoxyCodeLine{52     \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto}\& entry : fs::directory\_iterator(s,fs::directory\_options::skip\_permission\_denied, error\_code)) \{}
+\DoxyCodeLine{53         \textcolor{comment}{//cout << "{}."{};}}
+\DoxyCodeLine{54         \textcolor{keywordflow}{if}(!error\_code) \{}
+\DoxyCodeLine{55             \textcolor{keywordflow}{if}(!entry.is\_symlink() \&\& entry.is\_directory())\{}
+\DoxyCodeLine{56                 \textcolor{keyword}{const} \textcolor{keyword}{auto} dirname = \textcolor{stringliteral}{"{}/"{}} + entry.path().relative\_path().string();}
+\DoxyCodeLine{57                 cout << \textcolor{stringliteral}{"{}Dir: "{}} << dirname << endl;}
+\DoxyCodeLine{58                 \textcolor{keywordflow}{if}(strcmp(this-\/>dbasetype,\textcolor{stringliteral}{"{}mysql"{}}) == 0) \{}
+\DoxyCodeLine{59                     \textcolor{keyword}{auto} dirsaveasync = std::async(std::launch::async, \&mysqlcontroller::saveDirectoryName\_async, this-\/>mysqlctl, dirname);}
+\DoxyCodeLine{60                     dirsaveasync.wait();}
+\DoxyCodeLine{61                 \}}
+\DoxyCodeLine{62                 \textcolor{keywordflow}{if}(strcmp(this-\/>dbasetype,\textcolor{stringliteral}{"{}sqlite"{}}) == 0) \{}
+\DoxyCodeLine{63                     this-\/>sqlitectl-\/>save\_dir\_info(dirname.c\_str());}
+\DoxyCodeLine{64                 \}    }
+\DoxyCodeLine{65                 numberofdirectories++;}
+\DoxyCodeLine{66                 this-\/>get\_directories\_files(dirname, level+1);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (entry.is\_regular\_file()) \{}
+\DoxyCodeLine{69                 }
+\DoxyCodeLine{70                 \textcolor{keyword}{const} \textcolor{keyword}{auto} dname = s;}
+\DoxyCodeLine{71                 \textcolor{keyword}{const} \textcolor{keyword}{auto} filename = \textcolor{stringliteral}{"{}/"{}} +  entry.path().relative\_path().string();}
+\DoxyCodeLine{72                 \textcolor{keyword}{const} \textcolor{keyword}{auto} ftime = entry.last\_write\_time();}
+\DoxyCodeLine{73                 std::time\_t ctime = to\_time\_t(ftime);}
+\DoxyCodeLine{74                 \textcolor{keywordtype}{char}* time = to\_char\_time\_t(ctime);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76                 uintmax\_t fsize = entry.file\_size();}
+\DoxyCodeLine{77                 numberoffiles++;}
+\DoxyCodeLine{78                 cout << \textcolor{stringliteral}{"{}\(\backslash\)tFile: "{}} << filename << endl;}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80                 \textcolor{keywordflow}{if} (usehashvals == 0) \{}
+\DoxyCodeLine{81                     \textcolor{keywordflow}{if} (strcmp(this-\/>dbasetype, \textcolor{stringliteral}{"{}sqlite"{}}) == 0) \{}
+\DoxyCodeLine{82                         this-\/>sqlitectl-\/>save\_file\_info(filename.c\_str(),dname.c\_str(), time, fsize);}
+\DoxyCodeLine{83                     \}}
+\DoxyCodeLine{84                 \}}
+\DoxyCodeLine{85                 \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87                     FILE* file = fopen(filename.c\_str(), \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{88                     }
+\DoxyCodeLine{89                     \textcolor{keywordflow}{if} (file == NULL) \{}
+\DoxyCodeLine{90                         printf(\textcolor{stringliteral}{"{}\(\backslash\)tUnable to open file. Moving on...\(\backslash\)n"{}});}
+\DoxyCodeLine{91                     \}}
+\DoxyCodeLine{92                     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{93                         SHA256CPP* sha256\_obj = \textcolor{keyword}{new} SHA256CPP();}
+\DoxyCodeLine{94                         HashValues hashVals;}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96                         hashVals = sha256\_obj-\/>calculateHash(file);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98                         fclose(file);}
+\DoxyCodeLine{99                         \textcolor{keyword}{delete} sha256\_obj;}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101                         \textcolor{keywordtype}{string} hashedvals = to\_string(hashVals.H[0]);}
+\DoxyCodeLine{102                         hashedvals += to\_string(hashVals.H[1]);}
+\DoxyCodeLine{103                         hashedvals += to\_string(hashVals.H[2]);}
+\DoxyCodeLine{104                         hashedvals += to\_string(hashVals.H[3]);}
+\DoxyCodeLine{105                         hashedvals += to\_string(hashVals.H[4]);}
+\DoxyCodeLine{106                         hashedvals += to\_string(hashVals.H[5]);}
+\DoxyCodeLine{107                         hashedvals += to\_string(hashVals.H[6]);}
+\DoxyCodeLine{108                         hashedvals += to\_string(hashVals.H[7]);}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110                         \textcolor{keywordflow}{if} (strcmp(this-\/>dbasetype, \textcolor{stringliteral}{"{}mysql"{}}) == 0) \{}
+\DoxyCodeLine{111                             \textcolor{keyword}{auto} filesaveasync = std::async(std::launch::async, \&mysqlcontroller::saveFileInfo\_async, this-\/>mysqlctl, dname, entry.path().filename().string(), hashedvals);}
+\DoxyCodeLine{112                             filesaveasync.wait();}
+\DoxyCodeLine{113                         \}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115                         \textcolor{keywordflow}{if} (strcmp(this-\/>dbasetype, \textcolor{stringliteral}{"{}sqlite"{}}) == 0) \{}
+\DoxyCodeLine{116                             \textcolor{comment}{//fprintf(stderr, "{}Saving hashedvalue of \%s"{}, hashedvals.c\_str());}}
+\DoxyCodeLine{117                             this-\/>sqlitectl-\/>save\_file\_info(filename.c\_str(), dname.c\_str(), time, fsize, (\textcolor{keywordtype}{char}*)hashedvals.c\_str());}
+\DoxyCodeLine{118                         \}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120                     \}}
+\DoxyCodeLine{121                 \}}
+\DoxyCodeLine{122             \} }
+\DoxyCodeLine{123             \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{124                 \textcolor{comment}{//Do nothing}}
+\DoxyCodeLine{125                 \textcolor{keyword}{const} \textcolor{keyword}{auto} unknown = \textcolor{stringliteral}{"{}/"{}} +  entry.path().relative\_path().string();}
+\DoxyCodeLine{126                 cout << \textcolor{stringliteral}{"{}\(\backslash\)tUnknown: "{}} << unknown << endl;}
+\DoxyCodeLine{127             \}}
+\DoxyCodeLine{128         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{129             cout << \textcolor{stringliteral}{"{}\# ERR: DirectoryIterator in "{}} << \_\_FILE\_\_;}
+\DoxyCodeLine{130             cout << \textcolor{stringliteral}{"{}("{}} << \_\_FUNCTION\_\_ << \textcolor{stringliteral}{"{}) on line "{}} << \_\_LINE\_\_ << endl;}
+\DoxyCodeLine{131             cout << \textcolor{stringliteral}{"{}\# ERROR Code: "{}} << error\_code.category().name();}
+\DoxyCodeLine{132             cout << \textcolor{stringliteral}{"{} ERROR Details: "{}} << error\_code.category().message(error\_code.value()) << endl;}
+\DoxyCodeLine{133             cout << \textcolor{stringliteral}{"{} ERROR accessing: "{}} << entry.path().relative\_path().string() << endl;}
+\DoxyCodeLine{134         \}    }
+\DoxyCodeLine{135     \}}
+\DoxyCodeLine{136     }
+\DoxyCodeLine{137 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfileintegritychecker_af2fb66e054e9f613677746f6f3dde0a3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfileintegritychecker_af2fb66e054e9f613677746f6f3dde0a3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classfileintegritychecker_ab064f5cb87b4a7d8c557a32d764a131a}} 
 \index{fileintegritychecker@{fileintegritychecker}!processFiles@{processFiles}}
 \index{processFiles@{processFiles}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{processFiles()}{processFiles()}}
+\doxysubsubsection{processFiles()}
 {\footnotesize\ttfamily void fileintegritychecker\+::process\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfileintegritychecker_ad83727702919ed588145f7e9f9f183d7}\label{classfileintegritychecker_ad83727702919ed588145f7e9f9f183d7}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{186                                         \{}
+\DoxyCodeLine{187     \textcolor{keywordtype}{string} pDir = this-\/>parentdir;}
+\DoxyCodeLine{188     cout << pDir << endl;}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190     \textcolor{keywordflow}{if} (strcmp(this-\/>dbasetype, \textcolor{stringliteral}{"{}mysql"{}}) == 0) \{}
+\DoxyCodeLine{191         \textcolor{keyword}{auto} dirsaveasync = std::async(std::launch::async, \&mysqlcontroller::saveDirectoryName\_async, this-\/>mysqlctl, pDir.c\_str());}
+\DoxyCodeLine{192         dirsaveasync.wait();}
+\DoxyCodeLine{193     \}}
+\DoxyCodeLine{194     \textcolor{keywordflow}{if} (strcmp(this-\/>dbasetype, \textcolor{stringliteral}{"{}sqlite"{}}) == 0) \{}
+\DoxyCodeLine{195         this-\/>sqlitectl-\/>save\_dir\_info(pDir.c\_str());}
+\DoxyCodeLine{196     \}}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198     numberofdirectories++;}
+\DoxyCodeLine{199     }
+\DoxyCodeLine{200     this-\/>get\_directories\_files(pDir);}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202     }
+\DoxyCodeLine{203 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfileintegritychecker_ab064f5cb87b4a7d8c557a32d764a131a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{classfileintegritychecker_ab064f5cb87b4a7d8c557a32d764a131a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classfileintegritychecker_ad83727702919ed588145f7e9f9f183d7}} 
 \index{fileintegritychecker@{fileintegritychecker}!setDatabaseConnections@{setDatabaseConnections}}
 \index{setDatabaseConnections@{setDatabaseConnections}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{setDatabaseConnections()}{setDatabaseConnections()}}
+\doxysubsubsection{setDatabaseConnections()}
 {\footnotesize\ttfamily void fileintegritychecker\+::set\+Database\+Connections (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classfileintegritychecker_af19f4b1b0f37b3645f0aa27ce201538d}\label{classfileintegritychecker_af19f4b1b0f37b3645f0aa27ce201538d}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{164                                                   \{}
+\DoxyCodeLine{165     \textcolor{keywordflow}{if} (strcmp(this-\/>dbasetype, \textcolor{stringliteral}{"{}mysql"{}}) == 0) \{}
+\DoxyCodeLine{166         this-\/>mysqlctl = \textcolor{keyword}{new} mysqlcontroller(this-\/>dbasehost, \textcolor{stringliteral}{"{}fileintegritychecker"{}}, this-\/>uname, this-\/>pwd, 3306, this-\/>mname);}
+\DoxyCodeLine{167         this-\/>mysqlctl-\/>initdb();}
+\DoxyCodeLine{168     \}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170     \textcolor{keywordflow}{if} (strcmp(this-\/>dbasetype, \textcolor{stringliteral}{"{}sqlite"{}}) == 0) \{}
+\DoxyCodeLine{171         this-\/>sqlitectl = \textcolor{keyword}{new} sqlite3controller(this-\/>dbasefilename, this-\/>mname);}
+\DoxyCodeLine{172         this-\/>sqlitectl-\/>initdb();}
+\DoxyCodeLine{173     \}}
+\DoxyCodeLine{174 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfileintegritychecker_ad83727702919ed588145f7e9f9f183d7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{classfileintegritychecker_ad83727702919ed588145f7e9f9f183d7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{classfileintegritychecker_af19f4b1b0f37b3645f0aa27ce201538d}} 
 \index{fileintegritychecker@{fileintegritychecker}!setParamVals@{setParamVals}}
 \index{setParamVals@{setParamVals}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{setParamVals()}{setParamVals()}}
-{\footnotesize\ttfamily void fileintegritychecker\+::set\+Param\+Vals (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_menu}{Menu}} $\ast$}]{m }\end{DoxyParamCaption})}
+\doxysubsubsection{setParamVals()}
+{\footnotesize\ttfamily void fileintegritychecker\+::set\+Param\+Vals (\begin{DoxyParamCaption}\item[{\textbf{ Menu} $\ast$}]{\+\_\+menu }\end{DoxyParamCaption})}
 
+
+
+Set the Param Vals object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{143                                                    \{}
+\DoxyCodeLine{144    this-\/>parentdir = \_menu-\/>getPARENTDIR();}
+\DoxyCodeLine{145    this-\/>dbasetype = \_menu-\/>getDBASETYPE();}
+\DoxyCodeLine{146    this-\/>mname = \_menu-\/>getMACHINENAME();}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148    \textcolor{keywordflow}{if}(strcmp(this-\/>dbasetype,\textcolor{stringliteral}{"{}mysql"{}}) == 0) \{}
+\DoxyCodeLine{149        this-\/>dbasehost = \_menu-\/>getDATABASEHOSTNAME();}
+\DoxyCodeLine{150        this-\/>uname = \_menu-\/>getUSERNAME();}
+\DoxyCodeLine{151        this-\/>pwd = \_menu-\/>getPASSWORD();}
+\DoxyCodeLine{152        this-\/>portno = \_menu-\/>getPORT();}
+\DoxyCodeLine{153    \}}
+\DoxyCodeLine{154    }
+\DoxyCodeLine{155    \textcolor{keywordflow}{if}(strcmp(this-\/>dbasetype,\textcolor{stringliteral}{"{}sqlite"{}}) == 0) \{}
+\DoxyCodeLine{156        this-\/>dbasefilename = \_menu-\/>getDBASEFILENAME();}
+\DoxyCodeLine{157    \}}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159    this-\/>usehashvals = \_menu-\/>getPROCESSHASHVALS();}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classfileintegritychecker_af19f4b1b0f37b3645f0aa27ce201538d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{classfileintegritychecker_af19f4b1b0f37b3645f0aa27ce201538d_icgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classfileintegritychecker_a2d1e27b35a85dc13f1619dedaf53c4c8}\label{classfileintegritychecker_a2d1e27b35a85dc13f1619dedaf53c4c8}} 
+\mbox{\label{classfileintegritychecker_a2d1e27b35a85dc13f1619dedaf53c4c8}} 
 \index{fileintegritychecker@{fileintegritychecker}!dbase@{dbase}}
 \index{dbase@{dbase}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{dbase}{dbase}}
+\doxysubsubsection{dbase}
 {\footnotesize\ttfamily char$\ast$ fileintegritychecker\+::dbase\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classfileintegritychecker_a02a1a1e0e235f6ca153171030b60d319}\label{classfileintegritychecker_a02a1a1e0e235f6ca153171030b60d319}} 
+\mbox{\label{classfileintegritychecker_a02a1a1e0e235f6ca153171030b60d319}} 
 \index{fileintegritychecker@{fileintegritychecker}!dbasefilename@{dbasefilename}}
 \index{dbasefilename@{dbasefilename}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{dbasefilename}{dbasefilename}}
+\doxysubsubsection{dbasefilename}
 {\footnotesize\ttfamily char$\ast$ fileintegritychecker\+::dbasefilename\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classfileintegritychecker_a5258b64047e22c2f82fb13e908b0c080}\label{classfileintegritychecker_a5258b64047e22c2f82fb13e908b0c080}} 
+\mbox{\label{classfileintegritychecker_a5258b64047e22c2f82fb13e908b0c080}} 
 \index{fileintegritychecker@{fileintegritychecker}!dbasehost@{dbasehost}}
 \index{dbasehost@{dbasehost}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{dbasehost}{dbasehost}}
+\doxysubsubsection{dbasehost}
 {\footnotesize\ttfamily char$\ast$ fileintegritychecker\+::dbasehost\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classfileintegritychecker_a5b7a655ace1a445aaf32984dde0cd14a}\label{classfileintegritychecker_a5b7a655ace1a445aaf32984dde0cd14a}} 
+\mbox{\label{classfileintegritychecker_a5b7a655ace1a445aaf32984dde0cd14a}} 
 \index{fileintegritychecker@{fileintegritychecker}!dbasetype@{dbasetype}}
 \index{dbasetype@{dbasetype}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{dbasetype}{dbasetype}}
+\doxysubsubsection{dbasetype}
 {\footnotesize\ttfamily char$\ast$ fileintegritychecker\+::dbasetype\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classfileintegritychecker_aaa47205a07b1d35b7bf6a145a99207e9}\label{classfileintegritychecker_aaa47205a07b1d35b7bf6a145a99207e9}} 
+\mbox{\label{classfileintegritychecker_aaa47205a07b1d35b7bf6a145a99207e9}} 
 \index{fileintegritychecker@{fileintegritychecker}!mname@{mname}}
 \index{mname@{mname}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{mname}{mname}}
+\doxysubsubsection{mname}
 {\footnotesize\ttfamily char$\ast$ fileintegritychecker\+::mname\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classfileintegritychecker_a73cb3d6b1f3fccb340dba68b56241ecd}\label{classfileintegritychecker_a73cb3d6b1f3fccb340dba68b56241ecd}} 
+\mbox{\label{classfileintegritychecker_a73cb3d6b1f3fccb340dba68b56241ecd}} 
 \index{fileintegritychecker@{fileintegritychecker}!mysqlctl@{mysqlctl}}
 \index{mysqlctl@{mysqlctl}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{mysqlctl}{mysqlctl}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classmysqlcontroller}{mysqlcontroller}}$\ast$ fileintegritychecker\+::mysqlctl\hspace{0.3cm}{\ttfamily [private]}}
+\doxysubsubsection{mysqlctl}
+{\footnotesize\ttfamily \textbf{ mysqlcontroller}$\ast$ fileintegritychecker\+::mysqlctl\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classfileintegritychecker_a084e0e1a26d35c85d16ecfccc84ee031}\label{classfileintegritychecker_a084e0e1a26d35c85d16ecfccc84ee031}} 
+\mbox{\label{classfileintegritychecker_a084e0e1a26d35c85d16ecfccc84ee031}} 
 \index{fileintegritychecker@{fileintegritychecker}!numberofdirectories@{numberofdirectories}}
 \index{numberofdirectories@{numberofdirectories}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{numberofdirectories}{numberofdirectories}}
+\doxysubsubsection{numberofdirectories}
 {\footnotesize\ttfamily long int fileintegritychecker\+::numberofdirectories = 0}
 
-\mbox{\Hypertarget{classfileintegritychecker_a8cc50a2938d11837ec1ee0250e73fa6d}\label{classfileintegritychecker_a8cc50a2938d11837ec1ee0250e73fa6d}} 
+\mbox{\label{classfileintegritychecker_a8cc50a2938d11837ec1ee0250e73fa6d}} 
 \index{fileintegritychecker@{fileintegritychecker}!numberoffiles@{numberoffiles}}
 \index{numberoffiles@{numberoffiles}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{numberoffiles}{numberoffiles}}
+\doxysubsubsection{numberoffiles}
 {\footnotesize\ttfamily long int fileintegritychecker\+::numberoffiles = 0}
 
-\mbox{\Hypertarget{classfileintegritychecker_a00bbf08cd81818d0c048f1bddfdcd9b1}\label{classfileintegritychecker_a00bbf08cd81818d0c048f1bddfdcd9b1}} 
+\mbox{\label{classfileintegritychecker_a00bbf08cd81818d0c048f1bddfdcd9b1}} 
 \index{fileintegritychecker@{fileintegritychecker}!numberofnewdirectories@{numberofnewdirectories}}
 \index{numberofnewdirectories@{numberofnewdirectories}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{numberofnewdirectories}{numberofnewdirectories}}
+\doxysubsubsection{numberofnewdirectories}
 {\footnotesize\ttfamily long int fileintegritychecker\+::numberofnewdirectories = 0\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classfileintegritychecker_a0c490abca9b7cb896f2efb06cd74b431}\label{classfileintegritychecker_a0c490abca9b7cb896f2efb06cd74b431}} 
+\mbox{\label{classfileintegritychecker_a0c490abca9b7cb896f2efb06cd74b431}} 
 \index{fileintegritychecker@{fileintegritychecker}!numberofverifieddirectories@{numberofverifieddirectories}}
 \index{numberofverifieddirectories@{numberofverifieddirectories}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{numberofverifieddirectories}{numberofverifieddirectories}}
+\doxysubsubsection{numberofverifieddirectories}
 {\footnotesize\ttfamily long int fileintegritychecker\+::numberofverifieddirectories = 0\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classfileintegritychecker_a23b4005e258b5038e68452c6d895a185}\label{classfileintegritychecker_a23b4005e258b5038e68452c6d895a185}} 
+\mbox{\label{classfileintegritychecker_a23b4005e258b5038e68452c6d895a185}} 
 \index{fileintegritychecker@{fileintegritychecker}!parentdir@{parentdir}}
 \index{parentdir@{parentdir}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{parentdir}{parentdir}}
+\doxysubsubsection{parentdir}
 {\footnotesize\ttfamily char$\ast$ fileintegritychecker\+::parentdir\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classfileintegritychecker_a6948be4b723e374ddce7273697c9dae7}\label{classfileintegritychecker_a6948be4b723e374ddce7273697c9dae7}} 
+\mbox{\label{classfileintegritychecker_a6948be4b723e374ddce7273697c9dae7}} 
 \index{fileintegritychecker@{fileintegritychecker}!portno@{portno}}
 \index{portno@{portno}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{portno}{portno}}
+\doxysubsubsection{portno}
 {\footnotesize\ttfamily char$\ast$ fileintegritychecker\+::portno\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classfileintegritychecker_a6137942fb3ff1790d622310840e9dc6c}\label{classfileintegritychecker_a6137942fb3ff1790d622310840e9dc6c}} 
+\mbox{\label{classfileintegritychecker_a6137942fb3ff1790d622310840e9dc6c}} 
 \index{fileintegritychecker@{fileintegritychecker}!pwd@{pwd}}
 \index{pwd@{pwd}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{pwd}{pwd}}
+\doxysubsubsection{pwd}
 {\footnotesize\ttfamily char$\ast$ fileintegritychecker\+::pwd\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classfileintegritychecker_a106e283f11f9f3c0788f9e43c3a0d3f0}\label{classfileintegritychecker_a106e283f11f9f3c0788f9e43c3a0d3f0}} 
+\mbox{\label{classfileintegritychecker_a106e283f11f9f3c0788f9e43c3a0d3f0}} 
 \index{fileintegritychecker@{fileintegritychecker}!sqlitectl@{sqlitectl}}
 \index{sqlitectl@{sqlitectl}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{sqlitectl}{sqlitectl}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classsqlite3controller}{sqlite3controller}}$\ast$ fileintegritychecker\+::sqlitectl\hspace{0.3cm}{\ttfamily [private]}}
+\doxysubsubsection{sqlitectl}
+{\footnotesize\ttfamily \textbf{ sqlite3controller}$\ast$ fileintegritychecker\+::sqlitectl\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classfileintegritychecker_abb322369f0338dafa1c8f92b95cda730}\label{classfileintegritychecker_abb322369f0338dafa1c8f92b95cda730}} 
+\mbox{\label{classfileintegritychecker_abb322369f0338dafa1c8f92b95cda730}} 
 \index{fileintegritychecker@{fileintegritychecker}!uname@{uname}}
 \index{uname@{uname}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{uname}{uname}}
+\doxysubsubsection{uname}
 {\footnotesize\ttfamily char$\ast$ fileintegritychecker\+::uname\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classfileintegritychecker_a754ca74fc0280d60adcf7099e7913813}\label{classfileintegritychecker_a754ca74fc0280d60adcf7099e7913813}} 
+\mbox{\label{classfileintegritychecker_a754ca74fc0280d60adcf7099e7913813}} 
 \index{fileintegritychecker@{fileintegritychecker}!usehashvals@{usehashvals}}
 \index{usehashvals@{usehashvals}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{usehashvals}{usehashvals}}
+\doxysubsubsection{usehashvals}
 {\footnotesize\ttfamily int fileintegritychecker\+::usehashvals = 0\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classfileintegritychecker_a6a433c2b64e97b2ca080db41a9df49c2}\label{classfileintegritychecker_a6a433c2b64e97b2ca080db41a9df49c2}} 
+\mbox{\label{classfileintegritychecker_a6a433c2b64e97b2ca080db41a9df49c2}} 
 \index{fileintegritychecker@{fileintegritychecker}!verbose\_output@{verbose\_output}}
 \index{verbose\_output@{verbose\_output}!fileintegritychecker@{fileintegritychecker}}
-\doxysubsubsection{\texorpdfstring{verbose\_output}{verbose\_output}}
+\doxysubsubsection{verbose\_output}
 {\footnotesize\ttfamily bool fileintegritychecker\+::verbose\+\_\+output = false\hspace{0.3cm}{\ttfamily [private]}}
 

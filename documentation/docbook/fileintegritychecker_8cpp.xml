@@ -33,9 +33,7 @@
     <title>MAXCHAR</title>
 <indexterm><primary>MAXCHAR</primary><secondary>fileintegritychecker.cpp</secondary></indexterm>
 <indexterm><primary>fileintegritychecker.cpp</primary><secondary>MAXCHAR</secondary></indexterm>
-<para><computeroutput>#define MAXCHAR&#160;&#160;&#160;100000</computeroutput></para><para>
-Definition at line <link linkend="_fileintegritychecker_8cpp_source_1l00008">8</link> of file <link linkend="_fileintegritychecker_8cpp_source">fileintegritychecker.cpp</link>.</para>
-</section>
+<para><computeroutput>#define MAXCHAR&#160;&#160;&#160;100000</computeroutput></para></section>
 </section>
 <section>
 <title>Function Documentation</title>
@@ -43,15 +41,56 @@ Definition at line <link linkend="_fileintegritychecker_8cpp_source_1l00008">8</
     <title>to_char_time_t()</title>
 <indexterm><primary>to_char_time_t</primary><secondary>fileintegritychecker.cpp</secondary></indexterm>
 <indexterm><primary>fileintegritychecker.cpp</primary><secondary>to_char_time_t</secondary></indexterm>
-<para><computeroutput>char * to_char_time_t (std::time_t time)</computeroutput></para><para>
-Definition at line <link linkend="_fileintegritychecker_8cpp_source_1l00019">19</link> of file <link linkend="_fileintegritychecker_8cpp_source">fileintegritychecker.cpp</link>.</para>
+<para><computeroutput>char * to_char_time_t (std::time_t time)</computeroutput></para><programlisting linenumbering="unnumbered">20 {
+21 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;retVal;
+22 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>*&#32;char_array;
+23 
+24 &#32;&#32;&#32;&#32;tm*&#32;now&#32;=&#32;localtime(&amp;time);
+25 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;date_string[100];
+26 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">char</emphasis>&#32;time_string[100];
+27 
+28 &#32;&#32;&#32;&#32;strftime(date_string,&#32;50,&#32;<emphasis role="stringliteral">&quot;%B&#32;%d,&#32;%Y&#32;&quot;</emphasis>,&#32;now);
+29 &#32;&#32;&#32;&#32;strftime(time_string,&#32;50,&#32;<emphasis role="stringliteral">&quot;%T&quot;</emphasis>,&#32;now);
+30 
+31 &#32;&#32;&#32;&#32;retVal&#32;+=&#32;date_string;
+32 &#32;&#32;&#32;&#32;retVal&#32;+=&#32;time_string;
+33 
+34 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n&#32;=&#32;retVal.length();
+35 &#32;&#32;&#32;&#32;char_array&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>[n&#32;+&#32;1];
+36 
+37 &#32;&#32;&#32;&#32;strcpy(char_array,&#32;retVal.c_str());
+38 
+39 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;char_array;
+40 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="fileintegritychecker_8cpp_ac01cc26ee78680a5119ba192f7b4ea53_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 </section>
 <anchor xml:id="_fileintegritychecker_8cpp_1aa0c7e6e475d4dd6b5f4dd0f04be4fbfa"/><section>
     <title>to_time_t()</title>
 <indexterm><primary>to_time_t</primary><secondary>fileintegritychecker.cpp</secondary></indexterm>
 <indexterm><primary>fileintegritychecker.cpp</primary><secondary>to_time_t</secondary></indexterm>
-<computeroutput>template&lt;typename TP &gt; </computeroutput><para><computeroutput>std::time_t to_time_t (TP tp)</computeroutput></para><para>
-Definition at line <link linkend="_fileintegritychecker_8cpp_source_1l00011">11</link> of file <link linkend="_fileintegritychecker_8cpp_source">fileintegritychecker.cpp</link>.</para>
+<computeroutput>template&lt;typename TP &gt; </computeroutput><para><computeroutput>std::time_t to_time_t (TP tp)</computeroutput></para><programlisting linenumbering="unnumbered">12 {
+13 &#32;&#32;&#32;&#32;<emphasis role="keyword">using&#32;namespace&#32;</emphasis>std::chrono;
+14 &#32;&#32;&#32;&#32;<emphasis role="keyword">auto</emphasis>&#32;sctp&#32;=&#32;time_point_cast&lt;system_clock::duration&gt;(tp&#32;-&#32;TP::clock::now()
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;+&#32;system_clock::now());
+16 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;system_clock::to_time_t(sctp);
+17 }
+</programlisting>Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="fileintegritychecker_8cpp_aa0c7e6e475d4dd6b5f4dd0f04be4fbfa_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
 </section>
 </section>
 </section>

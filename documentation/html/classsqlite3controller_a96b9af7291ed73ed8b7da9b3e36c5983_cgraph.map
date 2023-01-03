@@ -1,0 +1,4 @@
+<map id="sqlite3controller::checkIfFileExist" name="sqlite3controller::checkIfFileExist">
+<area shape="rect" id="node1" title="Checks if the file exists in the database." alt="" coords="5,5,127,45"/>
+<area shape="rect" id="node2" href="$classsqlite3controller.html#afad285c88925ab4bb987583563c11d8a" title="Checks if the directory exists in the database." alt="" coords="175,5,320,45"/>
+</map>

@@ -1,4 +1,4 @@
-\hypertarget{class_s_q_lite_helper}{}\doxysection{SQLite\+Helper Class Reference}
+\doxysection{SQLite\+Helper Class Reference}
 \label{class_s_q_lite_helper}\index{SQLiteHelper@{SQLiteHelper}}
 
 
@@ -11,8 +11,7 @@ The SQL Helper class for the SQLite database.
 
 
 
-Collaboration diagram for SQLite\+Helper\+:
-\nopagebreak
+Collaboration diagram for SQLite\+Helper\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -22,59 +21,59 @@ Collaboration diagram for SQLite\+Helper\+:
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}} \{ \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f}{Hashed\+Val}} = 1
-, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02}{File\+Size}} = 2
-, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7}{Date\+Modified}} = 3
-, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad}{NONE}} = 4
+enum \textbf{ Attribute\+To\+Check} \{ \textbf{ Hashed\+Val} = 1
+, \textbf{ File\+Size} = 2
+, \textbf{ Date\+Modified} = 3
+, \textbf{ NONE} = 4
  \}
 \begin{DoxyCompactList}\small\item\em Enumerator used to set the file attribute to check for changes or to update the value for. \end{DoxyCompactList}\item 
-enum \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}} \{ \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809}{Files}} = 1
-, \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17}{Changes}} = 2
+enum \textbf{ Table\+To\+Check} \{ \textbf{ Files} = 1
+, \textbf{ Changes} = 2
  \}
 \begin{DoxyCompactList}\small\item\em Enumerator used to set the table to check for file attribute changes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static int \mbox{\hyperlink{class_s_q_lite_helper_ab5c6b4d91ba851773d08383743cbe503}{check\+If\+Attribute\+Is\+In\+Changes}} (const int file\+\_\+id, const \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}} attribute, sqlite3 $\ast$db)
+static int \textbf{ check\+If\+Attribute\+Is\+In\+Changes} (const int file\+\_\+id, const \textbf{ Attribute\+To\+Check} attribute, sqlite3 $\ast$\textbf{ db})
 \begin{DoxyCompactList}\small\item\em Determines if the provided attribute is in the changes table. \end{DoxyCompactList}\item 
-static int \mbox{\hyperlink{class_s_q_lite_helper_a277ba3424168330b7f5b354e477f5de2}{check\+If\+Attribute\+Has\+Changed}} (const int file\+\_\+id, const \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}} attribute, const \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}} table, sqlite3 $\ast$db, const char $\ast$char\+\_\+attr=NULL, const int int\+\_\+attr=0)
+static int \textbf{ check\+If\+Attribute\+Has\+Changed} (const int file\+\_\+id, const \textbf{ Attribute\+To\+Check} attribute, const \textbf{ Table\+To\+Check} table, sqlite3 $\ast$\textbf{ db}, const char $\ast$char\+\_\+attr=NULL, const int int\+\_\+attr=0)
 \begin{DoxyCompactList}\small\item\em Determines if the provided attribute has changed its value. \end{DoxyCompactList}\item 
-static char $\ast$ \mbox{\hyperlink{class_s_q_lite_helper_adbeb0bc39c03a429690faf485a17c2d1}{get\+Current\+Time}} ()
+static char $\ast$ \textbf{ get\+Current\+Time} ()
 \begin{DoxyCompactList}\small\item\em Will retrieve the current time. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{class_s_q_lite_helper_a174400575d3038248769856efc9546a8}{set\+Directory\+Name}} (char $\ast$dir\+\_\+name)
+static void \textbf{ set\+Directory\+Name} (char $\ast$dir\+\_\+name)
 \begin{DoxyCompactList}\small\item\em Sets the relative directory name. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{class_s_q_lite_helper_a0815f283b738dea61f78f0e0dab958ea}{set\+File\+Name}} (char $\ast$file\+\_\+name)
+static void \textbf{ set\+File\+Name} (char $\ast$file\+\_\+name)
 \begin{DoxyCompactList}\small\item\em Sets the absolute file name. \end{DoxyCompactList}\item 
-static void \mbox{\hyperlink{class_s_q_lite_helper_a8fc3a476fa41e7601138ed1a87431ab9}{set\+Machine\+Name}} (char $\ast$machine\+\_\+name)
+static void \textbf{ set\+Machine\+Name} (char $\ast$machine\+\_\+name)
 \begin{DoxyCompactList}\small\item\em Sets the machine name where the scanner is running. \end{DoxyCompactList}\item 
-static int \mbox{\hyperlink{class_s_q_lite_helper_adcab3649b5f610ddab96736dc409d653}{get\+Directory\+Id}} (sqlite3 $\ast$db)
+static int \textbf{ get\+Directory\+Id} (sqlite3 $\ast$\textbf{ db})
 \begin{DoxyCompactList}\small\item\em Retrieves the id of the directory from the directories table. \end{DoxyCompactList}\item 
-static int \mbox{\hyperlink{class_s_q_lite_helper_a42d042748147b7ebe97214069c62ace6}{get\+Directory\+Id}} (sqlite3 $\ast$db, char $\ast$dir\+\_\+name, char $\ast$machine\+\_\+name)
+static int \textbf{ get\+Directory\+Id} (sqlite3 $\ast$\textbf{ db}, char $\ast$dir\+\_\+name, char $\ast$machine\+\_\+name)
 \begin{DoxyCompactList}\small\item\em Retrieves the id of the directory from the directories table. \end{DoxyCompactList}\item 
-static int \mbox{\hyperlink{class_s_q_lite_helper_a4e69ffbd22c6d9c2df1decfd484e5a83}{get\+File\+Id}} (sqlite3 $\ast$db)
-\item 
-static int \mbox{\hyperlink{class_s_q_lite_helper_abb6a58d490dda33874679f9b6f7a2025}{get\+File\+Id}} (sqlite3 $\ast$db, char $\ast$file\+\_\+name, int dir\+\_\+id)
-\item 
-static int \mbox{\hyperlink{class_s_q_lite_helper_ac43f81918e037ab5b07f773794d8f9af}{save\+File\+Info}} (sqlite3 $\ast$db, const int dir\+\_\+id, const char $\ast$file\+\_\+name, const int file\+\_\+size=0, const char $\ast$date\+\_\+modified=NULL, const char $\ast$hashed\+\_\+val=NULL, const bool is\+New=true, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}} attr\+\_\+to\+\_\+update=\mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad}{Attribute\+To\+Check\+::\+NONE}})
-\end{DoxyCompactItemize}
+static int \textbf{ get\+File\+Id} (sqlite3 $\ast$\textbf{ db})
+\begin{DoxyCompactList}\small\item\em Returns the id of the file if the file exists in the files table. \end{DoxyCompactList}\item 
+static int \textbf{ get\+File\+Id} (sqlite3 $\ast$\textbf{ db}, char $\ast$file\+\_\+name, int dir\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Returns the id of the file if the file exists in the files table. \end{DoxyCompactList}\item 
+static int \textbf{ save\+File\+Info} (sqlite3 $\ast$\textbf{ db}, const int dir\+\_\+id, const char $\ast$file\+\_\+name, const int file\+\_\+size=0, const char $\ast$date\+\_\+modified=NULL, const char $\ast$hashed\+\_\+val=NULL, const bool is\+New=true, \textbf{ Attribute\+To\+Check} attr\+\_\+to\+\_\+update=\textbf{ Attribute\+To\+Check\+::\+NONE})
+\begin{DoxyCompactList}\small\item\em Entry point to saving the file information. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static int \mbox{\hyperlink{class_s_q_lite_helper_a0f4192b37fcaff2ba209154127ade345}{did\+Hashed\+Value\+Change}} (const char $\ast$hashed\+\_\+val, \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}} table, const int file\+\_\+id, sqlite3 $\ast$db)
+static int \textbf{ did\+Hashed\+Value\+Change} (const char $\ast$hashed\+\_\+val, \textbf{ Table\+To\+Check} table, const int file\+\_\+id, sqlite3 $\ast$\textbf{ db})
 \item 
-static int \mbox{\hyperlink{class_s_q_lite_helper_ae87be06de4087dcf735e5b12c4eaee9a}{did\+File\+Size\+Change}} (const int file\+\_\+size, \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}} table, const int file\+\_\+id, sqlite3 $\ast$db)
+static int \textbf{ did\+File\+Size\+Change} (const int file\+\_\+size, \textbf{ Table\+To\+Check} table, const int file\+\_\+id, sqlite3 $\ast$\textbf{ db})
 \item 
-static int \mbox{\hyperlink{class_s_q_lite_helper_aac258e856d9f8c033d33bbd4fc8919cd}{did\+Date\+Modified\+Change}} (const char $\ast$date\+\_\+modified, \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}} table, const int file\+\_\+id, sqlite3 $\ast$db)
+static int \textbf{ did\+Date\+Modified\+Change} (const char $\ast$date\+\_\+modified, \textbf{ Table\+To\+Check} table, const int file\+\_\+id, sqlite3 $\ast$\textbf{ db})
 \item 
-static int \mbox{\hyperlink{class_s_q_lite_helper_a416b734c88d6e65e3a358953aea9468a}{save\+New\+File\+Info}} (sqlite3 $\ast$db)
+static int \textbf{ save\+New\+File\+Info} (sqlite3 $\ast$\textbf{ db})
 \item 
-static int \mbox{\hyperlink{class_s_q_lite_helper_a84b6c0493c0f59b4311ec393464b01ec}{save\+Existing\+File\+Info}} (sqlite3 $\ast$db, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}} attr\+\_\+to\+\_\+update, const char $\ast$text\+\_\+val=NULL, const int int\+\_\+val=0)
+static int \textbf{ save\+Existing\+File\+Info} (sqlite3 $\ast$\textbf{ db}, \textbf{ Attribute\+To\+Check} attr\+\_\+to\+\_\+update, const char $\ast$text\+\_\+val=NULL, const int int\+\_\+val=0)
 \item 
-static int \mbox{\hyperlink{class_s_q_lite_helper_a95096df7d3e7fb019d18f2a62a10d646}{insert\+Text\+Value\+To\+Changes}} (sqlite3 $\ast$db, const int file\+\_\+id, const char $\ast$text\+\_\+val, const char $\ast$attr\+\_\+changed)
+static int \textbf{ insert\+Text\+Value\+To\+Changes} (sqlite3 $\ast$\textbf{ db}, const int file\+\_\+id, const char $\ast$text\+\_\+val, const char $\ast$attr\+\_\+changed)
 \item 
-static int \mbox{\hyperlink{class_s_q_lite_helper_a9f5d43ac23996620ac57f3be87fd17cd}{insert\+Int\+Value\+To\+Changes}} (sqlite3 $\ast$db, const int file\+\_\+id, const int int\+\_\+val, const char $\ast$attr\+\_\+changed)
+static int \textbf{ insert\+Int\+Value\+To\+Changes} (sqlite3 $\ast$\textbf{ db}, const int file\+\_\+id, const int int\+\_\+val, const char $\ast$attr\+\_\+changed)
 \item 
-static int \mbox{\hyperlink{class_s_q_lite_helper_a4eb63efa7ac69125fd954d5efb23c2c6}{update\+Changed\+In\+File}} (sqlite3 $\ast$db, int file\+\_\+id, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}} attr\+\_\+to\+\_\+change)
+static int \textbf{ update\+Changed\+In\+File} (sqlite3 $\ast$\textbf{ db}, int file\+\_\+id, \textbf{ Attribute\+To\+Check} attr\+\_\+to\+\_\+change)
 \end{DoxyCompactItemize}
 
 
@@ -82,72 +81,72 @@ static int \mbox{\hyperlink{class_s_q_lite_helper_a4eb63efa7ac69125fd954d5efb23c
 The SQL Helper class for the SQLite database. 
 
 \doxysubsection{Member Enumeration Documentation}
-\mbox{\Hypertarget{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}\label{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}} 
+\mbox{\label{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}} 
 \index{SQLiteHelper@{SQLiteHelper}!AttributeToCheck@{AttributeToCheck}}
 \index{AttributeToCheck@{AttributeToCheck}!SQLiteHelper@{SQLiteHelper}}
-\doxysubsubsection{\texorpdfstring{AttributeToCheck}{AttributeToCheck}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{SQLite\+Helper\+::\+Attribute\+To\+Check}}}
+\doxysubsubsection{AttributeToCheck}
+{\footnotesize\ttfamily enum \textbf{ SQLite\+Helper\+::\+Attribute\+To\+Check}}
 
 
 
 Enumerator used to set the file attribute to check for changes or to update the value for. 
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{HashedVal@{HashedVal}!SQLiteHelper@{SQLiteHelper}}\index{SQLiteHelper@{SQLiteHelper}!HashedVal@{HashedVal}}}\mbox{\Hypertarget{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f}\label{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HashedVal@{HashedVal}!SQLiteHelper@{SQLiteHelper}}\index{SQLiteHelper@{SQLiteHelper}!HashedVal@{HashedVal}}}\mbox{\label{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f}} 
 Hashed\+Val&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{FileSize@{FileSize}!SQLiteHelper@{SQLiteHelper}}\index{SQLiteHelper@{SQLiteHelper}!FileSize@{FileSize}}}\mbox{\Hypertarget{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02}\label{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FileSize@{FileSize}!SQLiteHelper@{SQLiteHelper}}\index{SQLiteHelper@{SQLiteHelper}!FileSize@{FileSize}}}\mbox{\label{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02}} 
 File\+Size&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{DateModified@{DateModified}!SQLiteHelper@{SQLiteHelper}}\index{SQLiteHelper@{SQLiteHelper}!DateModified@{DateModified}}}\mbox{\Hypertarget{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7}\label{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DateModified@{DateModified}!SQLiteHelper@{SQLiteHelper}}\index{SQLiteHelper@{SQLiteHelper}!DateModified@{DateModified}}}\mbox{\label{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7}} 
 Date\+Modified&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!SQLiteHelper@{SQLiteHelper}}\index{SQLiteHelper@{SQLiteHelper}!NONE@{NONE}}}\mbox{\Hypertarget{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad}\label{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!SQLiteHelper@{SQLiteHelper}}\index{SQLiteHelper@{SQLiteHelper}!NONE@{NONE}}}\mbox{\label{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad}} 
 NONE&\\
 \hline
 
 \end{DoxyEnumFields}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{22 \{ \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a69de2902ce804763ae1a21446ab8958f}{HashedVal}} = 1, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643aaba31fc2353550dcadd7ac225e31dc02}{FileSize}} = 2, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a31c1958486003b1ae6d7f4b4823d7cc7}{DateModified}} = 3, \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad}{NONE}} = 4\};}
+\DoxyCodeLine{26 \{ HashedVal = 1, FileSize = 2, DateModified = 3, NONE = 4\};}
 
 \end{DoxyCode}
-\mbox{\Hypertarget{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}\label{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}} 
+\mbox{\label{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}} 
 \index{SQLiteHelper@{SQLiteHelper}!TableToCheck@{TableToCheck}}
 \index{TableToCheck@{TableToCheck}!SQLiteHelper@{SQLiteHelper}}
-\doxysubsubsection{\texorpdfstring{TableToCheck}{TableToCheck}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{SQLite\+Helper\+::\+Table\+To\+Check}}}
+\doxysubsubsection{TableToCheck}
+{\footnotesize\ttfamily enum \textbf{ SQLite\+Helper\+::\+Table\+To\+Check}}
 
 
 
 Enumerator used to set the table to check for file attribute changes. 
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{Files@{Files}!SQLiteHelper@{SQLiteHelper}}\index{SQLiteHelper@{SQLiteHelper}!Files@{Files}}}\mbox{\Hypertarget{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809}\label{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Files@{Files}!SQLiteHelper@{SQLiteHelper}}\index{SQLiteHelper@{SQLiteHelper}!Files@{Files}}}\mbox{\label{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809}} 
 Files&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{Changes@{Changes}!SQLiteHelper@{SQLiteHelper}}\index{SQLiteHelper@{SQLiteHelper}!Changes@{Changes}}}\mbox{\Hypertarget{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17}\label{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Changes@{Changes}!SQLiteHelper@{SQLiteHelper}}\index{SQLiteHelper@{SQLiteHelper}!Changes@{Changes}}}\mbox{\label{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17}} 
 Changes&\\
 \hline
 
 \end{DoxyEnumFields}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{27 \{\mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecae690fd346a28dc86b712c6003d4cc809}{Files}} = 1, \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ecab36f2ee0cd6cb1842902faf53f176b17}{Changes}} = 2\};}
+\DoxyCodeLine{31 \{Files = 1, Changes = 2\};}
 
 \end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_s_q_lite_helper_a277ba3424168330b7f5b354e477f5de2}\label{class_s_q_lite_helper_a277ba3424168330b7f5b354e477f5de2}} 
+\mbox{\label{class_s_q_lite_helper_a373f87d1a12fb0d1014b4e01a7288521}} 
 \index{SQLiteHelper@{SQLiteHelper}!checkIfAttributeHasChanged@{checkIfAttributeHasChanged}}
 \index{checkIfAttributeHasChanged@{checkIfAttributeHasChanged}!SQLiteHelper@{SQLiteHelper}}
-\doxysubsubsection{\texorpdfstring{checkIfAttributeHasChanged()}{checkIfAttributeHasChanged()}}
-{\footnotesize\ttfamily static int SQLite\+Helper\+::check\+If\+Attribute\+Has\+Changed (\begin{DoxyParamCaption}\item[{const int}]{file\+\_\+id,  }\item[{const \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}}}]{attribute,  }\item[{const \mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}}}]{table,  }\item[{sqlite3 $\ast$}]{db,  }\item[{const char $\ast$}]{char\+\_\+attr = {\ttfamily NULL},  }\item[{const int}]{int\+\_\+attr = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\doxysubsubsection{checkIfAttributeHasChanged()}
+{\footnotesize\ttfamily int SQLite\+Helper\+::check\+If\+Attribute\+Has\+Changed (\begin{DoxyParamCaption}\item[{const int}]{file\+\_\+id,  }\item[{const \textbf{ Attribute\+To\+Check}}]{attribute,  }\item[{const \textbf{ Table\+To\+Check}}]{table,  }\item[{sqlite3 $\ast$}]{db,  }\item[{const char $\ast$}]{char\+\_\+attr = {\ttfamily NULL},  }\item[{const int}]{int\+\_\+attr = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -169,24 +168,63 @@ The logic in the function will first determine the attribute to check using the 
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}} 
+\doxyref{Attribute\+To\+Check}{p.}{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643} 
 
-\mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}} 
+\doxyref{Table\+To\+Check}{p.}{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec} 
 
-\mbox{\hyperlink{class_s_q_lite_helper_a0f4192b37fcaff2ba209154127ade345}{did\+Hashed\+Value\+Change()}} 
+\doxyref{did\+Hashed\+Value\+Change()}{p.}{class_s_q_lite_helper_aa733abbf8352e42fbcda544c13b5e4f1} 
 
-\mbox{\hyperlink{class_s_q_lite_helper_ae87be06de4087dcf735e5b12c4eaee9a}{did\+File\+Size\+Change()}} 
+\doxyref{did\+File\+Size\+Change()}{p.}{class_s_q_lite_helper_ab551977b252cab42efd1f3b06676d7b1} 
 
-\mbox{\hyperlink{class_s_q_lite_helper_aac258e856d9f8c033d33bbd4fc8919cd}{did\+Date\+Modified\+Change()}} 
+\doxyref{did\+Date\+Modified\+Change()}{p.}{class_s_q_lite_helper_ad0fbfec9fab919ce001e2ca3a2f3d2d3} 
 \end{DoxySeeAlso}
 \begin{DoxyReturn}{Returns}
 1 if changed, 0 if not 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_s_q_lite_helper_ab5c6b4d91ba851773d08383743cbe503}\label{class_s_q_lite_helper_ab5c6b4d91ba851773d08383743cbe503}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{45                                                                                                                                                                                   \{}
+\DoxyCodeLine{46     \textcolor{keywordtype}{int} retVal = 0;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{keywordflow}{switch}(attribute) \{}
+\DoxyCodeLine{49     \textcolor{keywordflow}{case} 1: \textcolor{comment}{//Hashedval}}
+\DoxyCodeLine{50         retVal = didHashedValueChange(char\_attr, table, file\_id, db);}
+\DoxyCodeLine{51         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{52     \textcolor{keywordflow}{case} 2: \textcolor{comment}{//Filesize}}
+\DoxyCodeLine{53         retVal = didFileSizeChange(int\_attr, table, file\_id, db);}
+\DoxyCodeLine{54         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{55     \textcolor{keywordflow}{case} 3: \textcolor{comment}{//Datemodified}}
+\DoxyCodeLine{56         retVal = didDateModifiedChange(char\_attr, table, file\_id, db);}
+\DoxyCodeLine{57         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{58     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{59         retVal = -\/1;}
+\DoxyCodeLine{60     \}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{comment}{//fprintf(stderr, "{}\(\backslash\)nReturn value from checkIfAttributeHasChanged is \%d"{}, retVal);}}
+\DoxyCodeLine{63     }
+\DoxyCodeLine{64     \textcolor{keywordflow}{return} retVal;}
+\DoxyCodeLine{65 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_a373f87d1a12fb0d1014b4e01a7288521_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_a373f87d1a12fb0d1014b4e01a7288521_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_q_lite_helper_a6329b4efc28fd0442a6cc25246cc4fb5}} 
 \index{SQLiteHelper@{SQLiteHelper}!checkIfAttributeIsInChanges@{checkIfAttributeIsInChanges}}
 \index{checkIfAttributeIsInChanges@{checkIfAttributeIsInChanges}!SQLiteHelper@{SQLiteHelper}}
-\doxysubsubsection{\texorpdfstring{checkIfAttributeIsInChanges()}{checkIfAttributeIsInChanges()}}
-{\footnotesize\ttfamily static int SQLite\+Helper\+::check\+If\+Attribute\+Is\+In\+Changes (\begin{DoxyParamCaption}\item[{const int}]{file\+\_\+id,  }\item[{const \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}}}]{attribute,  }\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\doxysubsubsection{checkIfAttributeIsInChanges()}
+{\footnotesize\ttfamily int SQLite\+Helper\+::check\+If\+Attribute\+Is\+In\+Changes (\begin{DoxyParamCaption}\item[{const int}]{file\+\_\+id,  }\item[{const \textbf{ Attribute\+To\+Check}}]{attribute,  }\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -204,11 +242,60 @@ Determines if the provided attribute is in the changes table.
 \begin{DoxyReturn}{Returns}
 1 if is in the changes table, 0 if not 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_s_q_lite_helper_aac258e856d9f8c033d33bbd4fc8919cd}\label{class_s_q_lite_helper_aac258e856d9f8c033d33bbd4fc8919cd}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{67                                                                                                               \{}
+\DoxyCodeLine{68     \textcolor{keywordtype}{char}* zErrMsg = 0;}
+\DoxyCodeLine{69     \textcolor{keywordtype}{int} rc;}
+\DoxyCodeLine{70     sqlite3\_stmt* pStmt;}
+\DoxyCodeLine{71     \textcolor{keywordtype}{char}* sql\_stmt;}
+\DoxyCodeLine{72     }
+\DoxyCodeLine{73     \textcolor{keywordtype}{int} retVal = 0;}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{keywordflow}{switch} (attribute) \{}
+\DoxyCodeLine{76     \textcolor{keywordflow}{case} 1: \textcolor{comment}{//Hashedval}}
+\DoxyCodeLine{77         rc = sqlite3\_prepare\_v3(db, sql\_check\_if\_hashedval\_changed, -\/1, 0, \&pStmt, NULL);}
+\DoxyCodeLine{78         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{79     \textcolor{keywordflow}{case} 2: \textcolor{comment}{//Filesize}}
+\DoxyCodeLine{80         rc = sqlite3\_prepare\_v3(db, sql\_check\_if\_filesize\_changed, -\/1, 0, \&pStmt, NULL);}
+\DoxyCodeLine{81         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{82     \textcolor{keywordflow}{case} 3: \textcolor{comment}{//Datemodified}}
+\DoxyCodeLine{83         rc = sqlite3\_prepare\_v3(db, sql\_check\_if\_datemodified\_changed, -\/1, 0, \&pStmt, NULL);}
+\DoxyCodeLine{84         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{85     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{86         retVal = -\/1;}
+\DoxyCodeLine{87     \}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{keywordflow}{if} (rc == SQLITE\_OK) \{}
+\DoxyCodeLine{90         sqlite3\_bind\_int(pStmt, 1, file\_id);}
+\DoxyCodeLine{91     \}}
+\DoxyCodeLine{92     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94         fprintf(stderr, \textcolor{stringliteral}{"{}checkIfAttributeIsInChanges::Failed to execute statement: \%s\(\backslash\)n"{}}, sqlite3\_errmsg(db));}
+\DoxyCodeLine{95         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{96     \}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     \textcolor{keywordflow}{while} (sqlite3\_step(pStmt) == SQLITE\_ROW)}
+\DoxyCodeLine{99     \{}
+\DoxyCodeLine{100         retVal = sqlite3\_column\_int(pStmt, 0);}
+\DoxyCodeLine{101     \}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{keywordflow}{return} retVal;}
+\DoxyCodeLine{104 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_a6329b4efc28fd0442a6cc25246cc4fb5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_q_lite_helper_ad0fbfec9fab919ce001e2ca3a2f3d2d3}} 
 \index{SQLiteHelper@{SQLiteHelper}!didDateModifiedChange@{didDateModifiedChange}}
 \index{didDateModifiedChange@{didDateModifiedChange}!SQLiteHelper@{SQLiteHelper}}
-\doxysubsubsection{\texorpdfstring{didDateModifiedChange()}{didDateModifiedChange()}}
-{\footnotesize\ttfamily static int SQLite\+Helper\+::did\+Date\+Modified\+Change (\begin{DoxyParamCaption}\item[{const char $\ast$}]{date\+\_\+modified,  }\item[{\mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}}}]{table,  }\item[{const int}]{file\+\_\+id,  }\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+\doxysubsubsection{didDateModifiedChange()}
+{\footnotesize\ttfamily int SQLite\+Helper\+::did\+Date\+Modified\+Change (\begin{DoxyParamCaption}\item[{const char $\ast$}]{date\+\_\+modified,  }\item[{\textbf{ Table\+To\+Check}}]{table,  }\item[{const int}]{file\+\_\+id,  }\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -224,11 +311,61 @@ Determines if the provided attribute is in the changes table.
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_s_q_lite_helper_ae87be06de4087dcf735e5b12c4eaee9a}\label{class_s_q_lite_helper_ae87be06de4087dcf735e5b12c4eaee9a}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{189                                                                                                                      \{}
+\DoxyCodeLine{190     \textcolor{keywordtype}{int} retVal = 0;}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192     \textcolor{keywordtype}{char}* zErrMsg = 0;}
+\DoxyCodeLine{193     \textcolor{keywordtype}{int} rc;}
+\DoxyCodeLine{194     sqlite3\_stmt* pStmt;}
+\DoxyCodeLine{195    }
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197     \textcolor{keywordflow}{if} (table == 1) \{}
+\DoxyCodeLine{198         rc = sqlite3\_prepare\_v3(db, sql\_check\_if\_datemodified\_changed\_in\_files, -\/1, 0, \&pStmt, NULL);}
+\DoxyCodeLine{199     \}}
+\DoxyCodeLine{200     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (table == 2) \{}
+\DoxyCodeLine{201         rc = sqlite3\_prepare\_v3(db, sql\_check\_if\_value\_changed\_in\_changes\_textval, -\/1, 0, \&pStmt, NULL);}
+\DoxyCodeLine{202     \}}
+\DoxyCodeLine{203     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{204     \{}
+\DoxyCodeLine{205         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{206     \}}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209     \textcolor{keywordflow}{if} (rc == SQLITE\_OK) \{}
+\DoxyCodeLine{210         sqlite3\_bind\_text(pStmt, 1, date\_modified, -\/1, NULL);}
+\DoxyCodeLine{211         sqlite3\_bind\_int(pStmt, 2, file\_id);}
+\DoxyCodeLine{212     \}}
+\DoxyCodeLine{213     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215         fprintf(stderr, \textcolor{stringliteral}{"{}didDateModifiedChange::Failed to execute statement: \%s\(\backslash\)n"{}}, sqlite3\_errmsg(db));}
+\DoxyCodeLine{216         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{217     \}}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219     \textcolor{keywordflow}{while} (sqlite3\_step(pStmt) == SQLITE\_ROW)}
+\DoxyCodeLine{220     \{}
+\DoxyCodeLine{221         retVal = sqlite3\_column\_int(pStmt, 0);}
+\DoxyCodeLine{222     \}}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224     sqlite3\_finalize(pStmt);}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226     \textcolor{keywordflow}{return} retVal;}
+\DoxyCodeLine{227 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_ad0fbfec9fab919ce001e2ca3a2f3d2d3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_q_lite_helper_ab551977b252cab42efd1f3b06676d7b1}} 
 \index{SQLiteHelper@{SQLiteHelper}!didFileSizeChange@{didFileSizeChange}}
 \index{didFileSizeChange@{didFileSizeChange}!SQLiteHelper@{SQLiteHelper}}
-\doxysubsubsection{\texorpdfstring{didFileSizeChange()}{didFileSizeChange()}}
-{\footnotesize\ttfamily static int SQLite\+Helper\+::did\+File\+Size\+Change (\begin{DoxyParamCaption}\item[{const int}]{file\+\_\+size,  }\item[{\mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}}}]{table,  }\item[{const int}]{file\+\_\+id,  }\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+\doxysubsubsection{didFileSizeChange()}
+{\footnotesize\ttfamily int SQLite\+Helper\+::did\+File\+Size\+Change (\begin{DoxyParamCaption}\item[{const int}]{file\+\_\+size,  }\item[{\textbf{ Table\+To\+Check}}]{table,  }\item[{const int}]{file\+\_\+id,  }\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -244,11 +381,61 @@ Determines if the provided attribute is in the changes table.
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_s_q_lite_helper_a0f4192b37fcaff2ba209154127ade345}\label{class_s_q_lite_helper_a0f4192b37fcaff2ba209154127ade345}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{149                                                                                                            \{}
+\DoxyCodeLine{150     \textcolor{keywordtype}{int} retVal = 0;}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152     \textcolor{keywordtype}{char}* zErrMsg = 0;}
+\DoxyCodeLine{153     \textcolor{keywordtype}{int} rc;}
+\DoxyCodeLine{154     sqlite3\_stmt* pStmt;}
+\DoxyCodeLine{155     }
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157     \textcolor{keywordflow}{if} (table == 1) \{}
+\DoxyCodeLine{158         rc = sqlite3\_prepare\_v3(db, sql\_check\_if\_filesize\_changed\_in\_files, -\/1, 0, \&pStmt, NULL);}
+\DoxyCodeLine{159     \}}
+\DoxyCodeLine{160     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (table == 2) \{}
+\DoxyCodeLine{161         rc = sqlite3\_prepare\_v3(db, sql\_check\_if\_value\_changed\_in\_changes\_intval, -\/1, 0, \&pStmt, NULL);}
+\DoxyCodeLine{162     \}}
+\DoxyCodeLine{163     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{164     \{}
+\DoxyCodeLine{165         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{166     \}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169     \textcolor{keywordflow}{if} (rc == SQLITE\_OK) \{}
+\DoxyCodeLine{170         sqlite3\_bind\_int(pStmt, 1, file\_size);}
+\DoxyCodeLine{171         sqlite3\_bind\_int(pStmt, 2, file\_id);}
+\DoxyCodeLine{172     \}}
+\DoxyCodeLine{173     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175         fprintf(stderr, \textcolor{stringliteral}{"{}didFileSizeChange::Failed to execute statement: \%s\(\backslash\)n"{}}, sqlite3\_errmsg(db));}
+\DoxyCodeLine{176         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{177     \}}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179     \textcolor{keywordflow}{while} (sqlite3\_step(pStmt) == SQLITE\_ROW)}
+\DoxyCodeLine{180     \{}
+\DoxyCodeLine{181         retVal = sqlite3\_column\_int(pStmt, 0);}
+\DoxyCodeLine{182     \}}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184     sqlite3\_finalize(pStmt);}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186     \textcolor{keywordflow}{return} retVal;}
+\DoxyCodeLine{187 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_ab551977b252cab42efd1f3b06676d7b1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_q_lite_helper_aa733abbf8352e42fbcda544c13b5e4f1}} 
 \index{SQLiteHelper@{SQLiteHelper}!didHashedValueChange@{didHashedValueChange}}
 \index{didHashedValueChange@{didHashedValueChange}!SQLiteHelper@{SQLiteHelper}}
-\doxysubsubsection{\texorpdfstring{didHashedValueChange()}{didHashedValueChange()}}
-{\footnotesize\ttfamily static int SQLite\+Helper\+::did\+Hashed\+Value\+Change (\begin{DoxyParamCaption}\item[{const char $\ast$}]{hashed\+\_\+val,  }\item[{\mbox{\hyperlink{class_s_q_lite_helper_a28ae89546eaa8a7ecfef48dbdb26b2ec}{Table\+To\+Check}}}]{table,  }\item[{const int}]{file\+\_\+id,  }\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+\doxysubsubsection{didHashedValueChange()}
+{\footnotesize\ttfamily int SQLite\+Helper\+::did\+Hashed\+Value\+Change (\begin{DoxyParamCaption}\item[{const char $\ast$}]{hashed\+\_\+val,  }\item[{\textbf{ Table\+To\+Check}}]{table,  }\item[{const int}]{file\+\_\+id,  }\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -264,30 +451,118 @@ Determines if the provided attribute is in the changes table.
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_s_q_lite_helper_adbeb0bc39c03a429690faf485a17c2d1}\label{class_s_q_lite_helper_adbeb0bc39c03a429690faf485a17c2d1}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{106                                                                                                                  \{}
+\DoxyCodeLine{107     \textcolor{keywordtype}{int} retVal = 0;}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109     \textcolor{keywordtype}{char}* zErrMsg = 0;}
+\DoxyCodeLine{110     \textcolor{keywordtype}{int} rc;}
+\DoxyCodeLine{111     sqlite3\_stmt* pStmt;}
+\DoxyCodeLine{112     }
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     \textcolor{keywordflow}{if} (table == 1) \{}
+\DoxyCodeLine{115         rc = sqlite3\_prepare\_v3(db, sql\_check\_if\_hashedval\_changed\_in\_files, -\/1, 0, \&pStmt, NULL);}
+\DoxyCodeLine{116     \}}
+\DoxyCodeLine{117     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (table == 2) \{}
+\DoxyCodeLine{118         rc = sqlite3\_prepare\_v3(db, sql\_check\_if\_value\_changed\_in\_changes\_textval, -\/1, 0, \&pStmt, NULL);}
+\DoxyCodeLine{119     \}}
+\DoxyCodeLine{120     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{121     \{}
+\DoxyCodeLine{122         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{123     \}}
+\DoxyCodeLine{124     }
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126     \textcolor{keywordflow}{if} (rc == SQLITE\_OK) \{}
+\DoxyCodeLine{127         }
+\DoxyCodeLine{128         sqlite3\_bind\_text(pStmt, 1, hashed\_val, -\/1, NULL);}
+\DoxyCodeLine{129         sqlite3\_bind\_int(pStmt, 2, file\_id);}
+\DoxyCodeLine{130         }
+\DoxyCodeLine{131     \}}
+\DoxyCodeLine{132     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134         fprintf(stderr, \textcolor{stringliteral}{"{}didHashedValueChange::Failed to execute statement: \%s\(\backslash\)n"{}}, sqlite3\_errmsg(db));}
+\DoxyCodeLine{135         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{136     \}}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138     \textcolor{keywordflow}{while} (sqlite3\_step(pStmt) == SQLITE\_ROW)}
+\DoxyCodeLine{139     \{}
+\DoxyCodeLine{140         retVal = sqlite3\_column\_int(pStmt, 0);}
+\DoxyCodeLine{141     \}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     sqlite3\_finalize(pStmt);}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145     }
+\DoxyCodeLine{146     \textcolor{keywordflow}{return} retVal;}
+\DoxyCodeLine{147 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_aa733abbf8352e42fbcda544c13b5e4f1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_q_lite_helper_a33630720f2df387b6c543d33473138e4}} 
 \index{SQLiteHelper@{SQLiteHelper}!getCurrentTime@{getCurrentTime}}
 \index{getCurrentTime@{getCurrentTime}!SQLiteHelper@{SQLiteHelper}}
-\doxysubsubsection{\texorpdfstring{getCurrentTime()}{getCurrentTime()}}
-{\footnotesize\ttfamily static char $\ast$ SQLite\+Helper\+::get\+Current\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\doxysubsubsection{getCurrentTime()}
+{\footnotesize\ttfamily char $\ast$ SQLite\+Helper\+::get\+Current\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Will retrieve the current time. 
 
 \begin{DoxyReturn}{Returns}
-Current time in B d, Y T format. Example\+: December 12, 2020 20\+:10\+:05 
+Current time in B d, Y T format. Example\+: December 12, 2020 20\+:10\+:05
+
+char$\ast$ 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_s_q_lite_helper_adcab3649b5f610ddab96736dc409d653}\label{class_s_q_lite_helper_adcab3649b5f610ddab96736dc409d653}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{334                                    \{}
+\DoxyCodeLine{335     \textcolor{keywordtype}{string} retVal;}
+\DoxyCodeLine{336     \textcolor{keywordtype}{char}* char\_array;}
+\DoxyCodeLine{337 }
+\DoxyCodeLine{338     time\_t t = time(0);   \textcolor{comment}{// get time now}}
+\DoxyCodeLine{339     tm* now = localtime(\&t);}
+\DoxyCodeLine{340     \textcolor{keywordtype}{char} date\_string[100];}
+\DoxyCodeLine{341     \textcolor{keywordtype}{char} time\_string[100];}
+\DoxyCodeLine{342 }
+\DoxyCodeLine{343     strftime(date\_string, 50, \textcolor{stringliteral}{"{}\%B \%d, \%Y "{}}, now);}
+\DoxyCodeLine{344     strftime(time\_string, 50, \textcolor{stringliteral}{"{}\%T"{}}, now);}
+\DoxyCodeLine{345 }
+\DoxyCodeLine{346     retVal += date\_string;}
+\DoxyCodeLine{347     retVal += time\_string;}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{349     \textcolor{keywordtype}{int} n = retVal.length();}
+\DoxyCodeLine{350     char\_array = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[n + 1];}
+\DoxyCodeLine{351 }
+\DoxyCodeLine{352     strcpy(char\_array, retVal.c\_str());}
+\DoxyCodeLine{353     }
+\DoxyCodeLine{354     \textcolor{keywordflow}{return} char\_array;}
+\DoxyCodeLine{355 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_a33630720f2df387b6c543d33473138e4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_q_lite_helper_afdfb80facf1c802161aa1627d286f322}} 
 \index{SQLiteHelper@{SQLiteHelper}!getDirectoryId@{getDirectoryId}}
 \index{getDirectoryId@{getDirectoryId}!SQLiteHelper@{SQLiteHelper}}
-\doxysubsubsection{\texorpdfstring{getDirectoryId()}{getDirectoryId()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily static int SQLite\+Helper\+::get\+Directory\+Id (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\doxysubsubsection{getDirectoryId()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int SQLite\+Helper\+::get\+Directory\+Id (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Retrieves the id of the directory from the directories table. 
 
-{\bfseries{PRECONDITION\+:}} Call to \mbox{\hyperlink{class_s_q_lite_helper_a174400575d3038248769856efc9546a8}{set\+Directory\+Name()}} to set the directory to check. 
+{\bfseries{PRECONDITION\+:}} Call to \doxyref{set\+Directory\+Name()}{p.}{class_s_q_lite_helper_a190dc1ee6382b8d506cbd1ee6ee59e37} to set the directory to check. 
 \begin{DoxyParams}{Parameters}
 {\em db} & sqlite3 database object \\
 \hline
@@ -295,11 +570,49 @@ Retrieves the id of the directory from the directories table.
 \begin{DoxyReturn}{Returns}
 0 if directory does not exist in directories table, otherwise the directory id will be returned. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_s_q_lite_helper_a42d042748147b7ebe97214069c62ace6}\label{class_s_q_lite_helper_a42d042748147b7ebe97214069c62ace6}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{245                                             \{}
+\DoxyCodeLine{246     \textcolor{keywordtype}{char}* zErrMsg = 0;}
+\DoxyCodeLine{247     \textcolor{keywordtype}{int} rc;}
+\DoxyCodeLine{248     sqlite3\_stmt* pStmt;}
+\DoxyCodeLine{249     \textcolor{keywordtype}{int} retVal = 0;}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251     rc = sqlite3\_prepare\_v3(db, sql\_get\_directory\_id, -\/1, 0, \&pStmt, NULL);}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253     \textcolor{keywordflow}{if} (rc == SQLITE\_OK) \{}
+\DoxyCodeLine{254         sqlite3\_bind\_text(pStmt, 1, \_dirname, -\/1, NULL);}
+\DoxyCodeLine{255         sqlite3\_bind\_text(pStmt, 2, \_machinename, -\/1, NULL);}
+\DoxyCodeLine{256     \}}
+\DoxyCodeLine{257     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259         fprintf(stderr, \textcolor{stringliteral}{"{}getDirectoryId::Failed to execute statement: \%s\(\backslash\)n"{}}, sqlite3\_errmsg(db));}
+\DoxyCodeLine{260         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{261     \}}
+\DoxyCodeLine{262 }
+\DoxyCodeLine{263     \textcolor{keywordflow}{while} (sqlite3\_step(pStmt) == SQLITE\_ROW)}
+\DoxyCodeLine{264     \{}
+\DoxyCodeLine{265         retVal = sqlite3\_column\_int(pStmt, 0);}
+\DoxyCodeLine{266     \}}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268     sqlite3\_finalize(pStmt);}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270     \textcolor{keywordflow}{return} retVal;}
+\DoxyCodeLine{271 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_afdfb80facf1c802161aa1627d286f322_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_q_lite_helper_aefefe3d1f0fc6debc943d28f654fce12}} 
 \index{SQLiteHelper@{SQLiteHelper}!getDirectoryId@{getDirectoryId}}
 \index{getDirectoryId@{getDirectoryId}!SQLiteHelper@{SQLiteHelper}}
-\doxysubsubsection{\texorpdfstring{getDirectoryId()}{getDirectoryId()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily static int SQLite\+Helper\+::get\+Directory\+Id (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{char $\ast$}]{dir\+\_\+name,  }\item[{char $\ast$}]{machine\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\doxysubsubsection{getDirectoryId()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int SQLite\+Helper\+::get\+Directory\+Id (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{char $\ast$}]{dir\+\_\+name,  }\item[{char $\ast$}]{machine\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -317,43 +630,136 @@ Retrieves the id of the directory from the directories table.
 \begin{DoxyReturn}{Returns}
 0 if directory does not exist in directories table, otherwise the directory id will be returned. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_s_q_lite_helper_a4e69ffbd22c6d9c2df1decfd484e5a83}\label{class_s_q_lite_helper_a4e69ffbd22c6d9c2df1decfd484e5a83}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{273                                                                                 \{}
+\DoxyCodeLine{274     \textcolor{keywordtype}{int} retVal = 0;}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276     \_dirname = (\textcolor{keywordtype}{char}*)malloc(strlen(dir\_name) + 1);}
+\DoxyCodeLine{277     strcpy(\_dirname, dir\_name);}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279     \_machinename = (\textcolor{keywordtype}{char}*)malloc(strlen(machine\_name) + 1);}
+\DoxyCodeLine{280     strcpy(\_machinename, machine\_name);}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282     retVal = getDirectoryId(db);}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{284     \textcolor{keywordflow}{return} retVal;}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_aefefe3d1f0fc6debc943d28f654fce12_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_q_lite_helper_a59fc305207ad616bafef83b54b102153}} 
 \index{SQLiteHelper@{SQLiteHelper}!getFileId@{getFileId}}
 \index{getFileId@{getFileId}!SQLiteHelper@{SQLiteHelper}}
-\doxysubsubsection{\texorpdfstring{getFileId()}{getFileId()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily static int SQLite\+Helper\+::get\+File\+Id (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\doxysubsubsection{getFileId()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int SQLite\+Helper\+::get\+File\+Id (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the id of the file if the file exists in the files table. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em db} & \\
+{\em db} & The sqlite3 database object. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+0 if file does not exist in files table, otherwise the file id will be returned. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_s_q_lite_helper_abb6a58d490dda33874679f9b6f7a2025}\label{class_s_q_lite_helper_abb6a58d490dda33874679f9b6f7a2025}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{288                                        \{}
+\DoxyCodeLine{289     \textcolor{keywordtype}{char}* zErrMsg = 0;}
+\DoxyCodeLine{290     \textcolor{keywordtype}{int} rc;}
+\DoxyCodeLine{291     sqlite3\_stmt* pStmt;}
+\DoxyCodeLine{292     \textcolor{keywordtype}{int} retVal = 0;}
+\DoxyCodeLine{293 }
+\DoxyCodeLine{294     rc = sqlite3\_prepare\_v3(db, sql\_get\_file\_id, -\/1, 0, \&pStmt, NULL);}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296     \textcolor{keywordflow}{if} (rc == SQLITE\_OK) \{}
+\DoxyCodeLine{297         sqlite3\_bind\_text(pStmt, 1, \_filename, -\/1, NULL);}
+\DoxyCodeLine{298         sqlite3\_bind\_int(pStmt, 2, \_dirid);}
+\DoxyCodeLine{299     \}}
+\DoxyCodeLine{300     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302         fprintf(stderr, \textcolor{stringliteral}{"{}getFileId::Failed to execute statement: \%s\(\backslash\)n"{}}, sqlite3\_errmsg(db));}
+\DoxyCodeLine{303         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{304     \}}
+\DoxyCodeLine{305 }
+\DoxyCodeLine{306     \textcolor{keywordflow}{while} (sqlite3\_step(pStmt) == SQLITE\_ROW)}
+\DoxyCodeLine{307     \{}
+\DoxyCodeLine{308         retVal = sqlite3\_column\_int(pStmt, 0);}
+\DoxyCodeLine{309     \}}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311     sqlite3\_finalize(pStmt);}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313     \textcolor{keywordflow}{return} retVal;}
+\DoxyCodeLine{314 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_a59fc305207ad616bafef83b54b102153_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_q_lite_helper_ae7ff51ba0b3f52d1725b68842168e65f}} 
 \index{SQLiteHelper@{SQLiteHelper}!getFileId@{getFileId}}
 \index{getFileId@{getFileId}!SQLiteHelper@{SQLiteHelper}}
-\doxysubsubsection{\texorpdfstring{getFileId()}{getFileId()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily static int SQLite\+Helper\+::get\+File\+Id (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{char $\ast$}]{file\+\_\+name,  }\item[{int}]{dir\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\doxysubsubsection{getFileId()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int SQLite\+Helper\+::get\+File\+Id (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{char $\ast$}]{file\+\_\+name,  }\item[{int}]{dir\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
+
+Returns the id of the file if the file exists in the files table. 
+
+{\bfseries{NOTE\+:}} Will call the \doxyref{get\+File\+Id(sqlite3$\ast$ db)}{p.}{class_s_q_lite_helper_a59fc305207ad616bafef83b54b102153} method after setting the directory id and file name at the class level. 
 \begin{DoxyParams}{Parameters}
-{\em db} & \\
+{\em db} & sqlite3 database object \\
 \hline
-{\em file\+\_\+name} & \\
+{\em file\+\_\+name} & Absolute name of the file \\
 \hline
-{\em dir\+\_\+id} & \\
+{\em dir\+\_\+id} & Id of the Directory where the file is located \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+0 if file does not exist in files table, otherwise the file id will be returned. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_s_q_lite_helper_a9f5d43ac23996620ac57f3be87fd17cd}\label{class_s_q_lite_helper_a9f5d43ac23996620ac57f3be87fd17cd}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{316                                                                     \{}
+\DoxyCodeLine{317     \textcolor{keywordtype}{int} retVal = 0;}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319     \_filename = (\textcolor{keywordtype}{char}*)malloc(strlen(file\_name) + 1);}
+\DoxyCodeLine{320     strcpy(\_filename, file\_name);}
+\DoxyCodeLine{321     \_dirid = dir\_id;}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{323     retVal = getFileId(db);}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325     \textcolor{keywordflow}{return} retVal;}
+\DoxyCodeLine{326 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_ae7ff51ba0b3f52d1725b68842168e65f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_q_lite_helper_a53e8c824b040560b8bb1393a853f265a}} 
 \index{SQLiteHelper@{SQLiteHelper}!insertIntValueToChanges@{insertIntValueToChanges}}
 \index{insertIntValueToChanges@{insertIntValueToChanges}!SQLiteHelper@{SQLiteHelper}}
-\doxysubsubsection{\texorpdfstring{insertIntValueToChanges()}{insertIntValueToChanges()}}
-{\footnotesize\ttfamily static int SQLite\+Helper\+::insert\+Int\+Value\+To\+Changes (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{const int}]{file\+\_\+id,  }\item[{const int}]{int\+\_\+val,  }\item[{const char $\ast$}]{attr\+\_\+changed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+\doxysubsubsection{insertIntValueToChanges()}
+{\footnotesize\ttfamily int SQLite\+Helper\+::insert\+Int\+Value\+To\+Changes (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{const int}]{file\+\_\+id,  }\item[{const int}]{int\+\_\+val,  }\item[{const char $\ast$}]{attr\+\_\+changed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -369,11 +775,76 @@ Retrieves the id of the directory from the directories table.
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_s_q_lite_helper_a95096df7d3e7fb019d18f2a62a10d646}\label{class_s_q_lite_helper_a95096df7d3e7fb019d18f2a62a10d646}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{578                                                                                                                      \{}
+\DoxyCodeLine{579     \textcolor{keywordtype}{char}* zErrMsg = 0;}
+\DoxyCodeLine{580     \textcolor{keywordtype}{int} rc;}
+\DoxyCodeLine{581     sqlite3\_stmt* pStmt;}
+\DoxyCodeLine{582     \textcolor{keywordtype}{char}* current\_time = getCurrentTime();}
+\DoxyCodeLine{583 }
+\DoxyCodeLine{584     rc = sqlite3\_prepare\_v3(db, sql\_save\_intval\_in\_changes, -\/1, 0, \&pStmt, NULL);}
+\DoxyCodeLine{585 }
+\DoxyCodeLine{586     \textcolor{keywordflow}{if} (rc == SQLITE\_OK) \{}
+\DoxyCodeLine{587         sqlite3\_bind\_int(pStmt, 1, file\_id);}
+\DoxyCodeLine{588         sqlite3\_bind\_text(pStmt, 2, current\_time, -\/1, NULL);}
+\DoxyCodeLine{589         sqlite3\_bind\_int(pStmt, 3, int\_val);}
+\DoxyCodeLine{590         sqlite3\_bind\_text(pStmt, 4, attr\_changed, -\/1, NULL);}
+\DoxyCodeLine{591     \}}
+\DoxyCodeLine{592     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{593 }
+\DoxyCodeLine{594         fprintf(stderr, \textcolor{stringliteral}{"{}insertIntValueToChanges::Failed to execute statement: \%s\(\backslash\)n"{}}, sqlite3\_errmsg(db));}
+\DoxyCodeLine{595         sqlite3\_finalize(pStmt);}
+\DoxyCodeLine{596         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{597     \}}
+\DoxyCodeLine{598 }
+\DoxyCodeLine{599     rc = sqlite3\_step(pStmt);}
+\DoxyCodeLine{600 }
+\DoxyCodeLine{601     \textcolor{keywordflow}{if} (rc == SQLITE\_BUSY) \{}
+\DoxyCodeLine{602         cout << \textcolor{stringliteral}{"{}\(\backslash\)nDatabase is busy"{}} << endl;}
+\DoxyCodeLine{603         \textcolor{keywordflow}{while} (rc == SQLITE\_BUSY)}
+\DoxyCodeLine{604         \{}
+\DoxyCodeLine{605             rc = sqlite3\_step(pStmt);}
+\DoxyCodeLine{606         \}}
+\DoxyCodeLine{607     \}}
+\DoxyCodeLine{608     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (rc == SQLITE\_ERROR) \{}
+\DoxyCodeLine{609         printf(\textcolor{stringliteral}{"{}\(\backslash\)nIn insertIntValueToChanges execution failed: \%s\(\backslash\)n"{}}, sqlite3\_errmsg(db));}
+\DoxyCodeLine{610     \}}
+\DoxyCodeLine{611     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (rc == SQLITE\_MISUSE) \{}
+\DoxyCodeLine{612         cout << \textcolor{stringliteral}{"{}\(\backslash\)nA MISUSE has been deteced in insertIntValueToChanges."{}} << endl;}
+\DoxyCodeLine{613     \}}
+\DoxyCodeLine{614     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (rc == SQLITE\_DONE) \{}
+\DoxyCodeLine{615         cout << \textcolor{stringliteral}{"{}\(\backslash\)nsqlite3\_step executed successfully."{}} << endl;}
+\DoxyCodeLine{616     \}}
+\DoxyCodeLine{617     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{618         cout << \textcolor{stringliteral}{"{}\(\backslash\)nNot sure what happened in insertIntValueToChanges."{}} << endl;}
+\DoxyCodeLine{619     \}}
+\DoxyCodeLine{620 }
+\DoxyCodeLine{621     sqlite3\_finalize(pStmt);}
+\DoxyCodeLine{622 }
+\DoxyCodeLine{623     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{624 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_a53e8c824b040560b8bb1393a853f265a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_a53e8c824b040560b8bb1393a853f265a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_q_lite_helper_a65965633aef3f5a34884740c497a61dc}} 
 \index{SQLiteHelper@{SQLiteHelper}!insertTextValueToChanges@{insertTextValueToChanges}}
 \index{insertTextValueToChanges@{insertTextValueToChanges}!SQLiteHelper@{SQLiteHelper}}
-\doxysubsubsection{\texorpdfstring{insertTextValueToChanges()}{insertTextValueToChanges()}}
-{\footnotesize\ttfamily static int SQLite\+Helper\+::insert\+Text\+Value\+To\+Changes (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{const int}]{file\+\_\+id,  }\item[{const char $\ast$}]{text\+\_\+val,  }\item[{const char $\ast$}]{attr\+\_\+changed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+\doxysubsubsection{insertTextValueToChanges()}
+{\footnotesize\ttfamily int SQLite\+Helper\+::insert\+Text\+Value\+To\+Changes (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{const int}]{file\+\_\+id,  }\item[{const char $\ast$}]{text\+\_\+val,  }\item[{const char $\ast$}]{attr\+\_\+changed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -389,11 +860,76 @@ Retrieves the id of the directory from the directories table.
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_s_q_lite_helper_a84b6c0493c0f59b4311ec393464b01ec}\label{class_s_q_lite_helper_a84b6c0493c0f59b4311ec393464b01ec}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{530                                                                                                                          \{}
+\DoxyCodeLine{531     \textcolor{keywordtype}{char}* zErrMsg = 0;}
+\DoxyCodeLine{532     \textcolor{keywordtype}{int} rc;}
+\DoxyCodeLine{533     sqlite3\_stmt* pStmt;}
+\DoxyCodeLine{534     \textcolor{keywordtype}{char}* current\_time = getCurrentTime();}
+\DoxyCodeLine{535     }
+\DoxyCodeLine{536     rc = sqlite3\_prepare\_v3(db, sql\_save\_textval\_in\_changes, -\/1, 0, \&pStmt, NULL);}
+\DoxyCodeLine{537 }
+\DoxyCodeLine{538     \textcolor{keywordflow}{if} (rc == SQLITE\_OK) \{}
+\DoxyCodeLine{539         sqlite3\_bind\_int(pStmt, 1, file\_id);}
+\DoxyCodeLine{540         sqlite3\_bind\_text(pStmt, 2, current\_time, -\/1, NULL);}
+\DoxyCodeLine{541         sqlite3\_bind\_text(pStmt, 3, text\_val, -\/1, NULL);}
+\DoxyCodeLine{542         sqlite3\_bind\_text(pStmt, 4, attr\_changed, -\/1, NULL);}
+\DoxyCodeLine{543     \}}
+\DoxyCodeLine{544     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{545 }
+\DoxyCodeLine{546         fprintf(stderr, \textcolor{stringliteral}{"{}insertTextValueToChanges::Failed to execute statement: \%s\(\backslash\)n"{}}, sqlite3\_errmsg(db));}
+\DoxyCodeLine{547         sqlite3\_finalize(pStmt);}
+\DoxyCodeLine{548         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{549     \}}
+\DoxyCodeLine{550 }
+\DoxyCodeLine{551     rc = sqlite3\_step(pStmt);}
+\DoxyCodeLine{552 }
+\DoxyCodeLine{553     \textcolor{keywordflow}{if} (rc == SQLITE\_BUSY) \{}
+\DoxyCodeLine{554         cout << \textcolor{stringliteral}{"{}\(\backslash\)nDatabase is busy"{}} << endl;}
+\DoxyCodeLine{555         \textcolor{keywordflow}{while} (rc == SQLITE\_BUSY)}
+\DoxyCodeLine{556         \{}
+\DoxyCodeLine{557             rc = sqlite3\_step(pStmt);}
+\DoxyCodeLine{558         \}}
+\DoxyCodeLine{559     \}}
+\DoxyCodeLine{560     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (rc == SQLITE\_ERROR) \{}
+\DoxyCodeLine{561         printf(\textcolor{stringliteral}{"{}\(\backslash\)nIn insertTextValuetoChanges execution failed: \%s\(\backslash\)n"{}}, sqlite3\_errmsg(db));}
+\DoxyCodeLine{562     \}}
+\DoxyCodeLine{563     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (rc == SQLITE\_MISUSE) \{}
+\DoxyCodeLine{564         cout << \textcolor{stringliteral}{"{}\(\backslash\)nA MISUSE has been deteced in insertTextValuetoChanges."{}} << endl;}
+\DoxyCodeLine{565     \}}
+\DoxyCodeLine{566     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (rc == SQLITE\_DONE) \{}
+\DoxyCodeLine{567         cout << \textcolor{stringliteral}{"{}\(\backslash\)nsqlite3\_step executed successfully."{}} << endl;}
+\DoxyCodeLine{568     \}}
+\DoxyCodeLine{569     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{570         cout << \textcolor{stringliteral}{"{}\(\backslash\)nNot sure what happened in insertTextValuetoChanges."{}} << endl;}
+\DoxyCodeLine{571     \}}
+\DoxyCodeLine{572 }
+\DoxyCodeLine{573     sqlite3\_finalize(pStmt);}
+\DoxyCodeLine{574 }
+\DoxyCodeLine{575     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{576 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_a65965633aef3f5a34884740c497a61dc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_a65965633aef3f5a34884740c497a61dc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_q_lite_helper_af16a7fbd53573503bfa21c97eea53efb}} 
 \index{SQLiteHelper@{SQLiteHelper}!saveExistingFileInfo@{saveExistingFileInfo}}
 \index{saveExistingFileInfo@{saveExistingFileInfo}!SQLiteHelper@{SQLiteHelper}}
-\doxysubsubsection{\texorpdfstring{saveExistingFileInfo()}{saveExistingFileInfo()}}
-{\footnotesize\ttfamily static int SQLite\+Helper\+::save\+Existing\+File\+Info (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{\mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}}}]{attr\+\_\+to\+\_\+update,  }\item[{const char $\ast$}]{text\+\_\+val = {\ttfamily NULL},  }\item[{const int}]{int\+\_\+val = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+\doxysubsubsection{saveExistingFileInfo()}
+{\footnotesize\ttfamily int SQLite\+Helper\+::save\+Existing\+File\+Info (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{\textbf{ Attribute\+To\+Check}}]{attr\+\_\+to\+\_\+update,  }\item[{const char $\ast$}]{text\+\_\+val = {\ttfamily NULL},  }\item[{const int}]{int\+\_\+val = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -409,46 +945,197 @@ Retrieves the id of the directory from the directories table.
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_s_q_lite_helper_ac43f81918e037ab5b07f773794d8f9af}\label{class_s_q_lite_helper_ac43f81918e037ab5b07f773794d8f9af}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{462                                                                                                                             \{}
+\DoxyCodeLine{463     \textcolor{keywordtype}{int} retVal = 0;}
+\DoxyCodeLine{464 }
+\DoxyCodeLine{465     \textcolor{keywordtype}{char}* zErrMsg = 0;}
+\DoxyCodeLine{466     \textcolor{keywordtype}{int} rc;}
+\DoxyCodeLine{467     sqlite3\_stmt* pStmt;}
+\DoxyCodeLine{468     }
+\DoxyCodeLine{469     \textcolor{keywordtype}{char}* current\_time = getCurrentTime();}
+\DoxyCodeLine{470     \textcolor{keywordtype}{int} fileId = getFileId(db);}
+\DoxyCodeLine{471     }
+\DoxyCodeLine{472     \textcolor{keywordtype}{int} in\_changes = checkIfAttributeIsInChanges(fileId, attr\_to\_update, db);}
+\DoxyCodeLine{473     \textcolor{keywordtype}{int} has\_changes = 0;}
+\DoxyCodeLine{474 }
+\DoxyCodeLine{475     \textcolor{keywordflow}{switch} (attr\_to\_update)}
+\DoxyCodeLine{476     \{}
+\DoxyCodeLine{477     \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{478 }
+\DoxyCodeLine{479         \textcolor{keywordflow}{if} (!in\_changes) \{}
+\DoxyCodeLine{480             has\_changes = checkIfAttributeHasChanged(fileId, attr\_to\_update, TableToCheck::Files, db, text\_val);}
+\DoxyCodeLine{481         \}}
+\DoxyCodeLine{482         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{483             has\_changes = checkIfAttributeHasChanged(fileId, attr\_to\_update, TableToCheck::Changes, db, text\_val);}
+\DoxyCodeLine{484         \}}
+\DoxyCodeLine{485         }
+\DoxyCodeLine{486         \textcolor{keywordflow}{if} (has\_changes == 0) \{}
+\DoxyCodeLine{487             \textcolor{comment}{//fprintf(stderr, "{}\(\backslash\)nInside has\_changes with value of \%d and text value \%s\(\backslash\)n"{}, has\_changes, text\_val);}}
+\DoxyCodeLine{488             retVal = insertTextValueToChanges(db, fileId, text\_val,\textcolor{stringliteral}{"{}hashedvalue"{}});}
+\DoxyCodeLine{489         \}}
+\DoxyCodeLine{490         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{491     \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{492         }
+\DoxyCodeLine{493         \textcolor{keywordflow}{if} (!in\_changes) \{}
+\DoxyCodeLine{494             has\_changes = checkIfAttributeHasChanged(fileId, attr\_to\_update, TableToCheck::Files, db, NULL, int\_val);}
+\DoxyCodeLine{495         \}}
+\DoxyCodeLine{496         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{497             has\_changes = checkIfAttributeHasChanged(fileId, attr\_to\_update, TableToCheck::Changes, db, NULL, int\_val);}
+\DoxyCodeLine{498         \}}
+\DoxyCodeLine{499         }
+\DoxyCodeLine{500         \textcolor{keywordflow}{if} (has\_changes == 0) \{}
+\DoxyCodeLine{501             \textcolor{comment}{//fprintf(stderr, "{}\(\backslash\)nInside has\_changes with value of \%d and int value \%d\(\backslash\)n"{}, has\_changes, int\_val);}}
+\DoxyCodeLine{502             retVal = insertIntValueToChanges(db, fileId, int\_val, \textcolor{stringliteral}{"{}filesize"{}});}
+\DoxyCodeLine{503         \}}
+\DoxyCodeLine{504         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{505     \textcolor{keywordflow}{case} 3:}
+\DoxyCodeLine{506 }
+\DoxyCodeLine{507         \textcolor{keywordflow}{if} (!in\_changes) \{}
+\DoxyCodeLine{508             has\_changes = checkIfAttributeHasChanged(fileId, attr\_to\_update, TableToCheck::Files, db, text\_val);}
+\DoxyCodeLine{509         \}}
+\DoxyCodeLine{510         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{511             has\_changes = checkIfAttributeHasChanged(fileId, attr\_to\_update, TableToCheck::Changes, db, text\_val);}
+\DoxyCodeLine{512         \}}
+\DoxyCodeLine{513         }
+\DoxyCodeLine{514         \textcolor{keywordflow}{if} (has\_changes == 0) \{}
+\DoxyCodeLine{515             \textcolor{comment}{//fprintf(stderr, "{}\(\backslash\)nInside has\_changes with value of \%d and text value \%s\(\backslash\)n"{}, has\_changes, text\_val);}}
+\DoxyCodeLine{516             retVal = insertTextValueToChanges(db, fileId, text\_val,\textcolor{stringliteral}{"{}lastmodified"{}});}
+\DoxyCodeLine{517         \}}
+\DoxyCodeLine{518         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{519     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{520         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{521     \}}
+\DoxyCodeLine{522 }
+\DoxyCodeLine{523     \textcolor{keywordflow}{if} (!in\_changes \&\& has\_changes == 0) \{}
+\DoxyCodeLine{524         retVal = updateChangedInFile(db, fileId, attr\_to\_update);}
+\DoxyCodeLine{525     \}}
+\DoxyCodeLine{526 }
+\DoxyCodeLine{527     \textcolor{keywordflow}{return} retVal;}
+\DoxyCodeLine{528 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_af16a7fbd53573503bfa21c97eea53efb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_af16a7fbd53573503bfa21c97eea53efb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_q_lite_helper_a10508781dbcc903c632e83c1527da36f}} 
 \index{SQLiteHelper@{SQLiteHelper}!saveFileInfo@{saveFileInfo}}
 \index{saveFileInfo@{saveFileInfo}!SQLiteHelper@{SQLiteHelper}}
-\doxysubsubsection{\texorpdfstring{saveFileInfo()}{saveFileInfo()}}
-{\footnotesize\ttfamily static int SQLite\+Helper\+::save\+File\+Info (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{const int}]{dir\+\_\+id,  }\item[{const char $\ast$}]{file\+\_\+name,  }\item[{const int}]{file\+\_\+size = {\ttfamily 0},  }\item[{const char $\ast$}]{date\+\_\+modified = {\ttfamily NULL},  }\item[{const char $\ast$}]{hashed\+\_\+val = {\ttfamily NULL},  }\item[{const bool}]{is\+New = {\ttfamily true},  }\item[{\mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}}}]{attr\+\_\+to\+\_\+update = {\ttfamily \mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643a76ad4e13865f58e04c95f78d433802ad}{Attribute\+To\+Check\+::\+NONE}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\doxysubsubsection{saveFileInfo()}
+{\footnotesize\ttfamily int SQLite\+Helper\+::save\+File\+Info (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{const int}]{dir\+\_\+id,  }\item[{const char $\ast$}]{file\+\_\+name,  }\item[{const int}]{file\+\_\+size = {\ttfamily 0},  }\item[{const char $\ast$}]{date\+\_\+modified = {\ttfamily NULL},  }\item[{const char $\ast$}]{hashed\+\_\+val = {\ttfamily NULL},  }\item[{const bool}]{is\+New = {\ttfamily true},  }\item[{\textbf{ Attribute\+To\+Check}}]{attr\+\_\+to\+\_\+update = {\ttfamily \textbf{ Attribute\+To\+Check\+::\+NONE}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
+
+Entry point to saving the file information. 
+
+ 
 \begin{DoxyParams}{Parameters}
-{\em db} & \\
+{\em db} & sqlite3 database object. \\
 \hline
-{\em dir\+\_\+id} & \\
+{\em dir\+\_\+id} & Id of the directory from the directories table. \\
 \hline
-{\em file\+\_\+name} & \\
+{\em file\+\_\+name} & Absolute name of the file. \\
 \hline
-{\em file\+\_\+size} & \\
+{\em file\+\_\+size} & File size of the file in bytes. Default value is 0. \\
 \hline
-{\em date\+\_\+modified} & \\
+{\em date\+\_\+modified} & Date the file was last modified. Default value is NULL. \\
 \hline
 {\em hashed\+\_\+val} & \\
 \hline
-{\em is\+New} & \\
+{\em is\+New} & Determines if the file information being added is for a new file or an existing file. Default value is true. \\
 \hline
-{\em attr\+\_\+to\+\_\+update} & \\
+{\em attr\+\_\+to\+\_\+update} & The attribute to update if the is\+New = false. Default value is NONE. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{class_s_q_lite_helper_a416b734c88d6e65e3a358953aea9468a}{save\+New\+File\+Info()}} 
+\doxyref{save\+New\+File\+Info()}{p.}{class_s_q_lite_helper_a843ad9e365ed3bc8d6d8baf38600fdc0} 
 
-\mbox{\hyperlink{class_s_q_lite_helper_a84b6c0493c0f59b4311ec393464b01ec}{save\+Existing\+File\+Info()}} 
+\doxyref{save\+Existing\+File\+Info()}{p.}{class_s_q_lite_helper_af16a7fbd53573503bfa21c97eea53efb} 
 
-\mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}} 
+\doxyref{Attribute\+To\+Check}{p.}{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_s_q_lite_helper_a416b734c88d6e65e3a358953aea9468a}\label{class_s_q_lite_helper_a416b734c88d6e65e3a358953aea9468a}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{357                                                                                                                                                                                                               \{}
+\DoxyCodeLine{358     \textcolor{keywordtype}{int} retVal = 0;}
+\DoxyCodeLine{359     \textcolor{keywordtype}{int} hasChanged = 0;}
+\DoxyCodeLine{360 }
+\DoxyCodeLine{361     \_dirid = dir\_id;}
+\DoxyCodeLine{362     \_filename = (\textcolor{keywordtype}{char}*)malloc(strlen(file\_name)+1);}
+\DoxyCodeLine{363     strcpy(\_filename,file\_name);}
+\DoxyCodeLine{364     \_filesize = file\_size;}
+\DoxyCodeLine{365 }
+\DoxyCodeLine{366     \textcolor{keywordflow}{if} (date\_modified != NULL) \{}
+\DoxyCodeLine{367         \_datemodified = (\textcolor{keywordtype}{char}*)malloc(strlen(date\_modified) + 1);}
+\DoxyCodeLine{368         strcpy(\_datemodified, date\_modified);}
+\DoxyCodeLine{369     \}}
+\DoxyCodeLine{370     }
+\DoxyCodeLine{371     \textcolor{keywordflow}{if} (hashed\_val != NULL) \{}
+\DoxyCodeLine{372         \textcolor{comment}{//fprintf(stderr, "{}\(\backslash\)nGetting ready to store hashedvalue into \_hashedval with value of \%s\(\backslash\)n"{}, \_hashedval);}}
+\DoxyCodeLine{373         \_hashedval = (\textcolor{keywordtype}{char}*)malloc(strlen(hashed\_val) + 1);}
+\DoxyCodeLine{374         strcpy(\_hashedval, (\textcolor{keywordtype}{char}*)hashed\_val);}
+\DoxyCodeLine{375     \}}
+\DoxyCodeLine{376     }
+\DoxyCodeLine{377     \textcolor{keywordflow}{if} (isNew) \{}
+\DoxyCodeLine{378         saveNewFileInfo(db);}
+\DoxyCodeLine{379     \}}
+\DoxyCodeLine{380     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{381         \textcolor{keywordflow}{switch} (attr\_to\_update)}
+\DoxyCodeLine{382         \{}
+\DoxyCodeLine{383         \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{384             \textcolor{comment}{//fprintf(stderr, "{}\(\backslash\)nGetting ready to save hashedvalue of \%s\(\backslash\)n"{}, \_hashedval);}}
+\DoxyCodeLine{385             saveExistingFileInfo(db, attr\_to\_update,\_hashedval);}
+\DoxyCodeLine{386             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{387         \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{388             saveExistingFileInfo(db, attr\_to\_update,NULL,\_filesize);}
+\DoxyCodeLine{389             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{390         \textcolor{keywordflow}{case} 3:}
+\DoxyCodeLine{391             saveExistingFileInfo(db, attr\_to\_update, \_datemodified);}
+\DoxyCodeLine{392             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{393         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{394             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{395         \}}
+\DoxyCodeLine{396         \textcolor{comment}{//saveExistingFileInfo(db, attr\_to\_update);}}
+\DoxyCodeLine{397     \}}
+\DoxyCodeLine{398 }
+\DoxyCodeLine{399     \textcolor{keywordflow}{return} retVal;}
+\DoxyCodeLine{400 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_a10508781dbcc903c632e83c1527da36f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_a10508781dbcc903c632e83c1527da36f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_q_lite_helper_a843ad9e365ed3bc8d6d8baf38600fdc0}} 
 \index{SQLiteHelper@{SQLiteHelper}!saveNewFileInfo@{saveNewFileInfo}}
 \index{saveNewFileInfo@{saveNewFileInfo}!SQLiteHelper@{SQLiteHelper}}
-\doxysubsubsection{\texorpdfstring{saveNewFileInfo()}{saveNewFileInfo()}}
-{\footnotesize\ttfamily static int SQLite\+Helper\+::save\+New\+File\+Info (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+\doxysubsubsection{saveNewFileInfo()}
+{\footnotesize\ttfamily int SQLite\+Helper\+::save\+New\+File\+Info (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -458,11 +1145,88 @@ Retrieves the id of the directory from the directories table.
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_s_q_lite_helper_a174400575d3038248769856efc9546a8}\label{class_s_q_lite_helper_a174400575d3038248769856efc9546a8}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{402                                              \{}
+\DoxyCodeLine{403     \textcolor{keywordtype}{int} retVal = 0;}
+\DoxyCodeLine{404     \textcolor{keywordtype}{char}* zErrMsg = 0;}
+\DoxyCodeLine{405     \textcolor{keywordtype}{int} rc;}
+\DoxyCodeLine{406     sqlite3\_stmt* pStmt;}
+\DoxyCodeLine{407     }
+\DoxyCodeLine{408     \textcolor{keywordtype}{char}* current\_time = getCurrentTime();}
+\DoxyCodeLine{409 }
+\DoxyCodeLine{410     \textcolor{keywordflow}{if} (\_hashedval == NULL) \{}
+\DoxyCodeLine{411         rc = sqlite3\_prepare\_v3(db, sql\_save\_newfile\_nohashedval, -\/1, 0, \&pStmt, NULL);}
+\DoxyCodeLine{412     \}}
+\DoxyCodeLine{413     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{414         rc = sqlite3\_prepare\_v3(db, sql\_save\_newfile\_hashedval, -\/1, 0, \&pStmt, NULL);}
+\DoxyCodeLine{415     \}}
+\DoxyCodeLine{416 }
+\DoxyCodeLine{417     \textcolor{comment}{//dirid, dateadded, filename, filesize, lastmodified}}
+\DoxyCodeLine{418     \textcolor{keywordflow}{if} (rc == SQLITE\_OK) \{}
+\DoxyCodeLine{419         sqlite3\_bind\_int(pStmt, 1, \_dirid);}
+\DoxyCodeLine{420         sqlite3\_bind\_text(pStmt, 2, current\_time, -\/1, NULL);}
+\DoxyCodeLine{421         sqlite3\_bind\_text(pStmt, 3, \_filename, -\/1, NULL);}
+\DoxyCodeLine{422         sqlite3\_bind\_int(pStmt, 4, \_filesize);}
+\DoxyCodeLine{423         sqlite3\_bind\_text(pStmt, 5, \_datemodified, -\/1, NULL);}
+\DoxyCodeLine{424         }
+\DoxyCodeLine{425         \textcolor{keywordflow}{if} (\_hashedval != NULL) \{}
+\DoxyCodeLine{426             sqlite3\_bind\_text(pStmt, 6, \_hashedval, -\/1, NULL);}
+\DoxyCodeLine{427         \}}
+\DoxyCodeLine{428     \}}
+\DoxyCodeLine{429     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{430 }
+\DoxyCodeLine{431         \textcolor{comment}{//fprintf(stderr, "{}saveNewFileInfo::Failed to execute statement: \%s\(\backslash\)n"{}, sqlite3\_errmsg(db));}}
+\DoxyCodeLine{432         retVal = -\/1;}
+\DoxyCodeLine{433     \}}
+\DoxyCodeLine{434 }
+\DoxyCodeLine{435     rc = sqlite3\_step(pStmt);}
+\DoxyCodeLine{436 }
+\DoxyCodeLine{437     \textcolor{keywordflow}{if} (rc == SQLITE\_BUSY) \{}
+\DoxyCodeLine{438         cout << \textcolor{stringliteral}{"{}\(\backslash\)nDatabase is busy"{}} << endl;}
+\DoxyCodeLine{439         \textcolor{keywordflow}{while} (rc == SQLITE\_BUSY)}
+\DoxyCodeLine{440         \{}
+\DoxyCodeLine{441             rc = sqlite3\_step(pStmt);}
+\DoxyCodeLine{442         \}}
+\DoxyCodeLine{443     \}}
+\DoxyCodeLine{444     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (rc == SQLITE\_ERROR) \{}
+\DoxyCodeLine{445         printf(\textcolor{stringliteral}{"{}\(\backslash\)nIn SQLiteHelper::saveNewFileInfo execution failed: \%s\(\backslash\)n"{}}, sqlite3\_errmsg(db));}
+\DoxyCodeLine{446     \}}
+\DoxyCodeLine{447     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (rc == SQLITE\_MISUSE) \{}
+\DoxyCodeLine{448         cout << \textcolor{stringliteral}{"{}\(\backslash\)nA MISUSE has been deteced in SQLiteHelper::saveNewFileInfo."{}} << endl;}
+\DoxyCodeLine{449     \}}
+\DoxyCodeLine{450     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (rc == SQLITE\_DONE) \{}
+\DoxyCodeLine{451         cout << \textcolor{stringliteral}{"{}\(\backslash\)nsqlite3\_step executed successfully in SQLiteHelper::saveNewFileInfo."{}} << endl;}
+\DoxyCodeLine{452     \}}
+\DoxyCodeLine{453     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{454         cout << \textcolor{stringliteral}{"{}\(\backslash\)nNot sure what happened in SQLiteHelper::saveNewFileInfo."{}} << endl;}
+\DoxyCodeLine{455     \}}
+\DoxyCodeLine{456 }
+\DoxyCodeLine{457     sqlite3\_finalize(pStmt);}
+\DoxyCodeLine{458     }
+\DoxyCodeLine{459     \textcolor{keywordflow}{return} retVal;}
+\DoxyCodeLine{460 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_a843ad9e365ed3bc8d6d8baf38600fdc0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_a843ad9e365ed3bc8d6d8baf38600fdc0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_q_lite_helper_a190dc1ee6382b8d506cbd1ee6ee59e37}} 
 \index{SQLiteHelper@{SQLiteHelper}!setDirectoryName@{setDirectoryName}}
 \index{setDirectoryName@{setDirectoryName}!SQLiteHelper@{SQLiteHelper}}
-\doxysubsubsection{\texorpdfstring{setDirectoryName()}{setDirectoryName()}}
-{\footnotesize\ttfamily static void SQLite\+Helper\+::set\+Directory\+Name (\begin{DoxyParamCaption}\item[{char $\ast$}]{dir\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\doxysubsubsection{setDirectoryName()}
+{\footnotesize\ttfamily void SQLite\+Helper\+::set\+Directory\+Name (\begin{DoxyParamCaption}\item[{char $\ast$}]{dir\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -473,11 +1237,19 @@ Sets the relative directory name.
 {\em dir\+\_\+name} & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_s_q_lite_helper_a0815f283b738dea61f78f0e0dab958ea}\label{class_s_q_lite_helper_a0815f283b738dea61f78f0e0dab958ea}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{230                                                   \{}
+\DoxyCodeLine{231     \_dirname = (\textcolor{keywordtype}{char}*)malloc(strlen(dir\_name) + 1);}
+\DoxyCodeLine{232     strcpy(\_dirname, dir\_name);}
+\DoxyCodeLine{233 \}}
+
+\end{DoxyCode}
+\mbox{\label{class_s_q_lite_helper_afee8872bcc8c1b58c274374331ccc3aa}} 
 \index{SQLiteHelper@{SQLiteHelper}!setFileName@{setFileName}}
 \index{setFileName@{setFileName}!SQLiteHelper@{SQLiteHelper}}
-\doxysubsubsection{\texorpdfstring{setFileName()}{setFileName()}}
-{\footnotesize\ttfamily static void SQLite\+Helper\+::set\+File\+Name (\begin{DoxyParamCaption}\item[{char $\ast$}]{file\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\doxysubsubsection{setFileName()}
+{\footnotesize\ttfamily void SQLite\+Helper\+::set\+File\+Name (\begin{DoxyParamCaption}\item[{char $\ast$}]{file\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -488,11 +1260,19 @@ Sets the absolute file name.
 {\em file\+\_\+name} & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_s_q_lite_helper_a8fc3a476fa41e7601138ed1a87431ab9}\label{class_s_q_lite_helper_a8fc3a476fa41e7601138ed1a87431ab9}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{235                                               \{}
+\DoxyCodeLine{236     \_filename = (\textcolor{keywordtype}{char}*)malloc(strlen(file\_name) + 1);}
+\DoxyCodeLine{237     strcpy(\_filename, file\_name);}
+\DoxyCodeLine{238 \}}
+
+\end{DoxyCode}
+\mbox{\label{class_s_q_lite_helper_ab269da2fbf803659b63e7161dfbf0a18}} 
 \index{SQLiteHelper@{SQLiteHelper}!setMachineName@{setMachineName}}
 \index{setMachineName@{setMachineName}!SQLiteHelper@{SQLiteHelper}}
-\doxysubsubsection{\texorpdfstring{setMachineName()}{setMachineName()}}
-{\footnotesize\ttfamily static void SQLite\+Helper\+::set\+Machine\+Name (\begin{DoxyParamCaption}\item[{char $\ast$}]{machine\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\doxysubsubsection{setMachineName()}
+{\footnotesize\ttfamily void SQLite\+Helper\+::set\+Machine\+Name (\begin{DoxyParamCaption}\item[{char $\ast$}]{machine\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -503,11 +1283,19 @@ Sets the machine name where the scanner is running.
 {\em machine\+\_\+name} & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_s_q_lite_helper_a4eb63efa7ac69125fd954d5efb23c2c6}\label{class_s_q_lite_helper_a4eb63efa7ac69125fd954d5efb23c2c6}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{240                                                     \{}
+\DoxyCodeLine{241     \_machinename = (\textcolor{keywordtype}{char}*)malloc(strlen(machine\_name) + 1);}
+\DoxyCodeLine{242     strcpy(\_machinename, machine\_name);}
+\DoxyCodeLine{243 \}}
+
+\end{DoxyCode}
+\mbox{\label{class_s_q_lite_helper_a7f4941d87b3ea71d1691f62b0113999a}} 
 \index{SQLiteHelper@{SQLiteHelper}!updateChangedInFile@{updateChangedInFile}}
 \index{updateChangedInFile@{updateChangedInFile}!SQLiteHelper@{SQLiteHelper}}
-\doxysubsubsection{\texorpdfstring{updateChangedInFile()}{updateChangedInFile()}}
-{\footnotesize\ttfamily static int SQLite\+Helper\+::update\+Changed\+In\+File (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{int}]{file\+\_\+id,  }\item[{\mbox{\hyperlink{class_s_q_lite_helper_a6ec2e82b83e64f66831dc36a7359c643}{Attribute\+To\+Check}}}]{attr\+\_\+to\+\_\+change }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+\doxysubsubsection{updateChangedInFile()}
+{\footnotesize\ttfamily int SQLite\+Helper\+::update\+Changed\+In\+File (\begin{DoxyParamCaption}\item[{sqlite3 $\ast$}]{db,  }\item[{int}]{file\+\_\+id,  }\item[{\textbf{ Attribute\+To\+Check}}]{attr\+\_\+to\+\_\+change }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -521,3 +1309,81 @@ Sets the machine name where the scanner is running.
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{626                                                                                                \{}
+\DoxyCodeLine{627     \textcolor{keywordtype}{char}* zErrMsg = 0;}
+\DoxyCodeLine{628     \textcolor{keywordtype}{int} rc;}
+\DoxyCodeLine{629     sqlite3\_stmt* pStmt;}
+\DoxyCodeLine{630     \textcolor{keywordtype}{int} retVal = 0;}
+\DoxyCodeLine{631     \textcolor{keywordtype}{char}* current\_time = getCurrentTime();}
+\DoxyCodeLine{632     \textcolor{keywordtype}{char}* sql\_stmt;}
+\DoxyCodeLine{633     }
+\DoxyCodeLine{634     \textcolor{keywordflow}{switch} (attr\_to\_change)}
+\DoxyCodeLine{635     \{}
+\DoxyCodeLine{636     \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{637         rc = sqlite3\_prepare\_v3(db, sql\_set\_inchanges\_hashedval, -\/1, 0, \&pStmt, NULL);}
+\DoxyCodeLine{638         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{639     \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{640         rc = sqlite3\_prepare\_v3(db, sql\_set\_inchanges\_filesize, -\/1, 0, \&pStmt, NULL);}
+\DoxyCodeLine{641         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{642     \textcolor{keywordflow}{case} 3:}
+\DoxyCodeLine{643         rc = sqlite3\_prepare\_v3(db, sql\_set\_inchanges\_lastmodified, -\/1, 0, \&pStmt, NULL);}
+\DoxyCodeLine{644         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{645     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{646         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{647         cout << \textcolor{stringliteral}{"{}Unknown attribute. Nothing saved."{}} << endl;}
+\DoxyCodeLine{648         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{649     \}}
+\DoxyCodeLine{650 }
+\DoxyCodeLine{651     \textcolor{keywordflow}{if} (rc == SQLITE\_OK) \{}
+\DoxyCodeLine{652         sqlite3\_bind\_int(pStmt, 1, file\_id);}
+\DoxyCodeLine{653     \}}
+\DoxyCodeLine{654     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{655         fprintf(stderr, \textcolor{stringliteral}{"{}updateChangedInFiles:Failed to execute statement: \%s\(\backslash\)n"{}}, sqlite3\_errmsg(db));}
+\DoxyCodeLine{656         sqlite3\_finalize(pStmt);}
+\DoxyCodeLine{657         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{658     \}}
+\DoxyCodeLine{659 }
+\DoxyCodeLine{660     rc = sqlite3\_step(pStmt);}
+\DoxyCodeLine{661 }
+\DoxyCodeLine{662     \textcolor{keywordflow}{if} (rc == SQLITE\_BUSY) \{}
+\DoxyCodeLine{663         cout << \textcolor{stringliteral}{"{}\(\backslash\)nDatabase is busy"{}} << endl;}
+\DoxyCodeLine{664         \textcolor{keywordflow}{while} (rc == SQLITE\_BUSY)}
+\DoxyCodeLine{665         \{}
+\DoxyCodeLine{666             rc = sqlite3\_step(pStmt);}
+\DoxyCodeLine{667         \}}
+\DoxyCodeLine{668     \}}
+\DoxyCodeLine{669     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (rc == SQLITE\_ERROR) \{}
+\DoxyCodeLine{670         printf(\textcolor{stringliteral}{"{}\(\backslash\)nIn updateChangedInFiles execution failed: \%s\(\backslash\)n"{}}, sqlite3\_errmsg(db));}
+\DoxyCodeLine{671     \}}
+\DoxyCodeLine{672     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (rc == SQLITE\_MISUSE) \{}
+\DoxyCodeLine{673         cout << \textcolor{stringliteral}{"{}\(\backslash\)nA MISUSE has been deteced in updateChangedInFiles."{}} << endl;}
+\DoxyCodeLine{674     \}}
+\DoxyCodeLine{675     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (rc == SQLITE\_DONE) \{}
+\DoxyCodeLine{676         cout << \textcolor{stringliteral}{"{}\(\backslash\)nsqlite3\_step executed successfully."{}} << endl;}
+\DoxyCodeLine{677     \}}
+\DoxyCodeLine{678     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{679         cout << \textcolor{stringliteral}{"{}\(\backslash\)nNot sure what happened in updateChangedInFiles."{}} << endl;}
+\DoxyCodeLine{680     \}}
+\DoxyCodeLine{681 }
+\DoxyCodeLine{682     sqlite3\_finalize(pStmt);}
+\DoxyCodeLine{683 }
+\DoxyCodeLine{684     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{685 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_a7f4941d87b3ea71d1691f62b0113999a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_q_lite_helper_a7f4941d87b3ea71d1691f62b0113999a_icgraph}
+\end{center}
+\end{figure}

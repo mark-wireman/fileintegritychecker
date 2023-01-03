@@ -1,0 +1,145 @@
+.TH "C:/Users/mark_/source/repos/fileintegritychecker/src/SQLiteHelper.cpp" 3 "Sun Jan 1 2023" "Version 1.0" "File Integrity Checker" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/mark_/source/repos/fileintegritychecker/src/SQLiteHelper.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./headers/SQLiteHelper\&.h'\fP
+.br
+
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "char * \fBsql_check_if_filesize_changed\fP = 'select filesizechanged from files where id=?; '"
+.br
+.ti -1c
+.RI "char * \fBsql_check_if_filesize_changed_in_files\fP = 'select id from files where filesize = ? and id = ?; '"
+.br
+.ti -1c
+.RI "char * \fBsql_check_if_hashedval_changed\fP = 'select hashedvaluechanged from files where id=?; '"
+.br
+.ti -1c
+.RI "char * \fBsql_check_if_hashedval_changed_in_files\fP = 'select id from files where hashedvalue = ? and id = ?; '"
+.br
+.ti -1c
+.RI "char * \fBsql_check_if_datemodified_changed\fP = 'select lastmodifiedchanged from files where id=?; '"
+.br
+.ti -1c
+.RI "char * \fBsql_check_if_datemodified_changed_in_files\fP = 'select id from files where lastmodified = ? and id = ?; '"
+.br
+.ti -1c
+.RI "char * \fBsql_check_if_value_changed_in_changes_textval\fP = 'select id from changes where fileid = ? and textvalue = ?; '"
+.br
+.ti -1c
+.RI "char * \fBsql_check_if_value_changed_in_changes_intval\fP = 'select id from changes where fileid = ? and intvalue = ?; '"
+.br
+.ti -1c
+.RI "char * \fBsql_get_file_id\fP = 'select id from files where filename=? and dirid=?; '"
+.br
+.ti -1c
+.RI "char * \fBsql_get_directory_id\fP = 'select id from directories where dirname=? and \fBmachinename\fP= ?; '"
+.br
+.ti -1c
+.RI "char * \fBsql_save_newfile_nohashedval\fP = 'insert into files (dirid, dateadded, filename, filesize, lastmodified) VALUES (?,?,?,?,?); '"
+.br
+.ti -1c
+.RI "char * \fBsql_save_newfile_hashedval\fP = 'insert into files (dirid, dateadded, filename, filesize, lastmodified, hashval) VALUES (?,?,?,?,?,?); '"
+.br
+.ti -1c
+.RI "char * \fBsql_save_textval_in_changes\fP = 'INSERT INTO changes (fileid,datechanged,textvalue,attributechanged) VALUES (?,?,?,?); '"
+.br
+.ti -1c
+.RI "char * \fBsql_save_intval_in_changes\fP = 'INSERT INTO changes (fileid,datechanged,intvalue,attributechanged) VALUES (?,?,?,?); '"
+.br
+.ti -1c
+.RI "char * \fBsql_set_inchanges_hashedval\fP = 'UPDATE files SET hashedvaluechanged=1 WHERE id=?; '"
+.br
+.ti -1c
+.RI "char * \fBsql_set_inchanges_filesize\fP = 'UPDATE files SET filesizechanged=1 WHERE id=?; '"
+.br
+.ti -1c
+.RI "char * \fBsql_set_inchanges_lastmodified\fP = 'UPDATE files SET lastmodifiedchanged=1 WHERE id=?; '"
+.br
+.ti -1c
+.RI "char * \fB_dirname\fP"
+.br
+.ti -1c
+.RI "char * \fB_filename\fP"
+.br
+.ti -1c
+.RI "char * \fB_machinename\fP"
+.br
+.ti -1c
+.RI "char * \fB_datemodified\fP"
+.br
+.ti -1c
+.RI "char * \fB_hashedval\fP"
+.br
+.ti -1c
+.RI "int \fB_filesize\fP"
+.br
+.ti -1c
+.RI "int \fB_dirid\fP"
+.br
+.ti -1c
+.RI "sqlite3_stmt * \fBpStmt\fP"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "char* _datemodified"
+
+.SS "int _dirid"
+
+.SS "char* _dirname"
+
+.SS "char* _filename"
+
+.SS "int _filesize"
+
+.SS "char* _hashedval"
+
+.SS "char* _machinename"
+
+.SS "sqlite3_stmt* pStmt"
+
+.SS "char* sql_check_if_datemodified_changed = 'select lastmodifiedchanged from files where id=?; '"
+
+.SS "char* sql_check_if_datemodified_changed_in_files = 'select id from files where lastmodified = ? and id = ?; '"
+
+.SS "char* sql_check_if_filesize_changed = 'select filesizechanged from files where id=?; '"
+
+.SS "char* sql_check_if_filesize_changed_in_files = 'select id from files where filesize = ? and id = ?; '"
+
+.SS "char* sql_check_if_hashedval_changed = 'select hashedvaluechanged from files where id=?; '"
+
+.SS "char* sql_check_if_hashedval_changed_in_files = 'select id from files where hashedvalue = ? and id = ?; '"
+
+.SS "char* sql_check_if_value_changed_in_changes_intval = 'select id from changes where fileid = ? and intvalue = ?; '"
+
+.SS "char* sql_check_if_value_changed_in_changes_textval = 'select id from changes where fileid = ? and textvalue = ?; '"
+
+.SS "char* sql_get_directory_id = 'select id from directories where dirname=? and \fBmachinename\fP= ?; '"
+
+.SS "char* sql_get_file_id = 'select id from files where filename=? and dirid=?; '"
+
+.SS "char* sql_save_intval_in_changes = 'INSERT INTO changes (fileid,datechanged,intvalue,attributechanged) VALUES (?,?,?,?); '"
+
+.SS "char* sql_save_newfile_hashedval = 'insert into files (dirid, dateadded, filename, filesize, lastmodified, hashval) VALUES (?,?,?,?,?,?); '"
+
+.SS "char* sql_save_newfile_nohashedval = 'insert into files (dirid, dateadded, filename, filesize, lastmodified) VALUES (?,?,?,?,?); '"
+
+.SS "char* sql_save_textval_in_changes = 'INSERT INTO changes (fileid,datechanged,textvalue,attributechanged) VALUES (?,?,?,?); '"
+
+.SS "char* sql_set_inchanges_filesize = 'UPDATE files SET filesizechanged=1 WHERE id=?; '"
+
+.SS "char* sql_set_inchanges_hashedval = 'UPDATE files SET hashedvaluechanged=1 WHERE id=?; '"
+
+.SS "char* sql_set_inchanges_lastmodified = 'UPDATE files SET lastmodifiedchanged=1 WHERE id=?; '"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for File Integrity Checker from the source code\&.

@@ -1,4 +1,4 @@
-\hypertarget{class_s_h_a256_c_p_p}{}\doxysection{SHA256\+CPP Class Reference}
+\doxysection{SHA256\+CPP Class Reference}
 \label{class_s_h_a256_c_p_p}\index{SHA256CPP@{SHA256CPP}}
 
 
@@ -6,8 +6,7 @@
 
 
 
-Collaboration diagram for SHA256\+CPP\+:
-\nopagebreak
+Collaboration diagram for SHA256\+CPP\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,140 +16,798 @@ Collaboration diagram for SHA256\+CPP\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_s_h_a256_c_p_p_ac2f738d58ae8cbc5ee99963adaf538ca}{SHA256\+CPP}} ()
+\textbf{ SHA256\+CPP} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \doxyref{SHA256\+CPP\+::\+SHA256\+CPP}{p.}{class_s_h_a256_c_p_p_ac2f738d58ae8cbc5ee99963adaf538ca} object. \end{DoxyCompactList}\item 
+virtual \textbf{ $\sim$\+SHA256\+CPP} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxyref{SHA256\+CPP\+::\+SHA256\+CPP}{p.}{class_s_h_a256_c_p_p_ac2f738d58ae8cbc5ee99963adaf538ca} object. \end{DoxyCompactList}\item 
+bool \textbf{ endian\+Check} ()
 \item 
-virtual \mbox{\hyperlink{class_s_h_a256_c_p_p_a5b3c3cd1fcc19df9f6b855cc05dfe5af}{$\sim$\+SHA256\+CPP}} ()
+\textbf{ Hash\+Values} \textbf{ calculate\+Hash} (FILE $\ast$file)
 \item 
-bool \mbox{\hyperlink{class_s_h_a256_c_p_p_acd60e2902a86486cd8c0c730b22ec34d}{endian\+Check}} ()
+void \textbf{ print\+File\+Contents} (FILE $\ast$file\+For\+Printing)
 \item 
-\mbox{\hyperlink{struct_hash_values}{Hash\+Values}} \mbox{\hyperlink{class_s_h_a256_c_p_p_a9466f56550cb9725c8fd6be92e5c1b77}{calculate\+Hash}} (FILE $\ast$file)
-\item 
-void \mbox{\hyperlink{class_s_h_a256_c_p_p_accf77858eb3d4019f13d1e9c40dc9a73}{print\+File\+Contents}} (FILE $\ast$file\+For\+Printing)
-\item 
-void \mbox{\hyperlink{class_s_h_a256_c_p_p_af6bbbbc8eb2d1d2ce127d9ee41f80d43}{endian\+Check\+Print}} ()
+void \textbf{ endian\+Check\+Print} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-uint32\+\_\+t \mbox{\hyperlink{class_s_h_a256_c_p_p_ac70dfb32d56867b6f8790242c3202c06}{sig0}} (uint32\+\_\+t x)
+uint32\+\_\+t \textbf{ sig0} (uint32\+\_\+t x)
 \item 
-uint32\+\_\+t \mbox{\hyperlink{class_s_h_a256_c_p_p_ad8bbe4f9babe02201d94d63fd65cc832}{sig1}} (uint32\+\_\+t x)
+uint32\+\_\+t \textbf{ sig1} (uint32\+\_\+t x)
 \item 
-uint32\+\_\+t \mbox{\hyperlink{class_s_h_a256_c_p_p_ab1a29784c317f21287def4327f83c342}{rotr}} (uint32\+\_\+t n, uint16\+\_\+t x)
+uint32\+\_\+t \textbf{ rotr} (uint32\+\_\+t n, uint16\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Rotate bits right. \end{DoxyCompactList}\item 
+uint32\+\_\+t \textbf{ shr} (uint32\+\_\+t n, uint16\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Shift bits right. \end{DoxyCompactList}\item 
+uint32\+\_\+t \textbf{ SIG0} (uint32\+\_\+t x)
 \item 
-uint32\+\_\+t \mbox{\hyperlink{class_s_h_a256_c_p_p_a0ba361bc6a4f925454dfcd14fcb95f58}{shr}} (uint32\+\_\+t n, uint16\+\_\+t x)
+uint32\+\_\+t \textbf{ SIG1} (uint32\+\_\+t x)
 \item 
-uint32\+\_\+t \mbox{\hyperlink{class_s_h_a256_c_p_p_ae5224ffbd7fb6ab5d05a846e3c7e4bd3}{SIG0}} (uint32\+\_\+t x)
+uint32\+\_\+t \textbf{ Ch} (uint32\+\_\+t x, uint32\+\_\+t y, uint32\+\_\+t z)
+\begin{DoxyCompactList}\small\item\em Choose. \end{DoxyCompactList}\item 
+uint32\+\_\+t \textbf{ Maj} (uint32\+\_\+t x, uint32\+\_\+t y, uint32\+\_\+t z)
+\begin{DoxyCompactList}\small\item\em Majority decision. \end{DoxyCompactList}\item 
+int \textbf{ calc\+File\+Size} (FILE $\ast$file)
 \item 
-uint32\+\_\+t \mbox{\hyperlink{class_s_h_a256_c_p_p_ad8ea0d3bc89a2622dd230b9fb42c8463}{SIG1}} (uint32\+\_\+t x)
-\item 
-uint32\+\_\+t \mbox{\hyperlink{class_s_h_a256_c_p_p_a4f63d4fc8d0f9267cd3d4c70fb61b2f3}{Ch}} (uint32\+\_\+t x, uint32\+\_\+t y, uint32\+\_\+t z)
-\item 
-uint32\+\_\+t \mbox{\hyperlink{class_s_h_a256_c_p_p_a76c44344a60f168d02bf8a5888bf02ad}{Maj}} (uint32\+\_\+t x, uint32\+\_\+t y, uint32\+\_\+t z)
-\item 
-int \mbox{\hyperlink{class_s_h_a256_c_p_p_a5064c84992660bbd9e98f46511d780d8}{calc\+File\+Size}} (FILE $\ast$file)
-\item 
-int \mbox{\hyperlink{class_s_h_a256_c_p_p_af0be644c9e466da786edad451fb16c14}{fill\+Message\+Block}} (FILE $\ast$file, union \mbox{\hyperlink{unionmessage_block}{message\+Block}} $\ast$msg\+Block, enum \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959}{status}} $\ast$state, uint64\+\_\+t $\ast$num\+Bits)
+int \textbf{ fill\+Message\+Block} (FILE $\ast$file, union \textbf{ message\+Block} $\ast$msg\+Block, enum \textbf{ status} $\ast$\textbf{ state}, uint64\+\_\+t $\ast$num\+Bits)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_s_h_a256_c_p_p_ac2f738d58ae8cbc5ee99963adaf538ca}\label{class_s_h_a256_c_p_p_ac2f738d58ae8cbc5ee99963adaf538ca}} 
+\mbox{\label{class_s_h_a256_c_p_p_ac2f738d58ae8cbc5ee99963adaf538ca}} 
 \index{SHA256CPP@{SHA256CPP}!SHA256CPP@{SHA256CPP}}
 \index{SHA256CPP@{SHA256CPP}!SHA256CPP@{SHA256CPP}}
-\doxysubsubsection{\texorpdfstring{SHA256CPP()}{SHA256CPP()}}
+\doxysubsubsection{SHA256CPP()}
 {\footnotesize\ttfamily SHA256\+CPP\+::\+SHA256\+CPP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_s_h_a256_c_p_p_a5b3c3cd1fcc19df9f6b855cc05dfe5af}\label{class_s_h_a256_c_p_p_a5b3c3cd1fcc19df9f6b855cc05dfe5af}} 
+
+
+Construct a new \doxyref{SHA256\+CPP\+::\+SHA256\+CPP}{p.}{class_s_h_a256_c_p_p_ac2f738d58ae8cbc5ee99963adaf538ca} object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8 \{\}}
+
+\end{DoxyCode}
+\mbox{\label{class_s_h_a256_c_p_p_aff6f658beaeaa61fb3f31bc0c8517be6}} 
 \index{SHA256CPP@{SHA256CPP}!````~SHA256CPP@{$\sim$SHA256CPP}}
 \index{````~SHA256CPP@{$\sim$SHA256CPP}!SHA256CPP@{SHA256CPP}}
-\doxysubsubsection{\texorpdfstring{$\sim$SHA256CPP()}{~SHA256CPP()}}
-{\footnotesize\ttfamily virtual SHA256\+CPP\+::$\sim$\+SHA256\+CPP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+\doxysubsubsection{$\sim$SHA256CPP()}
+{\footnotesize\ttfamily SHA256\+CPP\+::$\sim$\+SHA256\+CPP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
+
+
+Destroy the \doxyref{SHA256\+CPP\+::\+SHA256\+CPP}{p.}{class_s_h_a256_c_p_p_ac2f738d58ae8cbc5ee99963adaf538ca} object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14 \{\}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_s_h_a256_c_p_p_a5064c84992660bbd9e98f46511d780d8}\label{class_s_h_a256_c_p_p_a5064c84992660bbd9e98f46511d780d8}} 
+\mbox{\label{class_s_h_a256_c_p_p_a5064c84992660bbd9e98f46511d780d8}} 
 \index{SHA256CPP@{SHA256CPP}!calcFileSize@{calcFileSize}}
 \index{calcFileSize@{calcFileSize}!SHA256CPP@{SHA256CPP}}
-\doxysubsubsection{\texorpdfstring{calcFileSize()}{calcFileSize()}}
+\doxysubsubsection{calcFileSize()}
 {\footnotesize\ttfamily int SHA256\+CPP\+::calc\+File\+Size (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_s_h_a256_c_p_p_a9466f56550cb9725c8fd6be92e5c1b77}\label{class_s_h_a256_c_p_p_a9466f56550cb9725c8fd6be92e5c1b77}} 
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{351                                       \{}
+\DoxyCodeLine{352     \textcolor{keywordtype}{int} prev=ftell(file);}
+\DoxyCodeLine{353     fseek(file, 0L, SEEK\_END);}
+\DoxyCodeLine{354     \textcolor{keywordtype}{int} size=ftell(file);}
+\DoxyCodeLine{355     fseek(file,prev,SEEK\_SET); }
+\DoxyCodeLine{356     \textcolor{keywordflow}{return} size;}
+\DoxyCodeLine{357 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_h_a256_c_p_p_a5064c84992660bbd9e98f46511d780d8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_h_a256_c_p_p_a9466f56550cb9725c8fd6be92e5c1b77}} 
 \index{SHA256CPP@{SHA256CPP}!calculateHash@{calculateHash}}
 \index{calculateHash@{calculateHash}!SHA256CPP@{SHA256CPP}}
-\doxysubsubsection{\texorpdfstring{calculateHash()}{calculateHash()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_hash_values}{Hash\+Values}} SHA256\+CPP\+::calculate\+Hash (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{file }\end{DoxyParamCaption})}
+\doxysubsubsection{calculateHash()}
+{\footnotesize\ttfamily \textbf{ Hash\+Values} SHA256\+CPP\+::calculate\+Hash (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{file }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_s_h_a256_c_p_p_a4f63d4fc8d0f9267cd3d4c70fb61b2f3}\label{class_s_h_a256_c_p_p_a4f63d4fc8d0f9267cd3d4c70fb61b2f3}} 
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{Hash\+Values}{p.}{struct_hash_values} 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{51                                               \{}
+\DoxyCodeLine{52     \textcolor{comment}{// Variables}}
+\DoxyCodeLine{53     \textcolor{comment}{// The current message block}}
+\DoxyCodeLine{54     \textcolor{keyword}{union }messageBlock msgBlock;}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{comment}{// The number of bits read from the file}}
+\DoxyCodeLine{57     uint64\_t numBits = 0;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{comment}{// The state of the program}}
+\DoxyCodeLine{60     \textcolor{keyword}{enum} status state = READ;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{comment}{//printf("{}\(\backslash\)n Starting SHA256 algorithm....\(\backslash\)n"{});}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{comment}{// Declare the K constant}}
+\DoxyCodeLine{65     \textcolor{comment}{// Defined in Section 4.2.2}}
+\DoxyCodeLine{66     uint32\_t K[] =}
+\DoxyCodeLine{67     \{}
+\DoxyCodeLine{68         0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, }
+\DoxyCodeLine{69         0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,}
+\DoxyCodeLine{70         0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3,}
+\DoxyCodeLine{71         0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,}
+\DoxyCodeLine{72         0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc,}
+\DoxyCodeLine{73         0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,}
+\DoxyCodeLine{74         0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7, }
+\DoxyCodeLine{75         0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967, }
+\DoxyCodeLine{76         0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13,}
+\DoxyCodeLine{77         0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,}
+\DoxyCodeLine{78         0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3,}
+\DoxyCodeLine{79         0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,}
+\DoxyCodeLine{80         0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5,}
+\DoxyCodeLine{81         0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3, }
+\DoxyCodeLine{82         0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208,}
+\DoxyCodeLine{83         0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2}
+\DoxyCodeLine{84     \};}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \textcolor{comment}{// Message schedule}}
+\DoxyCodeLine{87     uint32\_t W[64];}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{comment}{// Working variables}}
+\DoxyCodeLine{90     uint32\_t a, b, c, d, e, f, g, h;}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{comment}{// Temp variables}}
+\DoxyCodeLine{93     uint32\_t T1;}
+\DoxyCodeLine{94     uint32\_t T2;}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     \textcolor{comment}{// Hash values}}
+\DoxyCodeLine{97     \textcolor{comment}{// Taken from https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-\/4.pdf}}
+\DoxyCodeLine{98     \textcolor{comment}{//array<uint32\_t,8> H;}}
+\DoxyCodeLine{99     \textcolor{comment}{//static uint32\_t H[8];}}
+\DoxyCodeLine{100     \textcolor{keyword}{struct }HashValues HVals;}
+\DoxyCodeLine{101     HVals.H[0] = 0x6a09e667;}
+\DoxyCodeLine{102     HVals.H[1] = 0xbb67ae85;}
+\DoxyCodeLine{103     HVals.H[2] = 0x3c6ef372;}
+\DoxyCodeLine{104     HVals.H[3] = 0xa54ff53a;}
+\DoxyCodeLine{105     HVals.H[4] = 0x510e527f;}
+\DoxyCodeLine{106     HVals.H[5] = 0x9b05688c;}
+\DoxyCodeLine{107     HVals.H[6] = 0x1f83d9ab;}
+\DoxyCodeLine{108     HVals.H[7] = 0x5be0cd19;}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \textcolor{comment}{// The current message block}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112     \textcolor{comment}{// For loop to iterate through the message block }}
+\DoxyCodeLine{113     \textcolor{keywordtype}{int} j;}
+\DoxyCodeLine{114     \textcolor{keywordtype}{int} o;}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116     \textcolor{comment}{//printf("{}\(\backslash\)n Initalized variables... Entering loops\(\backslash\)n"{});}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118     \textcolor{keywordflow}{while}(fillMessageBlock(file, \&msgBlock, \&state, \&numBits))}
+\DoxyCodeLine{119     \{}
+\DoxyCodeLine{120         \textcolor{keywordflow}{for}(j=0; j<16; j++)}
+\DoxyCodeLine{121         \{   }
+\DoxyCodeLine{122             \textcolor{comment}{// Fist check for big or little endian}}
+\DoxyCodeLine{123             \textcolor{comment}{// If our system is big endian we dont need to do any conversion}}
+\DoxyCodeLine{124             \textcolor{keywordflow}{if}(endianCheck()==\textcolor{keyword}{true})}
+\DoxyCodeLine{125             \{}
+\DoxyCodeLine{126                 W[j] = msgBlock.t[j];}
+\DoxyCodeLine{127             \}}
+\DoxyCodeLine{128             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{129             \{}
+\DoxyCodeLine{130                 \textcolor{comment}{// Add the current message block to our messag schedule}}
+\DoxyCodeLine{131                 \textcolor{comment}{// Convert to big endian first}}
+\DoxyCodeLine{132                 W[j] = byteSwap32(msgBlock.t[j]);}
+\DoxyCodeLine{133             \}}
+\DoxyCodeLine{134            }
+\DoxyCodeLine{135         \}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137         \textcolor{keywordflow}{for} (j=16; j<64; j++)}
+\DoxyCodeLine{138         \{}
+\DoxyCodeLine{139             \textcolor{comment}{// Step 1}}
+\DoxyCodeLine{140             W[j] = sig1(W[j-\/2]) + W[j-\/7] + sig0(W[j-\/15]) + W[j-\/16];}
+\DoxyCodeLine{141         \}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144         \textcolor{comment}{// Initalize a..h}}
+\DoxyCodeLine{145         \textcolor{comment}{// Step 2}}
+\DoxyCodeLine{146         a=HVals.H[0];}
+\DoxyCodeLine{147         b=HVals.H[1];}
+\DoxyCodeLine{148         c=HVals.H[2];}
+\DoxyCodeLine{149         d=HVals.H[3];}
+\DoxyCodeLine{150         e=HVals.H[4];}
+\DoxyCodeLine{151         f=HVals.H[5];}
+\DoxyCodeLine{152         g=HVals.H[6];}
+\DoxyCodeLine{153         h=HVals.H[7];}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155         \textcolor{comment}{// For loop}}
+\DoxyCodeLine{156         \textcolor{comment}{// Step 3}}
+\DoxyCodeLine{157         \textcolor{keywordflow}{for}(j = 0; j < 64; j++)}
+\DoxyCodeLine{158         \{}
+\DoxyCodeLine{159             \textcolor{comment}{// Creating new variables}}
+\DoxyCodeLine{160             T1 = h + SIG1(e) + Ch(e,f,g) + K[j] + W[j];}
+\DoxyCodeLine{161             T2 = SIG0(a) + Maj(a,b,c);}
+\DoxyCodeLine{162             h = g;}
+\DoxyCodeLine{163             g = f;}
+\DoxyCodeLine{164             f = e;}
+\DoxyCodeLine{165             e = d + T1;}
+\DoxyCodeLine{166             d = c;}
+\DoxyCodeLine{167             c = b;}
+\DoxyCodeLine{168             b = a;}
+\DoxyCodeLine{169             a = T1 + T2;}
+\DoxyCodeLine{170         \}}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172         \textcolor{comment}{// Step 4}}
+\DoxyCodeLine{173         HVals.H[0] = a + HVals.H[0];}
+\DoxyCodeLine{174         HVals.H[1] = b + HVals.H[1];}
+\DoxyCodeLine{175         HVals.H[2] = c + HVals.H[2];}
+\DoxyCodeLine{176         HVals.H[3] = d + HVals.H[3];}
+\DoxyCodeLine{177         HVals.H[4] = e + HVals.H[4];}
+\DoxyCodeLine{178         HVals.H[5] = f + HVals.H[5];}
+\DoxyCodeLine{179         HVals.H[6] = g + HVals.H[6];}
+\DoxyCodeLine{180         HVals.H[7] = h + HVals.H[7];}
+\DoxyCodeLine{181     }
+\DoxyCodeLine{182     \}\textcolor{comment}{// end while}}
+\DoxyCodeLine{183     }
+\DoxyCodeLine{184     \textcolor{keywordflow}{return} HVals;}
+\DoxyCodeLine{185 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_h_a256_c_p_p_a9466f56550cb9725c8fd6be92e5c1b77_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_h_a256_c_p_p_a9466f56550cb9725c8fd6be92e5c1b77_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_h_a256_c_p_p_a4f63d4fc8d0f9267cd3d4c70fb61b2f3}} 
 \index{SHA256CPP@{SHA256CPP}!Ch@{Ch}}
 \index{Ch@{Ch}!SHA256CPP@{SHA256CPP}}
-\doxysubsubsection{\texorpdfstring{Ch()}{Ch()}}
+\doxysubsubsection{Ch()}
 {\footnotesize\ttfamily uint32\+\_\+t SHA256\+CPP\+::\+Ch (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x,  }\item[{uint32\+\_\+t}]{y,  }\item[{uint32\+\_\+t}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_s_h_a256_c_p_p_acd60e2902a86486cd8c0c730b22ec34d}\label{class_s_h_a256_c_p_p_acd60e2902a86486cd8c0c730b22ec34d}} 
+
+
+Choose. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+{\em z} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{437 \{}
+\DoxyCodeLine{438     \textcolor{keywordflow}{return} ((x \& y) \string^ (\string~(x)\&z));}
+\DoxyCodeLine{439 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_h_a256_c_p_p_a4f63d4fc8d0f9267cd3d4c70fb61b2f3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_h_a256_c_p_p_acd60e2902a86486cd8c0c730b22ec34d}} 
 \index{SHA256CPP@{SHA256CPP}!endianCheck@{endianCheck}}
 \index{endianCheck@{endianCheck}!SHA256CPP@{SHA256CPP}}
-\doxysubsubsection{\texorpdfstring{endianCheck()}{endianCheck()}}
+\doxysubsubsection{endianCheck()}
 {\footnotesize\ttfamily bool SHA256\+CPP\+::endian\+Check (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_s_h_a256_c_p_p_af6bbbbc8eb2d1d2ce127d9ee41f80d43}\label{class_s_h_a256_c_p_p_af6bbbbc8eb2d1d2ce127d9ee41f80d43}} 
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{35                             \{}
+\DoxyCodeLine{36     \textcolor{keywordtype}{int} num = 1;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keywordflow}{if}(*(\textcolor{keywordtype}{char} *)\&num == 1) \{}
+\DoxyCodeLine{39             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{40     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{41             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{42     \}}
+\DoxyCodeLine{43 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_h_a256_c_p_p_acd60e2902a86486cd8c0c730b22ec34d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_h_a256_c_p_p_af6bbbbc8eb2d1d2ce127d9ee41f80d43}} 
 \index{SHA256CPP@{SHA256CPP}!endianCheckPrint@{endianCheckPrint}}
 \index{endianCheckPrint@{endianCheckPrint}!SHA256CPP@{SHA256CPP}}
-\doxysubsubsection{\texorpdfstring{endianCheckPrint()}{endianCheckPrint()}}
+\doxysubsubsection{endianCheckPrint()}
 {\footnotesize\ttfamily void SHA256\+CPP\+::endian\+Check\+Print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_s_h_a256_c_p_p_af0be644c9e466da786edad451fb16c14}\label{class_s_h_a256_c_p_p_af0be644c9e466da786edad451fb16c14}} 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20                                  \{}
+\DoxyCodeLine{21     \textcolor{keywordtype}{int} num = 1;}
+\DoxyCodeLine{22     \textcolor{keywordflow}{if}(*(\textcolor{keywordtype}{char} *)\&num == 1) \{}
+\DoxyCodeLine{23             printf(\textcolor{stringliteral}{"{}\(\backslash\)n Your system is Little-\/Endian!\(\backslash\)n"{}});}
+\DoxyCodeLine{24     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{25             printf(\textcolor{stringliteral}{"{}Your system is Big-\/Endian!\(\backslash\)n"{}});}
+\DoxyCodeLine{26     \}}
+\DoxyCodeLine{27 \};}
+
+\end{DoxyCode}
+\mbox{\label{class_s_h_a256_c_p_p_af0be644c9e466da786edad451fb16c14}} 
 \index{SHA256CPP@{SHA256CPP}!fillMessageBlock@{fillMessageBlock}}
 \index{fillMessageBlock@{fillMessageBlock}!SHA256CPP@{SHA256CPP}}
-\doxysubsubsection{\texorpdfstring{fillMessageBlock()}{fillMessageBlock()}}
-{\footnotesize\ttfamily int SHA256\+CPP\+::fill\+Message\+Block (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{file,  }\item[{union \mbox{\hyperlink{unionmessage_block}{message\+Block}} $\ast$}]{msg\+Block,  }\item[{enum \mbox{\hyperlink{_s_h_a256_c_p_p_8h_a015eb90e0de9f16e87bd149d4b9ce959}{status}} $\ast$}]{state,  }\item[{uint64\+\_\+t $\ast$}]{num\+Bits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+\doxysubsubsection{fillMessageBlock()}
+{\footnotesize\ttfamily int SHA256\+CPP\+::fill\+Message\+Block (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{file,  }\item[{union \textbf{ message\+Block} $\ast$}]{msg\+Block,  }\item[{enum \textbf{ status} $\ast$}]{state,  }\item[{uint64\+\_\+t $\ast$}]{num\+Bits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_s_h_a256_c_p_p_a76c44344a60f168d02bf8a5888bf02ad}\label{class_s_h_a256_c_p_p_a76c44344a60f168d02bf8a5888bf02ad}} 
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \\
+\hline
+{\em msg\+Block} & \\
+\hline
+{\em state} & \\
+\hline
+{\em num\+Bits} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{196                                                                                                                \{}
+\DoxyCodeLine{197     \textcolor{comment}{// Variables}}
+\DoxyCodeLine{198     uint64\_t numBytes;}
+\DoxyCodeLine{199     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201     \textcolor{comment}{// If we've finished padding and processing all the message blocks, exit}}
+\DoxyCodeLine{202     \textcolor{keywordflow}{if}(*state == FINISH)}
+\DoxyCodeLine{203     \{}
+\DoxyCodeLine{204         \textcolor{comment}{//printf("{}\(\backslash\)n State = FINISH.\(\backslash\)n"{});}}
+\DoxyCodeLine{205         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{206     \}}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208     \textcolor{comment}{// Handle our PAD0 and PAD1 states}}
+\DoxyCodeLine{209     \textcolor{comment}{// Check if we need another block full of padding}}
+\DoxyCodeLine{210     \textcolor{keywordflow}{if}(*state == PAD0 || *state == PAD1)}
+\DoxyCodeLine{211     \{}
+\DoxyCodeLine{212         \textcolor{comment}{//printf("{}\(\backslash\)n State = PAD0 or PAD1.\(\backslash\)n"{});}}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214         \textcolor{comment}{// Set the first 56 bytes to all zero bits}}
+\DoxyCodeLine{215         \textcolor{keywordflow}{for}(i=0; i<56; i++)}
+\DoxyCodeLine{216         \{}
+\DoxyCodeLine{217             msgBlock-\/>e[i] = 0x00;}
+\DoxyCodeLine{218         \}}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220         \textcolor{comment}{// Set the last 64 bits to an integer (should be big endian)}}
+\DoxyCodeLine{221         msgBlock-\/>s[7] = byteSwap64(*numBits);}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223         \textcolor{comment}{// Set the state to finish}}
+\DoxyCodeLine{224         *state = FINISH;}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226         \textcolor{comment}{// If state is PAD1, set the first bit of msgBlock to 1}}
+\DoxyCodeLine{227         \textcolor{keywordflow}{if}(*state == PAD1)}
+\DoxyCodeLine{228         \{}
+\DoxyCodeLine{229             \textcolor{comment}{// 0x80 = 10000000}}
+\DoxyCodeLine{230             msgBlock-\/>e[0] = 0x80;}
+\DoxyCodeLine{231         \}}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233         \textcolor{comment}{// keep the loop in SHA256 going for one more iteration}}
+\DoxyCodeLine{234         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{235     \}}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237     \textcolor{comment}{// Read bytes instead of characters}}
+\DoxyCodeLine{238     \textcolor{comment}{// Read until the end of the file}}
+\DoxyCodeLine{239     numBytes = fread(msgBlock-\/>e, 1, 64, file);}
+\DoxyCodeLine{240     }
+\DoxyCodeLine{241     }
+\DoxyCodeLine{242     \textcolor{comment}{// Keep track of the number of bytes we've read}}
+\DoxyCodeLine{243     *numBits = *numBits + (numBytes * 8);}
+\DoxyCodeLine{244     }
+\DoxyCodeLine{245     \textcolor{comment}{// If theres enough room to finish the padding}}
+\DoxyCodeLine{246     \textcolor{keywordflow}{if}(numBytes < 56)}
+\DoxyCodeLine{247     \{}
+\DoxyCodeLine{248         \textcolor{comment}{// 0x80 = 10000000}}
+\DoxyCodeLine{249         \textcolor{comment}{// Add the one bit, as per the standard before padding with 0s}}
+\DoxyCodeLine{250         msgBlock-\/>e[numBytes] = 0x80;}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252         \textcolor{comment}{// Add 0 bits until the last 64 bits}}
+\DoxyCodeLine{253         \textcolor{keywordflow}{while}(numBytes < 56)}
+\DoxyCodeLine{254         \{}
+\DoxyCodeLine{255             \textcolor{comment}{// Add the index into our block}}
+\DoxyCodeLine{256             numBytes = numBytes +1;}
+\DoxyCodeLine{257             }
+\DoxyCodeLine{258             \textcolor{comment}{// Add enough zeroes so that there are 64 bits left at the end}}
+\DoxyCodeLine{259             msgBlock-\/>e[numBytes] = 0x00;}
+\DoxyCodeLine{260         \}}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262         \textcolor{comment}{// Store the length of the file in bits as a (Should be big endian) unsigned 64 bit int}}
+\DoxyCodeLine{263         msgBlock-\/>s[7] = byteSwap64(*numBits);}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265         \textcolor{comment}{// Change the state of our program}}
+\DoxyCodeLine{266         *state = FINISH;}
+\DoxyCodeLine{267     \}}
+\DoxyCodeLine{268     \textcolor{comment}{// Otherwise, check if we can put some padding into this message block}}
+\DoxyCodeLine{269     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(numBytes < 64)}
+\DoxyCodeLine{270     \{   }
+\DoxyCodeLine{271         \textcolor{comment}{// Set the state to PAD0}}
+\DoxyCodeLine{272         *state = PAD0;}
+\DoxyCodeLine{273         }
+\DoxyCodeLine{274         \textcolor{comment}{// 0x80 = 10000000}}
+\DoxyCodeLine{275         \textcolor{comment}{// Add the one bit into the current message block}}
+\DoxyCodeLine{276         msgBlock-\/>e[numBytes] = 0x80;}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278         \textcolor{comment}{// Pad the rest of the message block with 0 bits}}
+\DoxyCodeLine{279         \textcolor{keywordflow}{while}(numBytes < 64)}
+\DoxyCodeLine{280         \{}
+\DoxyCodeLine{281             numBytes = numBytes + 1;}
+\DoxyCodeLine{282             msgBlock-\/>e[numBytes] = 0x00;}
+\DoxyCodeLine{283         \}}
+\DoxyCodeLine{284     \}}
+\DoxyCodeLine{285     \textcolor{comment}{// Otherwise if we're at the end of the file, need to create a new message block full of padding}}
+\DoxyCodeLine{286     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(feof(file))}
+\DoxyCodeLine{287     \{}
+\DoxyCodeLine{288         \textcolor{comment}{// Set the state to PAD1}}
+\DoxyCodeLine{289         \textcolor{comment}{// We need a message Block full of padding}}
+\DoxyCodeLine{290         *state = PAD1;}
+\DoxyCodeLine{291     \}}
+\DoxyCodeLine{292     }
+\DoxyCodeLine{293     \textcolor{comment}{// Print padding}}
+\DoxyCodeLine{294     \textcolor{comment}{/*}}
+\DoxyCodeLine{295 \textcolor{comment}{    printf("{}\(\backslash\)n-\/-\/-\/ PADDING -\/-\/-\/ \(\backslash\)n"{});}}
+\DoxyCodeLine{296 \textcolor{comment}{    for (int i=0; i<64; i++)}}
+\DoxyCodeLine{297 \textcolor{comment}{    \{}}
+\DoxyCodeLine{298 \textcolor{comment}{       printf("{}\%x"{}, msgBlock.e[i]);}}
+\DoxyCodeLine{299 \textcolor{comment}{    \}}}
+\DoxyCodeLine{300 \textcolor{comment}{    printf("{}\(\backslash\)n"{});}}
+\DoxyCodeLine{301 \textcolor{comment}{    */}}
+\DoxyCodeLine{302     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{303 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_h_a256_c_p_p_af0be644c9e466da786edad451fb16c14_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_h_a256_c_p_p_a76c44344a60f168d02bf8a5888bf02ad}} 
 \index{SHA256CPP@{SHA256CPP}!Maj@{Maj}}
 \index{Maj@{Maj}!SHA256CPP@{SHA256CPP}}
-\doxysubsubsection{\texorpdfstring{Maj()}{Maj()}}
+\doxysubsubsection{Maj()}
 {\footnotesize\ttfamily uint32\+\_\+t SHA256\+CPP\+::\+Maj (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x,  }\item[{uint32\+\_\+t}]{y,  }\item[{uint32\+\_\+t}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_s_h_a256_c_p_p_accf77858eb3d4019f13d1e9c40dc9a73}\label{class_s_h_a256_c_p_p_accf77858eb3d4019f13d1e9c40dc9a73}} 
+
+
+Majority decision. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+{\em z} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{450 \{}
+\DoxyCodeLine{451     \textcolor{keywordflow}{return} ((x \& y) \string^ (x \& z) \string^ (y \& z));}
+\DoxyCodeLine{452 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_h_a256_c_p_p_a76c44344a60f168d02bf8a5888bf02ad_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_h_a256_c_p_p_accf77858eb3d4019f13d1e9c40dc9a73}} 
 \index{SHA256CPP@{SHA256CPP}!printFileContents@{printFileContents}}
 \index{printFileContents@{printFileContents}!SHA256CPP@{SHA256CPP}}
-\doxysubsubsection{\texorpdfstring{printFileContents()}{printFileContents()}}
+\doxysubsubsection{printFileContents()}
 {\footnotesize\ttfamily void SHA256\+CPP\+::print\+File\+Contents (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{file\+For\+Printing }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_s_h_a256_c_p_p_ab1a29784c317f21287def4327f83c342}\label{class_s_h_a256_c_p_p_ab1a29784c317f21287def4327f83c342}} 
+
+\begin{DoxyParams}{Parameters}
+{\em file\+For\+Printing} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{310                                                        \{}
+\DoxyCodeLine{311     \textcolor{comment}{// Variables}}
+\DoxyCodeLine{312     \textcolor{keywordtype}{char} fileContents[MAXCHAR];}
+\DoxyCodeLine{313     \textcolor{keywordtype}{char} fileContentsAsString[MAXCHAR];}
+\DoxyCodeLine{314     \textcolor{keywordtype}{long} fileSize;}
+\DoxyCodeLine{315 }
+\DoxyCodeLine{316     \textcolor{comment}{// First check to make sure the file could be found}}
+\DoxyCodeLine{317     \textcolor{keywordflow}{if} (fileForPrinting == NULL)\{}
+\DoxyCodeLine{318         printf(\textcolor{stringliteral}{"{}\(\backslash\)n Could not open file"{}});}
+\DoxyCodeLine{319     \}}
+\DoxyCodeLine{320     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{321     \{}
+\DoxyCodeLine{322         \textcolor{comment}{// Calculate the size of the file}}
+\DoxyCodeLine{323         fileSize = calcFileSize(fileForPrinting);}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325         printf(\textcolor{stringliteral}{"{}\(\backslash\)n File Size (characters): \%d \(\backslash\)n"{}}, fileSize);}
+\DoxyCodeLine{326 }
+\DoxyCodeLine{327         printf(\textcolor{stringliteral}{"{}\(\backslash\)n ============= File Contents ============= \(\backslash\)n"{}});}
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329         \textcolor{comment}{// While there is still stuff to read from the file}}
+\DoxyCodeLine{330         \textcolor{keywordflow}{while}(fgets(fileContents, MAXCHAR, fileForPrinting) != NULL)}
+\DoxyCodeLine{331         \{}
+\DoxyCodeLine{332             \textcolor{comment}{// Print the contents of the file}}
+\DoxyCodeLine{333             printf(\textcolor{stringliteral}{"{} \%s\(\backslash\)n"{}}, fileContents);}
+\DoxyCodeLine{334         \};}
+\DoxyCodeLine{335         }
+\DoxyCodeLine{336         printf(\textcolor{stringliteral}{"{}\(\backslash\)n ========================================= \(\backslash\)n"{}});}
+\DoxyCodeLine{337 }
+\DoxyCodeLine{338         fclose(fileForPrinting);}
+\DoxyCodeLine{339 }
+\DoxyCodeLine{340         \textcolor{comment}{// Close the file }}
+\DoxyCodeLine{341         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{342     \}}
+\DoxyCodeLine{343 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_h_a256_c_p_p_accf77858eb3d4019f13d1e9c40dc9a73_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_h_a256_c_p_p_ab1a29784c317f21287def4327f83c342}} 
 \index{SHA256CPP@{SHA256CPP}!rotr@{rotr}}
 \index{rotr@{rotr}!SHA256CPP@{SHA256CPP}}
-\doxysubsubsection{\texorpdfstring{rotr()}{rotr()}}
-{\footnotesize\ttfamily uint32\+\_\+t SHA256\+CPP\+::rotr (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{n,  }\item[{uint16\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+\doxysubsubsection{rotr()}
+{\footnotesize\ttfamily uint32\+\_\+t SHA256\+CPP\+::rotr (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_s_h_a256_c_p_p_a0ba361bc6a4f925454dfcd14fcb95f58}\label{class_s_h_a256_c_p_p_a0ba361bc6a4f925454dfcd14fcb95f58}} 
+
+
+Rotate bits right. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em a} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{390 \{}
+\DoxyCodeLine{391     \textcolor{keywordflow}{return} (x >> a) | (x << (32 -\/ a));}
+\DoxyCodeLine{392 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_h_a256_c_p_p_ab1a29784c317f21287def4327f83c342_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_h_a256_c_p_p_a0ba361bc6a4f925454dfcd14fcb95f58}} 
 \index{SHA256CPP@{SHA256CPP}!shr@{shr}}
 \index{shr@{shr}!SHA256CPP@{SHA256CPP}}
-\doxysubsubsection{\texorpdfstring{shr()}{shr()}}
-{\footnotesize\ttfamily uint32\+\_\+t SHA256\+CPP\+::shr (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{n,  }\item[{uint16\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+\doxysubsubsection{shr()}
+{\footnotesize\ttfamily uint32\+\_\+t SHA256\+CPP\+::shr (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_s_h_a256_c_p_p_ac70dfb32d56867b6f8790242c3202c06}\label{class_s_h_a256_c_p_p_ac70dfb32d56867b6f8790242c3202c06}} 
+
+
+Shift bits right. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{402 \{}
+\DoxyCodeLine{403     \textcolor{keywordflow}{return} (x >> b);}
+\DoxyCodeLine{404 \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_h_a256_c_p_p_a0ba361bc6a4f925454dfcd14fcb95f58_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_h_a256_c_p_p_ac70dfb32d56867b6f8790242c3202c06}} 
 \index{SHA256CPP@{SHA256CPP}!sig0@{sig0}}
 \index{sig0@{sig0}!SHA256CPP@{SHA256CPP}}
-\doxysubsubsection{\texorpdfstring{sig0()}{sig0()}}
+\doxysubsubsection{sig0()}
 {\footnotesize\ttfamily uint32\+\_\+t SHA256\+CPP\+::sig0 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_s_h_a256_c_p_p_ae5224ffbd7fb6ab5d05a846e3c7e4bd3}\label{class_s_h_a256_c_p_p_ae5224ffbd7fb6ab5d05a846e3c7e4bd3}} 
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{366 \{}
+\DoxyCodeLine{367     \textcolor{comment}{// Section 3.2}}
+\DoxyCodeLine{368     \textcolor{keywordflow}{return} (rotr(x, 7) \string^ rotr(x, 18) \string^ shr(x, 3));}
+\DoxyCodeLine{369 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{class_s_h_a256_c_p_p_ac70dfb32d56867b6f8790242c3202c06_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_h_a256_c_p_p_ac70dfb32d56867b6f8790242c3202c06_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_h_a256_c_p_p_ae5224ffbd7fb6ab5d05a846e3c7e4bd3}} 
 \index{SHA256CPP@{SHA256CPP}!SIG0@{SIG0}}
 \index{SIG0@{SIG0}!SHA256CPP@{SHA256CPP}}
-\doxysubsubsection{\texorpdfstring{SIG0()}{SIG0()}}
+\doxysubsubsection{SIG0()}
 {\footnotesize\ttfamily uint32\+\_\+t SHA256\+CPP\+::\+SIG0 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_s_h_a256_c_p_p_ad8bbe4f9babe02201d94d63fd65cc832}\label{class_s_h_a256_c_p_p_ad8bbe4f9babe02201d94d63fd65cc832}} 
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{413 \{}
+\DoxyCodeLine{414     \textcolor{keywordflow}{return} (rotr(x, 2) \string^ rotr(x, 13) \string^ rotr(x, 22));}
+\DoxyCodeLine{415 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{class_s_h_a256_c_p_p_ae5224ffbd7fb6ab5d05a846e3c7e4bd3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_h_a256_c_p_p_ae5224ffbd7fb6ab5d05a846e3c7e4bd3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_h_a256_c_p_p_ad8bbe4f9babe02201d94d63fd65cc832}} 
 \index{SHA256CPP@{SHA256CPP}!sig1@{sig1}}
 \index{sig1@{sig1}!SHA256CPP@{SHA256CPP}}
-\doxysubsubsection{\texorpdfstring{sig1()}{sig1()}}
+\doxysubsubsection{sig1()}
 {\footnotesize\ttfamily uint32\+\_\+t SHA256\+CPP\+::sig1 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{class_s_h_a256_c_p_p_ad8ea0d3bc89a2622dd230b9fb42c8463}\label{class_s_h_a256_c_p_p_ad8ea0d3bc89a2622dd230b9fb42c8463}} 
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{378 \{}
+\DoxyCodeLine{379     \textcolor{keywordflow}{return} (rotr(x, 17) \string^ rotr(x, 19) \string^ shr(x, 10));}
+\DoxyCodeLine{380 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{class_s_h_a256_c_p_p_ad8bbe4f9babe02201d94d63fd65cc832_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_h_a256_c_p_p_ad8bbe4f9babe02201d94d63fd65cc832_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_s_h_a256_c_p_p_ad8ea0d3bc89a2622dd230b9fb42c8463}} 
 \index{SHA256CPP@{SHA256CPP}!SIG1@{SIG1}}
 \index{SIG1@{SIG1}!SHA256CPP@{SHA256CPP}}
-\doxysubsubsection{\texorpdfstring{SIG1()}{SIG1()}}
+\doxysubsubsection{SIG1()}
 {\footnotesize\ttfamily uint32\+\_\+t SHA256\+CPP\+::\+SIG1 (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t 
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{424 \{}
+\DoxyCodeLine{425     \textcolor{keywordflow}{return} (rotr(x, 6) \string^ rotr(x, 11) \string^ rotr(x, 25));}
+\DoxyCodeLine{426 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{class_s_h_a256_c_p_p_ad8ea0d3bc89a2622dd230b9fb42c8463_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_h_a256_c_p_p_ad8ea0d3bc89a2622dd230b9fb42c8463_icgraph}
+\end{center}
+\end{figure}

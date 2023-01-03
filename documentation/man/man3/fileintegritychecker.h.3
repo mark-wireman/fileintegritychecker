@@ -1,66 +1,53 @@
-.TH "headers/fileintegritychecker.h" 3 "Sat Dec 10 2022" "fileintegritychecker" \" -*- nroff -*-
+.TH "C:/Users/mark_/source/repos/fileintegritychecker/headers/fileintegritychecker.h" 3 "Sun Jan 1 2023" "Version 1.0" "File Integrity Checker" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-headers/fileintegritychecker.h
+C:/Users/mark_/source/repos/fileintegritychecker/headers/fileintegritychecker.h
 .SH SYNOPSIS
 .br
 .PP
-\fC#include <stdio\&.h>\fP
+\fC#include <iostream>\fP
+.br
+\fC#include <cstdint>\fP
+.br
+\fC#include <fstream>\fP
+.br
+\fC#include <filesystem>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <cstring>\fP
+.br
+\fC#include <thread>\fP
+.br
+\fC#include <vector>\fP
 .br
 \fC#include <dirent\&.h>\fP
 .br
-\fC#include <sys/stat\&.h>\fP
-.br
 \fC#include <sys/types\&.h>\fP
 .br
-\fC#include <stdint\&.h>\fP
+\fC#include <future>\fP
 .br
-\fC#include <time\&.h>\fP
+\fC#include <chrono>\fP
 .br
-\fC#include <stdlib\&.h>\fP
+\fC#include 'SHA256CPP\&.h'\fP
 .br
-\fC#include <sys/sysmacros\&.h>\fP
+\fC#include 'Menu\&.h'\fP
 .br
-\fC#include 'SHA256\&.h'\fP
+\fC#include 'mysqlcontroller\&.h'\fP
+.br
+\fC#include 'sqlite3controller\&.h'\fP
+.br
+\fC#include 'SQLiteHelper\&.h'\fP
 .br
 
-.SS "Functions"
+.SS "Classes"
 
 .in +1c
 .ti -1c
-.RI "int \fBisDir\fP (char *filename)"
-.br
-.ti -1c
-.RI "int \fBmain\fP (int argc, char *argv[])"
-.br
-.ti -1c
-.RI "void \fBhashfiles\fP (char *startdirectory)"
-.br
-.ti -1c
-.RI "int \fBcheckifrootorparent\fP (char *dirname)"
-.br
-.ti -1c
-.RI "int \fBcheckifrootdir\fP (char *dirname)"
-.br
-.ti -1c
-.RI "int \fBcheckifparentdir\fP (char *dirname)"
+.RI "class \fBfileintegritychecker\fP"
 .br
 .in -1c
-.SH "Function Documentation"
-.PP 
-.SS "int checkifparentdir (char * dirname)"
-
-.SS "int checkifrootdir (char * dirname)"
-
-.SS "int checkifrootorparent (char * dirname)"
-
-.SS "void hashfiles (char * startdirectory)"
-
-.SS "int isDir (char * filename)"
-
-.SS "int main (int argc, char * argv[])"
-
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for fileintegritychecker from the source code\&.
+Generated automatically by Doxygen for File Integrity Checker from the source code\&.

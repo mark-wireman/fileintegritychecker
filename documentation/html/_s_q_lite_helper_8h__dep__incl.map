@@ -1,6 +1,12 @@
 <map id="C:/Users/mark_/source/repos/fileintegritychecker/headers/SQLiteHelper.h" name="C:/Users/mark_/source/repos/fileintegritychecker/headers/SQLiteHelper.h">
-<area shape="rect" id="node1" title=" " alt="" coords="28,5,199,60"/>
-<area shape="rect" id="node2" href="$fileintegritychecker_8h.html" title=" " alt="" coords="16,211,211,265"/>
-<area shape="rect" id="node3" href="$mysqlcontroller_8h.html" title=" " alt="" coords="26,108,201,163"/>
-<area shape="rect" id="node4" href="$sqlite3controller_8h.html" title=" " alt="" coords="226,108,404,163"/>
+<area shape="rect" id="node1" title=" " alt="" coords="460,5,631,60"/>
+<area shape="rect" id="node2" href="$fileintegritychecker_8h.html" title=" " alt="" coords="408,211,603,265"/>
+<area shape="rect" id="node5" href="$mysqlcontroller_8h.html" title=" " alt="" coords="226,108,401,163"/>
+<area shape="rect" id="node8" href="$sqlite3controller_8h.html" title=" " alt="" coords="520,108,699,163"/>
+<area shape="rect" id="node10" href="$_s_q_lite_helper_8cpp.html" title=" " alt="" coords="723,108,893,163"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title=" " alt="" coords="320,313,491,368"/>
+<area shape="rect" id="node4" href="$fileintegritychecker_8cpp.html" title=" " alt="" coords="515,313,696,368"/>
+<area shape="rect" id="node6" href="$mysqlcontroller_8cpp.html" title=" " alt="" coords="5,211,176,265"/>
+<area shape="rect" id="node7" href="$testmysqlcontroller_8cpp.html" title=" " alt="" coords="201,211,383,265"/>
+<area shape="rect" id="node9" href="$sqlite3controller_8cpp.html" title=" " alt="" coords="627,211,797,265"/>
 </map>

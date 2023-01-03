@@ -1,0 +1,85 @@
+\doxysection{C\+:/\+Users/mark\+\_\+/source/repos/fileintegritychecker/main.cpp File Reference}
+\label{main_8cpp}\index{C:/Users/mark\_/source/repos/fileintegritychecker/main.cpp@{C:/Users/mark\_/source/repos/fileintegritychecker/main.cpp}}
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include \char`\"{}headers/\+Menu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}headers/fileintegritychecker.\+h\char`\"{}}\newline
+Include dependency graph for main.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ main} (int argc, char $\ast$argv[$\,$])
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{main()}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv[$\,$] }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8     time\_t start, end;}
+\DoxyCodeLine{9     \textcolor{keywordtype}{double} time\_taken = 0.0;}
+\DoxyCodeLine{10     \textcolor{keywordtype}{int} menuresult = 0;}
+\DoxyCodeLine{11     fileintegritychecker* fic; }
+\DoxyCodeLine{12     Menu* m;}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14     cout << \textcolor{stringliteral}{"{}Starting processing...."{}} << endl;}
+\DoxyCodeLine{15     time(\&start);}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     m = \textcolor{keyword}{new} Menu();}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keywordflow}{if} (argc >= 3) \{}
+\DoxyCodeLine{20         menuresult = m-\/>ParseArguments(argc, argv);}
+\DoxyCodeLine{21         \textcolor{keywordflow}{if} (menuresult == -\/1) \{}
+\DoxyCodeLine{22             m-\/>PrintMenu();}
+\DoxyCodeLine{23             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{24         \}}
+\DoxyCodeLine{25     \}}
+\DoxyCodeLine{26     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{27         m-\/>PrintMenu();}
+\DoxyCodeLine{28         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{29     \}}
+\DoxyCodeLine{30     }
+\DoxyCodeLine{31     fic = \textcolor{keyword}{new} fileintegritychecker();}
+\DoxyCodeLine{32     fic-\/>setParamVals(m);}
+\DoxyCodeLine{33     fic-\/>setDatabaseConnections();}
+\DoxyCodeLine{34     fic-\/>processFiles();}
+\DoxyCodeLine{35     fic-\/>closeDatabaseConnections();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     time(\&end);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{comment}{// Calculating total time taken by the program.}}
+\DoxyCodeLine{40     time\_taken = double(end -\/ start);}
+\DoxyCodeLine{41     \textcolor{keywordtype}{int} n = time\_taken;}
+\DoxyCodeLine{42     n = n \% (24 * 3600);}
+\DoxyCodeLine{43     \textcolor{keywordtype}{int} hour = n / 3600;}
+\DoxyCodeLine{44     n \%= 3600;}
+\DoxyCodeLine{45     \textcolor{keywordtype}{int} minutes = n / 60;}
+\DoxyCodeLine{46     n \%= 60;}
+\DoxyCodeLine{47     \textcolor{keywordtype}{int} seconds = n;}
+\DoxyCodeLine{48     cout << \textcolor{stringliteral}{"{}Time taken is: "{}} << hour << \textcolor{stringliteral}{"{} "{}} << \textcolor{stringliteral}{"{}hours "{}} << minutes << \textcolor{stringliteral}{"{} "{}} << \textcolor{stringliteral}{"{}minutes "{}} << seconds << \textcolor{stringliteral}{"{} "{}} << \textcolor{stringliteral}{"{}seconds "{}} << endl;}
+\DoxyCodeLine{49     cout << \textcolor{stringliteral}{"{}Total directories processed: "{}} << fic-\/>numberofdirectories << \textcolor{stringliteral}{"{} ."{}} << endl;}
+\DoxyCodeLine{50     cout << \textcolor{stringliteral}{"{}Total files processed: "{}} << fic-\/>numberoffiles << \textcolor{stringliteral}{"{} ."{}} << endl;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{53 \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}

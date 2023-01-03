@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_main_8cpp" xml:lang="en-US">
+<title>C:/Users/mark_/source/repos/fileintegritychecker/main.cpp File Reference</title>
+<indexterm><primary>C:/Users/mark_/source/repos/fileintegritychecker/main.cpp</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &lt;cstdio&gt;<?linebreak?>#include &quot;headers/Menu.h&quot;<?linebreak?>#include &quot;headers/fileintegritychecker.h&quot;<?linebreak?></programlisting>Include dependency graph for main.cpp:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8cpp__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97">main</link> (int argc, char *argv[])</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97"/><section>
+    <title>main()</title>
+<indexterm><primary>main</primary><secondary>main.cpp</secondary></indexterm>
+<indexterm><primary>main.cpp</primary><secondary>main</secondary></indexterm>
+<para><computeroutput>int main (int argc, char * argv[])</computeroutput></para><programlisting linenumbering="unnumbered">6 {
+7 
+8 &#32;&#32;&#32;&#32;time_t&#32;start,&#32;end;
+9 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;time_taken&#32;=&#32;0.0;
+10 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;menuresult&#32;=&#32;0;
+11 &#32;&#32;&#32;&#32;<link linkend="_classfileintegritychecker">fileintegritychecker</link>*&#32;fic;&#32;
+12 &#32;&#32;&#32;&#32;<link linkend="_class_menu">Menu</link>*&#32;m;
+13 
+14 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Starting&#32;processing....&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+15 &#32;&#32;&#32;&#32;time(&amp;start);
+16 
+17 &#32;&#32;&#32;&#32;m&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_class_menu">Menu</link>();
+18 
+19 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(argc&#32;&gt;=&#32;3)&#32;{
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;menuresult&#32;=&#32;m-&gt;<link linkend="_class_menu_1a50f39bd5a994cb64421bfacbf6aed5e8">ParseArguments</link>(argc,&#32;argv);
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(menuresult&#32;==&#32;-1)&#32;{
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m-&gt;<link linkend="_class_menu_1acbe5ec7e6202dec08ca26f4898df8040">PrintMenu</link>();
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+25 &#32;&#32;&#32;&#32;}
+26 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;{
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;m-&gt;<link linkend="_class_menu_1acbe5ec7e6202dec08ca26f4898df8040">PrintMenu</link>();
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+29 &#32;&#32;&#32;&#32;}
+30 &#32;&#32;&#32;&#32;
+31 &#32;&#32;&#32;&#32;fic&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;<link linkend="_classfileintegritychecker">fileintegritychecker</link>();
+32 &#32;&#32;&#32;&#32;fic-&gt;<link linkend="_classfileintegritychecker_1af19f4b1b0f37b3645f0aa27ce201538d">setParamVals</link>(m);
+33 &#32;&#32;&#32;&#32;fic-&gt;<link linkend="_classfileintegritychecker_1ad83727702919ed588145f7e9f9f183d7">setDatabaseConnections</link>();
+34 &#32;&#32;&#32;&#32;fic-&gt;<link linkend="_classfileintegritychecker_1ab064f5cb87b4a7d8c557a32d764a131a">processFiles</link>();
+35 &#32;&#32;&#32;&#32;fic-&gt;<link linkend="_classfileintegritychecker_1aeb559134d644a9263fc9ab8a25ecf333">closeDatabaseConnections</link>();
+36 
+37 &#32;&#32;&#32;&#32;time(&amp;end);
+38 
+39 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Calculating&#32;total&#32;time&#32;taken&#32;by&#32;the&#32;program.</emphasis>
+40 &#32;&#32;&#32;&#32;time_taken&#32;=&#32;double(end&#32;-&#32;start);
+41 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;n&#32;=&#32;time_taken;
+42 &#32;&#32;&#32;&#32;n&#32;=&#32;n&#32;%&#32;(24&#32;*&#32;3600);
+43 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;hour&#32;=&#32;n&#32;/&#32;3600;
+44 &#32;&#32;&#32;&#32;n&#32;%=&#32;3600;
+45 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;minutes&#32;=&#32;n&#32;/&#32;60;
+46 &#32;&#32;&#32;&#32;n&#32;%=&#32;60;
+47 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;seconds&#32;=&#32;n;
+48 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Time&#32;taken&#32;is:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;hour&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;hours&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;minutes&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;minutes&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;seconds&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;seconds&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+49 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Total&#32;directories&#32;processed:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;fic-&gt;<link linkend="_classfileintegritychecker_1a084e0e1a26d35c85d16ecfccc84ee031">numberofdirectories</link>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+50 &#32;&#32;&#32;&#32;cout&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;Total&#32;files&#32;processed:&#32;&quot;</emphasis>&#32;&lt;&lt;&#32;fic-&gt;<link linkend="_classfileintegritychecker_1a8cc50a2938d11837ec1ee0250e73fa6d">numberoffiles</link>&#32;&lt;&lt;&#32;<emphasis role="stringliteral">&quot;&#32;.&quot;</emphasis>&#32;&lt;&lt;&#32;endl;
+51 
+52 &#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;0;
+53 }
+</programlisting>Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+</section>

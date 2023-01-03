@@ -1,0 +1,341 @@
+.TH "fileintegritychecker" 3 "Sun Jan 1 2023" "Version 1.0" "File Integrity Checker" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+fileintegritychecker
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <fileintegritychecker\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBfileintegritychecker\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~fileintegritychecker\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetParamVals\fP (\fBMenu\fP *m)"
+.br
+.RI "Set the Param Vals object\&. "
+.ti -1c
+.RI "void \fBsetDatabaseConnections\fP ()"
+.br
+.ti -1c
+.RI "void \fBprocessFiles\fP ()"
+.br
+.ti -1c
+.RI "void \fBcloseDatabaseConnections\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "long int \fBnumberofdirectories\fP = 0"
+.br
+.ti -1c
+.RI "long int \fBnumberoffiles\fP = 0"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBget_directories_files\fP (const string &s, int level=0)"
+.br
+.RI "Get the directories files object\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "char * \fBparentdir\fP"
+.br
+.ti -1c
+.RI "char * \fBdbasehost\fP"
+.br
+.ti -1c
+.RI "char * \fBdbase\fP"
+.br
+.ti -1c
+.RI "char * \fBuname\fP"
+.br
+.ti -1c
+.RI "char * \fBpwd\fP"
+.br
+.ti -1c
+.RI "char * \fBportno\fP"
+.br
+.ti -1c
+.RI "char * \fBmname\fP"
+.br
+.ti -1c
+.RI "char * \fBdbasetype\fP"
+.br
+.ti -1c
+.RI "char * \fBdbasefilename\fP"
+.br
+.ti -1c
+.RI "int \fBusehashvals\fP = 0"
+.br
+.ti -1c
+.RI "long int \fBnumberofnewdirectories\fP = 0"
+.br
+.ti -1c
+.RI "long int \fBnumberofverifieddirectories\fP = 0"
+.br
+.ti -1c
+.RI "bool \fBverbose_output\fP = false"
+.br
+.ti -1c
+.RI "\fBmysqlcontroller\fP * \fBmysqlctl\fP"
+.br
+.ti -1c
+.RI "\fBsqlite3controller\fP * \fBsqlitectl\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "fileintegritychecker::fileintegritychecker ()"
+
+.PP
+.nf
+205 {}
+.fi
+.SS "fileintegritychecker::~fileintegritychecker ()\fC [virtual]\fP"
+
+.PP
+.nf
+207 {}
+.fi
+.SH "Member Function Documentation"
+.PP 
+.SS "void fileintegritychecker::closeDatabaseConnections ()"
+
+.PP
+.nf
+176                                                     {
+177     if (strcmp(this->dbasetype, "mysql") == 0) {
+178         this->mysqlctl->closedb();
+179     }
+180 
+181     if (strcmp(this->dbasetype, "sqlite") == 0) {
+182         this->sqlitectl->closedb();
+183     }
+184 }
+.fi
+.SS "void fileintegritychecker::get_directories_files (const string & s, int level = \fC0\fP)\fC [private]\fP"
+
+.PP
+Get the directories files object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIs\fP 
+.br
+\fIlevel\fP 
+.RE
+.PP
+
+.PP
+.nf
+48                                                                            {
+49     
+50     
+51     auto error_code = std::error_code();
+52     for(const auto& entry : fs::directory_iterator(s,fs::directory_options::skip_permission_denied, error_code)) {
+53         //cout << "\&.";
+54         if(!error_code) {
+55             if(!entry\&.is_symlink() && entry\&.is_directory()){
+56                 const auto dirname = "/" + entry\&.path()\&.relative_path()\&.string();
+57                 cout << "Dir: " << dirname << endl;
+58                 if(strcmp(this->dbasetype,"mysql") == 0) {
+59                     auto dirsaveasync = std::async(std::launch::async, &mysqlcontroller::saveDirectoryName_async, this->mysqlctl, dirname);
+60                     dirsaveasync\&.wait();
+61                 }
+62                 if(strcmp(this->dbasetype,"sqlite") == 0) {
+63                     this->sqlitectl->save_dir_info(dirname\&.c_str());
+64                 }    
+65                 numberofdirectories++;
+66                 this->get_directories_files(dirname, level+1);
+67 
+68             } else if (entry\&.is_regular_file()) {
+69                 
+70                 const auto dname = s;
+71                 const auto filename = "/" +  entry\&.path()\&.relative_path()\&.string();
+72                 const auto ftime = entry\&.last_write_time();
+73                 std::time_t ctime = to_time_t(ftime);
+74                 char* time = to_char_time_t(ctime);
+75 
+76                 uintmax_t fsize = entry\&.file_size();
+77                 numberoffiles++;
+78                 cout << "\tFile: " << filename << endl;
+79 
+80                 if (usehashvals == 0) {
+81                     if (strcmp(this->dbasetype, "sqlite") == 0) {
+82                         this->sqlitectl->save_file_info(filename\&.c_str(),dname\&.c_str(), time, fsize);
+83                     }
+84                 }
+85                 else {
+86 
+87                     FILE* file = fopen(filename\&.c_str(), "r");
+88                     
+89                     if (file == NULL) {
+90                         printf("\tUnable to open file\&. Moving on\&.\&.\&.\n");
+91                     }
+92                     else {
+93                         SHA256CPP* sha256_obj = new SHA256CPP();
+94                         HashValues hashVals;
+95 
+96                         hashVals = sha256_obj->calculateHash(file);
+97 
+98                         fclose(file);
+99                         delete sha256_obj;
+100 
+101                         string hashedvals = to_string(hashVals\&.H[0]);
+102                         hashedvals += to_string(hashVals\&.H[1]);
+103                         hashedvals += to_string(hashVals\&.H[2]);
+104                         hashedvals += to_string(hashVals\&.H[3]);
+105                         hashedvals += to_string(hashVals\&.H[4]);
+106                         hashedvals += to_string(hashVals\&.H[5]);
+107                         hashedvals += to_string(hashVals\&.H[6]);
+108                         hashedvals += to_string(hashVals\&.H[7]);
+109 
+110                         if (strcmp(this->dbasetype, "mysql") == 0) {
+111                             auto filesaveasync = std::async(std::launch::async, &mysqlcontroller::saveFileInfo_async, this->mysqlctl, dname, entry\&.path()\&.filename()\&.string(), hashedvals);
+112                             filesaveasync\&.wait();
+113                         }
+114 
+115                         if (strcmp(this->dbasetype, "sqlite") == 0) {
+116                             //fprintf(stderr, "Saving hashedvalue of %s", hashedvals\&.c_str());
+117                             this->sqlitectl->save_file_info(filename\&.c_str(), dname\&.c_str(), time, fsize, (char*)hashedvals\&.c_str());
+118                         }
+119 
+120                     }
+121                 }
+122             } 
+123             else {
+124                 //Do nothing
+125                 const auto unknown = "/" +  entry\&.path()\&.relative_path()\&.string();
+126                 cout << "\tUnknown: " << unknown << endl;
+127             }
+128         } else {
+129             cout << "# ERR: DirectoryIterator in " << __FILE__;
+130             cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
+131             cout << "# ERROR Code: " << error_code\&.category()\&.name();
+132             cout << " ERROR Details: " << error_code\&.category()\&.message(error_code\&.value()) << endl;
+133             cout << " ERROR accessing: " << entry\&.path()\&.relative_path()\&.string() << endl;
+134         }    
+135     }
+136     
+137 }
+.fi
+.SS "void fileintegritychecker::processFiles ()"
+
+.PP
+.nf
+186                                         {
+187     string pDir = this->parentdir;
+188     cout << pDir << endl;
+189 
+190     if (strcmp(this->dbasetype, "mysql") == 0) {
+191         auto dirsaveasync = std::async(std::launch::async, &mysqlcontroller::saveDirectoryName_async, this->mysqlctl, pDir\&.c_str());
+192         dirsaveasync\&.wait();
+193     }
+194     if (strcmp(this->dbasetype, "sqlite") == 0) {
+195         this->sqlitectl->save_dir_info(pDir\&.c_str());
+196     }
+197 
+198     numberofdirectories++;
+199     
+200     this->get_directories_files(pDir);
+201 
+202     
+203 }
+.fi
+.SS "void fileintegritychecker::setDatabaseConnections ()"
+
+.PP
+.nf
+164                                                   {
+165     if (strcmp(this->dbasetype, "mysql") == 0) {
+166         this->mysqlctl = new mysqlcontroller(this->dbasehost, "fileintegritychecker", this->uname, this->pwd, 3306, this->mname);
+167         this->mysqlctl->initdb();
+168     }
+169 
+170     if (strcmp(this->dbasetype, "sqlite") == 0) {
+171         this->sqlitectl = new sqlite3controller(this->dbasefilename, this->mname);
+172         this->sqlitectl->initdb();
+173     }
+174 }
+.fi
+.SS "void fileintegritychecker::setParamVals (\fBMenu\fP * _menu)"
+
+.PP
+Set the Param Vals object\&. 
+.PP
+.nf
+143                                                    {
+144    this->parentdir = _menu->getPARENTDIR();
+145    this->dbasetype = _menu->getDBASETYPE();
+146    this->mname = _menu->getMACHINENAME();
+147 
+148    if(strcmp(this->dbasetype,"mysql") == 0) {
+149        this->dbasehost = _menu->getDATABASEHOSTNAME();
+150        this->uname = _menu->getUSERNAME();
+151        this->pwd = _menu->getPASSWORD();
+152        this->portno = _menu->getPORT();
+153    }
+154    
+155    if(strcmp(this->dbasetype,"sqlite") == 0) {
+156        this->dbasefilename = _menu->getDBASEFILENAME();
+157    }
+158 
+159    this->usehashvals = _menu->getPROCESSHASHVALS();
+160 
+161 }
+.fi
+.SH "Member Data Documentation"
+.PP 
+.SS "char* fileintegritychecker::dbase\fC [private]\fP"
+
+.SS "char* fileintegritychecker::dbasefilename\fC [private]\fP"
+
+.SS "char* fileintegritychecker::dbasehost\fC [private]\fP"
+
+.SS "char* fileintegritychecker::dbasetype\fC [private]\fP"
+
+.SS "char* fileintegritychecker::mname\fC [private]\fP"
+
+.SS "\fBmysqlcontroller\fP* fileintegritychecker::mysqlctl\fC [private]\fP"
+
+.SS "long int fileintegritychecker::numberofdirectories = 0"
+
+.SS "long int fileintegritychecker::numberoffiles = 0"
+
+.SS "long int fileintegritychecker::numberofnewdirectories = 0\fC [private]\fP"
+
+.SS "long int fileintegritychecker::numberofverifieddirectories = 0\fC [private]\fP"
+
+.SS "char* fileintegritychecker::parentdir\fC [private]\fP"
+
+.SS "char* fileintegritychecker::portno\fC [private]\fP"
+
+.SS "char* fileintegritychecker::pwd\fC [private]\fP"
+
+.SS "\fBsqlite3controller\fP* fileintegritychecker::sqlitectl\fC [private]\fP"
+
+.SS "char* fileintegritychecker::uname\fC [private]\fP"
+
+.SS "int fileintegritychecker::usehashvals = 0\fC [private]\fP"
+
+.SS "bool fileintegritychecker::verbose_output = false\fC [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for File Integrity Checker from the source code\&.

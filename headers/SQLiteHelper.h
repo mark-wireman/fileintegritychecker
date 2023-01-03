@@ -1,3 +1,7 @@
+/**
+* @file SQLiteHelper.h
+*/
+
 #ifndef HEADERS_SQLITEHELPER_H_
 #define HEADERS_SQLITEHELPER_H_
 
@@ -96,31 +100,33 @@ public:
     static int getDirectoryId(sqlite3* db, char* dir_name, char* machine_name);
     
     /**
-     * @brief 
-     * @param db 
-     * @return 
+     * @brief Returns the id of the file if the file exists in the files table.
+     * @param db The sqlite3 database object.
+     * @return 0 if file does not exist in files table, otherwise the file id will be returned.
     */
     static int getFileId(sqlite3* db);
     
     /**
-     * @brief 
-     * @param db 
-     * @param file_name 
-     * @param dir_id 
-     * @return 
+     * @brief Returns the id of the file if the file exists in the files table.
+     * <div><b>NOTE:</b> Will call the getFileId(sqlite3* db) method after setting the directory id and file name at the class level.</div>
+     * @param db sqlite3 database object
+     * @param file_name Absolute name of the file
+     * @param dir_id Id of the Directory where the file is located
+     * @return 0 if file does not exist in files table, otherwise the file id will be returned.
     */
     static int getFileId(sqlite3* db, char* file_name, int dir_id);
 
     /**
-     * @brief 
-     * @param db 
-     * @param dir_id 
-     * @param file_name 
-     * @param file_size 
-     * @param date_modified 
+     * @brief Entry point to saving the file information.
+     * <div></div>
+     * @param db sqlite3 database object.
+     * @param dir_id Id of the directory from the directories table.
+     * @param file_name Absolute name of the file.
+     * @param file_size File size of the file in bytes. Default value is 0.
+     * @param date_modified Date the file was last modified. Default value is NULL.
      * @param hashed_val 
-     * @param isNew 
-     * @param attr_to_update 
+     * @param isNew Determines if the file information being added is for a new file or an existing file. Default value is true. 
+     * @param attr_to_update The attribute to update if the isNew = false. Default value is NONE.
      * @return 
      * @see saveNewFileInfo()
      * @see saveExistingFileInfo()

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['uname_0',['uname',['../classfileintegritychecker.html#abb322369f0338dafa1c8f92b95cda730',1,'fileintegritychecker::uname()'],['../class_menu.html#abfa524748149194d31f3a760ab8765fd',1,'Menu::uname()']]],
-  ['usehashvals_1',['usehashvals',['../classfileintegritychecker.html#a754ca74fc0280d60adcf7099e7913813',1,'fileintegritychecker']]]
+  ['res_0',['res',['../mysqlcontroller_8cpp.html#aafbbfadf03a197580df9925af46a548e',1,'mysqlcontroller.cpp']]]
 ];

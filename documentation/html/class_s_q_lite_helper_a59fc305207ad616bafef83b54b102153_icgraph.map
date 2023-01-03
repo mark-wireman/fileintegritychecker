@@ -1,0 +1,10 @@
+<map id="SQLiteHelper::getFileId" name="SQLiteHelper::getFileId">
+<area shape="rect" id="node1" title="Returns the id of the file if the file exists in the files table." alt="" coords="1096,56,1252,81"/>
+<area shape="rect" id="node2" href="$class_s_q_lite_helper.html#ae7ff51ba0b3f52d1725b68842168e65f" title="Returns the id of the file if the file exists in the files table." alt="" coords="880,5,1036,31"/>
+<area shape="rect" id="node3" href="$classsqlite3controller.html#ad24d1eff1c881ec79c608d4fbd5207b3" title="Save the details of the file." alt="" coords="476,75,597,115"/>
+<area shape="rect" id="node7" href="$class_s_q_lite_helper.html#af16a7fbd53573503bfa21c97eea53efb" title=" " alt="" coords="868,106,1048,146"/>
+<area shape="rect" id="node4" href="$classfileintegritychecker.html#af2fb66e054e9f613677746f6f3dde0a3" title="Get the directories files object." alt="" coords="283,75,428,115"/>
+<area shape="rect" id="node5" href="$classfileintegritychecker.html#ab064f5cb87b4a7d8c557a32d764a131a" title=" " alt="" coords="104,75,235,115"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,83,56,108"/>
+<area shape="rect" id="node8" href="$class_s_q_lite_helper.html#a10508781dbcc903c632e83c1527da36f" title="Entry point to saving the file information." alt="" coords="645,109,820,135"/>
+</map>

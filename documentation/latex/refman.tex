@@ -116,24 +116,6 @@
   \newunicodechar{²}{${}^{2}$}% Superscript two
   \newunicodechar{³}{${}^{3}$}% Superscript three
   % Hyperlinks
-    % Hyperlinks (required, but should be loaded last)
-    \ifpdf
-      \usepackage[pdftex,pagebackref=true]{hyperref}
-    \else
-      \ifxetex
-        \usepackage[pagebackref=true]{hyperref}
-      \else
-        \usepackage[ps2pdf,pagebackref=true]{hyperref}
-      \fi
-    \fi
-    \hypersetup{%
-      colorlinks=true,%
-      linkcolor=blue,%
-      citecolor=blue,%
-      unicode,%
-      pdftitle={File Integrity Checker},%
-      pdfsubject={}%
-    }
   % Custom commands used by the header
   % Custom commands
   \newcommand{\clearemptydoublepage}{%
@@ -152,12 +134,6 @@
 \begin{document}
   \raggedbottom
   % Titlepage & ToC
-    % To avoid duplicate page anchors due to reuse of same numbers for
-    % the index (be it as roman numbers)
-    \hypersetup{pageanchor=false,
-                bookmarksnumbered=true,
-                pdfencoding=unicode
-               }
   \pagenumbering{alph}
   \begin{titlepage}
   \vspace*{7cm}
@@ -173,8 +149,6 @@
   \tableofcontents
   \clearemptydoublepage
   \pagenumbering{arabic}
-  % re-enable anchors again
-  \hypersetup{pageanchor=true}
 %--- Begin generated contents ---
 \chapter{Class Index}
 \input{annotated}
@@ -204,6 +178,14 @@
 \input{_s_q_lite_helper_8h_source}
 \input{userdefinederrors_8h}
 \input{userdefinederrors_8h_source}
+\input{main_8cpp}
+\input{fileintegritychecker_8cpp}
+\input{_menu_8cpp}
+\input{mysqlcontroller_8cpp}
+\input{_s_h_a256_c_p_p_8cpp}
+\input{sqlite3controller_8cpp}
+\input{_s_q_lite_helper_8cpp}
+\input{testmysqlcontroller_8cpp}
 %--- End generated contents ---
 % Index
   \backmatter
