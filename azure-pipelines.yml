@@ -12,6 +12,7 @@ pool:
 steps:
 - script: |
     sudo apt install default-libmysqlclient-dev
+    sudo apt install libmysqlcppconn-dev
   displayName: 'Install mysqlclient dev'
 - script: |
     sudo apt install sqlite3
