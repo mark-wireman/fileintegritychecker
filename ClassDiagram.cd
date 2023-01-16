@@ -31,30 +31,35 @@
   <Class Name="sqlite3controller">
     <Position X="10" Y="4.75" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>AAEgAAAAAIAAAAAAAAAAAQAYADAAAAAABCgAQAIEAAE=</HashCode>
+      <HashCode>AAAgAAAAAIAAAAAAAAAAAQAYACAAAAAABCgAAAIEAAE=</HashCode>
       <FileName>headers\sqlite3controller.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SQLiteHelper">
-    <Position X="3.75" Y="6.25" Width="2.5" />
+  <Class Name="SQLHelper">
+    <Position X="6.75" Y="6.25" Width="2.75" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Enum Name="SQLiteHelper::AttributeToCheck" Collapsed="true">
+      <Enum Name="SQLHelper::TABLE_TO_CREATE">
         <TypeIdentifier>
-          <NewMemberFileName>headers\SQLiteHelper.h</NewMemberFileName>
+          <NewMemberFileName>headers\SQLHelper.h</NewMemberFileName>
         </TypeIdentifier>
       </Enum>
-      <Enum Name="SQLiteHelper::TableToCheck" Collapsed="true">
+      <Enum Name="SQLHelper::AttributeToCheck">
         <TypeIdentifier>
-          <NewMemberFileName>headers\SQLiteHelper.h</NewMemberFileName>
+          <NewMemberFileName>headers\SQLHelper.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="SQLHelper::TableToCheck">
+        <TypeIdentifier>
+          <NewMemberFileName>headers\SQLHelper.h</NewMemberFileName>
         </TypeIdentifier>
       </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>BBBAAAKAAAAAAEAAAAAAAAAAAwAAgAAAIAAAAAAIAAA=</HashCode>
-      <FileName>headers\SQLiteHelper.h</FileName>
+      <HashCode>BBBAAAKAAgACBOAABAAAAACAAwAAgAAAIAAAAAAIAAA=</HashCode>
+      <FileName>headers\SQLHelper.h</FileName>
     </TypeIdentifier>
   </Class>
   <Struct Name="HashValues">

@@ -102,7 +102,7 @@ void sqlite3controller::createTables() {
         fprintf(stdout, "Table created successfully\n");
     }
 
-    rc = sqlite3_exec(db, filetable_sql, NULL, 0, &zErrMsg);
+    rc = sqlite3_exec(db, SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::FILES), NULL, 0, &zErrMsg);
     
     if( rc != SQLITE_OK ){
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -111,7 +111,7 @@ void sqlite3controller::createTables() {
         fprintf(stdout, "Table created successfully\n");
     }
 
-    rc = sqlite3_exec(db, changestable_sql, NULL, 0, &zErrMsg);
+    rc = sqlite3_exec(db, SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::CHANGES), NULL, 0, &zErrMsg);
     
     if( rc != SQLITE_OK ){
         fprintf(stderr, "SQL error: %s\n", zErrMsg);

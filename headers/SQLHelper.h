@@ -14,6 +14,7 @@
 #include <fstream>
 #include <cstring>
 #include <sqlite3.h>
+#include <cxxabi.h>
 
 /**
  * @brief The SQL Helper class for the SQLite database.
@@ -46,7 +47,7 @@ public:
     */
     static int checkIfAttributeIsInChanges(const int file_id, const AttributeToCheck attribute, sqlite3 *db);
     
-    static template <Class T> int checkIfAttributeIsInChanges(const int file_id, const AttributeToCheck attribute, T *connection_obj);
+    template <class T> static int checkIfAttributeIsInChanges(const int file_id, const AttributeToCheck attribute, T *connection_obj);
     
     /**
      * @brief Determines if the provided attribute has changed its value.
@@ -152,7 +153,7 @@ private:
      * @return 
     */
     static int didHashedValueChange(const char* hashed_val, TableToCheck table, const int file_id, sqlite3* db);
-    
+    template <class T> static int didHashedValueChange(const char* hashed_val, TableToCheck table, const int file_id, T* connection_obj);
     /**
      * @brief 
      * @param file_size 

@@ -95,7 +95,7 @@ char* SQLHelper::getCreateTableSQL(TABLE_TO_CREATE _newtable) {
 
 int SQLHelper::checkIfAttributeHasChanged(const int file_id, const AttributeToCheck attribute, const TableToCheck table, sqlite3* db, const char* char_attr, const int int_attr) {
     int retVal = 0;
-
+    
     switch(attribute) {
     case 1: //Hashedval
         retVal = didHashedValueChange(char_attr, table, file_id, db);
@@ -115,11 +115,24 @@ int SQLHelper::checkIfAttributeHasChanged(const int file_id, const AttributeToCh
     return retVal;
 }
 
-template <Class T>
+template <class T>
 int SQLHelper::checkIfAttributeIsInChanges(const int file_id, const AttributeToCheck attribute, T *connection_obj)
 {
+    cout << "connection_obj type name:\t";
+    cout << abi::__cxa_demangle(typeid(connection_obj).name(), nullptr, nullptr, nullptr) << endl;
+
+    switch (abi::__cxa_demangle(typeid(connection_obj).name(), nullptr, nullptr, nullptr)) {
+    case "mysql*":
+        break;
+    case "sqlite3*":
+        break;
+    default:
+        break;
+    }
     return 0;
 }
+
+
 
 int SQLHelper::checkIfAttributeIsInChanges(const int file_id, const AttributeToCheck attribute, sqlite3* db) {
     char* zErrMsg = 0;
@@ -158,6 +171,12 @@ int SQLHelper::checkIfAttributeIsInChanges(const int file_id, const AttributeToC
     }
 
     return retVal;
+}
+
+template<class T>
+int SQLHelper::didHashedValueChange(const char* hashed_val, TableToCheck table, const int file_id, T* connection_obj)
+{
+    return 0;
 }
 
 int SQLHelper::didHashedValueChange(const char* hashed_val, TableToCheck table, const int file_id, sqlite3* db) {
