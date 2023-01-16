@@ -16,7 +16,8 @@
 #include <dirent.h>
 #include <sqlite3.h>
 #include "SHA256CPP.h"
-#include "SQLiteHelper.h"
+//#include "SQLiteHelper.h"
+#include "SQLHelper.h"
 
 /**
  * @brief Sqlite3 Controller class

@@ -13,7 +13,7 @@
 #include <sstream>
 using std::stringstream;
 #include "mysql_connection.h"
-#include "SQLiteHelper.h"
+#include "SQLHelper.h"
 
 #include <cppconn/driver.h>
 #include <cppconn/exception.h>
@@ -50,8 +50,6 @@ public:
     void initPreparedStatements();
     void closePreparedStatements();
 private:
-    //char* getCurrentTime();
-	//void addVerified(int);
 	char* filterApostraphe(string);
     
 };

@@ -248,7 +248,7 @@ void mysqlcontroller::saveDirectoryName(string dirname) {
 	strcpy(dirnameverified,dirname.c_str());
     
 	initPreparedStatements();
-	char* currenttime = SQLiteHelper::getCurrentTime();
+	char* currenttime = SQLHelper::getCurrentTime();
 
 	try {
 		con->setAutoCommit(false);
@@ -336,7 +336,7 @@ void mysqlcontroller::saveFileInfo_async(const string &dirname, const string &fn
  */
 void mysqlcontroller::saveFileInfo(string dirname, string fname, string hashval) {
 	
-	char* currenttime = SQLiteHelper::getCurrentTime();
+	char* currenttime = SQLHelper::getCurrentTime();
 
 	initPreparedStatements();
 

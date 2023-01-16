@@ -20,7 +20,9 @@ C++ Compling instructions for MySQL
 
 g++ src/sqlite3crud.o src/SHA256.o src/Menu.o src/fileintegritychecker.cpp -o demo1 -I/usr/local/include -I/usr/local/include/mysql -W -lmysqlclient -L/usr/local/lib mysqlexample.cpp
 
+sudo apt install libmysqlcppconn-dev
 sudo apt install default-libmysqlclient-dev
+sudo apt install libsqlite3-dev
 
 g++ -c src/mysqlcontroller.cpp -I/usr/local/include -I/usr/local/include/mysql -W -lmysqlclient -L/usr/local/lib
 g++ -std=c++17 -c src/mysqlcontroller.cpp -I/usr/include/mysql -W -fno-stack-protector -ggdb -lmysqlclient

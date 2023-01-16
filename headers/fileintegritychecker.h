@@ -14,7 +14,8 @@
 #include "Menu.h"
 #include "mysqlcontroller.h"
 #include "sqlite3controller.h"
-#include "SQLiteHelper.h"
+//#include "SQLiteHelper.h"
+//#include "SQLHelper.h"
 
 class fileintegritychecker {
 public:

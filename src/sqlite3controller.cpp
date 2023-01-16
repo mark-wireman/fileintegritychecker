@@ -61,7 +61,8 @@ void sqlite3controller::createTables() {
     char *filetable_sql;
     char *changestable_sql;
     char *zErrMsg = 0;
-
+    
+    
     dirtable_sql = "CREATE TABLE IF NOT EXISTS directories("  \
       "id INTEGER PRIMARY KEY AUTOINCREMENT," \
       "dirname           TEXT," \
@@ -89,9 +90,10 @@ void sqlite3controller::createTables() {
       "attributechanged TEXT DEFAULT NULL," \
       "textvalue TEXT DEFAULT NULL," \
       "intvalue INT DEFAULT -1);";
-
+    
     /* Execute SQL statement */
-    rc = sqlite3_exec(db, dirtable_sql, NULL, 0, &zErrMsg);
+    //rc = sqlite3_exec(db, dirtable_sql, NULL, 0, &zErrMsg);
+    rc = sqlite3_exec(db, SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::DIRECTORIES), NULL, 0, &zErrMsg);
    
     if( rc != SQLITE_OK ){
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -212,21 +214,21 @@ int sqlite3controller::save_file_info(const char* fname, const char* dirname, ch
     
 
     int dir_id = checkIfDirectoryExist(dirname);
-    int fileExists = SQLiteHelper::getFileId(db, (char*)fname, dir_id);
+    int fileExists = SQLHelper::getFileId(db, (char*)fname, dir_id);
 
     if(fileExists > 0) {
         if (lastmodified != NULL) {
-            SQLiteHelper::saveFileInfo(db, dir_id, fname, filesize,lastmodified, NULL, false, SQLiteHelper::AttributeToCheck::DateModified);
+            SQLHelper::saveFileInfo(db, dir_id, fname, filesize,lastmodified, NULL, false, SQLHelper::AttributeToCheck::DateModified);
         }
         if (hashval != NULL) {
             //fprintf(stderr, "\nReceived hashedvalue of %s\n", hashval);
-            SQLiteHelper::saveFileInfo(db, dir_id, fname, filesize, NULL, hashval, false, SQLiteHelper::AttributeToCheck::HashedVal);
+            SQLHelper::saveFileInfo(db, dir_id, fname, filesize, NULL, hashval, false, SQLHelper::AttributeToCheck::HashedVal);
         }
         if (filesize > 0) {
-            SQLiteHelper::saveFileInfo(db, dir_id, fname, filesize, lastmodified, NULL, false, SQLiteHelper::AttributeToCheck::FileSize);
+            SQLHelper::saveFileInfo(db, dir_id, fname, filesize, lastmodified, NULL, false, SQLHelper::AttributeToCheck::FileSize);
         }
     } else if(fileExists == 0) {
-        SQLiteHelper::saveFileInfo(db, dir_id, fname, filesize, lastmodified, hashval, true);
+        SQLHelper::saveFileInfo(db, dir_id, fname, filesize, lastmodified, hashval, true);
     } else {
         return -1;
     }
@@ -261,11 +263,11 @@ int sqlite3controller::save_dir_info(const char* dirname) {
     
     if (rc == SQLITE_OK) {
         if(dirExists > 1) {
-            sqlite3_bind_text(pStmt, 1, SQLiteHelper::getCurrentTime(), -1, NULL);
+            sqlite3_bind_text(pStmt, 1, SQLHelper::getCurrentTime(), -1, NULL);
             sqlite3_bind_int(pStmt, 2, dirExists);
         } else {
             sqlite3_bind_text(pStmt, 1, dirname, -1, NULL);
-            sqlite3_bind_text(pStmt, 2, SQLiteHelper::getCurrentTime(), -1, NULL);
+            sqlite3_bind_text(pStmt, 2, SQLHelper::getCurrentTime(), -1, NULL);
             sqlite3_bind_text(pStmt, 3, sqlite3_mname, -1, NULL);
         }
     } else {
