@@ -19,5 +19,5 @@ steps:
     sudo apt install libsqlite3-dev
   displayName: 'Install sqlite3'
 - script: |
-    make makefile_azure.mak
+    make -fflag makefile_azure.mak
   displayName: 'make'
