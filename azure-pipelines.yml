@@ -11,10 +11,7 @@ pool:
 
 steps:
 - script: |
-    sudo apt install openssl
-    sudo apt install libzstd-dev
-  displayName: 'Install Pre-requisites'
-- script: |
+    sudo apt install mysql-client
     sudo apt install default-libmysqlclient-dev
     sudo apt install libmysqlcppconn-dev
   displayName: 'Install mysqlclient dev'
