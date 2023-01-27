@@ -54,16 +54,37 @@ void sqlite3controller::closedb() {
     sqlite3_close_v2(db);
 }
 
+void sqlite3controller::correctAutoIncrement(char*& _sqlstmt) {
+    for(int i = 0; i < strlen(_sqlstmt); i++) {
+        if(_sqlstmt[i] == '_') {
+            _sqlstmt[i] = 'I';
+            _sqlstmt[i+1] = 'N';
+            _sqlstmt[i+2] = 'C';
+            _sqlstmt[i+3] = 'R';
+            _sqlstmt[i+4] = 'E';
+            _sqlstmt[i+5] = 'M';
+            _sqlstmt[i+6] = 'E';
+            _sqlstmt[i+7] = 'N';
+            _sqlstmt[i+8] = 'T';
+            _sqlstmt[i+9] = ' ';
+        }
+    }
+}
 
 void sqlite3controller::createTables() {
     int rc;
-    char *dirtable_sql;
-    char *filetable_sql;
-    char *changestable_sql;
+    //char *dirtable_sql;
+    char *filetable_sql = SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::FILES);
+    char *changestable_sql = SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::CHANGES);
     char *zErrMsg = 0;
     
-    
-    dirtable_sql = "CREATE TABLE IF NOT EXISTS directories("  \
+    char* dirtable_sql = SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::DIRECTORIES);
+
+    correctAutoIncrement(dirtable_sql);
+    correctAutoIncrement(filetable_sql);
+    correctAutoIncrement(changestable_sql);
+
+    /*dirtable_sql = "CREATE TABLE IF NOT EXISTS directories("  \
       "id INTEGER PRIMARY KEY AUTOINCREMENT," \
       "dirname           TEXT," \
       "dateadded         TEXT," \
@@ -89,11 +110,12 @@ void sqlite3controller::createTables() {
       "datechanged TEXT DEFAULT NULL," \
       "attributechanged TEXT DEFAULT NULL," \
       "textvalue TEXT DEFAULT NULL," \
-      "intvalue INT DEFAULT -1);";
+      "intvalue INT DEFAULT -1);";*/
     
     /* Execute SQL statement */
     //rc = sqlite3_exec(db, dirtable_sql, NULL, 0, &zErrMsg);
-    rc = sqlite3_exec(db, SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::DIRECTORIES), NULL, 0, &zErrMsg);
+    //rc = sqlite3_exec(db, SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::DIRECTORIES), NULL, 0, &zErrMsg);
+    rc = sqlite3_exec(db, dirtable_sql, NULL, 0, &zErrMsg);
    
     if( rc != SQLITE_OK ){
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -102,7 +124,8 @@ void sqlite3controller::createTables() {
         fprintf(stdout, "Table created successfully\n");
     }
 
-    rc = sqlite3_exec(db, SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::FILES), NULL, 0, &zErrMsg);
+    //rc = sqlite3_exec(db, SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::FILES), NULL, 0, &zErrMsg);
+    rc = sqlite3_exec(db, filetable_sql, NULL, 0, &zErrMsg);
     
     if( rc != SQLITE_OK ){
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
@@ -111,7 +134,8 @@ void sqlite3controller::createTables() {
         fprintf(stdout, "Table created successfully\n");
     }
 
-    rc = sqlite3_exec(db, SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::CHANGES), NULL, 0, &zErrMsg);
+    //rc = sqlite3_exec(db, SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::CHANGES), NULL, 0, &zErrMsg);
+    rc = sqlite3_exec(db, changestable_sql, NULL, 0, &zErrMsg);
     
     if( rc != SQLITE_OK ){
         fprintf(stderr, "SQL error: %s\n", zErrMsg);

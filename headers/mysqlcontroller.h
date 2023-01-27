@@ -51,6 +51,7 @@ public:
     void closePreparedStatements();
 private:
 	char* filterApostraphe(string);
+    void createTables();
     
 };
 

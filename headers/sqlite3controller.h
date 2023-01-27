@@ -156,6 +156,8 @@ class sqlite3controller {
         */
         int checkIfFileExist(const char* fname, const char* dirname);
 
+        void correctAutoIncrement(char*& _sqlStmt);
+
 };
 
 #endif

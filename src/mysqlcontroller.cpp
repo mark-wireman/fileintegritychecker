@@ -3,6 +3,7 @@
 #define STRING_SIZE 65535
 #define SAVEDIRSTOREDPROCSTMT "call saveDirectoryDetails(?, ?, ?)"
 #define SAVEFILEINFOPROCSTMT "call saveFileHashVal(?,?,?,?,?)"
+#define CREATESCHEMA "CREATE DATABASE IF NOT EXISTS "
 
 //MYSQL *connection, mysql;
 char* hostname;
@@ -20,7 +21,7 @@ sql::Statement *stmt;
 sql::ResultSet *res;
 sql::PreparedStatement *savedirprepStmt;
 sql::PreparedStatement *savedfileprepStmt;
-
+sql::PreparedStatement *createDatabase;
 /**
  * @brief Construct a new mysqlcontroller::mysqlcontroller object
  * 
@@ -35,6 +36,7 @@ mysqlcontroller::mysqlcontroller(char* host, char* dbase, char* uname, char* pwd
     password = pwd;
     port = portno;
 	machinename = mname;
+
 }
 
 /**
@@ -184,8 +186,10 @@ void mysqlcontroller::initdb() {
 		driver = get_driver_instance();
 		con = driver->connect(connstr, username, password);
 		con->setAutoCommit(false);
+		createTables();
 		/* Connect to the MySQL test database */
 		con->setSchema(dbasename);
+
 		cout << "Successfully connected to database." << endl;
 	} catch (sql::SQLException &e) {
 		cout << "# ERR: SQLException in " << __FILE__;
@@ -196,6 +200,34 @@ void mysqlcontroller::initdb() {
 	}
 
 	cout << endl;
+}
+
+void mysqlcontroller::createTables() {
+	
+	char* createTblStmt = new char[strlen(CREATESCHEMA) + strlen(dbasename) + 1];
+	strcpy(createTblStmt, CREATESCHEMA);
+	strcat(createTblStmt,dbasename);
+	
+	sql::Statement *stmt = con->createStatement();
+	stmt->execute(createTblStmt);
+	con->commit();
+
+	strcpy(createTblStmt,"USE ");
+	strcat(createTblStmt,dbasename);
+	stmt->execute(createTblStmt);
+	con->commit();
+
+	stmt->execute(SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::DIRECTORIES));
+	con->commit();
+	
+	stmt->execute(SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::FILES));
+	con->commit();
+	
+	stmt->execute(SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::CHANGES));
+	con->commit();
+
+	delete stmt;
+
 }
 
 /**
@@ -236,6 +268,7 @@ char* mysqlcontroller::filterApostraphe(string dirname) {
 
 	return char_array;
 }
+
 
 /**
  * @brief 

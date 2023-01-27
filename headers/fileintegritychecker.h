@@ -38,6 +38,7 @@ private:
 	char* mname;
 	char* dbasetype;
 	char* dbasefilename;
+	char* dbasename;
 	int usehashvals = 0;
 	long int numberofnewdirectories = 0;
 	long int numberofverifieddirectories = 0;

@@ -104,6 +104,10 @@ int Menu::getPROCESSHASHVALS() {
 	return this->processhashvals;
 }
 
+char* Menu::getDBASENAME() {
+	return this->dbasename;
+}
+
 /**
  * @brief 
  * 
@@ -154,15 +158,18 @@ int Menu::ParseArguments(int argc, char* argv[]) {
 		if(strcmp(argv[argumentcount],"-host") == 0) {
 			this->dbasehost = new char[strlen(argv[argumentcount+1])];
 			this->dbasehost = argv[argumentcount+1];
+			cout << "host is: " << this->dbasehost << endl;
 		}
 		if(strcmp(argv[argumentcount],"-username") == 0) {
 			this->uname = new char[strlen(argv[argumentcount+1])];
 			this->uname = argv[argumentcount+1];
+			cout << "username is set." << endl;
 		}
 		if(strcmp(argv[argumentcount],"-password") == 0) {
 			this->pwd = (char*)malloc(sizeof(char)*strlen(argv[argumentcount+1]));
 			this->pwd = new char[strlen(argv[argumentcount+1])];
 			this->pwd = argv[argumentcount+1];
+			cout << "username is set." << endl;
 		}
 		if(strcmp(argv[argumentcount],"-port") == 0) {
 			this->portno = new char[strlen(argv[argumentcount+1])];
@@ -183,6 +190,12 @@ int Menu::ParseArguments(int argc, char* argv[]) {
 			this->dbasefilename = new char[strlen(argv[argumentcount + 1])];
 			this->dbasefilename = argv[argumentcount + 1];
 			cout << "dbasefilename is: " << this->dbasefilename << endl;
+		}
+		if (strcmp(argv[argumentcount], "-dbasename") == 0) {
+			this->dbasename = (char*)malloc(sizeof(char) * strlen(argv[argumentcount + 1]));
+			this->dbasename = new char[strlen(argv[argumentcount + 1])];
+			this->dbasename = argv[argumentcount + 1];
+			cout << "dbasename is: " << this->dbasename << endl;
 		}
 		if(strcmp(argv[argumentcount],"-usehashvals") == 0) {
 			this->processhashvals = 1;

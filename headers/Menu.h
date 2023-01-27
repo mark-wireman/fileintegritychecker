@@ -28,6 +28,7 @@ public:
 	char* getPARENTDIR();
 	char* getDBASETYPE();
 	char* getDBASEFILENAME();
+	char* getDBASENAME();
 	int getPROCESSHASHVALS();
 private:
 	char* parentdir = NULL;
@@ -38,6 +39,7 @@ private:
 	char* mname = NULL;
 	char* dbasetype = NULL;
 	char* dbasefilename = NULL;
+	char* dbasename = NULL;
 	int processhashvals = 0;
 };
 

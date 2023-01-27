@@ -7,7 +7,7 @@
 using namespace::std;
 
 char*  DIRECTORYTABLE_SQL = "CREATE TABLE IF NOT EXISTS directories("  \
-      "id INTEGER PRIMARY KEY AUTOINCREMENT," \
+      "id INTEGER PRIMARY KEY AUTO_INCREMENT," \
       "dirname           TEXT," \
       "dateadded         TEXT," \
       "status        CHAR(50) DEFAULT 'NEW'," \
@@ -15,11 +15,11 @@ char*  DIRECTORYTABLE_SQL = "CREATE TABLE IF NOT EXISTS directories("  \
       "machinename       TEXT);";
 
 char* FILETABLE_SQL = "CREATE TABLE IF NOT EXISTS files("  \
-      "id INTEGER PRIMARY KEY AUTOINCREMENT," \
+      "id INTEGER PRIMARY KEY AUTO_INCREMENT," \
       "dirid           int DEFAULT 0," \
       "dateadded         TEXT," \
       "filename      TEXT," \
-      "hashedvalue      TEXT DEFAULT 'NOVAL'," \
+      "hashedvalue      CHAR(50) DEFAULT 'NOVAL'," \
       "hashedvaluechanged      int DEFAULT 0," \
       "lastmodified      TEXT," \
       "lastmodifiedchanged      int DEFAULT 0," \
@@ -27,11 +27,11 @@ char* FILETABLE_SQL = "CREATE TABLE IF NOT EXISTS files("  \
       "filesizechanged int DEFAULT 0); ";
 
 char* CHANGETABLE_SQL = "CREATE TABLE IF NOT EXISTS changes(" \
-      "id INTEGER PRIMARY KEY AUTOINCREMENT," \
+      "id INTEGER PRIMARY KEY AUTO_INCREMENT," \
       "fileid int DEFAULT 0," \
-      "datechanged TEXT DEFAULT NULL," \
-      "attributechanged TEXT DEFAULT NULL," \
-      "textvalue TEXT DEFAULT NULL," \
+      "datechanged CHAR(50) DEFAULT NULL," \
+      "attributechanged TEXT," \
+      "textvalue TEXT," \
       "intvalue INT DEFAULT -1);";
 
 char* sql_check_if_filesize_changed = "select filesizechanged from files where id=?; ";

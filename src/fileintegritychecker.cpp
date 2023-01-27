@@ -150,10 +150,13 @@ void fileintegritychecker::setParamVals(Menu *_menu) {
        this->uname = _menu->getUSERNAME();
        this->pwd = _menu->getPASSWORD();
        this->portno = _menu->getPORT();
+       this->dbasename = _menu->getDBASENAME();
+       cout << "mysql parameters set." << endl;
    }
    
    if(strcmp(this->dbasetype,"sqlite") == 0) {
        this->dbasefilename = _menu->getDBASEFILENAME();
+       cout << "sqlite3 parameters set." << endl;
    }
 
    this->usehashvals = _menu->getPROCESSHASHVALS();
@@ -163,23 +166,27 @@ void fileintegritychecker::setParamVals(Menu *_menu) {
 
 void fileintegritychecker::setDatabaseConnections() {
     if (strcmp(this->dbasetype, "mysql") == 0) {
-        this->mysqlctl = new mysqlcontroller(this->dbasehost, "fileintegritychecker", this->uname, this->pwd, 3306, this->mname);
+        this->mysqlctl = new mysqlcontroller(this->dbasehost, this->dbasename, this->uname, this->pwd, 3306, this->mname);
         this->mysqlctl->initdb();
+        cout << "mysql database connection set." << endl;
     }
 
     if (strcmp(this->dbasetype, "sqlite") == 0) {
         this->sqlitectl = new sqlite3controller(this->dbasefilename, this->mname);
         this->sqlitectl->initdb();
+        cout << "sqlite3 database connection set." << endl;
     }
 }
 
 void fileintegritychecker::closeDatabaseConnections() {
     if (strcmp(this->dbasetype, "mysql") == 0) {
         this->mysqlctl->closedb();
+        cout << "mysql database connection closed." << endl;
     }
 
     if (strcmp(this->dbasetype, "sqlite") == 0) {
         this->sqlitectl->closedb();
+        cout << "sqlite3 database connection closed." << endl;
     }
 }
 
