@@ -15,17 +15,24 @@
 #include <cstring>
 #include <sqlite3.h>
 #include <cxxabi.h>
+#include <map>
+#include "mysql_connection.h"
+#include <cppconn/driver.h>
+#include <cppconn/exception.h>
+#include <cppconn/resultset.h>
+#include <cppconn/statement.h>
+#include <cppconn/prepared_statement.h>
 
 /**
  * @brief The SQL Helper class for the SQLite database.
 */
 class SQLHelper {
 public:
-    enum class TABLE_TO_CREATE:char{
-      DIRECTORIES,FILES,CHANGES
-    };
+    //enum TableToCreate {Directories = 1, Files = 2, Changes = 3};
+    enum TableName {Directories = 1, Files = 2, Changes = 3};
+    template <typename T> char* returnName(T x);
 
-    static char* getCreateTableSQL(TABLE_TO_CREATE _newtable);
+    static char* getCreateTableSQL(TableName _newtable);
 
     /**
      * @brief Enumerator used to set the file attribute to check for changes or to update the value for.
@@ -35,7 +42,7 @@ public:
     /**
      * @brief Enumerator used to set the table to check for file attribute changes.
     */
-    enum TableToCheck {Files = 1, Changes = 2};
+    //enum TableToCheck {Files = 1, Changes = 2};
     
     /**
      * @brief Determines if the provided attribute is in the changes table.
@@ -46,8 +53,8 @@ public:
      
     */
     static int checkIfAttributeIsInChanges(const int file_id, const AttributeToCheck attribute, sqlite3 *db);
+    static int checkIfAttributeIsInChanges(const int file_id, const AttributeToCheck attribute, sql::Connection *conn);
     
-    template <class T> static int checkIfAttributeIsInChanges(const int file_id, const AttributeToCheck attribute, T *connection_obj);
     
     /**
      * @brief Determines if the provided attribute has changed its value.
@@ -65,7 +72,8 @@ public:
      * @see didDateModifiedChange()
      * @return 1 if changed, 0 if not
     */
-    static int checkIfAttributeHasChanged(const int file_id, const AttributeToCheck attribute, const TableToCheck table, sqlite3* db, const char* char_attr = NULL, const int int_attr = 0);
+    static int checkIfAttributeHasChanged(const int file_id, const AttributeToCheck attribute, const TableName table, sqlite3* db, const char* char_attr = NULL, const int int_attr = 0);
+    static int checkIfAttributeHasChanged(const int file_id, const AttributeToCheck attribute, const TableName table, sql::Connection* conn, const char* char_attr = NULL, const int int_attr = 0);
 
     /**
      * @brief Will retrieve the current time.
@@ -98,6 +106,7 @@ public:
      * @return 0 if directory does not exist in directories table, otherwise the directory id will be returned.
     */
     static int getDirectoryId(sqlite3* db);
+    static int getDirectoryId(sql::Connection* conn);
     
     /**
      * @brief Retrieves the id of the directory from the directories table.
@@ -107,6 +116,7 @@ public:
      * @return 0 if directory does not exist in directories table, otherwise the directory id will be returned.
     */
     static int getDirectoryId(sqlite3* db, char* dir_name, char* machine_name);
+    static int getDirectoryId(sql::Connection* conn, char* dir_name, char* machine_name);
     
     /**
      * @brief Returns the id of the file if the file exists in the files table.
@@ -114,6 +124,7 @@ public:
      * @return 0 if file does not exist in files table, otherwise the file id will be returned.
     */
     static int getFileId(sqlite3* db);
+    static int getFileId(sql::Connection* conn);
     
     /**
      * @brief Returns the id of the file if the file exists in the files table.
@@ -124,6 +135,7 @@ public:
      * @return 0 if file does not exist in files table, otherwise the file id will be returned.
     */
     static int getFileId(sqlite3* db, char* file_name, int dir_id);
+    static int getFileId(sql::Connection* conn, char* file_name, int dir_id);
 
     /**
      * @brief Entry point to saving the file information.
@@ -142,6 +154,7 @@ public:
      * @see AttributeToCheck
     */
     static int saveFileInfo(sqlite3* db, const int dir_id, const char* file_name, const int file_size = 0, const char* date_modified = NULL, const char* hashed_val = NULL, const bool isNew = true, AttributeToCheck attr_to_update = AttributeToCheck::NONE);
+    static int saveFileInfo(sql::Connection* conn, const int dir_id, const char* file_name, const int file_size = 0, const char* date_modified = NULL, const char* hashed_val = NULL, const bool isNew = true, AttributeToCheck attr_to_update = AttributeToCheck::NONE);
     
 private:
     /**
@@ -152,8 +165,9 @@ private:
      * @param db 
      * @return 
     */
-    static int didHashedValueChange(const char* hashed_val, TableToCheck table, const int file_id, sqlite3* db);
-    template <class T> static int didHashedValueChange(const char* hashed_val, TableToCheck table, const int file_id, T* connection_obj);
+    static int didHashedValueChange(const char* hashed_val, TableName table, const int file_id, sqlite3* db);
+    static int didHashedValueChange(const char* hashed_val, TableName table, const int file_id, sql::Connection* conn);
+    
     /**
      * @brief 
      * @param file_size 
@@ -162,7 +176,8 @@ private:
      * @param db 
      * @return 
     */
-    static int didFileSizeChange(const int file_size, TableToCheck table, const int file_id, sqlite3* db);
+    static int didFileSizeChange(const int file_size, TableName table, const int file_id, sqlite3* db);
+    static int didFileSizeChange(const int file_size, TableName table, const int file_id, sql::Connection* conn);
     
     /**
      * @brief 
@@ -172,7 +187,8 @@ private:
      * @param db 
      * @return 
     */
-    static int didDateModifiedChange(const char* date_modified, TableToCheck table, const int file_id, sqlite3* db);
+    static int didDateModifiedChange(const char* date_modified, TableName table, const int file_id, sqlite3* db);
+    static int didDateModifiedChange(const char* date_modified, TableName table, const int file_id, sql::Connection* conn);
     
     /**
      * @brief 
@@ -180,6 +196,7 @@ private:
      * @return 
     */
     static int saveNewFileInfo(sqlite3* db);
+    static int saveNewFileInfo(sql::Connection* conn);
     
     /**
      * @brief 
@@ -190,6 +207,7 @@ private:
      * @return 
     */
     static int saveExistingFileInfo(sqlite3* db, AttributeToCheck attr_to_update, const char* text_val = NULL, const int int_val = 0);
+    static int saveExistingFileInfo(sql::Connection* conn, AttributeToCheck attr_to_update, const char* text_val = NULL, const int int_val = 0);
     
     /**
      * @brief 
@@ -200,6 +218,7 @@ private:
      * @return 
     */
     static int insertTextValueToChanges(sqlite3* db, const int file_id, const char* text_val, const char* attr_changed);
+    static int insertTextValueToChanges(sql::Connection* conn, const int file_id, const char* text_val, const char* attr_changed);
     
     /**
      * @brief 
@@ -210,6 +229,7 @@ private:
      * @return 
     */
     static int insertIntValueToChanges(sqlite3* db, const int file_id, const int int_val, const char* attr_changed);
+    static int insertIntValueToChanges(sql::Connection* conn, const int file_id, const int int_val, const char* attr_changed);
     
     /**
      * @brief 
@@ -219,6 +239,7 @@ private:
      * @return 
     */
     static int updateChangedInFile(sqlite3* db, int file_id, AttributeToCheck attr_to_change);
+    static int updateChangedInFile(sql::Connection* conn, int file_id, AttributeToCheck attr_to_change);
 
 };
 

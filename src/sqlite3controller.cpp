@@ -1,45 +1,30 @@
-#include "../headers/sqlite3controller.h"
+#include "../headers/SQLite3Controller.h"
 
 using namespace std;
 namespace fs = std::filesystem;
 
 sqlite3 *db;
-char* sqlite3_dbasename;
-char* sqlite3_mname;
 
-sqlite3controller::sqlite3controller() {}
+SQLite3Controller::SQLite3Controller() {}
 
-sqlite3controller::sqlite3controller(char* databasename, char* machinename) {
-    sqlite3_mname = machinename;
-    sqlite3_dbasename = databasename;
+SQLite3Controller::SQLite3Controller(char* databasename, char* machinename) {
+    setMACHINENAME(machinename);
+    setDATABASENAME(databasename);
+    setDATABASETYPE("sqlite3");
+    
 }
 
 
-sqlite3controller::~sqlite3controller() {}
+SQLite3Controller::~SQLite3Controller() {}
 
 
-void sqlite3controller::setDATABASENAME(char* databasename) {
-    sqlite3_dbasename = databasename;
-}
-
-
-void sqlite3controller::setMACHINENAME(char* machinename) {
-    sqlite3_mname = machinename;
-}
-
-
-char* sqlite3controller::getDATABASENAME() {
-    return sqlite3_dbasename;
-}
-
-
-
-void sqlite3controller::initdb() {
+void SQLite3Controller::initdb() {
     char *zErrMsg = 0;
     int rc;
-   
+    
+    
     /* Open database */
-    rc = sqlite3_open_v2(sqlite3_dbasename, &db, SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE, NULL);
+    rc = sqlite3_open_v2(getDATABASENAME(), &db, SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE, NULL);
    
     if( rc ) {
         fprintf(stderr, "\nIn initdb can't open database: %s\n", sqlite3_errmsg(db));
@@ -50,11 +35,11 @@ void sqlite3controller::initdb() {
 
 }
 
-void sqlite3controller::closedb() {
+void SQLite3Controller::closedb() {
     sqlite3_close_v2(db);
 }
 
-void sqlite3controller::correctAutoIncrement(char*& _sqlstmt) {
+void SQLite3Controller::correctAutoIncrement(char*& _sqlstmt) {
     for(int i = 0; i < strlen(_sqlstmt); i++) {
         if(_sqlstmt[i] == '_') {
             _sqlstmt[i] = 'I';
@@ -71,50 +56,18 @@ void sqlite3controller::correctAutoIncrement(char*& _sqlstmt) {
     }
 }
 
-void sqlite3controller::createTables() {
+void SQLite3Controller::createTables() {
     int rc;
-    //char *dirtable_sql;
-    char *filetable_sql = SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::FILES);
-    char *changestable_sql = SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::CHANGES);
+
+    char* dirtable_sql = SQLHelper::getCreateTableSQL(SQLHelper::TableName::Directories);
+    char *filetable_sql = SQLHelper::getCreateTableSQL(SQLHelper::TableName::Files);
+    char *changestable_sql = SQLHelper::getCreateTableSQL(SQLHelper::TableName::Changes);
     char *zErrMsg = 0;
-    
-    char* dirtable_sql = SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::DIRECTORIES);
 
     correctAutoIncrement(dirtable_sql);
     correctAutoIncrement(filetable_sql);
     correctAutoIncrement(changestable_sql);
-
-    /*dirtable_sql = "CREATE TABLE IF NOT EXISTS directories("  \
-      "id INTEGER PRIMARY KEY AUTOINCREMENT," \
-      "dirname           TEXT," \
-      "dateadded         TEXT," \
-      "status        CHAR(50) DEFAULT 'NEW'," \
-      "dateverified      TEXT," \ 
-      "machinename       TEXT);";
-
-    filetable_sql = "CREATE TABLE IF NOT EXISTS files("  \
-      "id INTEGER PRIMARY KEY AUTOINCREMENT," \
-      "dirid           int DEFAULT 0," \
-      "dateadded         TEXT," \
-      "filename      TEXT," \
-      "hashedvalue      TEXT DEFAULT 'NOVAL'," \
-      "hashedvaluechanged      int DEFAULT 0," \
-      "lastmodified      TEXT," \
-      "lastmodifiedchanged      int DEFAULT 0," \
-      "filesize    int," \
-      "filesizechanged int DEFAULT 0); ";
-
-    changestable_sql = "CREATE TABLE IF NOT EXISTS changes(" \
-      "id INTEGER PRIMARY KEY AUTOINCREMENT," \
-      "fileid int DEFAULT 0," \
-      "datechanged TEXT DEFAULT NULL," \
-      "attributechanged TEXT DEFAULT NULL," \
-      "textvalue TEXT DEFAULT NULL," \
-      "intvalue INT DEFAULT -1);";*/
-    
-    /* Execute SQL statement */
-    //rc = sqlite3_exec(db, dirtable_sql, NULL, 0, &zErrMsg);
-    //rc = sqlite3_exec(db, SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::DIRECTORIES), NULL, 0, &zErrMsg);
+   
     rc = sqlite3_exec(db, dirtable_sql, NULL, 0, &zErrMsg);
    
     if( rc != SQLITE_OK ){
@@ -124,7 +77,6 @@ void sqlite3controller::createTables() {
         fprintf(stdout, "Table created successfully\n");
     }
 
-    //rc = sqlite3_exec(db, SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::FILES), NULL, 0, &zErrMsg);
     rc = sqlite3_exec(db, filetable_sql, NULL, 0, &zErrMsg);
     
     if( rc != SQLITE_OK ){
@@ -134,7 +86,6 @@ void sqlite3controller::createTables() {
         fprintf(stdout, "Table created successfully\n");
     }
 
-    //rc = sqlite3_exec(db, SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::CHANGES), NULL, 0, &zErrMsg);
     rc = sqlite3_exec(db, changestable_sql, NULL, 0, &zErrMsg);
     
     if( rc != SQLITE_OK ){
@@ -151,7 +102,7 @@ void sqlite3controller::createTables() {
  * @param dirname 
  * @return int 
  */
-int sqlite3controller::checkIfDirectoryExist(const char* dirname) {
+int SQLite3Controller::checkIfDirectoryExist(const char* dirname) {
     char *zErrMsg = 0;
     int rc;
     char *sql = "SELECT id FROM directories WHERE dirname = ? AND machinename = ?; ";
@@ -162,7 +113,7 @@ int sqlite3controller::checkIfDirectoryExist(const char* dirname) {
     
     if (rc == SQLITE_OK) {        
         sqlite3_bind_text(pStmt, 1, dirname, -1, NULL);
-        sqlite3_bind_text(pStmt, 2, sqlite3_mname, -1, NULL);
+        sqlite3_bind_text(pStmt, 2, getMACHINENAME(), -1, NULL);
     } else {
         
         fprintf(stderr, "Failed to execute statement: %s\n", sqlite3_errmsg(db));
@@ -188,7 +139,7 @@ int sqlite3controller::checkIfDirectoryExist(const char* dirname) {
  * @param dirname 
  * @return int 
  */
-int sqlite3controller::checkIfFileExist(const char* fname, const char* dirname) {
+int SQLite3Controller::checkIfFileExist(const char* fname, const char* dirname) {
     char *zErrMsg = 0;
     int rc;
     char *sql = "SELECT id FROM files WHERE dirid = ? AND filename = ?; ";
@@ -202,7 +153,7 @@ int sqlite3controller::checkIfFileExist(const char* fname, const char* dirname) 
     if (rc == SQLITE_OK) {        
         sqlite3_bind_int(pStmt, 1, dirId);
         sqlite3_bind_text(pStmt, 2, fname, -1, NULL);
-        sqlite3_bind_text(pStmt, 3, sqlite3_mname, -1, NULL);
+        sqlite3_bind_text(pStmt, 3,getMACHINENAME(), -1, NULL);
     } else {
         
         fprintf(stderr, "Failed to execute statement: %s\n", sqlite3_errmsg(db));
@@ -234,7 +185,7 @@ int sqlite3controller::checkIfFileExist(const char* fname, const char* dirname) 
  * @param hashval 
  * @return int 
  */
-int sqlite3controller::save_file_info(const char* fname, const char* dirname, char* lastmodified, uintmax_t filesize, const char* hashval) {
+int SQLite3Controller::save_file_info(const char* fname, const char* dirname, char* lastmodified, uintmax_t filesize, const char* hashval) {
     
 
     int dir_id = checkIfDirectoryExist(dirname);
@@ -267,7 +218,7 @@ int sqlite3controller::save_file_info(const char* fname, const char* dirname, ch
  * @param dirname 
  * @return int 
  */
-int sqlite3controller::save_dir_info(const char* dirname) {
+int SQLite3Controller::save_dir_info(const char* dirname) {
     char *zErrMsg = 0;
     int rc;
     char *diradd_sql;
@@ -292,7 +243,7 @@ int sqlite3controller::save_dir_info(const char* dirname) {
         } else {
             sqlite3_bind_text(pStmt, 1, dirname, -1, NULL);
             sqlite3_bind_text(pStmt, 2, SQLHelper::getCurrentTime(), -1, NULL);
-            sqlite3_bind_text(pStmt, 3, sqlite3_mname, -1, NULL);
+            sqlite3_bind_text(pStmt, 3, _machinename, -1, NULL);
         }
     } else {
         
@@ -316,7 +267,7 @@ int sqlite3controller::save_dir_info(const char* dirname) {
         cout << "\nA MISUSE has been deteced in save_dir_info." << endl;
     }
     else if (rc == SQLITE_DONE) {
-        cout << "\nsqlite3_step executed successfully." << endl;
+        //cout << "\nsqlite3_step executed successfully." << endl;
     }
     else {
         cout << "\nNot sure what happened." << endl;

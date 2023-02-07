@@ -16,9 +16,8 @@
 #include <dirent.h>
 #include <sqlite3.h>
 #include "SHA256CPP.h"
-#include "SQLFunctionsBase.h"
 #include "SQLHelper.h"
-
+#include "SQLFunctionsBase.h"
 
 /**
  * @brief Sqlite3 Controller class
@@ -26,12 +25,12 @@
  * @details The class that handles the SQL functions for creating, updating, and adding files and directories attributes to a 
  * Sqlite3 database.
  */
-class SQLite3Controller : public virtual SQLFunctionsBase {
+class sqlite3controller : public virtual SQLFunctionsBase {
     public:
         /**
          * @brief Construct a new sqlite3controller::sqlite3controller object.
         */
-        SQLite3Controller();
+        sqlite3controller();
         
         /**
          * @brief Construct a new sqlite3controller::sqlite3controller object. 
@@ -39,12 +38,12 @@ class SQLite3Controller : public virtual SQLFunctionsBase {
          * @param databasename 
          * @param machinename 
         */
-        SQLite3Controller(char* databasename, char* machinename);
+        sqlite3controller(char* databasename, char* machinename);
         
         /**
          * @brief Destroy the sqlite3controller::sqlite3controller object
         */
-        virtual ~SQLite3Controller();
+        virtual ~sqlite3controller();
         
         
         /**

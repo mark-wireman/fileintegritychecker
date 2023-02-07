@@ -1,194 +1,55 @@
-#include "../headers/mysqlcontroller.h"
+#include "../headers/MySQLController.h"
 
 #define STRING_SIZE 65535
 #define SAVEDIRSTOREDPROCSTMT "call saveDirectoryDetails(?, ?, ?)"
 #define SAVEFILEINFOPROCSTMT "call saveFileHashVal(?,?,?,?,?)"
 #define CREATESCHEMA "CREATE DATABASE IF NOT EXISTS "
-
-//MYSQL *connection, mysql;
-char* hostname;
-char* dbasename;
-char* username;
-char* password;
-char* machinename;
-int port;
-int state;
-//MYSQL_STMT *storedProcStmt = NULL;
+#define UPDATEDIRINFO "UPDATE directories set dateverified=?, status='VERIFIED' WHERE id=?"
+#define INSERTDIRINFO "INSERT INTO directories (dirname,dateadded,machinename) VALUES (?,?,? )"
 
 sql::Driver *driver;
 sql::Connection *con;
-sql::Statement *stmt;
-sql::ResultSet *res;
-sql::PreparedStatement *savedirprepStmt;
-sql::PreparedStatement *savedfileprepStmt;
-sql::PreparedStatement *createDatabase;
-/**
- * @brief Construct a new mysqlcontroller::mysqlcontroller object
- * 
- */
-mysqlcontroller::mysqlcontroller() {}
+//sql::Statement *stmt;
+//sql::ResultSet *res;
 
-mysqlcontroller::mysqlcontroller(char* host, char* dbase, char* uname, char* pwd, int portno, char* mname)
-{
-    hostname = host;
-    dbasename = dbase;
-    username= uname;
-    password = pwd;
-    port = portno;
-	machinename = mname;
 
-}
+MySQLController::MySQLController() {}
 
-/**
- * @brief Destroy mysqlcontroller::mysqlcontroller object
- * 
- */
-mysqlcontroller::~mysqlcontroller() {}
-
-/**
- * @brief 
- * 
- * @param host 
- */
-void mysqlcontroller::setHOSTNAME(char* host) {
-    hostname = host;
-}
-
-/**
- * @brief 
- * 
- * @param dbase 
- */
-void mysqlcontroller::setDBASENAME(char* dbase) {
-    dbasename = dbase;
-}
-
-/**
- * @brief 
- * 
- * @param uname 
- */
-void mysqlcontroller::setUSERNAME(char* uname) {
-    username = uname;
-}
-
-/**
- * @brief 
- * 
- * @param pwd 
- */
-void mysqlcontroller::setPASSWORD(char* pwd) {
-    password = pwd;
-}
-
-/**
- * @brief 
- * 
- * @param portno 
- */
-void mysqlcontroller::setPORT(int portno) {
-    port = portno;
-}
-
-/**
- * @brief 
- * 
- * @param mname 
- */
-void mysqlcontroller::setMACHINENAME(char* mname) {
-	machinename = mname;
-}
-
-/**
- * @brief 
- * 
- * @return char* 
- */
-char* mysqlcontroller::getHOSTNAME() {
-    return hostname;
-}
-
-/**
- * @brief 
- * 
- * @return char* 
- */
-char* mysqlcontroller::getDBASENAME() {
-    return dbasename;
-}
-
-/**
- * @brief 
- * 
- * @return char* 
- */
-char* mysqlcontroller::getUSERNAME() {
-    return username;
-}
-
-/**
- * @brief 
- * 
- * @return char* 
- */
-char* mysqlcontroller::getPASSWORD() {
-    return password;
-}
-
-/**
- * @brief 
- * 
- * @return int 
- */
-int mysqlcontroller::getPORT() {
-    return port;
-}
-
-/**
- * @brief 
- * 
- * @return char* 
- */
-char* mysqlcontroller::getMACHINENAME() {
-	return machinename;
-}
-
-/**
- * @brief 
- * 
- */
-void mysqlcontroller::initPreparedStatements() {
-
-	savedirprepStmt = con->prepareStatement(SAVEDIRSTOREDPROCSTMT);
-	savedfileprepStmt = con->prepareStatement(SAVEFILEINFOPROCSTMT);
-
+MySQLController::MySQLController(char* host, char* dbase, char* uname, char* pwd, char* mname, int portno) {
+    setMACHINENAME(mname);
+    setDATABASENAME(dbase);
+    setHOSTNAME(host);
+    setUSERNAME(uname);
+    setPASSWORD(pwd);
+    setPORTNUMBER(portno);
+    setDATABASETYPE("mysql");
+    
 }
 
 
-/**
- * @brief 
- * 
- */
-void mysqlcontroller::initdb() {
-    try {
+MySQLController::~MySQLController() {}
+
+
+void MySQLController::initdb() {
+     try {
 		cout << "Initializing connection to the database." << std::endl;
 
-		string connstr = "tcp://" + string(hostname) + ":";
+		string connstr = "tcp://" + string(getHOSTNAME()) + ":";
 		
-		if(port == 0) {
+		if(getPORTNUMBER() == 0) {
 			connstr += "3306";
 		}
 		else {
-			connstr += to_string(port);
+			connstr += to_string(getPORTNUMBER());
 		}
 
 		/* Create a connection */
 		driver = get_driver_instance();
-		con = driver->connect(connstr, username, password);
+		con = driver->connect(connstr,getUSERNAME(),getPASSWORD());
 		con->setAutoCommit(false);
 		createTables();
 		/* Connect to the MySQL test database */
-		con->setSchema(dbasename);
+		con->setSchema(getDATABASENAME());
 
 		cout << "Successfully connected to database." << endl;
 	} catch (sql::SQLException &e) {
@@ -200,155 +61,119 @@ void mysqlcontroller::initdb() {
 	}
 
 	cout << endl;
+
 }
 
-void mysqlcontroller::createTables() {
-	
-	char* createTblStmt = new char[strlen(CREATESCHEMA) + strlen(dbasename) + 1];
+void MySQLController::closedb() {
+ 	delete res;
+    delete stmt;
+    delete con;
+}
+
+
+void MySQLController::createTables() {
+    char* createTblStmt = new char[strlen(CREATESCHEMA) + strlen(getDATABASENAME()) + 1];
 	strcpy(createTblStmt, CREATESCHEMA);
-	strcat(createTblStmt,dbasename);
+	strcat(createTblStmt,getDATABASENAME());
 	
 	sql::Statement *stmt = con->createStatement();
 	stmt->execute(createTblStmt);
 	con->commit();
 
 	strcpy(createTblStmt,"USE ");
-	strcat(createTblStmt,dbasename);
+	strcat(createTblStmt,getDATABASENAME());
 	stmt->execute(createTblStmt);
 	con->commit();
 
-	stmt->execute(SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::DIRECTORIES));
+	stmt->execute(SQLHelper::getCreateTableSQL(SQLHelper::TableName::Directories));
 	con->commit();
 	
-	stmt->execute(SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::FILES));
+	stmt->execute(SQLHelper::getCreateTableSQL(SQLHelper::TableName::Files));
 	con->commit();
 	
-	stmt->execute(SQLHelper::getCreateTableSQL(SQLHelper::TABLE_TO_CREATE::CHANGES));
+	stmt->execute(SQLHelper::getCreateTableSQL(SQLHelper::TableName::Changes));
 	con->commit();
 
 	delete stmt;
-
 }
 
 /**
  * @brief 
  * 
  * @param dirname 
- * @return char* 
+ * @return int 
  */
-char* mysqlcontroller::filterApostraphe(string dirname) {
-	string retVal = "";
-    char* char_array;
+int MySQLController::checkIfDirectoryExist(const char* dirname) {
+    char *sql = "SELECT id FROM directories WHERE dirname = ? AND machinename = ?";
+    sql::PreparedStatement* pStmt;
+    int retVal = 0;
+    sql::ResultSet* rslt;
 
-	std::vector<string> result;
-	std::stringstream s_stream(dirname); //create string stream from the string
+    pStmt = con->prepareStatement(sql);
 
-	while(s_stream.good()) {
-	   string substr;
-	   getline(s_stream, substr, '\''); //get first string delimited by comma
-	   result.push_back(substr);
-	}
+    try {
 
-	if(result.size() > 1) {
-		retVal+=result.at(0);
-
-		for(int i = 1; i<result.size(); i++) {    //print all splitted strings
-			retVal+="'";
-			retVal+="'";
-			retVal+=result.at(i);
-		}
-	} else {
-		retVal = dirname;
-	}
+		con->setAutoCommit(false);
+        pStmt->setString(1,dirname);
+		pStmt->setString(2, getMACHINENAME());
+		rslt = pStmt->executeQuery();
 		
-	int n = retVal.length();
-	char_array = new char[n + 1];
+        while(rslt->next()) {
+            //printf("\n\tInside while next in checkIfDirectoryExist.\n\n");
+            retVal = rslt->getInt(1);
+            //printf("\n\tAfter while next in checkIfDirectoryExist with retVal %d.\n\n",retVal);
+        }
 
-	strcpy(char_array, retVal.c_str());
+		con->setAutoCommit(true);
 
-	return char_array;
-}
+	} catch (sql::SQLException &e) {
+		cout << "# ERR: SQLException in " << __FILE__;
+		cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
+		cout << "# ERR: " << e.what();
+		cout << " (MySQL error code: " << e.getErrorCode();
+		cout << ", SQLState: " << e.getSQLState() << " )" << endl;
+	}
 
-
-/**
- * @brief 
- * 
- * @param dirname 
- */
-void mysqlcontroller::saveDirectoryName(string dirname) {
-
-	char* dirnameverified = new char[dirname.length() + 1]; // filterApostraphe(dirname);
-	strcpy(dirnameverified,dirname.c_str());
+    delete res;
+    delete pStmt;
     
-	initPreparedStatements();
-	char* currenttime = SQLHelper::getCurrentTime();
-
-	try {
-		con->setAutoCommit(false);
-		savedirprepStmt->setString(1, dirnameverified);
-		savedirprepStmt->setString(2, currenttime);
-		savedirprepStmt->setString(3, machinename);
-		savedirprepStmt->executeUpdate();
-		con->commit();
-		con->setAutoCommit(true);
-	} catch (sql::SQLException &e) {
-		cout << "# ERR: SQLException in " << __FILE__;
-		cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
-		cout << "# ERR: " << e.what();
-		cout << " (MySQL error code: " << e.getErrorCode();
-		cout << ", SQLState: " << e.getSQLState() << " )" << endl;
-	}
-
-	closePreparedStatements();
+    return retVal;
 
 }
+
 
 /**
  * @brief 
  * 
- * @param dirname 
- */
-void mysqlcontroller::saveDirectoryName_async(const string &dirname) {
-	string dname = dirname;
-	saveDirectoryName(dname);
-}
-
-/**
- * @brief 
- * 
- * @param dirname 
  * @param fname 
- * @param hashval 
+ * @param dirname 
+ * @return int 
  */
-void mysqlcontroller::saveFileInfo_async(const string &dirname, const string &fname, const string &hashval) {
-	string dname = dirname;
-	string filname = fname;
-	string hval = hashval;
-	string currenttime = "";
-	
-	std::time_t t = std::time(0);   // get time now
-	std::tm* now = std::localtime(&t);
-	char date_string[100];
-	char time_string[100];
+int MySQLController::checkIfFileExist(const char* fname, const char* dirname) {
+    
+    char *sql = "SELECT id FROM files WHERE dirid = ? AND filename = ?; ";
+    sql::PreparedStatement* pStmt;
+    int retVal = 0;
+    sql::ResultSet* rslt;
 
-	strftime(date_string, 50, "%B %d, %Y ", now);
-	strftime(time_string, 50, "%T", now);
+    pStmt = con->prepareStatement(sql);
 
-	currenttime += date_string;
-	currenttime += time_string;
+    int dirId = checkIfDirectoryExist(dirname);
 
-	savedfileprepStmt = con->prepareStatement(SAVEFILEINFOPROCSTMT);
+    try {
 
-	try {
 		con->setAutoCommit(false);
-		savedfileprepStmt->setString(1, dirname);
-		savedfileprepStmt->setString(2, currenttime);
-		savedfileprepStmt->setString(3, machinename);
-		savedfileprepStmt->setString(4, fname);
-		savedfileprepStmt->setString(5, hashval);
-		savedfileprepStmt->executeUpdate();
-		con->commit();
+        pStmt->setInt(1,dirId);
+        pStmt->setString(2,dirname);
+		pStmt->setString(3, getMACHINENAME());
+		rslt = pStmt->executeQuery();
+		
+        while(rslt->next()) {
+            retVal = rslt->getInt(1);
+        }
+
 		con->setAutoCommit(true);
+
 	} catch (sql::SQLException &e) {
 		cout << "# ERR: SQLException in " << __FILE__;
 		cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
@@ -357,32 +182,90 @@ void mysqlcontroller::saveFileInfo_async(const string &dirname, const string &fn
 		cout << ", SQLState: " << e.getSQLState() << " )" << endl;
 	}
 
-	delete savedfileprepStmt;
+    delete res;
+    delete pStmt;
+
+    return retVal;
+
+}
+
+
+
+/**
+ * @brief 
+ * 
+ * @param fname 
+ * @param dirname 
+ * @param lastmodified 
+ * @param filesize 
+ * @param hashval 
+ * @return int 
+ */
+int MySQLController::save_file_info(const char* fname, const char* dirname, char* lastmodified, uintmax_t filesize, const char* hashval) {
+    //printf("Variables provided are: \n\t%s \n\t %s \n\t %s \n\t %d \n\t %s \n",fname,dirname,lastmodified,filesize,hashval);
+
+    int dir_id = checkIfDirectoryExist(dirname);
+    int fileExists = SQLHelper::getFileId(con, (char*)fname, dir_id);
+
+    if(fileExists > 0) {
+        if (lastmodified != NULL) {
+            SQLHelper::saveFileInfo(con, dir_id, fname, filesize,lastmodified, NULL, false, SQLHelper::AttributeToCheck::DateModified);
+        }
+        if (hashval != NULL) {
+            //fprintf(stderr, "\nReceived hashedvalue of %s\n", hashval);
+            SQLHelper::saveFileInfo(con, dir_id, fname, filesize, NULL, hashval, false, SQLHelper::AttributeToCheck::HashedVal);
+        }
+        if (filesize > 0) {
+            SQLHelper::saveFileInfo(con, dir_id, fname, filesize, NULL, NULL, false, SQLHelper::AttributeToCheck::FileSize);
+        }
+    } else if(fileExists == 0) {
+        SQLHelper::saveFileInfo(con, dir_id, fname, filesize, lastmodified, hashval, true);
+    } else {
+        return -1;
+    }
+
+    return 0;
+
 }
 
 /**
  * @brief 
  * 
  * @param dirname 
- * @param fname 
- * @param hashval 
+ * @return int 
  */
-void mysqlcontroller::saveFileInfo(string dirname, string fname, string hashval) {
-	
-	char* currenttime = SQLHelper::getCurrentTime();
+int MySQLController::save_dir_info(const char* dirname) {
+    char *diradd_sql;
+    sql::PreparedStatement *pStmt;
+    char* current_time = SQLHelper::getCurrentTime();
+    int dirExists = checkIfDirectoryExist(dirname);
 
-	initPreparedStatements();
+    if(dirExists > 1) {
+        pStmt = con->prepareStatement(UPDATEDIRINFO);
+    } else if(dirExists == 0) {
+        pStmt = con->prepareStatement(INSERTDIRINFO);
+    } else {
+        return -1;
+    }
 
-	try {
+    try {
+
 		con->setAutoCommit(false);
-		savedfileprepStmt->setString(1, dirname);
-		savedfileprepStmt->setString(2, currenttime);
-		savedfileprepStmt->setString(3, machinename);
-		savedfileprepStmt->setString(4, fname);
-		savedfileprepStmt->setString(5, hashval);
-		savedfileprepStmt->executeUpdate();
-		con->commit();
-		con->setAutoCommit(true);
+
+        if(dirExists > 0) {
+            pStmt->setString(1,current_time);
+            pStmt->setInt(2,dirExists);
+            pStmt->executeQuery();
+        } else {
+            pStmt->setString(1,dirname);
+            pStmt->setString(2,current_time);
+            pStmt->setString(3,getMACHINENAME());
+            pStmt->executeQuery();
+        }
+		
+		
+        con->setAutoCommit(true);
+
 	} catch (sql::SQLException &e) {
 		cout << "# ERR: SQLException in " << __FILE__;
 		cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
@@ -391,26 +274,9 @@ void mysqlcontroller::saveFileInfo(string dirname, string fname, string hashval)
 		cout << ", SQLState: " << e.getSQLState() << " )" << endl;
 	}
 
-	closePreparedStatements();
+    delete res;
+    delete pStmt;
 
-}
+    return 0;  
 
-/**
- * @brief 
- * 
- */
-void mysqlcontroller::closePreparedStatements() {
-	
-	delete savedirprepStmt;
-	delete savedfileprepStmt;
-}
-
-/**
- * @brief 
- * 
- */
-void mysqlcontroller::closedb() {
-	delete res;
-    delete stmt;
-    delete con;
 }

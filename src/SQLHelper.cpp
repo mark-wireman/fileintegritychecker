@@ -69,21 +69,25 @@ int _dirid;
 
 sqlite3_stmt* pStmt;
 
-char* SQLHelper::getCreateTableSQL(TABLE_TO_CREATE _newtable) {
+template <typename T> char* SQLHelper::returnName(T x) {
+     return abi::__cxa_demangle(typeid(x).name(), nullptr, nullptr, nullptr);
+}
+
+char* SQLHelper::getCreateTableSQL(TableName _newtable) {
     char* retVal = NULL;
 
     switch(_newtable) {
-        case (TABLE_TO_CREATE::CHANGES):
-            retVal = (char*)malloc(strlen(CHANGETABLE_SQL) + 1);
-            strcpy(retVal, CHANGETABLE_SQL);
-            break;
-        case (TABLE_TO_CREATE::DIRECTORIES):
+        case (1):
             retVal = (char*)malloc(strlen(DIRECTORYTABLE_SQL) + 1);
             strcpy(retVal, DIRECTORYTABLE_SQL);
             break;
-        case (TABLE_TO_CREATE::FILES):
+        case (2):
             retVal = (char*)malloc(strlen(FILETABLE_SQL) + 1);
             strcpy(retVal, FILETABLE_SQL);
+            break;
+        case (3):
+            retVal = (char*)malloc(strlen(CHANGETABLE_SQL) + 1);
+            strcpy(retVal, CHANGETABLE_SQL);
             break;
         default:
             break;
@@ -93,7 +97,7 @@ char* SQLHelper::getCreateTableSQL(TABLE_TO_CREATE _newtable) {
 }
 
 
-int SQLHelper::checkIfAttributeHasChanged(const int file_id, const AttributeToCheck attribute, const TableToCheck table, sqlite3* db, const char* char_attr, const int int_attr) {
+int SQLHelper::checkIfAttributeHasChanged(const int file_id, const AttributeToCheck attribute, const TableName table, sqlite3* db, const char* char_attr, const int int_attr) {
     int retVal = 0;
     
     switch(attribute) {
@@ -115,24 +119,71 @@ int SQLHelper::checkIfAttributeHasChanged(const int file_id, const AttributeToCh
     return retVal;
 }
 
-template <class T>
-int SQLHelper::checkIfAttributeIsInChanges(const int file_id, const AttributeToCheck attribute, T *connection_obj)
-{
-    cout << "connection_obj type name:\t";
-    cout << abi::__cxa_demangle(typeid(connection_obj).name(), nullptr, nullptr, nullptr) << endl;
-
-    switch (abi::__cxa_demangle(typeid(connection_obj).name(), nullptr, nullptr, nullptr)) {
-    case "mysql*":
+int SQLHelper::checkIfAttributeHasChanged(const int file_id, const AttributeToCheck attribute, const TableName table, sql::Connection* conn, const char* char_attr, const int int_attr) {
+    int retVal = 0;
+    
+    switch(attribute) {
+    case 1: //Hashedval
+        retVal = didHashedValueChange(char_attr, table, file_id, conn);
         break;
-    case "sqlite3*":
+    case 2: //Filesize
+        retVal = didFileSizeChange(int_attr, table, file_id, conn);
+        break;
+    case 3: //Datemodified
+        retVal = didDateModifiedChange(char_attr, table, file_id, conn);
         break;
     default:
-        break;
+        retVal = -1;
     }
-    return 0;
+
+    //fprintf(stderr, "\nReturn value from checkIfAttributeHasChanged is %d", retVal);
+    
+    return retVal;
 }
 
+int SQLHelper::checkIfAttributeIsInChanges(const int file_id, const AttributeToCheck attribute, sql::Connection* conn) {
+    sql::PreparedStatement* pStmt;
+    sql::ResultSet* res;
+    
+    int retVal = 0;
 
+    switch (attribute) {
+    case 1: //Hashedval
+        pStmt = conn->prepareStatement(sql_check_if_hashedval_changed);
+        break;
+    case 2: //Filesize
+        pStmt = conn->prepareStatement(sql_check_if_filesize_changed);
+        break;
+    case 3: //Datemodified
+        pStmt = conn->prepareStatement(sql_check_if_datemodified_changed);
+        break;
+    default:
+        retVal = -1;
+    }
+
+    try {
+		conn->setAutoCommit(false);
+		pStmt->setInt(1, file_id);
+		res = pStmt->executeQuery();
+		
+        while(res->next()) {
+            retVal = res->getInt(1);
+        }
+
+		conn->setAutoCommit(true);
+	} catch (sql::SQLException &e) {
+		cout << "# ERR: SQLException in " << __FILE__;
+		cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
+		cout << "# ERR: " << e.what();
+		cout << " (MySQL error code: " << e.getErrorCode();
+		cout << ", SQLState: " << e.getSQLState() << " )" << endl;
+	}
+
+    delete res;
+	delete pStmt;
+
+    return retVal;
+}
 
 int SQLHelper::checkIfAttributeIsInChanges(const int file_id, const AttributeToCheck attribute, sqlite3* db) {
     char* zErrMsg = 0;
@@ -173,13 +224,50 @@ int SQLHelper::checkIfAttributeIsInChanges(const int file_id, const AttributeToC
     return retVal;
 }
 
-template<class T>
-int SQLHelper::didHashedValueChange(const char* hashed_val, TableToCheck table, const int file_id, T* connection_obj)
-{
-    return 0;
+int SQLHelper::didHashedValueChange(const char* hashed_val, TableName table, const int file_id, sql::Connection* conn) {
+    sql::PreparedStatement* pStmt;
+    sql::ResultSet* res;
+    
+    int retVal = 0;
+
+    if (table == 2) {
+        pStmt = conn->prepareStatement(sql_check_if_hashedval_changed_in_files);
+    }
+    else if (table == 3) {
+        pStmt = conn->prepareStatement(sql_check_if_value_changed_in_changes_textval);
+    }
+    else
+    {
+        return -1;
+    }
+
+    try {
+		conn->setAutoCommit(false);
+        pStmt->setString(1,hashed_val);
+		pStmt->setInt(2, file_id);
+		res = pStmt->executeQuery();
+		
+        while(res->next()) {
+            retVal = res->getInt(1);
+        }
+
+		conn->setAutoCommit(true);
+	} catch (sql::SQLException &e) {
+		cout << "# ERR: SQLException in " << __FILE__;
+		cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
+		cout << "# ERR: " << e.what();
+		cout << " (MySQL error code: " << e.getErrorCode();
+		cout << ", SQLState: " << e.getSQLState() << " )" << endl;
+	}
+
+    delete res;
+    delete pStmt;
+
+    return retVal;
 }
 
-int SQLHelper::didHashedValueChange(const char* hashed_val, TableToCheck table, const int file_id, sqlite3* db) {
+
+int SQLHelper::didHashedValueChange(const char* hashed_val, TableName table, const int file_id, sqlite3* db) {
     int retVal = 0;
 
     char* zErrMsg = 0;
@@ -187,10 +275,10 @@ int SQLHelper::didHashedValueChange(const char* hashed_val, TableToCheck table, 
     sqlite3_stmt* pStmt;
     
 
-    if (table == 1) {
+    if (table == 2) {
         rc = sqlite3_prepare_v3(db, sql_check_if_hashedval_changed_in_files, -1, 0, &pStmt, NULL);
     }
-    else if (table == 2) {
+    else if (table == 3) {
         rc = sqlite3_prepare_v3(db, sql_check_if_value_changed_in_changes_textval, -1, 0, &pStmt, NULL);
     }
     else
@@ -222,7 +310,49 @@ int SQLHelper::didHashedValueChange(const char* hashed_val, TableToCheck table, 
     return retVal;
 }
 
-int SQLHelper::didFileSizeChange(const int file_size, TableToCheck table, const int file_id, sqlite3* db) {
+int SQLHelper::didFileSizeChange(const int file_size, TableName table, const int file_id, sql::Connection* conn) {
+    sql::PreparedStatement* pStmt;
+    sql::ResultSet* res;
+    
+    int retVal = 0;
+
+    if (table == 2) {
+        pStmt = conn->prepareStatement(sql_check_if_filesize_changed_in_files);
+    }
+    else if (table == 3) {
+        pStmt = conn->prepareStatement(sql_check_if_value_changed_in_changes_intval);
+    }
+    else
+    {
+        return -1;
+    }
+
+    try {
+		conn->setAutoCommit(false);
+        pStmt->setInt(1,file_size);
+		pStmt->setInt(2, file_id);
+		res = pStmt->executeQuery();
+		
+        while(res->next()) {
+            retVal = res->getInt(1);
+        }
+
+		conn->setAutoCommit(true);
+	} catch (sql::SQLException &e) {
+		cout << "# ERR: SQLException in " << __FILE__;
+		cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
+		cout << "# ERR: " << e.what();
+		cout << " (MySQL error code: " << e.getErrorCode();
+		cout << ", SQLState: " << e.getSQLState() << " )" << endl;
+	}
+
+    delete res;
+    delete pStmt;
+
+    return retVal;
+}
+
+int SQLHelper::didFileSizeChange(const int file_size, TableName table, const int file_id, sqlite3* db) {
     int retVal = 0;
 
     char* zErrMsg = 0;
@@ -230,10 +360,10 @@ int SQLHelper::didFileSizeChange(const int file_size, TableToCheck table, const 
     sqlite3_stmt* pStmt;
     
 
-    if (table == 1) {
+    if (table == 2) {
         rc = sqlite3_prepare_v3(db, sql_check_if_filesize_changed_in_files, -1, 0, &pStmt, NULL);
     }
-    else if (table == 2) {
+    else if (table == 3) {
         rc = sqlite3_prepare_v3(db, sql_check_if_value_changed_in_changes_intval, -1, 0, &pStmt, NULL);
     }
     else
@@ -262,7 +392,49 @@ int SQLHelper::didFileSizeChange(const int file_size, TableToCheck table, const 
     return retVal;
 }
 
-int SQLHelper::didDateModifiedChange(const char* date_modified, TableToCheck table, const int file_id, sqlite3* db) {
+int SQLHelper::didDateModifiedChange(const char* date_modified, TableName table, const int file_id, sql::Connection* conn) {
+    sql::PreparedStatement* pStmt;
+    sql::ResultSet* res;
+    
+    int retVal = 0;
+
+    if (table == 2) {
+        pStmt = conn->prepareStatement(sql_check_if_datemodified_changed_in_files);
+    }
+    else if (table == 3) {
+        pStmt = conn->prepareStatement(sql_check_if_value_changed_in_changes_textval);
+    }
+    else
+    {
+        return -1;
+    }
+
+    try {
+		conn->setAutoCommit(false);
+        pStmt->setString(1,date_modified);
+		pStmt->setInt(2, file_id);
+		res = pStmt->executeQuery();
+		
+        while(res->next()) {
+            retVal = res->getInt(1);
+        }
+
+		conn->setAutoCommit(true);
+	} catch (sql::SQLException &e) {
+		cout << "# ERR: SQLException in " << __FILE__;
+		cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
+		cout << "# ERR: " << e.what();
+		cout << " (MySQL error code: " << e.getErrorCode();
+		cout << ", SQLState: " << e.getSQLState() << " )" << endl;
+	}
+
+    delete res;
+    delete pStmt;
+
+    return retVal;
+}
+
+int SQLHelper::didDateModifiedChange(const char* date_modified, TableName table, const int file_id, sqlite3* db) {
     int retVal = 0;
 
     char* zErrMsg = 0;
@@ -270,10 +442,10 @@ int SQLHelper::didDateModifiedChange(const char* date_modified, TableToCheck tab
     sqlite3_stmt* pStmt;
    
 
-    if (table == 1) {
+    if (table == 2) {
         rc = sqlite3_prepare_v3(db, sql_check_if_datemodified_changed_in_files, -1, 0, &pStmt, NULL);
     }
-    else if (table == 2) {
+    else if (table == 3) {
         rc = sqlite3_prepare_v3(db, sql_check_if_value_changed_in_changes_textval, -1, 0, &pStmt, NULL);
     }
     else
@@ -318,6 +490,38 @@ void SQLHelper::setMachineName(char* machine_name) {
     strcpy(_machinename, machine_name);
 }
 
+int SQLHelper::getDirectoryId(sql::Connection* conn) {
+    sql::PreparedStatement* pStmt;
+    sql::ResultSet* res;
+    int retVal = 0;
+    
+    pStmt = conn->prepareStatement(sql_get_directory_id);
+
+    try {
+		conn->setAutoCommit(false);
+        pStmt->setString(1,_dirname);
+		pStmt->setString(2, _machinename);
+		res = pStmt->executeQuery();
+		
+        while(res->next()) {
+            retVal = res->getInt(1);
+        }
+
+		conn->setAutoCommit(true);
+	} catch (sql::SQLException &e) {
+		cout << "# ERR: SQLException in " << __FILE__;
+		cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
+		cout << "# ERR: " << e.what();
+		cout << " (MySQL error code: " << e.getErrorCode();
+		cout << ", SQLState: " << e.getSQLState() << " )" << endl;
+	}
+
+    delete res;
+    delete pStmt;
+
+    return retVal;
+}
+
 int SQLHelper::getDirectoryId(sqlite3* db) {
     char* zErrMsg = 0;
     int rc;
@@ -346,6 +550,21 @@ int SQLHelper::getDirectoryId(sqlite3* db) {
     return retVal;
 }
 
+int SQLHelper::getDirectoryId(sql::Connection* conn, char* dir_name, char* machine_name) {
+    int retVal = 0;
+
+    _dirname = (char*)malloc(strlen(dir_name) + 1);
+    strcpy(_dirname, dir_name);
+
+    _machinename = (char*)malloc(strlen(machine_name) + 1);
+    strcpy(_machinename, machine_name);
+
+    retVal = getDirectoryId(conn);
+
+    return retVal;
+
+}
+
 int SQLHelper::getDirectoryId(sqlite3* db, char* dir_name, char* machine_name) {
     int retVal = 0;
 
@@ -359,6 +578,38 @@ int SQLHelper::getDirectoryId(sqlite3* db, char* dir_name, char* machine_name) {
 
     return retVal;
 
+}
+
+int SQLHelper::getFileId(sql::Connection* conn) {
+    sql::PreparedStatement* pStmt;
+    sql::ResultSet* res;
+    int retVal = 0;
+    
+    pStmt = conn->prepareStatement(sql_get_file_id);
+
+    try {
+		conn->setAutoCommit(false);
+        pStmt->setString(1,_filename);
+		pStmt->setInt(2, _dirid);
+		res = pStmt->executeQuery();
+		
+        while(res->next()) {
+            retVal = res->getInt(1);
+        }
+
+		conn->setAutoCommit(true);
+	} catch (sql::SQLException &e) {
+		cout << "# ERR: SQLException in " << __FILE__;
+		cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
+		cout << "# ERR: " << e.what();
+		cout << " (MySQL error code: " << e.getErrorCode();
+		cout << ", SQLState: " << e.getSQLState() << " )" << endl;
+	}
+
+    delete res;
+    delete pStmt;
+
+    return retVal;
 }
 
 int SQLHelper::getFileId(sqlite3* db) {
@@ -385,6 +636,18 @@ int SQLHelper::getFileId(sqlite3* db) {
     }
 
     sqlite3_finalize(pStmt);
+
+    return retVal;
+}
+
+int SQLHelper::getFileId(sql::Connection* conn, char* file_name, int dir_id) { 
+    int retVal = 0;
+
+    _filename = (char*)malloc(strlen(file_name) + 1);
+    strcpy(_filename, file_name);
+    _dirid = dir_id;
+
+    retVal = getFileId(conn);
 
     return retVal;
 }
@@ -430,6 +693,51 @@ char* SQLHelper::getCurrentTime() {
 	return char_array;
 }
 
+int SQLHelper::saveFileInfo(sql::Connection* conn, const int dir_id, const char* file_name, const int file_size, const char* date_modified, const char* hashed_val, const bool isNew, AttributeToCheck attr_to_update) { 
+    int retVal = 0;
+    int hasChanged = 0;
+
+    _dirid = dir_id;
+    _filename = (char*)malloc(strlen(file_name)+1);
+    strcpy(_filename,file_name);
+    _filesize = file_size;
+
+    if (date_modified != NULL) {
+        _datemodified = (char*)malloc(strlen(date_modified) + 1);
+        strcpy(_datemodified, date_modified);
+    }
+    
+    if (hashed_val != NULL) {
+        //fprintf(stderr, "\nGetting ready to store hashedvalue into _hashedval with value of %s\n", _hashedval);
+        _hashedval = (char*)malloc(strlen(hashed_val) + 1);
+        strcpy(_hashedval, (char*)hashed_val);
+    }
+
+     if (isNew) {
+        saveNewFileInfo(conn);
+    }
+    else {
+        switch (attr_to_update)
+        {
+        case 1:
+            //fprintf(stderr, "\nGetting ready to save hashedvalue of %s\n", _hashedval);
+            saveExistingFileInfo(conn, attr_to_update,_hashedval);
+            break;
+        case 2:
+            saveExistingFileInfo(conn, attr_to_update,NULL,_filesize);
+            break;
+        case 3:
+            saveExistingFileInfo(conn, attr_to_update, _datemodified);
+            break;
+        default:
+            break;
+        }
+        //saveExistingFileInfo(db, attr_to_update);
+    }
+
+    return retVal;
+}
+
 int SQLHelper::saveFileInfo(sqlite3* db, const int dir_id, const char* file_name, const int file_size, const char* date_modified, const char* hashed_val, const bool isNew, AttributeToCheck attr_to_update) {
     int retVal = 0;
     int hasChanged = 0;
@@ -471,6 +779,47 @@ int SQLHelper::saveFileInfo(sqlite3* db, const int dir_id, const char* file_name
         }
         //saveExistingFileInfo(db, attr_to_update);
     }
+
+    return retVal;
+}
+
+int SQLHelper::saveNewFileInfo(sql::Connection* conn) {
+    sql::PreparedStatement* pStmt;
+    sql::ResultSet* res;
+    int retVal = 0;
+    char* current_time = getCurrentTime();
+    
+    if (_hashedval == NULL) {
+        pStmt = conn->prepareStatement(sql_save_newfile_nohashedval);
+    } else {
+        pStmt = conn->prepareStatement(sql_save_newfile_hashedval);
+    }
+    
+    try {
+		conn->setAutoCommit(false);
+        pStmt->setInt(1,_dirid);
+        pStmt->setString(2,current_time);
+		pStmt->setString(3, _filename);
+        pStmt->setInt(4,_filesize);
+        pStmt->setString(5,_datemodified);
+
+        if(_hashedval != NULL) {
+            pStmt->setString(6,_hashedval);
+        }
+
+		res = pStmt->executeQuery();
+
+		conn->setAutoCommit(true);
+	} catch (sql::SQLException &e) {
+		cout << "# ERR: SQLException in " << __FILE__;
+		cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
+		cout << "# ERR: " << e.what();
+		cout << " (MySQL error code: " << e.getErrorCode();
+		cout << ", SQLState: " << e.getSQLState() << " )" << endl;
+	}
+
+    delete res;
+    delete pStmt;
 
     return retVal;
 }
@@ -524,7 +873,7 @@ int SQLHelper::saveNewFileInfo(sqlite3* db) {
         cout << "\nA MISUSE has been deteced in SQLHelper::saveNewFileInfo." << endl;
     }
     else if (rc == SQLITE_DONE) {
-        cout << "\nsqlite3_step executed successfully in SQLHelper::saveNewFileInfo." << endl;
+        //cout << "\nsqlite3_step executed successfully in SQLHelper::saveNewFileInfo." << endl;
     }
     else {
         cout << "\nNot sure what happened in SQLHelper::saveNewFileInfo." << endl;
@@ -535,13 +884,73 @@ int SQLHelper::saveNewFileInfo(sqlite3* db) {
     return retVal;
 }
 
+int SQLHelper::saveExistingFileInfo(sql::Connection* conn, AttributeToCheck attr_to_update, const char* text_val, const int int_val) {
+    int retVal = 0;
+
+    char* current_time = getCurrentTime();
+    int fileId = getFileId(conn);
+    
+    int in_changes = checkIfAttributeIsInChanges(fileId, attr_to_update, conn);
+    int has_changes = 0;
+
+    switch (attr_to_update)
+    {
+    case 1:
+
+        if (!in_changes) {
+            has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableName::Files, conn, text_val);
+        }
+        else {
+            has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableName::Changes, conn, text_val);
+        }
+        
+        if (has_changes == 0) {
+            //fprintf(stderr, "\nInside has_changes with value of %d and text value %s\n", has_changes, text_val);
+            retVal = insertTextValueToChanges(conn, fileId, text_val,"hashedvalue");
+        }
+        break;
+    case 2:
+        
+        if (!in_changes) {
+            has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableName::Files, conn, NULL, int_val);
+        }
+        else {
+            has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableName::Changes, conn, NULL, int_val);
+        }
+        
+        if (has_changes == 0) {
+            //fprintf(stderr, "\nInside has_changes with value of %d and int value %d\n", has_changes, int_val);
+            retVal = insertIntValueToChanges(conn, fileId, int_val, "filesize");
+        }
+        break;
+    case 3:
+
+        if (!in_changes) {
+            has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableName::Files, conn, text_val);
+        }
+        else {
+            has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableName::Changes, conn, text_val);
+        }
+        
+        if (has_changes == 0) {
+            //fprintf(stderr, "\nInside has_changes with value of %d and text value %s\n", has_changes, text_val);
+            retVal = insertTextValueToChanges(conn, fileId, text_val,"lastmodified");
+        }
+        break;
+    default:
+        break;
+    }
+
+    if (!in_changes && has_changes == 0) {
+        retVal = updateChangedInFile(conn, fileId, attr_to_update);
+    }
+
+    return retVal;
+}
+
 int SQLHelper::saveExistingFileInfo(sqlite3* db, AttributeToCheck attr_to_update, const char* text_val, const int int_val) {
     int retVal = 0;
 
-    char* zErrMsg = 0;
-    int rc;
-    sqlite3_stmt* pStmt;
-    
     char* current_time = getCurrentTime();
     int fileId = getFileId(db);
     
@@ -553,10 +962,10 @@ int SQLHelper::saveExistingFileInfo(sqlite3* db, AttributeToCheck attr_to_update
     case 1:
 
         if (!in_changes) {
-            has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableToCheck::Files, db, text_val);
+            has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableName::Files, db, text_val);
         }
         else {
-            has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableToCheck::Changes, db, text_val);
+            has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableName::Changes, db, text_val);
         }
         
         if (has_changes == 0) {
@@ -567,10 +976,10 @@ int SQLHelper::saveExistingFileInfo(sqlite3* db, AttributeToCheck attr_to_update
     case 2:
         
         if (!in_changes) {
-            has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableToCheck::Files, db, NULL, int_val);
+            has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableName::Files, db, NULL, int_val);
         }
         else {
-            has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableToCheck::Changes, db, NULL, int_val);
+            has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableName::Changes, db, NULL, int_val);
         }
         
         if (has_changes == 0) {
@@ -581,10 +990,10 @@ int SQLHelper::saveExistingFileInfo(sqlite3* db, AttributeToCheck attr_to_update
     case 3:
 
         if (!in_changes) {
-            has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableToCheck::Files, db, text_val);
+            has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableName::Files, db, text_val);
         }
         else {
-            has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableToCheck::Changes, db, text_val);
+            has_changes = checkIfAttributeHasChanged(fileId, attr_to_update, TableName::Changes, db, text_val);
         }
         
         if (has_changes == 0) {
@@ -601,6 +1010,39 @@ int SQLHelper::saveExistingFileInfo(sqlite3* db, AttributeToCheck attr_to_update
     }
 
     return retVal;
+}
+
+int SQLHelper::insertTextValueToChanges(sql::Connection* conn, const int file_id, const char* text_val, const char* attr_changed) {
+    sql::PreparedStatement* pStmt;
+    sql::ResultSet* res;
+    int retVal = 0;
+    char* current_time = getCurrentTime();
+    
+    pStmt = conn->prepareStatement(sql_save_textval_in_changes);
+    
+    try {
+		conn->setAutoCommit(false);
+        pStmt->setInt(1,file_id);
+        pStmt->setString(2,current_time);
+		pStmt->setString(3, text_val);
+        pStmt->setString(4,attr_changed);
+        
+		res = pStmt->executeQuery();
+
+		conn->setAutoCommit(true);
+	} catch (sql::SQLException &e) {
+		cout << "# ERR: SQLException in " << __FILE__;
+		cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
+		cout << "# ERR: " << e.what();
+		cout << " (MySQL error code: " << e.getErrorCode();
+		cout << ", SQLState: " << e.getSQLState() << " )" << endl;
+	}
+
+    delete res;
+    delete pStmt;
+
+    return retVal;
+    
 }
 
 int SQLHelper::insertTextValueToChanges(sqlite3* db, const int file_id, const char* text_val, const char* attr_changed) {
@@ -640,7 +1082,7 @@ int SQLHelper::insertTextValueToChanges(sqlite3* db, const int file_id, const ch
         cout << "\nA MISUSE has been deteced in insertTextValuetoChanges." << endl;
     }
     else if (rc == SQLITE_DONE) {
-        cout << "\nsqlite3_step executed successfully." << endl;
+        //cout << "\nsqlite3_step executed successfully." << endl;
     }
     else {
         cout << "\nNot sure what happened in insertTextValuetoChanges." << endl;
@@ -649,6 +1091,38 @@ int SQLHelper::insertTextValueToChanges(sqlite3* db, const int file_id, const ch
     sqlite3_finalize(pStmt);
 
     return 0;
+}
+
+int SQLHelper::insertIntValueToChanges(sql::Connection* conn, const int file_id, const int int_val, const char* attr_changed) {
+    sql::PreparedStatement* pStmt;
+    sql::ResultSet* res;
+    int retVal = 0;
+    char* current_time = getCurrentTime();
+    
+    pStmt = conn->prepareStatement(sql_save_intval_in_changes);
+    
+    try {
+		conn->setAutoCommit(false);
+        pStmt->setInt(1,file_id);
+        pStmt->setString(2,current_time);
+		pStmt->setInt(3, int_val);
+        pStmt->setString(4,attr_changed);
+        
+		res = pStmt->executeQuery();
+
+		conn->setAutoCommit(true);
+	} catch (sql::SQLException &e) {
+		cout << "# ERR: SQLException in " << __FILE__;
+		cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
+		cout << "# ERR: " << e.what();
+		cout << " (MySQL error code: " << e.getErrorCode();
+		cout << ", SQLState: " << e.getSQLState() << " )" << endl;
+	}
+
+    delete res;
+    delete pStmt;
+
+    return retVal;
 }
 
 int SQLHelper::insertIntValueToChanges(sqlite3* db, const int file_id, const int int_val, const char* attr_changed) {
@@ -688,7 +1162,7 @@ int SQLHelper::insertIntValueToChanges(sqlite3* db, const int file_id, const int
         cout << "\nA MISUSE has been deteced in insertIntValueToChanges." << endl;
     }
     else if (rc == SQLITE_DONE) {
-        cout << "\nsqlite3_step executed successfully." << endl;
+        //cout << "\nsqlite3_step executed successfully." << endl;
     }
     else {
         cout << "\nNot sure what happened in insertIntValueToChanges." << endl;
@@ -697,6 +1171,51 @@ int SQLHelper::insertIntValueToChanges(sqlite3* db, const int file_id, const int
     sqlite3_finalize(pStmt);
 
     return 0;
+}
+
+int SQLHelper::updateChangedInFile(sql::Connection* conn, int file_id, AttributeToCheck attr_to_change) {
+    sql::PreparedStatement* pStmt;
+    sql::ResultSet* res;
+    int retVal = 0;
+    char* current_time = getCurrentTime();
+    
+    switch(attr_to_change)
+    {
+        case 1:
+            pStmt = conn->prepareStatement(sql_set_inchanges_hashedval);
+            break;
+        case 2:
+            pStmt = conn->prepareStatement(sql_set_inchanges_filesize);
+            break;
+        case 3:
+            pStmt = conn->prepareStatement(sql_set_inchanges_lastmodified);
+            break;
+        default:
+            cout << "Unknown attribute. Nothing saved." << endl;
+            return -1;
+            break;
+    }
+
+    try {
+		conn->setAutoCommit(false);
+        pStmt->setInt(1,file_id);
+        
+        res = pStmt->executeQuery();
+
+		conn->setAutoCommit(true);
+	} catch (sql::SQLException &e) {
+		cout << "# ERR: SQLException in " << __FILE__;
+		cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
+		cout << "# ERR: " << e.what();
+		cout << " (MySQL error code: " << e.getErrorCode();
+		cout << ", SQLState: " << e.getSQLState() << " )" << endl;
+	}
+
+    delete res;
+    delete pStmt;
+
+    return retVal;
+
 }
 
 int SQLHelper::updateChangedInFile(sqlite3* db, int file_id, AttributeToCheck attr_to_change) {
@@ -749,7 +1268,7 @@ int SQLHelper::updateChangedInFile(sqlite3* db, int file_id, AttributeToCheck at
         cout << "\nA MISUSE has been deteced in updateChangedInFiles." << endl;
     }
     else if (rc == SQLITE_DONE) {
-        cout << "\nsqlite3_step executed successfully." << endl;
+        //cout << "\nsqlite3_step executed successfully." << endl;
     }
     else {
         cout << "\nNot sure what happened in updateChangedInFiles." << endl;

@@ -18,4 +18,8 @@ C++ Compling instructions for sqlite3
 
 g++ src/sqlite3crud.o src/SHA256.o src/Menu.o src/fileintegritychecker.cpp -lsqlite3 -o fileintegritychecker.exe
 
+fjdl;kas;fjl;dasjfl;ajfl;ajfl;kasdjf;laksdjflajfa;sd
+asdjlkfjf;jdsa;lkfjd;skalfj;dsalkjfdals
+asdlkfjldaskfja;;jasdjf;lkajfdslkjoiew;jflqew/jfewlskfjsadlf
+
 

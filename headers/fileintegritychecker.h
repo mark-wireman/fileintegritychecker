@@ -12,8 +12,8 @@
 #include <chrono>
 #include "SHA256CPP.h"
 #include "Menu.h"
-#include "mysqlcontroller.h"
-#include "sqlite3controller.h"
+#include "MySQLController.h"
+#include "SQLite3Controller.h"
 //#include "SQLiteHelper.h"
 //#include "SQLHelper.h"
 
@@ -44,7 +44,7 @@ private:
 	long int numberofverifieddirectories = 0;
 	
 	bool verbose_output = false;
-	mysqlcontroller* mysqlctl;
-	sqlite3controller* sqlitectl;
+	MySQLController* mysqlctl;
+	SQLite3Controller* sqlitectl;
 	void get_directories_files(const string& s, int level = 0);
 };

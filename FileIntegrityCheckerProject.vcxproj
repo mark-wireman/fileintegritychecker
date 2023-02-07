@@ -77,6 +77,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\fileintegritychecker.cpp" />
+    <ClCompile Include="src\SQLFunctionsBase.cpp" />
     <ClCompile Include="src\SQLHelper.cpp" />
     <ClCompile Include="src\Menu.cpp" />
     <ClCompile Include="src\mysqlcontroller.cpp" />
@@ -96,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="headers\fileintegritychecker.h" />
+    <ClInclude Include="headers\SQLFunctionsBase.h" />
     <ClInclude Include="headers\SQLHelper.h" />
     <ClInclude Include="headers\Menu.h" />
     <ClInclude Include="headers\mysqlcontroller.h" />

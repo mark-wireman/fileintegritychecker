@@ -1,10 +1,31 @@
 #include <cstdio>
+#include <execinfo.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include "headers/Menu.h"
 #include "headers/fileintegritychecker.h"
 
+void handler(int sig) {
+  void *array[10];
+  size_t size;
+
+  // get void*'s for all entries on the stack
+  size = backtrace(array, 10);
+
+  // print out all the frames to stderr
+  fprintf(stderr, "Error: signal %d:\n", sig);
+  backtrace_symbols_fd(array, size, STDERR_FILENO);
+  exit(1);
+}
+
+
 int main(int argc, char* argv[])
 {
-
+    //if(argc == 2) {
+        //signal(SIGSEGV, handler);   // install our handler
+    //}
+    
     time_t start, end;
     double time_taken = 0.0;
     int menuresult = 0;

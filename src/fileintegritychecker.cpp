@@ -54,10 +54,12 @@ void fileintegritychecker::get_directories_files(const string& s, int level) {
         if(!error_code) {
             if(!entry.is_symlink() && entry.is_directory()){
                 const auto dirname = "/" + entry.path().relative_path().string();
-                cout << "Dir: " << dirname << endl;
+                printf("Dir: %s\n",dirname);
+                //cout << "Dir: " << dirname << endl;
                 if(strcmp(this->dbasetype,"mysql") == 0) {
-                    auto dirsaveasync = std::async(std::launch::async, &mysqlcontroller::saveDirectoryName_async, this->mysqlctl, dirname);
-                    dirsaveasync.wait();
+                    this->mysqlctl->save_dir_info(dirname.c_str());
+                    //auto dirsaveasync = std::async(std::launch::async, &mysqlcontroller::saveDirectoryName_async, this->mysqlctl, dirname);
+                    //dirsaveasync.wait();
                 }
                 if(strcmp(this->dbasetype,"sqlite") == 0) {
                     this->sqlitectl->save_dir_info(dirname.c_str());
@@ -75,9 +77,15 @@ void fileintegritychecker::get_directories_files(const string& s, int level) {
 
                 uintmax_t fsize = entry.file_size();
                 numberoffiles++;
-                cout << "\tFile: " << filename << endl;
+                printf("\tFile: %s\n", filename);
+                //cout << "\tFile: " << filename << endl;
 
                 if (usehashvals == 0) {
+                    if (strcmp(this->dbasetype, "mysql") == 0) {
+                        //printf("\tBefore call to mysqlctl->save_file_info\n");
+                        this->mysqlctl->save_file_info(filename.c_str(),dname.c_str(), time, fsize);
+                        //printf("\tAfter call to mysqlctl->save_file_info\n");
+                    }
                     if (strcmp(this->dbasetype, "sqlite") == 0) {
                         this->sqlitectl->save_file_info(filename.c_str(),dname.c_str(), time, fsize);
                     }
@@ -108,8 +116,9 @@ void fileintegritychecker::get_directories_files(const string& s, int level) {
                         hashedvals += to_string(hashVals.H[7]);
 
                         if (strcmp(this->dbasetype, "mysql") == 0) {
-                            auto filesaveasync = std::async(std::launch::async, &mysqlcontroller::saveFileInfo_async, this->mysqlctl, dname, entry.path().filename().string(), hashedvals);
-                            filesaveasync.wait();
+                            this->mysqlctl->save_file_info(filename.c_str(), dname.c_str(), time, fsize, (char*)hashedvals.c_str());
+                            //auto filesaveasync = std::async(std::launch::async, &mysqlcontroller::saveFileInfo_async, this->mysqlctl, dname, entry.path().filename().string(), hashedvals);
+                            //filesaveasync.wait();
                         }
 
                         if (strcmp(this->dbasetype, "sqlite") == 0) {
@@ -166,13 +175,13 @@ void fileintegritychecker::setParamVals(Menu *_menu) {
 
 void fileintegritychecker::setDatabaseConnections() {
     if (strcmp(this->dbasetype, "mysql") == 0) {
-        this->mysqlctl = new mysqlcontroller(this->dbasehost, this->dbasename, this->uname, this->pwd, 3306, this->mname);
+        this->mysqlctl = new MySQLController(this->dbasehost, this->dbasename, this->uname, this->pwd, this->mname,  3306);
         this->mysqlctl->initdb();
         cout << "mysql database connection set." << endl;
     }
 
     if (strcmp(this->dbasetype, "sqlite") == 0) {
-        this->sqlitectl = new sqlite3controller(this->dbasefilename, this->mname);
+        this->sqlitectl = new SQLite3Controller(this->dbasefilename, this->mname);
         this->sqlitectl->initdb();
         cout << "sqlite3 database connection set." << endl;
     }
@@ -192,11 +201,12 @@ void fileintegritychecker::closeDatabaseConnections() {
 
 void fileintegritychecker::processFiles() {
     string pDir = this->parentdir;
-    cout << pDir << endl;
 
     if (strcmp(this->dbasetype, "mysql") == 0) {
-        auto dirsaveasync = std::async(std::launch::async, &mysqlcontroller::saveDirectoryName_async, this->mysqlctl, pDir.c_str());
-        dirsaveasync.wait();
+        this->mysqlctl->save_dir_info(pDir.c_str());
+        //printf("\nAfter save_dir_info in processFiles\n\n");
+        //auto dirsaveasync = std::async(std::launch::async, &mysqlcontroller::saveDirectoryName_async, this->mysqlctl, pDir.c_str());
+        //dirsaveasync.wait();
     }
     if (strcmp(this->dbasetype, "sqlite") == 0) {
         this->sqlitectl->save_dir_info(pDir.c_str());
@@ -204,6 +214,7 @@ void fileintegritychecker::processFiles() {
 
     numberofdirectories++;
     
+    //printf("\nPassing call to get_directories_files\n\n");
     this->get_directories_files(pDir);
 
     
