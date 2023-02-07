@@ -80,10 +80,9 @@
     <ClCompile Include="src\SQLFunctionsBase.cpp" />
     <ClCompile Include="src\SQLHelper.cpp" />
     <ClCompile Include="src\Menu.cpp" />
-    <ClCompile Include="src\mysqlcontroller.cpp" />
+    <ClCompile Include="src\MySQLController.cpp" />
     <ClCompile Include="src\SHA256CPP.cpp" />
-    <ClCompile Include="src\sqlite3controller.cpp" />
-    <ClCompile Include="src\testmysqlcontroller.cpp" />
+    <ClCompile Include="src\SQLite3Controller.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
@@ -100,10 +99,9 @@
     <ClInclude Include="headers\SQLFunctionsBase.h" />
     <ClInclude Include="headers\SQLHelper.h" />
     <ClInclude Include="headers\Menu.h" />
-    <ClInclude Include="headers\mysqlcontroller.h" />
+    <ClInclude Include="headers\MySQLController.h" />
     <ClInclude Include="headers\SHA256CPP.h" />
-    <ClInclude Include="headers\sqlite3controller.h" />
-    <ClInclude Include="headers\userdefinederrors.h" />
+    <ClInclude Include="headers\SQLite3Controller.h" />
   </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
