@@ -1,7 +1,7 @@
 #ifndef HEADERS_SQLITE3CONTROLLER_H_
 #define HEADERS_SQLITE3CONTROLLER_H_
 
-#define __STDC_WANT_LIB_EXT1__ 1
+//#define __STDC_WANT_LIB_EXT1__ 1
 
 #include <stdio.h>
 #include <stdlib.h>
