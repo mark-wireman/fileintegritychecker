@@ -1,3 +1,6 @@
+#ifndef HEADERS_FILEINTEGRITYCHECKER_H_
+#define HEADERS_FILEINTEGRITYCHECKER_H_
+
 #include <iostream>
 #include <cstdint>
 #include <fstream>
@@ -48,3 +51,5 @@ private:
 	SQLite3Controller* sqlitectl;
 	void get_directories_files(const string& s, int level = 0);
 };
+
+#endif

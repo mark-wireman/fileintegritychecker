@@ -5,8 +5,8 @@
  *      Author: mark_
  */
 
-#ifndef MENU_H_
-#define MENU_H_
+#ifndef HEADERS_MENU_H_
+#define HEADERS_MENU_H_
 
 #include <string>
 #include <cstring>

@@ -2,10 +2,8 @@
 * @file SQLHelper.h
 */
 
-#ifndef HEADERS_SQLHelper_H_
-#define HEADERS_SQLHelper_H_
-
-#define __STDC_WANT_LIB_EXT1__ 1
+#ifndef HEADERS_SQLHELPER_H_
+#define HEADERS_SQLHELPER_H_
 
 #include <stdio.h>
 #include <stdlib.h>

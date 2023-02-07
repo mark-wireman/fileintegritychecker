@@ -1,5 +1,5 @@
-#ifndef SQLFUNCTIONSBASE_H_
-#define SQLFUNCTIONSBASE_H_
+#ifndef HEADERS_SQLFUNCTIONSBASE_H_
+#define HEADERS_SQLFUNCTIONSBASE_H_
 
 #include <iostream>
 
