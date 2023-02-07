@@ -44,7 +44,7 @@ SQLite3Controller.o: SQLHelper.o
 	$(CC) -c -std=$(STDLIB) SQLFunctionsBase.o SQLHelper.o $(SRC_DIR)/SQLite3Controller.cpp $(INCLUDES) $(CFLAGS) $(LIBS)
 
 fileintegritychecker.o: SHA256CPP.o Menu.o SQLFunctionsBase.o SQLHelper.o MySQLController.o SQLite3Controller.o
-	$(CC) -c -std=$(STDLIB) SHA256CPP.o Menu.o mysqlcontroller.o sqlite3controller.o $(SRC_DIR)/fileintegritychecker.cpp $(INCLUDES) $(CFLAGS) $(LIBS)
+	$(CC) -c -std=$(STDLIB) SHA256CPP.o Menu.o MySQLController.o SQLite3Controller.o $(SRC_DIR)/fileintegritychecker.cpp $(INCLUDES) $(CFLAGS) $(LIBS)
 #	$(CC) -c -std=$(STDLIB) SHA256CPP.o Menu.o SQLiteHelper.o mysqlcontroller.o sqlite3controller.o $(SRC_DIR)/fileintegritychecker.cpp $(INCLUDES) $(DEPS) $(CFLAGS) $(LIBS)
 
 # *****
