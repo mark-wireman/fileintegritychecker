@@ -5,7 +5,7 @@
  
 CC = g++
 STDLIB = c++17
-OBJECTS = SQLHelper.o SHA256CPP.o Menu.o MySQLController.o SQLite3Controller.o fileintegritychecker.o
+OBJECTS = SQLFunctionsBase.o SQLHelper.o SHA256CPP.o Menu.o MySQLController.o SQLite3Controller.o fileintegritychecker.o
 CFLAGS = -Wl,--copy-dt-needed-entries
 LIBS =  -pthread -lssl -lcrypto -lsqlite3 -lzstd
 MYSQLLIBS = -pthread -lssl -lcrypto
