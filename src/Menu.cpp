@@ -114,7 +114,7 @@ char* Menu::getDBASENAME() {
  */
 void Menu::PrintMenu() {
 	
-	cout << "Usage: fileintegritychecker [-dir -dbasetype -machine] optional: [-dbasefilename -host -port -user -pwd]" << endl;
+	cout << "Usage: fileintegritychecker [-dir -dbasetype -machine] optional: [-dbasefilename -host -port -username -password]" << endl;
 	cout << "\t-dir The directory to start the search" << endl;
 	cout << "\t-dbasetype Either mysql or sqlite." << endl; 
 	cout << "\t\tIf mysql the -host, -port, -user, and -pwd are required." << endl;
@@ -131,7 +131,7 @@ void Menu::PrintMenu() {
     cout << endl;
 	cout << "Example:" << endl;
 	cout << "\tFor mysql dbasetype -" << endl;
-	cout << "\t\tfileintegritychecker -dir /home -dbasetype mysql -machine MyMachineName -host 127.0.0.1 -port 3306 -user user -pwd password" << endl;
+	cout << "\t\tfileintegritychecker -dir /home -dbasetype mysql -machine MyMachineName -host 127.0.0.1 -port 3306 -username user -password password" << endl;
 	cout << endl;
 	cout << "\tFor sqlite dbasetype -" << endl;
 	cout << "\t\tfileintegritychecker -dir /home -dbasetype sqlite -machine MyMachineName -dbasefilename dirname/dbasefilename.db" << endl;

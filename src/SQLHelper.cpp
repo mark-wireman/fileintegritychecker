@@ -19,7 +19,7 @@ char* FILETABLE_SQL = "CREATE TABLE IF NOT EXISTS files("  \
       "dirid           int DEFAULT 0," \
       "dateadded         TEXT," \
       "filename      TEXT," \
-      "hashedvalue      CHAR(50) DEFAULT 'NOVAL'," \
+      "hashedvalue      CHAR(250) DEFAULT 'NOVAL'," \
       "hashedvaluechanged      int DEFAULT 0," \
       "lastmodified      TEXT," \
       "lastmodifiedchanged      int DEFAULT 0," \
@@ -50,7 +50,7 @@ char* sql_get_file_id = "select id from files where filename=? and dirid=?; ";
 char* sql_get_directory_id = "select id from directories where dirname=? and machinename= ?; ";
 
 char* sql_save_newfile_nohashedval = "insert into files (dirid, dateadded, filename, filesize, lastmodified) VALUES (?,?,?,?,?); ";
-char* sql_save_newfile_hashedval = "insert into files (dirid, dateadded, filename, filesize, lastmodified, hashval) VALUES (?,?,?,?,?,?); ";
+char* sql_save_newfile_hashedval = "insert into files (dirid, dateadded, filename, filesize, lastmodified, hashedvalue) VALUES (?,?,?,?,?,?); ";
 
 char* sql_save_textval_in_changes = "INSERT INTO changes (fileid,datechanged,textvalue,attributechanged) VALUES (?,?,?,?); ";
 char* sql_save_intval_in_changes = "INSERT INTO changes (fileid,datechanged,intvalue,attributechanged) VALUES (?,?,?,?); ";
