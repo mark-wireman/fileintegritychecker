@@ -1,0 +1,19 @@
+Use Case 1: Monitor Production
+	- Run the FileIntegrity to monitor critical directories and files on production systems
+
+Use Case 2: Inventory of Production Systems
+	- Run the FileIntegrity to monitor production and to keep an up-to-date registry of files and directories
+	- The registry can be used to map to applications and keep assets updated
+
+Use Case 3: Build and Stage Integrity
+	- Run the FileIntegrity to verify and validate the application files that will be used to deploy to production
+	- Use the hashed values to compare between the Build and Staging files to confirm no changes were made prior to deployment to staging
+	- Can also use the same for verification in Production
+
+Use Case 4: Alignment of Application Files to Applications
+	- Run the FileIntegrity to scan directories of deployed applications to inventory all files associated with an application
+
+Use Case 5: Use Prometheus or similar product to monitor data for changes
+	- Integrate the Fileintegrity scan data to a monitoring system
+
+* For all of the above, the Security organization will maintain the data store used to save the FileIntegrity scan details.
