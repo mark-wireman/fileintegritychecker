@@ -54,7 +54,7 @@ void fileintegritychecker::get_directories_files(const string& s, int level) {
         if(!error_code) {
             if(!entry.is_symlink() && entry.is_directory()){
                 const auto dirname = "/" + entry.path().relative_path().string();
-                printf("Dir: %s\n",dirname);
+                printf("Dir: %s\n",dirname.c_str());
                 //cout << "Dir: " << dirname << endl;
                 if(strcmp(this->dbasetype,"mysql") == 0) {
                     this->mysqlctl->save_dir_info(dirname.c_str());
@@ -77,7 +77,7 @@ void fileintegritychecker::get_directories_files(const string& s, int level) {
 
                 uintmax_t fsize = entry.file_size();
                 numberoffiles++;
-                printf("\tFile: %s\n", filename);
+                printf("\tFile: %s\n", filename.c_str());
                 //cout << "\tFile: " << filename << endl;
 
                 if (usehashvals == 0) {

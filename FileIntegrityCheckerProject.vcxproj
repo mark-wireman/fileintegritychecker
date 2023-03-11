@@ -87,9 +87,11 @@
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
     <None Include="makefile" />
+    <None Include="makefile_azure.mak" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="compiler_notes.txt" />
+    <Text Include="UseCases.txt" />
   </ItemGroup>
   <ItemGroup>
     <Object Include="src\mysqlcontroller.o" />
