@@ -17,9 +17,9 @@ steps:
     #sudo apt install default-libmysqlclient-dev
     #sudo apt install libmysqlcppconn-dev
 #  displayName: 'Install mysqlclient dev'
-#- script: |
-    #sudo apt install libsqlite3-dev
-#  displayName: 'Install sqlite3'
+- script: |
+    sudo apt install libsqlite3-dev
+  displayName: 'Install sqlite3'
 - script: |
     make -f makefile_azure.mak
   displayName: 'make'
