@@ -8,7 +8,7 @@
 
    jobs:
     build:
-      runs-on: dharmasvr2
+      runs-on: [self-hosted, x64]
       steps:
       - name: checkout repo
         uses: actions/checkout@main
