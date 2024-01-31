@@ -18,11 +18,11 @@ jobs:
 
     - name: Run Prisma Cloud 
       id: prisma-cloud
-      uses: bridgecrewio/checkov-action@master
+    - uses: bridgecrewio/checkov-action@master
       env:
-        PRISMA_API_URL: https://api.prismacloud.io
+          PRISMA_API_URL: https://api.prismacloud.io
       with:
-        api-key: ${{ secrets.BC_API_KEY }}
+          api-key: ${{ secrets.BC_API_KEY }}
           
     - name: make
       run: make -f makefile_azure.mak
