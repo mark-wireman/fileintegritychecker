@@ -9,7 +9,8 @@ on:
 jobs:
   build:
 
-    runs-on: dharmasvr2
+    runs-on: 
+      labels: dharmasvr2
 
     steps:
     - uses: actions/checkout@v3
