@@ -14,14 +14,15 @@ jobs:
 
     steps:
     - name: Checkout repo
-    - uses: actions/checkout@v3
+      uses: actions/checkout@v2
 
     - name: Run Prisma Cloud 
+      id: prisma-cloud
       uses: bridgecrewio/checkov-action@master
       env:
         PRISMA_API_URL: https://api.prismacloud.io
       with:
         api-key: ${{ secrets.BC_API_KEY }}
-          
+
     - name: make
       run: make -f makefile_azure.mak
