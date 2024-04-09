@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: 
-      labels: [self-hosted, Linux, X64]
+      labels: [self-hosted,Linux, X64]
 
     steps:
     - name: Checkout repo
