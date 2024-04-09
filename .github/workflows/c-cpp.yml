@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: 
-      labels: [self-hosted, x64]
+      labels: [self-hosted, Linux, X64]
 
     steps:
     - name: Checkout repo
@@ -22,6 +22,17 @@ jobs:
         PRISMA_API_URL: https://api.prismacloud.io
       with:
         api-key: ${{ secrets.BC_API_KEY }}
+        framework: sca_package
+        output_format: csv
+        soft_fail_on: true
+        output_file_path: output 
+        file: code-coverage.csv
+        log_level: debug
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v4
+      with:
+        name: code-coverage-report
+        path: output
 
     - name: make
       run: make -f makefile_azure.mak
